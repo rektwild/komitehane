@@ -9,11 +9,121 @@
       "title": "Komitehane",
       "description": "Komitehane — modern, çok dilli bir web uygulaması.",
       "imageAlt": "Komitehane sosyal önizlemesi"
+    },
+    "tools": {
+      "title": "Araçlar",
+      "description": "Not hesaplama araçlarıyla akademik hedeflerini daha kolay planla.",
+      "imageAlt": "Komitehane araçlar sayfası"
     }
   },
   "Home": {
     "title": "Komitehane",
     "description": "Komitehane — modern, çok dilli bir web uygulaması."
+  },
+  "Aside": {
+    "label": "Yan içerikler",
+    "countdown": {
+      "title": "TUS Sayacı",
+      "value": "{days} gün"
+    },
+    "relatedTools": {
+      "title": "İlgili araçlar"
+    },
+    "relatedBlogs": {
+      "title": "İlgili bloglar",
+      "items": {
+        "studyPlan": "TUS çalışma planı",
+        "resourceSelection": "TUS kaynak seçimi",
+        "examDayPreparation": "Sınav günü hazırlığı"
+      }
+    }
+  },
+  "Tools": {
+    "title": "Araçlar",
+    "description": "Not hesaplama araçlarıyla akademik hedeflerini daha kolay planla.",
+    "catalog": {
+      "search": {
+        "label": "Araçlarda ara",
+        "placeholder": "Araçlarda ara..."
+      },
+      "sort": {
+        "label": "Sırala",
+        "default": "Varsayılan sıralama",
+        "az": "A’dan Z’ye",
+        "za": "Z’den A’ya"
+      },
+      "empty": {
+        "title": "Araç bulunamadı",
+        "description": "Arama ölçütlerini değiştirip tekrar deneyin."
+      }
+    },
+    "card": {
+      "provider": "Komitehane",
+      "open": "Aracı aç",
+      "imagePlaceholder": "Görsel yakında"
+    },
+    "placeholder": {
+      "eyebrow": "Yakında",
+      "description": "Bu aracın hesaplama ekranı yakında burada olacak.",
+      "back": "Araçlara dön"
+    },
+    "committeeMinimumFinalForm": {
+      "calculate": "Hesapla",
+      "calculationInformationTitle": "Hesaplama bilgileri",
+      "passingGrade": "Geçme Notu",
+      "committeeCount": "Komite Sayısı",
+      "committeeGrade": "Komite {index} Notu",
+      "committeeWeight": "Komite {index} Ağırlığı (%)",
+      "finalWeight": "Final Ağırlığı (%)",
+      "pendingValue": "—",
+      "resultTitle": "Hesaplama sonucu",
+      "howItWorksTitle": "Komite not hesaplama nasıl çalışır?",
+      "howItWorksIntroduction": "Komite not hesaplama aracı, komite sınavı notlarınızı ve ağırlıklarını girerek geçmek için finalden almanız gereken minimum notu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; hiçbir not veriniz sunucuya gönderilmez veya saklanmaz.",
+      "systemTitle": "Komite sistemi nedir?",
+      "systemDescription": "Komite sistemi, dönemin komite adı verilen bölümlere ayrıldığı ve her komitenin yıl sonu notuna belirli bir ağırlıkla katıldığı bir değerlendirme düzenidir. Her komiteden alınan not, komitenin ağırlığıyla çarpılarak toplanır; kalan ağırlık final sınavına aittir.",
+      "minimumFinalTitle": "Minimum final notu nasıl hesaplanır?",
+      "minimumFinalIntroduction": "Gerekli minimum final notu şu formülle hesaplanır:",
+      "minimumFinalFormula": "Gerekli Final Notu = ((Geçme Notu − Komite Katkısı) × 100) / Final Ağırlığı",
+      "minimumFinalContributionIntroduction": "Komite katkısı ise şu formülle bulunur:",
+      "minimumFinalContributionFormula": "Σ (Komite Notu × Komite Ağırlığı) / 100",
+      "minimumFinalExamplePrefix": "Örnek: Geçme notu 60 olan bir derste komite ağırlıkları toplamı %60 ve komite ortalamanız 55 ise komite katkınız 55 × 0,60 = 33 puandır. Final ağırlığı %40 olduğunda finalden almanız gereken minimum not",
+      "minimumFinalExampleCalculation": "((60 − 33) × 100) / 40 =",
+      "minimumFinalExampleResult": "67,5",
+      "minimumFinalExampleSuffix": "olur.",
+      "faqTitle": "Sıkça Sorulan Sorular",
+      "faqCommitteeGradeQuestion": "Komite notu nedir?",
+      "faqCommitteeGradeAnswer": "Komite notu, komite sisteminde dönem boyunca yapılan ara sınavlardan alınan nottur. Her komite notu, belirlenen ağırlığı kadar yıl sonu notuna katkı sağlar. Ağırlıklar okulun not sistemine göre değişir ve hesaplayıcıda elle düzenlenebilir.",
+      "faqMinimumFinalQuestion": "Minimum final notu nasıl hesaplanır?",
+      "faqMinimumFinalAnswer": "Minimum final notu, geçme notuna ulaşmak için final sınavından alınması gereken en düşük nottur. Mevcut komite veya vize katkısı, geçme notundan çıkarılır ve kalan puan final ağırlığına oranlanır. Sonuç, araçta “Hesapla” butonuna tıklanarak saniyeler içinde görüntülenir.",
+      "faqMidtermCommitteeDifferenceQuestion": "Vize sistemi ile komite sistemi arasındaki fark nedir?",
+      "faqMidtermCommitteeDifferenceAnswer": "Vize sisteminde ders genellikle vize ve final olmak üzere birkaç sınavla değerlendirilirken, komite sisteminde dönem komite adı verilen birden fazla bölüme ayrılır. İki sistemde de notlar ağırlıklı olarak yıl sonu notuna katılır ve kalan ağırlık final sınavına aittir.",
+      "faqPassingGradeQuestion": "Geçme notu nedir?",
+      "faqPassingGradeAnswer": "Geçme notu, bir dersten başarılı sayılmak için yıl sonunda ulaşılması gereken minimum nottur. Pek çok üniversitede 60 olarak belirlenir ancak bölüme ve okula göre değişebilir. Araçtaki “Geçme Notu” alanından değiştirilebilir.",
+      "faqRequiredFinalGradeQuestion": "Finalden kaç almam gerektiğini nasıl öğrenirim?",
+      "faqRequiredFinalGradeAnswer": "Komite veya vize notlarınızı ve ağırlıklarını girin, ardından “Hesapla” butonuna tıklayın. Araç, geçme notuna ulaşmanız için finalden almanız gereken minimum notu yüzde olarak gösterir. Gerekli not 100'ü aşarsa araç, dersi geçmenin mevcut notlarla mümkün olmadığını bildirir.",
+      "faqStorageQuestion": "Notlarım kaydedilir mi?",
+      "faqStorageAnswer": "Notlar yalnızca tarayıcınızın yerel deposunda (localStorage) saklanır ve hiçbir sunucuya gönderilmez. Tarayıcı verileri temizlendiğinde notlar da silinir. Hesaplama tamamen çevrimdışı ve gizli biçimde çalışır.",
+      "faqFreeQuestion": "Bu hesaplayıcı ücretsiz mi?",
+      "faqFreeAnswer": "Evet, araç tamamen ücretsizdir. Reklam destekli olarak yayında tutulur; hesap açma, kayıt veya ödeme gerektirmez. Tüm özellikler herhangi bir ücret olmadan kullanılabilir."
+    },
+    "items": {
+      "midtermGrade": {
+        "title": "Vize Not Hesaplama",
+        "description": "Vize notunu hızlıca hesaplamak için kullan."
+      },
+      "committeeGrade": {
+        "title": "Komite Not Hesaplama",
+        "description": "Komite notunu pratik bir şekilde hesapla."
+      },
+      "committeeMinimumFinal": {
+        "title": "Komite Minimum Final Notu Hesaplama",
+        "description": "Komiteyi geçmek için gereken minimum final notunu bul."
+      },
+      "midtermMinimumFinal": {
+        "title": "Vize Minimum Final Notu Hesaplama",
+        "description": "Vize hedefin için gereken minimum final notunu bul."
+      }
+    }
   },
   "Header": {
     "navigation": {
@@ -22,7 +132,7 @@
       "library": "Library",
       "podcasts": "Podcastler",
       "communities": "Topluluklar",
-      "playgrounds": "Playgrounds",
+      "tools": "Araçlar",
       "store": "Store"
     },
     "search": {
@@ -40,6 +150,37 @@
       "description": "Komitehane içinde gezinin."
     }
   },
+  "Footer": {
+    "groups": {
+      "explore": "Keşfet",
+      "tools": "Araçlar",
+      "account": "Hesap"
+    },
+    "links": {
+      "courses": "Kurslar",
+      "library": "Kütüphane",
+      "podcasts": "Podcastler",
+      "communities": "Topluluklar",
+      "tools": "Araçlar",
+      "store": "Mağaza",
+      "login": "Giriş yap",
+      "signup": "Kayıt ol"
+    },
+    "aiLinksLabel": "Yapay zekâ araçlarını keşfet",
+    "providers": {
+      "claude": "Claude'u aç",
+      "openai": "ChatGPT'yi aç",
+      "perplexity": "Perplexity'yi aç",
+      "gemini": "Gemini'yi aç"
+    },
+    "copyright": "© Komitehane {year}"
+  },
+  "ThemeSwitcher": {
+    "label": "Tema seçin",
+    "system": "Sistem temasını kullan",
+    "light": "Açık temayı kullan",
+    "dark": "Koyu temayı kullan"
+  },
   "LocaleSwitcher": {
     "label": "Dil seçin",
     "locale": "{locale, select, tr {Türkçe} en {English} other {Bilinmeyen}}"
@@ -48,6 +189,14 @@
     "label": "Sayfa yolu",
     "more": "Önceki sayfaları göster",
     "menuLabel": "Sayfalar"
+  },
+  "News": {
+    "label": "Haberler",
+    "items": {
+      "item1": "Komitehane’de yeni içerikleri keşfedin.",
+      "item2": "Yeni özellikler üzerinde çalışıyoruz.",
+      "item3": "Komitehane’yi keşfetmeye başlayın."
+    }
   },
   "NotFound": {
     "title": "Sayfa bulunamadı",

@@ -6,14 +6,54 @@ export const routing = defineRouting({
   localePrefix: "always",
   pathnames: {
     "/": "/",
-    "/courses": "/courses",
-    "/library": "/library",
-    "/podcasts": "/podcasts",
-    "/communities": "/communities",
-    "/playgrounds": "/playgrounds",
-    "/store": "/store",
-    "/login": "/login",
-    "/signup": "/signup",
+    "/courses": {
+      tr: "/kurslar",
+      en: "/courses",
+    },
+    "/library": {
+      tr: "/kutuphane",
+      en: "/library",
+    },
+    "/podcasts": {
+      tr: "/podcastler",
+      en: "/podcasts",
+    },
+    "/communities": {
+      tr: "/topluluklar",
+      en: "/communities",
+    },
+    "/tools": {
+      tr: "/araclar",
+      en: "/tools",
+    },
+    "/tools/midterm-grade-calculator": {
+      tr: "/araclar/vize-not-hesaplama",
+      en: "/tools/midterm-grade-calculator",
+    },
+    "/tools/committee-grade-calculator": {
+      tr: "/araclar/komite-not-hesaplama",
+      en: "/tools/committee-grade-calculator",
+    },
+    "/tools/committee-minimum-final-grade": {
+      tr: "/araclar/komite-minimum-final-notu",
+      en: "/tools/committee-minimum-final-grade",
+    },
+    "/tools/midterm-minimum-final-grade": {
+      tr: "/araclar/vize-minimum-final-notu",
+      en: "/tools/midterm-minimum-final-grade",
+    },
+    "/store": {
+      tr: "/magaza",
+      en: "/store",
+    },
+    "/login": {
+      tr: "/giris",
+      en: "/login",
+    },
+    "/signup": {
+      tr: "/kayit",
+      en: "/signup",
+    },
   },
 });
 

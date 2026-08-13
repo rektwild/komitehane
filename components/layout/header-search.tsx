@@ -1,9 +1,9 @@
 "use client";
 
 import {SearchIcon} from "lucide-react";
-import {useTranslations} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 
-import {usePathname} from "@/i18n/navigation";
+import {getPathname, usePathname} from "@/i18n/navigation";
 import {
   InputGroup,
   InputGroupAddon,
@@ -17,12 +17,14 @@ type HeaderSearchProps = {
 
 export function HeaderSearch({className}: HeaderSearchProps) {
   const t = useTranslations("Header");
+  const locale = useLocale();
   const pathname = usePathname();
+  const localizedPathname = getPathname({href: pathname, locale});
 
   return (
     <form
       role="search"
-      action={pathname}
+      action={localizedPathname}
       method="get"
       className={cn("min-w-0", className)}
     >

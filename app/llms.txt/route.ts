@@ -1,7 +1,16 @@
+import {getPathname} from "@/i18n/navigation";
 import {siteConfig} from "@/config/site";
 import {absoluteUrl} from "@/lib/seo/urls";
 
-export function GET() {
+export async function GET() {
+  const localizedToolLinks = await Promise.all(
+    siteConfig.locales.map(async (locale) => {
+      const pathname = await getPathname({href: "/tools", locale});
+
+      return `- [${siteConfig.localeNames[locale]}](${absoluteUrl(pathname)})`;
+    }),
+  );
+
   const content = [
     `# ${siteConfig.name}`,
     "",
@@ -11,6 +20,9 @@ export function GET() {
     ...siteConfig.locales.map(
       (locale) => `- [${siteConfig.localeNames[locale]}](${absoluteUrl(`/${locale}`)})`
     ),
+    "",
+    "## Public tools",
+    ...localizedToolLinks,
     "",
     "## Notes",
     "",
@@ -26,4 +38,3 @@ export function GET() {
     },
   });
 }
-

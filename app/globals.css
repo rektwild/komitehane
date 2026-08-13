@@ -21,6 +21,8 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-action-foreground: var(--action-foreground);
+  --color-action: var(--action);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -44,6 +46,8 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
+  --action: oklch(0.58 0.2 255);
+  --action-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -66,6 +70,8 @@
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
+  --action: oklch(0.65 0.2 255);
+  --action-foreground: oklch(0.145 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -90,6 +96,64 @@
   }
 }
 
+@keyframes news-ticker-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.news-ticker-track {
+  display: flex;
+  width: max-content;
+  min-width: 200%;
+  height: 100%;
+  align-items: center;
+  animation: news-ticker-marquee 36s linear infinite;
+}
+
+.news-ticker-sequence {
+  display: flex;
+  flex: 1 0 50%;
+  min-width: 0;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  padding-inline: 1rem;
+}
+
+.news-ticker-item {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.news-ticker-separator {
+  width: 0.375rem;
+  height: 0.375rem;
+  flex: 0 0 auto;
+  margin-inline: 1.25rem;
+  border-radius: 9999px;
+  background-color: #000;
+  font-size: 0;
+}
+
+.news-ticker:hover .news-ticker-track,
+.news-ticker:focus-within .news-ticker-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-ticker-track {
+    animation: none;
+  }
+}
+
 @media (min-width: 1800px) {
   .site-container {
     padding-inline: 0;
@@ -99,7 +163,7 @@
 /* Match LearnHouse's dark-system-scheme page surface while keeping the
    white header/cards on the shared background token. */
 @media (prefers-color-scheme: dark) {
-  body {
+  :root:not(.dark) body {
     background-color: #fbfbfb;
   }
 }

@@ -9,11 +9,121 @@
       "title": "Komitehane",
       "description": "Komitehane — a modern, multilingual web application.",
       "imageAlt": "Komitehane social preview"
+    },
+    "tools": {
+      "title": "Tools",
+      "description": "Plan your academic goals with practical grade calculators.",
+      "imageAlt": "Komitehane tools page"
     }
   },
   "Home": {
     "title": "Komitehane",
     "description": "Komitehane — a modern, multilingual web application."
+  },
+  "Aside": {
+    "label": "Related content",
+    "countdown": {
+      "title": "TUS Countdown",
+      "value": "{days, plural, one {# day} other {# days}}"
+    },
+    "relatedTools": {
+      "title": "Related tools"
+    },
+    "relatedBlogs": {
+      "title": "Related blogs",
+      "items": {
+        "studyPlan": "TUS study plan",
+        "resourceSelection": "TUS resource selection",
+        "examDayPreparation": "Exam-day preparation"
+      }
+    }
+  },
+  "Tools": {
+    "title": "Tools",
+    "description": "Plan your academic goals with practical grade calculators.",
+    "catalog": {
+      "search": {
+        "label": "Search tools",
+        "placeholder": "Search tools..."
+      },
+      "sort": {
+        "label": "Sort",
+        "default": "Default order",
+        "az": "A to Z",
+        "za": "Z to A"
+      },
+      "empty": {
+        "title": "No tools found",
+        "description": "Try changing your search terms."
+      }
+    },
+    "card": {
+      "provider": "Komitehane",
+      "open": "Open tool",
+      "imagePlaceholder": "Image coming soon"
+    },
+    "placeholder": {
+      "eyebrow": "Coming soon",
+      "description": "The calculator interface for this tool will be available here soon.",
+      "back": "Back to tools"
+    },
+    "committeeMinimumFinalForm": {
+      "calculate": "Calculate",
+      "calculationInformationTitle": "Calculation information",
+      "passingGrade": "Passing Grade",
+      "committeeCount": "Committee Count",
+      "committeeGrade": "Committee {index} Grade",
+      "committeeWeight": "Committee {index} Weight (%)",
+      "finalWeight": "Final Weight (%)",
+      "pendingValue": "—",
+      "resultTitle": "Calculation result",
+      "howItWorksTitle": "How does committee grade calculation work?",
+      "howItWorksIntroduction": "The committee grade calculator calculates the minimum final grade you need to pass by using your committee exam grades and their weights. All calculations are performed only in your browser; no grade data is sent to or stored on a server.",
+      "systemTitle": "What is the committee system?",
+      "systemDescription": "The committee system is an assessment structure in which the term is divided into sections called committees, and each committee contributes to the year-end grade with a specific weight. The grade earned from each committee is multiplied by its weight and added together; the remaining weight belongs to the final exam.",
+      "minimumFinalTitle": "How is the minimum final grade calculated?",
+      "minimumFinalIntroduction": "The required minimum final grade is calculated with the following formula:",
+      "minimumFinalFormula": "Required Final Grade = ((Passing Grade − Committee Contribution) × 100) / Final Weight",
+      "minimumFinalContributionIntroduction": "Committee contribution is calculated with the following formula:",
+      "minimumFinalContributionFormula": "Σ (Committee Grade × Committee Weight) / 100",
+      "minimumFinalExamplePrefix": "Example: In a course with a passing grade of 60, if the total committee weight is 60% and your committee average is 55, your committee contribution is 55 × 0.60 = 33 points. When the final weight is 40%, the minimum grade you need on the final is",
+      "minimumFinalExampleCalculation": "((60 − 33) × 100) / 40 =",
+      "minimumFinalExampleResult": "67.5",
+      "minimumFinalExampleSuffix": ".",
+      "faqTitle": "Frequently Asked Questions",
+      "faqCommitteeGradeQuestion": "What is a committee grade?",
+      "faqCommitteeGradeAnswer": "A committee grade is the grade received from the midterm exams held throughout the term in the committee system. Each committee grade contributes to the year-end grade according to its assigned weight. Weights vary depending on the school's grading system and can be edited manually in the calculator.",
+      "faqMinimumFinalQuestion": "How is the minimum final grade calculated?",
+      "faqMinimumFinalAnswer": "The minimum final grade is the lowest grade you need to earn on the final exam to reach the passing grade. Your current committee or midterm contribution is subtracted from the passing grade, and the remaining points are calculated according to the final weight. The result appears within seconds when you click the “Calculate” button.",
+      "faqMidtermCommitteeDifferenceQuestion": "What is the difference between the midterm and committee systems?",
+      "faqMidtermCommitteeDifferenceAnswer": "In the midterm system, a course is generally evaluated through several exams, such as a midterm and a final. In the committee system, the term is divided into multiple sections called committees. In both systems, grades contribute to the year-end grade according to their weights, and the remaining weight belongs to the final exam.",
+      "faqPassingGradeQuestion": "What is the passing grade?",
+      "faqPassingGradeAnswer": "The passing grade is the minimum grade you must reach by the end of the year to pass a course. It is set at 60 at many universities, but it may vary by department and school. You can change it in the calculator's “Passing Grade” field.",
+      "faqRequiredFinalGradeQuestion": "How can I find out what grade I need on the final?",
+      "faqRequiredFinalGradeAnswer": "Enter your committee or midterm grades and their weights, then click the “Calculate” button. The tool shows the minimum final grade you need as a percentage to reach the passing grade. If the required grade exceeds 100, the tool indicates that passing the course is not possible with the current grades.",
+      "faqStorageQuestion": "Are my grades saved?",
+      "faqStorageAnswer": "Grades are stored only in your browser's local storage (localStorage) and are never sent to a server. Clearing your browser data also deletes the grades. The calculation works completely offline and privately.",
+      "faqFreeQuestion": "Is this calculator free?",
+      "faqFreeAnswer": "Yes, the tool is completely free. It is kept online with advertising support; no account, registration, or payment is required. All features are available at no cost."
+    },
+    "items": {
+      "midtermGrade": {
+        "title": "Midterm Grade Calculator",
+        "description": "Use this tool to quickly calculate your midterm grade."
+      },
+      "committeeGrade": {
+        "title": "Committee Grade Calculator",
+        "description": "Calculate your committee grade in a practical way."
+      },
+      "committeeMinimumFinal": {
+        "title": "Committee Minimum Final Grade Calculator",
+        "description": "Find the minimum final grade you need to pass the committee."
+      },
+      "midtermMinimumFinal": {
+        "title": "Midterm Minimum Final Grade Calculator",
+        "description": "Find the minimum final grade you need for your midterm target."
+      }
+    }
   },
   "Header": {
     "navigation": {
@@ -22,7 +132,7 @@
       "library": "Library",
       "podcasts": "Podcasts",
       "communities": "Communities",
-      "playgrounds": "Playgrounds",
+      "tools": "Tools",
       "store": "Store"
     },
     "search": {
@@ -40,6 +150,37 @@
       "description": "Navigate around Komitehane."
     }
   },
+  "Footer": {
+    "groups": {
+      "explore": "Explore",
+      "tools": "Tools",
+      "account": "Account"
+    },
+    "links": {
+      "courses": "Courses",
+      "library": "Library",
+      "podcasts": "Podcasts",
+      "communities": "Communities",
+      "tools": "Tools",
+      "store": "Store",
+      "login": "Log in",
+      "signup": "Sign up"
+    },
+    "aiLinksLabel": "Explore AI tools",
+    "providers": {
+      "claude": "Open Claude",
+      "openai": "Open ChatGPT",
+      "perplexity": "Open Perplexity",
+      "gemini": "Open Gemini"
+    },
+    "copyright": "© Komitehane {year}"
+  },
+  "ThemeSwitcher": {
+    "label": "Choose theme",
+    "system": "Use system theme",
+    "light": "Use light theme",
+    "dark": "Use dark theme"
+  },
   "LocaleSwitcher": {
     "label": "Choose language",
     "locale": "{locale, select, tr {Türkçe} en {English} other {Unknown}}"
@@ -48,6 +189,14 @@
     "label": "Breadcrumb",
     "more": "Show previous pages",
     "menuLabel": "Pages"
+  },
+  "News": {
+    "label": "News",
+    "items": {
+      "item1": "Discover new content on Komitehane.",
+      "item2": "New features are on the way.",
+      "item3": "Start exploring Komitehane."
+    }
   },
   "NotFound": {
     "title": "Page not found",

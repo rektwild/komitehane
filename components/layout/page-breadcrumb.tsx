@@ -1,8 +1,8 @@
+import {Fragment, type ComponentProps} from "react";
 import type {LucideIcon} from "lucide-react";
 import {getTranslations} from "next-intl/server";
 
 import {Link} from "@/i18n/navigation";
-import type {AppPathname} from "@/i18n/routing";
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -22,15 +22,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {cn} from "@/lib/utils";
 
+type BreadcrumbHref = ComponentProps<typeof Link>["href"];
+
 export type PageBreadcrumbItem = {
   label: string;
-  href?: AppPathname;
+  href?: BreadcrumbHref;
   icon?: LucideIcon;
 };
 
 export type PageBreadcrumbProps = {
   items: readonly PageBreadcrumbItem[];
-  variant?: "auto" | "section" | "trail";
   className?: string;
 };
 
@@ -96,7 +97,7 @@ function BreadcrumbTrailItem({
     <BreadcrumbItem
       className={cn("flex h-8 min-w-0 items-center", isFirst && "shrink-0")}
     >
-      {isCurrent || !item.href ? (
+      {isCurrent ? (
         <BreadcrumbPage
           className={cn(
             "flex h-full min-w-0 items-center px-2.5 font-medium text-gray-900",
@@ -105,7 +106,7 @@ function BreadcrumbTrailItem({
         >
           {content}
         </BreadcrumbPage>
-      ) : (
+      ) : item.href ? (
         <BreadcrumbLink
           render={<Link href={item.href} />}
           className={cn(
@@ -115,6 +116,15 @@ function BreadcrumbTrailItem({
         >
           {content}
         </BreadcrumbLink>
+      ) : (
+        <span
+          className={cn(
+            "flex h-full min-w-0 items-center px-2.5 font-medium text-gray-600",
+            Icon && "gap-1.5",
+          )}
+        >
+          {content}
+        </span>
       )}
     </BreadcrumbItem>
   );
@@ -157,24 +167,6 @@ function BreadcrumbOverflowMenu({
   );
 }
 
-function BreadcrumbSection({item}: {item: PageBreadcrumbItem}) {
-  const Icon = item.icon;
-
-  return (
-    <header className="flex min-w-0 items-center gap-5">
-      <span
-        aria-hidden="true"
-        className="grid size-16 shrink-0 place-items-center rounded-2xl border border-border/70 bg-background shadow-md shadow-gray-300/25 outline outline-1 outline-neutral-200/40"
-      >
-        {Icon ? <Icon className="size-7" strokeWidth={2} /> : null}
-      </span>
-      <h1 className="min-w-0 truncate text-4xl font-bold tracking-tight text-foreground">
-        {item.label}
-      </h1>
-    </header>
-  );
-}
-
 async function BreadcrumbTrail({
   items,
   ariaLabel,
@@ -192,8 +184,8 @@ async function BreadcrumbTrail({
   const penultimateItem = items[items.length - 2];
 
   return (
-    <Breadcrumb aria-label={ariaLabel} className="w-fit max-w-full min-w-0">
-      <BreadcrumbList className="w-fit max-w-full min-w-0 flex-nowrap gap-0 overflow-hidden rounded-lg bg-white p-0 text-[13px] font-medium text-gray-900 shadow-md shadow-gray-300/25 outline outline-1 outline-neutral-200/40">
+    <Breadcrumb aria-label={ariaLabel} className="max-w-full min-w-0">
+      <BreadcrumbList className="w-fit max-w-full min-w-0 flex-nowrap gap-0 overflow-hidden bg-transparent p-0 text-[13px] font-medium text-gray-900 shadow-none outline-none">
         <BreadcrumbTrailItem
           item={firstItem}
           isCurrent={items.length === 1}
@@ -236,32 +228,85 @@ async function BreadcrumbTrail({
   );
 }
 
+function NewsTickerSequence({
+  items,
+  isDuplicate = false,
+}: {
+  items: readonly string[];
+  isDuplicate?: boolean;
+}) {
+  return (
+    <div
+      aria-hidden={isDuplicate ? true : undefined}
+      className="news-ticker-sequence"
+    >
+      {items.map((item, index) => (
+        <Fragment
+          key={`${isDuplicate ? "duplicate" : "primary"}-${index}`}
+        >
+          <span className="news-ticker-item">{item}</span>
+          <span aria-hidden="true" className="news-ticker-separator">
+            .
+          </span>
+        </Fragment>
+      ))}
+    </div>
+  );
+}
+
+function NewsTicker({
+  items,
+  ariaLabel,
+}: {
+  items: readonly string[];
+  ariaLabel: string;
+}) {
+  return (
+    <div
+      aria-label={ariaLabel}
+      className="news-ticker h-full min-w-0 flex-1 overflow-hidden border-s border-neutral-200/60 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-ring/70"
+      role="marquee"
+      tabIndex={0}
+    >
+      <div className="h-full min-w-0 overflow-hidden">
+        <div className="news-ticker-track">
+          <NewsTickerSequence items={items} />
+          <NewsTickerSequence items={items} isDuplicate />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export async function PageBreadcrumb({
   items,
-  variant = "auto",
   className,
 }: PageBreadcrumbProps) {
   if (items.length === 0) return null;
 
-  const t = await getTranslations("Breadcrumb");
-  const resolvedVariant =
-    variant === "auto" ? (items.length === 1 ? "section" : "trail") : variant;
-
-  const wrapperClass =
-    resolvedVariant === "section" ? "w-full" : "w-fit max-w-full min-w-0";
+  const [breadcrumbT, newsT] = await Promise.all([
+    getTranslations("Breadcrumb"),
+    getTranslations("News"),
+  ]);
+  const newsItems = [
+    newsT("items.item1"),
+    newsT("items.item2"),
+    newsT("items.item3"),
+  ];
 
   return (
-    <div className={cn(wrapperClass, className)}>
-      {resolvedVariant === "section" ? (
-        <BreadcrumbSection item={items[items.length - 1]} />
-      ) : (
-        <BreadcrumbTrail
-          items={items}
-          ariaLabel={t("label")}
-          overflowLabel={t("more")}
-          overflowMenuLabel={t("menuLabel")}
-        />
-      )}
+    <div className={cn("w-full min-w-0", className)}>
+      <div className="flex h-8 w-full min-w-0 overflow-hidden rounded-lg bg-white text-gray-900 shadow-md shadow-gray-300/25 outline outline-1 outline-neutral-200/40">
+        <div className="min-w-0 max-w-[58%] shrink-0 overflow-hidden">
+          <BreadcrumbTrail
+            items={items}
+            ariaLabel={breadcrumbT("label")}
+            overflowLabel={breadcrumbT("more")}
+            overflowMenuLabel={breadcrumbT("menuLabel")}
+          />
+        </div>
+        <NewsTicker items={newsItems} ariaLabel={newsT("label")} />
+      </div>
     </div>
   );
 }

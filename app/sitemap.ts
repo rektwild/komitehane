@@ -6,7 +6,9 @@ import {isIndexableEnvironment} from "@/config/site";
 import {getAlternateLanguages} from "@/lib/seo/metadata";
 import {absoluteUrl} from "@/lib/seo/urls";
 
-const indexableRoutes = ["/"] as const satisfies (keyof typeof routing.pathnames)[];
+const indexableRoutes = ["/", "/tools"] as const satisfies (
+  keyof typeof routing.pathnames
+)[];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (!isIndexableEnvironment) {

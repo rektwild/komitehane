@@ -24,7 +24,7 @@ const navigationItems = [
   {key: "library", href: "/library", icon: FolderIcon},
   {key: "podcasts", href: "/podcasts", icon: HeadphonesIcon},
   {key: "communities", href: "/communities", icon: MessagesSquareIcon},
-  {key: "playgrounds", href: "/playgrounds", icon: BoxIcon},
+  {key: "tools", href: "/tools", icon: BoxIcon},
   {key: "store", href: "/store", icon: ShoppingBagIcon},
 ] as const;
 

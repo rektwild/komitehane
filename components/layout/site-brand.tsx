@@ -18,13 +18,20 @@ export function SiteBrand({className}: SiteBrandProps) {
         className,
       )}
     >
-      <span className="block h-6 w-fit shrink-0 overflow-visible">
+      <span className="block h-6 w-[148px] shrink-0 overflow-visible">
         <Image
-          src="/komitehane_logo.png"
+          src="/logo_for_light_mode.png"
           alt=""
           width={684}
           height={148}
-          className="block h-8 w-auto"
+          className="block h-8 w-full object-contain dark:hidden"
+        />
+        <Image
+          src="/logo_for_dark_mode.png"
+          alt=""
+          width={2752}
+          height={1536}
+          className="hidden h-8 w-full object-cover object-center dark:block"
         />
       </span>
     </Link>
