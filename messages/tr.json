@@ -1,0 +1,57 @@
+{
+  "Metadata": {
+    "title": {
+      "default": "Komitehane",
+      "template": "%s | Komitehane"
+    },
+    "description": "Komitehane — modern, çok dilli bir web uygulaması.",
+    "home": {
+      "title": "Komitehane",
+      "description": "Komitehane — modern, çok dilli bir web uygulaması.",
+      "imageAlt": "Komitehane sosyal önizlemesi"
+    }
+  },
+  "Home": {
+    "title": "Komitehane",
+    "description": "Komitehane — modern, çok dilli bir web uygulaması."
+  },
+  "Header": {
+    "navigation": {
+      "label": "Ana navigasyon",
+      "courses": "Kurslar",
+      "library": "Library",
+      "podcasts": "Podcastler",
+      "communities": "Topluluklar",
+      "playgrounds": "Playgrounds",
+      "store": "Store"
+    },
+    "search": {
+      "label": "Kursları, kullanıcıları ve koleksiyonları ara",
+      "placeholder": "Kursları, kullanıcıları, koleksiyonları ara..."
+    },
+    "auth": {
+      "login": "Giriş Yap",
+      "signup": "Kayıt Ol"
+    },
+    "mobile": {
+      "openMenu": "Navigasyon menüsünü aç",
+      "closeMenu": "Navigasyon menüsünü kapat",
+      "title": "Navigasyon",
+      "description": "Komitehane içinde gezinin."
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Dil seçin",
+    "locale": "{locale, select, tr {Türkçe} en {English} other {Bilinmeyen}}"
+  },
+  "Breadcrumb": {
+    "label": "Sayfa yolu",
+    "more": "Önceki sayfaları göster",
+    "menuLabel": "Sayfalar"
+  },
+  "NotFound": {
+    "title": "Sayfa bulunamadı",
+    "description": "Aradığınız sayfa bulunamadı. Adresi kontrol edin veya ana sayfaya dönün.",
+    "backToHome": "Ana sayfaya dön"
+  }
+}

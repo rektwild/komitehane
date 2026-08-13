@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Komitehane
 
-## Getting Started
+Komitehane — modern, çok dilli bir web uygulaması.
 
-First, run the development server:
+Next.js 16.3.0 (App Router, Turbopack) + React 19 + Tailwind CSS v4 + shadcn/ui + next-intl.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Komutlar
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- `pnpm dev` — geliştirme sunucusu
+- `pnpm lint` — ESLint
+- `pnpm build` — production build (TypeScript kontrolü dahil)
+- `pnpm start` — production sunucusu
+- `pnpm seo:audit` — SEO denetimi (çalışan sunucu gerektirir, bkz. `docs/SEO.md`)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+pnpm kullanılır; npm/yarn çalıştırılmaz.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Uluslararasılaştırma
 
-## Learn More
+- Yerel ayarlar `i18n/routing.ts` içinde tanımlıdır
+- Çeviriler `messages/<locale>.json` içindedir; arayüz dizeleri UI bileşenlerine hardcode edilmez
+- Mesaj düzenledikten sonra `pnpm exec next typegen` çalıştırın
+- Yerelleştirilmiş sayfalarda `@/i18n/navigation` yardımcıları kullanılır (`next/link` değil)
 
-To learn more about Next.js, take a look at the following resources:
+## SEO
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Spesifikasyon: `docs/SEO.md`
+- Dizinleme `config/site.ts` içindeki `isIndexableEnvironment` ile denetlenir
+- `pnpm seo:audit` ile doğrulama yapılır
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Yapı
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/[locale]/` — yerelleştirilmiş sayfalar ve düzen
+- `components/` — UI bileşenleri
+- `config/` — site yapılandırması
+- `i18n/` — next-intl yapılandırması
+- `lib/seo/` — SEO yardımcıları (metadata, JSON-LD, IndexNow)

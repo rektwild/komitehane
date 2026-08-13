@@ -1,0 +1,57 @@
+{
+  "Metadata": {
+    "title": {
+      "default": "Komitehane",
+      "template": "%s | Komitehane"
+    },
+    "description": "Komitehane — a modern, multilingual web application.",
+    "home": {
+      "title": "Komitehane",
+      "description": "Komitehane — a modern, multilingual web application.",
+      "imageAlt": "Komitehane social preview"
+    }
+  },
+  "Home": {
+    "title": "Komitehane",
+    "description": "Komitehane — a modern, multilingual web application."
+  },
+  "Header": {
+    "navigation": {
+      "label": "Primary navigation",
+      "courses": "Courses",
+      "library": "Library",
+      "podcasts": "Podcasts",
+      "communities": "Communities",
+      "playgrounds": "Playgrounds",
+      "store": "Store"
+    },
+    "search": {
+      "label": "Search courses, users, and collections",
+      "placeholder": "Search courses, users, collections..."
+    },
+    "auth": {
+      "login": "Log in",
+      "signup": "Sign up"
+    },
+    "mobile": {
+      "openMenu": "Open navigation menu",
+      "closeMenu": "Close navigation menu",
+      "title": "Navigation",
+      "description": "Navigate around Komitehane."
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Choose language",
+    "locale": "{locale, select, tr {Türkçe} en {English} other {Unknown}}"
+  },
+  "Breadcrumb": {
+    "label": "Breadcrumb",
+    "more": "Show previous pages",
+    "menuLabel": "Pages"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for couldn't be found. Check the address or go back to the homepage.",
+    "backToHome": "Back to home"
+  }
+}
