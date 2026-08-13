@@ -138,7 +138,7 @@ export function ToolsCatalog() {
           ))}
         </div>
       ) : (
-        <Empty className="min-h-52 border border-dashed border-border/60 bg-white">
+        <Empty className="min-h-52 border border-dashed border-border/60 bg-card text-card-foreground">
           <EmptyHeader>
             <EmptyMedia variant="icon">
               <SearchIcon aria-hidden="true" />

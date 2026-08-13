@@ -56,6 +56,7 @@ Next.js 16.3.0 (App Router, Turbopack) + React 19 + Tailwind CSS v4 + shadcn/ui 
 - Every locale must have correct `lang`, `dir` (`lib/seo/locales.ts`), canonical, hreflang and OG locale behavior.
 - The root layout lives at `app/[locale]/layout.tsx`; do not recreate a pass-through `app/layout.tsx`.
 - Do not use `setRequestLocale` or `requestLocale` — the project uses the `next/root-params` integration in `i18n/request.ts` (Next 16.3+).
-- Message arguments are type-checked via the generated `messages/en.d.json.ts` (run `pnpm build`/`pnpm exec next typegen` after editing messages) — do not commit or hand-edit that file.
+- Message arguments are type-checked via the generated `messages/en.d.json.ts` (run `pnpm build`/`pnpm exec next typegen` after editing messages) — do not commit or hand-edit that file. Root `global.ts` wires next-intl v4 typing (`AppConfig` with `Locale`/`Messages`) — the per-locale `Messages` union comes from `en.json`, so adding keys to tr but not en breaks typecheck.
+- `app/[locale]/breadcrumb-preview/` is an empty leftover directory (no route file, ignored by Next) — don't treat it as a live breadcrumb preview route, and don't delete it unless you confirm nothing references it.
 - 404 responses serve a minimal `<html id="__next_error__">` shell with the real localized layout (incl. `lang`) in flight data — this is standard Next 16 error-recovery, not a bug.
 - Sanity-check i18n changes against the URL matrix: `/` (307 → `/tr`), `/tr`, `/en`, `/xx` (307 → `/tr/xx`), `/tr/xx` + `/en/xx` (localized 404s), `/robots.txt`, `/sitemap.xml`, `/llms.txt`.

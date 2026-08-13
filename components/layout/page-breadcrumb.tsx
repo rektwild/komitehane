@@ -40,7 +40,7 @@ function LearnHouseChevronDivider() {
     <span aria-hidden="true" className="block h-full w-2">
       <svg
         aria-hidden="true"
-        className="block h-full w-2 text-gray-200"
+        className="block h-full w-2 text-border"
         fill="none"
         focusable="false"
         height="100%"
@@ -100,7 +100,7 @@ function BreadcrumbTrailItem({
       {isCurrent ? (
         <BreadcrumbPage
           className={cn(
-            "flex h-full min-w-0 items-center px-2.5 font-medium text-gray-900",
+            "flex h-full min-w-0 items-center px-2.5 font-medium text-foreground",
             Icon && "gap-1.5",
           )}
         >
@@ -110,7 +110,7 @@ function BreadcrumbTrailItem({
         <BreadcrumbLink
           render={<Link href={item.href} />}
           className={cn(
-            "flex h-full min-w-0 items-center px-2.5 font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900",
+            "flex h-full min-w-0 items-center px-2.5 font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
             Icon && "gap-1.5",
           )}
         >
@@ -119,7 +119,7 @@ function BreadcrumbTrailItem({
       ) : (
         <span
           className={cn(
-            "flex h-full min-w-0 items-center px-2.5 font-medium text-gray-600",
+            "flex h-full min-w-0 items-center px-2.5 font-medium text-muted-foreground",
             Icon && "gap-1.5",
           )}
         >
@@ -144,7 +144,7 @@ function BreadcrumbOverflowMenu({
       <DropdownMenu>
         <DropdownMenuTrigger
           aria-label={label}
-          className="flex h-full items-center px-2.5 text-gray-600 outline-none transition-colors hover:bg-gray-50 hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-ring/50"
+          className="flex h-full items-center px-2.5 text-muted-foreground outline-none transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring/50"
         >
           <BreadcrumbEllipsis />
         </DropdownMenuTrigger>
@@ -185,7 +185,7 @@ async function BreadcrumbTrail({
 
   return (
     <Breadcrumb aria-label={ariaLabel} className="max-w-full min-w-0">
-      <BreadcrumbList className="w-fit max-w-full min-w-0 flex-nowrap gap-0 overflow-hidden bg-transparent p-0 text-[13px] font-medium text-gray-900 shadow-none outline-none">
+      <BreadcrumbList className="w-fit max-w-full min-w-0 flex-nowrap gap-0 overflow-hidden bg-transparent p-0 text-[13px] font-medium text-foreground shadow-none outline-none">
         <BreadcrumbTrailItem
           item={firstItem}
           isCurrent={items.length === 1}
@@ -245,7 +245,7 @@ function NewsTickerSequence({
           key={`${isDuplicate ? "duplicate" : "primary"}-${index}`}
         >
           <span className="news-ticker-item">{item}</span>
-          <span aria-hidden="true" className="news-ticker-separator">
+          <span aria-hidden="true" className="news-ticker-separator bg-foreground">
             .
           </span>
         </Fragment>
@@ -264,7 +264,7 @@ function NewsTicker({
   return (
     <div
       aria-label={ariaLabel}
-      className="news-ticker h-full min-w-0 flex-1 overflow-hidden border-s border-neutral-200/60 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-ring/70"
+      className="news-ticker h-full min-w-0 flex-1 overflow-hidden border-s border-border/60 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-ring/70"
       role="marquee"
       tabIndex={0}
     >
@@ -296,7 +296,7 @@ export async function PageBreadcrumb({
 
   return (
     <div className={cn("w-full min-w-0", className)}>
-      <div className="flex h-8 w-full min-w-0 overflow-hidden rounded-lg bg-white text-gray-900 shadow-md shadow-gray-300/25 outline outline-1 outline-neutral-200/40">
+      <div className="flex h-8 w-full min-w-0 overflow-hidden rounded-lg bg-background text-foreground shadow-surface outline outline-1 outline-border/60">
         <div className="min-w-0 max-w-[58%] shrink-0 overflow-hidden">
           <BreadcrumbTrail
             items={items}
