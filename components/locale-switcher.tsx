@@ -13,12 +13,16 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {Link, usePathname} from "@/i18n/navigation";
-import {routing} from "@/i18n/routing";
+import {routing, type StaticAppPathname} from "@/i18n/routing";
 
 export function LocaleSwitcher() {
   const t = useTranslations("LocaleSwitcher");
   const locale = useLocale();
   const pathname = usePathname();
+  const switcherHref =
+    pathname === "/news/[slug]" || pathname.startsWith("/news/")
+      ? "/news"
+      : (pathname as StaticAppPathname);
 
   return (
     <DropdownMenu>
@@ -42,7 +46,7 @@ export function LocaleSwitcher() {
           {routing.locales.map((cur: Locale) => (
             <DropdownMenuItem
               key={cur}
-              render={<Link href={pathname} locale={cur} />}
+              render={<Link href={switcherHref} locale={cur} />}
               aria-current={cur === locale ? "page" : undefined}
             >
               {t("locale", {locale: cur})}

@@ -3,12 +3,10 @@ import type {Locale} from "next-intl";
 import {getLocale} from "next-intl/server";
 
 import {getPathname} from "@/i18n/navigation";
-import {routing} from "@/i18n/routing";
+import {routing, type StaticAppPathname} from "@/i18n/routing";
 import {isIndexableEnvironment, siteConfig} from "@/config/site";
 import {getOgLocale} from "@/lib/seo/locales";
 import {absoluteUrl} from "@/lib/seo/urls";
-
-export type AppPathname = keyof typeof routing.pathnames;
 
 type LocalizedMetadataInput = {
   title: string;
@@ -19,6 +17,13 @@ type LocalizedMetadataInput = {
   publishedTime?: string;
   modifiedTime?: string;
   authors?: Array<{name: string; url?: string}>;
+};
+
+type DynamicLocalizedMetadataInput = LocalizedMetadataInput & {
+  locale: Locale;
+  canonicalPath: string;
+  localizedPaths: Partial<Record<Locale, string>>;
+  image?: {url: string; alt: string; width?: number; height?: number};
 };
 
 export function getRobotsMetadata(): Metadata["robots"] {
@@ -44,7 +49,7 @@ export function getRobotsMetadata(): Metadata["robots"] {
 }
 
 export async function getAlternateLanguages(
-  href: AppPathname,
+  href: StaticAppPathname,
   availableLocales: readonly Locale[] = routing.locales
 ): Promise<Record<string, string>> {
   const languages: Record<string, string> = {};
@@ -62,7 +67,7 @@ export async function getAlternateLanguages(
 }
 
 export async function getLocalizedMetadata(
-  href: AppPathname,
+  href: StaticAppPathname,
   {
     title,
     description,
@@ -132,6 +137,71 @@ export async function getLocalizedMetadata(
     ...(authors && authors.length > 0
       ? {authors, creator: authors[0].name}
       : siteConfig.authors.length > 0
+        ? {authors: siteConfig.authors, creator: siteConfig.authors[0].name}
+        : {}),
+  };
+}
+
+export function getDynamicLocalizedMetadata({
+  locale,
+  canonicalPath,
+  localizedPaths,
+  image,
+  title,
+  description,
+  absoluteTitle = false,
+  type = "website",
+  publishedTime,
+  modifiedTime,
+  authors,
+}: DynamicLocalizedMetadataInput): Metadata {
+  const canonical = absoluteUrl(canonicalPath);
+  const languages = Object.fromEntries(
+    Object.entries(localizedPaths).map(([key, value]) => [key, absoluteUrl(value)]),
+  );
+  const defaultPath = localizedPaths[routing.defaultLocale];
+  if (defaultPath) {
+    languages["x-default"] = absoluteUrl(defaultPath);
+  }
+  const availableLocales = Object.keys(localizedPaths) as Locale[];
+  const socialImage = image
+    ? {
+        url: absoluteUrl(image.url),
+        width: image.width ?? 1200,
+        height: image.height ?? 630,
+        alt: image.alt,
+      }
+    : undefined;
+
+  return {
+    title: absoluteTitle ? {absolute: title} : title,
+    description,
+    alternates: {canonical, languages},
+    robots: getRobotsMetadata(),
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      siteName: siteConfig.name,
+      locale: getOgLocale(locale),
+      alternateLocale: availableLocales
+        .filter((current) => current !== locale)
+        .map(getOgLocale),
+      type,
+      ...(publishedTime ? {publishedTime} : {}),
+      ...(modifiedTime ? {modifiedTime} : {}),
+      ...(authors ? {authors: authors.map((author) => author.url || author.name)} : {}),
+      ...(socialImage ? {images: [socialImage]} : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      ...(socialImage ? {images: [{url: socialImage.url, alt: socialImage.alt}]} : {}),
+    },
+    ...(authors?.length
+      ? {authors, creator: authors[0].name}
+      : siteConfig.authors.length
         ? {authors: siteConfig.authors, creator: siteConfig.authors[0].name}
         : {}),
   };

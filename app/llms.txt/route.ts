@@ -10,6 +10,13 @@ export async function GET() {
       return `- [${siteConfig.localeNames[locale]}](${absoluteUrl(pathname)})`;
     }),
   );
+  const localizedNewsLinks = await Promise.all(
+    siteConfig.locales.map(async (locale) => {
+      const pathname = await getPathname({href: "/news", locale});
+
+      return `- [${siteConfig.localeNames[locale]}](${absoluteUrl(pathname)})`;
+    }),
+  );
 
   const content = [
     `# ${siteConfig.name}`,
@@ -23,6 +30,9 @@ export async function GET() {
     "",
     "## Public tools",
     ...localizedToolLinks,
+    "",
+    "## News",
+    ...localizedNewsLinks,
     "",
     "## Notes",
     "",

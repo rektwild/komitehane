@@ -296,7 +296,7 @@ export async function PageBreadcrumb({
 
   return (
     <div className={cn("w-full min-w-0", className)}>
-      <div className="flex h-8 w-full min-w-0 overflow-hidden rounded-lg bg-background text-foreground shadow-surface outline outline-1 outline-border/60">
+      <div className="flex h-8 w-full min-w-0 overflow-hidden rounded-lg bg-background text-foreground shadow-surface outline outline-1 outline-border/60 dark:bg-card">
         <div className="min-w-0 max-w-[58%] shrink-0 overflow-hidden">
           <BreadcrumbTrail
             items={items}

@@ -1,11 +1,11 @@
 "use client";
 
 import {
-  BookOpenIcon,
   BoxIcon,
   FolderIcon,
   HeadphonesIcon,
   MessagesSquareIcon,
+  NewspaperIcon,
   ShoppingBagIcon,
 } from "lucide-react";
 import {usePathname, Link} from "@/i18n/navigation";
@@ -17,10 +17,11 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import {inactiveRoutes} from "@/lib/navigation";
 import {cn} from "@/lib/utils";
 
 const navigationItems = [
-  {key: "courses", href: "/courses", icon: BookOpenIcon},
+  {key: "news", href: "/news", icon: NewspaperIcon},
   {key: "library", href: "/library", icon: FolderIcon},
   {key: "podcasts", href: "/podcasts", icon: HeadphonesIcon},
   {key: "communities", href: "/communities", icon: MessagesSquareIcon},
@@ -39,7 +40,7 @@ export function DesktopNavigation() {
     >
       <NavigationMenu className="flex-none">
         <NavigationMenuList className="gap-5">
-          {navigationItems.map((item) => {
+          {navigationItems.filter((item) => !inactiveRoutes.has(item.href)).map((item) => {
             const isActive =
               pathname === item.href || pathname.startsWith(`${item.href}/`);
             const Icon = item.icon;

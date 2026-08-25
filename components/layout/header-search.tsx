@@ -3,7 +3,7 @@
 import {SearchIcon} from "lucide-react";
 import {useLocale, useTranslations} from "next-intl";
 
-import {getPathname, usePathname} from "@/i18n/navigation";
+import {getPathname} from "@/i18n/navigation";
 import {
   InputGroup,
   InputGroupAddon,
@@ -18,8 +18,7 @@ type HeaderSearchProps = {
 export function HeaderSearch({className}: HeaderSearchProps) {
   const t = useTranslations("Header");
   const locale = useLocale();
-  const pathname = usePathname();
-  const localizedPathname = getPathname({href: pathname, locale});
+  const localizedPathname = getPathname({href: "/news", locale});
 
   return (
     <form

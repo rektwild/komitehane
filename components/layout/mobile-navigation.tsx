@@ -1,12 +1,12 @@
 "use client";
 
 import {
-  BookOpenIcon,
   BoxIcon,
   FolderIcon,
   HeadphonesIcon,
   MenuIcon,
   MessagesSquareIcon,
+  NewspaperIcon,
   ShoppingBagIcon,
   XIcon,
 } from "lucide-react";
@@ -23,6 +23,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {inactiveRoutes} from "@/lib/navigation";
 import {cn} from "@/lib/utils";
 
 import {LocaleSwitcher} from "@/components/locale-switcher";
@@ -31,7 +32,7 @@ import {HeaderSearch} from "./header-search";
 import {SiteBrand} from "./site-brand";
 
 const navigationItems = [
-  {key: "courses", href: "/courses", icon: BookOpenIcon},
+  {key: "news", href: "/news", icon: NewspaperIcon},
   {key: "library", href: "/library", icon: FolderIcon},
   {key: "podcasts", href: "/podcasts", icon: HeadphonesIcon},
   {key: "communities", href: "/communities", icon: MessagesSquareIcon},
@@ -90,7 +91,7 @@ export function MobileNavigation() {
             aria-label={t("navigation.label")}
             className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-4 py-4"
           >
-            {navigationItems.map((item) => {
+            {navigationItems.filter((item) => !inactiveRoutes.has(item.href)).map((item) => {
               const Icon = item.icon;
 
               return (

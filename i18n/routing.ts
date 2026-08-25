@@ -6,9 +6,13 @@ export const routing = defineRouting({
   localePrefix: "always",
   pathnames: {
     "/": "/",
-    "/courses": {
-      tr: "/kurslar",
-      en: "/courses",
+    "/news": {
+      tr: "/haberler",
+      en: "/news",
+    },
+    "/news/[slug]": {
+      tr: "/haberler/[slug]",
+      en: "/news/[slug]",
     },
     "/library": {
       tr: "/kutuphane",
@@ -58,3 +62,4 @@ export const routing = defineRouting({
 });
 
 export type AppPathname = keyof typeof routing.pathnames;
+export type StaticAppPathname = Exclude<AppPathname, "/news/[slug]">;

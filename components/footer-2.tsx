@@ -8,32 +8,8 @@ import {Openai} from "@/components/ui/svgs/openai";
 import {Perplexity} from "@/components/ui/svgs/perplexity";
 import {Button} from "@/components/ui/button";
 import {Link} from "@/i18n/navigation";
-
-const footerGroups = [
-  {
-    key: "explore",
-    links: [
-      {href: "/courses", key: "courses"},
-      {href: "/library", key: "library"},
-      {href: "/podcasts", key: "podcasts"},
-      {href: "/communities", key: "communities"},
-    ],
-  },
-  {
-    key: "tools",
-    links: [
-      {href: "/tools", key: "tools"},
-      {href: "/store", key: "store"},
-    ],
-  },
-  {
-    key: "account",
-    links: [
-      {href: "/login", key: "login"},
-      {href: "/signup", key: "signup"},
-    ],
-  },
-] as const;
+import {inactiveRoutes} from "@/lib/navigation";
+import {tools} from "@/lib/tools";
 
 const aiProviders = [
   {key: "claude", href: "https://claude.ai/", icon: ClaudeAI},
@@ -47,8 +23,38 @@ const aiProviders = [
 ] as const;
 
 export default async function Footer() {
-  const t = await getTranslations("Footer");
+  const [t, toolsT] = await Promise.all([
+    getTranslations("Footer"),
+    getTranslations("Tools"),
+  ]);
   const year = new Date().getFullYear();
+  const footerGroups = [
+    {
+      key: "explore",
+      links: [
+        {href: "/news", label: t("links.news")},
+        {href: "/library", label: t("links.library")},
+        {href: "/podcasts", label: t("links.podcasts")},
+        {href: "/communities", label: t("links.communities")},
+        {href: "/tools", label: t("links.tools")},
+        {href: "/store", label: t("links.store")},
+      ],
+    },
+    {
+      key: "tools",
+      links: tools.map((tool) => ({
+        href: tool.href,
+        label: toolsT(`items.${tool.key}.title`),
+      })),
+    },
+    {
+      key: "account",
+      links: [
+        {href: "/login", label: t("links.login")},
+        {href: "/signup", label: t("links.signup")},
+      ],
+    },
+  ] as const;
 
   return (
     <footer className="border-t border-border/60">
@@ -67,13 +73,13 @@ export default async function Footer() {
                 {t(`groups.${group.key}`)}
               </h2>
               <ul className="mt-4 flex flex-col gap-4">
-                {group.links.map((link) => (
-                  <li key={link.key}>
+                {group.links.filter((link) => !inactiveRoutes.has(link.href)).map((link) => (
+                  <li key={link.href}>
                     <Link
                       href={link.href}
                       className="text-sm text-muted-foreground duration-150 hover:text-primary"
                     >
-                      {t(`links.${link.key}`)}
+                      {link.label}
                     </Link>
                   </li>
                 ))}

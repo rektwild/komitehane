@@ -56,6 +56,7 @@ export const tools = [
 ] as const satisfies readonly ToolDefinitionShape[];
 
 export type ToolDefinition = (typeof tools)[number];
+export type ToolKey = ToolDefinition["key"];
 
 export function getToolBySlug(slug: string): ToolDefinition | undefined {
   return tools.find((tool) => tool.slug === slug);

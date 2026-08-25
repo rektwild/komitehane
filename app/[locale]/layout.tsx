@@ -7,6 +7,7 @@ import {JsonLd} from "@/components/json-ld";
 import Footer from "@/components/footer-2";
 import {SiteHeader} from "@/components/layout/site-header";
 import {SiteContainer} from "@/components/layout/site-container";
+import {ThemeInitializerScript} from "@/components/layout/theme-initializer";
 import {
   bingSiteVerification,
   googleSiteVerification,
@@ -85,7 +86,11 @@ export default async function LocaleLayout({children}: LayoutProps<"/[locale]">)
       lang={locale}
       dir={direction}
       className={`${wixMadeforText.variable} ${jetBrainsMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <ThemeInitializerScript locale={locale} />
+      </head>
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>
           <SiteHeader />

@@ -17,6 +17,8 @@ const privatePrefixes = [
 ] as const;
 
 const privatePaths = [
+  "/api",
+  "/admin",
   ...privatePrefixes,
   ...siteConfig.locales.flatMap((locale) =>
     privatePrefixes.map((prefix) => `/${locale}${prefix}`)

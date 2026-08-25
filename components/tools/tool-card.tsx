@@ -16,7 +16,7 @@ export function ToolCard({tool}: ToolCardProps) {
   const description = t(`items.${tool.key}.description`);
 
   return (
-    <article className="group relative flex w-full flex-col overflow-hidden rounded-xl bg-card text-card-foreground shadow-surface outline outline-1 outline-border/60">
+    <article className="group relative flex h-full w-full flex-col overflow-hidden rounded-xl bg-card text-card-foreground shadow-surface outline outline-1 outline-border/60">
       <Link
         href={tool.href}
         aria-label={title}
@@ -36,7 +36,7 @@ export function ToolCard({tool}: ToolCardProps) {
         <div className="absolute inset-0 bg-foreground/0 transition-colors duration-300 group-hover:bg-foreground/5" />
       </Link>
 
-      <div className="flex flex-col gap-1.5 p-3">
+      <div className="flex flex-1 flex-col gap-1.5 p-3">
         <div className="flex items-start justify-between gap-2">
           <Link
             href={tool.href}
@@ -51,7 +51,7 @@ export function ToolCard({tool}: ToolCardProps) {
           {description}
         </p>
 
-        <div className="flex items-center justify-between gap-3 border-t border-border pt-1.5">
+        <div className="mt-auto flex items-center justify-between gap-3 border-t border-border pt-1.5">
           <div className="flex min-w-0 items-center gap-2">
             <span
               aria-hidden="true"

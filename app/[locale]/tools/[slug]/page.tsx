@@ -6,7 +6,7 @@ import {getLocale, getTranslations} from "next-intl/server";
 import {JsonLd} from "@/components/json-ld";
 import {PageBreadcrumb} from "@/components/layout/page-breadcrumb";
 import {PageWithAside} from "@/components/layout/page-with-aside";
-import {CommitteeMinimumFinalForm} from "@/components/tools/committee-minimum-final-form";
+import {GradeCalculator} from "@/components/tools/grade-calculator";
 import {getPathname} from "@/i18n/navigation";
 import {getToolBySlug, tools} from "@/lib/tools";
 import {getLocalizedMetadata} from "@/lib/seo/metadata";
@@ -95,9 +95,7 @@ export default async function ToolDetailPage({
             </h1>
           </header>
 
-          {tool.key === "committeeMinimumFinal" ? (
-            <CommitteeMinimumFinalForm />
-          ) : null}
+          <GradeCalculator toolKey={tool.key} />
         </section>
       </PageWithAside>
     </>

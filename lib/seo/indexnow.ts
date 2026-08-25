@@ -20,6 +20,7 @@ function getKeyLocation(): string | undefined {
   return `${siteUrl}/indexnow/${encodeURIComponent(indexNowKey)}`;
 }
 
+
 function normalizeUrls(urls: readonly string[]): string[] {
   const origin = new URL(siteUrl).origin;
   const normalized = new Set<string>();
@@ -88,4 +89,3 @@ export async function submitIndexNow(
     statuses,
   };
 }
-
