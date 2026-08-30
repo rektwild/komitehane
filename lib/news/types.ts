@@ -32,6 +32,16 @@ export type NewsSummary = {
   readingMinutes: number;
 };
 
+export type HomeNewsSection = {
+  category: NewsCategory;
+  articles: NewsSummary[];
+};
+
+export type HomeNewsResult = {
+  latest: NewsSummary[];
+  sections: HomeNewsSection[];
+};
+
 export type NewsTranslation = {
   locale: NewsLocale;
   slug: string;
@@ -45,8 +55,6 @@ export type NewsDetail = NewsSummary & {
 export type NewsListingResult = {
   latest: NewsSummary[];
   articles: NewsSummary[];
-  trending: NewsSummary[];
-  popular: NewsSummary[];
   categories: NewsCategory[];
   page: number;
   totalPages: number;
@@ -77,4 +85,9 @@ export type NewsSitemapEntry = {
   id: number;
   updatedAt: string;
   translations: NewsTranslation[];
+};
+
+export type NewsTickerItem = {
+  title: string;
+  slug: string;
 };

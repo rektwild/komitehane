@@ -5,9 +5,7 @@ import {getTranslations} from "next-intl/server";
 import {JsonLd} from "@/components/json-ld";
 import {PageBreadcrumb} from "@/components/layout/page-breadcrumb";
 import {PageWithAside} from "@/components/layout/page-with-aside";
-import {LatestNewsCarousel} from "@/components/news/latest-news-carousel";
 import {NewsListing} from "@/components/news/news-listing";
-import {NewsSidebar} from "@/components/news/news-sidebar";
 import {getPathname} from "@/i18n/navigation";
 import {getNewsListing} from "@/lib/news/data";
 import type {NewsLocale} from "@/lib/news/types";
@@ -94,30 +92,16 @@ export default async function NewsPage({params, searchParams}: NewsPageProps) {
             </h1>
           </header>
 
-          <div className="mt-4">
-            <LatestNewsCarousel articles={result.latest} locale={locale} />
-          </div>
-
-          <div className="mt-10 grid min-w-0 gap-10 lg:grid-cols-[21rem_minmax(0,1fr)] xl:gap-14">
-            <div className="order-1 min-w-0 lg:order-2">
-              <NewsListing
-                articles={result.articles}
-                locale={locale}
-                query={query}
-                category={category}
-                page={result.page}
-                totalPages={result.totalPages}
-              />
-            </div>
-            <div className="order-2 min-w-0 lg:order-1">
-              <NewsSidebar
-                trending={result.trending}
-                popular={result.popular}
-                categories={result.categories}
-                locale={locale}
-                selectedCategory={category}
-              />
-            </div>
+          <div className="mt-8 min-w-0">
+            <NewsListing
+              articles={result.articles}
+              categories={result.categories}
+              locale={locale}
+              query={query}
+              category={category}
+              page={result.page}
+              totalPages={result.totalPages}
+            />
           </div>
         </div>
       </PageWithAside>

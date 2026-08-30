@@ -1,8 +1,10 @@
 import {Fragment, type ComponentProps} from "react";
 import type {LucideIcon} from "lucide-react";
-import {getTranslations} from "next-intl/server";
+import {getLocale, getTranslations} from "next-intl/server";
 
 import {Link} from "@/i18n/navigation";
+import {getNewsTickerItems} from "@/lib/news/data";
+import type {NewsLocale, NewsTickerItem} from "@/lib/news/types";
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -228,11 +230,13 @@ async function BreadcrumbTrail({
   );
 }
 
+type NewsTickerSequenceItem = NewsTickerItem | {title: string; slug: null};
+
 function NewsTickerSequence({
   items,
   isDuplicate = false,
 }: {
-  items: readonly string[];
+  items: readonly NewsTickerSequenceItem[];
   isDuplicate?: boolean;
 }) {
   return (
@@ -242,9 +246,18 @@ function NewsTickerSequence({
     >
       {items.map((item, index) => (
         <Fragment
-          key={`${isDuplicate ? "duplicate" : "primary"}-${index}`}
+          key={`${isDuplicate ? "duplicate" : "primary"}-${item.slug ?? "empty"}-${index}`}
         >
-          <span className="news-ticker-item">{item}</span>
+          {item.slug ? (
+            <Link
+              href={{pathname: "/news/[slug]", params: {slug: item.slug}}}
+              className="news-ticker-item hover:underline underline-offset-4"
+            >
+              {item.title}
+            </Link>
+          ) : (
+            <span className="news-ticker-item">{item.title}</span>
+          )}
           <span aria-hidden="true" className="news-ticker-separator bg-foreground">
             .
           </span>
@@ -258,7 +271,7 @@ function NewsTicker({
   items,
   ariaLabel,
 }: {
-  items: readonly string[];
+  items: readonly NewsTickerSequenceItem[];
   ariaLabel: string;
 }) {
   return (
@@ -284,15 +297,16 @@ export async function PageBreadcrumb({
 }: PageBreadcrumbProps) {
   if (items.length === 0) return null;
 
-  const [breadcrumbT, newsT] = await Promise.all([
+  const [breadcrumbT, newsT, locale] = await Promise.all([
     getTranslations("Breadcrumb"),
     getTranslations("News"),
+    getLocale(),
   ]);
-  const newsItems = [
-    newsT("items.item1"),
-    newsT("items.item2"),
-    newsT("items.item3"),
-  ];
+  const rawTickerItems = await getNewsTickerItems(locale as NewsLocale);
+  const tickerItems: readonly NewsTickerSequenceItem[] =
+    rawTickerItems.length > 0
+      ? rawTickerItems
+      : [{title: newsT("empty"), slug: null}];
 
   return (
     <div className={cn("w-full min-w-0", className)}>
@@ -305,7 +319,7 @@ export async function PageBreadcrumb({
             overflowMenuLabel={breadcrumbT("menuLabel")}
           />
         </div>
-        <NewsTicker items={newsItems} ariaLabel={newsT("label")} />
+        <NewsTicker items={tickerItems} ariaLabel={newsT("label")} />
       </div>
     </div>
   );

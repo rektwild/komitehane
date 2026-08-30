@@ -1,7 +1,7 @@
 "use client";
 
 import {useRef, useState} from "react";
-import {CheckIcon, Link2Icon, MailIcon} from "lucide-react";
+import {CheckIcon, Link2Icon, MailIcon, Share2Icon} from "lucide-react";
 import {useTranslations} from "next-intl";
 
 import {Button} from "@/components/ui/button";
@@ -39,7 +39,10 @@ export function NewsShareActions({title, url}: {title: string; url: string}) {
 
   return (
     <section className="space-y-4">
-      <p className="text-sm font-medium text-muted-foreground">{t("shareTitle")}</p>
+      <div className="flex items-center justify-between gap-2">
+        <p className="text-sm font-medium text-muted-foreground">{t("shareTitle")}</p>
+        <Share2Icon aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />
+      </div>
 
       <div className="flex flex-wrap items-center gap-3">
         <Button

@@ -31,7 +31,9 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group";
-import {tools} from "@/lib/tools";
+import {tools, type ToolCategory} from "@/lib/tools";
+import {useRouter} from "@/i18n/navigation";
+import {ToolsFilterDropdown} from "@/components/tools/tools-filter-dropdown";
 
 const sortOrders = ["default", "az", "za"] as const;
 type SortOrder = (typeof sortOrders)[number];
@@ -40,15 +42,45 @@ function isSortOrder(value: string): value is SortOrder {
   return sortOrders.includes(value as SortOrder);
 }
 
-export function ToolsCatalog() {
+export function ToolsCatalog({
+  initialCategory,
+  initialQuery,
+}: {
+  initialCategory?: ToolCategory;
+  initialQuery?: string;
+}) {
   const t = useTranslations("Tools");
   const locale = useLocale();
-  const [query, setQuery] = useState("");
+  const router = useRouter();
+  const [query, setQuery] = useState(initialQuery ?? "");
   const [sortOrder, setSortOrder] = useState<SortOrder>("default");
+  const [category, setCategory] = useState<ToolCategory | undefined>(initialCategory);
+
+  const updateCategory = (nextCategory: ToolCategory | undefined) => {
+    setCategory(nextCategory);
+
+    const nextQuery: Record<string, string> = {};
+    const normalizedQuery = query.trim();
+    if (nextCategory) nextQuery.category = nextCategory;
+    if (normalizedQuery) nextQuery.q = normalizedQuery;
+
+    router.push(
+      Object.keys(nextQuery).length
+        ? {pathname: "/tools", query: nextQuery}
+        : {pathname: "/tools"},
+    );
+  };
+
+  const clearFilters = () => {
+    setQuery("");
+    setCategory(undefined);
+    router.push({pathname: "/tools"});
+  };
 
   const visibleTools = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase(locale);
     const matchingTools = tools.filter((tool) => {
+      if (category && tool.category !== category) return false;
       if (!normalizedQuery) return true;
 
       const searchableText = [
@@ -72,7 +104,7 @@ export function ToolsCatalog() {
 
       return sortOrder === "az" ? comparison : -comparison;
     });
-  }, [locale, query, sortOrder, t]);
+  }, [category, locale, query, sortOrder, t]);
 
   return (
     <div className="flex flex-col gap-6">
@@ -129,7 +161,19 @@ export function ToolsCatalog() {
             </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
+        <ToolsFilterDropdown
+          selectedCategory={category}
+          onCategoryChange={updateCategory}
+        />
       </div>
+
+      {query.trim() || category ? (
+        <div className="flex justify-end">
+          <Button type="button" variant="link" onClick={clearFilters}>
+            {t("catalog.clearFilters")}
+          </Button>
+        </div>
+      ) : null}
 
       {visibleTools.length > 0 ? (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

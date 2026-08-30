@@ -16,15 +16,21 @@ type ToolDefinitionShape = {
     | "midtermMinimumFinal";
   href: AppPathname;
   slug: string;
+  category: ToolCategory;
   icon: LucideIcon;
   thumbnailClassName: string;
 };
+
+export type ToolCategory = "midterm" | "committee";
+
+export const toolCategories = ["midterm", "committee"] as const satisfies readonly ToolCategory[];
 
 export const tools = [
   {
     key: "midtermGrade",
     href: "/tools/midterm-grade-calculator",
     slug: "midterm-grade-calculator",
+    category: "midterm",
     icon: CalculatorIcon,
     thumbnailClassName:
       "from-sky-500 via-cyan-400 to-blue-600 text-white",
@@ -33,6 +39,7 @@ export const tools = [
     key: "committeeGrade",
     href: "/tools/committee-grade-calculator",
     slug: "committee-grade-calculator",
+    category: "committee",
     icon: ClipboardCheckIcon,
     thumbnailClassName:
       "from-violet-600 via-fuchsia-500 to-purple-600 text-white",
@@ -41,6 +48,7 @@ export const tools = [
     key: "committeeMinimumFinal",
     href: "/tools/committee-minimum-final-grade",
     slug: "committee-minimum-final-grade",
+    category: "committee",
     icon: TargetIcon,
     thumbnailClassName:
       "from-amber-400 via-orange-500 to-red-500 text-white",
@@ -49,6 +57,7 @@ export const tools = [
     key: "midtermMinimumFinal",
     href: "/tools/midterm-minimum-final-grade",
     slug: "midterm-minimum-final-grade",
+    category: "midterm",
     icon: PercentIcon,
     thumbnailClassName:
       "from-emerald-500 via-teal-400 to-cyan-600 text-white",

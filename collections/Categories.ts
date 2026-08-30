@@ -1,6 +1,6 @@
 import type {CollectionConfig} from "payload";
 
-import {authenticated} from "@/collections/access";
+import {categoryWrite} from "@/collections/access";
 import {normalizeSlug} from "@/collections/slug";
 
 export const Categories: CollectionConfig = {
@@ -10,10 +10,10 @@ export const Categories: CollectionConfig = {
     defaultColumns: ["name", "slug", "updatedAt"],
   },
   access: {
-    create: authenticated,
-    delete: authenticated,
+    create: categoryWrite,
+    delete: categoryWrite,
     read: () => true,
-    update: authenticated,
+    update: categoryWrite,
   },
   fields: [
     {

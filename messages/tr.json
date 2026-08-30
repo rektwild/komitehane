@@ -34,18 +34,25 @@
     "relatedTools": {
       "title": "İlgili araçlar"
     },
+    "relatedToolsCategories": {
+      "title": "İlgili araç kategorileri"
+    },
+    "relatedCategories": {
+      "title": "İlgili Blog kategorileri",
+      "empty": "Henüz kategori yok."
+    },
     "relatedBlogs": {
       "title": "İlgili bloglar",
-      "items": {
-        "studyPlan": "TUS çalışma planı",
-        "resourceSelection": "TUS kaynak seçimi",
-        "examDayPreparation": "Sınav günü hazırlığı"
-      }
+      "empty": "Henüz yazı yok."
     }
   },
   "Tools": {
     "title": "Araçlar",
     "description": "Not hesaplama araçlarıyla akademik hedeflerini daha kolay planla.",
+    "categories": {
+      "midterm": "Vize hesaplama araçları",
+      "committee": "Komite hesaplama araçları"
+    },
     "catalog": {
       "search": {
         "label": "Araçlarda ara",
@@ -57,6 +64,12 @@
         "az": "A’dan Z’ye",
         "za": "Z’den A’ya"
       },
+      "filter": {
+        "label": "Filtrele",
+        "categories": "Kategoriler",
+        "allCategories": "Tüm kategoriler"
+      },
+      "clearFilters": "Filtreleri temizle",
       "empty": {
         "title": "Araç bulunamadı",
         "description": "Arama ölçütlerini değiştirip tekrar deneyin."
@@ -64,8 +77,24 @@
     },
     "card": {
       "provider": "Komitehane",
-      "open": "Aracı aç",
       "imagePlaceholder": "Görsel yakında"
+    },
+    "studentContext": {
+      "university": "Üniversite",
+      "universityPlaceholder": "Üniversite ara veya seç",
+      "universityNoResults": "Üniversite bulunamadı",
+      "department": "Bölüm",
+      "departmentPlaceholder": "Bölümünüzü yazın",
+      "class": "Sınıf",
+      "classPlaceholder": "Sınıf seçin",
+      "classes": {
+        "prep": "Hazırlık",
+        "year": "{index}. Sınıf"
+      },
+      "validation": {
+        "departmentRequired": "Bölümünüzü girin.",
+        "classRequired": "Sınıfınızı seçin."
+      }
     },
   "midtermGradeForm": {
     "calculate": "Hesapla",
@@ -80,10 +109,7 @@
     "resultTitle": "Hesaplama sonucu",
     "resultPending": "Notları ve ağırlıkları girip Hesapla butonuna basın.",
     "resultInvalid": "Girdiğiniz değerleri kontrol edip tekrar deneyin.",
-    "resultAlreadyPassing": "Minimum final notu: {value}",
-    "resultRequired": "Gerekli minimum final notu: {value}",
-    "resultCalculated": "Dönem sonu notunuz: {value}",
-    "resultImpossible": "Gerekli final notu: {value}",
+    "resultAlreadyPassing": "Mevcut notunuz geçme notunu karşılıyor.",
     "resultImpossibleDescription": "Finalden en fazla 100 alınabildiği için bu notlarla dersi geçmek mümkün değil.",
     "howItWorksTitle": "Vize not hesaplama nasıl çalışır?",
     "howItWorksIntroduction": "Bu araç, birden fazla vize notunu ve ağırlığını final notuyla birlikte değerlendirerek dönem sonu notunu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
@@ -130,10 +156,7 @@
     "resultTitle": "Hesaplama sonucu",
     "resultPending": "Komite notlarını, ağırlıklarını ve final notunu girip Hesapla butonuna basın.",
     "resultInvalid": "Girdiğiniz değerleri kontrol edip tekrar deneyin.",
-    "resultAlreadyPassing": "Minimum final notu: {value}",
-    "resultRequired": "Gerekli minimum final notu: {value}",
-    "resultCalculated": "Dönem sonu notunuz: {value}",
-    "resultImpossible": "Gerekli final notu: {value}",
+    "resultAlreadyPassing": "Mevcut notunuz geçme notunu karşılıyor.",
     "resultImpossibleDescription": "Finalden en fazla 100 alınabildiği için bu notlarla dersi geçmek mümkün değil.",
     "howItWorksTitle": "Komite not hesaplama nasıl çalışır?",
     "howItWorksIntroduction": "Bu araç, komite notlarını ve ağırlıklarını final notuyla birlikte değerlendirerek dönem sonu notunu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
@@ -180,10 +203,7 @@
     "resultTitle": "Hesaplama sonucu",
     "resultPending": "Geçme notunu, komite notlarını ve ağırlıklarını girip Hesapla butonuna basın.",
     "resultInvalid": "Girdiğiniz değerleri kontrol edip tekrar deneyin.",
-    "resultAlreadyPassing": "Mevcut katkınız geçme notunu karşılıyor. Minimum final notu: {value}",
-    "resultRequired": "Gerekli minimum final notu: {value}",
-    "resultCalculated": "Dönem sonu notunuz: {value}",
-    "resultImpossible": "Gerekli final notu: {value}",
+    "resultAlreadyPassing": "Mevcut katkınız geçme notunu karşılıyor.",
     "resultImpossibleDescription": "Finalden en fazla 100 alınabildiği için bu notlarla geçmek mümkün değil.",
     "howItWorksTitle": "Komite minimum final notu nasıl hesaplanır?",
     "howItWorksIntroduction": "Bu araç, komite katkınızı ve geçme notunuzu kullanarak finalden almanız gereken minimum notu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
@@ -230,10 +250,7 @@
     "resultTitle": "Hesaplama sonucu",
     "resultPending": "Geçme notunu, vize notlarını ve ağırlıklarını girip Hesapla butonuna basın.",
     "resultInvalid": "Girdiğiniz değerleri kontrol edip tekrar deneyin.",
-    "resultAlreadyPassing": "Mevcut katkınız geçme notunu karşılıyor. Minimum final notu: {value}",
-    "resultRequired": "Gerekli minimum final notu: {value}",
-    "resultCalculated": "Dönem sonu notunuz: {value}",
-    "resultImpossible": "Gerekli final notu: {value}",
+    "resultAlreadyPassing": "Mevcut katkınız geçme notunu karşılıyor.",
     "resultImpossibleDescription": "Finalden en fazla 100 alınabildiği için bu notlarla geçmek mümkün değil.",
     "howItWorksTitle": "Vize minimum final notu nasıl hesaplanır?",
     "howItWorksIntroduction": "Bu araç, vize katkınızı ve geçme notunuzu kullanarak finalden almanız gereken minimum notu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
@@ -353,37 +370,33 @@
   },
   "News": {
     "label": "Haberler",
-    "items": {
-      "item1": "Komitehane’de yeni içerikleri keşfedin.",
-      "item2": "Yeni özellikler üzerinde çalışıyoruz.",
-      "item3": "Komitehane’yi keşfetmeye başlayın."
-    }
+    "empty": "Henüz haber yok."
   },
   "NewsPage": {
     "title": "Haberler",
     "description": "Tıp eğitimi, TUS ve Komitehane hakkındaki güncel haberleri keşfedin.",
     "latest": "En yeni haberler",
-    "listTitle": "Tüm haberler",
     "trending": "Şimdi trend",
     "popular": "En popüler",
     "categories": "Kategoriler",
     "allCategories": "Tüm kategoriler",
     "searchLabel": "Haberlerde ara",
     "searchPlaceholder": "Başlık, özet veya kategori ara...",
-    "searchSubmit": "Ara",
+    "filterLabel": "Filtrele",
     "clearFilters": "Filtreleri temizle",
     "published": "{date}",
     "readingTime": "{minutes} dk okuma",
     "author": "{author}",
     "updated": "Güncellendi: {date}",
-    "previousSlide": "Önceki haber",
-    "nextSlide": "Sonraki haber",
+    "previousSlide": "Önceki Yazı",
+    "nextSlide": "Sonraki Yazı",
     "goToSlide": "{number}. habere git",
+    "paginationEllipsis": "Aradaki haberler",
     "carouselLabel": "En yeni haberler slaytı",
     "emptyTitle": "Haber bulunamadı",
     "emptyDescription": "Arama veya kategori filtrenizi değiştirip yeniden deneyin.",
-    "previousPage": "Önceki",
-    "nextPage": "Sonraki",
+    "previousPage": "Önceki Yazı",
+    "nextPage": "Sonraki Yazı",
     "pageLabel": "Sayfa {page} / {totalPages}",
     "articleImage": "{title} kapak görseli",
     "backToNews": "Haberlere dön",

@@ -34,18 +34,25 @@
     "relatedTools": {
       "title": "Related tools"
     },
+    "relatedToolsCategories": {
+      "title": "Related tool categories"
+    },
+    "relatedCategories": {
+      "title": "Related blog categories",
+      "empty": "No categories yet."
+    },
     "relatedBlogs": {
       "title": "Related blogs",
-      "items": {
-        "studyPlan": "TUS study plan",
-        "resourceSelection": "TUS resource selection",
-        "examDayPreparation": "Exam-day preparation"
-      }
+      "empty": "No posts yet."
     }
   },
   "Tools": {
     "title": "Tools",
     "description": "Plan your academic goals with practical grade calculators.",
+    "categories": {
+      "midterm": "Midterm calculation tools",
+      "committee": "Committee calculation tools"
+    },
     "catalog": {
       "search": {
         "label": "Search tools",
@@ -57,6 +64,12 @@
         "az": "A to Z",
         "za": "Z to A"
       },
+      "filter": {
+        "label": "Filter",
+        "categories": "Categories",
+        "allCategories": "All categories"
+      },
+      "clearFilters": "Clear filters",
       "empty": {
         "title": "No tools found",
         "description": "Try changing your search terms."
@@ -64,8 +77,24 @@
     },
     "card": {
       "provider": "Komitehane",
-      "open": "Open tool",
       "imagePlaceholder": "Image coming soon"
+    },
+    "studentContext": {
+      "university": "University",
+      "universityPlaceholder": "Search or select a university",
+      "universityNoResults": "No university found",
+      "department": "Department",
+      "departmentPlaceholder": "Enter your department",
+      "class": "Class",
+      "classPlaceholder": "Select class",
+      "classes": {
+        "prep": "Preparatory",
+        "year": "Year {index}"
+      },
+      "validation": {
+        "departmentRequired": "Enter your department.",
+        "classRequired": "Select your class."
+      }
     },
   "midtermGradeForm": {
     "calculate": "Calculate",
@@ -80,10 +109,7 @@
     "resultTitle": "Calculation result",
     "resultPending": "Enter the grades and weights, then press Calculate.",
     "resultInvalid": "Check the entered values and try again.",
-    "resultAlreadyPassing": "Minimum final grade: {value}",
-    "resultRequired": "Required minimum final grade: {value}",
-    "resultCalculated": "Your year-end grade: {value}",
-    "resultImpossible": "Required final grade: {value}",
+    "resultAlreadyPassing": "Your current grades already meet the passing grade.",
     "resultImpossibleDescription": "Because the highest possible final grade is 100, passing with these grades is not possible.",
     "howItWorksTitle": "How does midterm grade calculation work?",
     "howItWorksIntroduction": "This tool calculates your year-end grade by combining multiple midterm grades and weights with your final grade. All calculations are performed only in your browser; your grade data is not sent to a server.",
@@ -130,10 +156,7 @@
     "resultTitle": "Calculation result",
     "resultPending": "Enter the committee grades, weights, and final grade, then press Calculate.",
     "resultInvalid": "Check the entered values and try again.",
-    "resultAlreadyPassing": "Minimum final grade: {value}",
-    "resultRequired": "Required minimum final grade: {value}",
-    "resultCalculated": "Your year-end grade: {value}",
-    "resultImpossible": "Required final grade: {value}",
+    "resultAlreadyPassing": "Your current grades already meet the passing grade.",
     "resultImpossibleDescription": "Because the highest possible final grade is 100, passing with these grades is not possible.",
     "howItWorksTitle": "How does committee grade calculation work?",
     "howItWorksIntroduction": "This tool calculates your year-end grade by combining committee grades and weights with your final grade. All calculations are performed only in your browser; your grade data is not sent to a server.",
@@ -180,10 +203,7 @@
     "resultTitle": "Calculation result",
     "resultPending": "Enter the passing grade, committee grades, and weights, then press Calculate.",
     "resultInvalid": "Check the entered values and try again.",
-    "resultAlreadyPassing": "Your current contribution already meets the passing grade. Minimum final grade: {value}",
-    "resultRequired": "Required minimum final grade: {value}",
-    "resultCalculated": "Your year-end grade: {value}",
-    "resultImpossible": "Required final grade: {value}",
+    "resultAlreadyPassing": "Your current contribution already meets the passing grade.",
     "resultImpossibleDescription": "Because the highest possible final grade is 100, passing with these grades is not possible.",
     "howItWorksTitle": "How is the committee minimum final grade calculated?",
     "howItWorksIntroduction": "This tool uses your committee contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
@@ -230,10 +250,7 @@
     "resultTitle": "Calculation result",
     "resultPending": "Enter the passing grade, midterm grades, and weights, then press Calculate.",
     "resultInvalid": "Check the entered values and try again.",
-    "resultAlreadyPassing": "Your current contribution already meets the passing grade. Minimum final grade: {value}",
-    "resultRequired": "Required minimum final grade: {value}",
-    "resultCalculated": "Your year-end grade: {value}",
-    "resultImpossible": "Required final grade: {value}",
+    "resultAlreadyPassing": "Your current contribution already meets the passing grade.",
     "resultImpossibleDescription": "Because the highest possible final grade is 100, passing with these grades is not possible.",
     "howItWorksTitle": "How is the midterm minimum final grade calculated?",
     "howItWorksIntroduction": "This tool uses your midterm contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
@@ -353,37 +370,33 @@
   },
   "News": {
     "label": "News",
-    "items": {
-      "item1": "Discover new content on Komitehane.",
-      "item2": "New features are on the way.",
-      "item3": "Start exploring Komitehane."
-    }
+    "empty": "No headlines yet."
   },
   "NewsPage": {
     "title": "News",
     "description": "Discover the latest news about medical education, TUS, and Komitehane.",
     "latest": "Latest news",
-    "listTitle": "All news",
     "trending": "Trending Now",
     "popular": "Most Popular",
     "categories": "Categories",
     "allCategories": "All categories",
     "searchLabel": "Search news",
     "searchPlaceholder": "Search titles, summaries, or categories...",
-    "searchSubmit": "Search",
+    "filterLabel": "Filter",
     "clearFilters": "Clear filters",
     "published": "{date}",
     "readingTime": "{minutes} min read",
     "author": "{author}",
     "updated": "Updated: {date}",
-    "previousSlide": "Previous article",
-    "nextSlide": "Next article",
+    "previousSlide": "Previous Post",
+    "nextSlide": "Next Post",
     "goToSlide": "Go to article {number}",
+    "paginationEllipsis": "More slides",
     "carouselLabel": "Latest news carousel",
     "emptyTitle": "No news found",
     "emptyDescription": "Try changing your search or category filter.",
-    "previousPage": "Previous",
-    "nextPage": "Next",
+    "previousPage": "Previous Post",
+    "nextPage": "Next Post",
     "pageLabel": "Page {page} of {totalPages}",
     "articleImage": "Cover image for {title}",
     "backToNews": "Back to news",

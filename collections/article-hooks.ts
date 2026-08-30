@@ -3,15 +3,107 @@ import type {
   CollectionAfterDeleteHook,
   CollectionBeforeChangeHook,
   CollectionBeforeDeleteHook,
+  CollectionBeforeOperationHook,
 } from "payload";
+import {APIError} from "payload";
 
+import {isFounderUser, isWriterUser} from "@/collections/access";
 import {absoluteUrl} from "@/lib/seo/urls";
+import {relationshipId} from "@/collections/relationship";
 
 type LocalizedSlugs = Partial<Record<"tr" | "en", string>>;
 
 type IndexNowContext = {
   deletedArticlePublished?: boolean;
   deletedArticleSlugs?: LocalizedSlugs;
+};
+
+type ArticleWorkflowArguments = {
+  data?: {
+    _status?: unknown;
+  };
+  draft?: boolean;
+  publishAllLocales?: boolean;
+  publishSpecificLocale?: string;
+  unpublishAllLocales?: boolean;
+};
+
+export const enforceWriterArticleWorkflow: CollectionBeforeOperationHook = ({
+  args,
+  operation,
+  req,
+}) => {
+  if (!isWriterUser(req.user)) return args;
+  if (operation !== "create" && operation !== "update" && operation !== "restoreVersion") {
+    return args;
+  }
+
+  const workflow = args as ArticleWorkflowArguments;
+  const status = workflow.data?._status;
+  const isPublishing =
+    workflow.draft !== true ||
+    workflow.publishAllLocales === true ||
+    Boolean(workflow.publishSpecificLocale) ||
+    workflow.unpublishAllLocales === true ||
+    status === "published";
+
+  if (isPublishing) {
+    throw new APIError(
+      "Writers can only save their own articles as drafts.",
+      403,
+    );
+  }
+
+  return args;
+};
+
+export const setArticleAuthor: CollectionBeforeChangeHook = ({
+  data,
+  operation,
+  originalDoc,
+  req,
+}) => {
+  if (operation === "create") {
+    const requestedAuthor = relationshipId(data.author);
+    if (isFounderUser(req.user) && requestedAuthor !== undefined) {
+      return {...data, author: requestedAuthor};
+    }
+
+    return req.user ? {...data, author: req.user.id} : data;
+  }
+
+  const authorId = relationshipId(originalDoc?.author);
+  const requestedAuthor = relationshipId(data.author);
+  if (isFounderUser(req.user) && requestedAuthor !== undefined) {
+    return {...data, author: requestedAuthor};
+  }
+
+  return authorId === undefined ? data : {...data, author: authorId};
+};
+
+export const validateArticleHeroImageAccess: CollectionBeforeChangeHook = async ({
+  data,
+  originalDoc,
+  req,
+}) => {
+  if (!isWriterUser(req.user)) return data;
+
+  const heroImageId = relationshipId(data.heroImage ?? originalDoc?.heroImage);
+  if (heroImageId === undefined) return data;
+
+  const media = await req.payload.findByID({
+    collection: "media",
+    depth: 0,
+    id: heroImageId,
+    overrideAccess: false,
+    req,
+  });
+
+  if (!media) {
+    throw new APIError("Writers can only use media they are allowed to read.", 403);
+  }
+
+  return data;
 };
 
 function getArticleUrls(slugs: LocalizedSlugs): string[] {
@@ -28,6 +120,18 @@ async function submitArticleUrls(slugs: LocalizedSlugs) {
   } catch (error) {
     console.warn(
       `IndexNow submission failed: ${error instanceof Error ? error.message : "unknown error"}`,
+    );
+  }
+}
+
+async function revalidateNewsCaches() {
+  try {
+    const {revalidateTag} = await import("next/cache");
+    revalidateTag("news-ticker", "max");
+    revalidateTag("news-latest-links", "max");
+  } catch (error) {
+    console.warn(
+      `News cache revalidation failed: ${error instanceof Error ? error.message : "unknown error"}`,
     );
   }
 }
@@ -72,6 +176,7 @@ export const submitPublishedArticle: CollectionAfterChangeHook = async ({
   });
 
   await submitArticleUrls((localized.slug ?? {}) as LocalizedSlugs);
+  await revalidateNewsCaches();
   return doc;
 };
 
@@ -103,5 +208,6 @@ export const submitDeletedArticle: CollectionAfterDeleteHook = async ({
   if (indexNowContext.deletedArticlePublished && indexNowContext.deletedArticleSlugs) {
     await submitArticleUrls(indexNowContext.deletedArticleSlugs);
   }
+  await revalidateNewsCaches();
   return doc;
 };

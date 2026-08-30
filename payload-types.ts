@@ -128,6 +128,10 @@ export interface UserAuthOperations {
 export interface User {
   id: number;
   name: string;
+  /**
+   * Yetki ve herkese açık yazar rolü.
+   */
+  role?: ('founder' | 'editor' | 'writer') | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -154,6 +158,10 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
+  /**
+   * Founder değiştirebilir; diğer kullanıcılar için yükleyen kullanıcı otomatik atanır.
+   */
+  uploadedBy: number | User;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -224,16 +232,11 @@ export interface Article {
   };
   heroImage: number | Media;
   category: number | Category;
-  authorName: string;
   /**
-   * Yazarın görevi
+   * Founder değiştirebilir; diğer kullanıcılar için giriş yapan kullanıcı otomatik atanır.
    */
-  authorRole?: ('founder' | 'editor' | 'writer') | null;
+  author: number | User;
   publishedAt?: string | null;
-  isTrending?: boolean | null;
-  trendingOrder?: number | null;
-  isPopular?: boolean | null;
-  popularOrder?: number | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -326,6 +329,7 @@ export interface PayloadMigration {
  */
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
+  role?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -349,6 +353,7 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  uploadedBy?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -406,13 +411,8 @@ export interface ArticlesSelect<T extends boolean = true> {
   content?: T;
   heroImage?: T;
   category?: T;
-  authorName?: T;
-  authorRole?: T;
+  author?: T;
   publishedAt?: T;
-  isTrending?: T;
-  trendingOrder?: T;
-  isPopular?: T;
-  popularOrder?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

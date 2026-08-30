@@ -10,6 +10,24 @@ import {getPathname} from "@/i18n/navigation";
 import {getLocalizedMetadata} from "@/lib/seo/metadata";
 import {getWebPageJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
+import {toolCategories, type ToolCategory} from "@/lib/tools";
+
+type ToolsPageProps = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
+
+function firstValue(value: string | string[] | undefined): string | undefined {
+  return Array.isArray(value) ? value[0] : value;
+}
+
+function getToolCategory(value: string | undefined): ToolCategory | undefined {
+  return toolCategories.find((category) => category === value);
+}
+
+function getSearchQuery(value: string | undefined): string | undefined {
+  const query = value?.trim();
+  return query || undefined;
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Metadata.tools");
@@ -22,12 +40,15 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default async function ToolsPage() {
-  const [t, metadata, locale] = await Promise.all([
+export default async function ToolsPage({searchParams}: ToolsPageProps) {
+  const [values, t, metadata, locale] = await Promise.all([
+    searchParams,
     getTranslations("Tools"),
     getTranslations("Metadata.tools"),
     getLocale(),
   ]);
+  const category = getToolCategory(firstValue(values.category));
+  const query = getSearchQuery(firstValue(values.q));
   const pageUrl = absoluteUrl(await getPathname({href: "/tools", locale}));
 
   return (
@@ -54,7 +75,11 @@ export default async function ToolsPage() {
             </h1>
           </header>
 
-          <ToolsCatalog />
+          <ToolsCatalog
+            key={`${category ?? "all"}:${query ?? ""}`}
+            initialCategory={category}
+            initialQuery={query}
+          />
         </section>
       </PageWithAside>
     </>

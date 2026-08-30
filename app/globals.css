@@ -184,8 +184,7 @@
   font-size: 0;
 }
 
-.news-ticker:hover .news-ticker-track,
-.news-ticker:focus-within .news-ticker-track {
+.news-ticker:hover .news-ticker-track {
   animation-play-state: paused;
 }
 

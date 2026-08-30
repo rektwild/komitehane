@@ -1,11 +1,21 @@
 import type {CollectionConfig} from "payload";
 
-import {authenticated, publishedOrAuthenticated} from "@/collections/access";
 import {
+  articleCreate,
+  articleDelete,
+  articleRead,
+  articleReadVersions,
+  articleUpdate,
+  founderFieldAccess,
+} from "@/collections/access";
+import {
+  enforceWriterArticleWorkflow,
   rememberDeletedArticle,
   setPublishedAt,
+  setArticleAuthor,
   submitDeletedArticle,
   submitPublishedArticle,
+  validateArticleHeroImageAccess,
 } from "@/collections/article-hooks";
 import {normalizeSlug} from "@/collections/slug";
 
@@ -13,16 +23,18 @@ export const Articles: CollectionConfig = {
   slug: "articles",
   admin: {
     useAsTitle: "title",
-    defaultColumns: ["title", "category", "publishedAt", "_status", "updatedAt"],
+    defaultColumns: ["title", "author", "category", "publishedAt", "_status", "updatedAt"],
   },
   access: {
-    create: authenticated,
-    delete: authenticated,
-    read: publishedOrAuthenticated,
-    update: authenticated,
+    create: articleCreate,
+    delete: articleDelete,
+    read: articleRead,
+    readVersions: articleReadVersions,
+    update: articleUpdate,
   },
   hooks: {
-    beforeChange: [setPublishedAt],
+    beforeOperation: [enforceWriterArticleWorkflow],
+    beforeChange: [setArticleAuthor, validateArticleHeroImageAccess, setPublishedAt],
     afterChange: [submitPublishedArticle],
     beforeDelete: [rememberDeletedArticle],
     afterDelete: [submitDeletedArticle],
@@ -88,21 +100,18 @@ export const Articles: CollectionConfig = {
       type: "row",
       fields: [
         {
-          name: "authorName",
-          type: "text",
+          name: "author",
+          type: "relationship",
+          relationTo: "users",
           required: true,
-        },
-        {
-          name: "authorRole",
-          type: "select",
-          options: [
-            {label: "Founder", value: "founder"},
-            {label: "Editör", value: "editor"},
-            {label: "Yazar", value: "writer"},
-          ],
-          defaultValue: "writer",
+          defaultValue: ({req}) => req.user?.id ?? "",
+          access: {
+            create: founderFieldAccess,
+            update: founderFieldAccess,
+          },
           admin: {
-            description: "Yazarın görevi",
+            description:
+              "Founder değiştirebilir; diğer kullanıcılar için giriş yapan kullanıcı otomatik atanır.",
           },
         },
         {
@@ -113,39 +122,6 @@ export const Articles: CollectionConfig = {
             date: {
               pickerAppearance: "dayAndTime",
             },
-          },
-        },
-      ],
-    },
-    {
-      type: "row",
-      fields: [
-        {
-          name: "isTrending",
-          type: "checkbox",
-          defaultValue: false,
-        },
-        {
-          name: "trendingOrder",
-          type: "number",
-          min: 0,
-          defaultValue: 0,
-          admin: {
-            condition: (_, siblingData) => Boolean(siblingData?.isTrending),
-          },
-        },
-        {
-          name: "isPopular",
-          type: "checkbox",
-          defaultValue: false,
-        },
-        {
-          name: "popularOrder",
-          type: "number",
-          min: 0,
-          defaultValue: 0,
-          admin: {
-            condition: (_, siblingData) => Boolean(siblingData?.isPopular),
           },
         },
       ],

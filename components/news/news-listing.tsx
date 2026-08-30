@@ -2,6 +2,7 @@ import {SearchIcon} from "lucide-react";
 import {getTranslations} from "next-intl/server";
 
 import {ArticleCard} from "@/components/news/article-card";
+import {NewsFilterDropdown} from "@/components/news/news-filter-dropdown";
 import {Button} from "@/components/ui/button";
 import {
   Empty,
@@ -11,9 +12,13 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty";
-import {Input} from "@/components/ui/input";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
 import {getPathname, Link} from "@/i18n/navigation";
-import type {NewsLocale, NewsSummary} from "@/lib/news/types";
+import type {NewsCategory, NewsLocale, NewsSummary} from "@/lib/news/types";
 
 type QueryState = {q?: string; category?: string; page?: number};
 
@@ -27,6 +32,7 @@ function getListingHref({q, category, page}: QueryState) {
 
 export async function NewsListing({
   articles,
+  categories,
   locale,
   query,
   category,
@@ -34,6 +40,7 @@ export async function NewsListing({
   totalPages,
 }: {
   articles: NewsSummary[];
+  categories: NewsCategory[];
   locale: NewsLocale;
   query?: string;
   category?: string;
@@ -44,26 +51,36 @@ export async function NewsListing({
   const action = await getPathname({href: "/news", locale});
 
   return (
-    <section aria-labelledby="all-news-heading" className="min-w-0">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <h2 id="all-news-heading" className="text-2xl font-bold tracking-tight">
-          {t("listTitle")}
-        </h2>
-        <form role="search" action={action} className="flex w-full max-w-xl gap-2">
-          <div className="relative min-w-0 flex-1">
-            <SearchIcon aria-hidden="true" className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              name="q"
-              type="search"
-              defaultValue={query}
-              aria-label={t("searchLabel")}
-              placeholder={t("searchPlaceholder")}
-              className="h-10 ps-9"
-            />
-          </div>
-          {category ? <input type="hidden" name="category" value={category} /> : null}
-          <Button type="submit" size="lg">{t("searchSubmit")}</Button>
-        </form>
+    <section aria-label={t("title")} className="min-w-0">
+      <div className="flex flex-col gap-4">
+        <div className="flex w-full items-center gap-2">
+          <form
+            role="search"
+            action={action}
+            className="flex min-w-0 flex-1 items-center gap-2"
+          >
+            <InputGroup className="h-9 min-w-0 flex-1 rounded-xl bg-background shadow-none">
+              <InputGroupAddon className="pointer-events-none absolute inset-y-0 start-0 z-10 h-9 !ps-3">
+                <SearchIcon aria-hidden="true" className="size-4" />
+              </InputGroupAddon>
+              <InputGroupInput
+                id="news-search"
+                name="q"
+                type="search"
+                defaultValue={query}
+                aria-label={t("searchLabel")}
+                placeholder={t("searchPlaceholder")}
+                className="h-9 !ps-10 !pe-3 text-sm"
+              />
+            </InputGroup>
+            {category ? <input type="hidden" name="category" value={category} /> : null}
+          </form>
+          <NewsFilterDropdown
+            categories={categories}
+            selectedCategory={category}
+            query={query}
+          />
+        </div>
       </div>
 
       {query || category ? (
@@ -75,13 +92,16 @@ export async function NewsListing({
       ) : null}
 
       {articles.length ? (
-        <div className="mt-6 space-y-5">
+        <div className="mt-8 grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
             <ArticleCard
               key={article.id}
               article={article}
               locale={locale}
-              readingTimeLabel={t("readingTime", {minutes: String(article.readingMinutes)})}
+              variant="list"
+              readingTimeLabel={t("readingTime", {
+                minutes: String(article.readingMinutes),
+              })}
             />
           ))}
         </div>

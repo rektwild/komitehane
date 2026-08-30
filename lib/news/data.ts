@@ -1,12 +1,14 @@
 import "server-only";
 
+import {unstable_cache} from "next/cache";
 import {convertLexicalToPlaintext} from "@payloadcms/richtext-lexical/plaintext";
-import {getPayload, type Where} from "payload";
+import {getPayload, type PopulateType, type Where} from "payload";
 
 import configPromise from "@payload-config";
 import type {Article} from "@/payload-types";
 import type {
   AuthorRole,
+  HomeNewsResult,
   NewsCategory,
   NewsDetail,
   NewsImage,
@@ -15,6 +17,7 @@ import type {
   NewsLocale,
   NewsSitemapEntry,
   NewsSummary,
+  NewsTickerItem,
   NextNewsParams,
   RelatedNewsParams,
   NewsTranslation,
@@ -22,6 +25,23 @@ import type {
 
 const WORDS_PER_MINUTE = 200;
 const PAGE_SIZE = 10;
+const LATEST_PAGE_SIZE = 15;
+const HOME_CATEGORY_LIMIT = 3;
+const TICKER_LIMIT = 8;
+const ASIDE_LINKS_LIMIT = 5;
+
+const newsPopulate = {
+  users: {name: true, role: true},
+  media: {
+    alt: true,
+    filename: true,
+    height: true,
+    sizes: {hero: {height: true, url: true, width: true}},
+    url: true,
+    width: true,
+  },
+  categories: {name: true, slug: true},
+} satisfies PopulateType;
 
 type LocalizedString = Partial<Record<NewsLocale, string | null>>;
 type LocalizedArticle = Omit<Article, "slug"> & {slug?: LocalizedString};
@@ -60,20 +80,32 @@ function normalizeImage(value: Article["heroImage"]): NewsImage | null {
   };
 }
 
-function normalizeAuthorRole(value: Article["authorRole"]): AuthorRole {
+function normalizeAuthorRole(value: unknown): AuthorRole {
   if (value === "founder" || value === "editor" || value === "writer") return value;
   return "writer";
+}
+
+function normalizeAuthor(
+  value: Article["author"],
+): {name: string; role: AuthorRole} | null {
+  if (!value || typeof value === "number" || !value.name) return null;
+
+  return {
+    name: value.name,
+    role: normalizeAuthorRole(value.role),
+  };
 }
 
 function normalizeSummary(article: Article): NewsSummary | null {
   const category = normalizeCategory(article.category);
   const image = normalizeImage(article.heroImage);
+  const author = normalizeAuthor(article.author);
 
   if (
     !article.title ||
     !article.slug ||
     !article.excerpt ||
-    !article.authorName ||
+    !author ||
     !article.publishedAt ||
     !category ||
     !image
@@ -88,8 +120,8 @@ function normalizeSummary(article: Article): NewsSummary | null {
     excerpt: article.excerpt,
     image,
     category,
-    authorName: article.authorName,
-    authorRole: normalizeAuthorRole(article.authorRole),
+    authorName: author.name,
+    authorRole: author.role,
     publishedAt: article.publishedAt,
     createdAt: article.createdAt,
     updatedAt: article.updatedAt,
@@ -102,6 +134,44 @@ function normalizeSummaries(articles: Article[]): NewsSummary[] {
     const normalized = normalizeSummary(article);
     return normalized ? [normalized] : [];
   });
+}
+
+export async function getHomepageNews(
+  locale: NewsLocale,
+): Promise<HomeNewsResult> {
+  const payload = await getPayload({config: configPromise});
+  const result = await payload.find({
+    collection: "articles",
+    locale,
+    depth: 1,
+    pagination: false,
+    populate: newsPopulate,
+    overrideAccess: false,
+    sort: "-publishedAt",
+    where: publicWhere(),
+  });
+  const summaries = normalizeSummaries(result.docs);
+  const sections = new Map<number, HomeNewsResult["sections"][number]>();
+
+  for (const article of summaries) {
+    const existing = sections.get(article.category.id);
+    if (existing) {
+      if (existing.articles.length < HOME_CATEGORY_LIMIT) {
+        existing.articles.push(article);
+      }
+      continue;
+    }
+
+    sections.set(article.category.id, {
+      category: article.category,
+      articles: [article],
+    });
+  }
+
+  return {
+    latest: summaries.slice(0, LATEST_PAGE_SIZE),
+    sections: [...sections.values()],
+  };
 }
 
 function normalizeTranslations(article: LocalizedArticle): NewsTranslation[] {
@@ -157,7 +227,7 @@ export async function getNewsListing({
     });
   }
 
-  const [listing, latest, trending, popular, categoryArticles] =
+  const [listing, latest, categoryArticles] =
     await Promise.all([
       payload.find({
         collection: "articles",
@@ -165,6 +235,7 @@ export async function getNewsListing({
         depth: 1,
         limit: PAGE_SIZE,
         page: safePage,
+        populate: newsPopulate,
         overrideAccess: false,
         sort: "-publishedAt",
         where: {and: filters},
@@ -173,7 +244,8 @@ export async function getNewsListing({
         collection: "articles",
         locale,
         depth: 1,
-        limit: 10,
+        limit: LATEST_PAGE_SIZE,
+        populate: newsPopulate,
         overrideAccess: false,
         sort: "-publishedAt",
         where: base,
@@ -182,25 +254,8 @@ export async function getNewsListing({
         collection: "articles",
         locale,
         depth: 1,
-        limit: 3,
-        overrideAccess: false,
-        sort: ["trendingOrder", "-publishedAt"],
-        where: {and: [base, {isTrending: {equals: true}}]},
-      }),
-      payload.find({
-        collection: "articles",
-        locale,
-        depth: 1,
-        limit: 3,
-        overrideAccess: false,
-        sort: ["popularOrder", "-publishedAt"],
-        where: {and: [base, {isPopular: {equals: true}}]},
-      }),
-      payload.find({
-        collection: "articles",
-        locale,
-        depth: 1,
         pagination: false,
+        populate: newsPopulate,
         overrideAccess: false,
         sort: "-publishedAt",
         where: base,
@@ -216,8 +271,6 @@ export async function getNewsListing({
   return {
     latest: normalizeSummaries(latest.docs),
     articles: normalizeSummaries(listing.docs),
-    trending: normalizeSummaries(trending.docs),
-    popular: normalizeSummaries(popular.docs),
     categories: [...categories.values()].sort((a, b) =>
       a.name.localeCompare(b.name, locale),
     ),
@@ -237,6 +290,7 @@ export async function getNewsArticle(
     locale,
     depth: 1,
     limit: 1,
+    populate: newsPopulate,
     overrideAccess: false,
     where: {and: [publicWhere(), {slug: {equals: slug}}]},
   });
@@ -291,6 +345,7 @@ export async function getRelatedNewsArticles({
       locale,
       depth: 1,
       limit,
+      populate: newsPopulate,
       overrideAccess: false,
       sort: "-publishedAt",
       where: {
@@ -311,6 +366,7 @@ export async function getRelatedNewsArticles({
       locale,
       depth: 1,
       limit,
+      populate: newsPopulate,
       overrideAccess: false,
       sort: "-publishedAt",
       where: {
@@ -339,6 +395,7 @@ export async function getNewsCategories(locale: NewsLocale): Promise<NewsCategor
     locale,
     depth: 1,
     pagination: false,
+    populate: newsPopulate,
     overrideAccess: false,
     sort: "-publishedAt",
     where: base,
@@ -370,6 +427,7 @@ export async function getNextNewsArticle({
     locale,
     depth: 1,
     limit: 1,
+    populate: newsPopulate,
     overrideAccess: false,
     sort: "-publishedAt",
     where: {
@@ -387,6 +445,7 @@ export async function getNextNewsArticle({
     locale,
     depth: 1,
     limit: 1,
+    populate: newsPopulate,
     overrideAccess: false,
     sort: "-publishedAt",
     where: {
@@ -415,4 +474,97 @@ export async function getNewsSitemapEntries(): Promise<NewsSitemapEntry[]> {
       ? [{id: article.id, updatedAt: article.updatedAt, translations}]
       : [];
   });
+}
+
+async function fetchNewsTickerItems(
+  locale: NewsLocale,
+): Promise<NewsTickerItem[]> {
+  try {
+    const payload = await getPayload({config: configPromise});
+    const result = await payload.find({
+      collection: "articles",
+      locale,
+      depth: 0,
+      pagination: false,
+      limit: TICKER_LIMIT,
+      sort: "-publishedAt",
+      overrideAccess: false,
+      where: publicWhere(),
+    });
+
+    const items: NewsTickerItem[] = [];
+    for (const article of result.docs) {
+      if (
+        typeof article.title === "string" &&
+        article.title.trim() &&
+        typeof article.slug === "string" &&
+        article.slug.trim()
+      ) {
+        items.push({title: article.title.trim(), slug: article.slug.trim()});
+      }
+      if (items.length >= TICKER_LIMIT) break;
+    }
+    return items;
+  } catch {
+    return [];
+  }
+}
+
+const getCachedTickerItems = unstable_cache(
+  async (locale: NewsLocale): Promise<NewsTickerItem[]> =>
+    fetchNewsTickerItems(locale),
+  ["news-ticker"],
+  {revalidate: 60, tags: ["news-ticker"]},
+);
+
+export async function getNewsTickerItems(
+  locale: NewsLocale,
+): Promise<NewsTickerItem[]> {
+  return getCachedTickerItems(locale);
+}
+
+async function fetchLatestNewsLinks(
+  locale: NewsLocale,
+): Promise<NewsTickerItem[]> {
+  try {
+    const payload = await getPayload({config: configPromise});
+    const result = await payload.find({
+      collection: "articles",
+      locale,
+      depth: 0,
+      limit: ASIDE_LINKS_LIMIT,
+      sort: "-publishedAt",
+      overrideAccess: false,
+      where: publicWhere(),
+    });
+
+    const items: NewsTickerItem[] = [];
+    for (const article of result.docs) {
+      if (
+        typeof article.title === "string" &&
+        article.title.trim() &&
+        typeof article.slug === "string" &&
+        article.slug.trim()
+      ) {
+        items.push({title: article.title.trim(), slug: article.slug.trim()});
+      }
+      if (items.length >= ASIDE_LINKS_LIMIT) break;
+    }
+    return items;
+  } catch {
+    return [];
+  }
+}
+
+const getCachedLatestNewsLinks = unstable_cache(
+  async (locale: NewsLocale): Promise<NewsTickerItem[]> =>
+    fetchLatestNewsLinks(locale),
+  ["news-latest-links"],
+  {revalidate: 60, tags: ["news-latest-links"]},
+);
+
+export async function getLatestNewsLinks(
+  locale: NewsLocale,
+): Promise<NewsTickerItem[]> {
+  return getCachedLatestNewsLinks(locale);
 }

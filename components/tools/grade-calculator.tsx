@@ -16,6 +16,11 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import {
+  StudentContextFields,
+  useStudentContext,
+  type StudentContextValidation,
+} from "@/components/tools/student-context-fields";
+import {
   Field,
   FieldError,
   FieldGroup,
@@ -28,6 +33,7 @@ import {
   InputGroupText,
 } from "@/components/ui/input-group";
 import {Input} from "@/components/ui/input";
+import {Separator} from "@/components/ui/separator";
 import {
   Select,
   SelectContent,
@@ -267,7 +273,10 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
     toolKey === "committeeMinimumFinal" || toolKey === "midtermMinimumFinal";
   const storageKey = getStorageKey(toolKey);
   const storedState = useCalculatorState(storageKey);
+  const studentContext = useStudentContext();
   const {assessmentCount, rows, passingGrade, finalGrade} = storedState;
+  const [studentContextValidation, setStudentContextValidation] =
+    useState<StudentContextValidation>({});
   const [calculation, setCalculation] = useState<CalculationViewState>(() => ({
     storageKey,
     result: null,
@@ -319,9 +328,14 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
   const getIssueMessage = (issue: ValidationIssue | undefined) =>
     issue ? getValidationMessage(issue.code, t) : undefined;
 
-  function clearCalculation() {
+  const clearCalculation = useCallback(() => {
     setCalculation({storageKey, result: null, issues: []});
-  }
+  }, [storageKey]);
+
+  const handleStudentContextChange = useCallback(() => {
+    clearCalculation();
+    setStudentContextValidation({});
+  }, [clearCalculation]);
 
   function updateRow(
     rowIndex: number,
@@ -358,6 +372,23 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    const hasUniversity = studentContext.university !== "";
+    const hasDepartment = studentContext.department.trim() !== "";
+    const hasClassYear = studentContext.classYear !== "";
+    const missingStudentContext =
+      hasUniversity && (!hasDepartment || !hasClassYear);
+
+    if (missingStudentContext) {
+      clearCalculation();
+      setStudentContextValidation({
+        department: !hasDepartment,
+        classYear: hasDepartment && !hasClassYear,
+      });
+      return;
+    }
+
+    setStudentContextValidation({});
+
     const nextResult = isMinimumFinal
       ? calculateMinimumFinal(visibleRows, passingGrade)
       : calculateCourseGrade(visibleRows, finalGrade);
@@ -386,16 +417,23 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
 
     if (result.status === "ALREADY_PASSING") {
       return (
-        <p>
-          {t("resultAlreadyPassing", {value: formatNumber(result.value)})}
-        </p>
+        <div className="space-y-2">
+          <p className="text-3xl font-bold tabular-nums sm:text-5xl">
+            {formatNumber(result.value)}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            {t("resultAlreadyPassing")}
+          </p>
+        </div>
       );
     }
 
     if (result.status === "IMPOSSIBLE") {
       return (
         <div className="space-y-2">
-          <p>{t("resultImpossible", {value: formatNumber(result.value)})}</p>
+          <p className="text-3xl font-bold tabular-nums sm:text-5xl">
+            {formatNumber(result.value)}
+          </p>
           <p className="text-sm text-muted-foreground">
             {t("resultImpossibleDescription")}
           </p>
@@ -403,12 +441,58 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
       );
     }
 
-    return isMinimumFinal ? (
-      <p>{t("resultRequired", {value: formatNumber(result.value)})}</p>
-    ) : (
-      <p>{t("resultCalculated", {value: formatNumber(result.value)})}</p>
+    return (
+      <p className="text-3xl font-bold tabular-nums sm:text-5xl">
+        {formatNumber(result.value)}
+      </p>
     );
   }
+
+  const assessmentCountField = (
+    <Field data-invalid={Boolean(assessmentCountIssue)}>
+      <FieldLabel htmlFor={`calculator-${toolKey}-count`}>
+        {t("assessmentCount")}
+      </FieldLabel>
+      <Select
+        value={String(assessmentCount)}
+        onValueChange={handleAssessmentCountChange}
+      >
+        <SelectTrigger
+          id={`calculator-${toolKey}-count`}
+          className="w-full"
+          aria-invalid={Boolean(assessmentCountIssue)}
+          aria-describedby={
+            assessmentCountIssue
+              ? `calculator-${toolKey}-count-error`
+              : undefined
+          }
+        >
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            {Array.from(
+              {length: MAX_ASSESSMENT_COUNT},
+              (_, index) => {
+                const value = String(index + 1);
+
+                return (
+                  <SelectItem key={value} value={value}>
+                    {value}
+                  </SelectItem>
+                );
+              },
+            )}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+      <FieldError
+        id={`calculator-${toolKey}-count-error`}
+      >
+        {getIssueMessage(assessmentCountIssue)}
+      </FieldError>
+    </Field>
+  );
 
   return (
     <>
@@ -426,82 +510,53 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
           <Card className="w-full">
             <CardContent>
               <FieldGroup>
-                {isMinimumFinal ? (
-                  <Field data-invalid={Boolean(passingGradeIssue)}>
-                    <FieldLabel htmlFor={`calculator-${toolKey}-passing-grade`}>
-                      {t("passingGrade")}
-                    </FieldLabel>
-                    <Input
-                      id={`calculator-${toolKey}-passing-grade`}
-                      name="passing-grade"
-                      type="text"
-                      inputMode="decimal"
-                      value={passingGrade}
-                      aria-invalid={Boolean(passingGradeIssue)}
-                      aria-describedby={
-                        passingGradeIssue
-                          ? `calculator-${toolKey}-passing-grade-error`
-                          : undefined
-                      }
-                      onChange={(event) => {
-                        clearCalculation();
-                        updateStoredState(storageKey, (currentState) => ({
-                          ...currentState,
-                          passingGrade: event.target.value,
-                        }));
-                      }}
-                    />
-                    <FieldError
-                      id={`calculator-${toolKey}-passing-grade-error`}
-                    >
-                      {getIssueMessage(passingGradeIssue)}
-                    </FieldError>
-                  </Field>
+                <StudentContextFields
+                  onContextChange={handleStudentContextChange}
+                  validation={studentContextValidation}
+                />
+                {studentContext.university !== "" &&
+                studentContext.department.trim() !== "" ? (
+                  <Separator />
                 ) : null}
-
-                <Field data-invalid={Boolean(assessmentCountIssue)}>
-                  <FieldLabel htmlFor={`calculator-${toolKey}-count`}>
-                    {t("assessmentCount")}
-                  </FieldLabel>
-                  <Select
-                    value={String(assessmentCount)}
-                    onValueChange={handleAssessmentCountChange}
-                  >
-                    <SelectTrigger
-                      id={`calculator-${toolKey}-count`}
-                      className="w-full"
-                      aria-invalid={Boolean(assessmentCountIssue)}
-                      aria-describedby={
-                        assessmentCountIssue
-                          ? `calculator-${toolKey}-count-error`
-                          : undefined
-                      }
-                    >
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectGroup>
-                        {Array.from(
-                          {length: MAX_ASSESSMENT_COUNT},
-                          (_, index) => {
-                            const value = String(index + 1);
-
-                            return (
-                              <SelectItem key={value} value={value}>
-                                {value}
-                              </SelectItem>
-                            );
-                          },
-                        )}
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
-                  <FieldError
-                    id={`calculator-${toolKey}-count-error`}
-                  >
-                    {getIssueMessage(assessmentCountIssue)}
-                  </FieldError>
-                </Field>
+                {isMinimumFinal ? (
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <Field data-invalid={Boolean(passingGradeIssue)}>
+                      <FieldLabel
+                        htmlFor={`calculator-${toolKey}-passing-grade`}
+                      >
+                        {t("passingGrade")}
+                      </FieldLabel>
+                      <Input
+                        id={`calculator-${toolKey}-passing-grade`}
+                        name="passing-grade"
+                        type="text"
+                        inputMode="decimal"
+                        value={passingGrade}
+                        aria-invalid={Boolean(passingGradeIssue)}
+                        aria-describedby={
+                          passingGradeIssue
+                            ? `calculator-${toolKey}-passing-grade-error`
+                            : undefined
+                        }
+                        onChange={(event) => {
+                          clearCalculation();
+                          updateStoredState(storageKey, (currentState) => ({
+                            ...currentState,
+                            passingGrade: event.target.value,
+                          }));
+                        }}
+                      />
+                      <FieldError
+                        id={`calculator-${toolKey}-passing-grade-error`}
+                      >
+                        {getIssueMessage(passingGradeIssue)}
+                      </FieldError>
+                    </Field>
+                    {assessmentCountField}
+                  </div>
+                ) : (
+                  assessmentCountField
+                )}
 
                 <FieldGroup className="gap-4">
                   {visibleRows.map((row, index) => {

@@ -1,17 +1,35 @@
 import type {CollectionConfig} from "payload";
 
-import {authenticated} from "@/collections/access";
+import {
+  mediaCreate,
+  mediaDelete,
+  mediaRead,
+  mediaUpdate,
+  founderFieldAccess,
+} from "@/collections/access";
+import {
+  rejectWriterMediaImageEdits,
+  setUploadedBy,
+} from "@/collections/media-hooks";
 
 export const Media: CollectionConfig = {
   slug: "media",
   access: {
-    create: authenticated,
-    delete: authenticated,
-    read: () => true,
-    update: authenticated,
+    create: mediaCreate,
+    delete: mediaDelete,
+    read: mediaRead,
+    update: mediaUpdate,
+  },
+  hooks: {
+    beforeChange: [rejectWriterMediaImageEdits, setUploadedBy],
   },
   admin: {
     useAsTitle: "alt",
+    components: {
+      edit: {
+        Upload: "@/components/payload/media-upload",
+      },
+    },
   },
   fields: [
     {
@@ -19,6 +37,21 @@ export const Media: CollectionConfig = {
       type: "text",
       localized: true,
       required: true,
+    },
+    {
+      name: "uploadedBy",
+      type: "relationship",
+      relationTo: "users",
+      required: true,
+      defaultValue: ({req}) => req.user?.id ?? "",
+      access: {
+        create: founderFieldAccess,
+        update: founderFieldAccess,
+      },
+      admin: {
+        description:
+          "Founder değiştirebilir; diğer kullanıcılar için yükleyen kullanıcı otomatik atanır.",
+      },
     },
   ],
   upload: {

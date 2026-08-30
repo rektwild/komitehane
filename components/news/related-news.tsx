@@ -31,7 +31,7 @@ export async function RelatedNews({articles, locale}: RelatedNewsProps) {
         {t("relatedTitle")}
       </h2>
 
-      <div className="mt-6 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {articles.map((article) => {
           const formattedDate = dateFormatter.format(new Date(article.publishedAt));
 
