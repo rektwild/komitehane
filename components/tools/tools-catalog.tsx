@@ -2,8 +2,8 @@
 
 import {useMemo, useState} from "react";
 import {
+  ArrowDownUpIcon,
   ChevronDownIcon,
-  ListFilterIcon,
   SearchIcon,
 } from "lucide-react";
 import {useLocale, useTranslations} from "next-intl";
@@ -135,7 +135,7 @@ export function ToolsCatalog({
               />
             }
           >
-            <ListFilterIcon aria-hidden="true" data-icon="inline-start" />
+            <ArrowDownUpIcon aria-hidden="true" data-icon="inline-start" />
             <span className="hidden sm:inline">{t("catalog.sort.label")}</span>
             <ChevronDownIcon aria-hidden="true" data-icon="inline-end" />
           </DropdownMenuTrigger>
