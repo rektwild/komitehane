@@ -6,14 +6,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:vercel": "payload migrate && next build",
+    "build:vercel": "node scripts/payload-migrate.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "payload": "payload",
     "payload:types": "payload generate:types",
     "payload:importmap": "payload generate:importmap",
     "payload:migrate:create": "payload migrate:create",
-    "payload:migrate": "payload migrate",
+    "payload:migrate": "node scripts/payload-migrate.mjs",
     "seo:audit": "node scripts/seo-audit.mjs"
   },
   "dependencies": {

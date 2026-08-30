@@ -37,7 +37,8 @@ pnpm kullanılır; npm/yarn çalıştırılmaz.
 - Yönetim paneli `/admin`, REST API `/api`, haberler `/tr/haberler` ve `/en/news` altındadır.
 - `users`, `media`, `categories` ve `articles` koleksiyonları `collections/` altında tanımlıdır.
 - Haberler taslak/sürüm, TR/EN yerelleştirme, Vercel Blob görselleri ve PostgreSQL migration'ları kullanır.
-- Gerekli ortam değişkenleri: `DATABASE_URL`, `PAYLOAD_SECRET`, `BLOB_READ_WRITE_TOKEN`, `NEXT_PUBLIC_MEDIA_HOSTNAME` ve production'da `NEXT_PUBLIC_SITE_URL`.
+- Gerekli ortam değişkenleri: runtime için pooled `DATABASE_URL`, migration için direct `DATABASE_URL_UNPOOLED`, `PAYLOAD_SECRET`, `BLOB_READ_WRITE_TOKEN`, `NEXT_PUBLIC_MEDIA_HOSTNAME` ve production'da `NEXT_PUBLIC_SITE_URL`.
+- Neon kullanırken uygulama trafiği için `DATABASE_URL` (pooler), Payload migration'ları için `DATABASE_URL_UNPOOLED` (direct) tanımlayın. `pnpm payload:migrate` ve `pnpm build:vercel` migration aşamasında direct URL'yi otomatik seçer.
 - İlk kurulumda `pnpm payload:migrate` çalıştırın, `/admin` üzerinden ilk yöneticiyi oluşturun; ardından kategori, medya ve iki dilde haber ekleyin.
 - Preview ve production deployment'larında ayrı PostgreSQL ve Blob kaynakları kullanın.
 
