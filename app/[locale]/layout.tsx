@@ -1,5 +1,7 @@
 import type {Metadata} from "next";
 import {JetBrains_Mono, Wix_Madefor_Text} from "next/font/google";
+import {Analytics} from "@vercel/analytics/next";
+import {SpeedInsights} from "@vercel/speed-insights/next";
 import {NextIntlClientProvider} from "next-intl";
 import {getLocale, getTranslations} from "next-intl/server";
 
@@ -102,6 +104,8 @@ export default async function LocaleLayout({children}: LayoutProps<"/[locale]">)
           <Footer />
           <JsonLd data={getSiteJsonLd(locale)} />
         </NextIntlClientProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
