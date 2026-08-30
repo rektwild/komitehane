@@ -56,17 +56,8 @@ export const Users: CollectionConfig = {
       },
       admin: {
         condition: (data, _siblingData, {user}) =>
-          !isFounderUser(user) || !sameUser(user, data.id),
+          Boolean(user) && (!isFounderUser(user) || !sameUser(user, data.id)),
         description: "Yetki ve herkese açık yazar rolü.",
-      },
-    },
-    {
-      // The auth plugin merges this with Payload's built-in email field. Keeping
-      // the field-level read rule here removes email from anonymous relationships.
-      name: "email",
-      type: "email",
-      access: {
-        read: ({req}) => Boolean(req.user),
       },
     },
   ],

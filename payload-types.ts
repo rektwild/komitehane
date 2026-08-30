@@ -162,6 +162,7 @@ export interface Media {
    * Founder değiştirebilir; diğer kullanıcılar için yükleyen kullanıcı otomatik atanır.
    */
   uploadedBy: number | User;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -354,6 +355,7 @@ export interface UsersSelect<T extends boolean = true> {
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   uploadedBy?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
