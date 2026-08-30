@@ -13,7 +13,8 @@ are represented in the sitemap and structured data.
 - `lib/seo/metadata.ts` creates localized canonical, hreflang, robots, Open
   Graph, and Twitter metadata.
 - `lib/seo/structured-data.ts` creates the connected Organization, WebSite,
-  WebPage, CollectionPage/ItemList, and NewsArticle entity graph.
+  WebPage, CollectionPage/ItemList, NewsArticle, and BreadcrumbList entity
+  graphs.
 - `components/json-ld.tsx` safely serializes JSON-LD for server-rendered HTML.
 - `app/robots.ts` and `app/sitemap.ts` implement the Next.js metadata file
   conventions.
@@ -51,14 +52,14 @@ The routing policy is `localePrefix: "always"`:
 - `/` redirects to the default locale `/tr`
 - News lists: `/tr/haberler`, `/en/news`
 - News details use locale-specific CMS slugs and emit alternates only for
-  translations that actually exist.
+  translations with the localized fields required by the public detail page.
 
 Each localized page canonicalizes to itself. Each page emits reciprocal
 `hreflang` links for the actual translated equivalents and an `x-default` link
-to the default locale page. Query strings are not part of canonical or sitemap
-URLs. Future translated routes must pass the list of locales that actually
-have content to `getLocalizedMetadata()`; do not create alternate links for a
-missing translation.
+to the default locale page when that translation is available. Query strings
+are not part of canonical or sitemap URLs. Future translated routes must pass
+the list of locales that actually have content to `getLocalizedMetadata()`; do
+not create alternate links for a missing or incomplete translation.
 
 The sitemap uses the same URL helpers as metadata, so canonical and sitemap
 URLs cannot drift through independent string concatenation. Only public,
@@ -90,9 +91,12 @@ The site emits a connected graph containing:
   description, and `inLanguage`
 
 News lists add `CollectionPage` and `ItemList`; published details add
-`NewsArticle` with the visible author, dates, and hero image. No credentials,
-reviews, ratings, or business-location data are fabricated. JSON-LD is escaped
-for `<` before insertion to avoid closing-script injection.
+`WebPage`, `NewsArticle`, and `BreadcrumbList` nodes. The page node points to
+the article as its `mainEntity`, while the article points back through
+`mainEntityOfPage`; breadcrumb items mirror the visible localized breadcrumb.
+`NewsArticle` includes the visible author, dates, and hero image. No
+credentials, reviews, ratings, or business-location data are fabricated.
+JSON-LD is escaped for `<` before insertion to avoid closing-script injection.
 
 ## Robots and AI retrieval policy
 
@@ -154,7 +158,8 @@ it on real publish/update/unpublish/delete transitions and skip draft saves. It:
 - logs only response status, never the key
 
 The verification key is served at
-`/indexnow/<INDEXNOW_KEY>`. The utility includes that URL as `keyLocation`.
+`/<INDEXNOW_KEY>.txt` at the root of the host. The utility includes that URL as
+`keyLocation`.
 The hook submits affected localized detail URLs together with both news list
 URLs. Future-dated and draft-only changes are not submitted.
 
@@ -199,7 +204,21 @@ For an indexable-mode audit, start with a production origin configured and run
 the same command with `SEO_AUDIT_EXPECT_INDEXABLE=true`. The audit verifies
 redirects, 200/404 status codes, title, description, canonical, `lang`, one
 H1, reciprocal hreflang, JSON-LD parsing/entity types, robots, sitemap, and
-`llms.txt`.
+`llms.txt`. To validate a published localized article in addition to the
+representative routes, provide its path:
+
+```bash
+SEO_AUDIT_BASE_URL=http://localhost:3000 \
+SEO_AUDIT_EXPECT_INDEXABLE=true \
+SEO_AUDIT_ARTICLE_PATH=/tr/haberler/yayinlanmis-slug \
+pnpm seo:audit
+```
+
+The article audit checks the `WebPage` → `NewsArticle` → `BreadcrumbList`
+links, canonical URL, localized alternates, reciprocal alternate pages, and
+the article entry in the sitemap. If no article path is supplied, detail checks
+are skipped explicitly; this keeps local databases without published content
+auditable.
 
 ## New page checklist
 
@@ -214,6 +233,7 @@ H1, reciprocal hreflang, JSON-LD parsing/entity types, robots, sitemap, and
 - [ ] Provide an appropriate image and localized alt text when sharing benefits.
 - [ ] Decide index/noindex before adding the route to the sitemap.
 - [ ] Add the route to `indexableRoutes` only if it is public and returns 200.
+- [ ] Confirm detail JSON-LD contains linked WebPage, NewsArticle, and visible BreadcrumbList nodes.
 - [ ] Run the SEO audit and inspect generated HTML.
 
 ## New locale checklist

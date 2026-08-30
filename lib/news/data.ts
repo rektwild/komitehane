@@ -1,5 +1,6 @@
 import "server-only";
 
+import {cache} from "react";
 import {unstable_cache} from "next/cache";
 import {convertLexicalToPlaintext} from "@payloadcms/richtext-lexical/plaintext";
 import {getPayload, type PopulateType, type Where} from "payload";
@@ -44,7 +45,11 @@ const newsPopulate = {
 } satisfies PopulateType;
 
 type LocalizedString = Partial<Record<NewsLocale, string | null>>;
-type LocalizedArticle = Omit<Article, "slug"> & {slug?: LocalizedString};
+type LocalizedArticle = Omit<Article, "title" | "slug" | "excerpt"> & {
+  title?: LocalizedString;
+  slug?: LocalizedString;
+  excerpt?: LocalizedString;
+};
 
 function publicWhere(): Where {
   return {
@@ -175,11 +180,30 @@ export async function getHomepageNews(
 }
 
 function normalizeTranslations(article: LocalizedArticle): NewsTranslation[] {
-  if (!article.slug || typeof article.slug === "string") return [];
+  if (
+    !article.title ||
+    typeof article.title === "string" ||
+    !article.slug ||
+    typeof article.slug === "string" ||
+    !article.excerpt ||
+    typeof article.excerpt === "string"
+  ) {
+    return [];
+  }
 
   return (["tr", "en"] as const).flatMap((locale) => {
+    const title = article.title?.[locale];
     const slug = article.slug?.[locale];
-    return typeof slug === "string" && slug ? [{locale, slug}] : [];
+    const excerpt = article.excerpt?.[locale];
+
+    return typeof title === "string" &&
+      title.trim() &&
+      typeof slug === "string" &&
+      slug.trim() &&
+      typeof excerpt === "string" &&
+      excerpt.trim()
+      ? [{locale, slug: slug.trim()}]
+      : [];
   });
 }
 
@@ -280,7 +304,7 @@ export async function getNewsListing({
   };
 }
 
-export async function getNewsArticle(
+export const getNewsArticle = cache(async function getNewsArticle(
   locale: NewsLocale,
   slug: string,
 ): Promise<NewsDetail | null> {
@@ -313,7 +337,7 @@ export async function getNewsArticle(
     content: article.content,
     translations: normalizeTranslations(localized),
   };
-}
+});
 
 export async function getRelatedNewsArticles({
   locale,

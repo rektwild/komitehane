@@ -17,7 +17,7 @@ export type IndexNowResult = {
 
 function getKeyLocation(): string | undefined {
   if (!indexNowKey) return undefined;
-  return `${siteUrl}/indexnow/${encodeURIComponent(indexNowKey)}`;
+  return `${siteUrl}/${encodeURIComponent(indexNowKey)}.txt`;
 }
 
 

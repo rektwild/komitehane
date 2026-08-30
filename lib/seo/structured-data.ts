@@ -25,8 +25,7 @@ type WebSiteJsonLd = {
   publisher: EntityReference;
 };
 
-type WebPageJsonLd = {
-  "@context": "https://schema.org";
+type WebPageNode = {
   "@type": "WebPage";
   "@id": string;
   url: string;
@@ -35,6 +34,51 @@ type WebPageJsonLd = {
   inLanguage: Locale;
   isPartOf: EntityReference;
   publisher: EntityReference;
+  mainEntity?: EntityReference;
+  breadcrumb?: EntityReference;
+};
+
+type WebPageJsonLd = {
+  "@context": "https://schema.org";
+} & WebPageNode;
+
+type BreadcrumbItem = {
+  name: string;
+  url: string;
+};
+
+type NewsArticleJsonLd = {
+  "@context": "https://schema.org";
+  "@graph": Array<WebPageNode | NewsArticleNode | BreadcrumbListNode>;
+};
+
+type NewsArticleNode = {
+  "@type": "NewsArticle";
+  "@id": string;
+  url: string;
+  headline: string;
+  description: string;
+  image: string[];
+  datePublished: string;
+  dateModified: string;
+  inLanguage: Locale;
+  mainEntityOfPage: EntityReference;
+  author: {
+    "@type": "Person";
+    name: string;
+  };
+  publisher: EntityReference;
+};
+
+type BreadcrumbListNode = {
+  "@type": "BreadcrumbList";
+  "@id": string;
+  itemListElement: Array<{
+    "@type": "ListItem";
+    position: number;
+    name: string;
+    item: string;
+  }>;
 };
 
 const organizationId = `${siteUrl}/#organization`;
@@ -84,6 +128,22 @@ export function getWebPageJsonLd({
 }): WebPageJsonLd {
   return {
     "@context": "https://schema.org",
+    ...getWebPageNode({locale, url, name, description}),
+  };
+}
+
+function getWebPageNode({
+  locale,
+  url,
+  name,
+  description,
+}: {
+  locale: Locale;
+  url: string;
+  name: string;
+  description: string;
+}): WebPageNode {
+  return {
     "@type": "WebPage",
     "@id": `${url}#webpage`,
     url,
@@ -140,6 +200,7 @@ export function getNewsArticleJsonLd({
   authorName,
   publishedAt,
   updatedAt,
+  breadcrumbItems,
 }: {
   locale: Locale;
   url: string;
@@ -149,19 +210,51 @@ export function getNewsArticleJsonLd({
   authorName: string;
   publishedAt: string;
   updatedAt: string;
-}) {
+  breadcrumbItems: readonly [BreadcrumbItem, BreadcrumbItem, ...BreadcrumbItem[]];
+}): NewsArticleJsonLd {
+  const webpageId = `${url}#webpage`;
+  const articleId = `${url}#article`;
+  const breadcrumbId = `${url}#breadcrumb`;
+
   return {
     "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "@id": `${url}#article`,
-    headline: title,
-    description,
-    image: [absoluteUrl(image)],
-    datePublished: publishedAt,
-    dateModified: updatedAt,
-    inLanguage: locale,
-    mainEntityOfPage: {"@id": `${url}#webpage`},
-    author: {"@type": "Person", name: authorName},
-    publisher: {"@id": organizationId},
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": webpageId,
+        url,
+        name: title,
+        description,
+        inLanguage: locale,
+        isPartOf: {"@id": websiteId},
+        publisher: {"@id": organizationId},
+        mainEntity: {"@id": articleId},
+        breadcrumb: {"@id": breadcrumbId},
+      },
+      {
+        "@type": "NewsArticle",
+        "@id": articleId,
+        url,
+        headline: title,
+        description,
+        image: [absoluteUrl(image)],
+        datePublished: publishedAt,
+        dateModified: updatedAt,
+        inLanguage: locale,
+        mainEntityOfPage: {"@id": webpageId},
+        author: {"@type": "Person", name: authorName},
+        publisher: {"@id": organizationId},
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": breadcrumbId,
+        itemListElement: breadcrumbItems.map((item, index) => ({
+          "@type": "ListItem" as const,
+          position: index + 1,
+          name: item.name,
+          item: absoluteUrl(item.url),
+        })),
+      },
+    ],
   };
 }

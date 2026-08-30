@@ -82,6 +82,8 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
     href: {pathname: "/news/[slug]", params: {slug: article.slug}},
     locale,
   });
+  const currentUrl = absoluteUrl(currentPath);
+  const newsUrl = absoluteUrl(getPathname({href: "/news", locale}));
   const tocItems = extractNewsToc(article.content);
   const plainText = convertLexicalToPlaintext({ data: article.content });
   const [relatedArticles, categories, nextArticle] = await Promise.all([
@@ -141,13 +143,17 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
         <JsonLd
           data={getNewsArticleJsonLd({
             locale,
-            url: absoluteUrl(currentPath),
+            url: currentUrl,
             title: article.title,
             description: article.excerpt,
             image: article.image.url,
             authorName: article.authorName,
             publishedAt: article.publishedAt,
             updatedAt: article.updatedAt,
+            breadcrumbItems: [
+              {name: t("title"), url: newsUrl},
+              {name: article.title, url: currentUrl},
+            ],
           })}
         />
 
@@ -182,7 +188,7 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
               authorRole={article.authorRole}
               locale={locale}
             />
-            <NewsShareActions title={article.title} url={absoluteUrl(currentPath)} />
+            <NewsShareActions title={article.title} url={currentUrl} />
           </aside>
 
           <div className="order-1 min-w-0 space-y-8 xl:order-2">
@@ -216,7 +222,7 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
               categories={categories}
               selectedCategorySlug={article.category.slug}
               locale={locale}
-              articleUrl={absoluteUrl(currentPath)}
+              articleUrl={currentUrl}
               articleTitle={article.title}
               plainText={plainText}
             />
