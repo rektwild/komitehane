@@ -18,6 +18,7 @@ import type {
   NewsLocale,
   NewsSitemapEntry,
   NewsSummary,
+  NewsTag,
   NewsTickerItem,
   NextNewsParams,
   RelatedNewsParams,
@@ -42,6 +43,7 @@ const newsPopulate = {
     width: true,
   },
   categories: {name: true, slug: true},
+  tags: {name: true, slug: true},
 } satisfies PopulateType;
 
 type LocalizedString = Partial<Record<NewsLocale, string | null>>;
@@ -50,6 +52,7 @@ type LocalizedArticle = Omit<Article, "title" | "slug" | "excerpt"> & {
   slug?: LocalizedString;
   excerpt?: LocalizedString;
 };
+type ArticleTag = NonNullable<Article["tags"]>[number];
 
 function publicWhere(): Where {
   return {
@@ -73,6 +76,24 @@ function normalizeCategory(value: Article["category"]): NewsCategory | null {
   return {id: value.id, name: value.name, slug: value.slug};
 }
 
+function normalizeTag(value: ArticleTag): NewsTag | null {
+  if (!value || typeof value === "number" || !value.name || !value.slug) return null;
+
+  return {id: value.id, name: value.name, slug: value.slug};
+}
+
+function normalizeTags(value: Article["tags"]): NewsTag[] {
+  if (!Array.isArray(value)) return [];
+
+  const tags = new Map<number, NewsTag>();
+  for (const item of value) {
+    const tag = normalizeTag(item);
+    if (tag) tags.set(tag.id, tag);
+  }
+
+  return [...tags.values()];
+}
+
 function normalizeImage(value: Article["heroImage"]): NewsImage | null {
   if (!value || typeof value === "number" || !value.url) return null;
 
@@ -87,6 +108,7 @@ function normalizeImage(value: Article["heroImage"]): NewsImage | null {
 
 function normalizeAuthorRole(value: unknown): AuthorRole {
   if (value === "founder" || value === "editor" || value === "writer") return value;
+  if (value === "automation") return "writer";
   return "writer";
 }
 
@@ -103,6 +125,7 @@ function normalizeAuthor(
 
 function normalizeSummary(article: Article): NewsSummary | null {
   const category = normalizeCategory(article.category);
+  const tags = normalizeTags(article.tags);
   const image = normalizeImage(article.heroImage);
   const author = normalizeAuthor(article.author);
 
@@ -125,6 +148,7 @@ function normalizeSummary(article: Article): NewsSummary | null {
     excerpt: article.excerpt,
     image,
     category,
+    tags,
     authorName: author.name,
     authorRole: author.role,
     publishedAt: article.publishedAt,
@@ -211,6 +235,7 @@ export async function getNewsListing({
   locale,
   query = "",
   category,
+  tag,
   page = 1,
 }: NewsListingParams): Promise<NewsListingResult> {
   const payload = await getPayload({config: configPromise});
@@ -231,14 +256,34 @@ export async function getNewsListing({
     filters.push({category: {equals: selectedCategory?.id ?? -1}});
   }
 
-  if (normalizedQuery) {
-    const matchingCategories = await payload.find({
-      collection: "categories",
+  if (tag) {
+    const tagResult = await payload.find({
+      collection: "tags",
       locale,
-      pagination: false,
+      limit: 1,
       overrideAccess: false,
-      where: {name: {contains: normalizedQuery}},
+      where: {slug: {equals: tag}},
     });
+    filters.push({tags: {in: tagResult.docs.length ? [tagResult.docs[0].id] : [-1]}});
+  }
+
+  if (normalizedQuery) {
+    const [matchingCategories, matchingTags] = await Promise.all([
+      payload.find({
+        collection: "categories",
+        locale,
+        pagination: false,
+        overrideAccess: false,
+        where: {name: {contains: normalizedQuery}},
+      }),
+      payload.find({
+        collection: "tags",
+        locale,
+        pagination: false,
+        overrideAccess: false,
+        where: {name: {contains: normalizedQuery}},
+      }),
+    ]);
 
     filters.push({
       or: [
@@ -246,6 +291,9 @@ export async function getNewsListing({
         {excerpt: {contains: normalizedQuery}},
         ...(matchingCategories.docs.length
           ? [{category: {in: matchingCategories.docs.map((item) => item.id)}}]
+          : []),
+        ...(matchingTags.docs.length
+          ? [{tags: {in: matchingTags.docs.map((item) => item.id)}}]
           : []),
       ],
     });
@@ -287,9 +335,11 @@ export async function getNewsListing({
     ]);
 
   const categories = new Map<number, NewsCategory>();
+  const tags = new Map<number, NewsTag>();
   for (const article of categoryArticles.docs) {
     const normalized = normalizeCategory(article.category);
     if (normalized) categories.set(normalized.id, normalized);
+    for (const tag of normalizeTags(article.tags)) tags.set(tag.id, tag);
   }
 
   return {
@@ -298,6 +348,7 @@ export async function getNewsListing({
     categories: [...categories.values()].sort((a, b) =>
       a.name.localeCompare(b.name, locale),
     ),
+    tags: [...tags.values()].sort((a, b) => a.name.localeCompare(b.name, locale)),
     page: listing.page ?? safePage,
     totalPages: listing.totalPages,
     totalDocs: listing.totalDocs,

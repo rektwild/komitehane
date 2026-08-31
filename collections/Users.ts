@@ -15,7 +15,9 @@ import {reassignLinkedUserRecords, setUserRole} from "@/collections/user-hooks";
 
 export const Users: CollectionConfig = {
   slug: "users",
-  auth: true,
+  auth: {
+    useAPIKey: true,
+  },
   admin: {
     useAsTitle: "name",
   },
@@ -45,6 +47,7 @@ export const Users: CollectionConfig = {
         {label: "Founder", value: "founder"},
         {label: "Editor", value: "editor"},
         {label: "Writer", value: "writer"},
+        {label: "Automation", value: "automation"},
       ],
       filterOptions: ({options}) =>
         options.filter(
@@ -58,6 +61,22 @@ export const Users: CollectionConfig = {
         condition: (data, _siblingData, {user}) =>
           Boolean(user) && (!isFounderUser(user) || !sameUser(user, data.id)),
         description: "Yetki ve herkese açık yazar rolü.",
+      },
+    },
+    {
+      name: "enableAPIKey",
+      type: "checkbox",
+      access: {
+        read: ({req: {user}}) => isFounderUser(user),
+        update: ({req: {user}}) => isFounderUser(user),
+      },
+    },
+    {
+      name: "apiKey",
+      type: "text",
+      access: {
+        read: ({req: {user}}) => isFounderUser(user),
+        update: ({req: {user}}) => isFounderUser(user),
       },
     },
   ],

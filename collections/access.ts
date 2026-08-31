@@ -2,7 +2,7 @@ import type {Access, FieldAccess, PayloadRequest, Where} from "payload";
 
 import {relationshipId} from "@/collections/relationship";
 
-export const userRoles = ["founder", "editor", "writer"] as const;
+export const userRoles = ["founder", "editor", "writer", "automation"] as const;
 export type UserRole = (typeof userRoles)[number];
 
 type RoleBearingUser = {
@@ -31,6 +31,14 @@ export function isWriterUser(user: unknown): boolean {
   return getRole(user) === "writer";
 }
 
+export function isAutomationUser(user: unknown): boolean {
+  return getRole(user) === "automation";
+}
+
+export function isWriterLikeUser(user: unknown): boolean {
+  return isWriterUser(user) || isAutomationUser(user);
+}
+
 export function isEditorialUser(user: unknown): boolean {
   return isFounderUser(user) || isEditorUser(user);
 }
@@ -46,7 +54,7 @@ export function ownerWhere(field: string, id: number | string): Where {
 export const authenticated: Access = ({req: {user}}) => Boolean(user);
 
 export const authenticatedAdmin = ({req: {user}}: Parameters<Access>[0]) =>
-  Boolean(user);
+  Boolean(user && !isAutomationUser(user));
 
 export function publishedWhere(): Where {
   return {
@@ -65,7 +73,7 @@ export const publishedOrAuthenticated: Access = ({req: {user}}) => {
 export const articleRead: Access = ({req: {user}}) => {
   if (!user) return publishedWhere();
   if (isEditorialUser(user)) return true;
-  if (isWriterUser(user)) return ownerWhere("author", user.id);
+  if (isWriterLikeUser(user)) return ownerWhere("author", user.id);
   return false;
 };
 
@@ -74,13 +82,14 @@ export const articleCreate: Access = authenticated;
 export const articleUpdate: Access = ({req: {user}}) => {
   if (!user) return false;
   if (isEditorialUser(user)) return true;
-  if (isWriterUser(user)) return ownerWhere("author", user.id);
+  if (isWriterLikeUser(user)) return ownerWhere("author", user.id);
   return false;
 };
 
 export const articleDelete: Access = ({req: {user}}) => {
   if (!user) return false;
   if (isEditorialUser(user)) return true;
+  if (isAutomationUser(user)) return false;
   if (isWriterUser(user)) {
     return {
       and: [
@@ -95,7 +104,7 @@ export const articleDelete: Access = ({req: {user}}) => {
 export const articleReadVersions: Access = ({req: {user}}) => {
   if (!user) return false;
   if (isEditorialUser(user)) return true;
-  if (isWriterUser(user)) {
+  if (isWriterLikeUser(user)) {
     // Version access queries the generated `version` group directly.
     return ownerWhere("version.author", user.id);
   }
@@ -104,6 +113,7 @@ export const articleReadVersions: Access = ({req: {user}}) => {
 
 export const mediaRead: Access = ({req: {user}}) => {
   if (!user || isEditorialUser(user) || isWriterUser(user)) return true;
+  if (isAutomationUser(user)) return ownerWhere("uploadedBy", user.id);
   return false;
 };
 
@@ -133,16 +143,34 @@ export const mediaUpdate: Access = async ({id, req}) => {
   const {user} = req;
   if (!user) return false;
   if (isEditorialUser(user)) return true;
-  if (isWriterUser(user)) {
+  if (isWriterLikeUser(user)) {
     if (id !== undefined) return ownsMedia({id, req, user});
     return ownerWhere("uploadedBy", user.id);
   }
   return false;
 };
 
-export const mediaDelete: Access = mediaUpdate;
+export const mediaDelete: Access = async (args) => {
+  if (isAutomationUser(args.req.user)) return false;
+  return mediaUpdate(args);
+};
 
 export const categoryWrite: Access = ({req: {user}}) =>
+  Boolean(user && isEditorialUser(user));
+
+export const tagRead: Access = () => true;
+
+export const tagCreate: Access = ({req: {user}}) =>
+  Boolean(user && (isEditorialUser(user) || isAutomationUser(user)));
+
+export const tagUpdate: Access = ({req: {user}}) => {
+  if (!user) return false;
+  if (isEditorialUser(user)) return true;
+  if (isAutomationUser(user)) return ownerWhere("createdBy", user.id);
+  return false;
+};
+
+export const tagDelete: Access = ({req: {user}}) =>
   Boolean(user && isEditorialUser(user));
 
 // Names and roles are intentionally public so depth-1 article relationships can

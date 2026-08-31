@@ -9,6 +9,7 @@ import sharp from "sharp";
 import {Articles} from "@/collections/Articles";
 import {Categories} from "@/collections/Categories";
 import {Media} from "@/collections/Media";
+import {Tags} from "@/collections/Tags";
 import {Users} from "@/collections/Users";
 
 const filename = fileURLToPath(import.meta.url);
@@ -67,7 +68,7 @@ export default buildConfig({
       baseDir: dirname,
     },
   },
-  collections: [Users, Media, Categories, Articles],
+  collections: [Users, Media, Categories, Tags, Articles],
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URL || "",

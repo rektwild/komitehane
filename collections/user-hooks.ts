@@ -51,7 +51,10 @@ export const setUserRole: CollectionBeforeChangeHook = async ({
     throw new APIError("Only the first account can be Founder.", 403);
   }
 
-  if (isFounderUser(req.user) && (data.role === "editor" || data.role === "writer")) {
+  if (
+    isFounderUser(req.user) &&
+    (data.role === "editor" || data.role === "writer" || data.role === "automation")
+  ) {
     return data;
   }
 
@@ -87,5 +90,13 @@ export const reassignLinkedUserRecords: CollectionBeforeDeleteHook = async ({
     req,
     returning: false,
     where: {uploadedBy: {equals: id}},
+  });
+
+  await req.payload.db.updateMany({
+    collection: "tags",
+    data: {createdBy: founder.id},
+    req,
+    returning: false,
+    where: {createdBy: {equals: id}},
   });
 };

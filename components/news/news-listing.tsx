@@ -20,14 +20,15 @@ import {
 } from "@/components/ui/input-group";
 import {getPathname, Link} from "@/i18n/navigation";
 import {adsenseConfig} from "@/config/adsense";
-import type {NewsCategory, NewsLocale, NewsSummary} from "@/lib/news/types";
+import type {NewsCategory, NewsLocale, NewsSummary, NewsTag} from "@/lib/news/types";
 
-type QueryState = {q?: string; category?: string; page?: number};
+type QueryState = {q?: string; category?: string; tag?: string; page?: number};
 
-function getListingHref({q, category, page}: QueryState) {
+function getListingHref({q, category, tag, page}: QueryState) {
   const query: Record<string, string | number> = {};
   if (q) query.q = q;
   if (category) query.category = category;
+  if (tag) query.tag = tag;
   if (page && page > 1) query.page = page;
   return {pathname: "/news" as const, ...(Object.keys(query).length ? {query} : {})};
 }
@@ -35,17 +36,21 @@ function getListingHref({q, category, page}: QueryState) {
 export async function NewsListing({
   articles,
   categories,
+  tags,
   locale,
   query,
   category,
+  tag,
   page,
   totalPages,
 }: {
   articles: NewsSummary[];
   categories: NewsCategory[];
+  tags: NewsTag[];
   locale: NewsLocale;
   query?: string;
   category?: string;
+  tag?: string;
   page: number;
   totalPages: number;
 }) {
@@ -82,16 +87,19 @@ export async function NewsListing({
               />
             </InputGroup>
             {category ? <input type="hidden" name="category" value={category} /> : null}
+            {tag ? <input type="hidden" name="tag" value={tag} /> : null}
           </form>
           <NewsFilterDropdown
             categories={categories}
+            tags={tags}
             selectedCategory={category}
+            selectedTag={tag}
             query={query}
           />
         </div>
       </div>
 
-      {query || category ? (
+      {query || category || tag ? (
         <div className="mt-3 flex justify-end">
           <Button variant="link" nativeButton={false} render={<Link href="/news" />}>
             {t("clearFilters")}
@@ -156,7 +164,7 @@ export async function NewsListing({
             variant="outline"
             nativeButton={false}
             disabled={page <= 1}
-            render={page > 1 ? <Link href={getListingHref({q: query, category, page: page - 1})} /> : undefined}
+            render={page > 1 ? <Link href={getListingHref({q: query, category, tag, page: page - 1})} /> : undefined}
           >
             {t("previousPage")}
           </Button>
@@ -165,7 +173,7 @@ export async function NewsListing({
             variant="outline"
             nativeButton={false}
             disabled={page >= totalPages}
-            render={page < totalPages ? <Link href={getListingHref({q: query, category, page: page + 1})} /> : undefined}
+            render={page < totalPages ? <Link href={getListingHref({q: query, category, tag, page: page + 1})} /> : undefined}
           >
             {t("nextPage")}
           </Button>

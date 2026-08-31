@@ -7,7 +7,11 @@ import type {
 } from "payload";
 import {APIError} from "payload";
 
-import {isFounderUser, isWriterUser} from "@/collections/access";
+import {
+  isAutomationUser,
+  isFounderUser,
+  isWriterLikeUser,
+} from "@/collections/access";
 import {absoluteUrl} from "@/lib/seo/urls";
 import {relationshipId} from "@/collections/relationship";
 
@@ -18,38 +22,47 @@ type IndexNowContext = {
   deletedArticleSlugs?: LocalizedSlugs;
 };
 
+type BooleanLike = boolean | string;
+
 type ArticleWorkflowArguments = {
   data?: {
     _status?: unknown;
   };
-  draft?: boolean;
-  publishAllLocales?: boolean;
+  draft?: BooleanLike;
+  publishAllLocales?: BooleanLike;
   publishSpecificLocale?: string;
-  unpublishAllLocales?: boolean;
+  unpublishAllLocales?: BooleanLike;
 };
+
+function isTrue(value: unknown): boolean {
+  return value === true || value === "true";
+}
 
 export const enforceWriterArticleWorkflow: CollectionBeforeOperationHook = ({
   args,
   operation,
   req,
 }) => {
-  if (!isWriterUser(req.user)) return args;
+  if (!isWriterLikeUser(req.user)) return args;
   if (operation !== "create" && operation !== "update" && operation !== "restoreVersion") {
     return args;
   }
 
   const workflow = args as ArticleWorkflowArguments;
   const status = workflow.data?._status;
+  const isDraftRequest = isTrue(workflow.draft);
   const isPublishing =
-    workflow.draft !== true ||
-    workflow.publishAllLocales === true ||
+    !isDraftRequest ||
+    isTrue(workflow.publishAllLocales) ||
     Boolean(workflow.publishSpecificLocale) ||
-    workflow.unpublishAllLocales === true ||
+    isTrue(workflow.unpublishAllLocales) ||
     status === "published";
 
   if (isPublishing) {
     throw new APIError(
-      "Writers can only save their own articles as drafts.",
+      isAutomationUser(req.user)
+        ? "Automation users can only save articles as drafts."
+        : "Writers can only save their own articles as drafts.",
       403,
     );
   }
@@ -86,7 +99,7 @@ export const validateArticleHeroImageAccess: CollectionBeforeChangeHook = async 
   originalDoc,
   req,
 }) => {
-  if (!isWriterUser(req.user)) return data;
+  if (!isWriterLikeUser(req.user)) return data;
 
   const heroImageId = relationshipId(data.heroImage ?? originalDoc?.heroImage);
   if (heroImageId === undefined) return data;
@@ -153,7 +166,7 @@ export const submitPublishedArticle: CollectionAfterChangeHook = async ({
   previousDoc,
   req,
 }) => {
-  const isDraftSave = req.query?.draft === true || req.query?.draft === "true";
+  const isDraftSave = isTrue(req.query?.draft);
   if (isDraftSave) {
     return doc;
   }

@@ -3,6 +3,7 @@ import * as migration_20260826_112500_author_role_ownership_model from './202608
 import * as migration_20260826_145000_single_founder_role from './20260826_145000_single_founder_role';
 import * as migration_20260830_100915_r2_media_prefix from './20260830_100915_r2_media_prefix';
 import * as migration_20260830_112053_normalize_user_roles from './20260830_112053_normalize_user_roles';
+import * as migration_20260831_170545_add_blog_ingestion_and_tags from './20260831_170545_add_blog_ingestion_and_tags';
 
 export const migrations = [
   {
@@ -28,6 +29,11 @@ export const migrations = [
   {
     up: migration_20260830_112053_normalize_user_roles.up,
     down: migration_20260830_112053_normalize_user_roles.down,
-    name: '20260830_112053_normalize_user_roles'
+    name: '20260830_112053_normalize_user_roles',
+  },
+  {
+    up: migration_20260831_170545_add_blog_ingestion_and_tags.up,
+    down: migration_20260831_170545_add_blog_ingestion_and_tags.down,
+    name: '20260831_170545_add_blog_ingestion_and_tags'
   },
 ];

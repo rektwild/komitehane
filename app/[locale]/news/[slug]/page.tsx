@@ -102,12 +102,6 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
     }),
   ]);
 
-  // REUI blog-6 "TOPICS" row: show current category + up to 2 other categories (max 3)
-  const topics = [
-    article.category,
-    ...categories.filter((c) => c.slug !== article.category.slug).slice(0, 2),
-  ].slice(0, 3);
-
   let headingCursor = 0;
   const richTextConverters = ({
     defaultConverters,
@@ -213,7 +207,11 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
 
             <AdPlacement placement="ARTICLE_MIDDLE" />
 
-            <NewsTopics topics={topics} label={t("topics")} />
+            <NewsTopics
+              category={article.category}
+              tags={article.tags}
+              label={t("topics")}
+            />
 
             <AdPlacement placement="ARTICLE_BOTTOM" />
 

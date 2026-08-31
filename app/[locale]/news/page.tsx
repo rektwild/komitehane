@@ -24,7 +24,12 @@ function firstValue(value: string | string[] | undefined): string | undefined {
 
 export async function generateMetadata({searchParams}: NewsPageProps): Promise<Metadata> {
   const values = await searchParams;
-  const filtered = Boolean(firstValue(values.q) || firstValue(values.category) || firstValue(values.page));
+  const filtered = Boolean(
+    firstValue(values.q) ||
+      firstValue(values.category) ||
+      firstValue(values.tag) ||
+      firstValue(values.page),
+  );
   const t = await getTranslations("Metadata.news");
   const metadata = await getLocalizedMetadata("/news", {
     title: t("title"),
@@ -54,8 +59,9 @@ export default async function NewsPage({params, searchParams}: NewsPageProps) {
   ]);
   const query = firstValue(values.q)?.trim() || undefined;
   const category = firstValue(values.category)?.trim() || undefined;
+  const tag = firstValue(values.tag)?.trim() || undefined;
   const parsedPage = Number.parseInt(firstValue(values.page) || "1", 10);
-  const result = await getNewsListing({locale, query, category, page: parsedPage});
+  const result = await getNewsListing({locale, query, category, tag, page: parsedPage});
   const pagePath = await getPathname({href: "/news", locale});
   const pageUrl = absoluteUrl(pagePath);
 
@@ -96,9 +102,11 @@ export default async function NewsPage({params, searchParams}: NewsPageProps) {
             <NewsListing
               articles={result.articles}
               categories={result.categories}
+              tags={result.tags}
               locale={locale}
               query={query}
               category={category}
+              tag={tag}
               page={result.page}
               totalPages={result.totalPages}
             />

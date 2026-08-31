@@ -15,6 +15,12 @@ export type NewsCategory = {
   slug: string;
 };
 
+export type NewsTag = {
+  id: number;
+  name: string;
+  slug: string;
+};
+
 export type AuthorRole = "founder" | "editor" | "writer";
 
 export type NewsSummary = {
@@ -24,6 +30,7 @@ export type NewsSummary = {
   excerpt: string;
   image: NewsImage;
   category: NewsCategory;
+  tags: NewsTag[];
   authorName: string;
   authorRole: AuthorRole;
   publishedAt: string;
@@ -56,6 +63,7 @@ export type NewsListingResult = {
   latest: NewsSummary[];
   articles: NewsSummary[];
   categories: NewsCategory[];
+  tags: NewsTag[];
   page: number;
   totalPages: number;
   totalDocs: number;
@@ -65,6 +73,7 @@ export type NewsListingParams = {
   locale: NewsLocale;
   query?: string;
   category?: string;
+  tag?: string;
   page?: number;
 };
 

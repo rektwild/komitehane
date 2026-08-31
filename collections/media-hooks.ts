@@ -1,6 +1,6 @@
 import {APIError, type CollectionBeforeChangeHook} from "payload";
 
-import {isFounderUser, isWriterUser} from "@/collections/access";
+import {isFounderUser, isWriterLikeUser} from "@/collections/access";
 import {relationshipId} from "@/collections/relationship";
 
 const imageEditKeys = [
@@ -50,7 +50,7 @@ export const rejectWriterMediaImageEdits: CollectionBeforeChangeHook = ({
   originalDoc,
   req,
 }) => {
-  if (!isWriterUser(req.user) || operation !== "update") return data;
+  if (!isWriterLikeUser(req.user) || operation !== "update") return data;
 
   const incomingData = isRecord(data) ? data : {};
   const originalData = isRecord(originalDoc) ? originalDoc : {};

@@ -25,7 +25,7 @@ export const siteUrl = normalizeOrigin(configuredSiteUrl || fallbackSiteUrl);
 const deploymentEnvironment =
   process.env.VERCEL_ENV || process.env.DEPLOYMENT_ENV || process.env.NODE_ENV;
 
-export const isPreviewEnvironment = ["preview", "staging"].includes(
+export const isPreviewEnvironment = ["development", "preview", "staging"].includes(
   deploymentEnvironment || ""
 );
 
@@ -70,4 +70,3 @@ export const indexNowKey = process.env.INDEXNOW_KEY?.trim();
 
 export const indexNowEndpoint =
   process.env.INDEXNOW_ENDPOINT?.trim() || "https://api.indexnow.org/indexnow";
-

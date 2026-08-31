@@ -97,6 +97,15 @@ export const Articles: CollectionConfig = {
       ],
     },
     {
+      name: "tags",
+      type: "relationship",
+      relationTo: "tags",
+      hasMany: true,
+      admin: {
+        description: "İçeriği sınıflandırmak için isteğe bağlı etiketler.",
+      },
+    },
+    {
       type: "row",
       fields: [
         {
