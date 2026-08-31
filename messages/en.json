@@ -19,6 +19,11 @@
       "title": "News | Komitehane",
       "description": "Discover the latest news about medical education, TUS, and Komitehane.",
       "imageAlt": "Komitehane news page"
+    },
+    "privacy": {
+      "title": "Privacy Policy | Komitehane",
+      "description": "Learn how Komitehane may use advertising, analytics, cookies, and similar technologies.",
+      "imageAlt": "Komitehane privacy policy"
     }
   },
   "Home": {
@@ -45,6 +50,9 @@
       "title": "Related blogs",
       "empty": "No posts yet."
     }
+  },
+  "Ads": {
+    "label": "Advertisement"
   },
   "Tools": {
     "title": "Tools",
@@ -342,7 +350,8 @@
       "tools": "Tools",
       "store": "Store",
       "login": "Log in",
-      "signup": "Sign up"
+      "signup": "Sign up",
+      "privacy": "Privacy policy"
     },
     "aiLinksLabel": "Explore AI tools",
     "providers": {
@@ -429,5 +438,47 @@
     "title": "Page not found",
     "description": "The page you're looking for couldn't be found. Check the address or go back to the homepage.",
     "backToHome": "Back to home"
+  },
+  "Privacy": {
+    "title": "Privacy policy",
+    "lastUpdated": "Last updated: August 31, 2026",
+    "intro": "This notice explains how Komitehane may use advertising, analytics, cookies, and similar technologies when you use the site.",
+    "sections": {
+      "adsense": {
+        "title": "Google AdSense advertising",
+        "paragraphOne": "Komitehane may use Google AdSense to display advertising on public pages. Ads may be contextual or personalized depending on your consent, regional requirements, and settings.",
+        "paragraphTwo": "Google and other third-party vendors may serve or measure ads. Their processing is governed by their own policies and by the choices available through the consent and advertising controls described below."
+      },
+      "technologies": {
+        "title": "Cookies and advertising technologies",
+        "paragraphOne": "Ad serving may involve advertising cookies, local storage, web beacons or pixels, IP addresses, device or browser information, and similar identifiers. These technologies can be used to deliver, limit, measure, and personalize advertising and to help detect invalid activity.",
+        "paragraphTwo": "Information involved in ad serving can include page context, approximate technical details, and ad interactions. The exact data and retention depend on the ad request, vendor, consent status, and settings."
+      },
+      "choices": {
+        "title": "Your advertising and privacy choices",
+        "paragraph": "When a Google consent message or privacy control is shown, you can choose whether to consent, manage options, or refuse where those choices are available. You can also review Google's advertising settings:",
+        "browser": "You can control cookies and local storage through your browser. Blocking advertising technologies may change how some site features or advertisements work."
+      },
+      "consent": {
+        "title": "Consent in the EEA, UK, and Switzerland",
+        "paragraphOne": "Google requires publishers serving personalized ads to users in the European Economic Area, the United Kingdom, and Switzerland to use a Google-certified consent management platform (CMP) integrated with the IAB Europe's Transparency and Consent Framework (TCF). Current TCF requirements include version 2.3.",
+        "paragraphTwo": "The site owner must configure Google's CMP through AdSense Privacy & messaging → European regulations, or use another Google-certified CMP. This repository does not create a custom consent banner and the code alone does not establish consent compliance."
+      },
+      "analytics": {
+        "title": "Analytics and performance measurement",
+        "paragraph": "This application currently includes Vercel Analytics and Vercel Speed Insights. These services may process technical, usage, and performance information according to their own documentation and privacy policies."
+      },
+      "localStorage": {
+        "title": "Calculator data",
+        "paragraph": "The interactive grade calculators save entered values in your browser's localStorage so they can be restored on this device. The calculator descriptions state that these grade values are not sent to the server."
+      },
+      "updates": {
+        "title": "Updates to this policy",
+        "paragraph": "This notice may be updated when the site, advertising providers, analytics services, or applicable requirements change. The latest version will be published on this page."
+      }
+    },
+    "links": {
+      "googleAdsSettings": "Google Ads Settings"
+    }
   }
 }

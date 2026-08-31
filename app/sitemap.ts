@@ -7,7 +7,7 @@ import {getAlternateLanguages} from "@/lib/seo/metadata";
 import {getNewsSitemapEntries} from "@/lib/news/data";
 import {absoluteUrl} from "@/lib/seo/urls";
 
-const indexableRoutes = ["/", "/tools", "/news"] as const satisfies (
+const indexableRoutes = ["/", "/tools", "/news", "/privacy"] as const satisfies (
   keyof typeof routing.pathnames
 )[];
 

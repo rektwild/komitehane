@@ -1,6 +1,7 @@
 import {SearchIcon} from "lucide-react";
 import {getTranslations} from "next-intl/server";
 
+import {AdPlacement} from "@/components/ads/ad-placement";
 import {ArticleCard} from "@/components/news/article-card";
 import {NewsFilterDropdown} from "@/components/news/news-filter-dropdown";
 import {Button} from "@/components/ui/button";
@@ -18,6 +19,7 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group";
 import {getPathname, Link} from "@/i18n/navigation";
+import {adsenseConfig} from "@/config/adsense";
 import type {NewsCategory, NewsLocale, NewsSummary} from "@/lib/news/types";
 
 type QueryState = {q?: string; category?: string; page?: number};
@@ -49,6 +51,12 @@ export async function NewsListing({
 }) {
   const t = await getTranslations("NewsPage");
   const action = await getPathname({href: "/news", locale});
+  const shouldRenderInlineAd =
+    adsenseConfig.enabled &&
+    Boolean(adsenseConfig.slots.LISTING_INLINE) &&
+    articles.length > 3;
+  const firstArticles = shouldRenderInlineAd ? articles.slice(0, 3) : articles;
+  const remainingArticles = shouldRenderInlineAd ? articles.slice(3) : [];
 
   return (
     <section aria-label={t("title")} className="min-w-0">
@@ -92,19 +100,41 @@ export async function NewsListing({
       ) : null}
 
       {articles.length ? (
-        <div className="mt-8 grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => (
-            <ArticleCard
-              key={article.id}
-              article={article}
-              locale={locale}
-              variant="list"
-              readingTimeLabel={t("readingTime", {
-                minutes: String(article.readingMinutes),
-              })}
-            />
-          ))}
-        </div>
+        <>
+          <div className="mt-8 grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {firstArticles.map((article) => (
+              <ArticleCard
+                key={article.id}
+                article={article}
+                locale={locale}
+                variant="list"
+                readingTimeLabel={t("readingTime", {
+                  minutes: String(article.readingMinutes),
+                })}
+              />
+            ))}
+          </div>
+
+          {shouldRenderInlineAd ? (
+            <AdPlacement placement="LISTING_INLINE" />
+          ) : null}
+
+          {remainingArticles.length > 0 ? (
+            <div className="mt-4 grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {remainingArticles.map((article) => (
+                <ArticleCard
+                  key={article.id}
+                  article={article}
+                  locale={locale}
+                  variant="list"
+                  readingTimeLabel={t("readingTime", {
+                    minutes: String(article.readingMinutes),
+                  })}
+                />
+              ))}
+            </div>
+          ) : null}
+        </>
       ) : (
         <Empty className="mt-6 min-h-72 border">
           <EmptyHeader>

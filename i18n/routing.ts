@@ -14,6 +14,10 @@ export const routing = defineRouting({
       tr: "/haberler/[slug]",
       en: "/news/[slug]",
     },
+    "/privacy": {
+      tr: "/gizlilik-politikasi",
+      en: "/privacy",
+    },
     "/library": {
       tr: "/kutuphane",
       en: "/library",

@@ -6,6 +6,7 @@ import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
 
 import {JsonLd} from "@/components/json-ld";
+import {AdPlacement} from "@/components/ads/ad-placement";
 import {convertLexicalToPlaintext} from "@payloadcms/richtext-lexical/plaintext";
 
 import {NewsAuthorCard} from "@/components/news/news-author-card";
@@ -205,10 +206,16 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
 
             <NewsPostSummaryAccordion content={article.excerpt} />
 
+            <AdPlacement placement="ARTICLE_TOP" />
+
             {/* @ts-expect-error RichText converters typing is loose enough for custom heading ids */}
             <RichText data={article.content} className="news-rich-text" converters={richTextConverters} />
 
+            <AdPlacement placement="ARTICLE_MIDDLE" />
+
             <NewsTopics topics={topics} label={t("topics")} />
+
+            <AdPlacement placement="ARTICLE_BOTTOM" />
 
             {nextArticle ? (
               <NewsNextPost article={nextArticle} locale={locale} />

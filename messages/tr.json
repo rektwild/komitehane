@@ -19,6 +19,11 @@
       "title": "Haberler | Komitehane",
       "description": "Tıp eğitimi, TUS ve Komitehane hakkındaki güncel haberleri keşfedin.",
       "imageAlt": "Komitehane haberler sayfası"
+    },
+    "privacy": {
+      "title": "Gizlilik Politikası | Komitehane",
+      "description": "Komitehane'nin reklam, analiz, çerez ve benzeri teknolojileri nasıl kullanabileceğini öğrenin.",
+      "imageAlt": "Komitehane gizlilik politikası"
     }
   },
   "Home": {
@@ -45,6 +50,9 @@
       "title": "İlgili bloglar",
       "empty": "Henüz yazı yok."
     }
+  },
+  "Ads": {
+    "label": "Reklam"
   },
   "Tools": {
     "title": "Araçlar",
@@ -342,7 +350,8 @@
       "tools": "Araçlar",
       "store": "Mağaza",
       "login": "Giriş yap",
-      "signup": "Kayıt ol"
+      "signup": "Kayıt ol",
+      "privacy": "Gizlilik politikası"
     },
     "aiLinksLabel": "Yapay zekâ araçlarını keşfet",
     "providers": {
@@ -429,5 +438,47 @@
     "title": "Sayfa bulunamadı",
     "description": "Aradığınız sayfa bulunamadı. Adresi kontrol edin veya ana sayfaya dönün.",
     "backToHome": "Ana sayfaya dön"
+  },
+  "Privacy": {
+    "title": "Gizlilik politikası",
+    "lastUpdated": "Son güncelleme: 31 Ağustos 2026",
+    "intro": "Bu bildirim, siteyi kullandığınızda Komitehane'nin reklam, analiz, çerez ve benzeri teknolojileri nasıl kullanabileceğini açıklar.",
+    "sections": {
+      "adsense": {
+        "title": "Google AdSense reklamları",
+        "paragraphOne": "Komitehane, herkese açık sayfalarda reklam göstermek için Google AdSense kullanabilir. Reklamlar; verdiğiniz izinlere, bölgesel gerekliliklere ve ayarlara bağlı olarak bağlamsal veya kişiselleştirilmiş olabilir.",
+        "paragraphTwo": "Google ve diğer üçüncü taraf sağlayıcılar reklam yayınlayabilir veya reklamları ölçebilir. Bu sağlayıcıların işlemleri kendi politikalarına ve aşağıda açıklanan izin ve reklam kontrolleriyle sunulan tercihlere tabidir."
+      },
+      "technologies": {
+        "title": "Çerezler ve reklam teknolojileri",
+        "paragraphOne": "Reklam sunumu; reklam çerezlerini, localStorage'ı, web işaretçilerini veya pikselleri, IP adreslerini, cihaz ya da tarayıcı bilgilerini ve benzeri tanımlayıcıları içerebilir. Bu teknolojiler reklamları sunmak, sınırlamak, ölçmek ve kişiselleştirmek ve geçersiz etkinlikleri tespit etmeye yardımcı olmak için kullanılabilir.",
+        "paragraphTwo": "Reklam sunumu kapsamında sayfa bağlamı, yaklaşık teknik bilgiler ve reklam etkileşimleri gibi bilgiler işlenebilir. Verilerin türü ve saklama süresi; reklam isteğine, sağlayıcıya, izin durumuna ve ayarlara göre değişir."
+      },
+      "choices": {
+        "title": "Reklam ve gizlilik tercihleriniz",
+        "paragraph": "Bir Google izin mesajı veya gizlilik kontrolü gösterildiğinde, sunulan seçeneklere göre izin verebilir, seçenekleri yönetebilir veya reddedebilirsiniz. Google'ın reklam ayarlarını da inceleyebilirsiniz:",
+        "browser": "Çerezleri ve localStorage'ı tarayıcınız üzerinden kontrol edebilirsiniz. Reklam teknolojilerini engellemek, bazı site özelliklerinin veya reklamların çalışma şeklini değiştirebilir."
+      },
+      "consent": {
+        "title": "AEA, Birleşik Krallık ve İsviçre'de izin",
+        "paragraphOne": "Google; Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'deki kullanıcılara kişiselleştirilmiş reklam sunan yayıncıların, IAB Europe Transparency and Consent Framework (TCF) ile entegre Google sertifikalı bir izin yönetim platformu (CMP) kullanmasını gerektirir. Güncel TCF gereklilikleri 2.3 sürümünü içerir.",
+        "paragraphTwo": "Site sahibi, AdSense Privacy & messaging → European regulations bölümünden Google CMP'yi yapılandırmalı veya başka bir Google sertifikalı CMP kullanmalıdır. Bu depo özel bir izin bildirimi oluşturmaz; tek başına kod, izin gerekliliklerine uyumu kanıtlamaz."
+      },
+      "analytics": {
+        "title": "Analiz ve performans ölçümü",
+        "paragraph": "Bu uygulamada Vercel Analytics ve Vercel Speed Insights kullanılmaktadır. Bu hizmetler, kendi belgelerine ve gizlilik politikalarına göre teknik, kullanım ve performans bilgilerini işleyebilir."
+      },
+      "localStorage": {
+        "title": "Hesaplayıcı verileri",
+        "paragraph": "Etkileşimli not hesaplayıcıları, girilen değerleri bu cihazda geri yükleyebilmek için tarayıcınızdaki localStorage alanına kaydeder. Hesaplayıcı açıklamalarında bu not değerlerinin sunucuya gönderilmediği belirtilir."
+      },
+      "updates": {
+        "title": "Bu politikadaki güncellemeler",
+        "paragraph": "Site, reklam sağlayıcıları, analiz hizmetleri veya geçerli gereklilikler değiştiğinde bu bildirim güncellenebilir. Güncel sürüm bu sayfada yayımlanır."
+      }
+    },
+    "links": {
+      "googleAdsSettings": "Google Reklam Ayarları"
+    }
   }
 }

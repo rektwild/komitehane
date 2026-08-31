@@ -52,6 +52,7 @@ export default async function Footer() {
       links: [
         {href: "/login", label: t("links.login")},
         {href: "/signup", label: t("links.signup")},
+        {href: "/privacy", label: t("links.privacy")},
       ],
     },
   ] as const;

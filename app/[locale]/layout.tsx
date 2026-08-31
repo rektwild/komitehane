@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import {JetBrains_Mono, Wix_Madefor_Text} from "next/font/google";
+import Script from "next/script";
 import {Analytics} from "@vercel/analytics/next";
 import {SpeedInsights} from "@vercel/speed-insights/next";
 import {NextIntlClientProvider} from "next-intl";
@@ -16,6 +17,7 @@ import {
   siteConfig,
   siteUrl,
 } from "@/config/site";
+import {adsenseConfig, adsenseScriptSrc} from "@/config/adsense";
 import {routing} from "@/i18n/routing";
 import {getDirection, getOgLocale} from "@/lib/seo/locales";
 import {getRobotsMetadata} from "@/lib/seo/metadata";
@@ -75,6 +77,9 @@ export async function generateMetadata(): Promise<Metadata> {
       title: t("title.default"),
       description: t("description"),
     },
+    ...(adsenseConfig.clientId
+      ? {other: {"google-adsense-account": adsenseConfig.clientId}}
+      : {}),
     ...(Object.keys(verification).length > 0 ? {verification} : {}),
   };
 }
@@ -92,6 +97,14 @@ export default async function LocaleLayout({children}: LayoutProps<"/[locale]">)
     >
       <head>
         <ThemeInitializerScript locale={locale} />
+        {adsenseConfig.enabled && adsenseScriptSrc ? (
+          <Script
+            id="google-adsense"
+            src={adsenseScriptSrc}
+            strategy="beforeInteractive"
+            crossOrigin="anonymous"
+          />
+        ) : null}
       </head>
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>

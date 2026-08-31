@@ -32,6 +32,24 @@ pnpm kullanılır; npm/yarn çalıştırılmaz.
 - Dizinleme `config/site.ts` içindeki `isIndexableEnvironment` ile denetlenir
 - `pnpm seo:audit` ile doğrulama yapılır
 
+## Google AdSense
+
+AdSense entegrasyonu `config/adsense.ts`, `components/ads/` ve public uygulama layout'u üzerinden merkezi olarak yönetilir. Geçerli bir publisher ID olmadan site kodu, meta etiketi ve manuel reklam birimleri üretilmez.
+
+Production ortamında aşağıdaki değişkenleri tanımlayın:
+
+- `NEXT_PUBLIC_ADSENSE_CLIENT_ID` — AdSense publisher ID'si, `ca-pub-XXXXXXXXXXXXXXXX` biçiminde
+- `NEXT_PUBLIC_ADSENSE_SLOT_ARTICLE_TOP`
+- `NEXT_PUBLIC_ADSENSE_SLOT_ARTICLE_MIDDLE`
+- `NEXT_PUBLIC_ADSENSE_SLOT_ARTICLE_BOTTOM`
+- `NEXT_PUBLIC_ADSENSE_SLOT_LISTING` — manuel responsive Display Ad birimlerinin slot ID'leri
+
+`ca-pub-XXXXXXXXXXXXXXXX` site kodu ve `google-adsense-account` meta etiketi için kullanılır. `ads.txt` ise `ca-` ürün önekini çıkararak `pub-XXXXXXXXXXXXXXXX` biçimini kullanır; `/ads.txt` route'u bu satırı publisher ID'den otomatik üretir.
+
+Development ve test ortamlarında reklamlar varsayılan olarak kapalıdır. Yerelde açıkça test etmek gerekirse yalnızca ayrı bir geliştirme ortamında `NEXT_PUBLIC_ADSENSE_ENABLED=true` ve `NEXT_PUBLIC_ADSENSE_ENABLE_NON_PRODUCTION=true` tanımlayın; otomatik testlerde bu değişkenleri etkinleştirmeyin. Reklam değişkenleri eksikse build ve sayfalar çalışmaya devam eder.
+
+AdSense panelinde production domain'ini ekleyin, responsive Display Ad birimlerini oluşturup slot ID'lerini girin, `ads.txt` durumunu doğrulayın ve `Privacy & messaging → European regulations` altında Google sertifikalı CMP'yi yapılandırın. AEA, Birleşik Krallık ve İsviçre trafiği için güncel IAB TCF v2.3 gereklilikleri panelde ayrıca kontrol edilmelidir. Auto Ads ayarları da yalnızca AdSense panelinden yönetilir.
+
 ## Haberler ve Payload CMS
 
 - Yönetim paneli `/admin`, REST API `/api`, haberler `/tr/haberler` ve `/en/news` altındadır.
