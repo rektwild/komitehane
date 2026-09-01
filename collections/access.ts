@@ -216,8 +216,12 @@ export const roleCreate: FieldAccess = ({req: {user}}) =>
 // a Founder edits another user.
 export const roleUpdate: FieldAccess = ({req: {user}}) => isFounderUser(user);
 
-export const founderFieldAccess: FieldAccess = ({req: {user}}) =>
-  isFounderUser(user);
+// Payload evaluates field-level access before beforeChange hooks. These
+// relationship fields are populated by hooks for authenticated users, so the
+// field must allow the request through before the hook can assign the current
+// user. The hooks still prevent non-Founders from choosing another user.
+export const systemAssignedFieldAccess: FieldAccess = ({req: {user}}) =>
+  Boolean(user);
 
 export const firstUserOrAuthenticated: Access = userCreate;
 

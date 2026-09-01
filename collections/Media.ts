@@ -5,7 +5,7 @@ import {
   mediaDelete,
   mediaRead,
   mediaUpdate,
-  founderFieldAccess,
+  systemAssignedFieldAccess,
 } from "@/collections/access";
 import {
   rejectWriterMediaImageEdits,
@@ -45,8 +45,8 @@ export const Media: CollectionConfig = {
       required: true,
       defaultValue: ({req}) => req.user?.id ?? "",
       access: {
-        create: founderFieldAccess,
-        update: founderFieldAccess,
+        create: systemAssignedFieldAccess,
+        update: systemAssignedFieldAccess,
       },
       admin: {
         description:

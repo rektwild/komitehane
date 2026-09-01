@@ -1,7 +1,7 @@
 import type {CollectionConfig} from "payload";
 
 import {
-  founderFieldAccess,
+  systemAssignedFieldAccess,
   tagCreate,
   tagDelete,
   tagRead,
@@ -50,8 +50,8 @@ export const Tags: CollectionConfig = {
       required: true,
       defaultValue: ({req}) => req.user?.id ?? "",
       access: {
-        create: founderFieldAccess,
-        update: founderFieldAccess,
+        create: systemAssignedFieldAccess,
+        update: systemAssignedFieldAccess,
       },
       admin: {
         description: "Etiketi oluşturan kullanıcı otomatik atanır.",

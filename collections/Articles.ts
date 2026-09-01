@@ -6,7 +6,7 @@ import {
   articleRead,
   articleReadVersions,
   articleUpdate,
-  founderFieldAccess,
+  systemAssignedFieldAccess,
 } from "@/collections/access";
 import {
   enforceWriterArticleWorkflow,
@@ -115,8 +115,8 @@ export const Articles: CollectionConfig = {
           required: true,
           defaultValue: ({req}) => req.user?.id ?? "",
           access: {
-            create: founderFieldAccess,
-            update: founderFieldAccess,
+            create: systemAssignedFieldAccess,
+            update: systemAssignedFieldAccess,
           },
           admin: {
             description:
