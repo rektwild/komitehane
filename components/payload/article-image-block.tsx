@@ -1,10 +1,13 @@
 "use client";
 
-import type {ViewMapBlockComponentProps} from "@payloadcms/richtext-lexical";
+import {BlockCollapsible} from "@payloadcms/richtext-lexical/client";
+import type {LexicalBlockClientProps} from "@payloadcms/richtext-lexical";
+import {useFormFields} from "@payloadcms/ui";
+import type {FC} from "react";
 
 import type {ArticleImageBlockFields} from "@/blocks/article-image";
 
-type ArticleImageBlockAdminProps = ViewMapBlockComponentProps;
+type ArticleImageBlockAdminProps = LexicalBlockClientProps;
 
 function nonEmptyString(value: unknown): string | null {
   return typeof value === "string" && value.trim() ? value.trim() : null;
@@ -16,13 +19,16 @@ function getMediaUrl(value: unknown): string | null {
   return nonEmptyString((value as {url?: unknown}).url);
 }
 
-export function ArticleImageBlockAdmin(props: ArticleImageBlockAdminProps) {
-  if (!props.isEditor) {
-    return null;
-  }
-
-  const {BlockCollapsible} = props.useBlockComponentContext();
-  const fields = props.formData as unknown as ArticleImageBlockFields;
+export const ArticleImageBlockAdmin: FC<ArticleImageBlockAdminProps> = () => {
+  const fields = useFormFields(([formState]) => ({
+    media: formState.media?.value as ArticleImageBlockFields["media"] | undefined,
+    mediaUrl: formState.mediaUrl?.value as ArticleImageBlockFields["mediaUrl"] | undefined,
+    alt: formState.alt?.value as ArticleImageBlockFields["alt"] | undefined,
+    caption: formState.caption?.value as ArticleImageBlockFields["caption"] | undefined,
+    sourcePageUrl: formState.sourcePageUrl?.value as ArticleImageBlockFields["sourcePageUrl"] | undefined,
+    photographerName: formState.photographerName?.value as ArticleImageBlockFields["photographerName"] | undefined,
+    photographerUrl: formState.photographerUrl?.value as ArticleImageBlockFields["photographerUrl"] | undefined,
+  }));
   const mediaUrl = nonEmptyString(fields.mediaUrl) || getMediaUrl(fields.media);
   const alt = nonEmptyString(fields.alt) || "Görsel alt metni henüz eklenmedi";
   const caption = nonEmptyString(fields.caption);
@@ -86,6 +92,6 @@ export function ArticleImageBlockAdmin(props: ArticleImageBlockAdminProps) {
       </div>
     </BlockCollapsible>
   );
-}
+};
 
 export default ArticleImageBlockAdmin;
