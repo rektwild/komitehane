@@ -53,6 +53,36 @@ export const Media: CollectionConfig = {
           "Founder değiştirebilir; diğer kullanıcılar için yükleyen kullanıcı otomatik atanır.",
       },
     },
+    {
+      name: "sourceProvider",
+      type: "select",
+      options: [
+        {label: "Pexels", value: "pexels"},
+      ],
+      admin: {
+        description: "Otomasyonla alınan görselin kaynak sağlayıcısı.",
+      },
+    },
+    {
+      name: "sourcePhotoId",
+      type: "text",
+      index: true,
+      admin: {
+        description: "Sağlayıcının fotoğraf ID'si; idempotent upload kontrolünde kullanılır.",
+      },
+    },
+    {
+      name: "sourcePageUrl",
+      type: "text",
+    },
+    {
+      name: "photographerName",
+      type: "text",
+    },
+    {
+      name: "photographerUrl",
+      type: "text",
+    },
   ],
   upload: {
     crop: true,

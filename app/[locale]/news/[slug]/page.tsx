@@ -9,6 +9,7 @@ import {JsonLd} from "@/components/json-ld";
 import {AdPlacement} from "@/components/ads/ad-placement";
 import {convertLexicalToPlaintext} from "@payloadcms/richtext-lexical/plaintext";
 
+import {ArticleImageBlock} from "@/components/news/article-image-block";
 import {NewsAuthorCard} from "@/components/news/news-author-card";
 import {NewsNextPost} from "@/components/news/news-next-post";
 import {NewsPostSummaryAccordion} from "@/components/news/news-post-summary-accordion";
@@ -29,6 +30,7 @@ import type {NewsLocale} from "@/lib/news/types";
 import {getDynamicLocalizedMetadata} from "@/lib/seo/metadata";
 import {getNewsArticleJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
+import type {ArticleImageBlockFields} from "@/blocks/article-image";
 
 type NewsArticlePageProps = {
   params: Promise<{locale: NewsLocale; slug: string}>;
@@ -109,6 +111,18 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
     defaultConverters: Record<string, unknown>;
   }) => ({
     ...defaultConverters,
+    blocks: {
+      ...((defaultConverters.blocks as Record<string, unknown> | undefined) || {}),
+      articleImage: ({node}: {node: {fields: ArticleImageBlockFields}}) => (
+        <ArticleImageBlock
+          fields={node.fields}
+          fallbackAlt={t("inlineImageFallbackAlt")}
+          creditPrefix={t("imageCreditPrefix")}
+          creditOn={t("imageCreditOn")}
+          sourceLabel={t("pexelsSource")}
+        />
+      ),
+    },
     heading: ({node, nodesToJSX}: {node: {tag: string; children: unknown[]}; nodesToJSX: (args: {nodes: unknown[]}) => unknown}) => {
       const tag = node.tag as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
       const children = nodesToJSX({nodes: node.children}) as React.ReactNode;

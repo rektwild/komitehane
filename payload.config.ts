@@ -1,5 +1,5 @@
 import {postgresAdapter} from "@payloadcms/db-postgres";
-import {lexicalEditor} from "@payloadcms/richtext-lexical";
+import {BlocksFeature, lexicalEditor} from "@payloadcms/richtext-lexical";
 import {s3Storage} from "@payloadcms/storage-s3";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
@@ -11,6 +11,7 @@ import {Categories} from "@/collections/Categories";
 import {Media} from "@/collections/Media";
 import {Tags} from "@/collections/Tags";
 import {Users} from "@/collections/Users";
+import {ArticleImageBlock} from "@/blocks/article-image";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -74,7 +75,12 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URL || "",
     },
   }),
-  editor: lexicalEditor(),
+  editor: lexicalEditor({
+    features: ({defaultFeatures}) => [
+      ...defaultFeatures,
+      BlocksFeature({blocks: [ArticleImageBlock]}),
+    ],
+  }),
   localization: {
     locales: [
       {code: "tr", label: "Türkçe"},

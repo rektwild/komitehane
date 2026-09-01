@@ -1,7 +1,9 @@
 # Payload → n8n haber alımı
 
 Bu akış yalnızca taslak haber oluşturur. Yayınlama ve kapak görseli ekleme
-işlemleri Komitehane admin panelinde yapılır.
+işlemleri Komitehane admin panelinde yapılır. Yazı gövdesindeki anlamlı
+noktalara en fazla üç adet isteğe bağlı `articleImage` bloğu eklenebilir;
+kapak görseli akış tarafından otomatik seçilmez.
 
 ## Ön koşullar
 
@@ -11,6 +13,14 @@ işlemleri Komitehane admin panelinde yapılır.
 - En az bir kategori admin tarafından oluşturulmalıdır. Workflow eksik kategori
   bulursa durur; kategori oluşturmaz.
 - n8n isteklerinde `localhost` yerine `https://komitehane.com` kullanılmalıdır.
+- n8n içinde Pexels için bir `Header Auth` credential oluşturulmalıdır.
+  Header adı `Authorization`, değeri Pexels API key'inin kendisi olmalıdır.
+  API anahtarlarını workflow JSON'una veya repository'ye yazmayın.
+
+Görsel resolver workflow'u `Komitehane - Resolve Blog Images` adıyla oluşturulur.
+Credential'lar kaydedildikten sonra önce resolver'ı, sonra ana workflow'u publish
+edin. Credential'lar yoksa ana workflow görselleri atlayıp yazıyı yine taslak
+olarak kaydeder.
 
 HTTP Request node için kimlik doğrulama başlığı:
 
@@ -150,6 +160,85 @@ if (
 
 return item;
 ```
+
+### Gövde içi görseller
+
+n8n, model çıktısındaki işaretleri görsel sağlayıcılarından çözdükten sonra
+Lexical `articleImage` bloklarına dönüştürür. Görsel seçimi yapılmayan veya
+çözülemeyen bir işaret metinden çıkarılır; bu nedenle görsel API'leri
+ulaşılamadığında taslak metin olarak kaydedilmeye devam eder.
+
+İşaret formatı:
+
+```text
+[[IMAGE:image-1]]
+```
+
+Payload Lexical bloğunun örnek şekli:
+
+```json
+{
+  "type": "block",
+  "version": 2,
+  "fields": {
+    "id": "inline-image-1",
+    "blockType": "articleImage",
+    "provider": "pexels",
+    "media": 42,
+    "mediaUrl": "https://cdn.example.com/media/article-image.jpg",
+    "alt": "Farmakoloji çalışırken kullanılan notlar",
+    "caption": "Konu tekrarını görsel notlarla desteklemek.",
+    "sourcePhotoId": "pexels-photo-id",
+    "sourcePageUrl": "https://www.pexels.com/photo/example/",
+    "photographerName": "Photographer",
+    "photographerUrl": "https://www.pexels.com/@photographer"
+  }
+}
+```
+
+Pexels görselleri Payload Media'ya yüklenir; `media` ilişkisi ve kaynak
+bilgileri saklanır. `sourcePhotoId`, `sourcePageUrl`, `photographerName` ve
+`photographerUrl` alanları doldurulur. Frontend'de görünür fotoğraf kredisi
+gösterilir.
+
+Payload Media upload isteği `multipart/form-data` olmalıdır. Binary dosya
+`file` alanında gönderilir; `alt`, `sourceProvider`, `sourcePhotoId`,
+`sourcePageUrl`, `photographerName` ve `photographerUrl` gibi metadata alanları
+tek tek form alanları olarak değil, JSON-stringified `_payload` alanı içinde
+gönderilmelidir. Türkçe alt metin için upload URL'si `?locale=tr` kullanılır;
+İngilizce alt metin oluşturulan Media kaydına sonrasında `?locale=en` ile
+`PATCH` edilir. Multipart isteğinde `Content-Type` başlığını elle vermeyin;
+n8n boundary bilgisini kendisi eklemelidir.
+
+Resolver aynı Pexels fotoğrafı daha önce Media'ya kaydedilmişse dosya adından
+mevcut kaydı bulup yeniden kullanır; böylece tekrar denemeler `filename`
+benzersizlik hatası üretmez. Tüm görsel slotları tamamlandıktan sonra resolver
+ana workflow'a tek bir aggregate sonuç öğesi döndürür.
+
+n8n görsel çözücü alt akışının girdileri:
+
+```json
+{
+  "imageMode": "auto",
+  "imagePlanTr": [
+    {
+      "id": "image-1",
+      "searchQuery": "medical student pharmacology notes",
+      "alt": "Farmakoloji notlarıyla çalışan tıp öğrencisi",
+      "caption": "Görsel tekrar sürecini destekleyen çalışma notları."
+    }
+  ],
+  "imagePlanEn": [],
+  "articleMarkdown": "...\n[[IMAGE:image-1]]\n...",
+  "englishArticleMarkdown": "...\n[[IMAGE:image-1]]\n..."
+}
+```
+
+Çözücü çıktısında `articleMarkdownWithImages`,
+`englishArticleMarkdownWithImages`, `imageAssets`, `imageCount` ve
+`imageWarnings` alanları bulunur. `imageAssets` içindeki Pexels kaydı Payload
+Media ID'sini ve kaynak kredisi bilgilerini taşır. İçerik gönderilmeden önce
+bu alanlar `articleImage` bloklarına dönüştürülmelidir.
 
 ## Tekrar deneme ve idempotency
 

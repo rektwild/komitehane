@@ -12,6 +12,7 @@ import {
   isFounderUser,
   isWriterLikeUser,
 } from "@/collections/access";
+import type {ArticleImageBlockFields} from "@/blocks/article-image";
 import {absoluteUrl} from "@/lib/seo/urls";
 import {relationshipId} from "@/collections/relationship";
 
@@ -114,6 +115,88 @@ export const validateArticleHeroImageAccess: CollectionBeforeChangeHook = async 
 
   if (!media) {
     throw new APIError("Writers can only use media they are allowed to read.", 403);
+  }
+
+  return data;
+};
+
+const MAX_INLINE_IMAGES = 3;
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function collectInlineImageBlocks(value: unknown): ArticleImageBlockFields[] {
+  if (Array.isArray(value)) return value.flatMap(collectInlineImageBlocks);
+  if (!isRecord(value)) return [];
+
+  const fields = value.fields;
+  const current =
+    value.type === "block" &&
+    isRecord(fields) &&
+    fields.blockType === "articleImage"
+      ? [fields as ArticleImageBlockFields]
+      : [];
+
+  return [...current, ...Object.values(value).flatMap(collectInlineImageBlocks)];
+}
+
+function isHttpsUrl(value: unknown): value is string {
+  if (typeof value !== "string" || !value.trim()) return false;
+
+  try {
+    return new URL(value).protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
+function isAllowedMediaUrl(value: unknown): boolean {
+  if (value == null || value === "") return true;
+  if (!isHttpsUrl(value)) return false;
+
+  const allowedHostname = process.env.NEXT_PUBLIC_MEDIA_HOSTNAME?.trim().toLowerCase();
+  if (!allowedHostname) return true;
+
+  try {
+    return new URL(String(value)).hostname.toLowerCase() === allowedHostname;
+  } catch {
+    return false;
+  }
+}
+
+export const validateArticleInlineImageAccess: CollectionBeforeChangeHook = async ({
+  data,
+  req,
+}) => {
+  if (!isWriterLikeUser(req.user)) return data;
+
+  const blocks = collectInlineImageBlocks(data?.content);
+  if (blocks.length > MAX_INLINE_IMAGES) {
+    throw new APIError(`An article can contain at most ${MAX_INLINE_IMAGES} inline images.`, 422);
+  }
+
+  for (const fields of blocks) {
+    if (fields.provider === "pexels") {
+      const mediaId = relationshipId(fields.media);
+      if (mediaId === undefined || !isAllowedMediaUrl(fields.mediaUrl)) {
+        throw new APIError("Pexels inline images require a valid Payload Media asset.", 422);
+      }
+
+      const media = await req.payload.findByID({
+        collection: "media",
+        depth: 0,
+        id: mediaId,
+        overrideAccess: false,
+        req,
+      });
+      if (!media) {
+        throw new APIError("Writers can only use media they are allowed to read.", 403);
+      }
+      continue;
+    }
+
+    throw new APIError("Inline images must use Pexels Payload Media assets.", 422);
   }
 
   return data;

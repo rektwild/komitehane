@@ -167,6 +167,17 @@ export interface Media {
    * Founder değiştirebilir; diğer kullanıcılar için yükleyen kullanıcı otomatik atanır.
    */
   uploadedBy: number | User;
+  /**
+   * Otomasyonla alınan görselin kaynak sağlayıcısı.
+   */
+  sourceProvider?: 'pexels' | null;
+  /**
+   * Sağlayıcının fotoğraf ID'si; idempotent upload kontrolünde kullanılır.
+   */
+  sourcePhotoId?: string | null;
+  sourcePageUrl?: string | null;
+  photographerName?: string | null;
+  photographerUrl?: string | null;
   prefix?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -386,6 +397,11 @@ export interface UsersSelect<T extends boolean = true> {
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   uploadedBy?: T;
+  sourceProvider?: T;
+  sourcePhotoId?: T;
+  sourcePageUrl?: T;
+  photographerName?: T;
+  photographerUrl?: T;
   prefix?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -511,6 +527,30 @@ export interface CollectionsWidget {
     [k: string]: unknown;
   };
   width: 'full';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ArticleImageBlock".
+ */
+export interface ArticleImageBlock {
+  provider: 'pexels';
+  /**
+   * Pexels görselleri için Payload Media kaydı.
+   */
+  media?: (number | null) | Media;
+  /**
+   * R2 URL snapshot; ilişki populate edilemezse fallback olarak kullanılır.
+   */
+  mediaUrl?: string | null;
+  alt: string;
+  caption?: string | null;
+  sourcePhotoId?: string | null;
+  sourcePageUrl?: string | null;
+  photographerName?: string | null;
+  photographerUrl?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'articleImage';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

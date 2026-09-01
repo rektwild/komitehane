@@ -16,6 +16,7 @@ import {
   submitDeletedArticle,
   submitPublishedArticle,
   validateArticleHeroImageAccess,
+  validateArticleInlineImageAccess,
 } from "@/collections/article-hooks";
 import {normalizeSlug} from "@/collections/slug";
 
@@ -34,7 +35,12 @@ export const Articles: CollectionConfig = {
   },
   hooks: {
     beforeOperation: [enforceWriterArticleWorkflow],
-    beforeChange: [setArticleAuthor, validateArticleHeroImageAccess, setPublishedAt],
+    beforeChange: [
+      setArticleAuthor,
+      validateArticleHeroImageAccess,
+      validateArticleInlineImageAccess,
+      setPublishedAt,
+    ],
     afterChange: [submitPublishedArticle],
     beforeDelete: [rememberDeletedArticle],
     afterDelete: [submitDeletedArticle],

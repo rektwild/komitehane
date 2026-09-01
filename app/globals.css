@@ -136,6 +136,14 @@
   .news-rich-text blockquote {
     @apply rounded-[1.5rem] border border-border/70 bg-card/60 px-5 py-4 text-lg leading-8 text-foreground/80 md:px-6;
   }
+
+  .news-rich-text .article-inline-image {
+    @apply my-10;
+  }
+
+  .news-rich-text .article-inline-image a {
+    @apply font-medium text-muted-foreground;
+  }
 }
 
 @keyframes news-ticker-marquee {

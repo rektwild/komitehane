@@ -4,6 +4,7 @@ import * as migration_20260826_145000_single_founder_role from './20260826_14500
 import * as migration_20260830_100915_r2_media_prefix from './20260830_100915_r2_media_prefix';
 import * as migration_20260830_112053_normalize_user_roles from './20260830_112053_normalize_user_roles';
 import * as migration_20260831_170545_add_blog_ingestion_and_tags from './20260831_170545_add_blog_ingestion_and_tags';
+import * as migration_20260901_164346_add_article_inline_images from './20260901_164346_add_article_inline_images';
 
 export const migrations = [
   {
@@ -34,6 +35,11 @@ export const migrations = [
   {
     up: migration_20260831_170545_add_blog_ingestion_and_tags.up,
     down: migration_20260831_170545_add_blog_ingestion_and_tags.down,
-    name: '20260831_170545_add_blog_ingestion_and_tags'
+    name: '20260831_170545_add_blog_ingestion_and_tags',
+  },
+  {
+    up: migration_20260901_164346_add_article_inline_images.up,
+    down: migration_20260901_164346_add_article_inline_images.down,
+    name: '20260901_164346_add_article_inline_images'
   },
 ];
