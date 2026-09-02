@@ -435,6 +435,7 @@
     "getStarted": "Hemen Başla",
     "copyAsMarkdown": "Markdown olarak kopyala",
     "copiedMarkdown": "Kopyalandı!",
+    "aiPrompt": "Bu yazıyı kısa ve anlaşılır şekilde özetle. Önemli noktaları 3–5 maddeyle belirt.\n\nBaşlık: {title}\nKaynak: {url}",
     "askChatGPT": "ChatGPT'ye sor",
     "askClaude": "Claude'a sor",
     "askGemini": "Gemini'ye sor",

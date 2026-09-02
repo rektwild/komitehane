@@ -69,15 +69,11 @@ export function NewsRightRail({
     }
   };
 
-  const chatGptUrl = `https://chat.openai.com/?prompt=${encodeURIComponent(
-    `Summarize this article: "${articleTitle}"\n${articleUrl}`
-  )}`;
-  const claudeUrl = `https://claude.ai/new?q=${encodeURIComponent(
-    `Summarize this article: "${articleTitle}"\n${articleUrl}`
-  )}`;
-  const geminiUrl = `https://gemini.google.com/app?q=${encodeURIComponent(
-    `Summarize this article: "${articleTitle}"\n${articleUrl}`
-  )}`;
+  const aiPrompt = t("aiPrompt", {title: articleTitle, url: articleUrl});
+  const encodedAiPrompt = encodeURIComponent(aiPrompt);
+  const chatGptUrl = `https://chat.openai.com/?prompt=${encodedAiPrompt}`;
+  const claudeUrl = `https://claude.ai/new?q=${encodedAiPrompt}`;
+  const geminiUrl = `https://gemini.google.com/app?q=${encodedAiPrompt}`;
   const xShareUrl = `https://x.com/intent/tweet?url=${encodeURIComponent(
     articleUrl
   )}&text=${encodeURIComponent(articleTitle)}`;

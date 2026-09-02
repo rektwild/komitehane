@@ -435,6 +435,7 @@
     "getStarted": "Get Started",
     "copyAsMarkdown": "Copy as Markdown",
     "copiedMarkdown": "Copied!",
+    "aiPrompt": "Summarize this article clearly and concisely. Highlight the key points in 3–5 bullets.\n\nTitle: {title}\nSource: {url}",
     "askChatGPT": "Ask ChatGPT",
     "askClaude": "Ask Claude",
     "askGemini": "Ask Gemini",
