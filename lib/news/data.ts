@@ -38,6 +38,7 @@ const newsPopulate = {
     alt: true,
     filename: true,
     height: true,
+    prefix: true,
     photographerName: true,
     photographerUrl: true,
     sizes: {hero: {height: true, url: true, width: true}},
