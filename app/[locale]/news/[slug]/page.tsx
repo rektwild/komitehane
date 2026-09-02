@@ -25,7 +25,12 @@ import {
   getNextNewsArticle,
   getRelatedNewsArticles,
 } from "@/lib/news/data";
-import {extractNewsToc} from "@/lib/news/toc";
+import {
+  extractNewsToc,
+  getNewsHeadingText,
+  getNewsTocHeadingLevel,
+  normalizeNewsHeadingTag,
+} from "@/lib/news/toc";
 import type {NewsLocale} from "@/lib/news/types";
 import {getDynamicLocalizedMetadata} from "@/lib/seo/metadata";
 import {getNewsArticleJsonLd} from "@/lib/seo/structured-data";
@@ -124,17 +129,18 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
       ),
     },
     heading: ({node, nodesToJSX}: {node: {tag: string; children: unknown[]}; nodesToJSX: (args: {nodes: unknown[]}) => unknown}) => {
-      const tag = node.tag as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+      const tag = normalizeNewsHeadingTag(node.tag);
       const children = nodesToJSX({nodes: node.children}) as React.ReactNode;
-      if (tag === "h2" || tag === "h3") {
+      const tocLevel = getNewsTocHeadingLevel(node.tag);
+      if (tocLevel !== null && getNewsHeadingText(node)) {
         const item = tocItems[headingCursor++];
         if (item?.id) {
           const Heading = tag;
           return <Heading id={item.id}>{children as React.ReactNode}</Heading>;
         }
       }
-      const Tag = tag as keyof React.JSX.IntrinsicElements;
-      return <Tag>{children as React.ReactNode}</Tag>;
+      const Heading = tag;
+      return <Heading>{children as React.ReactNode}</Heading>;
     },
   });
 

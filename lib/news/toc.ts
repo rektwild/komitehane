@@ -6,6 +6,27 @@ export type NewsTocItem = {
   level: 2 | 3;
 };
 
+export type NewsRenderedHeadingTag = "h2" | "h3" | "h4" | "h5" | "h6";
+
+/**
+ * Keep the document outline stable on article pages: the article title owns
+ * the page's only h1, so an h1 selected inside Lexical content is rendered as
+ * an h2.
+ */
+export function normalizeNewsHeadingTag(tag: unknown): NewsRenderedHeadingTag {
+  if (tag === "h1") return "h2";
+  if (tag === "h2" || tag === "h3" || tag === "h4" || tag === "h5" || tag === "h6") {
+    return tag;
+  }
+  return "h2";
+}
+
+export function getNewsTocHeadingLevel(tag: unknown): NewsTocItem["level"] | null {
+  if (tag === "h1" || tag === "h2") return 2;
+  if (tag === "h3") return 3;
+  return null;
+}
+
 function slugifyHeading(value: string): string {
   return value
     .toLowerCase()
@@ -25,6 +46,10 @@ function getNodeText(node: unknown): string {
   return "";
 }
 
+export function getNewsHeadingText(node: unknown): string {
+  return getNodeText(node).trim().replace(/\s+/g, " ");
+}
+
 export function extractNewsToc(content: Article["content"]): NewsTocItem[] {
   const root = (content as {root?: {children?: unknown[]}})?.root;
   if (!root || !Array.isArray(root.children)) return [];
@@ -37,8 +62,9 @@ export function extractNewsToc(content: Article["content"]): NewsTocItem[] {
       if (!node || typeof node !== "object") continue;
       const n = node as Record<string, unknown>;
 
-      if (n.type === "heading" && (n.tag === "h2" || n.tag === "h3")) {
-        const text = getNodeText(n).trim().replace(/\s+/g, " ");
+      const level = n.type === "heading" ? getNewsTocHeadingLevel(n.tag) : null;
+      if (level !== null) {
+        const text = getNewsHeadingText(n);
         if (!text) {
           if (Array.isArray(n.children)) walk(n.children as unknown[]);
           continue;
@@ -49,7 +75,7 @@ export function extractNewsToc(content: Article["content"]): NewsTocItem[] {
         items.push({
           id: nextCount === 1 ? base : `${base}-${nextCount}`,
           text,
-          level: n.tag === "h3" ? 3 : 2,
+          level,
         });
       }
 
