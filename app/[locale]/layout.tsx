@@ -6,6 +6,7 @@ import {SpeedInsights} from "@vercel/speed-insights/next";
 import {NextIntlClientProvider} from "next-intl";
 import {getLocale, getTranslations} from "next-intl/server";
 
+import {GoogleAnalytics} from "@/components/google-analytics";
 import {JsonLd} from "@/components/json-ld";
 import Footer from "@/components/footer-2";
 import {SiteHeader} from "@/components/layout/site-header";
@@ -107,6 +108,7 @@ export default async function LocaleLayout({children}: LayoutProps<"/[locale]">)
         ) : null}
       </head>
       <body className="min-h-full flex flex-col">
+        <GoogleAnalytics />
         <NextIntlClientProvider>
           <SiteHeader />
           <main className="flex min-h-0 flex-1 flex-col pb-4 sm:pb-6 lg:pb-8">
