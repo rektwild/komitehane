@@ -171,7 +171,7 @@ function normalizeSummaries(articles: Article[]): NewsSummary[] {
   });
 }
 
-export async function getHomepageNews(
+async function fetchHomepageNews(
   locale: NewsLocale,
 ): Promise<HomeNewsResult> {
   const payload = await getPayload({config: configPromise});
@@ -209,6 +209,18 @@ export async function getHomepageNews(
   };
 }
 
+const getCachedHomepageNews = unstable_cache(
+  async (locale: NewsLocale): Promise<HomeNewsResult> => fetchHomepageNews(locale),
+  ["news-homepage"],
+  {revalidate: 300, tags: ["news-homepage", "news-articles"]},
+);
+
+export async function getHomepageNews(
+  locale: NewsLocale,
+): Promise<HomeNewsResult> {
+  return getCachedHomepageNews(locale);
+}
+
 function normalizeTranslations(article: LocalizedArticle): NewsTranslation[] {
   if (
     !article.title ||
@@ -237,7 +249,7 @@ function normalizeTranslations(article: LocalizedArticle): NewsTranslation[] {
   });
 }
 
-export async function getNewsListing({
+async function fetchNewsListing({
   locale,
   query = "",
   category,
@@ -361,7 +373,29 @@ export async function getNewsListing({
   };
 }
 
-export const getNewsArticle = cache(async function getNewsArticle(
+const getCachedNewsListing = unstable_cache(
+  async (paramsKey: string): Promise<NewsListingResult> => {
+    const params = JSON.parse(paramsKey) as NewsListingParams;
+    return fetchNewsListing(params);
+  },
+  ["news-listing"],
+  {revalidate: 300, tags: ["news-listing", "news-articles"]},
+);
+
+export async function getNewsListing(
+  params: NewsListingParams,
+): Promise<NewsListingResult> {
+  const paramsKey = JSON.stringify({
+    locale: params.locale,
+    query: params.query || "",
+    category: params.category || "",
+    tag: params.tag || "",
+    page: params.page || 1,
+  });
+  return getCachedNewsListing(paramsKey);
+}
+
+async function fetchNewsArticle(
   locale: NewsLocale,
   slug: string,
 ): Promise<NewsDetail | null> {
@@ -394,9 +428,23 @@ export const getNewsArticle = cache(async function getNewsArticle(
     content: article.content,
     translations: normalizeTranslations(localized),
   };
+}
+
+const getCachedNewsArticle = unstable_cache(
+  async (locale: NewsLocale, slug: string): Promise<NewsDetail | null> =>
+    fetchNewsArticle(locale, slug),
+  ["news-article-detail"],
+  {revalidate: 300, tags: ["news-article-detail", "news-articles"]},
+);
+
+export const getNewsArticle = cache(async function getNewsArticle(
+  locale: NewsLocale,
+  slug: string,
+): Promise<NewsDetail | null> {
+  return getCachedNewsArticle(locale, slug);
 });
 
-export async function getRelatedNewsArticles({
+async function fetchRelatedNewsArticles({
   locale,
   slug,
   categorySlug,
@@ -468,7 +516,28 @@ export async function getRelatedNewsArticles({
   return [...related.values()].slice(0, limit);
 }
 
-export async function getNewsCategories(locale: NewsLocale): Promise<NewsCategory[]> {
+const getCachedRelatedNewsArticles = unstable_cache(
+  async (paramsKey: string): Promise<NewsSummary[]> => {
+    const params = JSON.parse(paramsKey) as RelatedNewsParams;
+    return fetchRelatedNewsArticles(params);
+  },
+  ["news-related-articles"],
+  {revalidate: 300, tags: ["news-related-articles", "news-articles"]},
+);
+
+export async function getRelatedNewsArticles(
+  params: RelatedNewsParams,
+): Promise<NewsSummary[]> {
+  const paramsKey = JSON.stringify({
+    locale: params.locale,
+    slug: params.slug,
+    categorySlug: params.categorySlug || "",
+    limit: params.limit || 3,
+  });
+  return getCachedRelatedNewsArticles(paramsKey);
+}
+
+async function fetchNewsCategories(locale: NewsLocale): Promise<NewsCategory[]> {
   const payload = await getPayload({config: configPromise});
   const base = publicWhere();
   const result = await payload.find({
@@ -493,7 +562,18 @@ export async function getNewsCategories(locale: NewsLocale): Promise<NewsCategor
   );
 }
 
-export async function getNextNewsArticle({
+const getCachedNewsCategories = unstable_cache(
+  async (locale: NewsLocale): Promise<NewsCategory[]> =>
+    fetchNewsCategories(locale),
+  ["news-categories"],
+  {revalidate: 300, tags: ["news-categories", "news-articles"]},
+);
+
+export async function getNewsCategories(locale: NewsLocale): Promise<NewsCategory[]> {
+  return getCachedNewsCategories(locale);
+}
+
+async function fetchNextNewsArticle({
   locale,
   slug,
   publishedAt,
@@ -537,7 +617,27 @@ export async function getNextNewsArticle({
   return fallback.docs[0] ? normalizeSummary(fallback.docs[0]) : null;
 }
 
-export async function getNewsSitemapEntries(): Promise<NewsSitemapEntry[]> {
+const getCachedNextNewsArticle = unstable_cache(
+  async (paramsKey: string): Promise<NewsSummary | null> => {
+    const params = JSON.parse(paramsKey) as NextNewsParams;
+    return fetchNextNewsArticle(params);
+  },
+  ["news-next-article"],
+  {revalidate: 300, tags: ["news-next-article", "news-articles"]},
+);
+
+export async function getNextNewsArticle(
+  params: NextNewsParams,
+): Promise<NewsSummary | null> {
+  const paramsKey = JSON.stringify({
+    locale: params.locale,
+    slug: params.slug,
+    publishedAt: params.publishedAt,
+  });
+  return getCachedNextNewsArticle(paramsKey);
+}
+
+async function fetchNewsSitemapEntries(): Promise<NewsSitemapEntry[]> {
   const payload = await getPayload({config: configPromise});
   const result = await payload.find({
     collection: "articles",
@@ -555,6 +655,16 @@ export async function getNewsSitemapEntries(): Promise<NewsSitemapEntry[]> {
       ? [{id: article.id, updatedAt: article.updatedAt, translations}]
       : [];
   });
+}
+
+const getCachedNewsSitemapEntries = unstable_cache(
+  async (): Promise<NewsSitemapEntry[]> => fetchNewsSitemapEntries(),
+  ["news-sitemap-entries"],
+  {revalidate: 600, tags: ["news-sitemap-entries", "news-articles"]},
+);
+
+export async function getNewsSitemapEntries(): Promise<NewsSitemapEntry[]> {
+  return getCachedNewsSitemapEntries();
 }
 
 async function fetchNewsTickerItems(
