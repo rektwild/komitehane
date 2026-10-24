@@ -225,6 +225,14 @@ async function revalidateNewsCaches() {
     const {revalidateTag} = await import("next/cache");
     revalidateTag("news-ticker", "max");
     revalidateTag("news-latest-links", "max");
+    revalidateTag("news-articles", "max");
+    revalidateTag("news-homepage", "max");
+    revalidateTag("news-listing", "max");
+    revalidateTag("news-article-detail", "max");
+    revalidateTag("news-related-articles", "max");
+    revalidateTag("news-categories", "max");
+    revalidateTag("news-next-article", "max");
+    revalidateTag("news-sitemap-entries", "max");
   } catch (error) {
     console.warn(
       `News cache revalidation failed: ${error instanceof Error ? error.message : "unknown error"}`,
