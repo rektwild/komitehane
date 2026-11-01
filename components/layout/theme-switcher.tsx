@@ -23,11 +23,15 @@ function applyTheme(theme: Theme) {
 }
 
 const themeListeners = new Set<() => void>();
+let memoryTheme: Theme = "light";
 
 function getStoredTheme(): Theme {
-  const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
-
-  return isTheme(storedTheme) ? storedTheme : "light";
+  try {
+    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    return isTheme(storedTheme) ? storedTheme : "light";
+  } catch {
+    return memoryTheme;
+  }
 }
 
 function subscribeToTheme(listener: () => void) {
@@ -79,7 +83,12 @@ export function FooterThemeSwitcher() {
   }, [theme]);
 
   function handleThemeChange(nextTheme: Theme) {
-    window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    memoryTheme = nextTheme;
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    } catch {
+      // Keep the preference in memory when storage is unavailable.
+    }
     themeListeners.forEach((listener) => listener());
     applyTheme(nextTheme);
   }
