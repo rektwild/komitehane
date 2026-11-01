@@ -62,6 +62,48 @@ if (hasCompleteR2Environment && r2PublicUrl) {
   }
 }
 
+// Only trust the private PostgreSQL certificate when targeting the Oracle database.
+// Keep the existing Neon connection behavior unchanged until the final cutover.
+const databaseUrl = process.env.DATABASE_URL || "";
+const oracleDatabaseHostname = "blog-db.komitehane.com";
+let oracleDatabaseSsl:
+  | {ca: string; rejectUnauthorized: true; servername: string}
+  | undefined;
+
+if (databaseUrl) {
+  const parsedDatabaseUrl = new URL(databaseUrl);
+
+  if (parsedDatabaseUrl.hostname.toLowerCase() === oracleDatabaseHostname) {
+    // node-postgres discards a separately supplied ssl object if these
+    // connection-string parameters are present.
+    const conflictingSslOptions = ["sslmode", "sslcert", "sslkey", "sslrootcert"];
+    if (conflictingSslOptions.some((option) => parsedDatabaseUrl.searchParams.has(option))) {
+      throw new Error(
+        "Remove sslmode, sslcert, sslkey and sslrootcert from the Oracle DATABASE_URL; TLS is configured in payload.config.ts.",
+      );
+    }
+
+    const encodedCertificate = process.env.POSTGRES_CA_CERT_BASE64?.trim();
+    if (!encodedCertificate) {
+      throw new Error("POSTGRES_CA_CERT_BASE64 is required for the Oracle PostgreSQL connection.");
+    }
+
+    const certificate = Buffer.from(encodedCertificate, "base64").toString("utf8").trim();
+    if (
+      !certificate.startsWith("-----BEGIN CERTIFICATE-----") ||
+      !certificate.endsWith("-----END CERTIFICATE-----")
+    ) {
+      throw new Error("POSTGRES_CA_CERT_BASE64 must contain a Base64-encoded PEM certificate.");
+    }
+
+    oracleDatabaseSsl = {
+      ca: certificate,
+      rejectUnauthorized: true,
+      servername: oracleDatabaseHostname,
+    };
+  }
+}
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -72,7 +114,8 @@ export default buildConfig({
   collections: [Users, Media, Categories, Tags, Articles],
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URL || "",
+      connectionString: databaseUrl,
+      ...(oracleDatabaseSsl ? {ssl: oracleDatabaseSsl} : {}),
     },
   }),
   editor: lexicalEditor({
