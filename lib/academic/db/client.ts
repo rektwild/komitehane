@@ -15,6 +15,7 @@ export function academicPool(): Pool | null {
   if (!url || !ca || !academicYear()) return null;
   if (pool) return pool;
   const parsed = new URL(url);
+  if (decodeURIComponent(parsed.pathname.slice(1)) !== "komitehane_academic") throw new Error("ACADEMIC_DATABASE_NAME_INVALID");
   // Connection-string SSL parameters override node-postgres' ssl object.
   if (["sslmode","sslcert","sslkey","sslrootcert","ssl"].some(key => parsed.searchParams.has(key))) throw new Error("ACADEMIC_INVALID_TLS_CONFIGURATION");
   const certificate = Buffer.from(ca, "base64").toString("utf8");

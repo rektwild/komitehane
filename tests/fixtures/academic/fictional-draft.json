@@ -1,0 +1,13 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-000000000007",
+    "schemeId": "00000000-0000-4000-8000-000000000006",
+    "versionNumber": 1,
+    "passingGrade": "60.00",
+    "components": [
+      {"type": "COMMITTEE", "position": 1, "weightPercent": "40.00"},
+      {"type": "FINAL", "position": 1, "weightPercent": "60.00"}
+    ],
+    "sources": [{"url": "https://fictional.test/document", "type": "TEST", "verifiedAt": "2026-01-01T00:00:00Z"}]
+  }
+]

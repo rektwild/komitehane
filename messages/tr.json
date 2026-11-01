@@ -1,4 +1,5 @@
 {
+  "Academic": {"select": "Seçiniz", "university": "Üniversite", "faculty": "Fakülte", "program": "Program", "class": "Sınıf", "period": "Dönem", "annual": "Yıllık", "fall": "Güz", "spring": "Bahar", "course": "Ders", "source": "Resmi kaynak", "unavailable": "Akademik veri kullanılamıyor; manuel hesaplamaya devam edebilirsiniz.", "manual": "Doğrulanmış resmi kural seçilmedi. Oranları manuel girebilirsiniz.", "verified": "Doğrulanmış {year}–{nextYear} kuralı yüklendi. Oranları değiştirebilirsiniz.", "reset": "Resmi oranlara dön", "custom": "Değiştirilmiş kişisel oranlar", "landingTitle": "{university} {faculty} {program} {year}. Sınıf {tool}", "landingDescription": "{year}. sınıf için {academicYear} akademik yılında doğrulanmış değerlendirme kuralları ve hesaplama aracı.", "landingRules": "Doğrulanmış kurallar", "landingDisclaimer": "Hesaplama hedef ağırlıklı ortalama içindir; resmi geçiş koşullarının tamamını kapsamaz.", "landingAcademicYear": "Akademik yıl: {year}–{nextYear}", "landingCourse": "Ders: {course}", "landingWeights": "Ağırlıklar", "landingTarget": "Hedef ortalama: {grade}", "availableUniversities": "Doğrulanmış üniversite sayfaları", "recoverPrevious": "Önceki sürümdeki ayarlarımı getir", "noPrevious": "Bu bağlam için önceki bir sürüm kaydı bulunamadı.", "previousLoaded": "Önceki kişisel ayarlar yüklendi; oranları kontrol edin."},
   "Metadata": {
     "title": {
       "default": "Komitehane",
@@ -117,12 +118,12 @@
     "resultTitle": "Hesaplama sonucu",
     "resultPending": "Notları ve ağırlıkları girip Hesapla butonuna basın.",
     "resultInvalid": "Girdiğiniz değerleri kontrol edip tekrar deneyin.",
-    "resultAlreadyPassing": "Mevcut notunuz geçme notunu karşılıyor.",
-    "resultImpossibleDescription": "Finalden en fazla 100 alınabildiği için bu notlarla dersi geçmek mümkün değil.",
+    "resultAlreadyPassing": "Mevcut ağırlıklı katkı hedef ortalamaya ulaşıyor. Diğer resmi koşullar ayrıca geçerli olabilir.",
+    "resultImpossibleDescription": "Finalden en fazla 100 alındığında hedef ağırlıklı ortalamaya ulaşılamıyor.",
     "howItWorksTitle": "Vize not hesaplama nasıl çalışır?",
     "howItWorksIntroduction": "Bu araç, birden fazla vize notunu ve ağırlığını final notuyla birlikte değerlendirerek dönem sonu notunu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
     "systemTitle": "Vize ağırlıkları nasıl kullanılır?",
-    "systemDescription": "Her vize notu kendi ağırlığıyla çarpılarak dönem sonu notuna katkı sağlar. Vize ağırlıkları toplamının %100'den küçük olması gerekir; kalan ağırlık final sınavına otomatik olarak ayrılır.",
+    "systemDescription": "Ara sınavların ve finalin ağırlıkları düzenlenebilir; toplamları %100 olmalıdır.",
     "formulaTitle": "Dönem sonu notu nasıl hesaplanır?",
     "formulaIntroduction": "Dönem sonu notu şu formülle hesaplanır:",
     "formula": "Dönem Sonu Notu = Σ (Vize Notu × Vize Ağırlığı) / 100 + (Final Notu × Final Ağırlığı) / 100",
@@ -148,7 +149,8 @@
       "finalGradeRange": "Final notu 0 ile 100 arasında olmalıdır.",
       "totalWeightEmpty": "Ağırlık toplamı %0'dan büyük olmalıdır.",
       "totalWeightTooHigh": "Ağırlık toplamı %100'den küçük olmalıdır.",
-      "finalWeightZero": "Final ağırlığı %0 olamaz; final için ağırlık bırakmalısınız."
+      "finalWeightZero": "Final ağırlığı %0 olamaz; final için ağırlık bırakmalısınız.",
+      "totalWeightMismatch": "Ara sınavlar ve final ağırlıklarının toplamı %100 olmalıdır."
     }
   },
   "committeeGradeForm": {
@@ -164,12 +166,12 @@
     "resultTitle": "Hesaplama sonucu",
     "resultPending": "Komite notlarını, ağırlıklarını ve final notunu girip Hesapla butonuna basın.",
     "resultInvalid": "Girdiğiniz değerleri kontrol edip tekrar deneyin.",
-    "resultAlreadyPassing": "Mevcut notunuz geçme notunu karşılıyor.",
-    "resultImpossibleDescription": "Finalden en fazla 100 alınabildiği için bu notlarla dersi geçmek mümkün değil.",
+    "resultAlreadyPassing": "Mevcut ağırlıklı katkı hedef ortalamaya ulaşıyor. Diğer resmi koşullar ayrıca geçerli olabilir.",
+    "resultImpossibleDescription": "Finalden en fazla 100 alındığında hedef ağırlıklı ortalamaya ulaşılamıyor.",
     "howItWorksTitle": "Komite not hesaplama nasıl çalışır?",
     "howItWorksIntroduction": "Bu araç, komite notlarını ve ağırlıklarını final notuyla birlikte değerlendirerek dönem sonu notunu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
     "systemTitle": "Komite sistemi nasıl çalışır?",
-    "systemDescription": "Her komite notu kendi ağırlığıyla çarpılarak dönem sonu notuna katkı sağlar. Komite ağırlıkları toplamının %100'den küçük olması gerekir; kalan ağırlık final sınavına otomatik olarak ayrılır.",
+    "systemDescription": "Ara sınavların ve finalin ağırlıkları düzenlenebilir; toplamları %100 olmalıdır.",
     "formulaTitle": "Dönem sonu notu nasıl hesaplanır?",
     "formulaIntroduction": "Dönem sonu notu şu formülle hesaplanır:",
     "formula": "Dönem Sonu Notu = Σ (Komite Notu × Komite Ağırlığı) / 100 + (Final Notu × Final Ağırlığı) / 100",
@@ -195,7 +197,8 @@
       "finalGradeRange": "Final notu 0 ile 100 arasında olmalıdır.",
       "totalWeightEmpty": "Ağırlık toplamı %0'dan büyük olmalıdır.",
       "totalWeightTooHigh": "Ağırlık toplamı %100'den küçük olmalıdır.",
-      "finalWeightZero": "Final ağırlığı %0 olamaz; final için ağırlık bırakmalısınız."
+      "finalWeightZero": "Final ağırlığı %0 olamaz; final için ağırlık bırakmalısınız.",
+      "totalWeightMismatch": "Ara sınavlar ve final ağırlıklarının toplamı %100 olmalıdır."
     }
   },
   "committeeMinimumFinalForm": {
@@ -211,12 +214,12 @@
     "resultTitle": "Hesaplama sonucu",
     "resultPending": "Geçme notunu, komite notlarını ve ağırlıklarını girip Hesapla butonuna basın.",
     "resultInvalid": "Girdiğiniz değerleri kontrol edip tekrar deneyin.",
-    "resultAlreadyPassing": "Mevcut katkınız geçme notunu karşılıyor.",
-    "resultImpossibleDescription": "Finalden en fazla 100 alınabildiği için bu notlarla geçmek mümkün değil.",
+    "resultAlreadyPassing": "Mevcut ağırlıklı katkı hedef ortalamaya ulaşıyor. Diğer resmi koşullar ayrıca geçerli olabilir.",
+    "resultImpossibleDescription": "Finalden en fazla 100 alındığında hedef ağırlıklı ortalamaya ulaşılamıyor.",
     "howItWorksTitle": "Komite minimum final notu nasıl hesaplanır?",
     "howItWorksIntroduction": "Bu araç, komite katkınızı ve geçme notunuzu kullanarak finalden almanız gereken minimum notu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
     "systemTitle": "Komite katkısı nasıl hesaplanır?",
-    "systemDescription": "Her komite notu kendi ağırlığıyla çarpılır ve tüm katkılar toplanır. Komite ağırlıkları toplamı %100'den küçük olmalıdır; kalan ağırlık final sınavına ayrılır.",
+    "systemDescription": "Ara sınavların ve finalin ağırlıkları düzenlenebilir; toplamları %100 olmalıdır.",
     "formulaTitle": "Minimum final notu nasıl hesaplanır?",
     "formulaIntroduction": "Mevcut katkınız geçme notundan düşükse gerekli minimum final şu formülle hesaplanır:",
     "formula": "Minimum Final = ((Geçme Notu − Mevcut Katkı) × 100) / Final Ağırlığı",
@@ -242,7 +245,8 @@
       "finalGradeRange": "Final notu 0 ile 100 arasında olmalıdır.",
       "totalWeightEmpty": "Ağırlık toplamı %0'dan büyük olmalıdır.",
       "totalWeightTooHigh": "Ağırlık toplamı %100'den küçük olmalıdır.",
-      "finalWeightZero": "Final ağırlığı %0 olamaz; final için ağırlık bırakmalısınız."
+      "finalWeightZero": "Final ağırlığı %0 olamaz; final için ağırlık bırakmalısınız.",
+      "totalWeightMismatch": "Ara sınavlar ve final ağırlıklarının toplamı %100 olmalıdır."
     }
   },
   "midtermMinimumFinalForm": {
@@ -258,12 +262,12 @@
     "resultTitle": "Hesaplama sonucu",
     "resultPending": "Geçme notunu, vize notlarını ve ağırlıklarını girip Hesapla butonuna basın.",
     "resultInvalid": "Girdiğiniz değerleri kontrol edip tekrar deneyin.",
-    "resultAlreadyPassing": "Mevcut katkınız geçme notunu karşılıyor.",
-    "resultImpossibleDescription": "Finalden en fazla 100 alınabildiği için bu notlarla geçmek mümkün değil.",
+    "resultAlreadyPassing": "Mevcut ağırlıklı katkı hedef ortalamaya ulaşıyor. Diğer resmi koşullar ayrıca geçerli olabilir.",
+    "resultImpossibleDescription": "Finalden en fazla 100 alındığında hedef ağırlıklı ortalamaya ulaşılamıyor.",
     "howItWorksTitle": "Vize minimum final notu nasıl hesaplanır?",
     "howItWorksIntroduction": "Bu araç, vize katkınızı ve geçme notunuzu kullanarak finalden almanız gereken minimum notu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
     "systemTitle": "Vize katkısı nasıl hesaplanır?",
-    "systemDescription": "Her vize notu kendi ağırlığıyla çarpılır ve tüm katkılar toplanır. Vize ağırlıkları toplamı %100'den küçük olmalıdır; kalan ağırlık final sınavına ayrılır.",
+    "systemDescription": "Ara sınavların ve finalin ağırlıkları düzenlenebilir; toplamları %100 olmalıdır.",
     "formulaTitle": "Minimum final notu nasıl hesaplanır?",
     "formulaIntroduction": "Mevcut katkınız geçme notundan düşükse gerekli minimum final şu formülle hesaplanır:",
     "formula": "Minimum Final = ((Geçme Notu − Mevcut Katkı) × 100) / Final Ağırlığı",
@@ -289,7 +293,8 @@
       "finalGradeRange": "Final notu 0 ile 100 arasında olmalıdır.",
       "totalWeightEmpty": "Ağırlık toplamı %0'dan büyük olmalıdır.",
       "totalWeightTooHigh": "Ağırlık toplamı %100'den küçük olmalıdır.",
-      "finalWeightZero": "Final ağırlığı %0 olamaz; final için ağırlık bırakmalısınız."
+      "finalWeightZero": "Final ağırlığı %0 olamaz; final için ağırlık bırakmalısınız.",
+      "totalWeightMismatch": "Ara sınavlar ve final ağırlıklarının toplamı %100 olmalıdır."
     }
   },
     "items": {

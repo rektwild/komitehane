@@ -1,3 +1,5 @@
+import {calculate} from "@/lib/academic/calculations/engine";
+
 export const MIN_ASSESSMENT_COUNT = 1;
 export const MAX_ASSESSMENT_COUNT = 10;
 export const MIN_SCORE = 0;
@@ -25,7 +27,8 @@ export type ValidationIssueCode =
   | "finalGradeRange"
   | "totalWeightEmpty"
   | "totalWeightTooHigh"
-  | "finalWeightZero";
+  | "finalWeightZero"
+  | "totalWeightMismatch";
 
 export type ValidationIssue = {
   field: string;
@@ -85,7 +88,7 @@ export type MinimumFinalCalculationResult =
 export function parseLocalizedNumber(value: string): number | null {
   const normalized = value.trim().replace(",", ".");
 
-  if (!normalized || !/^-?\d+(?:\.\d*)?$/.test(normalized)) {
+  if (!normalized || !/^-?\d+(?:\.\d{1,2})?$/.test(normalized)) {
     return null;
   }
 
@@ -130,7 +133,7 @@ function validateNumberField({
 
   const isWeight = rangeCode === "weightRange";
   const isInRange = isWeight
-    ? parsed > MIN_WEIGHT && parsed <= MAX_WEIGHT
+    ? parsed >= MIN_WEIGHT && parsed <= MAX_WEIGHT
     : parsed >= MIN_SCORE && parsed <= MAX_SCORE;
 
   if (!isInRange) {
@@ -142,6 +145,7 @@ function validateNumberField({
 
 export function validateAssessments(
   rows: readonly AssessmentInput[],
+  finalWeightInput?: string,
 ): {valid: true; data: ValidatedAssessmentData} | {valid: false; errors: ValidationIssue[]} {
   const errors: ValidationIssue[] = [];
 
@@ -173,21 +177,15 @@ export function validateAssessments(
     return {valid: false, errors};
   }
 
-  const totalWeight = getTotalWeight(parsedRows);
-
-  if (totalWeight <= MIN_WEIGHT) {
-    errors.push({field: "totalWeight", code: "totalWeightEmpty"});
-  }
-
-  if (totalWeight >= MAX_WEIGHT) {
-    errors.push({field: "totalWeight", code: "totalWeightTooHigh"});
-  }
-
-  const finalWeight = MAX_WEIGHT - totalWeight;
-
-  if (finalWeight <= 0) {
-    errors.push({field: "finalWeight", code: "finalWeightZero"});
-  }
+  const totalUnits = parsedRows.reduce((total, row) => total + Math.round(row.weight * 100), 0);
+  const totalWeight = totalUnits / 100;
+  const finalField = finalWeightInput === undefined
+    ? {value: (10000 - totalUnits) / 100, issues: [] as ValidationIssue[]}
+    : validateNumberField({value: finalWeightInput, field: "finalWeight", rangeCode: "weightRange"});
+  errors.push(...finalField.issues);
+  const finalWeight = finalField.value;
+  if (Number.isFinite(finalWeight) && finalWeight <= 0) errors.push({field:"finalWeight",code:"finalWeightZero"});
+  if (Number.isFinite(finalWeight) && totalUnits + Math.round(finalWeight * 100) !== 10000) errors.push({field:"totalWeight",code:"totalWeightMismatch"});
 
   if (errors.length > 0) {
     return {valid: false, errors};
@@ -207,8 +205,9 @@ export function validateAssessments(
 export function calculateCourseGrade(
   rows: readonly AssessmentInput[],
   finalGrade: string,
+  finalWeightInput?: string,
 ): CourseGradeCalculationResult {
-  const assessments = validateAssessments(rows);
+  const assessments = validateAssessments(rows, finalWeightInput);
 
   if (!assessments.valid) {
     return {status: "INVALID_INPUT", errors: assessments.errors};
@@ -225,8 +224,9 @@ export function calculateCourseGrade(
   }
 
   const {currentContribution, finalWeight, totalWeight} = assessments.data;
-  const value =
-    currentContribution + (parsedFinalGrade.value * finalWeight) / 100;
+  const computed = calculate({mode:"COURSE_GRADE", assessments:rows, finalWeight, finalGrade});
+  if (computed.status === "INVALID_INPUT") return {status:"INVALID_INPUT",errors:[{field:"finalWeight",code:"totalWeightMismatch"}]};
+  const value = computed.value;
 
   return {
     status: "CALCULATED",
@@ -240,8 +240,9 @@ export function calculateCourseGrade(
 export function calculateMinimumFinal(
   rows: readonly AssessmentInput[],
   passingGrade: string,
+  finalWeightInput?: string,
 ): MinimumFinalCalculationResult {
-  const assessments = validateAssessments(rows);
+  const assessments = validateAssessments(rows, finalWeightInput);
 
   if (!assessments.valid) {
     return {status: "INVALID_INPUT", errors: assessments.errors};
@@ -266,34 +267,9 @@ export function calculateMinimumFinal(
     };
   }
 
-  if (currentContribution >= parsedPassingGrade.value) {
-    return {
-      status: "ALREADY_PASSING",
-      value: 0,
-      totalWeight,
-      finalWeight,
-      currentContribution,
-    };
-  }
-
-  const value =
-    ((parsedPassingGrade.value - currentContribution) * 100) / finalWeight;
-
-  if (!Number.isFinite(value)) {
-    return {
-      status: "INVALID_INPUT",
-      errors: [{field: "finalWeight", code: "finalWeightZero"}],
-    };
-  }
-
-  const result = {
-    value,
-    totalWeight,
-    finalWeight,
-    currentContribution,
-  };
-
-  return value > MAX_SCORE
-    ? {status: "IMPOSSIBLE", ...result}
-    : {status: "CALCULATED", ...result};
+  const computed = calculate({mode:"MINIMUM_FINAL", assessments:rows, finalWeight, passingGrade});
+  if (computed.status === "INVALID_INPUT") return {status:"INVALID_INPUT",errors:[{field:"finalWeight",code:"totalWeightMismatch"}]};
+  if (computed.status === "TARGET_ALREADY_MET") return {status:"ALREADY_PASSING",value:0,totalWeight,finalWeight,currentContribution};
+  const result = {value:computed.displayValue,totalWeight,finalWeight,currentContribution};
+  return computed.status === "IMPOSSIBLE_WITH_MAX_100" ? {status:"IMPOSSIBLE",...result} : {status:"CALCULATED",...result};
 }

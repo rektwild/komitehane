@@ -17,7 +17,15 @@
     "seo:audit": "node scripts/seo-audit.mjs",
     "test": "vitest run",
     "academic:generate": "drizzle-kit generate --config=drizzle.academic.config.ts",
-    "academic:check": "drizzle-kit check --config=drizzle.academic.config.ts"
+    "academic:check": "drizzle-kit check --config=drizzle.academic.config.ts",
+    "academic:seed:catalog": "node --import tsx scripts/academic/seed-catalog.ts",
+    "academic:publish": "node --import tsx scripts/academic/publish.ts",
+    "academic:test:postgres": "node --import tsx scripts/academic/test-postgres.ts",
+    "academic:seed:rules": "node --import tsx scripts/academic/seed-rules.ts",
+    "academic:validate": "node --import tsx scripts/academic/validate.ts",
+    "academic:migrate": "node --import tsx scripts/academic/migrate.ts",
+    "academic:seed:entities": "node --import tsx scripts/academic/seed-entities.ts",
+    "academic:test:wire": "node scripts/academic/test-pglite-wire.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -49,6 +57,7 @@
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.14",
+    "@electric-sql/pglite-socket": "0.2.17",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/pg": "^8.23.1",

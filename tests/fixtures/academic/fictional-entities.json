@@ -1,0 +1,6 @@
+{
+  "faculties": [{"id":"00000000-0000-4000-8000-000000000102","universityId":"00000000-0000-4000-8000-000000000001","name":"Fictional faculty","slug":"fictional-faculty"}],
+  "programs": [{"id":"00000000-0000-4000-8000-000000000103","facultyId":"00000000-0000-4000-8000-000000000102","name":"Fictional program","slug":"fictional-program","durationYears":6}],
+  "courses": [{"id":"00000000-0000-4000-8000-000000000104","programId":"00000000-0000-4000-8000-000000000103","name":"Fictional course","slug":"fictional-course"}],
+  "schemes": [{"id":"00000000-0000-4000-8000-000000000105","programId":"00000000-0000-4000-8000-000000000103","courseId":"00000000-0000-4000-8000-000000000104","academicYearStart":2026,"classYear":2,"period":"FALL","system":"MIDTERM"}]
+}

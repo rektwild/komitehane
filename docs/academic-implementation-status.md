@@ -1,25 +1,34 @@
-# Academic DB: incomplete implementation checkpoint
+# Academic DB implementation status
 
-This branch is a work in progress and must not be merged, deployed, migrated,
-seeded, or published yet. The runtime feature remains disabled. It is not a
-complete implementation of the Academic DB PRD.
+This is a draft and must not be merged, deployed or migrated to production
+until the PRD Definition of Done and real PostgreSQL checks are complete.
 
-Implemented in isolation: Drizzle schema and initial migration for eight
-tables, a calculation function, publication validation and a transactional
-publication service, and unit plus PGlite schema tests. The migration has not
-been applied to a real PostgreSQL server. PGlite is not a replacement for
-PostgreSQL concurrency, network/TLS, grants, or deployment tests.
+Implemented: eight-table academic schema and migration, read views that hide
+unpublished versions, a publication transaction and validators, inactive
+catalog/entity seed commands and draft-only rule import, a shared calculation
+engine, editable final weight, context/version-scoped browser storage and
+explicit previous-version recovery, catalog/rule/calculate API, localized
+academic routes and sitemap entries, OpenAPI and operating guide. No real
+academic rules or production data have been seeded. Candidate universities
+and imported faculty/program/course entities start inactive.
 
-Remaining work includes: repository/service completeness; reviewed catalog and
-rules seed/validate/publish CLIs; role grants, full operational and restore
-runbook; version-history API and all public endpoints with validation and abuse
-protection; integration of the shared engine into all four existing tools;
-editable final weights, university/faculty/program/course selection and safe
-versioned local storage; four localized SEO routes, SSR content, sitemap,
-canonical and locale switch; API specification; and real PostgreSQL,
-concurrency, UI, end-to-end and SEO tests. PRD Definition of Done is not met.
+Tested in-process: component arithmetic, API adapters, input guards, translated
+middleware rewrites, sitemap selection, migration and data constraints, read
+view permissions, and idempotent candidate/entity seeds using PGlite. A local
+HTTP smoke test returned 200 for all four Turkish generic tools, 404 for an
+unavailable academic page, 503 for the unavailable catalog and 200 for a
+manual calculation. PGlite is not a substitute for testing a real PostgreSQL instance, concurrent
+transactions or networking. Refer to CI/local test results for exact counts.
 
-No production database was accessed. Do not run generated SQL against the blog
-database. Before any production action, complete implementation, verify it in
-an isolated real PostgreSQL database, review TLS/role privileges and migration,
-take a backup, and obtain the separately required authorization.
+Still required before completion: run the Docker PostgreSQL integration test
+and verify migration, seeds, concurrent publication, read-only grants and TLS on
+a real server; run browser end-to-end and SEO smoke tests for all four tools,
+locale switching, storage recovery and DB failure; complete a successful build
+with an isolated Payload test configuration; verify performance and sitemap
+sharding before approaching 50,000 URLs; complete operator review and official
+sources/data. The 50,000 entry guard currently fails rather than shard a larger
+sitemap. This draft has not met the PRD Definition of Done.
+
+The supplied execution environment had neither Docker nor a PostgreSQL server.
+No production migration, seed, publish or deploy was performed. See
+`academic-db-operations.md` for the isolated test setup and production steps.

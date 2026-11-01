@@ -1,4 +1,5 @@
 {
+  "Academic": {"select": "Select", "university": "University", "faculty": "Faculty", "program": "Program", "class": "Year", "period": "Period", "annual": "Annual", "fall": "Fall", "spring": "Spring", "course": "Course", "source": "Official source", "unavailable": "Academic data is unavailable; you can continue manually.", "manual": "No verified official rule selected. Enter weights manually.", "verified": "Verified {year}–{nextYear} rule loaded. You may edit the weights.", "reset": "Reset to official weights", "custom": "Customized personal weights", "landingTitle": "{university} {faculty} {program} Year {year} {tool}", "landingDescription": "Verified assessment rules and calculator for year {year} in the {academicYear} academic year.", "landingRules": "Verified rules", "landingDisclaimer": "This calculates a target weighted average; it does not cover every official passing condition.", "landingAcademicYear": "Academic year: {year}–{nextYear}", "landingCourse": "Course: {course}", "landingWeights": "Weights", "landingTarget": "Target average: {grade}", "availableUniversities": "Verified university pages", "recoverPrevious": "Restore settings from an earlier version", "noPrevious": "No earlier version was found for this context.", "previousLoaded": "Earlier personal settings were restored; check the weights."},
   "Metadata": {
     "title": {
       "default": "Komitehane",
@@ -117,12 +118,12 @@
     "resultTitle": "Calculation result",
     "resultPending": "Enter the grades and weights, then press Calculate.",
     "resultInvalid": "Check the entered values and try again.",
-    "resultAlreadyPassing": "Your current grades already meet the passing grade.",
-    "resultImpossibleDescription": "Because the highest possible final grade is 100, passing with these grades is not possible.",
+    "resultAlreadyPassing": "The current weighted contribution meets the target. Other official requirements may still apply.",
+    "resultImpossibleDescription": "The target weighted average cannot be reached with a maximum final score of 100.",
     "howItWorksTitle": "How does midterm grade calculation work?",
     "howItWorksIntroduction": "This tool calculates your year-end grade by combining multiple midterm grades and weights with your final grade. All calculations are performed only in your browser; your grade data is not sent to a server.",
     "systemTitle": "How are midterm weights used?",
-    "systemDescription": "Each midterm grade is multiplied by its weight and contributes to the year-end grade. The total midterm weight must be below 100%; the remaining weight is assigned to the final automatically.",
+    "systemDescription": "Assessment and final weights are editable and must total 100%.",
     "formulaTitle": "How is the year-end grade calculated?",
     "formulaIntroduction": "The year-end grade is calculated with this formula:",
     "formula": "Year-end Grade = Σ (Midterm Grade × Midterm Weight) / 100 + (Final Grade × Final Weight) / 100",
@@ -148,7 +149,8 @@
       "finalGradeRange": "The final grade must be between 0 and 100.",
       "totalWeightEmpty": "The total weight must be greater than 0%.",
       "totalWeightTooHigh": "The total weight must be less than 100%.",
-      "finalWeightZero": "The final weight cannot be 0%; leave some weight for the final."
+      "finalWeightZero": "The final weight cannot be 0%; leave some weight for the final.",
+      "totalWeightMismatch": "Assessment and final weights must total 100%."
     }
   },
   "committeeGradeForm": {
@@ -164,12 +166,12 @@
     "resultTitle": "Calculation result",
     "resultPending": "Enter the committee grades, weights, and final grade, then press Calculate.",
     "resultInvalid": "Check the entered values and try again.",
-    "resultAlreadyPassing": "Your current grades already meet the passing grade.",
-    "resultImpossibleDescription": "Because the highest possible final grade is 100, passing with these grades is not possible.",
+    "resultAlreadyPassing": "The current weighted contribution meets the target. Other official requirements may still apply.",
+    "resultImpossibleDescription": "The target weighted average cannot be reached with a maximum final score of 100.",
     "howItWorksTitle": "How does committee grade calculation work?",
     "howItWorksIntroduction": "This tool calculates your year-end grade by combining committee grades and weights with your final grade. All calculations are performed only in your browser; your grade data is not sent to a server.",
     "systemTitle": "How does the committee system work?",
-    "systemDescription": "Each committee grade is multiplied by its weight and contributes to the year-end grade. The total committee weight must be below 100%; the remaining weight is assigned to the final automatically.",
+    "systemDescription": "Assessment and final weights are editable and must total 100%.",
     "formulaTitle": "How is the year-end grade calculated?",
     "formulaIntroduction": "The year-end grade is calculated with this formula:",
     "formula": "Year-end Grade = Σ (Committee Grade × Committee Weight) / 100 + (Final Grade × Final Weight) / 100",
@@ -195,7 +197,8 @@
       "finalGradeRange": "The final grade must be between 0 and 100.",
       "totalWeightEmpty": "The total weight must be greater than 0%.",
       "totalWeightTooHigh": "The total weight must be less than 100%.",
-      "finalWeightZero": "The final weight cannot be 0%; leave some weight for the final."
+      "finalWeightZero": "The final weight cannot be 0%; leave some weight for the final.",
+      "totalWeightMismatch": "Assessment and final weights must total 100%."
     }
   },
   "committeeMinimumFinalForm": {
@@ -211,12 +214,12 @@
     "resultTitle": "Calculation result",
     "resultPending": "Enter the passing grade, committee grades, and weights, then press Calculate.",
     "resultInvalid": "Check the entered values and try again.",
-    "resultAlreadyPassing": "Your current contribution already meets the passing grade.",
-    "resultImpossibleDescription": "Because the highest possible final grade is 100, passing with these grades is not possible.",
+    "resultAlreadyPassing": "The current weighted contribution meets the target. Other official requirements may still apply.",
+    "resultImpossibleDescription": "The target weighted average cannot be reached with a maximum final score of 100.",
     "howItWorksTitle": "How is the committee minimum final grade calculated?",
     "howItWorksIntroduction": "This tool uses your committee contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
     "systemTitle": "How is the committee contribution calculated?",
-    "systemDescription": "Each committee grade is multiplied by its weight and all contributions are added together. The total committee weight must be below 100%; the remaining weight is assigned to the final.",
+    "systemDescription": "Assessment and final weights are editable and must total 100%.",
     "formulaTitle": "How is the minimum final grade calculated?",
     "formulaIntroduction": "If your current contribution is below the passing grade, the required minimum final is calculated with this formula:",
     "formula": "Minimum Final = ((Passing Grade − Current Contribution) × 100) / Final Weight",
@@ -242,7 +245,8 @@
       "finalGradeRange": "The final grade must be between 0 and 100.",
       "totalWeightEmpty": "The total weight must be greater than 0%.",
       "totalWeightTooHigh": "The total weight must be less than 100%.",
-      "finalWeightZero": "The final weight cannot be 0%; leave some weight for the final."
+      "finalWeightZero": "The final weight cannot be 0%; leave some weight for the final.",
+      "totalWeightMismatch": "Assessment and final weights must total 100%."
     }
   },
   "midtermMinimumFinalForm": {
@@ -258,12 +262,12 @@
     "resultTitle": "Calculation result",
     "resultPending": "Enter the passing grade, midterm grades, and weights, then press Calculate.",
     "resultInvalid": "Check the entered values and try again.",
-    "resultAlreadyPassing": "Your current contribution already meets the passing grade.",
-    "resultImpossibleDescription": "Because the highest possible final grade is 100, passing with these grades is not possible.",
+    "resultAlreadyPassing": "The current weighted contribution meets the target. Other official requirements may still apply.",
+    "resultImpossibleDescription": "The target weighted average cannot be reached with a maximum final score of 100.",
     "howItWorksTitle": "How is the midterm minimum final grade calculated?",
     "howItWorksIntroduction": "This tool uses your midterm contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
     "systemTitle": "How is the midterm contribution calculated?",
-    "systemDescription": "Each midterm grade is multiplied by its weight and all contributions are added together. The total midterm weight must be below 100%; the remaining weight is assigned to the final.",
+    "systemDescription": "Assessment and final weights are editable and must total 100%.",
     "formulaTitle": "How is the minimum final grade calculated?",
     "formulaIntroduction": "If your current contribution is below the passing grade, the required minimum final is calculated with this formula:",
     "formula": "Minimum Final = ((Passing Grade − Current Contribution) × 100) / Final Weight",
@@ -289,7 +293,8 @@
       "finalGradeRange": "The final grade must be between 0 and 100.",
       "totalWeightEmpty": "The total weight must be greater than 0%.",
       "totalWeightTooHigh": "The total weight must be less than 100%.",
-      "finalWeightZero": "The final weight cannot be 0%; leave some weight for the final."
+      "finalWeightZero": "The final weight cannot be 0%; leave some weight for the final.",
+      "totalWeightMismatch": "Assessment and final weights must total 100%."
     }
   },
     "items": {

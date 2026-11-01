@@ -34,8 +34,9 @@ export async function publishVersion(pool: Pool, versionId: string): Promise<voi
   const client = await pool.connect();
   try {
     await client.query("BEGIN");
-    const lock = await client.query<{id:string; system_type:string}>(`SELECT s.id, s.system_type FROM grading_schemes s JOIN grading_scheme_versions v ON v.scheme_id=s.id WHERE v.id=$1 FOR UPDATE OF s`,[versionId]);
+    const lock = await client.query<{id:string; system_type:string; class_year:number; duration_years:number}>(`SELECT s.id, s.system_type,s.class_year,p.duration_years FROM grading_schemes s JOIN grading_scheme_versions v ON v.scheme_id=s.id JOIN programs p ON p.id=s.program_id WHERE v.id=$1 FOR UPDATE OF s`,[versionId]);
     if (lock.rowCount !== 1) throw new Error("VERSION_NOT_FOUND");
+    if (lock.rows[0].class_year > lock.rows[0].duration_years) throw new Error("CLASS_OUTSIDE_PROGRAM_DURATION");
     const version = await client.query<{status:string;passing_grade:string}>("SELECT status, passing_grade FROM grading_scheme_versions WHERE id=$1 FOR UPDATE",[versionId]);
     if (version.rows[0]?.status !== "DRAFT") throw new Error("VERSION_NOT_DRAFT");
     const components = await client.query<Component>("SELECT component_type, position, weight_percent FROM assessment_components WHERE version_id=$1 ORDER BY component_type, position",[versionId]);

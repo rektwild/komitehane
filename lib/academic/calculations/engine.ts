@@ -3,7 +3,7 @@
 export type Decimal = string | number;
 export type CalculationInput = {
   mode: "COURSE_GRADE" | "MINIMUM_FINAL";
-  assessments: {grade: Decimal; weight: Decimal}[];
+  assessments: readonly {grade: Decimal; weight: Decimal}[];
   finalWeight: Decimal;
   finalGrade?: Decimal;
   passingGrade?: Decimal;

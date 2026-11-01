@@ -146,3 +146,25 @@ END $$;
 CREATE TRIGGER academic_protect_components_trigger BEFORE INSERT OR UPDATE OR DELETE ON assessment_components FOR EACH ROW EXECUTE FUNCTION academic_protect_version_children();
 --> statement-breakpoint
 CREATE TRIGGER academic_protect_sources_trigger BEFORE INSERT OR UPDATE OR DELETE ON grading_rule_sources FOR EACH ROW EXECUTE FUNCTION academic_protect_version_children();
+--> statement-breakpoint
+CREATE VIEW academic_read_universities WITH (security_barrier=true) AS SELECT * FROM universities WHERE is_active;
+--> statement-breakpoint
+CREATE VIEW academic_read_faculties WITH (security_barrier=true) AS SELECT f.* FROM faculties f JOIN universities u ON u.id=f.university_id WHERE f.is_active AND u.is_active;
+--> statement-breakpoint
+CREATE VIEW academic_read_programs WITH (security_barrier=true) AS SELECT p.* FROM programs p JOIN faculties f ON f.id=p.faculty_id JOIN universities u ON u.id=f.university_id WHERE p.is_active AND f.is_active AND u.is_active;
+--> statement-breakpoint
+CREATE VIEW academic_read_courses WITH (security_barrier=true) AS SELECT c.* FROM courses c JOIN programs p ON p.id=c.program_id JOIN faculties f ON f.id=p.faculty_id JOIN universities u ON u.id=f.university_id WHERE c.is_active AND p.is_active AND f.is_active AND u.is_active;
+--> statement-breakpoint
+CREATE VIEW academic_read_grading_scheme_versions WITH (security_barrier=true) AS SELECT * FROM grading_scheme_versions WHERE status IN ('PUBLISHED','SUPERSEDED');
+--> statement-breakpoint
+CREATE VIEW academic_read_grading_schemes WITH (security_barrier=true) AS SELECT s.* FROM grading_schemes s WHERE EXISTS (SELECT 1 FROM grading_scheme_versions v WHERE v.scheme_id=s.id AND v.status IN ('PUBLISHED','SUPERSEDED'));
+--> statement-breakpoint
+CREATE VIEW academic_read_assessment_components WITH (security_barrier=true) AS SELECT c.* FROM assessment_components c JOIN grading_scheme_versions v ON v.id=c.version_id WHERE v.status IN ('PUBLISHED','SUPERSEDED');
+--> statement-breakpoint
+CREATE VIEW academic_read_grading_rule_sources WITH (security_barrier=true) AS SELECT r.* FROM grading_rule_sources r JOIN grading_scheme_versions v ON v.id=r.version_id WHERE v.status IN ('PUBLISHED','SUPERSEDED');
+--> statement-breakpoint
+CREATE VIEW academic_read_version_scopes WITH (security_barrier=true) AS
+SELECT s.id AS rule_id,s.program_id,s.course_id,s.class_year,s.period,s.academic_year_start,s.system_type,
+       v.id AS version_id,v.status,v.passing_grade
+FROM grading_schemes s JOIN grading_scheme_versions v ON v.scheme_id=s.id
+WHERE v.status IN ('PUBLISHED','SUPERSEDED');

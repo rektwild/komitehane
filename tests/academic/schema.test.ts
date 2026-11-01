@@ -1,6 +1,8 @@
 import {afterAll, beforeAll, describe, expect, it} from "vitest";
 import {readFile} from "node:fs/promises";
 import {PGlite} from "@electric-sql/pglite";
+import {seedCatalog} from "../../scripts/academic/seed-catalog";
+import {seedEntities} from "../../scripts/academic/seed-entities";
 
 // Fictional data only. This exercises PostgreSQL-compatible SQL in-process;
 // it does not replace real-server or concurrent-transaction tests.
@@ -29,6 +31,30 @@ describe("academic migration", () => {
   });
   it("rejects an invalid course/system combination", async () => {
     await expect(db.query("INSERT INTO grading_schemes(program_id,course_id,academic_year_start,class_year,period,system_type) VALUES ($1,$2,2026,2,'FALL','COMMITTEE')",[p2,c])).rejects.toThrow();
+  });
+  it("keeps drafts out of the read-only views", async () => {
+    expect((await db.query("SELECT id FROM academic_read_grading_scheme_versions WHERE id=$1",[v])).rows).toHaveLength(0);
+    expect((await db.query("SELECT id FROM academic_read_assessment_components WHERE version_id=$1",[v])).rows).toHaveLength(0);
+  });
+  it("read-view privileges exclude drafts and do not grant base table access",async()=>{
+    await db.exec("CREATE ROLE academic_reader_test; GRANT USAGE ON SCHEMA public TO academic_reader_test; GRANT SELECT ON academic_read_grading_scheme_versions,academic_read_assessment_components TO academic_reader_test; SET ROLE academic_reader_test");
+    try {
+      expect((await db.query("SELECT id FROM academic_read_grading_scheme_versions WHERE id=$1",[v])).rows).toHaveLength(0);
+      await expect(db.query("SELECT id FROM grading_scheme_versions")).rejects.toThrow();
+    } finally {await db.exec("RESET ROLE");}
+  });
+  it("imports inactive catalog candidates idempotently",async()=>{
+    const pool={connect:async()=>({query:db.query.bind(db),release:()=>{}})};
+    const count=await seedCatalog(pool as never); await seedCatalog(pool as never);
+    const result=await db.query<{n:string}>("SELECT count(*)::text n FROM universities WHERE NOT is_active");
+    expect(Number(result.rows[0].n)).toBe(count);
+  });
+  it("imports fictional academic entities without activating them",async()=>{
+    const pool={connect:async()=>({query:async(sql:string,args?:unknown[])=>{const r=await db.query(sql,args);return {...r,rowCount:r.affectedRows??0};},release:()=>{}})};
+    const fixture=JSON.parse(await readFile("tests/fixtures/academic/fictional-entities.json","utf8"));
+    await seedEntities(pool as never,fixture);await seedEntities(pool as never,fixture);
+    expect((await db.query("SELECT id FROM academic_read_faculties WHERE id=$1",[fixture.faculties[0].id])).rows).toHaveLength(0);
+    expect((await db.query("SELECT id FROM grading_schemes WHERE id=$1",[fixture.schemes[0].id])).rows).toHaveLength(1);
   });
   it("protects published components and versions", async () => {
     await db.query("UPDATE grading_scheme_versions SET status='PUBLISHED',published_at=now() WHERE id=$1",[v]);
