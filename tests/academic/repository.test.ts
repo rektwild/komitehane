@@ -3,7 +3,7 @@ import {readFile} from "node:fs/promises";
 import {PGlite} from "@electric-sql/pglite";
 const shared=vi.hoisted(()=>({pool:null as unknown}));
 vi.mock("@/lib/academic/db/client",()=>({academicPool:()=>shared.pool,academicYear:()=>2026}));
-import {landing,landingCandidates,rule,versionById} from "../../lib/academic/repositories/catalog";
+import {landing,landingCandidates,lookupRule,rule,versionById} from "../../lib/academic/repositories/catalog";
 const db=new PGlite();
 const id=(n:number)=>`00000000-0000-4000-8000-${n.toString().padStart(12,"0")}`;
 beforeAll(async()=>{
@@ -22,12 +22,18 @@ beforeAll(async()=>{
   await db.query("UPDATE grading_scheme_versions SET status='PUBLISHED',published_at=now() WHERE id=$1",[id(6)]);
   await db.query("UPDATE grading_scheme_versions SET status='SUPERSEDED',superseded_at=now() WHERE id=$1",[id(6)]);
   await db.query("UPDATE grading_scheme_versions SET status='PUBLISHED',published_at=now() WHERE id IN ($1,$2)",[id(7),id(8)]);
+  await db.query("INSERT INTO grading_schemes(id,program_id,academic_year_start,class_year,period,system_type) VALUES($1,$2,2026,4,'ANNUAL','COMMITTEE')",[id(9),id(3)]);
+  await db.query("INSERT INTO grading_scheme_versions(id,scheme_id,version_number,passing_grade) VALUES($1,$2,1,60)",[id(10),id(9)]);
+  await db.query("INSERT INTO assessment_components(version_id,component_type,position,weight_percent) VALUES($1,'COMMITTEE',1,40),($1,'FINAL',1,60)",[id(10)]);
+  await db.query("UPDATE grading_scheme_versions SET status='PUBLISHED',published_at=now() WHERE id=$1",[id(10)]);
 },30000);
 afterAll(async()=>{await db.close()});
 describe("academic repository against PostgreSQL-compatible SQL",()=>{
   it("returns a valid current rule and refuses an invalid published rule",async()=>{
     expect(await rule(id(3),2,"ANNUAL","COMMITTEE",null)).toMatchObject({versionId:id(7),passingGrade:"60.00"});
     expect(await rule(id(3),3,"ANNUAL","COMMITTEE",null)).toBeNull();
+    expect(await lookupRule(id(3),3,"ANNUAL","COMMITTEE",null)).toMatchObject({status:"UNSUPPORTED_RULE"});
+    expect(await lookupRule(id(3),4,"ANNUAL","COMMITTEE",null)).toMatchObject({status:"UNVERIFIED_RULE"});
     expect(await rule(id(3),2,"FALL","COMMITTEE",null)).toBeNull();
   });
   it("preserves explicit historical lookup",async()=>{

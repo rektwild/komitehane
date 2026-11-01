@@ -1,6 +1,6 @@
 import {z} from "zod";
 import {calculate} from "@/lib/academic/calculations/engine";
-import {universities,faculties,programs,courses,rule,versionById} from "@/lib/academic/repositories/catalog";
+import {universities,faculties,programs,courses,lookupRule,versionById} from "@/lib/academic/repositories/catalog";
 import {classYear,manualCalculation,officialCalculation,period,uuid} from "@/lib/academic/api/validation";
 
 const headers={"Cache-Control":"no-store","X-Content-Type-Options":"nosniff"};
@@ -41,7 +41,8 @@ export async function GET(req:Request,{params}:{params:Promise<{resource:string}
       const program=key(q.get("programId"));const year=classYear.parse(q.get("classYear"));const term=period.parse(q.get("period"));const system=z.enum(["COMMITTEE","MIDTERM"]).parse(q.get("system"));
       const course=system==="MIDTERM"?key(q.get("courseId")):null;
       if(system==="COMMITTEE" && q.has("courseId"))return fail("INVALID_INPUT",400);
-      const data=await rule(program,year,term,system,course);return data?ok(data):fail("RULE_NOT_FOUND",404);
+      const result=await lookupRule(program,year,term,system,course);
+      return result.status==="VERIFIED" ? ok(result.data) : fail(result.status,result.status==="RULE_NOT_FOUND"?404:422);
     }
     return fail("NOT_FOUND",404);
   } catch(e) {if(e instanceof z.ZodError)return fail("INVALID_INPUT",400);return fail("DB_UNAVAILABLE",503);}

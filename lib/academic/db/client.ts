@@ -2,6 +2,7 @@ import "server-only";
 import {Pool} from "pg";
 
 let pool: Pool | undefined;
+let configurationWarningEmitted=false;
 export function academicYear(): number | null {
   const raw = process.env.ACADEMIC_CURRENT_YEAR_START;
   if (!raw || !/^\d{4}$/.test(raw)) return null;
@@ -12,7 +13,10 @@ export function academicPool(): Pool | null {
   if (process.env.ACADEMIC_FEATURE_ENABLED !== "true") return null;
   const url = process.env.ACADEMIC_DATABASE_URL;
   const ca = process.env.ACADEMIC_POSTGRES_CA_CERT_BASE64;
-  if (!url || !ca || !academicYear()) return null;
+  if (!url || !ca || !academicYear()) {
+    if (!configurationWarningEmitted) {console.error("ACADEMIC_CONFIGURATION_INCOMPLETE: verified defaults are disabled");configurationWarningEmitted=true;}
+    return null;
+  }
   if (pool) return pool;
   const parsed = new URL(url);
   if (decodeURIComponent(parsed.pathname.slice(1)) !== "komitehane_academic") throw new Error("ACADEMIC_DATABASE_NAME_INVALID");

@@ -70,6 +70,7 @@ paths:
               schema: {type: object, required: [data], properties: {data: {$ref: '#/components/schemas/Rule'}}}
         '400': {$ref: '#/components/responses/Error'}
         '404': {$ref: '#/components/responses/Error'}
+        '422': {$ref: '#/components/responses/Error'}
         '503': {$ref: '#/components/responses/Error'}
   /calculate:
     post:

@@ -18,14 +18,24 @@ export async function courses(programId: string, classYear: number, period: stri
   const checked=await Promise.all(candidates.map(async course=>({course,eligible:await rule(programId,classYear,period,"MIDTERM",course.id)})));
   return checked.filter(x=>x.eligible).map(x=>x.course);
 }
-export async function rule(programId: string, classYear: number, period: string, system: string, courseId: string | null) {
-  const result = await db().query(`SELECT s.id AS "ruleId", v.id AS "versionId",s.academic_year_start AS "academicYearStart",s.class_year AS "classYear",s.period,s.system_type AS system,v.passing_grade AS "passingGrade", COALESCE((SELECT json_agg(json_build_object('type', c.component_type,'position', c.position,'weightPercent', c.weight_percent::text) ORDER BY c.component_type,c.position) FROM academic_read_assessment_components c WHERE c.version_id=v.id),'[]'::json) AS components, COALESCE((SELECT json_agg(json_build_object('sourceUrl', r.source_url,'sourceType',r.source_type,'verifiedAt',r.verified_at,'sourceTitle',r.source_title)) FROM academic_read_grading_rule_sources r WHERE r.version_id=v.id),'[]'::json) AS sources FROM academic_read_grading_schemes s JOIN academic_read_grading_scheme_versions v ON v.scheme_id=s.id JOIN academic_read_programs p ON p.id=s.program_id JOIN academic_read_faculties f ON f.id=p.faculty_id JOIN academic_read_universities u ON u.id=f.university_id WHERE s.program_id=$1 AND s.class_year=$2 AND s.period=$3 AND s.system_type=$4 AND s.course_id IS NOT DISTINCT FROM $5::uuid AND s.academic_year_start=$6 AND v.status='PUBLISHED' AND p.is_active AND f.is_active AND u.is_active AND s.class_year<=p.duration_years AND (s.course_id IS NULL OR EXISTS (SELECT 1 FROM academic_read_courses cr WHERE cr.id=s.course_id AND cr.is_active)) AND EXISTS (SELECT 1 FROM academic_read_grading_rule_sources src WHERE src.version_id=v.id) LIMIT 1`,[programId,classYear,period,system,courseId,academicYear()]);
+export async function lookupRule(programId: string, classYear: number, period: string, system: string, courseId: string | null) {
+  const result = await db().query(`SELECT s.id AS "ruleId", v.id AS "versionId",s.academic_year_start AS "academicYearStart",s.class_year AS "classYear",s.period,s.system_type AS system,v.passing_grade AS "passingGrade", COALESCE((SELECT json_agg(json_build_object('type', c.component_type,'position', c.position,'weightPercent', c.weight_percent::text) ORDER BY c.component_type,c.position) FROM academic_read_assessment_components c WHERE c.version_id=v.id),'[]'::json) AS components, COALESCE((SELECT json_agg(json_build_object('sourceUrl', r.source_url,'sourceType',r.source_type,'verifiedAt',r.verified_at,'sourceTitle',r.source_title)) FROM academic_read_grading_rule_sources r WHERE r.version_id=v.id),'[]'::json) AS sources FROM academic_read_grading_schemes s JOIN academic_read_grading_scheme_versions v ON v.scheme_id=s.id JOIN academic_read_programs p ON p.id=s.program_id JOIN academic_read_faculties f ON f.id=p.faculty_id JOIN academic_read_universities u ON u.id=f.university_id WHERE s.program_id=$1 AND s.class_year=$2 AND s.period=$3 AND s.system_type=$4 AND s.course_id IS NOT DISTINCT FROM $5::uuid AND s.academic_year_start=$6 AND v.status='PUBLISHED' AND p.is_active AND f.is_active AND u.is_active AND s.class_year<=p.duration_years AND (s.course_id IS NULL OR EXISTS (SELECT 1 FROM academic_read_courses cr WHERE cr.id=s.course_id AND cr.is_active)) LIMIT 1`,[programId,classYear,period,system,courseId,academicYear()]);
   const row=result.rows[0];
-  if (!row || !isEligible(row.system,row.passingGrade,row.components,row.sources)) return null;
-  return row;
+  if (!row) return {status:"RULE_NOT_FOUND"} as const;
+  const errors=publicationErrors(row.system,row.passingGrade,row.components,row.sources);
+  if (errors.includes("MISSING_VERIFIED_SOURCE")) return {status:"UNVERIFIED_RULE"} as const;
+  if (errors.length) return {status:"UNSUPPORTED_RULE"} as const;
+  return {status:"VERIFIED",data:row} as const;
+}
+export async function rule(programId:string,classYear:number,period:string,system:string,courseId:string|null) {
+  const result=await lookupRule(programId,classYear,period,system,courseId);
+  return result.status==="VERIFIED" ? result.data : null;
+}
+function publicationErrors(system:string,passingGrade:string,components:{type:string;position:number;weightPercent:string}[],sources:{sourceUrl:string;verifiedAt:string}[]) {
+  return validateForPublication(system,passingGrade,components.map(c=>({component_type:c.type,position:c.position,weight_percent:String(c.weightPercent)})),sources.map(s=>({source_url:s.sourceUrl,verified_at:new Date(s.verifiedAt)})));
 }
 function isEligible(system:string,passingGrade:string,components:{type:string;position:number;weightPercent:string}[],sources:{sourceUrl:string;verifiedAt:string}[]) {
-  return validateForPublication(system,passingGrade,components.map(c=>({component_type:c.type,position:c.position,weight_percent:String(c.weightPercent)})),sources.map(s=>({source_url:s.sourceUrl,verified_at:new Date(s.verifiedAt)}))).length===0;
+  return publicationErrors(system,passingGrade,components,sources).length===0;
 }
 export type PublishedVersion = {
   ruleId:string; programId:string; courseId:string|null; classYear:number; period:string; versionId:string; status:"PUBLISHED"|"SUPERSEDED"; academicYearStart:number; passingGrade:string;

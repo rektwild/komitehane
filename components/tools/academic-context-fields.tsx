@@ -11,12 +11,16 @@ export type AcademicRule={versionId:string;academicYearStart:number;passingGrade
 export type AcademicContext={universityId:string;facultyId:string;programId:string;classYear:string;period:string;courseId:string;rule:AcademicRule|null};
 export const emptyAcademicContext:AcademicContext={universityId:"",facultyId:"",programId:"",classYear:"",period:"ANNUAL",courseId:"",rule:null};
 type Payload<T>={data:T};
+class AcademicRequestError extends Error {constructor(readonly code:string) {super(code);}}
 async function getData<T>(url:string,signal:AbortSignal):Promise<T> {
-  const res=await fetch(url,{signal});if(!res.ok)throw Error("unavailable");return ((await res.json()) as Payload<T>).data;
+  const res=await fetch(url,{signal});
+  if(!res.ok) {const body=await res.json().catch(()=>null);throw new AcademicRequestError(body?.error?.code ?? "DB_UNAVAILABLE");}
+  return ((await res.json()) as Payload<T>).data;
 }
 export function AcademicContextFields({toolKey,context,onChange}:{toolKey:ToolKey;context:AcademicContext;onChange:(context:AcademicContext)=>void}) {
   const t=useTranslations("Academic");const locale=useLocale();const midterm=toolKey.startsWith("midterm");
   const [universities,setUniversities]=useState<Item[]>([]);const [faculties,setFaculties]=useState<Item[]>([]);const [programs,setPrograms]=useState<Item[]>([]);const [courses,setCourses]=useState<Item[]>([]);const [unavailable,setUnavailable]=useState(false);
+  const [ruleState,setRuleState]=useState<"IDLE"|"LOADING"|"VERIFIED"|"UNVERIFIED_RULE"|"UNSUPPORTED_RULE"|"ERROR">(context.programId && context.classYear && (!midterm || context.courseId) ? "LOADING" : "IDLE");
   useEffect(()=>{const c=new AbortController();
     async function loadAll() {const all:Item[]=[];for(let offset=0;offset<10000;offset+=100){const page=await getData<Item[]>(`/api/v1/universities?limit=100&offset=${offset}`,c.signal);all.push(...page);if(page.length<100)break;}return all;}
     loadAll().then(data=>{setUniversities(data);setUnavailable(false);}).catch(e=>{if(e.name!=="AbortError")setUnavailable(true);});return()=>c.abort();},[]);
@@ -29,7 +33,12 @@ export function AcademicContextFields({toolKey,context,onChange}:{toolKey:ToolKe
   useEffect(()=>{
     const c=new AbortController();if(!context.programId || !context.classYear || (midterm && !context.courseId))return()=>c.abort();
     const qs=new URLSearchParams({programId:context.programId,classYear:context.classYear,period:context.period,system:midterm?"MIDTERM":"COMMITTEE"});if(midterm)qs.set("courseId",context.courseId);
-    getData<AcademicRule>(`/api/v1/grading-rules?${qs}`,c.signal).then(rule=>onChange({...context,rule})).catch(()=>{});return()=>c.abort();
+    getData<AcademicRule>(`/api/v1/grading-rules?${qs}`,c.signal).then(rule=>{setRuleState("VERIFIED");onChange({...context,rule});}).catch(error=>{
+      if(error?.name==="AbortError")return;
+      if(error instanceof AcademicRequestError && error.code==="RULE_NOT_FOUND")setRuleState("IDLE");
+      else if(error instanceof AcademicRequestError && (error.code==="UNVERIFIED_RULE" || error.code==="UNSUPPORTED_RULE"))setRuleState(error.code);
+      else setRuleState("ERROR");
+    });return()=>c.abort();
   // onChange is stable; rule is intentionally excluded to avoid refetch after loading.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[context.programId,context.classYear,context.period,context.courseId,midterm,onChange]);
@@ -37,7 +46,9 @@ export function AcademicContextFields({toolKey,context,onChange}:{toolKey:ToolKe
     if ("universityId" in changes) {setFaculties([]);setPrograms([]);setCourses([]);}
     else if ("facultyId" in changes) {setPrograms([]);setCourses([]);}
     else if ("programId" in changes || "classYear" in changes || "period" in changes) setCourses([]);
-    onChange({...context,...changes,rule:null});
+    const next={...context,...changes,rule:null};
+    setRuleState(next.programId && next.classYear && (!midterm || next.courseId) ? "LOADING" : "IDLE");
+    onChange(next);
   };
   const selectClass="h-10 w-full rounded-md border border-input bg-background px-3 text-sm";
   const select=(name:string,label:string,value:string,items:Item[],change:(v:string)=>void)=><Field><FieldLabel htmlFor={`academic-${name}`}>{label}</FieldLabel><select id={`academic-${name}`} className={selectClass} value={value} onChange={e=>change(e.target.value)}><option value="">{t("select")}</option>{items.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></Field>;
@@ -45,7 +56,7 @@ export function AcademicContextFields({toolKey,context,onChange}:{toolKey:ToolKe
   const selectedFaculty=faculties.find(x=>x.id===context.facultyId);
   const selectedUniversity=universities.find(x=>x.id===context.universityId);
   const pagePath=context.rule && selectedProgram?.slug && selectedFaculty?.slug && selectedUniversity?.slug && context.classYear ? academicPath(locale,toolKey,selectedUniversity.slug,selectedFaculty.slug,selectedProgram.slug,Number(context.classYear)) : null;
-  return <div className="space-y-3"><p className="text-sm text-muted-foreground">{unavailable?t("unavailable"):context.rule?t("verified",{year:String(context.rule.academicYearStart),nextYear:String(context.rule.academicYearStart+1)}):t("manual")}</p>
+  return <div className="space-y-3"><p className="text-sm text-muted-foreground">{unavailable?t("unavailable"):context.rule?t("verified",{year:String(context.rule.academicYearStart),nextYear:String(context.rule.academicYearStart+1)}):ruleState==="LOADING"?t("loading"):ruleState==="UNVERIFIED_RULE"?t("unverified"):ruleState==="UNSUPPORTED_RULE"?t("unsupported"):ruleState==="ERROR"?t("unavailable"):t("manual")}</p>
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {select("university",t("university"),context.universityId,universities,v=>choose({universityId:v,facultyId:"",programId:"",classYear:"",courseId:""}))}
       {context.universityId && select("faculty",t("faculty"),context.facultyId,faculties,v=>choose({facultyId:v,programId:"",classYear:"",courseId:""}))}

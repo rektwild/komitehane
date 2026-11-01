@@ -1,7 +1,7 @@
 import {describe,expect,it,vi} from "vitest";
-vi.mock("@/lib/academic/repositories/catalog",()=>({universities:vi.fn().mockResolvedValue([]),faculties:vi.fn().mockResolvedValue([]),programs:vi.fn().mockResolvedValue([]),courses:vi.fn().mockResolvedValue([]),rule:vi.fn().mockResolvedValue(null),versionById:vi.fn().mockResolvedValue(null)}));
+vi.mock("@/lib/academic/repositories/catalog",()=>({universities:vi.fn().mockResolvedValue([]),faculties:vi.fn().mockResolvedValue([]),programs:vi.fn().mockResolvedValue([]),courses:vi.fn().mockResolvedValue([]),lookupRule:vi.fn().mockResolvedValue({status:"RULE_NOT_FOUND"}),rule:vi.fn().mockResolvedValue(null),versionById:vi.fn().mockResolvedValue(null)}));
 import {GET,POST} from "../../app/api/v1/[resource]/route";
-import {versionById} from "../../lib/academic/repositories/catalog";
+import {lookupRule,versionById} from "../../lib/academic/repositories/catalog";
 const params=(resource:string)=>({params:Promise.resolve({resource})});
 function request(body:unknown) {return new Request("http://localhost/api/v1/calculate",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(body)});}
 describe("academic API adapter",()=>{
@@ -21,6 +21,11 @@ describe("academic API adapter",()=>{
   it("validates identifiers and body size",async()=>{
     expect((await GET(new Request("http://localhost/api/v1/faculties?universityId=invalid"),params("faculties"))).status).toBe(400);
     expect((await POST(request({source:"CUSTOM",junk:"x".repeat(20000)}),params("calculate"))).status).toBe(400);
+  });
+  it("distinguishes an unsupported rule from missing data",async()=>{
+    vi.mocked(lookupRule).mockResolvedValueOnce({status:"UNSUPPORTED_RULE"});
+    const response=await GET(new Request("http://localhost/api/v1/grading-rules?programId=00000000-0000-4000-8000-000000000003&classYear=2&period=ANNUAL&system=COMMITTEE"),params("grading-rules"));
+    expect(response.status).toBe(422);expect(await response.json()).toMatchObject({error:{code:"UNSUPPORTED_RULE"}});
   });
   it("rejects other browser origins",async()=>{
     expect((await GET(new Request("http://localhost/api/v1/universities",{headers:{origin:"https://other.example"}}),params("universities"))).status).toBe(403);
