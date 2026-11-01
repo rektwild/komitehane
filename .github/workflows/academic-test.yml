@@ -17,6 +17,12 @@ jobs:
   academic-postgres:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      DATABASE_URL: postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/komitehane_payload_fixture
+      DATABASE_URL_UNPOOLED: postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/komitehane_payload_fixture
+      PAYLOAD_SECRET: local-fixture-only-not-a-production-secret-123456
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      ACADEMIC_FEATURE_ENABLED: 'false'
     services:
       postgres:
         image: postgres:16
@@ -44,3 +50,29 @@ jobs:
       - run: pnpm academic:test:postgres
         env:
           ACADEMIC_TEST_DATABASE_URL: postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/komitehane_academic_test
+      - name: Create isolated Payload fixture database
+        run: |
+          node --input-type=module <<'NODE'
+          import pg from 'pg';
+          const client = new pg.Client({connectionString:'postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/komitehane_academic_test'});
+          await client.connect();
+          try { await client.query('CREATE DATABASE komitehane_payload_fixture'); }
+          finally { await client.end(); }
+          NODE
+      - name: Migrate isolated Payload fixture
+        run: pnpm payload:migrate
+      - name: Build with fixture and no academic database
+        run: pnpm build
+      - name: SEO smoke with fixture
+        env:
+          SEO_AUDIT_EXPECT_INDEXABLE: 'true'
+          SEO_AUDIT_ACADEMIC_MISSING_PATH: /tr/araclar/komite-not-hesaplama/fictional/faculty/program/2-sinif
+        run: |
+          pnpm start --hostname localhost --port 3000 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 60); do
+            if curl --silent --fail http://localhost:3000/robots.txt >/dev/null; then break; fi
+            sleep 1
+          done
+          pnpm seo:audit
