@@ -1,10 +1,11 @@
 "use client";
 import {useEffect,useState} from "react";
-import {useTranslations} from "next-intl";
+import {useLocale,useTranslations} from "next-intl";
 import {Field,FieldLabel} from "@/components/ui/field";
 import type {ToolKey} from "@/lib/tools";
+import {academicPath} from "@/lib/academic/seo/paths";
 
-type Item={id:string;name:string;durationYears?:number};
+type Item={id:string;name:string;slug?:string;durationYears?:number};
 type Component={type:string;position:number;weightPercent:string};
 export type AcademicRule={versionId:string;academicYearStart:number;passingGrade:string;components:Component[];sources:{sourceUrl:string;sourceTitle?:string}[]};
 export type AcademicContext={universityId:string;facultyId:string;programId:string;classYear:string;period:string;courseId:string;rule:AcademicRule|null};
@@ -14,7 +15,7 @@ async function getData<T>(url:string,signal:AbortSignal):Promise<T> {
   const res=await fetch(url,{signal});if(!res.ok)throw Error("unavailable");return ((await res.json()) as Payload<T>).data;
 }
 export function AcademicContextFields({toolKey,context,onChange}:{toolKey:ToolKey;context:AcademicContext;onChange:(context:AcademicContext)=>void}) {
-  const t=useTranslations("Academic");const midterm=toolKey.startsWith("midterm");
+  const t=useTranslations("Academic");const locale=useLocale();const midterm=toolKey.startsWith("midterm");
   const [universities,setUniversities]=useState<Item[]>([]);const [faculties,setFaculties]=useState<Item[]>([]);const [programs,setPrograms]=useState<Item[]>([]);const [courses,setCourses]=useState<Item[]>([]);const [unavailable,setUnavailable]=useState(false);
   useEffect(()=>{const c=new AbortController();
     async function loadAll() {const all:Item[]=[];for(let offset=0;offset<10000;offset+=100){const page=await getData<Item[]>(`/api/v1/universities?limit=100&offset=${offset}`,c.signal);all.push(...page);if(page.length<100)break;}return all;}
@@ -41,6 +42,9 @@ export function AcademicContextFields({toolKey,context,onChange}:{toolKey:ToolKe
   const selectClass="h-10 w-full rounded-md border border-input bg-background px-3 text-sm";
   const select=(name:string,label:string,value:string,items:Item[],change:(v:string)=>void)=><Field><FieldLabel htmlFor={`academic-${name}`}>{label}</FieldLabel><select id={`academic-${name}`} className={selectClass} value={value} onChange={e=>change(e.target.value)}><option value="">{t("select")}</option>{items.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></Field>;
   const selectedProgram=programs.find(x=>x.id===context.programId);
+  const selectedFaculty=faculties.find(x=>x.id===context.facultyId);
+  const selectedUniversity=universities.find(x=>x.id===context.universityId);
+  const pagePath=context.rule && selectedProgram?.slug && selectedFaculty?.slug && selectedUniversity?.slug && context.classYear ? academicPath(locale,toolKey,selectedUniversity.slug,selectedFaculty.slug,selectedProgram.slug,Number(context.classYear)) : null;
   return <div className="space-y-3"><p className="text-sm text-muted-foreground">{unavailable?t("unavailable"):context.rule?t("verified",{year:String(context.rule.academicYearStart),nextYear:String(context.rule.academicYearStart+1)}):t("manual")}</p>
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {select("university",t("university"),context.universityId,universities,v=>choose({universityId:v,facultyId:"",programId:"",classYear:"",courseId:""}))}
@@ -50,6 +54,7 @@ export function AcademicContextFields({toolKey,context,onChange}:{toolKey:ToolKe
       {context.classYear && select("period",t("period"),context.period,[{id:"ANNUAL",name:t("annual")},{id:"FALL",name:t("fall")},{id:"SPRING",name:t("spring")}],v=>choose({period:v,courseId:""}))}
       {midterm && context.classYear && select("course",t("course"),context.courseId,courses,v=>choose({courseId:v}))}
     </div>
+    {pagePath ? <p className="text-sm"><a href={pagePath} className="underline">{t("viewUniversityPage")}</a></p> : null}
     {context.rule?.sources?.map((source,i)=><p className="text-xs" key={`${source.sourceUrl}-${i}`}><a className="underline" href={source.sourceUrl} target="_blank" rel="noreferrer">{t("source")}</a></p>)}
   </div>;
 }

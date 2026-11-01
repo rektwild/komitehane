@@ -368,6 +368,13 @@ export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: Tool
     if(!previous){setRecoveryNotice(academicT("noPrevious"));return;}
     clearCalculation();updateStoredState(storageKey,()=>({...previous,version:STORAGE_VERSION}));setRecoveryNotice(academicT("previousLoaded"));
   }
+  function copyManualGrades() {
+    const manual=getStorageSnapshot(getStorageKey(toolKey,emptyAcademicContext));
+    if(!manual.rows.some(row=>row.grade.trim()) && !manual.finalGrade.trim()){setRecoveryNotice(academicT("noManualGrades"));return;}
+    clearCalculation();
+    updateStoredState(storageKey,current=>({...current,rows:current.rows.map((row,i)=>({...row,grade:manual.rows[i]?.grade??""})),finalGrade:manual.finalGrade}));
+    setRecoveryNotice(academicT("manualGradesCopied"));
+  }
   function resetOfficial(rule:AcademicRule) {
     const system=toolKey.startsWith("midterm") ? "MIDTERM" : "COMMITTEE";
     const components=rule.components.filter(c=>c.type===system).sort((a,b)=>a.position-b.position);
@@ -535,7 +542,7 @@ export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: Tool
               <FieldGroup>
                 <AcademicContextFields toolKey={toolKey} context={academicContext} onChange={onAcademicChange} />
                 {customized ? <p className="text-sm text-muted-foreground">{academicT("custom")}</p> : null}
-                {academicContext.rule ? <><div className="flex flex-wrap gap-2"><Button type="button" variant="outline" onClick={()=>resetOfficial(academicContext.rule!)}>{academicT("reset")}</Button><Button type="button" variant="outline" onClick={recoverPrevious}>{academicT("recoverPrevious")}</Button></div>{recoveryNotice ? <p className="text-sm" role="status">{recoveryNotice}</p> : null}<Separator /></> : null}
+                {academicContext.rule ? <><div className="flex flex-wrap gap-2"><Button type="button" variant="outline" onClick={()=>resetOfficial(academicContext.rule!)}>{academicT("reset")}</Button><Button type="button" variant="outline" onClick={recoverPrevious}>{academicT("recoverPrevious")}</Button><Button type="button" variant="outline" onClick={copyManualGrades}>{academicT("copyManualGrades")}</Button></div>{recoveryNotice ? <p className="text-sm" role="status">{recoveryNotice}</p> : null}<Separator /></> : null}
                 {isMinimumFinal ? (
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <Field data-invalid={Boolean(passingGradeIssue)}>

@@ -76,6 +76,7 @@ jobs:
             sleep 1
           done
           pnpm seo:audit
+          BROWSER_EXECUTABLE="$(command -v google-chrome || command -v chromium || command -v chromium-browser)" node scripts/academic/browser-smoke.mjs manual
       - name: Prepare fictional academic DB and read-only role
         run: node tests/fixtures/academic/prepare-ci.mjs
       - name: Enable verified TLS for isolated PostgreSQL
@@ -141,3 +142,4 @@ jobs:
           done
           SEO_AUDIT_ACADEMIC_PATH=/tr/araclar/komite-not-hesaplama/fictional-test/faculty/program/2-sinif pnpm seo:audit
           SEO_AUDIT_ACADEMIC_PATH=/tr/araclar/vize-not-hesaplama/fictional-test/fictional-faculty/fictional-program/2-sinif pnpm seo:audit
+          BROWSER_EXECUTABLE="$(command -v google-chrome || command -v chromium || command -v chromium-browser)" node scripts/academic/browser-smoke.mjs official
