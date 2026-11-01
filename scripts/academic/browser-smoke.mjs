@@ -28,7 +28,7 @@ try {
     await page.locator('form button[type="submit"]').click();await page.locator('[aria-labelledby="calculator-committeeGrade-result-title"]').getByText("68",{exact:true}).waitFor();
     await context.close();
     const privateContext=await browser.newContext();await privateContext.addInitScript(()=>{Object.defineProperty(window,"localStorage",{get(){throw new Error("blocked")}})});const privatePage=await privateContext.newPage();
-    await privatePage.route("**/*",route=>route.request().url().startsWith(base)?route.continue():route.abort());await open(privatePage,paths[0]);
+    await privatePage.route("**/*",route=>route.request().url().startsWith(base)?route.continue():route.abort());await open(privatePage,paths[0]);await privatePage.getByText("Akademik veri kullanılamıyor",{exact:false}).waitFor();
     await privatePage.locator("#calculator-committeeGrade-assessment-0-grade").fill("80");await privatePage.locator("#calculator-committeeGrade-assessment-0-weight").fill("40");await privatePage.locator("#calculator-committeeGrade-final-grade").fill("60");
     await privatePage.locator('form button[type="submit"]').click();await privatePage.locator('[aria-labelledby="calculator-committeeGrade-result-title"]').getByText("68",{exact:true}).waitFor();await privateContext.close();
     console.log("Browser: eight generic tools, manual calculation and unavailable localStorage passed.");
