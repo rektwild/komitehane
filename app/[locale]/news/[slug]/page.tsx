@@ -10,6 +10,7 @@ import {AdPlacement} from "@/components/ads/ad-placement";
 import {convertLexicalToPlaintext} from "@payloadcms/richtext-lexical/plaintext";
 
 import {ArticleImageBlock} from "@/components/news/article-image-block";
+import {ArticleUploadImage} from "@/components/news/article-upload-image";
 import {NewsAuthorCard} from "@/components/news/news-author-card";
 import {NewsNextPost} from "@/components/news/news-next-post";
 import {NewsPostSummaryAccordion} from "@/components/news/news-post-summary-accordion";
@@ -128,6 +129,9 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
         />
       ),
     },
+    upload: ({node}: {node: unknown}) => (
+      <ArticleUploadImage node={node} fallbackAlt={t("inlineImageFallbackAlt")} />
+    ),
     heading: ({node, nodesToJSX}: {node: {tag: string; children: unknown[]}; nodesToJSX: (args: {nodes: unknown[]}) => unknown}) => {
       const tag = normalizeNewsHeadingTag(node.tag);
       const children = nodesToJSX({nodes: node.children}) as React.ReactNode;
