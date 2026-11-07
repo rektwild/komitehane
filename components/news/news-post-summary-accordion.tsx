@@ -30,7 +30,7 @@ export function NewsPostSummaryAccordion({content}: {content: string}) {
 
         <CollapsibleContent>
           <div className="border-t border-border/70 px-4 py-4 md:px-5 md:py-5">
-            <p className="text-base leading-8 text-muted-foreground sm:text-lg">{content}</p>
+            <p className="text-sm leading-6 text-muted-foreground">{content}</p>
           </div>
         </CollapsibleContent>
       </div>
