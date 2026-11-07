@@ -15,7 +15,7 @@ export function SiteHeader() {
           <DesktopNavigation />
         </div>
 
-        <div className="flex min-w-0 flex-1 justify-center px-2 sm:px-4 xl:max-w-lg">
+        <div className="flex min-w-0 flex-1 px-2 sm:px-4">
           <HeaderSearch className="w-full" />
         </div>
 
