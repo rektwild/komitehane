@@ -1,6 +1,5 @@
 import type {Metadata} from "next";
 import Image from "next/image";
-import {RichText} from "@payloadcms/richtext-lexical/react";
 import {NewspaperIcon} from "lucide-react";
 import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
@@ -9,8 +8,7 @@ import {JsonLd} from "@/components/json-ld";
 import {AdPlacement} from "@/components/ads/ad-placement";
 import {convertLexicalToPlaintext} from "@payloadcms/richtext-lexical/plaintext";
 
-import {ArticleImageBlock} from "@/components/news/article-image-block";
-import {ArticleUploadImage} from "@/components/news/article-upload-image";
+import {NewsArticleBody} from "@/components/news/news-article-body";
 import {NewsAuthorCard} from "@/components/news/news-author-card";
 import {NewsNextPost} from "@/components/news/news-next-post";
 import {NewsPostSummaryAccordion} from "@/components/news/news-post-summary-accordion";
@@ -26,17 +24,11 @@ import {
   getNextNewsArticle,
   getRelatedNewsArticles,
 } from "@/lib/news/data";
-import {
-  extractNewsToc,
-  getNewsHeadingText,
-  getNewsTocHeadingLevel,
-  normalizeNewsHeadingTag,
-} from "@/lib/news/toc";
+import {extractNewsToc} from "@/lib/news/toc";
 import type {NewsLocale} from "@/lib/news/types";
 import {getDynamicLocalizedMetadata} from "@/lib/seo/metadata";
 import {getNewsArticleJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
-import type {ArticleImageBlockFields} from "@/blocks/article-image";
 
 type NewsArticlePageProps = {
   params: Promise<{locale: NewsLocale; slug: string}>;
@@ -110,44 +102,6 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
     }),
   ]);
 
-  let headingCursor = 0;
-  const richTextConverters = ({
-    defaultConverters,
-  }: {
-    defaultConverters: Record<string, unknown>;
-  }) => ({
-    ...defaultConverters,
-    blocks: {
-      ...((defaultConverters.blocks as Record<string, unknown> | undefined) || {}),
-      articleImage: ({node}: {node: {fields: ArticleImageBlockFields}}) => (
-        <ArticleImageBlock
-          fields={node.fields}
-          fallbackAlt={t("inlineImageFallbackAlt")}
-          creditPrefix={t("imageCreditPrefix")}
-          creditOn={t("imageCreditOn")}
-          sourceLabel={t("pexelsSource")}
-        />
-      ),
-    },
-    upload: ({node}: {node: unknown}) => (
-      <ArticleUploadImage node={node} fallbackAlt={t("inlineImageFallbackAlt")} />
-    ),
-    heading: ({node, nodesToJSX}: {node: {tag: string; children: unknown[]}; nodesToJSX: (args: {nodes: unknown[]}) => unknown}) => {
-      const tag = normalizeNewsHeadingTag(node.tag);
-      const children = nodesToJSX({nodes: node.children}) as React.ReactNode;
-      const tocLevel = getNewsTocHeadingLevel(node.tag);
-      if (tocLevel !== null && getNewsHeadingText(node)) {
-        const item = tocItems[headingCursor++];
-        if (item?.id) {
-          const Heading = tag;
-          return <Heading id={item.id}>{children as React.ReactNode}</Heading>;
-        }
-      }
-      const Heading = tag;
-      return <Heading>{children as React.ReactNode}</Heading>;
-    },
-  });
-
   return (
     <>
       <PageBreadcrumb
@@ -177,13 +131,13 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
         />
 
         <header className="border-b border-border/60 pb-4">
-          <h1 className="text-balance text-3xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {article.title}
           </h1>
           <p
             id="article-excerpt"
             role="doc-subtitle"
-            className="mt-4 text-pretty text-lg leading-8 text-muted-foreground sm:text-xl sm:leading-9"
+            className="mt-3 text-pretty text-base leading-6 text-muted-foreground"
           >
             {article.excerpt}
           </p>
@@ -210,7 +164,7 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
             <NewsShareActions title={article.title} url={currentUrl} />
           </aside>
 
-          <div className="order-1 min-w-0 space-y-8 xl:order-2">
+          <div className="order-1 min-w-0 space-y-6 xl:order-2">
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card">
               <Image
                 src={article.image.url}
@@ -226,8 +180,13 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
 
             <AdPlacement placement="ARTICLE_TOP" />
 
-            {/* @ts-expect-error RichText converters typing is loose enough for custom heading ids */}
-            <RichText data={article.content} className="news-rich-text" converters={richTextConverters} />
+            <NewsArticleBody
+              content={article.content}
+              fallbackAlt={t("inlineImageFallbackAlt")}
+              creditPrefix={t("imageCreditPrefix")}
+              creditOn={t("imageCreditOn")}
+              sourceLabel={t("pexelsSource")}
+            />
 
             <AdPlacement placement="ARTICLE_MIDDLE" />
 

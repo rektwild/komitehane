@@ -743,24 +743,24 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
         </h2>
         <Card className="w-full">
           <CardContent>
-            <div className="space-y-4 text-sm leading-6">
+            <div className="article-copy">
               <p>{t("howItWorksIntroduction")}</p>
 
-              <section className="space-y-2">
-                <h3 className="font-bold">{t("systemTitle")}</h3>
+              <section className="article-copy-stack">
+                <h3>{t("systemTitle")}</h3>
                 <p>{t("systemDescription")}</p>
               </section>
 
-              <section className="space-y-2">
-                <h3 className="font-bold">{t("formulaTitle")}</h3>
+              <section className="article-copy-stack">
+                <h3>{t("formulaTitle")}</h3>
                 <p>{t("formulaIntroduction")}</p>
-                <blockquote className="border-l-4 border-border bg-muted/50 px-4 py-3 text-center">
+                <blockquote className="article-quote text-center">
                   <p className="font-mono text-xs leading-5 sm:text-sm">
                     <strong>{t("formula")}</strong>
                   </p>
                 </blockquote>
                 <p>{t("contributionIntroduction")}</p>
-                <blockquote className="border-l-4 border-border bg-muted/50 px-4 py-3 text-center">
+                <blockquote className="article-quote text-center">
                   <p className="font-mono text-xs leading-5 sm:text-sm">
                     <strong>{t("contributionFormula")}</strong>
                   </p>
