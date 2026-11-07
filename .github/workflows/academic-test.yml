@@ -1,0 +1,145 @@
+name: Academic isolated PostgreSQL tests
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/academic-test.yml'
+      - 'drizzle/academic/**'
+      - 'lib/academic/**'
+      - 'scripts/academic/**'
+      - 'tests/academic/**'
+      - 'tests/fixtures/academic/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  academic-postgres:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DATABASE_URL: postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/komitehane_payload_fixture
+      DATABASE_URL_UNPOOLED: postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/komitehane_payload_fixture
+      PAYLOAD_SECRET: local-fixture-only-not-a-production-secret-123456
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      ACADEMIC_FEATURE_ENABLED: 'false'
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: academic_test
+          POSTGRES_PASSWORD: academic_local_test_only
+          POSTGRES_DB: komitehane_academic_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U academic_test -d komitehane_academic_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm academic:check
+      - run: pnpm academic:test:postgres
+        env:
+          ACADEMIC_TEST_DATABASE_URL: postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/komitehane_academic_test
+      - name: Create isolated Payload fixture database
+        run: |
+          node --input-type=module <<'NODE'
+          import pg from 'pg';
+          const client = new pg.Client({connectionString:'postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/komitehane_academic_test'});
+          await client.connect();
+          try { await client.query('CREATE DATABASE komitehane_payload_fixture'); }
+          finally { await client.end(); }
+          NODE
+      - name: Migrate isolated Payload fixture
+        run: pnpm payload:migrate
+      - name: Build with fixture and no academic database
+        run: pnpm build
+      - name: SEO smoke with fixture
+        env:
+          SEO_AUDIT_EXPECT_INDEXABLE: 'true'
+          SEO_AUDIT_ACADEMIC_MISSING_PATH: /tr/araclar/komite-not-hesaplama/fictional/faculty/program/2-sinif
+        run: |
+          setsid pnpm start --hostname localhost --port 3000 &
+          server_pid=$!
+          trap 'kill -- "-$server_pid" 2>/dev/null || true; wait "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 60); do
+            if curl --silent --fail http://localhost:3000/robots.txt >/dev/null; then break; fi
+            sleep 1
+          done
+          pnpm seo:audit
+          BROWSER_EXECUTABLE="$(command -v google-chrome || command -v chromium || command -v chromium-browser)" node scripts/academic/browser-smoke.mjs manual
+      - name: Prepare fictional academic DB and read-only role
+        run: node tests/fixtures/academic/prepare-ci.mjs
+      - name: Enable verified TLS for isolated PostgreSQL
+        env:
+          PG_CONTAINER: ${{ job.services.postgres.id }}
+        run: |
+          openssl req -x509 -newkey rsa:2048 -nodes -sha256 -keyout /tmp/academic-ci-ca.key -out /tmp/academic-ci-ca.crt -days 1 -subj '/CN=Academic CI CA' -addext 'basicConstraints=critical,CA:TRUE'
+          openssl req -newkey rsa:2048 -nodes -keyout /tmp/academic-ci-server.key -out /tmp/academic-ci-server.csr -subj '/CN=localhost'
+          printf 'subjectAltName=DNS:localhost,IP:127.0.0.1\nextendedKeyUsage=serverAuth\n' > /tmp/academic-ci-ext.cnf
+          openssl x509 -req -in /tmp/academic-ci-server.csr -CA /tmp/academic-ci-ca.crt -CAkey /tmp/academic-ci-ca.key -CAcreateserial -out /tmp/academic-ci-server.crt -days 1 -sha256 -extfile /tmp/academic-ci-ext.cnf
+          docker cp /tmp/academic-ci-server.crt "$PG_CONTAINER":/tmp/academic-ci-server.crt
+          docker cp /tmp/academic-ci-server.key "$PG_CONTAINER":/tmp/academic-ci-server.key
+          docker exec --user root "$PG_CONTAINER" sh -c 'cp /tmp/academic-ci-server.crt /var/lib/postgresql/data/server.crt && cp /tmp/academic-ci-server.key /var/lib/postgresql/data/server.key && chown postgres:postgres /var/lib/postgresql/data/server.crt /var/lib/postgresql/data/server.key && chmod 600 /var/lib/postgresql/data/server.key'
+          node --input-type=module <<'NODE'
+          import pg from 'pg';
+          const client = new pg.Client({connectionString:'postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/postgres'});
+          await client.connect();
+          try { await client.query("ALTER SYSTEM SET ssl = 'on'"); await client.query('SELECT pg_reload_conf()'); }
+          finally { await client.end(); }
+          NODE
+          echo 'ACADEMIC_DATABASE_URL=postgresql://academic_app_fixture:academic_fixture_only@127.0.0.1:5432/komitehane_academic' >> "$GITHUB_ENV"
+          echo "ACADEMIC_POSTGRES_CA_CERT_BASE64=$(base64 -w0 /tmp/academic-ci-ca.crt)" >> "$GITHUB_ENV"
+      - name: Verify TLS and read-only academic privileges
+        run: |
+          node --input-type=module <<'NODE'
+          import pg from 'pg';
+          import {readFile} from 'node:fs/promises';
+          const ca = await readFile('/tmp/academic-ci-ca.crt','utf8');
+          let client;
+          for (let i=0;i<20;i++) {
+            client=new pg.Client({connectionString:process.env.ACADEMIC_DATABASE_URL,ssl:{ca,rejectUnauthorized:true}});
+            try { await client.connect(); break; }
+            catch (error) { await client.end().catch(()=>{}); if(i===19)throw error; await new Promise(r=>setTimeout(r,500)); }
+          }
+          try {
+            const count=await client.query('SELECT count(*)::int AS n FROM academic_read_grading_scheme_versions');
+            if(count.rows[0].n<1)throw new Error('Missing published fixture');
+            let denied=false;
+            try { await client.query('SELECT * FROM grading_scheme_versions'); }
+            catch(error) { if(error.code==='42501')denied=true; else throw error; }
+            if(!denied)throw new Error('Fixture app role can read base tables');
+          } finally { await client.end(); }
+          console.log('Verified TLS and view-only role on isolated academic fixture.');
+          NODE
+      - name: Build with verified fictional academic data
+        env:
+          ACADEMIC_FEATURE_ENABLED: 'true'
+          ACADEMIC_CURRENT_YEAR_START: '2026'
+        run: pnpm build
+      - name: Academic SEO smoke with verified fictional rules
+        env:
+          ACADEMIC_FEATURE_ENABLED: 'true'
+          ACADEMIC_CURRENT_YEAR_START: '2026'
+          SEO_AUDIT_EXPECT_INDEXABLE: 'true'
+          SEO_AUDIT_ACADEMIC_MISSING_PATH: /tr/araclar/komite-not-hesaplama/nonexistent/faculty/program/2-sinif
+        run: |
+          setsid pnpm start --hostname localhost --port 3000 &
+          server_pid=$!
+          trap 'kill -- "-$server_pid" 2>/dev/null || true; wait "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 60); do
+            if curl --silent --fail http://localhost:3000/robots.txt >/dev/null; then break; fi
+            sleep 1
+          done
+          SEO_AUDIT_ACADEMIC_PATH=/tr/araclar/komite-not-hesaplama/fictional-test/faculty/program/2-sinif pnpm seo:audit
+          SEO_AUDIT_ACADEMIC_PATH=/tr/araclar/vize-not-hesaplama/fictional-test/fictional-faculty/fictional-program/2-sinif pnpm seo:audit
+          BROWSER_EXECUTABLE="$(command -v google-chrome || command -v chromium || command -v chromium-browser)" node scripts/academic/browser-smoke.mjs official

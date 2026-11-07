@@ -15,11 +15,7 @@ import {
   Card,
   CardContent,
 } from "@/components/ui/card";
-import {
-  StudentContextFields,
-  useStudentContext,
-  type StudentContextValidation,
-} from "@/components/tools/student-context-fields";
+import {AcademicContextFields,emptyAcademicContext,type AcademicContext,type AcademicRule} from "@/components/tools/academic-context-fields";
 import {
   Field,
   FieldError,
@@ -56,7 +52,7 @@ import {
   type ValidationIssueCode,
 } from "@/lib/tools/calculations";
 
-const STORAGE_VERSION = 1;
+const STORAGE_VERSION = 2;
 const STORAGE_PREFIX = "komitehane:grade-calculator";
 const faqKeys = ["one", "two", "three", "four", "five", "six"] as const;
 
@@ -77,6 +73,8 @@ type StoredCalculatorState = {
   rows: AssessmentInput[];
   passingGrade: string;
   finalGrade: string;
+  finalWeight: string | null;
+  updatedAt?: number;
 };
 
 type CalculationViewState = {
@@ -103,6 +101,7 @@ function createEmptyStoredState(): StoredCalculatorState {
     rows: createAssessmentRows(),
     passingGrade: "",
     finalGrade: "",
+    finalWeight: null,
   };
 }
 
@@ -112,7 +111,7 @@ function parseStoredState(rawValue: string | null): StoredCalculatorState {
   try {
     const parsed: unknown = JSON.parse(rawValue);
 
-    if (!isRecord(parsed) || parsed.version !== STORAGE_VERSION) {
+    if (!isRecord(parsed) || (parsed.version !== STORAGE_VERSION && parsed.version !== 1)) {
       return createEmptyStoredState();
     }
 
@@ -139,14 +138,16 @@ function parseStoredState(rawValue: string | null): StoredCalculatorState {
       passingGrade:
         typeof parsed.passingGrade === "string" ? parsed.passingGrade : "",
       finalGrade: typeof parsed.finalGrade === "string" ? parsed.finalGrade : "",
+      finalWeight: typeof parsed.finalWeight === "string" ? parsed.finalWeight : null,
+      updatedAt: typeof parsed.updatedAt === "number" && Number.isFinite(parsed.updatedAt) ? parsed.updatedAt : undefined,
     };
   } catch {
     return createEmptyStoredState();
   }
 }
 
-function getStorageKey(toolKey: ToolKey) {
-  return `${STORAGE_PREFIX}:${toolKey}:v${STORAGE_VERSION}`;
+function getStorageKey(toolKey: ToolKey, context:AcademicContext) {
+  return `komitehane:calculator:v2:${toolKey}:${context.programId || "manual"}:${context.rule?.academicYearStart ?? "manual"}:${context.classYear || "none"}:${context.period}:${context.courseId || "none"}:${context.rule?.versionId || "manual"}`;
 }
 
 type StorageSnapshot = {
@@ -173,7 +174,10 @@ function getStorageSnapshot(key: string): StoredCalculatorState {
       return cachedSnapshot.state;
     }
 
-    const state = parseStoredState(rawValue);
+    const parts=key.split(":");
+    const isGeneralManual=parts[4] === "manual" && parts[6] === "none";
+    const legacy = !rawValue && isGeneralManual ? window.localStorage.getItem(`${STORAGE_PREFIX}:${parts[3]}:v1`) : null;
+    const state = parseStoredState(rawValue ?? legacy);
     storageSnapshots.set(key, {rawValue, state});
 
     return state;
@@ -212,7 +216,7 @@ function updateStoredState(
   if (typeof window === "undefined") return;
 
   const currentState = getStorageSnapshot(key);
-  const nextState = updater(currentState);
+  const nextState = {...updater(currentState),updatedAt:Date.now()};
 
   try {
     const rawValue = JSON.stringify(nextState);
@@ -263,20 +267,22 @@ function getValidationMessage(
       return t("validation.totalWeightTooHigh");
     case "finalWeightZero":
       return t("validation.finalWeightZero");
+    case "totalWeightMismatch":
+      return t("validation.totalWeightMismatch");
   }
 }
 
-export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
+export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: ToolKey; initialAcademicContext?: AcademicContext}) {
   const locale = useLocale();
   const t = useTranslations(formNamespaces[toolKey]);
   const isMinimumFinal =
     toolKey === "committeeMinimumFinal" || toolKey === "midtermMinimumFinal";
-  const storageKey = getStorageKey(toolKey);
+  const [academicContext,setAcademicContext] = useState<AcademicContext>(initialAcademicContext ?? emptyAcademicContext);
+  const storageKey = getStorageKey(toolKey,academicContext);
   const storedState = useCalculatorState(storageKey);
-  const studentContext = useStudentContext();
+  const academicT=useTranslations("Academic");
+  const [recoveryNotice,setRecoveryNotice]=useState("");
   const {assessmentCount, rows, passingGrade, finalGrade} = storedState;
-  const [studentContextValidation, setStudentContextValidation] =
-    useState<StudentContextValidation>({});
   const [calculation, setCalculation] = useState<CalculationViewState>(() => ({
     storageKey,
     result: null,
@@ -315,7 +321,7 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
     );
     const remainingWeight = getFinalWeight(completeRows);
 
-    return totalWeight > 0 && totalWeight < 100 ? remainingWeight : null;
+    return totalWeight >= 0 && totalWeight < 100 ? Math.round(remainingWeight * 100) / 100 : null;
   }, [visibleRows]);
 
   const formatNumber = (value: number) =>
@@ -332,10 +338,51 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
     setCalculation({storageKey, result: null, issues: []});
   }, [storageKey]);
 
-  const handleStudentContextChange = useCallback(() => {
+  const onAcademicChange = useCallback((next:AcademicContext) => {
+    setRecoveryNotice("");
+    if (next.rule) {
+      const key=getStorageKey(toolKey,next);
+      let exists=storageSnapshots.has(key);
+      try {exists=exists || window.localStorage.getItem(key)!==null;} catch { /* in-memory fallback */ }
+      if (!exists) {
+        const prior=getStorageSnapshot(getStorageKey(toolKey,{...next,rule:null}));
+        const system=toolKey.startsWith("midterm") ? "MIDTERM" : "COMMITTEE";
+        const components=next.rule.components.filter(c=>c.type===system).sort((x,y)=>x.position-y.position);
+        const final=next.rule.components.find(c=>c.type==="FINAL");
+        if (components.length>=1 && components.length<=MAX_ASSESSMENT_COUNT && final) {
+          updateStoredState(key, state=>({...state,assessmentCount:components.length,rows:state.rows.map((row,i)=>({...row,grade:prior.rows[i]?.grade ?? "",weight:components[i]?.weightPercent ?? ""})),passingGrade:next.rule!.passingGrade,finalWeight:final.weightPercent,finalGrade:prior.finalGrade}));
+        }
+      }
+    }
+    setAcademicContext(next);
+  },[toolKey]);
+  const officialParts=academicContext.rule?.components.filter(c=>c.type===(toolKey.startsWith("midterm")?"MIDTERM":"COMMITTEE")).sort((a,b)=>a.position-b.position) ?? [];
+  const officialFinal=academicContext.rule?.components.find(c=>c.type==="FINAL");
+  const customized=Boolean(academicContext.rule && (assessmentCount!==officialParts.length || officialParts.some((c,i)=>parseLocalizedNumber(rows[i]?.weight??"")!==Number(c.weightPercent)) || parseLocalizedNumber(storedState.finalWeight??"")!==Number(officialFinal?.weightPercent) || parseLocalizedNumber(passingGrade)!==Number(academicContext.rule.passingGrade)));
+  function recoverPrevious() {
+    const prefix=storageKey.slice(0,storageKey.lastIndexOf(":")+1);
+    const candidates=new Map<string,StoredCalculatorState>();
+    for(const [key,value] of storageSnapshots) if(key.startsWith(prefix) && key!==storageKey && !key.endsWith(":manual") && (value.rawValue!==null || value.state.updatedAt!==undefined)) candidates.set(key,value.state);
+    try {for(let i=0;i<window.localStorage.length;i++){const key=window.localStorage.key(i);if(key && key.startsWith(prefix) && key!==storageKey && !key.endsWith(":manual")) candidates.set(key,parseStoredState(window.localStorage.getItem(key)));}} catch { /* use in-memory candidates */ }
+    const previous=[...candidates.values()].sort((a,b)=>(b.updatedAt??0)-(a.updatedAt??0))[0];
+    if(!previous){setRecoveryNotice(academicT("noPrevious"));return;}
+    clearCalculation();updateStoredState(storageKey,()=>({...previous,version:STORAGE_VERSION}));setRecoveryNotice(academicT("previousLoaded"));
+  }
+  function copyManualGrades() {
+    const manual=getStorageSnapshot(getStorageKey(toolKey,emptyAcademicContext));
+    if(!manual.rows.some(row=>row.grade.trim()) && !manual.finalGrade.trim()){setRecoveryNotice(academicT("noManualGrades"));return;}
     clearCalculation();
-    setStudentContextValidation({});
-  }, [clearCalculation]);
+    updateStoredState(storageKey,current=>({...current,rows:current.rows.map((row,i)=>({...row,grade:manual.rows[i]?.grade??""})),finalGrade:manual.finalGrade}));
+    setRecoveryNotice(academicT("manualGradesCopied"));
+  }
+  function resetOfficial(rule:AcademicRule) {
+    const system=toolKey.startsWith("midterm") ? "MIDTERM" : "COMMITTEE";
+    const components=rule.components.filter(c=>c.type===system).sort((a,b)=>a.position-b.position);
+    const final=rule.components.find(c=>c.type==="FINAL");
+    if (!final || !components.length || components.length>MAX_ASSESSMENT_COUNT) return;
+    clearCalculation();
+    updateStoredState(storageKey,current=>({...current,assessmentCount:components.length,rows:current.rows.map((row,i)=>({...row,weight:components[i]?.weightPercent ?? ""})),passingGrade:rule.passingGrade,finalWeight:final.weightPercent}));
+  }
 
   function updateRow(
     rowIndex: number,
@@ -372,26 +419,9 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const hasUniversity = studentContext.university !== "";
-    const hasDepartment = studentContext.department.trim() !== "";
-    const hasClassYear = studentContext.classYear !== "";
-    const missingStudentContext =
-      hasUniversity && (!hasDepartment || !hasClassYear);
-
-    if (missingStudentContext) {
-      clearCalculation();
-      setStudentContextValidation({
-        department: !hasDepartment,
-        classYear: hasDepartment && !hasClassYear,
-      });
-      return;
-    }
-
-    setStudentContextValidation({});
-
     const nextResult = isMinimumFinal
-      ? calculateMinimumFinal(visibleRows, passingGrade)
-      : calculateCourseGrade(visibleRows, finalGrade);
+      ? calculateMinimumFinal(visibleRows, passingGrade, storedState.finalWeight ?? (finalWeight === null ? "" : String(finalWeight)))
+      : calculateCourseGrade(visibleRows, finalGrade, storedState.finalWeight ?? (finalWeight === null ? "" : String(finalWeight)));
 
     setCalculation({
       storageKey,
@@ -510,14 +540,9 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
           <Card className="w-full">
             <CardContent>
               <FieldGroup>
-                <StudentContextFields
-                  onContextChange={handleStudentContextChange}
-                  validation={studentContextValidation}
-                />
-                {studentContext.university !== "" &&
-                studentContext.department.trim() !== "" ? (
-                  <Separator />
-                ) : null}
+                <AcademicContextFields toolKey={toolKey} context={academicContext} onChange={onAcademicChange} />
+                {customized ? <p className="text-sm text-muted-foreground">{academicT("custom")}</p> : null}
+                {academicContext.rule ? <><div className="flex flex-wrap gap-2"><Button type="button" variant="outline" onClick={()=>resetOfficial(academicContext.rule!)}>{academicT("reset")}</Button><Button type="button" variant="outline" onClick={recoverPrevious}>{academicT("recoverPrevious")}</Button><Button type="button" variant="outline" onClick={copyManualGrades}>{academicT("copyManualGrades")}</Button></div>{recoveryNotice ? <p className="text-sm" role="status">{recoveryNotice}</p> : null}<Separator /></> : null}
                 {isMinimumFinal ? (
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <Field data-invalid={Boolean(passingGradeIssue)}>
@@ -672,13 +697,12 @@ export function GradeCalculator({toolKey}: {toolKey: ToolKey}) {
                       <InputGroupInput
                         id={`calculator-${toolKey}-final-weight`}
                         name="final-weight"
-                        value={
-                          finalWeight === null
-                            ? t("pendingValue")
-                            : formatNumber(finalWeight)
-                        }
-                        readOnly
-                        aria-readonly="true"
+                        value={storedState.finalWeight ?? (finalWeight === null ? "" : formatNumber(finalWeight))}
+                        inputMode="decimal"
+                        onChange={(event) => {
+                          clearCalculation();
+                          updateStoredState(storageKey, (currentState) => ({...currentState, finalWeight:event.target.value}));
+                        }}
                         aria-invalid={Boolean(finalWeightIssue)}
                         aria-describedby={
                           finalWeightIssue

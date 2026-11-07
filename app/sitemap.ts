@@ -6,6 +6,11 @@ import {isIndexableEnvironment} from "@/config/site";
 import {getAlternateLanguages} from "@/lib/seo/metadata";
 import {getNewsSitemapEntries} from "@/lib/news/data";
 import {absoluteUrl} from "@/lib/seo/urls";
+import {landingCandidates} from "@/lib/academic/repositories/catalog";
+import {academicPath} from "@/lib/academic/seo/paths";
+import {tools} from "@/lib/tools";
+
+export const revalidate = 300;
 
 const indexableRoutes = ["/", "/tools", "/news", "/privacy"] as const satisfies (
   keyof typeof routing.pathnames
@@ -29,6 +34,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
+  for (const tool of tools) {
+    const languages=await getAlternateLanguages(tool.href);
+    for (const locale of routing.locales) entries.push({url:absoluteUrl(await getPathname({href:tool.href,locale})),alternates:{languages}});
+  }
+  const academic=await landingCandidates();
+  for (const entry of academic) for (const tool of tools.filter(t=>(t.category==="midterm") === (entry.system==="MIDTERM"))) {
+    const paths=Object.fromEntries(routing.locales.map(locale=>[locale,absoluteUrl(academicPath(locale,tool.key,entry.universitySlug,entry.facultySlug,entry.programSlug,entry.classYear))]));
+    const languages={...paths,"x-default":paths.tr};
+    for (const locale of routing.locales) entries.push({url:paths[locale],alternates:{languages}});
+  }
   const articles = await getNewsSitemapEntries();
   for (const article of articles) {
     const localizedPaths = Object.fromEntries(
@@ -59,5 +74,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
+  if (entries.length>50000) throw new Error("SITEMAP_CAPACITY_EXCEEDED: configure sitemap sharding before adding more pages");
   return entries;
 }
