@@ -423,6 +423,11 @@
     max-inline-size: 100%;
   }
 
+  .news-rich-text .article-inline-image img {
+    inline-size: 100%;
+    block-size: auto;
+  }
+
   .news-rich-text .article-inline-image figcaption {
     max-inline-size: 100%;
     margin-block-start: 0.75rem;
