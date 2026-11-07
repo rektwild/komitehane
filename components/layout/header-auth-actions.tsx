@@ -2,16 +2,29 @@
 
 import {useTranslations} from "next-intl";
 
-import {Link} from "@/i18n/navigation";
 import {Button} from "@/components/ui/button";
+import {Link} from "@/i18n/navigation";
+import {
+  publicAuthEntryLinks,
+  visiblePublicAuthEntryLinks,
+} from "@/lib/auth-entry";
 
 export function HeaderAuthActions() {
+  if (visiblePublicAuthEntryLinks().length === 0) {
+    return null;
+  }
+
+  return <HeaderAuthActionButtons />;
+}
+
+function HeaderAuthActionButtons() {
   const t = useTranslations("Header");
+  const [login, signup] = publicAuthEntryLinks;
 
   return (
     <div className="flex shrink-0 items-center gap-1">
       <Button
-        render={<Link href="/login" />}
+        render={<Link href={login.href} />}
         nativeButton={false}
         variant="ghost"
         size="lg"
@@ -20,7 +33,7 @@ export function HeaderAuthActions() {
         {t("auth.login")}
       </Button>
       <Button
-        render={<Link href="/signup" />}
+        render={<Link href={signup.href} />}
         nativeButton={false}
         size="lg"
         className="ml-2 rounded-lg border-0 px-4 py-2 font-bold shadow-sm"
