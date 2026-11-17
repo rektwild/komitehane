@@ -453,7 +453,7 @@
   },
   "Privacy": {
     "title": "Gizlilik politikası",
-    "lastUpdated": "Son güncelleme: 31 Ağustos 2026",
+    "lastUpdated": "Son güncelleme: 18 Kasım 2026",
     "intro": "Bu bildirim, siteyi kullandığınızda Komitehane'nin reklam, analiz, çerez ve benzeri teknolojileri nasıl kullanabileceğini açıklar.",
     "sections": {
       "adsense": {
@@ -478,7 +478,7 @@
       },
       "analytics": {
         "title": "Analiz ve performans ölçümü",
-        "paragraph": "Bu uygulamada Vercel Analytics ve Vercel Speed Insights kullanılmaktadır. Bu hizmetler, kendi belgelerine ve gizlilik politikalarına göre teknik, kullanım ve performans bilgilerini işleyebilir."
+        "paragraph": "Google Analytics yalnızca production ortamında geçerli bir ölçüm kimliği yapılandırıldığında çalışır. Kullanıldığında ziyaret ve kullanım verileri Google tarafından kendi gizlilik politikalarına göre işlenebilir. Vercel Analytics ve Speed Insights bu uygulamadan kaldırılmıştır."
       },
       "localStorage": {
         "title": "Hesaplayıcı verileri",
