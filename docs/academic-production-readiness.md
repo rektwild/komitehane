@@ -52,6 +52,13 @@ The PostgreSQL 18 matrix job additionally creates a **custom-format pg_dump (-Fc
 - The operator opened **Backup Files**, which listed **one** downloadable `.sql.gz` object: `komitehane-db-2026-11-17T21-14-14-014Z.sql.gz`, displayed as **18 November 2026, 00:14:14** local time, **685.97 KB**. This confirms a remotely listed backup object. It does not alone prove the scheduled trigger, gzip payload integrity, completeness, or a successful *isolated* PostgreSQL restore.
 - **Remaining DB backup gate:** Download/retrieve the backup privately, check its gzip and SQL contents without publishing data, restore into a disposable **separate** PostgreSQL 18 instance/database, check expected tables and representative row counts, and destroy only the disposable environment after validation. Never restore into `komitehane-db-blog` or touch the blog schema.
 
+### Operator backup retrieval + gzip verification (18 November 2026)
+
+- Via the operator's unprivileged `komitehane-oracle` rclone remote, the Dokploy blog backup was found under `komitehane-pg-backups/komitehane-dbblog-hbcbpm/komitehane/postgres/komitehane-db-2026-11-17T21-14-14-014Z.sql.gz` (the initially assumed root-level `komitehane/postgres` prefix was incorrect).
+- A complete `rclone copyto` transferred **685.966 KiB**, and `gzip -t` **passed** on the downloaded file under `/home/ubuntu/komitehane-restore-test/`. The copy's file mode was `0600`.
+- SHA-256 of the downloaded compressed object: `720db939214d35863595bdf49411e6911a0e0cedf4aa3e87a9d2ee329ffe5bf6`. This is an operator-calculated local checksum, **not** an independently compared remote checksum.
+- **Remaining requirement:** Complete an isolated PostgreSQL 18 restore in a temporary Docker container with no public ports or Docker network. `gzip -t` alone is not a restore test.
+
 ## Safe read-only first-pass commands on the **actual** VPS
 
 Run as a trusted operator. These commands do not print secret values, mutate services, or connect to a DB:
