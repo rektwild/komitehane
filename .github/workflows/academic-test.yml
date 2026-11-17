@@ -111,7 +111,7 @@ jobs:
           openssl x509 -req -in /tmp/academic-ci-server.csr -CA /tmp/academic-ci-ca.crt -CAkey /tmp/academic-ci-ca.key -CAcreateserial -out /tmp/academic-ci-server.crt -days 1 -sha256 -extfile /tmp/academic-ci-ext.cnf
           docker cp /tmp/academic-ci-server.crt "$PG_CONTAINER":/tmp/academic-ci-server.crt
           docker cp /tmp/academic-ci-server.key "$PG_CONTAINER":/tmp/academic-ci-server.key
-          docker exec --user root "$PG_CONTAINER" sh -c 'cp /tmp/academic-ci-server.crt /var/lib/postgresql/data/server.crt && cp /tmp/academic-ci-server.key /var/lib/postgresql/data/server.key && chown postgres:postgres /var/lib/postgresql/data/server.crt /var/lib/postgresql/data/server.key && chmod 600 /var/lib/postgresql/data/server.key'
+          docker exec --user root "$PG_CONTAINER" sh -c 'set -eu; cp /tmp/academic-ci-server.crt "$PGDATA/server.crt"; cp /tmp/academic-ci-server.key "$PGDATA/server.key"; chown postgres:postgres "$PGDATA/server.crt" "$PGDATA/server.key"; chmod 600 "$PGDATA/server.key"'
           node --input-type=module <<'NODE'
           import pg from 'pg';
           const client = new pg.Client({connectionString:'postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/postgres'});
