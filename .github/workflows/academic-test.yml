@@ -15,7 +15,12 @@ permissions:
   contents: read
 jobs:
   academic-postgres:
+    name: Academic PostgreSQL ${{ matrix.postgres }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        postgres: ['16', '18']
     timeout-minutes: 15
     env:
       DATABASE_URL: postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/komitehane_payload_fixture
@@ -25,7 +30,7 @@ jobs:
       ACADEMIC_FEATURE_ENABLED: 'false'
     services:
       postgres:
-        image: postgres:16
+        image: postgres:${{ matrix.postgres }}
         env:
           POSTGRES_USER: academic_test
           POSTGRES_PASSWORD: academic_local_test_only
@@ -46,10 +51,25 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
+      - run: pnpm lint
       - run: pnpm academic:check
       - run: pnpm academic:test:postgres
         env:
           ACADEMIC_TEST_DATABASE_URL: postgresql://academic_test:academic_local_test_only@127.0.0.1:5432/komitehane_academic_test
+      - name: PostgreSQL 18 custom-format backup and isolated restore
+        if: matrix.postgres == '18'
+        env:
+          PG_CONTAINER: ${{ job.services.postgres.id }}
+        run: |
+          set -euo pipefail
+          docker exec "$PG_CONTAINER" pg_dump -U academic_test -d komitehane_academic_test -Fc -f /tmp/academic-restore-ci.dump
+          docker exec "$PG_CONTAINER" createdb -U academic_test komitehane_academic_restore_fixture
+          docker exec "$PG_CONTAINER" pg_restore -U academic_test --no-owner -d komitehane_academic_restore_fixture /tmp/academic-restore-ci.dump
+          tables=$(docker exec "$PG_CONTAINER" psql -U academic_test -d komitehane_academic_restore_fixture -Atqc "SELECT count(*) FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE'")
+          published=$(docker exec "$PG_CONTAINER" psql -U academic_test -d komitehane_academic_restore_fixture -Atqc "SELECT count(*) FROM grading_scheme_versions WHERE status IN ('PUBLISHED','SUPERSEDED')")
+          test "$tables" = '8'
+          test "$published" -ge 2
+          echo "PostgreSQL 18 isolated restore verified ($tables academic tables, $published published/superseded versions)."
       - name: Create isolated Payload fixture database
         run: |
           node --input-type=module <<'NODE'
@@ -63,6 +83,8 @@ jobs:
         run: pnpm payload:migrate
       - name: Build with fixture and no academic database
         run: pnpm build
+      - name: TypeScript typecheck after generated Next.js types
+        run: pnpm exec tsc --noEmit
       - name: SEO smoke with fixture
         env:
           SEO_AUDIT_EXPECT_INDEXABLE: 'true'
