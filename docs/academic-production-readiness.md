@@ -29,6 +29,15 @@ The PostgreSQL 18 matrix job additionally creates a **custom-format pg_dump (-Fc
 5. **Rollback readiness:** Store off-VPS configuration and DB backups separately. Confirm `ACADEMIC_FEATURE_ENABLED=false` disables academic DB access while generic manual calculations still work. Never use destructive down migrations as rollback. Test backup retrieval and checksum before toggling the live feature flag.
 6. **Legacy Vercel checks:** GitHub's `Vercel` status currently reports failure due to a blocked deployment/account connection, not because the academic CI fails. If Dokploy is the only deployment target, use Vercel project **Settings → Git → Disconnect** after verifying that no domains, sites, or other workflows still need Vercel. Also inspect GitHub branch protection/rulesets and remove a mandatory `Vercel` status requirement only if it is obsolete. This account-level change cannot be enacted by changing application code. Reference: https://vercel.com/docs/project-configuration/git-settings.
 
+## Operator-supplied live inspection evidence (18 November 2026)
+
+- Docker Swarm on `free-oracle-vps` is active; `komitehane-frontend-5plyok`, `komitehane-dbblog-hbcbpm`, and `dokploy` were reported as 1/1; `https://komitehane.com/tr` returned HTTP 200.
+- The frontend Swarm service has no published container port. The existing **blog** PostgreSQL Swarm service publishes TCP 15432 on both IPv4/IPv6 wildcard listeners. UFW allows 22/80/443, but this does **not** independently firewall Docker-published ports.
+- Oracle VNIC reports public IP `89.168.80.25` and **no attached NSG**. The shown Security List allows TCP 15432 only from `89.168.80.25/32` (the VPS's own public IP), with 22/80/443 unrestricted. Another Security List could still be attached to the subnet; confirm all lists and external reachability before concluding TCP 15432 is inaccessible externally.
+- DNS is **Cloudflare DNS Only**, not proxied. The operator supplied a Dokploy dynamic Traefik configuration routing HTTPS to `komitehane-frontend-5plyok:3000` via Let's Encrypt and subsequently observed **33 HTTP 404 + 17 HTTP 429** from 50 concurrent requests to `/api/v1/universities?limit=1`. This is live evidence of the API-specific edge rate-limiting path functioning, not proof that forwarded-header trust, client isolation, or spoof resistance is correct. API 404 is expected before deploying PR #5.
+- The media-backup timer was reported active with empty `LastTriggerUSec` and scheduled next trigger on 18 November 2026 at 03:30 Turkey time. **The actual scheduled run and resulting backup object remain unverified.**
+- These observations are operator-provided terminal and dashboard outputs, **not** direct shell or Oracle API verification by this assistant. No live firewall, Traefik, database, deployment or backup settings were changed using GitHub tools.
+
 ## Safe read-only first-pass commands on the **actual** VPS
 
 Run as a trusted operator. These commands do not print secret values, mutate services, or connect to a DB:
