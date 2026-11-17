@@ -126,7 +126,10 @@ real production traffic controls at a trusted edge (Traefik or Cloudflare),
 since in-process buckets are neither distributed nor spoof-proof.
 
 For an additional real PostgreSQL check, `.github/workflows/academic-test.yml`
-runs the same guarded test against a disposable PostgreSQL 16 service in a
-pull-request CI job. It uses only fixture credentials and has no production
+runs the same guarded test against disposable PostgreSQL 16 and 18 services in
+pull-request CI jobs, followed by a separate disposable PostgreSQL 18 custom-format
+backup/restore test. It uses only fixture credentials and has no production
 secrets, migration targets or deploy step. CI does not replace the requested
-local Docker run or an operator's production-environment checks.
+local Docker run or an operator's production-environment checks. See
+`academic-production-readiness.md` for the Dokploy/Traefik, scheduled backups,
+legacy Vercel and rollback checks.
