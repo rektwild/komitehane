@@ -30,4 +30,13 @@ describe("academic API adapter",()=>{
   it("rejects other browser origins",async()=>{
     expect((await GET(new Request("http://localhost/api/v1/universities",{headers:{origin:"https://other.example"}}),params("universities"))).status).toBe(403);
   });
+  it("limits each Traefik-visible peer independently and ignores spoofable leftmost XFF values",async()=>{
+    const get=(peer:string,leftmost="198.51.100.1")=>GET(new Request("http://localhost/api/v1/universities",{
+      headers:{"x-forwarded-for":`${leftmost}, ${peer}`},
+    }),params("universities"));
+    for(let i=0;i<120;i++)expect((await get("203.0.113.91")).status).toBe(200);
+    expect((await get("203.0.113.91")).status).toBe(429);
+    expect((await get("203.0.113.91","192.0.2.99")).status).toBe(429);
+    expect((await get("203.0.113.92")).status).toBe(200);
+  });
 });
