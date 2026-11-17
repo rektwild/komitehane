@@ -27,7 +27,7 @@ const r2Environment = {
 const hasAnyR2Environment = Object.values(r2Environment).some(Boolean);
 const hasCompleteR2Environment = Object.values(r2Environment).every(Boolean);
 const hostedDeployment = ["preview", "production", "staging"].includes(
-  process.env.VERCEL_ENV || process.env.DEPLOYMENT_ENV || "",
+  process.env.DEPLOYMENT_ENV || "",
 );
 
 if ((hasAnyR2Environment && !hasCompleteR2Environment) || (hostedDeployment && !hasCompleteR2Environment)) {
