@@ -116,7 +116,14 @@ A configured server can list its active catalog with
 `curl -sS 'http://localhost:3000/api/v1/universities?limit=25&offset=0'`.
 Refer to `academic-api.openapi.yaml` for all inputs and response shapes. The
 built-in rate limiter is process-local and best effort, not a distributed or
-identity-secure limit; an external production edge policy may still be needed.
+identity-secure limit. On Dokploy it uses the rightmost syntactically valid IP
+from Traefik's `X-Forwarded-For` header (the closest proxy-visible peer), not
+the obsolete Vercel-only header. Check Traefik's forwarded-header trust and
+entrypoint configuration before deployment: do not enable indiscriminate trust
+of client-supplied forwarding headers. When Cloudflare is upstream, the chosen
+peer may be a Cloudflare edge IP rather than the ultimate visitor. Configure
+real production traffic controls at a trusted edge (Traefik or Cloudflare),
+since in-process buckets are neither distributed nor spoof-proof.
 
 For an additional real PostgreSQL check, `.github/workflows/academic-test.yml`
 runs the same guarded test against a disposable PostgreSQL 16 service in a
