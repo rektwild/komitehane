@@ -53,4 +53,16 @@ describe("academic repository against PostgreSQL-compatible SQL",()=>{
     expect(await landing("fictional","faculty","program",3,"COMMITTEE")).toBeNull();
     expect(await landingCandidates()).toHaveLength(1);
   });
+  it("excludes inactive catalog hierarchy from SEO sitemap candidates",async()=>{
+    expect(await landingCandidates()).toHaveLength(1);
+    for (const [table, number] of [["universities",1],["faculties",2],["programs",3]] as const) {
+      await db.query(`UPDATE ${table} SET is_active=false WHERE id=$1`,[id(number)]);
+      try {
+        expect(await landingCandidates()).toHaveLength(0);
+      } finally {
+        await db.query(`UPDATE ${table} SET is_active=true WHERE id=$1`,[id(number)]);
+      }
+    }
+    expect(await landingCandidates()).toHaveLength(1);
+  });
 });
