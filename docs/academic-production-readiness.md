@@ -46,6 +46,12 @@ The PostgreSQL 18 matrix job additionally creates a **custom-format pg_dump (-Fc
 - The systemd timer was active but `LastTriggerUSec=` empty in the supplied output, with next listed trigger **18 November 2026 at 03:30 +03**. Thus the verified service run **must not be misrepresented as a successful scheduled timer execution**. Recheck `LastTriggerUSec` and service journal *after* the scheduled trigger, and verify a new destination object.
 - The Dokploy **PostgreSQL backup schedule / object destination and Dokploy system backup schedule** have not yet been checked in the production dashboard. No academic production DB has been provisioned.
 
+### Operator-provided Dokploy database backup listing (18 November 2026)
+
+- The production `DB-BLOG` Dokploy **Backups** tab showed an **Active** backup destination `Oracle Komitehane Backups` for database `komitehane-db-blog`, with schedule `0 0 * * *`, storage prefix `komitehane/postgres`, custom name `komitehane-db`, and `Keep Latest 14` (**14 versions**, not a 14-day TTL).
+- The operator opened **Backup Files**, which listed **one** downloadable `.sql.gz` object: `komitehane-db-2026-11-17T21-14-14-014Z.sql.gz`, displayed as **18 November 2026, 00:14:14** local time, **685.97 KB**. This confirms a remotely listed backup object. It does not alone prove the scheduled trigger, gzip payload integrity, completeness, or a successful *isolated* PostgreSQL restore.
+- **Remaining DB backup gate:** Download/retrieve the backup privately, check its gzip and SQL contents without publishing data, restore into a disposable **separate** PostgreSQL 18 instance/database, check expected tables and representative row counts, and destroy only the disposable environment after validation. Never restore into `komitehane-db-blog` or touch the blog schema.
+
 ## Safe read-only first-pass commands on the **actual** VPS
 
 Run as a trusted operator. These commands do not print secret values, mutate services, or connect to a DB:
