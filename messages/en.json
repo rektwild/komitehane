@@ -478,7 +478,7 @@
       },
       "analytics": {
         "title": "Analytics and performance measurement",
-        "paragraph": "Google Analytics runs only when a valid measurement ID is configured in production. If enabled, Google may process visit and usage information according to its privacy policies. Vercel Analytics and Speed Insights have been removed from this application."
+        "paragraph": "Google Analytics runs only when a valid measurement ID is configured in production. If enabled, Google may process visit and usage information according to its privacy policies."
       },
       "localStorage": {
         "title": "Calculator data",
