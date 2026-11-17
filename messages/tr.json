@@ -478,7 +478,7 @@
       },
       "analytics": {
         "title": "Analiz ve performans ölçümü",
-        "paragraph": "Google Analytics yalnızca production ortamında geçerli bir ölçüm kimliği yapılandırıldığında çalışır. Kullanıldığında ziyaret ve kullanım verileri Google tarafından kendi gizlilik politikalarına göre işlenebilir. Vercel Analytics ve Speed Insights bu uygulamadan kaldırılmıştır."
+        "paragraph": "Google Analytics yalnızca production ortamında geçerli bir ölçüm kimliği yapılandırıldığında çalışır. Kullanıldığında ziyaret ve kullanım verileri Google tarafından kendi gizlilik politikalarına göre işlenebilir."
       },
       "localStorage": {
         "title": "Hesaplayıcı verileri",
