@@ -1,3 +1,4 @@
+import {isIP} from "node:net";
 import {z} from "zod";
 import {calculate} from "@/lib/academic/calculations/engine";
 import {universities,faculties,programs,courses,lookupRule,versionById} from "@/lib/academic/repositories/catalog";
@@ -13,7 +14,11 @@ function guard(req:Request):Response|null {
   if (origin && origin!==new URL(req.url).origin) return fail("FORBIDDEN_ORIGIN",403);
   const now=Date.now();
   for (const [k,v] of rate) if (v.until < now) rate.delete(k);
-  const address=req.headers.get("x-vercel-forwarded-for")?.split(",")[0].trim() || "unknown";
+  // Traefik appends the closest proxy-visible peer to X-Forwarded-For.
+  // Ignore earlier client-supplied values; edge rate limiting is still required.
+  const proxyChain=req.headers.get("x-forwarded-for");
+  const proxyAddress=proxyChain?.split(",").at(-1)?.trim();
+  const address=proxyAddress && isIP(proxyAddress) ? proxyAddress : "unknown";
   if (rate.size>5000 && !rate.has(address)) return fail("RATE_LIMITED",429);
   const entry=rate.get(address) ?? {count:0,until:now+60000}; entry.count++; rate.set(address,entry);
   return entry.count>120 ? fail("RATE_LIMITED",429) : null;
