@@ -453,7 +453,7 @@
   },
   "Privacy": {
     "title": "Privacy policy",
-    "lastUpdated": "Last updated: August 31, 2026",
+    "lastUpdated": "Last updated: November 18, 2026",
     "intro": "This notice explains how Komitehane may use advertising, analytics, cookies, and similar technologies when you use the site.",
     "sections": {
       "adsense": {
@@ -478,7 +478,7 @@
       },
       "analytics": {
         "title": "Analytics and performance measurement",
-        "paragraph": "This application currently includes Vercel Analytics and Vercel Speed Insights. These services may process technical, usage, and performance information according to their own documentation and privacy policies."
+        "paragraph": "Google Analytics runs only when a valid measurement ID is configured in production. If enabled, Google may process visit and usage information according to its privacy policies. Vercel Analytics and Speed Insights have been removed from this application."
       },
       "localStorage": {
         "title": "Calculator data",
