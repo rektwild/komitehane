@@ -109,7 +109,7 @@ export async function NewsListing({
 
       {articles.length ? (
         <>
-          <div className="mt-8 grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid auto-rows-fr gap-6 md:grid-cols-2 lg:grid-cols-3">
             {firstArticles.map((article) => (
               <ArticleCard
                 key={article.id}
@@ -128,7 +128,7 @@ export async function NewsListing({
           ) : null}
 
           {remainingArticles.length > 0 ? (
-            <div className="mt-4 grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-6 grid auto-rows-fr gap-6 md:grid-cols-2 lg:grid-cols-3">
               {remainingArticles.map((article) => (
                 <ArticleCard
                   key={article.id}

@@ -41,7 +41,7 @@ export function ArticleImageBlock({
         />
       </div>
 
-      <figcaption className="mt-3 space-y-1.5 text-sm leading-6 text-muted-foreground">
+      <figcaption className="article-caption">
         {fields.caption?.trim() ? <p>{fields.caption.trim()}</p> : null}
         <p>
           {creditPrefix}
