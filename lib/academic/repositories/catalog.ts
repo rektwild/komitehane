@@ -73,7 +73,7 @@ export async function landingCandidates():Promise<AcademicLanding[]> {
     COALESCE((SELECT json_agg(json_build_object('type',a.component_type,'position',a.position,'weightPercent',a.weight_percent::text) ORDER BY a.component_type,a.position) FROM academic_read_assessment_components a WHERE a.version_id=v.id),'[]'::json) AS components,
     COALESCE((SELECT json_agg(json_build_object('sourceUrl',r.source_url,'sourceType',r.source_type,'verifiedAt',r.verified_at,'sourceTitle',r.source_title)) FROM academic_read_grading_rule_sources r WHERE r.version_id=v.id),'[]'::json) AS sources
     FROM academic_read_grading_schemes s JOIN academic_read_grading_scheme_versions v ON v.scheme_id=s.id JOIN academic_read_programs p ON p.id=s.program_id JOIN academic_read_faculties f ON f.id=p.faculty_id JOIN academic_read_universities u ON u.id=f.university_id LEFT JOIN academic_read_courses c ON c.id=s.course_id
-    WHERE s.academic_year_start=$1 AND v.status='PUBLISHED' AND s.class_year BETWEEN 1 AND p.duration_years AND (s.course_id IS NULL OR c.is_active)
+    WHERE s.academic_year_start=$1 AND v.status='PUBLISHED' AND u.is_active AND f.is_active AND p.is_active AND s.class_year BETWEEN 1 AND p.duration_years AND (s.course_id IS NULL OR c.is_active)
     ORDER BY u.name,f.name,p.name,s.class_year,s.system_type,s.period,c.name`,[academicYear()]);
   const grouped=new Map<string,AcademicLanding>();
   for(const row of result.rows) {
