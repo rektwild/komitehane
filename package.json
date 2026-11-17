@@ -15,7 +15,7 @@
     "payload:migrate:create": "payload migrate:create",
     "payload:migrate": "node scripts/payload-migrate.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",
-    "test": "vitest run",
+    "test": "vitest run tests/academic && node scripts/academic/run-node-tests.mjs",
     "academic:generate": "drizzle-kit generate --config=drizzle.academic.config.ts",
     "academic:check": "drizzle-kit check --config=drizzle.academic.config.ts",
     "academic:seed:catalog": "node --import tsx scripts/academic/seed-catalog.ts",
