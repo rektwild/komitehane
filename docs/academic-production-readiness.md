@@ -38,6 +38,14 @@ The PostgreSQL 18 matrix job additionally creates a **custom-format pg_dump (-Fc
 - The media-backup timer was reported active with empty `LastTriggerUSec` and scheduled next trigger on 18 November 2026 at 03:30 Turkey time. **The actual scheduled run and resulting backup object remain unverified.**
 - These observations are operator-provided terminal and dashboard outputs, **not** direct shell or Oracle API verification by this assistant. No live firewall, Traefik, database, deployment or backup settings were changed using GitHub tools.
 
+### Further operator evidence: backup service and PostgreSQL version (18 November 2026)
+
+- The live `komitehane-dbblog-hbcbpm` Docker service image was reported as `postgres:18` and replicas remained `1/1`. This confirms the configured image tag; inspect the running engine with `SELECT version()` before claiming a particular patch release.
+- Operator supplied `journalctl` logs for `komitehane-media-backup.service` showing a **successful service execution at 01:12:40–01:12:49 +03** with snapshot ID `20261117T221240Z`; remote comparison returned **0 differences and 139 matching files**, total **15.715 MiB (16,478,046 bytes)**, followed by `BACKUP VERIFIED`.
+- Media retention scan reported `Retention: 14 days`, `Mode: --apply`, kept three recent snapshot IDs and completed. This proves a scan was executed, **not** that aged-snapshot expiration has been independently tested.
+- The systemd timer was active but `LastTriggerUSec=` empty in the supplied output, with next listed trigger **18 November 2026 at 03:30 +03**. Thus the verified service run **must not be misrepresented as a successful scheduled timer execution**. Recheck `LastTriggerUSec` and service journal *after* the scheduled trigger, and verify a new destination object.
+- The Dokploy **PostgreSQL backup schedule / object destination and Dokploy system backup schedule** have not yet been checked in the production dashboard. No academic production DB has been provisioned.
+
 ## Safe read-only first-pass commands on the **actual** VPS
 
 Run as a trusted operator. These commands do not print secret values, mutate services, or connect to a DB:
