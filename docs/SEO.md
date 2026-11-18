@@ -35,10 +35,9 @@ path or trailing slash policy ambiguity. The value is normalized to `http` or
 `https` and is used by metadata, JSON-LD, sitemap, robots, and IndexNow.
 
 Production builds with a configured site URL are indexable. Development,
-staging, and Vercel preview deployments are `noindex` and return
+staging and preview deployments are `noindex` and return
 `Disallow: /` from `robots.txt`. Set `DEPLOYMENT_ENV=preview` or
-`DEPLOYMENT_ENV=staging` for non-Vercel environments; Vercel's `VERCEL_ENV`
-is respected automatically.
+`DEPLOYMENT_ENV=staging` in the Dokploy preview/staging environments.
 
 The local fallback origin is `http://localhost:3000`. It is useful for local
 rendering only and must not be used as a production deployment value.
@@ -251,7 +250,7 @@ auditable.
 ## Content quality notes
 
 The homepage still contains the original create-next-app demo copy and
-Next/Vercel links. They were not silently replaced because the repository does
+starter links. They were not silently replaced because the repository does
 not reveal Komitehane's actual product or editorial purpose. Replace those
 strings with truthful, localized product content before treating the homepage
 as a finished search landing page. Do not add author, FAQ, review, statistics,

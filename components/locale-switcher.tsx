@@ -14,15 +14,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {Link, usePathname} from "@/i18n/navigation";
 import {routing, type StaticAppPathname} from "@/i18n/routing";
+import {tools} from "@/lib/tools";
 
 export function LocaleSwitcher() {
   const t = useTranslations("LocaleSwitcher");
   const locale = useLocale();
   const pathname = usePathname();
-  const switcherHref =
-    pathname === "/news/[slug]" || pathname.startsWith("/news/")
-      ? "/news"
-      : (pathname as StaticAppPathname);
+  const academicTool=tools.find(tool=>pathname.startsWith(`${tool.href}/`));
+  const switcherHref = academicTool ? academicTool.href : pathname === "/news/[slug]" || pathname.startsWith("/news/") ? "/news" : (pathname as StaticAppPathname);
 
   return (
     <DropdownMenu>

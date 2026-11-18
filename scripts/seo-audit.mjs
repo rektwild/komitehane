@@ -5,6 +5,12 @@ const baseUrl = (process.env.SEO_AUDIT_BASE_URL || "http://localhost:3000").repl
 const expectIndexable = process.env.SEO_AUDIT_EXPECT_INDEXABLE !== "false";
 const articlePath = process.env.SEO_AUDIT_ARTICLE_PATH?.trim() || "";
 const locales = ["tr", "en"];
+const academicPath = process.env.SEO_AUDIT_ACADEMIC_PATH?.trim() || "";
+const missingAcademicPath = process.env.SEO_AUDIT_ACADEMIC_MISSING_PATH?.trim() || "";
+const toolPaths = {
+  tr: ["/tr/araclar/komite-not-hesaplama", "/tr/araclar/komite-minimum-final-notu", "/tr/araclar/vize-not-hesaplama", "/tr/araclar/vize-minimum-final-notu"],
+  en: ["/en/tools/committee-grade-calculator", "/en/tools/committee-minimum-final-grade", "/en/tools/midterm-grade-calculator", "/en/tools/midterm-minimum-final-grade"],
+};
 
 const failures = [];
 
@@ -84,10 +90,11 @@ function assertPage(locale, body) {
   if (lang !== locale) fail(`${locale}: html lang is ${lang || "missing"}`);
   if (!title.trim()) fail(`${locale}: missing title`);
   if (!description.trim()) fail(`${locale}: missing description`);
-  if (!/^https?:\/\//i.test(canonical)) fail(`${locale}: canonical is not absolute`);
-  if (new URL(canonical).search || new URL(canonical).hash) {
-    fail(`${locale}: canonical contains query/hash`);
-  }
+  try {
+    const canonicalUrl=new URL(canonical);
+    if (!/^https?:$/.test(canonicalUrl.protocol)) fail(`${locale}: canonical is not HTTP(S)`);
+    if (canonicalUrl.search || canonicalUrl.hash) fail(`${locale}: canonical contains query/hash`);
+  } catch {fail(`${locale}: canonical is not absolute`);}
   if (h1Count !== 1) fail(`${locale}: expected exactly one h1, found ${h1Count}`);
 
   if (!alternateMap.has(locale)) fail(`${locale}: missing self hreflang`);
@@ -293,6 +300,27 @@ async function run() {
     assertPage(locale, page.body);
   }
 
+  for (const locale of locales) for (const pathname of toolPaths[locale]) {
+    const page=await fetchText(pathname);
+    if(page.response.status!==200) fail(`${pathname}: expected 200, received ${page.response.status}`);
+    else assertPage(locale,page.body);
+  }
+  if (academicPath) {
+    const page=await fetchText(academicPath);
+    const locale=academicPath.match(/^\/(tr|en)\//)?.[1];
+    if (!locale || page.response.status!==200) fail(`${academicPath}: expected a localized 200 academic page`);
+    else {
+      assertPage(locale,page.body);
+      const canonical=firstMatch(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i,page.body);
+      if(canonical!==absoluteUrl(academicPath.split("?")[0]))fail(`${academicPath}: unexpected canonical`);
+      if(!getJsonLdGraph(page.body,academicPath).some(x=>x?.["@type"]==="BreadcrumbList"))fail(`${academicPath}: missing breadcrumb JSON-LD`);
+    }
+  }
+  if (missingAcademicPath) {
+    const page=await fetchText(missingAcademicPath);
+    if(page.response.status!==404) fail(`${missingAcademicPath}: expected 404, received ${page.response.status}`);
+  }
+
   const missing = await fetchText("/tr/does-not-exist");
   if (missing.response.status !== 404) {
     fail(`/tr/does-not-exist: expected 404, received ${missing.response.status}`);
@@ -322,6 +350,8 @@ async function run() {
     if (sitemapLocs.some((url) => /[?&](?:sort|filter|q|page)=/i.test(url))) {
       fail("sitemap.xml: contains a query-string URL");
     }
+    for(const pathname of Object.values(toolPaths).flat()) if(!sitemapLocs.includes(absoluteUrl(pathname))) fail(`sitemap.xml: missing ${pathname}`);
+    if(academicPath && !sitemapLocs.includes(absoluteUrl(academicPath.split("?")[0])))fail(`sitemap.xml: missing academic page ${academicPath}`);
     if (articlePath && !sitemapLocs.includes(absoluteUrl(articlePath))) {
       fail(`sitemap.xml: missing audited article ${absoluteUrl(articlePath)}`);
     }

@@ -12,12 +12,15 @@ import {getToolBySlug, tools} from "@/lib/tools";
 import {getLocalizedMetadata} from "@/lib/seo/metadata";
 import {getWebPageJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
+import {landingCandidates} from "@/lib/academic/repositories/catalog";
+import {academicPath} from "@/lib/academic/seo/paths";
 
 type ToolDetailPageProps = {
   params: Promise<{slug: string}>;
 };
 
 export const dynamicParams = false;
+export const revalidate = 300;
 
 export function generateStaticParams() {
   return tools.map((tool) => ({slug: tool.slug}));
@@ -35,21 +38,7 @@ export async function generateMetadata({
   const title = t(`items.${tool.key}.title`);
   const description = t(`items.${tool.key}.description`);
 
-  return {
-    ...(await getLocalizedMetadata(tool.href, {
-      title,
-      description,
-      imageAlt: title,
-    })),
-    robots: {
-      index: false,
-      follow: true,
-      googleBot: {
-        index: false,
-        follow: true,
-      },
-    },
-  };
+  return getLocalizedMetadata(tool.href, {title,description,imageAlt:title});
 }
 
 export default async function ToolDetailPage({
@@ -67,6 +56,8 @@ export default async function ToolDetailPage({
   const title = t(`items.${tool.key}.title`);
   const description = t(`items.${tool.key}.description`);
   const pageUrl = absoluteUrl(await getPathname({href: tool.href, locale}));
+  const academicT=await getTranslations("Academic");
+  const available=(await landingCandidates().catch(()=>[])).filter(entry=>(entry.system==="MIDTERM")===(tool.category==="midterm")).slice(0,12);
 
   return (
     <>
@@ -96,6 +87,7 @@ export default async function ToolDetailPage({
           </header>
 
           <GradeCalculator toolKey={tool.key} />
+          {available.length ? <section><h2 className="text-lg font-semibold">{academicT("availableUniversities")}</h2><ul className="list-disc pl-5">{available.map(entry=><li key={`${entry.programId}-${entry.classYear}`}><a className="underline" href={academicPath(locale,tool.key,entry.universitySlug,entry.facultySlug,entry.programSlug,entry.classYear)}>{entry.universityName} · {entry.facultyName} · {entry.programName} · {entry.classYear}</a></li>)}</ul></section> : null}
         </section>
       </PageWithAside>
     </>

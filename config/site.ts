@@ -23,7 +23,7 @@ function normalizeOrigin(value: string): string {
 export const siteUrl = normalizeOrigin(configuredSiteUrl || fallbackSiteUrl);
 
 const deploymentEnvironment =
-  process.env.VERCEL_ENV || process.env.DEPLOYMENT_ENV || process.env.NODE_ENV;
+  process.env.DEPLOYMENT_ENV || process.env.NODE_ENV;
 
 export const isPreviewEnvironment = ["development", "preview", "staging"].includes(
   deploymentEnvironment || ""

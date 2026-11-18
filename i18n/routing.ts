@@ -50,6 +50,22 @@ export const routing = defineRouting({
       tr: "/araclar/vize-minimum-final-notu",
       en: "/tools/midterm-minimum-final-grade",
     },
+    "/tools/committee-grade-calculator/[university]/[faculty]/[program]/[classYear]": {
+      tr: "/araclar/komite-not-hesaplama/[university]/[faculty]/[program]/[classYear]",
+      en: "/tools/committee-grade-calculator/[university]/[faculty]/[program]/[classYear]",
+    },
+    "/tools/committee-minimum-final-grade/[university]/[faculty]/[program]/[classYear]": {
+      tr: "/araclar/komite-minimum-final-notu/[university]/[faculty]/[program]/[classYear]",
+      en: "/tools/committee-minimum-final-grade/[university]/[faculty]/[program]/[classYear]",
+    },
+    "/tools/midterm-grade-calculator/[university]/[faculty]/[program]/[classYear]": {
+      tr: "/araclar/vize-not-hesaplama/[university]/[faculty]/[program]/[classYear]",
+      en: "/tools/midterm-grade-calculator/[university]/[faculty]/[program]/[classYear]",
+    },
+    "/tools/midterm-minimum-final-grade/[university]/[faculty]/[program]/[classYear]": {
+      tr: "/araclar/vize-minimum-final-notu/[university]/[faculty]/[program]/[classYear]",
+      en: "/tools/midterm-minimum-final-grade/[university]/[faculty]/[program]/[classYear]",
+    },
     "/store": {
       tr: "/magaza",
       en: "/store",
@@ -66,4 +82,4 @@ export const routing = defineRouting({
 });
 
 export type AppPathname = keyof typeof routing.pathnames;
-export type StaticAppPathname = Exclude<AppPathname, "/news/[slug]">;
+export type StaticAppPathname = Exclude<AppPathname, `${string}[${string}`>;

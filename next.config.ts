@@ -35,12 +35,6 @@ const nextConfig: NextConfig = {
     : undefined,
   async redirects() {
     return [
-      {
-        source: "/:path*",
-        has: [{type: "host", value: "komite-gulhane.vercel.app"}],
-        destination: "https://komitehane.com/tr/araclar",
-        permanent: true,
-      },
       {source: "/courses", destination: "/tr/haberler", permanent: true},
       {source: "/kurslar", destination: "/tr/haberler", permanent: true},
       {source: "/tr/kurslar", destination: "/tr/haberler", permanent: true},
