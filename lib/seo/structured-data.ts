@@ -64,7 +64,8 @@ type NewsArticleNode = {
   inLanguage: Locale;
   mainEntityOfPage: EntityReference;
   author: {
-    "@type": "Person";
+    "@id"?: string;
+    "@type": "Person" | "Organization";
     name: string;
   };
   publisher: EntityReference;
@@ -242,7 +243,9 @@ export function getNewsArticleJsonLd({
         dateModified: updatedAt,
         inLanguage: locale,
         mainEntityOfPage: {"@id": webpageId},
-        author: {"@type": "Person", name: authorName},
+        author: authorName.trim() === siteConfig.organizationName
+          ? {"@id": organizationId, "@type": "Organization", name: authorName}
+          : {"@type": "Person", name: authorName},
         publisher: {"@id": organizationId},
       },
       {

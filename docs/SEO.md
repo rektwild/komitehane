@@ -39,6 +39,14 @@ staging and preview deployments are `noindex` and return
 `Disallow: /` from `robots.txt`. Set `DEPLOYMENT_ENV=preview` or
 `DEPLOYMENT_ENV=staging` in the Dokploy preview/staging environments.
 
+On Dokploy, set `NEXT_PUBLIC_SITE_URL=https://komitehane.com` during the
+production build and at runtime, and set `DEPLOYMENT_ENV=production` in the
+production service. Rebuild after changing public environment variables.
+Verify the running service with
+`SEO_AUDIT_BASE_URL=https://komitehane.com pnpm seo:audit`. A successful
+crawlability audit measures technical eligibility. Use URL Inspection and
+the Page indexing report in Search Console to measure actual inclusion.
+
 The local fallback origin is `http://localhost:3000`. It is useful for local
 rendering only and must not be used as a production deployment value.
 
