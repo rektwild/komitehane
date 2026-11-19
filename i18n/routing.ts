@@ -3,6 +3,7 @@ import {defineRouting} from "next-intl/routing";
 export const routing = defineRouting({
   locales: ["tr", "en"],
   defaultLocale: "tr",
+  alternateLinks: false, // Public page metadata supplies translation-aware hreflang.
   localePrefix: "always",
   pathnames: {
     "/": "/",

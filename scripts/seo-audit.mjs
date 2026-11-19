@@ -331,6 +331,19 @@ async function run() {
   if (expectIndexable && !/Sitemap:/i.test(robots.body)) {
     fail("robots.txt: missing sitemap declaration");
   }
+  if (expectIndexable) {
+    const groups = robots.body.split(/\r?\n\s*\r?\n/);
+    for (const agent of ["Googlebot", "bingbot", "OAI-SearchBot", "PerplexityBot", "Claude-SearchBot"]) {
+      const group = groups.find((entry) =>
+        entry.split(/\r?\n/).some((line) =>
+          line.trim().toLowerCase() === `user-agent: ${agent.toLowerCase()}`
+        )
+      );
+      if (!group || !/^Allow:\s*\/\s*$/im.test(group) || /^Disallow:\s*\/\s*$/im.test(group)) {
+        fail(`robots.txt: public search access missing for ${agent}`);
+      }
+    }
+  }
   if (!expectIndexable && !/Disallow:\s*\//i.test(robots.body)) {
     fail("robots.txt: preview/development must disallow / ");
   }
@@ -362,6 +375,12 @@ async function run() {
   const llms = await fetchText("/llms.txt");
   if (llms.response.status !== 200 || !/^# Komitehane/m.test(llms.body)) {
     fail("llms.txt: expected a public text resource");
+  }
+
+  for (const pathname of Object.values(toolPaths).flat()) {
+    if (!llms.body.includes(`](${absoluteUrl(pathname)})`)) {
+      fail(`llms.txt: missing localized tool ${pathname}`);
+    }
   }
 
   if (articlePath) {

@@ -1,3 +1,5 @@
+import {getTranslations} from "next-intl/server";
+import {tools} from "@/lib/tools";
 import {getPathname} from "@/i18n/navigation";
 import {siteConfig} from "@/config/site";
 import {absoluteUrl} from "@/lib/seo/urls";
@@ -7,7 +9,14 @@ export async function GET() {
     siteConfig.locales.map(async (locale) => {
       const pathname = await getPathname({href: "/tools", locale});
 
-      return `- [${siteConfig.localeNames[locale]}](${absoluteUrl(pathname)})`;
+      const t = await getTranslations({locale, namespace: "Tools"});
+      return [
+        `- [${siteConfig.localeNames[locale]}](${absoluteUrl(pathname)})`,
+        ...tools.map((tool) => {
+          const url = absoluteUrl(getPathname({href: tool.href, locale}));
+          return `  - [${t(`items.${tool.key}.title`)}](${url})`;
+        }),
+      ].join("\n");
     }),
   );
   const localizedNewsLinks = await Promise.all(
@@ -21,7 +30,7 @@ export async function GET() {
   const content = [
     `# ${siteConfig.name}`,
     "",
-    siteConfig.description,
+    "> Komitehane publishes medical student news and university grade calculators in Turkish and English.",
     "",
     "## Localized homepages",
     ...siteConfig.locales.map(

@@ -7,6 +7,8 @@ import {
 } from "@/config/site";
 import {absoluteUrl} from "@/lib/seo/urls";
 
+export const dynamic = "force-dynamic";
+
 const privatePrefixes = [
   "/api/",
   "/admin/",

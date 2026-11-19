@@ -22,7 +22,6 @@ import type {
   NewsTickerItem,
   NextNewsParams,
   RelatedNewsParams,
-  NewsTranslation,
 } from "@/lib/news/types";
 
 const WORDS_PER_MINUTE = 200;
@@ -53,12 +52,6 @@ const newsPopulate = {
   tags: {name: true, slug: true},
 } satisfies PopulateType;
 
-type LocalizedString = Partial<Record<NewsLocale, string | null>>;
-type LocalizedArticle = Omit<Article, "title" | "slug" | "excerpt"> & {
-  title?: LocalizedString;
-  slug?: LocalizedString;
-  excerpt?: LocalizedString;
-};
 type ArticleTag = NonNullable<Article["tags"]>[number];
 
 function publicWhere(): Where {
@@ -130,7 +123,7 @@ function normalizeAuthor(
   };
 }
 
-function normalizeSummary(article: Article): NewsSummary | null {
+function getSummaryFields(article: Article) {
   const category = normalizeCategory(article.category);
   const tags = normalizeTags(article.tags);
   const image = normalizeImage(article.heroImage);
@@ -140,6 +133,7 @@ function normalizeSummary(article: Article): NewsSummary | null {
     !article.title ||
     !article.slug ||
     !article.excerpt ||
+    !article.content?.root ||
     !author ||
     !article.publishedAt ||
     !category ||
@@ -161,8 +155,12 @@ function normalizeSummary(article: Article): NewsSummary | null {
     publishedAt: article.publishedAt,
     createdAt: article.createdAt,
     updatedAt: article.updatedAt,
-    readingMinutes: getReadingMinutes(article.content),
   };
+}
+
+function normalizeSummary(article: Article): NewsSummary | null {
+  const fields = getSummaryFields(article);
+  return fields ? {...fields, readingMinutes: getReadingMinutes(article.content)} : null;
 }
 
 function normalizeSummaries(articles: Article[]): NewsSummary[] {
@@ -208,34 +206,6 @@ export async function getHomepageNews(
     latest: summaries.slice(0, LATEST_PAGE_SIZE),
     sections: [...sections.values()],
   };
-}
-
-function normalizeTranslations(article: LocalizedArticle): NewsTranslation[] {
-  if (
-    !article.title ||
-    typeof article.title === "string" ||
-    !article.slug ||
-    typeof article.slug === "string" ||
-    !article.excerpt ||
-    typeof article.excerpt === "string"
-  ) {
-    return [];
-  }
-
-  return (["tr", "en"] as const).flatMap((locale) => {
-    const title = article.title?.[locale];
-    const slug = article.slug?.[locale];
-    const excerpt = article.excerpt?.[locale];
-
-    return typeof title === "string" &&
-      title.trim() &&
-      typeof slug === "string" &&
-      slug.trim() &&
-      typeof excerpt === "string" &&
-      excerpt.trim()
-      ? [{locale, slug: slug.trim()}]
-      : [];
-  });
 }
 
 export async function getNewsListing({
@@ -382,18 +352,26 @@ export const getNewsArticle = cache(async function getNewsArticle(
   const summary = normalizeSummary(article);
   if (!summary) return null;
 
-  const localized = (await payload.findByID({
+  const otherLocale: NewsLocale = locale === "tr" ? "en" : "tr";
+  const other = await payload.find({
     collection: "articles",
-    id: article.id,
-    locale: "all",
-    depth: 0,
+    locale: otherLocale,
+    fallbackLocale: false,
+    depth: 1,
+    populate: newsPopulate,
+    limit: 1,
     overrideAccess: false,
-  })) as unknown as LocalizedArticle;
+    where: {and: [publicWhere(), {id: {equals: article.id}}]},
+  });
+  const translation = other.docs[0] && getSummaryFields(other.docs[0]);
 
   return {
     ...summary,
     content: article.content,
-    translations: normalizeTranslations(localized),
+    translations: [
+      {locale, slug: summary.slug},
+      ...(translation ? [{locale: otherLocale, slug: translation.slug}] : []),
+    ],
   };
 });
 
@@ -540,22 +518,29 @@ export async function getNextNewsArticle({
 
 export async function getNewsSitemapEntries(): Promise<NewsSitemapEntry[]> {
   const payload = await getPayload({config: configPromise});
-  const result = await payload.find({
-    collection: "articles",
-    locale: "all",
-    depth: 0,
-    pagination: false,
-    overrideAccess: false,
-    sort: "-updatedAt",
-    where: publicWhere(),
-  });
-
-  return (result.docs as unknown as LocalizedArticle[]).flatMap((article) => {
-    const translations = normalizeTranslations(article);
-    return translations.length
-      ? [{id: article.id, updatedAt: article.updatedAt, translations}]
-      : [];
-  });
+  const entries = new Map<number, NewsSitemapEntry>();
+  for (const locale of ["tr", "en"] as const) {
+    const result = await payload.find({
+      collection: "articles",
+      locale,
+      fallbackLocale: false,
+      depth: 1,
+      populate: newsPopulate,
+      pagination: false,
+      overrideAccess: false,
+      sort: "-updatedAt",
+      where: publicWhere(),
+    });
+    for (const article of result.docs) {
+      if (!getSummaryFields(article)) continue;
+      const entry = entries.get(article.id) ?? {
+        id: article.id, updatedAt: article.updatedAt, translations: [],
+      };
+      entry.translations.push({locale, slug: article.slug});
+      entries.set(article.id, entry);
+    }
+  }
+  return [...entries.values()];
 }
 
 async function fetchNewsTickerItems(
