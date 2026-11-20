@@ -101,7 +101,7 @@ export function ArticleCard({
           className={cn(
             "line-clamp-2",
             featured || carousel
-              ? "text-2xl font-semibold leading-tight tracking-tight sm:text-3xl"
+              ? "text-xl font-semibold leading-tight tracking-tight sm:text-2xl"
               : typography.heading,
             list && "underline-offset-4 decoration-1 group-hover:underline",
           )}

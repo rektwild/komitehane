@@ -111,7 +111,7 @@ export default async function ToolDetailPage({
           <GradeCalculator toolKey={tool.key} />
           {available.length ? (
             <section aria-labelledby={`academic-pages-${tool.key}`} className="flex flex-col gap-3">
-              <h2 id={`academic-pages-${tool.key}`} className={typography.title}>
+              <h2 id={`academic-pages-${tool.key}`} className={typography.subtitle}>
                 {academicT("availableUniversities")}
               </h2>
               {[...availableByUniversity].map(([universityName, entries]) => (

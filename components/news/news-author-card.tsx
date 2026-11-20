@@ -23,13 +23,13 @@ export function NewsAuthorCard({
     <div className="flex items-center gap-4">
       <div
         aria-hidden="true"
-        className="flex size-16 shrink-0 items-center justify-center rounded-full bg-muted text-xl font-medium text-foreground"
+        className="flex size-14 shrink-0 items-center justify-center rounded-full bg-muted text-lg font-medium text-foreground"
       >
         {getAuthorInitial(authorName)}
       </div>
 
       <div className="min-w-0 space-y-0.5">
-        <p className="truncate text-lg font-medium tracking-[-0.03em] text-foreground">
+        <p className="truncate text-base font-semibold tracking-tight text-foreground">
           {authorSlug ? (
             <Link
               href={{pathname: "/authors/[slug]", params: {slug: authorSlug}}}

@@ -100,13 +100,14 @@
 }
 
 @layer components {
-  /* Tools-page copy rhythm: text-sm/leading-6, space-y-4, space-y-2, gap-3, gap-6. */
+  /* Long-form copy rhythm (articles + tool explainers): 16/28 body, 20/28 h2,
+     18/28 h3, 1.25rem paragraph gap, extra space above headings. */
   .article-copy {
     max-inline-size: 100%;
     min-width: 0;
     color: var(--foreground);
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
     overflow-wrap: anywhere;
     word-break: normal;
   }
@@ -116,15 +117,15 @@
   }
 
   .article-copy > * + * {
-    margin-block-start: 1rem;
+    margin-block-start: 1.25rem;
   }
 
   .article-copy > * + h2 {
-    margin-block-start: 1.5rem;
+    margin-block-start: 2.25rem;
   }
 
   .article-copy > * + :is(h3, h4, h5, h6) {
-    margin-block-start: 1rem;
+    margin-block-start: 1.75rem;
   }
 
   .article-copy > :is(h3, h4, h5, h6) + * {
@@ -136,7 +137,7 @@
   }
 
   .article-copy-stack > * + * {
-    margin-block-start: 0.5rem;
+    margin-block-start: 0.75rem;
   }
 
   .article-copy p {
@@ -154,14 +155,22 @@
   }
 
   .article-copy h2 {
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    letter-spacing: -0.025em;
   }
 
-  .article-copy :is(h3, h4, h5, h6) {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+  .article-copy h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+  }
+
+  .article-copy :is(h4, h5, h6) {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.75rem;
   }
 
   .article-copy > .article-references-title {
@@ -353,7 +362,7 @@
     margin-block-start: 0.5rem;
     color: var(--muted-foreground);
     font-size: 0.875rem;
-    line-height: 1.5rem;
+    line-height: 1.375rem;
   }
 
   .article-copy .article-inline-image figcaption p + p {

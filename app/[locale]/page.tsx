@@ -50,7 +50,7 @@ export default async function Home() {
     <>
       <PageBreadcrumb items={[{label: t("title")}]} className="shrink-0 py-4" />
       <PageWithAside>
-        <div className="flex min-w-0 flex-1 flex-col gap-4 pb-8">
+        <div className="flex min-w-0 flex-1 flex-col gap-10 pb-12">
           <JsonLd
             data={getWebPageJsonLd({
               locale,
@@ -59,11 +59,11 @@ export default async function Home() {
               description: metadata("description"),
             })}
           />
-          <header className="flex min-w-0 flex-col gap-3">
+          <header className="flex min-w-0 flex-col gap-4">
             <h1 className={typography.display}>
               {t("heading")}
             </h1>
-            <p className="max-w-3xl text-pretty text-base leading-7 text-muted-foreground">
+            <p className="max-w-3xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
               {t("intro")}
             </p>
             <nav aria-label={t("quickLinksLabel")}>

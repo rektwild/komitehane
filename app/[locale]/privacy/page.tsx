@@ -53,14 +53,14 @@ export default async function PrivacyPage() {
           <p className="mt-3 text-sm text-muted-foreground">
             {t("lastUpdated")}
           </p>
-          <p className="mt-5 text-pretty text-lg leading-8 text-muted-foreground">
+          <p className="mt-3 text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
             {t("intro")}
           </p>
         </header>
 
-        <div className="mt-8 space-y-8 text-base leading-8 text-foreground">
+        <div className="mt-8 space-y-8 text-base leading-7 text-foreground">
           <section className="space-y-3">
-            <h2 className={typography.title}>
+            <h2 className={typography.subtitle}>
               {t("sections.adsense.title")}
             </h2>
             <p>{t("sections.adsense.paragraphOne")}</p>
@@ -68,7 +68,7 @@ export default async function PrivacyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className={typography.title}>
+            <h2 className={typography.subtitle}>
               {t("sections.technologies.title")}
             </h2>
             <p>{t("sections.technologies.paragraphOne")}</p>
@@ -76,7 +76,7 @@ export default async function PrivacyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className={typography.title}>
+            <h2 className={typography.subtitle}>
               {t("sections.choices.title")}
             </h2>
             <p>{t("sections.choices.paragraph")}</p>
@@ -95,7 +95,7 @@ export default async function PrivacyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className={typography.title}>
+            <h2 className={typography.subtitle}>
               {t("sections.consent.title")}
             </h2>
             <p>{t("sections.consent.paragraphOne")}</p>
@@ -103,21 +103,21 @@ export default async function PrivacyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className={typography.title}>
+            <h2 className={typography.subtitle}>
               {t("sections.analytics.title")}
             </h2>
             <p>{t("sections.analytics.paragraph")}</p>
           </section>
 
           <section className="space-y-3">
-            <h2 className={typography.title}>
+            <h2 className={typography.subtitle}>
               {t("sections.localStorage.title")}
             </h2>
             <p>{t("sections.localStorage.paragraph")}</p>
           </section>
 
           <section className="space-y-3">
-            <h2 className={typography.title}>
+            <h2 className={typography.subtitle}>
               {t("sections.updates.title")}
             </h2>
             <p>{t("sections.updates.paragraph")}</p>

@@ -52,7 +52,7 @@ export async function SiteAside() {
                 {toolCategories.map((category) => (
                   <li key={category}>
                     <Button
-                      className="h-auto min-h-7 w-full items-start justify-start py-1 text-start whitespace-normal"
+                      className="h-auto min-h-8 w-full items-start justify-start py-1.5 text-start text-sm leading-5 whitespace-normal"
                       nativeButton={false}
                       size="sm"
                       variant="ghost"
@@ -87,7 +87,7 @@ export async function SiteAside() {
                   {tools.map((tool) => (
                     <li key={tool.key}>
                       <Button
-                        className="w-full justify-start"
+                        className="h-auto min-h-8 w-full justify-start py-1.5 text-sm leading-5"
                         nativeButton={false}
                         size="sm"
                         variant="ghost"
@@ -115,7 +115,7 @@ export async function SiteAside() {
                   {categories.map((category) => (
                     <li key={category.id}>
                       <Button
-                        className="h-auto min-h-7 w-full items-start justify-start py-1 text-start whitespace-normal"
+                        className="h-auto min-h-8 w-full items-start justify-start py-1.5 text-start text-sm leading-5 whitespace-normal"
                         nativeButton={false}
                         size="sm"
                         variant="ghost"
@@ -158,7 +158,7 @@ export async function SiteAside() {
                   {latestNews.map((item) => (
                     <li key={item.slug}>
                       <Button
-                        className="h-auto min-h-7 w-full items-start justify-start py-1 text-start whitespace-normal"
+                        className="h-auto min-h-8 w-full items-start justify-start py-1.5 text-start text-sm leading-5 whitespace-normal"
                         nativeButton={false}
                         size="sm"
                         variant="ghost"

@@ -19,7 +19,7 @@ export async function HomeNewsCategorySection({
       aria-labelledby={`home-news-category-${section.category.id}`}
       className="flex min-w-0 flex-col gap-4"
     >
-      <div className="flex min-w-0 items-center gap-6">
+      <div className="flex min-w-0 items-center gap-4">
         <h2
           id={`home-news-category-${section.category.id}`}
           className={cn(typography.title, "min-w-0")}

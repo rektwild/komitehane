@@ -15,7 +15,7 @@ type NewsCategoryBadgeProps = {
 const sizeClasses: Record<BadgeSize, string> = {
   default: "rounded-full px-2.5 py-0.5 text-xs",
   compact:
-    "rounded-full px-2.5 py-0.5 font-mono text-[10px] font-medium uppercase tracking-widest",
+    "rounded-full px-2.5 py-0.5 font-mono text-xs font-medium uppercase tracking-wider",
   topic:
     "rounded-full px-3 py-1 text-sm font-medium normal-case tracking-normal",
 };

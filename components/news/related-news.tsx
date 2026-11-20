@@ -24,7 +24,7 @@ export async function RelatedNews({articles, locale}: RelatedNewsProps) {
   return (
     <section
       aria-labelledby="related-news-title"
-      className="mt-14 pt-10 md:mt-16 md:pt-12"
+      className="mt-12 md:mt-16"
     >
       <h2
         id="related-news-title"

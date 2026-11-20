@@ -156,14 +156,14 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
           })}
         />
 
-        <header className="border-b border-border/60 pb-4">
+        <header className="border-b border-border/60 pb-6">
           <h1 className={typography.display}>
             {article.title}
           </h1>
           <p
             id="article-excerpt"
             role="doc-subtitle"
-            className="mt-3 text-pretty text-base leading-6 text-muted-foreground"
+            className="mt-3 text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
           >
             {article.excerpt}
           </p>
@@ -180,7 +180,7 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
           </div>
         </header>
 
-        <div className="grid gap-5 pt-4 xl:grid-cols-[260px_minmax(0,1fr)_300px] xl:gap-6">
+        <div className="grid gap-6 pt-6 xl:grid-cols-[260px_minmax(0,1fr)_300px] xl:gap-8">
           <aside className="order-2 space-y-6 xl:order-1 xl:sticky xl:top-28 xl:self-start">
             <NewsAuthorCard
               authorName={article.authorName}
@@ -191,7 +191,7 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
             <NewsShareActions title={article.title} url={currentUrl} />
           </aside>
 
-          <div className="order-1 min-w-0 space-y-6 xl:order-2">
+          <div className="order-1 min-w-0 space-y-8 xl:order-2">
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card">
               <Image
                 src={article.image.url}

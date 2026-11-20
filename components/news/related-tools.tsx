@@ -12,7 +12,7 @@ export function RelatedTools() {
   return (
     <section
       aria-labelledby="related-tools-title"
-      className="mt-14 pt-10 md:mt-16 md:pt-12"
+      className="mt-12 md:mt-16"
     >
       <h2
         id="related-tools-title"

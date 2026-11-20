@@ -41,7 +41,7 @@ export async function HomeToolsCategorySection({
       aria-labelledby={headingId}
       className="min-w-0"
     >
-      <div className="flex min-w-0 items-center gap-6">
+      <div className="flex min-w-0 items-center gap-4">
         <h2
           id={headingId}
           className={cn(typography.title, "min-w-0")}
@@ -51,7 +51,7 @@ export async function HomeToolsCategorySection({
         <span aria-hidden="true" className="h-1 min-w-0 flex-1 bg-action" />
       </div>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {selectedTools.map((tool) => (
           <ToolCard
             key={tool.key}

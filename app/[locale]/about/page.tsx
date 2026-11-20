@@ -54,14 +54,14 @@ export default async function AboutPage() {
           <h1 className={typography.display}>
             {t("heading")}
           </h1>
-          <p className="mt-5 text-pretty text-lg leading-8 text-muted-foreground">
+          <p className="mt-3 text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
             {t("intro")}
           </p>
         </header>
 
-        <div className="mt-8 space-y-8 text-base leading-8 text-foreground">
+        <div className="mt-8 space-y-8 text-base leading-7 text-foreground">
           <section className="space-y-3">
-            <h2 className={typography.title}>
+            <h2 className={typography.subtitle}>
               {t("sections.offer.title")}
             </h2>
             <ul className="list-disc space-y-2 ps-6">
@@ -72,7 +72,7 @@ export default async function AboutPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className={typography.title}>
+            <h2 className={typography.subtitle}>
               {t("sections.calculators.title")}
             </h2>
             <p>{t("sections.calculators.paragraphOne")}</p>
@@ -80,7 +80,7 @@ export default async function AboutPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className={typography.title}>
+            <h2 className={typography.subtitle}>
               {t("sections.editorial.title")}
             </h2>
             <p>{t("sections.editorial.paragraphOne")}</p>
@@ -88,7 +88,7 @@ export default async function AboutPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className={typography.title}>
+            <h2 className={typography.subtitle}>
               {t("sections.limitations.title")}
             </h2>
             <p>{t("sections.limitations.paragraph")}</p>
@@ -97,7 +97,7 @@ export default async function AboutPage() {
           <nav aria-labelledby="about-links-title" className="space-y-3">
             <h2
               id="about-links-title"
-              className={typography.title}
+              className={typography.subtitle}
             >
               {t("sections.links.title")}
             </h2>

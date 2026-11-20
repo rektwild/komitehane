@@ -29,7 +29,7 @@ export function ToolCard({tool}: ToolCardProps) {
           className="flex h-full w-full flex-col items-center justify-center gap-2 overflow-hidden bg-gradient-to-br from-muted via-background to-muted text-muted-foreground transition-transform duration-500 group-hover:scale-105"
         >
           <ImageIcon aria-hidden="true" className="size-10" strokeWidth={1.4} />
-          <span className="text-[10px] font-semibold uppercase tracking-[0.2em]">
+          <span className="text-xs font-semibold uppercase tracking-widest">
             {t("card.imagePlaceholder")}
           </span>
         </div>
@@ -46,7 +46,7 @@ export function ToolCard({tool}: ToolCardProps) {
 
         <div className="mt-auto flex items-center gap-1.5 border-t border-border/50 pt-2.5 sm:gap-2">
           <Avatar size="sm" className="size-6">
-            <AvatarFallback className="text-[10px] font-medium">K</AvatarFallback>
+            <AvatarFallback className="text-xs font-medium">K</AvatarFallback>
           </Avatar>
           <span className="min-w-0 truncate text-xs font-medium tracking-tight text-foreground">
             {t("card.provider")}
