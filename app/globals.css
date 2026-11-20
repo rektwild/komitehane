@@ -553,3 +553,9 @@
     background-color: #fbfbfb;
   }
 }
+
+/* Google's recommended collapse for AdSense slots with no ad to show; the
+   inline display:block on <ins> needs !important to be overridden. */
+ins.adsbygoogle[data-ad-status="unfilled"] {
+  display: none !important;
+}

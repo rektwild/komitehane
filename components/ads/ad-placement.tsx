@@ -22,9 +22,14 @@ export async function AdPlacement({
   return (
     <section
       aria-label={t("label")}
-      className={cn("w-full min-w-0 py-6 sm:py-8", className)}
+      className={cn(
+        // Reserve spacing only once AdSense reports a filled ad; unfilled,
+        // blocked or not-yet-loaded slots must not leave an empty gap.
+        "w-full min-w-0 has-[ins[data-ad-status=filled]]:py-6 sm:has-[ins[data-ad-status=filled]]:py-8",
+        className,
+      )}
     >
-      <div className="min-h-28 w-full min-w-0">
+      <div className="w-full min-w-0">
         <AdSenseAd slot={slot} format="auto" responsive />
       </div>
     </section>
