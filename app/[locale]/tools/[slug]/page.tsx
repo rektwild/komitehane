@@ -36,7 +36,7 @@ export async function generateMetadata({
 
   const t = await getTranslations("Tools");
   const title = t(`items.${tool.key}.title`);
-  const description = t(`items.${tool.key}.description`);
+  const description = t(`items.${tool.key}.metaDescription`);
 
   return getLocalizedMetadata(tool.href, {title,description,imageAlt:title});
 }
@@ -54,7 +54,7 @@ export default async function ToolDetailPage({
     getLocale(),
   ]);
   const title = t(`items.${tool.key}.title`);
-  const description = t(`items.${tool.key}.description`);
+  const description = t(`items.${tool.key}.metaDescription`);
   const pageUrl = absoluteUrl(await getPathname({href: tool.href, locale}));
   const academicT=await getTranslations("Academic");
   const available=(await landingCandidates().catch(()=>[])).filter(entry=>(entry.system==="MIDTERM")===(tool.category==="midterm")).slice(0,12);

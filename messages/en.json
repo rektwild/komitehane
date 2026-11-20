@@ -5,16 +5,16 @@
       "default": "Komitehane",
       "template": "%s | Komitehane"
     },
-    "description": "Komitehane — a modern, multilingual web application.",
+    "description": "Free committee and midterm grade calculators, minimum final grade tools, and TUS and medical education news for medical students in Turkey.",
     "home": {
-      "title": "Komitehane",
-      "description": "Komitehane — a modern, multilingual web application.",
-      "imageAlt": "Komitehane social preview"
+      "title": "Komitehane – Committee & Midterm Grade Calculators, TUS News",
+      "description": "Calculate committee and midterm grades and find the minimum final grade you need. Free grade calculators, a TUS countdown and news for medical students.",
+      "imageAlt": "Komitehane: grade calculators and TUS news for medical students"
     },
     "tools": {
-      "title": "Tools",
-      "description": "Plan your academic goals with practical grade calculators.",
-      "imageAlt": "Komitehane tools page"
+      "title": "Committee and Midterm Grade Calculators | Komitehane",
+      "description": "Calculate committee and midterm grades and find the minimum final grade you need. Free, sign-up-free grade calculators for medical students.",
+      "imageAlt": "Komitehane grade calculators"
     },
     "news": {
       "title": "News | Komitehane",
@@ -29,7 +29,7 @@
   },
   "Home": {
     "title": "Komitehane",
-    "description": "Komitehane — a modern, multilingual web application."
+    "description": "Committee and midterm grade calculators, TUS and medical education news for medical students in Turkey."
   },
   "Aside": {
     "label": "Related content",
@@ -57,6 +57,8 @@
   },
   "Tools": {
     "title": "Tools",
+    "heading": "Grade Calculators",
+    "intro": "Enter committee or midterm grades with their weights to calculate your end-of-term grade, or find the minimum final exam grade you need to pass. The tools are free, need no sign-up, and every calculation runs only in your browser.",
     "description": "Plan your academic goals with practical grade calculators.",
     "categories": {
       "midterm": "Midterm calculation tools",
@@ -217,7 +219,7 @@
     "resultAlreadyPassing": "The current weighted contribution meets the target. Other official requirements may still apply.",
     "resultImpossibleDescription": "The target weighted average cannot be reached with a maximum final score of 100.",
     "howItWorksTitle": "How is the committee minimum final grade calculated?",
-    "howItWorksIntroduction": "This tool uses your committee contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
+    "howItWorksIntroduction": "This tool answers \"What do I need on my final?\": it uses your committee contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
     "systemTitle": "How is the committee contribution calculated?",
     "systemDescription": "Assessment and final weights are editable and must total 100%.",
     "formulaTitle": "How is the minimum final grade calculated?",
@@ -265,7 +267,7 @@
     "resultAlreadyPassing": "The current weighted contribution meets the target. Other official requirements may still apply.",
     "resultImpossibleDescription": "The target weighted average cannot be reached with a maximum final score of 100.",
     "howItWorksTitle": "How is the midterm minimum final grade calculated?",
-    "howItWorksIntroduction": "This tool uses your midterm contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
+    "howItWorksIntroduction": "This tool answers \"What do I need on my final?\": it uses your midterm contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
     "systemTitle": "How is the midterm contribution calculated?",
     "systemDescription": "Assessment and final weights are editable and must total 100%.",
     "formulaTitle": "How is the minimum final grade calculated?",
@@ -300,19 +302,23 @@
     "items": {
       "midtermGrade": {
         "title": "Midterm Grade Calculator",
-        "description": "Use this tool to quickly calculate your midterm grade."
+        "description": "Use this tool to quickly calculate your midterm grade.",
+        "metaDescription": "Enter midterm and final grades with their weights to calculate your end-of-term grade. Supports 1–10 midterms with an automatic final weight; free."
       },
       "committeeGrade": {
         "title": "Committee Grade Calculator",
-        "description": "Calculate your committee grade in a practical way."
+        "description": "Calculate your committee grade in a practical way.",
+        "metaDescription": "Calculate your end-of-term grade from medical school committee grades and weights. Supports 1–10 committees with an automatic final weight; free."
       },
       "committeeMinimumFinal": {
         "title": "Committee Minimum Final Grade Calculator",
-        "description": "Find the minimum final grade you need to pass the committee."
+        "description": "Find the minimum final grade you need to pass the committee.",
+        "metaDescription": "Find the minimum final exam grade you need to pass the committee. Enter committee grades, weights and the passing grade to see the result instantly."
       },
       "midtermMinimumFinal": {
         "title": "Midterm Minimum Final Grade Calculator",
-        "description": "Find the minimum final grade you need for your midterm target."
+        "description": "Find the minimum final grade you need for your midterm target.",
+        "metaDescription": "Find the minimum final exam grade you need to pass the course. Enter midterm grades, weights and the passing grade to see the result instantly."
       }
     }
   },
@@ -345,7 +351,8 @@
     "groups": {
       "explore": "Explore",
       "tools": "Tools",
-      "account": "Account"
+      "account": "Account",
+      "site": "Company"
     },
     "links": {
       "news": "News",

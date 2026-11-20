@@ -69,10 +69,13 @@ export default async function ToolsPage({searchParams}: ToolsPageProps) {
             })}
           />
 
-          <header>
+          <header className="max-w-3xl">
             <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              {t("title")}
+              {t("heading")}
             </h1>
+            <p className="mt-3 text-pretty text-base leading-7 text-muted-foreground">
+              {t("intro")}
+            </p>
           </header>
 
           <ToolsCatalog

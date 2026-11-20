@@ -30,7 +30,7 @@ export async function GET() {
   const content = [
     `# ${siteConfig.name}`,
     "",
-    "> Komitehane publishes medical student news and university grade calculators in Turkish and English.",
+    "> Komitehane is a Turkish and English website for medical students in Turkey: free committee (komite) and midterm (vize) grade calculators, minimum final grade calculators, a TUS exam countdown, and TUS and medical education news.",
     "",
     "## Localized homepages",
     ...siteConfig.locales.map(

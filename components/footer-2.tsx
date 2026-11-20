@@ -8,7 +8,7 @@ import {Openai} from "@/components/ui/svgs/openai";
 import {Perplexity} from "@/components/ui/svgs/perplexity";
 import {Button} from "@/components/ui/button";
 import {Link} from "@/i18n/navigation";
-import {inactiveRoutes} from "@/lib/navigation";
+import {isLinkableRoute} from "@/lib/navigation";
 import {tools} from "@/lib/tools";
 
 const aiProviders = [
@@ -48,14 +48,25 @@ export default async function Footer() {
       })),
     },
     {
+      key: "site",
+      links: [
+        {href: "/privacy", label: t("links.privacy")},
+      ],
+    },
+    {
       key: "account",
       links: [
         {href: "/login", label: t("links.login")},
         {href: "/signup", label: t("links.signup")},
-        {href: "/privacy", label: t("links.privacy")},
       ],
     },
   ] as const;
+  const visibleFooterGroups = footerGroups
+    .map((group) => ({
+      ...group,
+      links: group.links.filter((link) => isLinkableRoute(link.href)),
+    }))
+    .filter((group) => group.links.length > 0);
 
   return (
     <footer className="border-t border-border/60">
@@ -65,7 +76,7 @@ export default async function Footer() {
             <SiteBrand className="w-fit" />
           </div>
 
-          {footerGroups.map((group) => (
+          {visibleFooterGroups.map((group) => (
             <nav
               key={group.key}
               aria-label={t(`groups.${group.key}`)}
@@ -74,7 +85,7 @@ export default async function Footer() {
                 {t(`groups.${group.key}`)}
               </h2>
               <ul className="mt-4 flex flex-col gap-4">
-                {group.links.filter((link) => !inactiveRoutes.has(link.href)).map((link) => (
+                {group.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}

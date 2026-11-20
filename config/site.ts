@@ -46,7 +46,8 @@ export const localeToOpenGraphLocale = {
 export const siteConfig = {
   name: "Komitehane",
   organizationName: "Komitehane",
-  description: "A modern, multilingual web application.",
+  description:
+    "Free committee and midterm grade calculators, minimum final grade tools, and TUS and medical education news for medical students in Turkey.",
   url: siteUrl,
   defaultLocale: routing.defaultLocale,
   locales: routing.locales,

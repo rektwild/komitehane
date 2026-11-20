@@ -31,3 +31,15 @@ test("keeps auth routes and header translations for later", () => {
   assert.deepEqual(en.Header.auth, {login: "Log in", signup: "Sign up"});
   assert.deepEqual(tr.Header.auth, {login: "Giriş Yap", signup: "Kayıt Ol"});
 });
+
+test("never links footer/navigation to auth pages that are not launched", async () => {
+  const {isLinkableRoute} = await import("@/lib/navigation");
+
+  assert.equal(isLinkableRoute("/login"), false);
+  assert.equal(isLinkableRoute("/signup"), false);
+  assert.equal(isLinkableRoute("/store"), false);
+  assert.equal(isLinkableRoute("/privacy"), true);
+  assert.equal(isLinkableRoute("/news"), true);
+  assert.equal(isLinkableRoute("/login", true), true);
+  assert.equal(isLinkableRoute("/signup", true), true);
+});
