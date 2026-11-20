@@ -36,7 +36,7 @@ export function ToolCard({tool}: ToolCardProps) {
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col gap-2 px-2 pb-2">
-        <h3 className={cn(typography.heading, "line-clamp-2")}>
+        <h3 className={cn(typography.heading, "line-clamp-2 min-h-[2lh]")}>
           {title}
         </h3>
 
