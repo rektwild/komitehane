@@ -2,6 +2,7 @@
 import {useEffect,useState} from "react";
 import {useLocale,useTranslations} from "next-intl";
 import {Field,FieldLabel} from "@/components/ui/field";
+import {Select,SelectContent,SelectGroup,SelectItem,SelectTrigger,SelectValue} from "@/components/ui/select";
 import type {ToolKey} from "@/lib/tools";
 import {academicPath} from "@/lib/academic/seo/paths";
 
@@ -50,8 +51,25 @@ export function AcademicContextFields({toolKey,context,onChange}:{toolKey:ToolKe
     setRuleState(next.programId && next.classYear && (!midterm || next.courseId) ? "LOADING" : "IDLE");
     onChange(next);
   };
-  const selectClass="h-10 w-full rounded-md border border-input bg-background px-3 text-sm";
-  const select=(name:string,label:string,value:string,items:Item[],change:(v:string)=>void)=><Field><FieldLabel htmlFor={`academic-${name}`}>{label}</FieldLabel><select id={`academic-${name}`} className={selectClass} value={value} onChange={e=>change(e.target.value)}><option value="">{t("select")}</option>{items.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></Field>;
+  const select=(name:string,label:string,value:string,items:Item[],change:(v:string)=>void)=>(
+    <Field>
+      <FieldLabel htmlFor={`academic-${name}`}>{label}</FieldLabel>
+      <Select
+        value={value===""?null:value}
+        onValueChange={v=>change(v??"")}
+        items={items.map(x=>({value:x.id,label:x.name}))}
+      >
+        <SelectTrigger id={`academic-${name}`} className="w-full">
+          <SelectValue placeholder={t("select")} />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            {items.map(x=><SelectItem key={x.id} value={x.id}>{x.name}</SelectItem>)}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </Field>
+  );
   const selectedProgram=programs.find(x=>x.id===context.programId);
   const selectedFaculty=faculties.find(x=>x.id===context.facultyId);
   const selectedUniversity=universities.find(x=>x.id===context.universityId);
