@@ -478,7 +478,15 @@
       "editor": "Editor",
       "writer": "Writer"
     },
-    "profileLink": "{name}'s author profile"
+    "profileLink": "{name}'s author profile",
+    "articleCount": "{count, plural, one {# article} other {# articles}}",
+    "searchLabel": "Search this author's articles",
+    "searchPlaceholder": "Search articles",
+    "viewLabel": "View",
+    "viewGrid": "Grid view",
+    "viewList": "List view",
+    "emptyTitle": "No articles found",
+    "emptyDescription": "Try a different search term."
   },
   "About": {
     "title": "About",

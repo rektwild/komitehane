@@ -3,6 +3,7 @@ import {getTranslations} from "next-intl/server";
 
 import {Link} from "@/i18n/navigation";
 import {PageWithAside} from "@/components/layout/page-with-aside";
+import {typography} from "@/lib/typography";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("NotFound");
@@ -26,7 +27,7 @@ export default async function NotFound() {
         <p className="font-mono text-6xl font-semibold text-muted-foreground/25">
           404
         </p>
-        <h1 className="text-2xl font-semibold tracking-tight">{t("title")}</h1>
+        <h1 className={typography.display}>{t("title")}</h1>
         <p className="max-w-md text-muted-foreground">{t("description")}</p>
         <Link
           href="/"

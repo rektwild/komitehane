@@ -24,7 +24,7 @@ export async function NewsDetailCategories({
     <section aria-labelledby="detail-categories-title" className="space-y-4">
       <h2
         id="detail-categories-title"
-        className="flex items-center gap-3 text-base font-bold leading-none tracking-tight text-foreground"
+        className="flex items-center gap-3 text-base font-semibold leading-none tracking-tight text-foreground"
       >
         <span>{t("categories")}</span>
         <span aria-hidden="true" className="h-[2px] flex-1 self-center bg-action" />

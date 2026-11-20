@@ -478,7 +478,15 @@
       "editor": "Editör",
       "writer": "Yazar"
     },
-    "profileLink": "{name} yazar profili"
+    "profileLink": "{name} yazar profili",
+    "articleCount": "{count, plural, one {# yazı} other {# yazı}}",
+    "searchLabel": "Yazarın yazılarında ara",
+    "searchPlaceholder": "Yazılarda ara",
+    "viewLabel": "Görünüm",
+    "viewGrid": "Kart görünümü",
+    "viewList": "Liste görünümü",
+    "emptyTitle": "Yazı bulunamadı",
+    "emptyDescription": "Farklı bir arama terimi deneyin."
   },
   "About": {
     "title": "Hakkımızda",

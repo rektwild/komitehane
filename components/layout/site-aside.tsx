@@ -11,6 +11,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import {TusCountdown} from "@/components/layout/tus-countdown";
+import {typography} from "@/lib/typography";
 
 export async function SiteAside() {
   const [t, toolsT, locale] = await Promise.all([
@@ -28,7 +29,7 @@ export async function SiteAside() {
     <aside aria-label={t("label")} className="w-full lg:w-72 lg:shrink-0">
       <div className="flex flex-col gap-6">
         <section aria-labelledby="tus-countdown-title" className="flex flex-col gap-3">
-          <h2 id="tus-countdown-title" className="text-sm font-medium">
+          <h2 id="tus-countdown-title" className={typography.label}>
             {t("countdown.title")}
           </h2>
           <Card size="sm">
@@ -42,7 +43,7 @@ export async function SiteAside() {
           aria-labelledby="related-tools-categories-title"
           className="flex flex-col gap-3"
         >
-          <h2 id="related-tools-categories-title" className="text-sm font-medium">
+          <h2 id="related-tools-categories-title" className={typography.label}>
             {t("relatedToolsCategories.title")}
           </h2>
           <Card size="sm">
@@ -77,7 +78,7 @@ export async function SiteAside() {
             </CardContent>
           </Card>
           <section aria-labelledby="related-tools-title" className="flex flex-col gap-3">
-            <h3 id="related-tools-title" className="text-sm font-medium">
+            <h3 id="related-tools-title" className={typography.label}>
               {t("relatedTools.title")}
             </h3>
             <Card size="sm">
@@ -104,7 +105,7 @@ export async function SiteAside() {
         </section>
 
         <section aria-labelledby="related-categories-title" className="flex flex-col gap-3">
-          <h2 id="related-categories-title" className="text-sm font-medium">
+          <h2 id="related-categories-title" className={typography.label}>
             {t("relatedCategories.title")}
           </h2>
           <Card size="sm">
@@ -147,7 +148,7 @@ export async function SiteAside() {
         </section>
 
         <section aria-labelledby="related-blogs-title" className="flex flex-col gap-3">
-          <h2 id="related-blogs-title" className="text-sm font-medium">
+          <h2 id="related-blogs-title" className={typography.label}>
             {t("relatedBlogs.title")}
           </h2>
           <Card size="sm">

@@ -5,14 +5,17 @@ import {getTranslations} from "next-intl/server";
 
 import {JsonLd} from "@/components/json-ld";
 import {PageBreadcrumb} from "@/components/layout/page-breadcrumb";
-import {PageWithAside} from "@/components/layout/page-with-aside";
 import {ArticleCard} from "@/components/news/article-card";
+import {ArticleListRow} from "@/components/news/article-list-row";
+import {AuthorArticles} from "@/components/news/author-articles";
 import {getPathname} from "@/i18n/navigation";
 import {getAuthorProfile} from "@/lib/news/data";
 import type {AuthorProfile, NewsLocale} from "@/lib/news/types";
 import {getDynamicLocalizedMetadata} from "@/lib/seo/metadata";
 import {getAuthorProfileJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
+import {typography} from "@/lib/typography";
+import {cn} from "@/lib/utils";
 
 type AuthorPageProps = {
   params: Promise<{locale: NewsLocale; slug: string}>;
@@ -71,55 +74,52 @@ export default async function AuthorPage({params}: AuthorPageProps) {
         className="shrink-0 py-4"
       />
 
-      <PageWithAside>
-        <div className="flex min-w-0 flex-1 flex-col gap-8 pb-8">
-          <JsonLd
-            data={getAuthorProfileJsonLd({
-              locale,
-              url: pageUrl,
-              name: profile.name,
-              pageTitle: t("metaTitle", {name: profile.name}),
-              description,
-              jobTitle: roleLabel,
-              bio: profile.bio,
-              breadcrumbItems: [
-                {name: newsT("title"), url: newsUrl},
-                {name: profile.name, url: pageUrl},
-              ],
-            })}
-          />
+      <div className="flex min-w-0 flex-1 flex-col pb-12">
+        <JsonLd
+          data={getAuthorProfileJsonLd({
+            locale,
+            url: pageUrl,
+            name: profile.name,
+            pageTitle: t("metaTitle", {name: profile.name}),
+            description,
+            jobTitle: roleLabel,
+            bio: profile.bio,
+            breadcrumbItems: [
+              {name: newsT("title"), url: newsUrl},
+              {name: profile.name, url: pageUrl},
+            ],
+          })}
+        />
 
-          <header className="flex min-w-0 items-start gap-5 border-b border-border/60 pb-6">
-            <div
-              aria-hidden="true"
-              className="flex size-20 shrink-0 items-center justify-center rounded-full bg-muted text-2xl font-medium text-foreground"
-            >
-              {profile.name.trim().charAt(0).toLocaleUpperCase(locale)}
-            </div>
-            <div className="min-w-0 space-y-2">
-              <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                {profile.name}
-              </h1>
-              <p className="text-sm font-medium text-muted-foreground">{roleLabel}</p>
-              {profile.bio ? (
-                <p className="max-w-3xl text-pretty text-base leading-7 text-muted-foreground">
-                  {profile.bio}
-                </p>
-              ) : null}
-            </div>
-          </header>
+        <header className="flex min-w-0 items-center gap-5 border-b border-border/60 pt-4 pb-10 sm:gap-8">
+          <div
+            aria-hidden="true"
+            className="flex size-20 shrink-0 items-center justify-center rounded-full border border-border/60 bg-muted text-3xl font-semibold text-foreground sm:size-28 sm:text-4xl"
+          >
+            {profile.name.trim().charAt(0).toLocaleUpperCase(locale)}
+          </div>
+          <div className="min-w-0 space-y-1.5">
+            <h1 className={typography.display}>{profile.name}</h1>
+            <p className="text-base text-muted-foreground sm:text-lg">{roleLabel}</p>
+            {profile.bio ? (
+              <p className={cn(typography.lead, "max-w-3xl pt-1")}>{profile.bio}</p>
+            ) : null}
+            <p className={cn(typography.meta, "pt-1 sm:text-sm")}>
+              {t("articleCount", {count: profile.articles.length})}
+            </p>
+          </div>
+        </header>
 
-          <section aria-labelledby="author-articles-title" className="min-w-0">
-            <h2
-              id="author-articles-title"
-              className="text-2xl font-bold tracking-tight text-foreground"
-            >
-              {t("articlesTitle")}
-            </h2>
-            <div className="mt-6 grid auto-rows-fr gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {profile.articles.map((article) => (
+        <section aria-labelledby="author-articles-title" className="min-w-0 pt-8">
+          <h2 id="author-articles-title" className="sr-only">
+            {t("articlesTitle")}
+          </h2>
+          <AuthorArticles
+            items={profile.articles.map((article) => ({
+              id: article.id,
+              searchText: [article.title, article.excerpt, article.category.name].join(" "),
+              card: (
                 <ArticleCard
-                  key={article.id}
                   article={article}
                   locale={locale}
                   variant="list"
@@ -127,11 +127,12 @@ export default async function AuthorPage({params}: AuthorPageProps) {
                     minutes: String(article.readingMinutes),
                   })}
                 />
-              ))}
-            </div>
-          </section>
-        </div>
-      </PageWithAside>
+              ),
+              row: <ArticleListRow article={article} locale={locale} />,
+            }))}
+          />
+        </section>
+      </div>
     </>
   );
 }

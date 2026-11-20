@@ -10,6 +10,7 @@ import {
   getWebPageJsonLd,
 } from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
+import {typography} from "@/lib/typography";
 
 const offerKeys = ["tools", "minimumFinal", "news", "countdown"] as const;
 
@@ -50,7 +51,7 @@ export default async function AboutPage() {
         />
 
         <header className="border-b border-border/60 pb-6">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h1 className={typography.display}>
             {t("heading")}
           </h1>
           <p className="mt-5 text-pretty text-lg leading-8 text-muted-foreground">
@@ -60,7 +61,7 @@ export default async function AboutPage() {
 
         <div className="mt-8 space-y-8 text-base leading-8 text-foreground">
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold leading-tight tracking-tight">
+            <h2 className={typography.title}>
               {t("sections.offer.title")}
             </h2>
             <ul className="list-disc space-y-2 ps-6">
@@ -71,7 +72,7 @@ export default async function AboutPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold leading-tight tracking-tight">
+            <h2 className={typography.title}>
               {t("sections.calculators.title")}
             </h2>
             <p>{t("sections.calculators.paragraphOne")}</p>
@@ -79,7 +80,7 @@ export default async function AboutPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold leading-tight tracking-tight">
+            <h2 className={typography.title}>
               {t("sections.editorial.title")}
             </h2>
             <p>{t("sections.editorial.paragraphOne")}</p>
@@ -87,7 +88,7 @@ export default async function AboutPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold leading-tight tracking-tight">
+            <h2 className={typography.title}>
               {t("sections.limitations.title")}
             </h2>
             <p>{t("sections.limitations.paragraph")}</p>
@@ -96,7 +97,7 @@ export default async function AboutPage() {
           <nav aria-labelledby="about-links-title" className="space-y-3">
             <h2
               id="about-links-title"
-              className="text-xl font-semibold leading-tight tracking-tight"
+              className={typography.title}
             >
               {t("sections.links.title")}
             </h2>

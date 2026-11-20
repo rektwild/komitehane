@@ -3,6 +3,7 @@ import Image from "next/image";
 import {Avatar, AvatarFallback} from "@/components/ui/avatar";
 import {Link} from "@/i18n/navigation";
 import type {NewsLocale, NewsSummary} from "@/lib/news/types";
+import {typography} from "@/lib/typography";
 import {cn} from "@/lib/utils";
 
 function getAuthorInitial(authorName: string): string {
@@ -43,6 +44,7 @@ export function ArticleCard({
   const featured = variant === "featured";
   const carousel = variant === "carousel";
   const supporting = variant === "supporting";
+  const list = variant === "list";
   const detailHref = {
     pathname: "/news/[slug]" as const,
     params: {slug: article.slug},
@@ -57,23 +59,23 @@ export function ArticleCard({
     <Link
       href={detailHref}
       className={cn(
-        "group min-w-0 rounded-lg outline-none transition-colors hover:bg-muted/50 active:bg-muted focus-visible:ring-2 focus-visible:ring-ring/50",
+        "group min-w-0 rounded-lg outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring/50",
+        list ? "flex h-full flex-col gap-4" : "hover:bg-muted/50 active:bg-muted",
         carousel
           ? "grid h-full gap-4 p-3 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-6"
           : supporting
             ? "flex h-full flex-col gap-2.5 p-2.5"
-            : "flex h-full flex-col gap-2 p-3",
+            : !list && "flex h-full flex-col gap-2 p-3",
         featured && "h-full gap-3 p-3",
       )}
     >
       <div
         className={cn(
-          "relative w-full overflow-hidden rounded-lg bg-muted shadow-md outline outline-offset-3 outline-border/50",
-          carousel
-            ? "aspect-[16/9] md:aspect-auto md:min-h-80"
-            : supporting
-              ? "aspect-[16/9]"
-              : "aspect-[16/9]",
+          "relative w-full overflow-hidden rounded-lg bg-muted",
+          list
+            ? "border border-border/60"
+            : "shadow-md outline outline-offset-3 outline-border/50",
+          carousel ? "aspect-[16/9] md:aspect-auto md:min-h-80" : "aspect-[16/9]",
         )}
       >
         <Image
@@ -92,17 +94,16 @@ export function ArticleCard({
           featured && "gap-3 px-2 pb-3 sm:px-3",
           carousel && "justify-center gap-4 px-2 py-2 md:px-4 md:py-6",
           supporting && "flex-1 gap-2 px-2 pb-1",
-          !featured && !carousel && !supporting && "flex-1 gap-2 pb-2",
+          list && "flex-1 gap-2 px-0 pb-0",
         )}
       >
         <h2
           className={cn(
-            "font-semibold tracking-tight",
+            "line-clamp-2",
             featured || carousel
-              ? "line-clamp-2 text-2xl leading-tight sm:text-3xl"
-              : supporting
-                ? "line-clamp-2 text-[17px] leading-snug"
-                : "line-clamp-2 text-lg leading-snug",
+              ? "text-2xl font-semibold leading-tight tracking-tight sm:text-3xl"
+              : typography.heading,
+            list && "underline-offset-4 decoration-1 group-hover:underline",
           )}
         >
           {article.title}
@@ -110,12 +111,8 @@ export function ArticleCard({
 
         <p
           className={cn(
-            "text-muted-foreground group-active:text-foreground",
-            featured || carousel
-              ? "line-clamp-3 text-sm leading-relaxed sm:text-[15px]"
-              : supporting
-                ? "line-clamp-2 text-[13px] leading-relaxed"
-                : "line-clamp-3 text-sm leading-relaxed",
+            typography.body,
+            featured || carousel ? "line-clamp-3 sm:text-base" : "line-clamp-2",
           )}
         >
           {article.excerpt}
@@ -135,7 +132,7 @@ export function ArticleCard({
               <AvatarFallback
                 className={cn(
                   "font-medium",
-                  featured || carousel ? "text-xs" : "text-[10px]",
+                  "text-xs",
                 )}
               >
                 {getAuthorInitial(article.authorName)}
@@ -153,8 +150,7 @@ export function ArticleCard({
           <div
             className={cn(
               "flex shrink-0 items-center gap-1 text-muted-foreground transition-colors group-hover:text-foreground sm:gap-1.5",
-              featured || carousel ? "text-xs sm:text-sm" : "text-[11px] sm:text-xs",
-              supporting && "text-[11px]",
+              featured || carousel ? "text-xs sm:text-sm" : "text-xs",
             )}
           >
             <time dateTime={article.publishedAt} className="whitespace-nowrap">

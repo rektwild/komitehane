@@ -6,6 +6,8 @@ import {useTranslations} from "next-intl";
 import {Avatar, AvatarFallback} from "@/components/ui/avatar";
 import {Link} from "@/i18n/navigation";
 import type {ToolDefinition} from "@/lib/tools";
+import {typography} from "@/lib/typography";
+import {cn} from "@/lib/utils";
 
 type ToolCardProps = {
   tool: Pick<ToolDefinition, "key" | "href">;
@@ -27,14 +29,14 @@ export function ToolCard({tool}: ToolCardProps) {
           className="flex h-full w-full flex-col items-center justify-center gap-2 overflow-hidden bg-gradient-to-br from-muted via-background to-muted text-muted-foreground transition-transform duration-500 group-hover:scale-105"
         >
           <ImageIcon aria-hidden="true" className="size-10" strokeWidth={1.4} />
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em]">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.2em]">
             {t("card.imagePlaceholder")}
           </span>
         </div>
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col gap-2 px-2 pb-2">
-        <h3 className="line-clamp-2 text-lg font-semibold leading-snug tracking-tight">
+        <h3 className={cn(typography.heading, "line-clamp-2")}>
           {title}
         </h3>
 

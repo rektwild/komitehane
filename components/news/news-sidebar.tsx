@@ -8,6 +8,7 @@ import {
 import {Separator} from "@/components/ui/separator";
 import {Link} from "@/i18n/navigation";
 import type {NewsCategory, NewsLocale, NewsSummary} from "@/lib/news/types";
+import {typography} from "@/lib/typography";
 
 function RankedList({
   articles,
@@ -24,7 +25,7 @@ function RankedList({
     <ol className="mt-4 space-y-5">
       {articles.map((article, index) => (
         <li key={article.id} className="grid grid-cols-[2rem_minmax(0,1fr)] gap-3">
-          <span className="text-2xl font-bold text-muted-foreground/60">
+          <span className="text-2xl font-semibold text-muted-foreground/60">
             {index + 1}.
           </span>
           <div className="min-w-0">
@@ -72,7 +73,7 @@ export async function NewsSidebar({
     <aside aria-label={t("categories")} className="min-w-0 space-y-8 lg:sticky lg:top-24 lg:self-start">
       {trending.length ? (
         <section>
-          <h2 className="text-lg font-bold tracking-tight">{t("trending")}</h2>
+          <h2 className={typography.heading}>{t("trending")}</h2>
           <RankedList articles={trending} locale={locale} readingTime={readingTime} />
         </section>
       ) : null}
@@ -81,7 +82,7 @@ export async function NewsSidebar({
 
       {popular.length ? (
         <section>
-          <h2 className="text-lg font-bold tracking-tight">{t("popular")}</h2>
+          <h2 className={typography.heading}>{t("popular")}</h2>
           <RankedList articles={popular} locale={locale} readingTime={readingTime} />
         </section>
       ) : null}
@@ -90,7 +91,7 @@ export async function NewsSidebar({
 
       {categories.length ? (
         <section>
-          <h2 className="text-lg font-bold tracking-tight">{t("categories")}</h2>
+          <h2 className={typography.heading}>{t("categories")}</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             <NewsBadge
               label={t("allCategories")}

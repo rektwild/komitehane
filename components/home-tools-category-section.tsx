@@ -2,6 +2,8 @@ import {getTranslations} from "next-intl/server";
 
 import {ToolCard} from "@/components/tools/tool-card";
 import {tools, type ToolCategory} from "@/lib/tools";
+import {typography} from "@/lib/typography";
+import {cn} from "@/lib/utils";
 
 function shuffle<T>(items: readonly T[]): T[] {
   const shuffled = [...items];
@@ -42,7 +44,7 @@ export async function HomeToolsCategorySection({
       <div className="flex min-w-0 items-center gap-6">
         <h2
           id={headingId}
-          className="min-w-0 text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+          className={cn(typography.title, "min-w-0")}
         >
           {t(`categories.${category}`)}
         </h2>

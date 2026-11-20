@@ -10,6 +10,7 @@ import {Button} from "@/components/ui/button";
 import {Link} from "@/i18n/navigation";
 import {isLinkableRoute} from "@/lib/navigation";
 import {tools} from "@/lib/tools";
+import {typography} from "@/lib/typography";
 
 const aiProviders = [
   {key: "claude", href: "https://claude.ai/", icon: ClaudeAI},
@@ -82,7 +83,7 @@ export default async function Footer() {
               key={group.key}
               aria-label={t(`groups.${group.key}`)}
             >
-              <h2 className="text-foreground text-sm font-medium">
+              <h2 className={typography.label}>
                 {t(`groups.${group.key}`)}
               </h2>
               <ul className="mt-4 flex flex-col gap-4">

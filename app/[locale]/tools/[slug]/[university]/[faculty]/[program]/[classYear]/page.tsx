@@ -15,6 +15,7 @@ import {getDynamicLocalizedMetadata} from "@/lib/seo/metadata";
 import {getWebPageJsonLd} from "@/lib/seo/structured-data";
 import {socialImagePath} from "@/lib/seo/social-image-keys";
 import {absoluteUrl} from "@/lib/seo/urls";
+import {typography} from "@/lib/typography";
 
 export const revalidate = 300;
 
@@ -49,8 +50,8 @@ export default async function AcademicLandingPage({params}:{params:Promise<Param
     <PageBreadcrumb items={[{label:toolsT("title"),href:"/tools",icon:BoxIcon},{label:toolTitle,href:tool.href},{label:title}]} className="shrink-0 py-4" />
     <PageWithAside><section className="flex min-w-0 flex-1 flex-col gap-6">
     <JsonLd data={getWebPageJsonLd({locale:p.locale,url:pageUrl,name:title,description,breadcrumbItems:[{name:toolsT("title"),url:toolsUrl},{name:toolTitle,url:toolUrl},{name:title,url:pageUrl}]})} />
-    <h1 className="text-2xl font-bold sm:text-4xl">{title}</h1><p>{description}</p><p>{t("landingDisclaimer")}</p>
-    <h2 className="text-lg font-bold">{t("landingRules")}</h2>
+    <h1 className={typography.display}>{title}</h1><p>{description}</p><p>{t("landingDisclaimer")}</p>
+    <h2 className={typography.title}>{t("landingRules")}</h2>
     {entry.rules.map(({rule,courseName,period})=><section key={rule.versionId} className="rounded-md border p-4 text-sm"><p>{t("landingAcademicYear",{year:String(rule.academicYearStart),nextYear:String(rule.academicYearStart+1)})}</p>{courseName?<p>{t("landingCourse",{course:courseName})}</p>:null}<p>{t("period")}: {t(period==="FALL"?"fall":period==="SPRING"?"spring":"annual")}</p><p>{t("landingWeights")}: {rule.components.map((c:{type:string;position:number;weightPercent:string})=>`${c.type} ${c.position}: %${c.weightPercent}`).join(" · ")}</p><p>{t("landingTarget",{grade:String(rule.passingGrade)})}</p>{rule.sources.map((source:{sourceUrl:string},i:number)=><a className="underline" href={source.sourceUrl} target="_blank" rel="noreferrer" key={i}>{t("source")}</a>)}</section>)}
     <GradeCalculator toolKey={tool.key} initialAcademicContext={initial} />
   </section></PageWithAside>

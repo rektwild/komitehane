@@ -16,6 +16,7 @@ import {absoluteUrl} from "@/lib/seo/urls";
 import {getHomepageNews} from "@/lib/news/data";
 import type {NewsLocale} from "@/lib/news/types";
 import {toolCategories, tools} from "@/lib/tools";
+import {typography} from "@/lib/typography";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Metadata.home");
@@ -59,7 +60,7 @@ export default async function Home() {
             })}
           />
           <header className="flex min-w-0 flex-col gap-3">
-            <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <h1 className={typography.display}>
               {t("heading")}
             </h1>
             <p className="max-w-3xl text-pretty text-base leading-7 text-muted-foreground">

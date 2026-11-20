@@ -4,6 +4,7 @@ import {useTranslations} from "next-intl";
 
 import {ToolCard} from "@/components/tools/tool-card";
 import {tools} from "@/lib/tools";
+import {typography} from "@/lib/typography";
 
 export function RelatedTools() {
   const t = useTranslations("NewsPage");
@@ -15,7 +16,7 @@ export function RelatedTools() {
     >
       <h2
         id="related-tools-title"
-        className="text-2xl font-bold leading-none tracking-tight text-foreground sm:text-3xl"
+        className={typography.title}
       >
         {t("relatedToolsTitle")}
       </h2>

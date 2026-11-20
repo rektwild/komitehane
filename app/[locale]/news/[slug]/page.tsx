@@ -30,6 +30,7 @@ import type {NewsLocale} from "@/lib/news/types";
 import {getDynamicLocalizedMetadata} from "@/lib/seo/metadata";
 import {getNewsArticleJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
+import {typography} from "@/lib/typography";
 
 type NewsArticlePageProps = {
   params: Promise<{locale: NewsLocale; slug: string}>;
@@ -156,7 +157,7 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
         />
 
         <header className="border-b border-border/60 pb-4">
-          <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h1 className={typography.display}>
             {article.title}
           </h1>
           <p

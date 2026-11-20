@@ -13,6 +13,7 @@ import type {NewsLocale} from "@/lib/news/types";
 import {getLocalizedMetadata, getRobotsMetadata} from "@/lib/seo/metadata";
 import {getNewsCollectionJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
+import {typography} from "@/lib/typography";
 
 type NewsPageProps = {
   params: Promise<{locale: NewsLocale}>;
@@ -154,7 +155,7 @@ export default async function NewsPage({params, searchParams}: NewsPageProps) {
           />
 
           <header className="max-w-3xl">
-            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h1 className={typography.display}>
               {t("title")}
             </h1>
           </header>

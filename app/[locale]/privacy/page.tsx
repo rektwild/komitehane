@@ -7,6 +7,7 @@ import {getPathname} from "@/i18n/navigation";
 import {getLocalizedMetadata} from "@/lib/seo/metadata";
 import {getWebPageJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
+import {typography} from "@/lib/typography";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Metadata.privacy");
@@ -46,7 +47,7 @@ export default async function PrivacyPage() {
         />
 
         <header className="border-b border-border/60 pb-6">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h1 className={typography.display}>
             {t("title")}
           </h1>
           <p className="mt-3 text-sm text-muted-foreground">
@@ -59,7 +60,7 @@ export default async function PrivacyPage() {
 
         <div className="mt-8 space-y-8 text-base leading-8 text-foreground">
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold leading-tight tracking-tight">
+            <h2 className={typography.title}>
               {t("sections.adsense.title")}
             </h2>
             <p>{t("sections.adsense.paragraphOne")}</p>
@@ -67,7 +68,7 @@ export default async function PrivacyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold leading-tight tracking-tight">
+            <h2 className={typography.title}>
               {t("sections.technologies.title")}
             </h2>
             <p>{t("sections.technologies.paragraphOne")}</p>
@@ -75,7 +76,7 @@ export default async function PrivacyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold leading-tight tracking-tight">
+            <h2 className={typography.title}>
               {t("sections.choices.title")}
             </h2>
             <p>{t("sections.choices.paragraph")}</p>
@@ -94,7 +95,7 @@ export default async function PrivacyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold leading-tight tracking-tight">
+            <h2 className={typography.title}>
               {t("sections.consent.title")}
             </h2>
             <p>{t("sections.consent.paragraphOne")}</p>
@@ -102,21 +103,21 @@ export default async function PrivacyPage() {
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold leading-tight tracking-tight">
+            <h2 className={typography.title}>
               {t("sections.analytics.title")}
             </h2>
             <p>{t("sections.analytics.paragraph")}</p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold leading-tight tracking-tight">
+            <h2 className={typography.title}>
               {t("sections.localStorage.title")}
             </h2>
             <p>{t("sections.localStorage.paragraph")}</p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="text-xl font-semibold leading-tight tracking-tight">
+            <h2 className={typography.title}>
               {t("sections.updates.title")}
             </h2>
             <p>{t("sections.updates.paragraph")}</p>

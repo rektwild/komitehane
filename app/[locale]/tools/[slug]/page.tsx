@@ -14,6 +14,8 @@ import {getWebPageJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
 import {landingCandidates} from "@/lib/academic/repositories/catalog";
 import {academicPath} from "@/lib/academic/seo/paths";
+import {typography} from "@/lib/typography";
+import {cn} from "@/lib/utils";
 
 type ToolDetailPageProps = {
   params: Promise<{slug: string}>;
@@ -101,7 +103,7 @@ export default async function ToolDetailPage({
           />
 
           <header>
-            <h1 className="min-w-0 text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h1 className={cn(typography.display, "min-w-0")}>
               {title}
             </h1>
           </header>
@@ -109,7 +111,7 @@ export default async function ToolDetailPage({
           <GradeCalculator toolKey={tool.key} />
           {available.length ? (
             <section aria-labelledby={`academic-pages-${tool.key}`} className="flex flex-col gap-3">
-              <h2 id={`academic-pages-${tool.key}`} className="text-lg font-semibold">
+              <h2 id={`academic-pages-${tool.key}`} className={typography.title}>
                 {academicT("availableUniversities")}
               </h2>
               {[...availableByUniversity].map(([universityName, entries]) => (
