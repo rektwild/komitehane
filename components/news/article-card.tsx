@@ -102,7 +102,7 @@ export function ArticleCard({
             "line-clamp-2",
             featured || carousel
               ? "text-xl font-semibold leading-tight tracking-tight sm:text-2xl"
-              : typography.heading,
+              : cn(typography.heading, "min-h-[2lh]"),
             list && "underline-offset-4 decoration-1 group-hover:underline",
           )}
         >

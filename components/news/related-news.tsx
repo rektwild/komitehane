@@ -62,7 +62,7 @@ export async function RelatedNews({articles, locale}: RelatedNewsProps) {
                   <span>{t("readingTime", {minutes: String(article.readingMinutes)})}</span>
                 </div>
 
-                <h3 className={cn(typography.heading, "line-clamp-2 transition-colors group-hover:text-primary")}>
+                <h3 className={cn(typography.heading, "line-clamp-2 min-h-[2lh] transition-colors group-hover:text-primary")}>
                   {article.title}
                 </h3>
 
