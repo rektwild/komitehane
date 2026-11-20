@@ -468,6 +468,17 @@
     "description": "Aradığınız sayfa bulunamadı. Adresi kontrol edin veya ana sayfaya dönün.",
     "backToHome": "Ana sayfaya dön"
   },
+  "Authors": {
+    "metaTitle": "{name} – Yazar profili",
+    "metaDescription": "{name} tarafından Komitehane'de yayımlanan TUS ve tıp eğitimi haberleri ve yazıları.",
+    "articlesTitle": "Yazıları",
+    "roles": {
+      "founder": "Kurucu",
+      "editor": "Editör",
+      "writer": "Yazar"
+    },
+    "profileLink": "{name} yazar profili"
+  },
   "About": {
     "title": "Hakkımızda",
     "heading": "Komitehane hakkında",

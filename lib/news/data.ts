@@ -8,6 +8,7 @@ import {getPayload, type PopulateType, type Where} from "payload";
 import configPromise from "@payload-config";
 import type {Article} from "@/payload-types";
 import type {
+  AuthorProfile,
   AuthorRole,
   HomeNewsResult,
   NewsCategory,
@@ -32,7 +33,7 @@ const TICKER_LIMIT = 8;
 const ASIDE_LINKS_LIMIT = 5;
 
 const newsPopulate = {
-  users: {name: true, role: true},
+  users: {name: true, role: true, slug: true},
   media: {
     alt: true,
     filename: true,
@@ -114,12 +115,14 @@ function normalizeAuthorRole(value: unknown): AuthorRole {
 
 function normalizeAuthor(
   value: Article["author"],
-): {name: string; role: AuthorRole} | null {
+): {name: string; role: AuthorRole; slug: string | null} | null {
   if (!value || typeof value === "number" || !value.name) return null;
 
   return {
     name: value.name,
     role: normalizeAuthorRole(value.role),
+    // Automation accounts never get a public profile page.
+    slug: value.role !== "automation" && value.slug ? value.slug : null,
   };
 }
 
@@ -152,6 +155,7 @@ function getSummaryFields(article: Article) {
     tags,
     authorName: author.name,
     authorRole: author.role,
+    authorSlug: author.slug,
     publishedAt: article.publishedAt,
     createdAt: article.createdAt,
     updatedAt: article.updatedAt,
@@ -536,7 +540,11 @@ export async function getNewsSitemapEntries(): Promise<NewsSitemapEntry[]> {
       const entry = entries.get(article.id) ?? {
         id: article.id, updatedAt: article.updatedAt, translations: [],
       };
-      entry.translations.push({locale, slug: article.slug});
+      entry.translations.push({
+        locale,
+        slug: article.slug,
+        authorSlug: normalizeAuthor(article.author)?.slug ?? null,
+      });
       entries.set(article.id, entry);
     }
   }
@@ -635,3 +643,85 @@ export async function getLatestNewsLinks(
 ): Promise<NewsTickerItem[]> {
   return getCachedLatestNewsLinks(locale);
 }
+
+const AUTHOR_ARTICLES_LIMIT = 48;
+const newsLocales = ["tr", "en"] as const satisfies readonly NewsLocale[];
+
+function authorArticlesWhere(authorId: number): Where {
+  return {and: [publicWhere(), {author: {equals: authorId}}]};
+}
+
+/**
+ * Public author profile for one locale. Returns null for unknown slugs,
+ * automation accounts, and authors without a public article in that locale,
+ * so profile pages never render empty or advertise missing translations.
+ */
+export const getAuthorProfile = cache(async (
+  locale: NewsLocale,
+  slug: string,
+): Promise<AuthorProfile | null> => {
+  const payload = await getPayload({config: configPromise});
+  const users = await payload.find({
+    collection: "users",
+    locale,
+    fallbackLocale: false,
+    depth: 0,
+    limit: 1,
+    overrideAccess: false,
+    select: {name: true, role: true, slug: true, bio: true},
+    where: {
+      and: [{slug: {equals: slug}}, {role: {not_equals: "automation"}}],
+    },
+  });
+  const user = users.docs[0];
+  if (!user?.name || !user.slug) return null;
+
+  const result = await payload.find({
+    collection: "articles",
+    locale,
+    fallbackLocale: false,
+    depth: 1,
+    limit: AUTHOR_ARTICLES_LIMIT,
+    populate: newsPopulate,
+    overrideAccess: false,
+    sort: "-publishedAt",
+    where: authorArticlesWhere(user.id),
+  });
+  const articles = normalizeSummaries(result.docs);
+  if (articles.length === 0) return null;
+
+  const locales: NewsLocale[] = [];
+  for (const candidate of newsLocales) {
+    if (candidate === locale) {
+      locales.push(candidate);
+      continue;
+    }
+
+    const other = await payload.find({
+      collection: "articles",
+      locale: candidate,
+      fallbackLocale: false,
+      depth: 1,
+      limit: AUTHOR_ARTICLES_LIMIT,
+      populate: newsPopulate,
+      overrideAccess: false,
+      where: authorArticlesWhere(user.id),
+    });
+    if (other.docs.some((article) => getSummaryFields(article))) {
+      locales.push(candidate);
+    }
+  }
+
+  const bio = typeof user.bio === "string" && user.bio.trim() ? user.bio.trim() : null;
+
+  return {
+    id: user.id,
+    name: user.name,
+    slug: user.slug,
+    role: normalizeAuthorRole(user.role),
+    bio,
+    articles,
+    locales,
+  };
+});
+

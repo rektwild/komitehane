@@ -272,6 +272,7 @@ export function getNewsArticleJsonLd({
   description,
   image,
   authorName,
+  authorUrl,
   publishedAt,
   updatedAt,
   breadcrumbItems,
@@ -282,6 +283,8 @@ export function getNewsArticleJsonLd({
   description: string;
   image: string;
   authorName: string;
+  /** Absolute URL of the author's public profile page, when one exists. */
+  authorUrl?: string;
   publishedAt: string;
   updatedAt: string;
   breadcrumbItems: readonly [BreadcrumbItem, BreadcrumbItem, ...BreadcrumbItem[]];
@@ -318,7 +321,9 @@ export function getNewsArticleJsonLd({
         mainEntityOfPage: {"@id": webpageId},
         author: authorName.trim() === siteConfig.organizationName
           ? {"@id": organizationId, "@type": "Organization", name: authorName}
-          : {"@type": "Person", name: authorName},
+          : authorUrl
+            ? {"@id": getPersonId(authorUrl), "@type": "Person", name: authorName, url: authorUrl}
+            : {"@type": "Person", name: authorName},
         publisher: {"@id": organizationId},
       },
       {
@@ -334,3 +339,56 @@ export function getNewsArticleJsonLd({
     ],
   };
 }
+
+function getPersonId(profileUrl: string): string {
+  return `${profileUrl}#person`;
+}
+
+/**
+ * ProfilePage → Person graph for a public author page. Only facts shown on
+ * the page (name, role at Komitehane, optional bio) are emitted.
+ */
+export function getAuthorProfileJsonLd({
+  locale,
+  url,
+  name,
+  pageTitle,
+  description,
+  jobTitle,
+  bio,
+  breadcrumbItems,
+}: {
+  locale: Locale;
+  url: string;
+  name: string;
+  pageTitle: string;
+  description: string;
+  jobTitle: string;
+  bio: string | null;
+  breadcrumbItems: readonly [BreadcrumbItem, BreadcrumbItem, ...BreadcrumbItem[]];
+}) {
+  const personId = getPersonId(url);
+  const breadcrumb = getBreadcrumbListNode(url, breadcrumbItems);
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        ...getWebPageNode({locale, url, name: pageTitle, description, type: "ProfilePage"}),
+        mainEntity: {"@id": personId},
+        breadcrumb: {"@id": breadcrumb["@id"]},
+      },
+      {
+        "@type": "Person",
+        "@id": personId,
+        name,
+        url,
+        jobTitle,
+        ...(bio ? {description: bio} : {}),
+        worksFor: {"@id": organizationId},
+      },
+      breadcrumb,
+    ],
+  };
+}
+

@@ -67,16 +67,31 @@ export async function generateMetadata({params}: NewsArticlePageProps): Promise<
     type: "article",
     publishedTime: article.publishedAt,
     modifiedTime: article.updatedAt,
-    authors: [{name: article.authorName}],
+    authors: [
+      {
+        name: article.authorName,
+        ...(article.authorSlug
+          ? {
+              url: absoluteUrl(
+                getPathname({
+                  href: {pathname: "/authors/[slug]", params: {slug: article.authorSlug}},
+                  locale,
+                }),
+              ),
+            }
+          : {}),
+      },
+    ],
     image: article.image,
   });
 }
 
 export default async function NewsArticlePage({params}: NewsArticlePageProps) {
   const {locale, slug} = await params;
-  const [article, t] = await Promise.all([
+  const [article, t, authorsT] = await Promise.all([
     getNewsArticle(locale, slug),
     getTranslations("NewsPage"),
+    getTranslations("Authors"),
   ]);
   if (!article) notFound();
 
@@ -86,6 +101,14 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
   });
   const currentUrl = absoluteUrl(currentPath);
   const newsUrl = absoluteUrl(getPathname({href: "/news", locale}));
+  const authorUrl = article.authorSlug
+    ? absoluteUrl(
+        getPathname({
+          href: {pathname: "/authors/[slug]", params: {slug: article.authorSlug}},
+          locale,
+        }),
+      )
+    : undefined;
   const tocItems = extractNewsToc(article.content);
   const plainText = convertLexicalToPlaintext({ data: article.content });
   const [relatedArticles, categories, nextArticle] = await Promise.all([
@@ -122,6 +145,7 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
             description: article.excerpt,
             image: article.image.url,
             authorName: article.authorName,
+            authorUrl,
             publishedAt: article.publishedAt,
             updatedAt: article.updatedAt,
             breadcrumbItems: [
@@ -159,8 +183,9 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
           <aside className="order-2 space-y-6 xl:order-1 xl:sticky xl:top-28 xl:self-start">
             <NewsAuthorCard
               authorName={article.authorName}
-              authorRole={article.authorRole}
-              locale={locale}
+              roleLabel={authorsT(`roles.${article.authorRole}`)}
+              authorSlug={article.authorSlug}
+              profileLinkLabel={authorsT("profileLink", {name: article.authorName})}
             />
             <NewsShareActions title={article.title} url={currentUrl} />
           </aside>

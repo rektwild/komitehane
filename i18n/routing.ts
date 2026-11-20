@@ -23,6 +23,10 @@ export const routing = defineRouting({
       tr: "/hakkimizda",
       en: "/about",
     },
+    "/authors/[slug]": {
+      tr: "/yazarlar/[slug]",
+      en: "/authors/[slug]",
+    },
     "/library": {
       tr: "/kutuphane",
       en: "/library",

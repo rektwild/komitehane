@@ -1,8 +1,8 @@
 import {describe,expect,it,vi} from "vitest";
 vi.mock("@/config/site",()=>({isIndexableEnvironment:true,siteUrl:"https://komitehane.example"}));
-vi.mock("@/lib/news/data",()=>({getNewsSitemapEntries:vi.fn().mockResolvedValue([{updatedAt:"2026-01-01T00:00:00Z",translations:[{locale:"tr",slug:"test-news"}]}])}));
+vi.mock("@/lib/news/data",()=>({getNewsSitemapEntries:vi.fn().mockResolvedValue([{updatedAt:"2026-01-01T00:00:00Z",translations:[{locale:"tr",slug:"test-news",authorSlug:"ayse-yilmaz"}]}])}));
 vi.mock("@/lib/academic/repositories/catalog",()=>({landingCandidates:vi.fn().mockResolvedValue([{universitySlug:"fictional",facultySlug:"faculty",programSlug:"program",classYear:2,system:"COMMITTEE"}])}));
-vi.mock("@/i18n/navigation",()=>({getPathname:({href,locale}:{href:string|{pathname:string;params:{slug:string}};locale:string})=>typeof href==="string"?`/${locale}${href === "/" ? "" : href}`:`/${locale}/haberler/${href.params.slug}`}));
+vi.mock("@/i18n/navigation",()=>({getPathname:({href,locale}:{href:string|{pathname:string;params:{slug:string}};locale:string})=>typeof href==="string"?`/${locale}${href === "/" ? "" : href}`:href.pathname==="/authors/[slug]"?`/${locale}/yazarlar/${href.params.slug}`:`/${locale}/haberler/${href.params.slug}`}));
 vi.mock("@/lib/seo/metadata",()=>({getAlternateLanguages:vi.fn().mockResolvedValue({})}));
 import sitemap from "../../app/sitemap";
 describe("academic sitemap",()=>{
@@ -12,5 +12,16 @@ describe("academic sitemap",()=>{
     expect(urls.some(url=>url.endsWith("/tr/haberler/test-news"))).toBe(true);
     expect(urls.some(url=>url.includes("/tr/araclar/komite-not-hesaplama/fictional/"))).toBe(true);
     expect(urls.some(url=>url.includes("/fictional/") && url.includes("vize"))).toBe(false);
+  });
+  it("lists author profiles only in locales where they have public articles",async()=>{
+    const entries=await sitemap();const urls=entries.map(entry=>entry.url);
+    expect(urls).toContain("https://komitehane.example/tr/yazarlar/ayse-yilmaz");
+    expect(urls.some(url=>url.includes("/en/yazarlar/"))).toBe(false);
+    const author=entries.find(entry=>entry.url.endsWith("/tr/yazarlar/ayse-yilmaz"));
+    expect(author?.alternates?.languages).toEqual({tr:"https://komitehane.example/tr/yazarlar/ayse-yilmaz","x-default":"https://komitehane.example/tr/yazarlar/ayse-yilmaz"});
+  });
+  it("includes the About page",async()=>{
+    const urls=(await sitemap()).map(entry=>entry.url);
+    expect(urls).toContain("https://komitehane.example/tr/about");
   });
 });

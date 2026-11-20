@@ -468,6 +468,17 @@
     "description": "The page you're looking for couldn't be found. Check the address or go back to the homepage.",
     "backToHome": "Back to home"
   },
+  "Authors": {
+    "metaTitle": "{name} – Author profile",
+    "metaDescription": "News and articles about TUS and medical education written by {name} on Komitehane.",
+    "articlesTitle": "Articles",
+    "roles": {
+      "founder": "Founder",
+      "editor": "Editor",
+      "writer": "Writer"
+    },
+    "profileLink": "{name}'s author profile"
+  },
   "About": {
     "title": "About",
     "heading": "About Komitehane",
