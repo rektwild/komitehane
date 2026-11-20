@@ -104,10 +104,13 @@ export default async function LocaleLayout({children}: LayoutProps<"/[locale]">)
       </head>
       <body className="min-h-full flex flex-col">
         {adsenseConfig.enabled && adsenseScriptSrc ? (
-          // afterInteractive keeps the ad script from competing with
-          // first-party code for the initial download; ad slots queue their
-          // `adsbygoogle.push` calls until it loads. Site ownership is still
-          // verified through the google-adsense-account meta tag.
+          // afterInteractive (Next's default for third-party scripts) runs the
+          // ad script after hydration instead of ahead of first-party code;
+          // Next still emits a preload hint, so ads are not delayed. Ad slots
+          // queue `adsbygoogle.push` calls until it loads. lazyOnload would
+          // defer it further (no preload) at the cost of later ad rendering.
+          // Site ownership is verified through the google-adsense-account
+          // meta tag.
           <Script
             id="google-adsense"
             src={adsenseScriptSrc}

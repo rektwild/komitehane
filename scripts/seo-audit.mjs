@@ -7,6 +7,13 @@ const articlePath = process.env.SEO_AUDIT_ARTICLE_PATH?.trim() || "";
 const locales = ["tr", "en"];
 const academicPath = process.env.SEO_AUDIT_ACADEMIC_PATH?.trim() || "";
 const missingAcademicPath = process.env.SEO_AUDIT_ACADEMIC_MISSING_PATH?.trim() || "";
+const authorPath = process.env.SEO_AUDIT_AUTHOR_PATH?.trim() || "";
+const newsArchivePath = process.env.SEO_AUDIT_NEWS_ARCHIVE_PATH?.trim() || "";
+const expectTrainingAllowed = process.env.SEO_AUDIT_EXPECT_TRAINING_ALLOWED === "true";
+const aboutPaths = {tr: "/tr/hakkimizda", en: "/en/about"};
+const searchAgents = ["Googlebot", "bingbot", "Google-Extended", "OAI-SearchBot", "PerplexityBot", "Claude-SearchBot", "Applebot", "Amzn-SearchBot"];
+const trainingAgents = ["GPTBot", "ClaudeBot", "CCBot", "Applebot-Extended", "meta-externalagent", "Bytespider", "Amazonbot"];
+const webPageTypes = ["WebPage", "AboutPage", "CollectionPage", "ProfilePage"];
 const toolPaths = {
   tr: ["/tr/araclar/komite-not-hesaplama", "/tr/araclar/komite-minimum-final-notu", "/tr/araclar/vize-not-hesaplama", "/tr/araclar/vize-minimum-final-notu"],
   en: ["/en/tools/committee-grade-calculator", "/en/tools/committee-minimum-final-grade", "/en/tools/midterm-grade-calculator", "/en/tools/midterm-minimum-final-grade"],
@@ -106,11 +113,23 @@ function assertPage(locale, body) {
   if (!alternateMap.has("x-default")) fail(`${locale}: missing x-default hreflang`);
 
   const graph = getJsonLdGraph(body, locale);
-  for (const type of ["Organization", "WebSite", "WebPage"]) {
+  for (const type of ["Organization", "WebSite"]) {
     if (!graph.some((entry) => entry["@type"] === type)) {
       fail(`${locale}: missing ${type} JSON-LD`);
     }
   }
+  if (!graph.some((entry) => webPageTypes.includes(entry["@type"]))) {
+    fail(`${locale}: missing WebPage JSON-LD`);
+  }
+  const organization = graph.find((entry) => entry["@type"] === "Organization");
+  if (organization && (!organization.description || !organization.logo?.url)) {
+    fail(`${locale}: Organization JSON-LD is missing description or logo`);
+  }
+  if (/<h1[^>]*class=["'][^"']*\bsr-only\b/i.test(body)) {
+    fail(`${locale}: h1 is visually hidden`);
+  }
+  const ogImage = firstMatch(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i, body);
+  if (!ogImage) fail(`${locale}: missing og:image`);
 
   if (expectIndexable && /noindex/i.test(robots)) {
     fail(`${locale}: unexpectedly noindex`);
@@ -282,6 +301,41 @@ async function assertArticleAlternates(pathname, source) {
   }
 }
 
+function internalLinks(body) {
+  return [...body.matchAll(/<a\b[^>]*\shref=["'](\/[^"'#]*)["']/gi)]
+    .map((match) => match[1].replace(/&amp;/g, "&"))
+    .filter((href) => !href.startsWith("/_next/") && !href.startsWith("//"));
+}
+
+async function assertInternalLinks(pages) {
+  const checked = new Map();
+  for (const [label, body] of pages) {
+    for (const href of new Set(internalLinks(body))) {
+      if (!checked.has(href)) {
+        const {response} = await fetchText(href);
+        checked.set(href, response.status);
+      }
+      const status = checked.get(href);
+      if (status >= 400) fail(`${label}: internal link ${href} returned ${status}`);
+    }
+  }
+  return checked.size;
+}
+
+function assertAuthorPage(pathname, body) {
+  const label = `author ${pathname}`;
+  const canonical = firstMatch(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i, body);
+  const graph = getJsonLdGraph(body, label);
+  const profile = graph.find((entry) => entry?.["@type"] === "ProfilePage");
+  const person = graph.find((entry) => entry?.["@type"] === "Person");
+  const breadcrumb = graph.find((entry) => entry?.["@type"] === "BreadcrumbList");
+  if (canonical !== absoluteUrl(pathname)) fail(`${label}: canonical mismatch`);
+  if ((body.match(/<h1\b/gi) || []).length !== 1) fail(`${label}: expected exactly one h1`);
+  if (!profile || profile.mainEntity?.["@id"] !== person?.["@id"]) fail(`${label}: ProfilePage must point to Person`);
+  if (!person?.name || person.url !== canonical) fail(`${label}: Person is missing name or url`);
+  if (!breadcrumb || profile?.breadcrumb?.["@id"] !== breadcrumb["@id"]) fail(`${label}: missing linked BreadcrumbList`);
+}
+
 async function run() {
   const root = await fetchText("/");
   if (![301, 302, 307, 308].includes(root.response.status)) {
@@ -305,6 +359,60 @@ async function run() {
     if(page.response.status!==200) fail(`${pathname}: expected 200, received ${page.response.status}`);
     else assertPage(locale,page.body);
   }
+  const linkSources = [];
+  for (const locale of locales) {
+    const home = await fetchText(`/${locale}`);
+    if (home.response.status === 200) linkSources.push([`/${locale}`, home.body]);
+    const about = await fetchText(aboutPaths[locale]);
+    if (about.response.status !== 200) {
+      fail(`${aboutPaths[locale]}: expected 200, received ${about.response.status}`);
+    } else {
+      assertPage(locale, about.body);
+      if (!getJsonLdGraph(about.body, aboutPaths[locale]).some((entry) => entry?.["@type"] === "AboutPage")) {
+        fail(`${aboutPaths[locale]}: missing AboutPage JSON-LD`);
+      }
+      linkSources.push([aboutPaths[locale], about.body]);
+    }
+  }
+  const toolPage = await fetchText(toolPaths.tr[0]);
+  if (toolPage.response.status === 200) {
+    linkSources.push([toolPaths.tr[0], toolPage.body]);
+    if (!getJsonLdGraph(toolPage.body, toolPaths.tr[0]).some((entry) => entry?.["@type"] === "BreadcrumbList")) {
+      fail(`${toolPaths.tr[0]}: missing BreadcrumbList JSON-LD`);
+    }
+    const ogImage = firstMatch(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i, toolPage.body);
+    if (ogImage) {
+      const image = await fetch(absoluteUrl(new URL(ogImage).pathname));
+      if (image.status !== 200 || !/^image\//.test(image.headers.get("content-type") || "")) {
+        fail(`${toolPaths.tr[0]}: og:image ${ogImage} is not a served image`);
+      }
+    }
+  }
+  const linkCount = await assertInternalLinks(linkSources);
+  console.log(`SEO audit: checked ${linkCount} internal link targets.`);
+
+  const outOfRange = await fetchText("/tr/haberler?page=100000");
+  if (outOfRange.response.status !== 404) {
+    fail(`/tr/haberler?page=100000: expected 404, received ${outOfRange.response.status}`);
+  }
+  if (newsArchivePath) {
+    const archive = await fetchText(newsArchivePath);
+    const canonical = firstMatch(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i, archive.body);
+    const robotsMeta = firstMatch(/<meta[^>]+name=["']robots["'][^>]+content=["']([^"']+)["']/i, archive.body);
+    if (archive.response.status !== 200) fail(`${newsArchivePath}: expected 200`);
+    if (canonical !== absoluteUrl(newsArchivePath)) fail(`${newsArchivePath}: archive page must be self-canonical`);
+    if (expectIndexable && /noindex/i.test(robotsMeta)) fail(`${newsArchivePath}: archive page is noindex`);
+  }
+  const filtered = await fetchText("/tr/haberler?q=tus");
+  const filteredRobots = firstMatch(/<meta[^>]+name=["']robots["'][^>]+content=["']([^"']+)["']/i, filtered.body);
+  if (!/noindex/i.test(filteredRobots)) fail("/tr/haberler?q=tus: search results must be noindex");
+
+  if (authorPath) {
+    const author = await fetchText(authorPath);
+    if (author.response.status !== 200) fail(`${authorPath}: expected 200, received ${author.response.status}`);
+    else assertAuthorPage(authorPath, author.body);
+  }
+
   if (academicPath) {
     const page=await fetchText(academicPath);
     const locale=academicPath.match(/^\/(tr|en)\//)?.[1];
@@ -333,7 +441,17 @@ async function run() {
   }
   if (expectIndexable) {
     const groups = robots.body.split(/\r?\n\s*\r?\n/);
-    for (const agent of ["Googlebot", "bingbot", "OAI-SearchBot", "PerplexityBot", "Claude-SearchBot"]) {
+    for (const agent of trainingAgents) {
+      const group = groups.find((entry) =>
+        entry.split(/\r?\n/).some((line) =>
+          line.trim().toLowerCase() === `user-agent: ${agent.toLowerCase()}`
+        )
+      );
+      const blocked = Boolean(group && /^Disallow:\s*\/\s*$/im.test(group) && !/^Allow:/im.test(group));
+      if (!expectTrainingAllowed && !blocked) fail(`robots.txt: training crawler ${agent} is not blocked`);
+      if (expectTrainingAllowed && blocked) fail(`robots.txt: training crawler ${agent} is blocked`);
+    }
+    for (const agent of searchAgents) {
       const group = groups.find((entry) =>
         entry.split(/\r?\n/).some((line) =>
           line.trim().toLowerCase() === `user-agent: ${agent.toLowerCase()}`
@@ -365,6 +483,8 @@ async function run() {
     }
     for(const pathname of Object.values(toolPaths).flat()) if(!sitemapLocs.includes(absoluteUrl(pathname))) fail(`sitemap.xml: missing ${pathname}`);
     if(academicPath && !sitemapLocs.includes(absoluteUrl(academicPath.split("?")[0])))fail(`sitemap.xml: missing academic page ${academicPath}`);
+    for (const pathname of Object.values(aboutPaths)) if (!sitemapLocs.includes(absoluteUrl(pathname))) fail(`sitemap.xml: missing ${pathname}`);
+    if (authorPath && !sitemapLocs.includes(absoluteUrl(authorPath))) fail(`sitemap.xml: missing author ${authorPath}`);
     if (articlePath && !sitemapLocs.includes(absoluteUrl(articlePath))) {
       fail(`sitemap.xml: missing audited article ${absoluteUrl(articlePath)}`);
     }
@@ -377,7 +497,7 @@ async function run() {
     fail("llms.txt: expected a public text resource");
   }
 
-  for (const pathname of Object.values(toolPaths).flat()) {
+  for (const pathname of [...Object.values(toolPaths).flat(), ...Object.values(aboutPaths)]) {
     if (!llms.body.includes(`](${absoluteUrl(pathname)})`)) {
       fail(`llms.txt: missing localized tool ${pathname}`);
     }

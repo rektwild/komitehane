@@ -9,9 +9,12 @@ rather than implying that all courses have identical weights. Invalid paths or
 missing eligible rules return 404; an unavailable academic DB leaves the
 manual generic calculators available.
 
-The page has localized title, canonical, alternates, one H1, visible source
-and academic year, WebPage and BreadcrumbList JSON-LD, and the calculator.
-General tools link to eligible academic pages; the sitemap adds eligible pages
+The page has a localized title, a description naming the university, faculty
+and program, canonical, alternates, one H1, a visible breadcrumb (Tools > Tool >
+Page), visible source and academic year, a WebPage linked to a BreadcrumbList
+that mirrors the visible breadcrumb, the calculator, and the calculator's
+social image. General tools link every eligible academic page, grouped by
+university, so none depends on the sitemap alone; the sitemap adds eligible pages
 and preserves news entries. Preview environments remain noindex. Academic
 pages, generic tool links and sitemap use a 300-second revalidation period.
 The sitemap currently rejects more than 50,000 entries; implement and verify
