@@ -13,6 +13,7 @@ import {landing} from "@/lib/academic/repositories/catalog";
 import {getToolBySlug} from "@/lib/tools";
 import {getDynamicLocalizedMetadata} from "@/lib/seo/metadata";
 import {getWebPageJsonLd} from "@/lib/seo/structured-data";
+import {socialImagePath} from "@/lib/seo/social-image-keys";
 import {absoluteUrl} from "@/lib/seo/urls";
 
 export const revalidate = 300;
@@ -35,7 +36,7 @@ async function textFor(p:Params,toolKey:Parameters<typeof academicPath>[1],entry
 export async function generateMetadata({params}:{params:Promise<Params>}):Promise<Metadata> {
   const {p,tool,entry,year}=await load(params);const {title,description}=await textFor(p,tool.key,entry,year);
   const paths={tr:academicPath("tr",tool.key,p.university,p.faculty,p.program,year),en:academicPath("en",tool.key,p.university,p.faculty,p.program,year)};
-  return getDynamicLocalizedMetadata({locale:p.locale,canonicalPath:paths[p.locale],localizedPaths:paths,title,description,image:{url:`/${p.locale}/opengraph-image`,alt:title}});
+  return getDynamicLocalizedMetadata({locale:p.locale,canonicalPath:paths[p.locale],localizedPaths:paths,title,description,image:{url:socialImagePath(p.locale,tool.key),alt:title}});
 }
 export default async function AcademicLandingPage({params}:{params:Promise<Params>}) {
   const {p,tool,entry,year}=await load(params);const {t,toolsT,title,description}=await textFor(p,tool.key,entry,year);

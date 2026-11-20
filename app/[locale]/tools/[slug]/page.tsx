@@ -38,7 +38,12 @@ export async function generateMetadata({
   const title = t(`items.${tool.key}.title`);
   const description = t(`items.${tool.key}.metaDescription`);
 
-  return getLocalizedMetadata(tool.href, {title,description,imageAlt:title});
+  return getLocalizedMetadata(tool.href, {
+    title,
+    description,
+    imageAlt: title,
+    socialImageKey: tool.key,
+  });
 }
 
 export default async function ToolDetailPage({

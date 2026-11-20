@@ -18,6 +18,7 @@
     },
     "news": {
       "title": "Haberler | Komitehane",
+      "pagedTitle": "Haberler – Sayfa {page} | Komitehane",
       "description": "Tıp eğitimi, TUS ve Komitehane hakkındaki güncel haberleri keşfedin.",
       "imageAlt": "Komitehane haberler sayfası"
     },

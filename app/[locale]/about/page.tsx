@@ -20,6 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("title"),
     description: t("description"),
     imageAlt: t("imageAlt"),
+    socialImageKey: "about",
     absoluteTitle: true,
   });
 }

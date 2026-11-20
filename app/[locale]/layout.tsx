@@ -26,7 +26,9 @@ import "../globals.css";
 
 const wixMadeforText = Wix_Madefor_Text({
   variable: "--font-default",
-  subsets: ["latin"],
+  // Turkish ğ, ş and İ live in latin-ext; preload it with latin so Turkish
+  // pages do not request an extra font file after first render.
+  subsets: ["latin", "latin-ext"],
   display: "swap",
 });
 
@@ -99,16 +101,20 @@ export default async function LocaleLayout({children}: LayoutProps<"/[locale]">)
     >
       <head>
         <ThemeInitializerScript locale={locale} />
+      </head>
+      <body className="min-h-full flex flex-col">
         {adsenseConfig.enabled && adsenseScriptSrc ? (
+          // afterInteractive keeps the ad script from competing with
+          // first-party code for the initial download; ad slots queue their
+          // `adsbygoogle.push` calls until it loads. Site ownership is still
+          // verified through the google-adsense-account meta tag.
           <Script
             id="google-adsense"
             src={adsenseScriptSrc}
-            strategy="beforeInteractive"
+            strategy="afterInteractive"
             crossOrigin="anonymous"
           />
         ) : null}
-      </head>
-      <body className="min-h-full flex flex-col">
         <GoogleAnalytics />
         <NextIntlClientProvider>
           <SiteHeader />

@@ -212,6 +212,17 @@ export async function getHomepageNews(
   };
 }
 
+/** Request-deduplicated listing lookup shared by metadata and the page. */
+export const getCachedNewsListing = cache(
+  (
+    locale: NewsLocale,
+    query: string | undefined,
+    category: string | undefined,
+    tag: string | undefined,
+    page: number,
+  ) => getNewsListing({locale, query, category, tag, page}),
+);
+
 export async function getNewsListing({
   locale,
   query = "",

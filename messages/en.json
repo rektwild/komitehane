@@ -18,6 +18,7 @@
     },
     "news": {
       "title": "News | Komitehane",
+      "pagedTitle": "News – Page {page} | Komitehane",
       "description": "Discover the latest news about medical education, TUS, and Komitehane.",
       "imageAlt": "Komitehane news page"
     },

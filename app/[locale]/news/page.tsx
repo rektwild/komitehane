@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import {NewspaperIcon} from "lucide-react";
+import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
 
 import {JsonLd} from "@/components/json-ld";
@@ -7,9 +8,9 @@ import {PageBreadcrumb} from "@/components/layout/page-breadcrumb";
 import {PageWithAside} from "@/components/layout/page-with-aside";
 import {NewsListing} from "@/components/news/news-listing";
 import {getPathname} from "@/i18n/navigation";
-import {getNewsListing} from "@/lib/news/data";
+import {getCachedNewsListing} from "@/lib/news/data";
 import type {NewsLocale} from "@/lib/news/types";
-import {getLocalizedMetadata} from "@/lib/seo/metadata";
+import {getLocalizedMetadata, getRobotsMetadata} from "@/lib/seo/metadata";
 import {getNewsCollectionJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
 
@@ -22,23 +23,80 @@ function firstValue(value: string | string[] | undefined): string | undefined {
   return Array.isArray(value) ? value[0] : value;
 }
 
-export async function generateMetadata({searchParams}: NewsPageProps): Promise<Metadata> {
-  const values = await searchParams;
-  const filtered = Boolean(
-    firstValue(values.q) ||
-      firstValue(values.category) ||
-      firstValue(values.tag) ||
-      firstValue(values.page),
-  );
+type ListingState = {
+  query?: string;
+  category?: string;
+  tag?: string;
+  page: number;
+  /** A plain `?page=N` (N >= 2) archive page without search or filters. */
+  isArchivePage: boolean;
+  /** Search, filter, or non-canonical page values (e.g. `?page=1`). */
+  isFilteredView: boolean;
+};
+
+function getListingState(values: Record<string, string | string[] | undefined>): ListingState {
+  const query = firstValue(values.q)?.trim() || undefined;
+  const category = firstValue(values.category)?.trim() || undefined;
+  const tag = firstValue(values.tag)?.trim() || undefined;
+  const rawPage = firstValue(values.page);
+  const canonicalPage = rawPage && /^[1-9]\d{0,5}$/.test(rawPage) ? Number(rawPage) : undefined;
+  const page = canonicalPage ?? (Number.parseInt(rawPage || "1", 10) || 1);
+  const hasFilters = Boolean(query || category || tag);
+  const isArchivePage = !hasFilters && canonicalPage !== undefined && canonicalPage >= 2;
+
+  return {
+    query,
+    category,
+    tag,
+    page,
+    isArchivePage,
+    isFilteredView: hasFilters || (rawPage !== undefined && !isArchivePage),
+  };
+}
+
+function getListing(locale: NewsLocale, state: ListingState) {
+  return getCachedNewsListing(locale, state.query, state.category, state.tag, state.page);
+}
+
+function getArchivePath(basePath: string, page: number): string {
+  return page >= 2 ? `${basePath}?page=${page}` : basePath;
+}
+
+export async function generateMetadata({params, searchParams}: NewsPageProps): Promise<Metadata> {
+  const [{locale}, values] = await Promise.all([params, searchParams]);
+  const state = getListingState(values);
   const t = await getTranslations("Metadata.news");
   const metadata = await getLocalizedMetadata("/news", {
     title: t("title"),
     description: t("description"),
     imageAlt: t("imageAlt"),
+    socialImageKey: "news",
     absoluteTitle: true,
   });
 
-  return filtered
+  if (state.isArchivePage) {
+    // Archive pages are self-canonical and indexable so older articles stay
+    // reachable through crawlable pagination. They carry no hreflang: page N
+    // in one locale does not list the same articles as page N in another.
+    const result = await getListing(locale, state);
+    if (state.page > result.totalPages) notFound();
+
+    const canonical = absoluteUrl(
+      getArchivePath(await getPathname({href: "/news", locale}), state.page),
+    );
+    const title = t("pagedTitle", {page: String(state.page)});
+
+    return {
+      ...metadata,
+      title: {absolute: title},
+      alternates: {canonical},
+      robots: getRobotsMetadata(),
+      openGraph: {...metadata.openGraph, title, url: canonical},
+      twitter: {...metadata.twitter, title},
+    };
+  }
+
+  return state.isFilteredView
     ? {
         ...metadata,
         robots: {
@@ -57,13 +115,14 @@ export default async function NewsPage({params, searchParams}: NewsPageProps) {
     getTranslations("NewsPage"),
     getTranslations("Metadata.news"),
   ]);
-  const query = firstValue(values.q)?.trim() || undefined;
-  const category = firstValue(values.category)?.trim() || undefined;
-  const tag = firstValue(values.tag)?.trim() || undefined;
-  const parsedPage = Number.parseInt(firstValue(values.page) || "1", 10);
-  const result = await getNewsListing({locale, query, category, tag, page: parsedPage});
+  const state = getListingState(values);
+  const {query, category, tag} = state;
+  const result = await getListing(locale, state);
+  if (state.isArchivePage && state.page > result.totalPages) notFound();
   const pagePath = await getPathname({href: "/news", locale});
-  const pageUrl = absoluteUrl(pagePath);
+  const pageUrl = absoluteUrl(
+    state.isArchivePage ? getArchivePath(pagePath, state.page) : pagePath,
+  );
 
   return (
     <>
@@ -78,7 +137,9 @@ export default async function NewsPage({params, searchParams}: NewsPageProps) {
             data={getNewsCollectionJsonLd({
               locale,
               url: pageUrl,
-              name: metadataT("title"),
+              name: state.isArchivePage
+                ? metadataT("pagedTitle", {page: String(state.page)})
+                : metadataT("title"),
               description: metadataT("description"),
               articles: result.articles.map((article) => ({
                 name: article.title,
