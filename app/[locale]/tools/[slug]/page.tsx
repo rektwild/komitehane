@@ -56,8 +56,19 @@ export default async function ToolDetailPage({
   const title = t(`items.${tool.key}.title`);
   const description = t(`items.${tool.key}.metaDescription`);
   const pageUrl = absoluteUrl(await getPathname({href: tool.href, locale}));
-  const academicT=await getTranslations("Academic");
-  const available=(await landingCandidates().catch(()=>[])).filter(entry=>(entry.system==="MIDTERM")===(tool.category==="midterm")).slice(0,12);
+  const toolsUrl = absoluteUrl(await getPathname({href: "/tools", locale}));
+  const academicT = await getTranslations("Academic");
+  const available = (await landingCandidates().catch(() => [])).filter(
+    (entry) => (entry.system === "MIDTERM") === (tool.category === "midterm"),
+  );
+  // Every eligible academic page is linked (grouped by university) so none
+  // of them is reachable only through the sitemap.
+  const availableByUniversity = new Map<string, typeof available>();
+  for (const entry of available) {
+    const group = availableByUniversity.get(entry.universityName) ?? [];
+    group.push(entry);
+    availableByUniversity.set(entry.universityName, group);
+  }
 
   return (
     <>
@@ -77,6 +88,10 @@ export default async function ToolDetailPage({
               url: pageUrl,
               name: title,
               description,
+              breadcrumbItems: [
+                {name: t("title"), url: toolsUrl},
+                {name: title, url: pageUrl},
+              ],
             })}
           />
 
@@ -87,7 +102,30 @@ export default async function ToolDetailPage({
           </header>
 
           <GradeCalculator toolKey={tool.key} />
-          {available.length ? <section><h2 className="text-lg font-semibold">{academicT("availableUniversities")}</h2><ul className="list-disc pl-5">{available.map(entry=><li key={`${entry.programId}-${entry.classYear}`}><a className="underline" href={academicPath(locale,tool.key,entry.universitySlug,entry.facultySlug,entry.programSlug,entry.classYear)}>{entry.universityName} · {entry.facultyName} · {entry.programName} · {entry.classYear}</a></li>)}</ul></section> : null}
+          {available.length ? (
+            <section aria-labelledby={`academic-pages-${tool.key}`} className="flex flex-col gap-3">
+              <h2 id={`academic-pages-${tool.key}`} className="text-lg font-semibold">
+                {academicT("availableUniversities")}
+              </h2>
+              {[...availableByUniversity].map(([universityName, entries]) => (
+                <details key={universityName} className="rounded-md border px-4 py-2">
+                  <summary className="cursor-pointer font-medium">{universityName}</summary>
+                  <ul className="mt-2 list-disc ps-5">
+                    {entries.map((entry) => (
+                      <li key={`${entry.programId}-${entry.classYear}`}>
+                        <a
+                          className="underline underline-offset-4"
+                          href={academicPath(locale, tool.key, entry.universitySlug, entry.facultySlug, entry.programSlug, entry.classYear)}
+                        >
+                          {entry.facultyName} · {entry.programName} · {academicT("classYearLabel", {year: String(entry.classYear)})}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              ))}
+            </section>
+          ) : null}
         </section>
       </PageWithAside>
     </>

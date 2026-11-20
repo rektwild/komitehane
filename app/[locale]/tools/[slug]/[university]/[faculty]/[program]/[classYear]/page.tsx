@@ -2,10 +2,12 @@ import type {Metadata} from "next";
 import type {Locale} from "next-intl";
 import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
+import {BoxIcon} from "lucide-react";
 import {JsonLd} from "@/components/json-ld";
+import {PageBreadcrumb} from "@/components/layout/page-breadcrumb";
 import {PageWithAside} from "@/components/layout/page-with-aside";
 import {GradeCalculator} from "@/components/tools/grade-calculator";
-import {Link,getPathname} from "@/i18n/navigation";
+import {getPathname} from "@/i18n/navigation";
 import {academicPath} from "@/lib/academic/seo/paths";
 import {landing} from "@/lib/academic/repositories/catalog";
 import {getToolBySlug} from "@/lib/tools";
@@ -26,8 +28,9 @@ async function load(params:Promise<Params>) {
 async function textFor(p:Params,toolKey:Parameters<typeof academicPath>[1],entry:NonNullable<Awaited<ReturnType<typeof landing>>>,year:number) {
   const t=await getTranslations({locale:p.locale,namespace:"Academic"}); const toolsT=await getTranslations({locale:p.locale,namespace:"Tools"});
   const title=t("landingTitle",{university:entry.universityName,faculty:entry.facultyName,program:entry.programName,year:String(year),tool:toolsT(`items.${toolKey}.title`)});
-  const academicYear=String(entry.rules[0].rule.academicYearStart);
-  return {t,title,description:t("landingDescription",{year:String(year),academicYear})};
+  const start=entry.rules[0].rule.academicYearStart;
+  const academicYear=`${start}–${start+1}`;
+  return {t,toolsT,title,description:t("landingDescription",{university:entry.universityName,faculty:entry.facultyName,program:entry.programName,year:String(year),academicYear})};
 }
 export async function generateMetadata({params}:{params:Promise<Params>}):Promise<Metadata> {
   const {p,tool,entry,year}=await load(params);const {title,description}=await textFor(p,tool.key,entry,year);
@@ -35,17 +38,20 @@ export async function generateMetadata({params}:{params:Promise<Params>}):Promis
   return getDynamicLocalizedMetadata({locale:p.locale,canonicalPath:paths[p.locale],localizedPaths:paths,title,description,image:{url:`/${p.locale}/opengraph-image`,alt:title}});
 }
 export default async function AcademicLandingPage({params}:{params:Promise<Params>}) {
-  const {p,tool,entry,year}=await load(params);const {t,title,description}=await textFor(p,tool.key,entry,year);
+  const {p,tool,entry,year}=await load(params);const {t,toolsT,title,description}=await textFor(p,tool.key,entry,year);
   const pageUrl=absoluteUrl(academicPath(p.locale,tool.key,p.university,p.faculty,p.program,year));
+  const toolsUrl=absoluteUrl(await getPathname({href:"/tools",locale:p.locale}));
   const toolUrl=absoluteUrl(await getPathname({href:tool.href,locale:p.locale}));
+  const toolTitle=toolsT(`items.${tool.key}.title`);
   const initial={universityId:entry.universityId,facultyId:entry.facultyId,programId:entry.programId,classYear:String(year),period:entry.rules[0].period,courseId:tool.category==="midterm"?(entry.rules[0].courseId??""):"",rule:null};
-  return <PageWithAside><section className="flex min-w-0 flex-1 flex-col gap-6">
-    <JsonLd data={getWebPageJsonLd({locale:p.locale,url:pageUrl,name:title,description})} />
-    <JsonLd data={{"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:(await getTranslations({locale:p.locale,namespace:"Tools"}))(`items.${tool.key}.title`),item:toolUrl},{"@type":"ListItem",position:2,name:title,item:pageUrl}]}} />
-    <nav aria-label={t("landingRules")}><Link href={tool.href} className="underline">{(await getTranslations({locale:p.locale,namespace:"Tools"}))(`items.${tool.key}.title`)}</Link></nav>
+  return <>
+    <PageBreadcrumb items={[{label:toolsT("title"),href:"/tools",icon:BoxIcon},{label:toolTitle,href:tool.href},{label:title}]} className="shrink-0 py-4" />
+    <PageWithAside><section className="flex min-w-0 flex-1 flex-col gap-6">
+    <JsonLd data={getWebPageJsonLd({locale:p.locale,url:pageUrl,name:title,description,breadcrumbItems:[{name:toolsT("title"),url:toolsUrl},{name:toolTitle,url:toolUrl},{name:title,url:pageUrl}]})} />
     <h1 className="text-2xl font-bold sm:text-4xl">{title}</h1><p>{description}</p><p>{t("landingDisclaimer")}</p>
     <h2 className="text-lg font-bold">{t("landingRules")}</h2>
     {entry.rules.map(({rule,courseName,period})=><section key={rule.versionId} className="rounded-md border p-4 text-sm"><p>{t("landingAcademicYear",{year:String(rule.academicYearStart),nextYear:String(rule.academicYearStart+1)})}</p>{courseName?<p>{t("landingCourse",{course:courseName})}</p>:null}<p>{t("period")}: {t(period==="FALL"?"fall":period==="SPRING"?"spring":"annual")}</p><p>{t("landingWeights")}: {rule.components.map((c:{type:string;position:number;weightPercent:string})=>`${c.type} ${c.position}: %${c.weightPercent}`).join(" · ")}</p><p>{t("landingTarget",{grade:String(rule.passingGrade)})}</p>{rule.sources.map((source:{sourceUrl:string},i:number)=><a className="underline" href={source.sourceUrl} target="_blank" rel="noreferrer" key={i}>{t("source")}</a>)}</section>)}
     <GradeCalculator toolKey={tool.key} initialAcademicContext={initial} />
-  </section></PageWithAside>;
+  </section></PageWithAside>
+  </>;
 }
