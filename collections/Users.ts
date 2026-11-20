@@ -8,6 +8,7 @@ import {
   sameUser,
   userCreate,
   userDelete,
+  userEmailRead,
   userRead,
   userUpdate,
 } from "@/collections/access";
@@ -34,6 +35,18 @@ export const Users: CollectionConfig = {
     beforeDelete: [reassignLinkedUserRecords],
   },
   fields: [
+    // Overrides Payload's generated auth email field (merged by name) to add
+    // field-level read access; the rest of its config stays Payload's default.
+    {
+      name: "email",
+      type: "email",
+      required: true,
+      unique: true,
+      index: true,
+      access: {
+        read: userEmailRead,
+      },
+    },
     {
       name: "name",
       type: "text",

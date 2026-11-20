@@ -174,8 +174,14 @@ export const tagDelete: Access = ({req: {user}}) =>
   Boolean(user && isEditorialUser(user));
 
 // Names and roles are intentionally public so depth-1 article relationships can
-// be rendered. The email field has its own field-level read access.
+// be rendered. The email field is restricted separately by `userEmailRead`.
 export const userRead: Access = () => true;
+
+// Email addresses are private: Founders/Editors may read every address, other
+// signed-in users only their own, anonymous requests none. Without field read
+// access Payload also rejects `where[email]` queries, blocking enumeration.
+export const userEmailRead: FieldAccess = ({id, doc, req: {user}}) =>
+  isEditorialUser(user) || sameUser(user, id ?? (doc as {id?: number | string} | undefined)?.id);
 
 export const userCreate: Access = async ({req}) => {
   if (req.user) return isFounderUser(req.user);
