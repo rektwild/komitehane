@@ -133,7 +133,7 @@ export default async function NewsPage({params, searchParams}: NewsPageProps) {
       />
 
       <PageWithAside>
-        <div className="flex min-w-0 flex-1 flex-col gap-8 pb-12">
+        <div className="flex min-w-0 flex-1 flex-col gap-6 pb-12">
           <JsonLd
             data={getNewsCollectionJsonLd({
               locale,
