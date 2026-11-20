@@ -33,6 +33,8 @@ export type NewsSummary = {
   tags: NewsTag[];
   authorName: string;
   authorRole: AuthorRole;
+  /** Public profile slug; null for automation accounts or legacy users. */
+  authorSlug: string | null;
   publishedAt: string;
   createdAt: string;
   updatedAt: string;
@@ -93,7 +95,18 @@ export type NextNewsParams = {
 export type NewsSitemapEntry = {
   id: number;
   updatedAt: string;
-  translations: NewsTranslation[];
+  translations: Array<NewsTranslation & {authorSlug?: string | null}>;
+};
+
+export type AuthorProfile = {
+  id: number;
+  name: string;
+  slug: string;
+  role: AuthorRole;
+  bio: string | null;
+  articles: NewsSummary[];
+  /** Locales in which this author has at least one public article. */
+  locales: NewsLocale[];
 };
 
 export type NewsTickerItem = {

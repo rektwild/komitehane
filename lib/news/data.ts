@@ -8,6 +8,7 @@ import {getPayload, type PopulateType, type Where} from "payload";
 import configPromise from "@payload-config";
 import type {Article} from "@/payload-types";
 import type {
+  AuthorProfile,
   AuthorRole,
   HomeNewsResult,
   NewsCategory,
@@ -32,7 +33,7 @@ const TICKER_LIMIT = 8;
 const ASIDE_LINKS_LIMIT = 5;
 
 const newsPopulate = {
-  users: {name: true, role: true},
+  users: {name: true, role: true, slug: true},
   media: {
     alt: true,
     filename: true,
@@ -59,6 +60,22 @@ function publicWhere(): Where {
     and: [
       {_status: {equals: "published"}},
       {publishedAt: {less_than_equal: new Date().toISOString()}},
+    ],
+  };
+}
+
+/**
+ * Public articles that have a translation in the queried locale. `_status`
+ * and `publishedAt` are not localized, so without the localized checks an
+ * untranslated article still counts toward totals and pagination (e.g. the
+ * English list reported pages that rendered empty).
+ */
+function publicLocalizedWhere(): Where {
+  return {
+    and: [
+      publicWhere(),
+      {slug: {exists: true}},
+      {title: {exists: true}},
     ],
   };
 }
@@ -114,12 +131,14 @@ function normalizeAuthorRole(value: unknown): AuthorRole {
 
 function normalizeAuthor(
   value: Article["author"],
-): {name: string; role: AuthorRole} | null {
+): {name: string; role: AuthorRole; slug: string | null} | null {
   if (!value || typeof value === "number" || !value.name) return null;
 
   return {
     name: value.name,
     role: normalizeAuthorRole(value.role),
+    // Automation accounts never get a public profile page.
+    slug: value.role !== "automation" && value.slug ? value.slug : null,
   };
 }
 
@@ -152,6 +171,7 @@ function getSummaryFields(article: Article) {
     tags,
     authorName: author.name,
     authorRole: author.role,
+    authorSlug: author.slug,
     publishedAt: article.publishedAt,
     createdAt: article.createdAt,
     updatedAt: article.updatedAt,
@@ -182,7 +202,7 @@ export async function getHomepageNews(
     populate: newsPopulate,
     overrideAccess: false,
     sort: "-publishedAt",
-    where: publicWhere(),
+    where: publicLocalizedWhere(),
   });
   const summaries = normalizeSummaries(result.docs);
   const sections = new Map<number, HomeNewsResult["sections"][number]>();
@@ -208,6 +228,17 @@ export async function getHomepageNews(
   };
 }
 
+/** Request-deduplicated listing lookup shared by metadata and the page. */
+export const getCachedNewsListing = cache(
+  (
+    locale: NewsLocale,
+    query: string | undefined,
+    category: string | undefined,
+    tag: string | undefined,
+    page: number,
+  ) => getNewsListing({locale, query, category, tag, page}),
+);
+
 export async function getNewsListing({
   locale,
   query = "",
@@ -218,7 +249,7 @@ export async function getNewsListing({
   const payload = await getPayload({config: configPromise});
   const normalizedQuery = query.trim().slice(0, 120);
   const safePage = Number.isFinite(page) && page > 0 ? Math.floor(page) : 1;
-  const base = publicWhere();
+  const base = publicLocalizedWhere();
   const filters: Where[] = [base];
 
   if (category) {
@@ -344,7 +375,7 @@ export const getNewsArticle = cache(async function getNewsArticle(
     limit: 1,
     populate: newsPopulate,
     overrideAccess: false,
-    where: {and: [publicWhere(), {slug: {equals: slug}}]},
+    where: {and: [publicLocalizedWhere(), {slug: {equals: slug}}]},
   });
   const article = result.docs[0];
   if (!article) return null;
@@ -361,7 +392,7 @@ export const getNewsArticle = cache(async function getNewsArticle(
     populate: newsPopulate,
     limit: 1,
     overrideAccess: false,
-    where: {and: [publicWhere(), {id: {equals: article.id}}]},
+    where: {and: [publicLocalizedWhere(), {id: {equals: article.id}}]},
   });
   const translation = other.docs[0] && getSummaryFields(other.docs[0]);
 
@@ -382,7 +413,7 @@ export async function getRelatedNewsArticles({
   limit = 3,
 }: RelatedNewsParams): Promise<NewsSummary[]> {
   const payload = await getPayload({config: configPromise});
-  const base = publicWhere();
+  const base = publicLocalizedWhere();
   const excludeCurrent = {slug: {not_in: [slug]}};
 
   let categoryId: number | null = null;
@@ -449,7 +480,7 @@ export async function getRelatedNewsArticles({
 
 export async function getNewsCategories(locale: NewsLocale): Promise<NewsCategory[]> {
   const payload = await getPayload({config: configPromise});
-  const base = publicWhere();
+  const base = publicLocalizedWhere();
   const result = await payload.find({
     collection: "articles",
     locale,
@@ -478,7 +509,7 @@ export async function getNextNewsArticle({
   publishedAt,
 }: NextNewsParams): Promise<NewsSummary | null> {
   const payload = await getPayload({config: configPromise});
-  const base = publicWhere();
+  const base = publicLocalizedWhere();
 
   // Find the chronologically next (older) published article.
   // Supabase-style "Next post" points to the next item in reverse-chronological order.
@@ -529,14 +560,18 @@ export async function getNewsSitemapEntries(): Promise<NewsSitemapEntry[]> {
       pagination: false,
       overrideAccess: false,
       sort: "-updatedAt",
-      where: publicWhere(),
+      where: publicLocalizedWhere(),
     });
     for (const article of result.docs) {
       if (!getSummaryFields(article)) continue;
       const entry = entries.get(article.id) ?? {
         id: article.id, updatedAt: article.updatedAt, translations: [],
       };
-      entry.translations.push({locale, slug: article.slug});
+      entry.translations.push({
+        locale,
+        slug: article.slug,
+        authorSlug: normalizeAuthor(article.author)?.slug ?? null,
+      });
       entries.set(article.id, entry);
     }
   }
@@ -556,7 +591,7 @@ async function fetchNewsTickerItems(
       limit: TICKER_LIMIT,
       sort: "-publishedAt",
       overrideAccess: false,
-      where: publicWhere(),
+      where: publicLocalizedWhere(),
     });
 
     const items: NewsTickerItem[] = [];
@@ -602,7 +637,7 @@ async function fetchLatestNewsLinks(
       limit: ASIDE_LINKS_LIMIT,
       sort: "-publishedAt",
       overrideAccess: false,
-      where: publicWhere(),
+      where: publicLocalizedWhere(),
     });
 
     const items: NewsTickerItem[] = [];
@@ -635,3 +670,85 @@ export async function getLatestNewsLinks(
 ): Promise<NewsTickerItem[]> {
   return getCachedLatestNewsLinks(locale);
 }
+
+const AUTHOR_ARTICLES_LIMIT = 48;
+const newsLocales = ["tr", "en"] as const satisfies readonly NewsLocale[];
+
+function authorArticlesWhere(authorId: number): Where {
+  return {and: [publicLocalizedWhere(), {author: {equals: authorId}}]};
+}
+
+/**
+ * Public author profile for one locale. Returns null for unknown slugs,
+ * automation accounts, and authors without a public article in that locale,
+ * so profile pages never render empty or advertise missing translations.
+ */
+export const getAuthorProfile = cache(async (
+  locale: NewsLocale,
+  slug: string,
+): Promise<AuthorProfile | null> => {
+  const payload = await getPayload({config: configPromise});
+  const users = await payload.find({
+    collection: "users",
+    locale,
+    fallbackLocale: false,
+    depth: 0,
+    limit: 1,
+    overrideAccess: false,
+    select: {name: true, role: true, slug: true, bio: true},
+    where: {
+      and: [{slug: {equals: slug}}, {role: {not_equals: "automation"}}],
+    },
+  });
+  const user = users.docs[0];
+  if (!user?.name || !user.slug) return null;
+
+  const result = await payload.find({
+    collection: "articles",
+    locale,
+    fallbackLocale: false,
+    depth: 1,
+    limit: AUTHOR_ARTICLES_LIMIT,
+    populate: newsPopulate,
+    overrideAccess: false,
+    sort: "-publishedAt",
+    where: authorArticlesWhere(user.id),
+  });
+  const articles = normalizeSummaries(result.docs);
+  if (articles.length === 0) return null;
+
+  const locales: NewsLocale[] = [];
+  for (const candidate of newsLocales) {
+    if (candidate === locale) {
+      locales.push(candidate);
+      continue;
+    }
+
+    const other = await payload.find({
+      collection: "articles",
+      locale: candidate,
+      fallbackLocale: false,
+      depth: 1,
+      limit: AUTHOR_ARTICLES_LIMIT,
+      populate: newsPopulate,
+      overrideAccess: false,
+      where: authorArticlesWhere(user.id),
+    });
+    if (other.docs.some((article) => getSummaryFields(article))) {
+      locales.push(candidate);
+    }
+  }
+
+  const bio = typeof user.bio === "string" && user.bio.trim() ? user.bio.trim() : null;
+
+  return {
+    id: user.id,
+    name: user.name,
+    slug: user.slug,
+    role: normalizeAuthorRole(user.role),
+    bio,
+    articles,
+    locales,
+  };
+});
+

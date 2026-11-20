@@ -46,7 +46,8 @@ export const localeToOpenGraphLocale = {
 export const siteConfig = {
   name: "Komitehane",
   organizationName: "Komitehane",
-  description: "A modern, multilingual web application.",
+  description:
+    "Free committee and midterm grade calculators, minimum final grade tools, and TUS and medical education news for medical students in Turkey.",
   url: siteUrl,
   defaultLocale: routing.defaultLocale,
   locales: routing.locales,
@@ -54,7 +55,13 @@ export const siteConfig = {
   localeToOpenGraphLocale,
   socialProfiles: [] as string[],
   authors: [] as Array<{name: string; url?: string}>,
-  logo: undefined as string | undefined,
+  // Rendered on light surfaces; Google requires a crawlable logo of at least
+  // 112x112 px that looks right on a white background.
+  logo: {
+    url: "/logo/komitehane_logo_for_light_mode.png",
+    width: 684,
+    height: 148,
+  } as {url: string; width: number; height: number} | undefined,
 } as const;
 
 export const allowModelTrainingCrawlers =

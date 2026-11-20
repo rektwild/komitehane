@@ -19,6 +19,14 @@ export const routing = defineRouting({
       tr: "/gizlilik-politikasi",
       en: "/privacy",
     },
+    "/about": {
+      tr: "/hakkimizda",
+      en: "/about",
+    },
+    "/authors/[slug]": {
+      tr: "/yazarlar/[slug]",
+      en: "/authors/[slug]",
+    },
     "/library": {
       tr: "/kutuphane",
       en: "/library",

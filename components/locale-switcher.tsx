@@ -21,7 +21,14 @@ export function LocaleSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
   const academicTool=tools.find(tool=>pathname.startsWith(`${tool.href}/`));
-  const switcherHref = academicTool ? academicTool.href : pathname === "/news/[slug]" || pathname.startsWith("/news/") ? "/news" : (pathname as StaticAppPathname);
+  // Dynamic pages (articles, author profiles) may not exist in the other
+  // locale, so the switcher falls back to the localized news list.
+  const isDynamicNewsPage =
+    pathname === "/news/[slug]" ||
+    pathname.startsWith("/news/") ||
+    pathname === "/authors/[slug]" ||
+    pathname.startsWith("/authors/");
+  const switcherHref = academicTool ? academicTool.href : isDynamicNewsPage ? "/news" : (pathname as StaticAppPathname);
 
   return (
     <DropdownMenu>

@@ -11,6 +11,7 @@ import {getLocalizedMetadata} from "@/lib/seo/metadata";
 import {getWebPageJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
 import {toolCategories, type ToolCategory} from "@/lib/tools";
+import {typography} from "@/lib/typography";
 
 type ToolsPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -36,6 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("title"),
     description: t("description"),
     imageAlt: t("imageAlt"),
+    socialImageKey: "tools",
     absoluteTitle: true,
   });
 }
@@ -69,10 +71,13 @@ export default async function ToolsPage({searchParams}: ToolsPageProps) {
             })}
           />
 
-          <header>
-            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              {t("title")}
+          <header className="max-w-3xl">
+            <h1 className={typography.display}>
+              {t("heading")}
             </h1>
+            <p className="mt-3 text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+              {t("intro")}
+            </p>
           </header>
 
           <ToolsCatalog

@@ -126,11 +126,11 @@ export function NewsRightRail({
                         href={`#${item.id}`}
                         aria-current={active ? "true" : undefined}
                         className={cn(
-                          "block py-1 text-xs leading-5 transition-colors",
+                          "block py-1 text-sm leading-5 transition-colors",
                           active
                             ? "text-foreground"
                             : "text-muted-foreground hover:text-foreground",
-                          item.level === 3 && "pl-3 text-[11px]"
+                          item.level === 3 && "pl-3"
                         )}
                       >
                         {item.text}

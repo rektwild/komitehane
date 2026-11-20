@@ -16,6 +16,7 @@ import {NewsRightRail} from "@/components/news/news-right-rail";
 import {NewsShareActions} from "@/components/news/news-share-actions";
 import {NewsTopics} from "@/components/news/news-topics";
 import {RelatedNews} from "@/components/news/related-news";
+import {RelatedTools} from "@/components/news/related-tools";
 import {PageBreadcrumb} from "@/components/layout/page-breadcrumb";
 import {getPathname} from "@/i18n/navigation";
 import {
@@ -29,6 +30,7 @@ import type {NewsLocale} from "@/lib/news/types";
 import {getDynamicLocalizedMetadata} from "@/lib/seo/metadata";
 import {getNewsArticleJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
+import {typography} from "@/lib/typography";
 
 type NewsArticlePageProps = {
   params: Promise<{locale: NewsLocale; slug: string}>;
@@ -66,16 +68,31 @@ export async function generateMetadata({params}: NewsArticlePageProps): Promise<
     type: "article",
     publishedTime: article.publishedAt,
     modifiedTime: article.updatedAt,
-    authors: [{name: article.authorName}],
+    authors: [
+      {
+        name: article.authorName,
+        ...(article.authorSlug
+          ? {
+              url: absoluteUrl(
+                getPathname({
+                  href: {pathname: "/authors/[slug]", params: {slug: article.authorSlug}},
+                  locale,
+                }),
+              ),
+            }
+          : {}),
+      },
+    ],
     image: article.image,
   });
 }
 
 export default async function NewsArticlePage({params}: NewsArticlePageProps) {
   const {locale, slug} = await params;
-  const [article, t] = await Promise.all([
+  const [article, t, authorsT] = await Promise.all([
     getNewsArticle(locale, slug),
     getTranslations("NewsPage"),
+    getTranslations("Authors"),
   ]);
   if (!article) notFound();
 
@@ -85,6 +102,14 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
   });
   const currentUrl = absoluteUrl(currentPath);
   const newsUrl = absoluteUrl(getPathname({href: "/news", locale}));
+  const authorUrl = article.authorSlug
+    ? absoluteUrl(
+        getPathname({
+          href: {pathname: "/authors/[slug]", params: {slug: article.authorSlug}},
+          locale,
+        }),
+      )
+    : undefined;
   const tocItems = extractNewsToc(article.content);
   const plainText = convertLexicalToPlaintext({ data: article.content });
   const [relatedArticles, categories, nextArticle] = await Promise.all([
@@ -121,6 +146,7 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
             description: article.excerpt,
             image: article.image.url,
             authorName: article.authorName,
+            authorUrl,
             publishedAt: article.publishedAt,
             updatedAt: article.updatedAt,
             breadcrumbItems: [
@@ -130,14 +156,14 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
           })}
         />
 
-        <header className="border-b border-border/60 pb-4">
-          <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <header className="border-b border-border/60 pb-6">
+          <h1 className={typography.display}>
             {article.title}
           </h1>
           <p
             id="article-excerpt"
             role="doc-subtitle"
-            className="mt-3 text-pretty text-base leading-6 text-muted-foreground"
+            className="mt-3 text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
           >
             {article.excerpt}
           </p>
@@ -154,17 +180,18 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
           </div>
         </header>
 
-        <div className="grid gap-5 pt-4 xl:grid-cols-[260px_minmax(0,1fr)_300px] xl:gap-6">
+        <div className="grid gap-6 pt-6 xl:grid-cols-[260px_minmax(0,1fr)_300px] xl:gap-8">
           <aside className="order-2 space-y-6 xl:order-1 xl:sticky xl:top-28 xl:self-start">
             <NewsAuthorCard
               authorName={article.authorName}
-              authorRole={article.authorRole}
-              locale={locale}
+              roleLabel={authorsT(`roles.${article.authorRole}`)}
+              authorSlug={article.authorSlug}
+              profileLinkLabel={authorsT("profileLink", {name: article.authorName})}
             />
             <NewsShareActions title={article.title} url={currentUrl} />
           </aside>
 
-          <div className="order-1 min-w-0 space-y-6 xl:order-2">
+          <div className="order-1 min-w-0 space-y-8 xl:order-2">
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card">
               <Image
                 src={article.image.url}
@@ -218,6 +245,7 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
         </div>
 
         <RelatedNews articles={relatedArticles} locale={locale} />
+        <RelatedTools />
       </article>
     </>
   );

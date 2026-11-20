@@ -8,12 +8,15 @@ import {HomeToolsCategorySection} from "@/components/home-tools-category-section
 import {PageBreadcrumb} from "@/components/layout/page-breadcrumb";
 import {PageWithAside} from "@/components/layout/page-with-aside";
 import {LatestNewsCarousel} from "@/components/news/latest-news-carousel";
+import {Button} from "@/components/ui/button";
+import {Link} from "@/i18n/navigation";
 import {getLocalizedMetadata} from "@/lib/seo/metadata";
 import {getWebPageJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
 import {getHomepageNews} from "@/lib/news/data";
 import type {NewsLocale} from "@/lib/news/types";
-import {toolCategories} from "@/lib/tools";
+import {toolCategories, tools} from "@/lib/tools";
+import {typography} from "@/lib/typography";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Metadata.home");
@@ -22,22 +25,32 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("title"),
     description: t("description"),
     imageAlt: t("imageAlt"),
+    socialImageKey: "home",
     absoluteTitle: true,
   });
 }
 
 export default async function Home() {
-  const t = await getTranslations("Home");
-  const metadata = await getTranslations("Metadata.home");
+  const [t, metadata, toolsT] = await Promise.all([
+    getTranslations("Home"),
+    getTranslations("Metadata.home"),
+    getTranslations("Tools"),
+  ]);
   const locale = (await getLocale()) as NewsLocale;
   const news = await getHomepageNews(locale);
   const pageUrl = absoluteUrl(`/${locale}`);
+  // Tool sections are interleaved with news sections; any category that did
+  // not get a slot (e.g. only one news category) is appended so every tool
+  // category stays linked from the homepage body.
+  const remainingToolCategories = toolCategories.slice(
+    Math.min(news.sections.length, toolCategories.length),
+  );
 
   return (
     <>
       <PageBreadcrumb items={[{label: t("title")}]} className="shrink-0 py-4" />
       <PageWithAside>
-        <div className="flex min-w-0 flex-1 flex-col gap-4 pb-8">
+        <div className="flex min-w-0 flex-1 flex-col gap-10 pb-12">
           <JsonLd
             data={getWebPageJsonLd({
               locale,
@@ -46,8 +59,32 @@ export default async function Home() {
               description: metadata("description"),
             })}
           />
-          <section aria-label={t("title")} className="min-w-0">
-            <h1 className="sr-only">{t("title")}</h1>
+          <header className="flex min-w-0 flex-col gap-4">
+            <h1 className={typography.display}>
+              {t("heading")}
+            </h1>
+            <p className="max-w-3xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
+              {t("intro")}
+            </p>
+            <nav aria-label={t("quickLinksLabel")}>
+              <ul className="flex flex-wrap gap-2">
+                {tools.map((tool) => (
+                  <li key={tool.key}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      nativeButton={false}
+                      render={<Link href={tool.href} />}
+                    >
+                      {toolsT(`items.${tool.key}.title`)}
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </header>
+
+          <section aria-label={t("latestNewsLabel")} className="min-w-0">
             <LatestNewsCarousel articles={news.latest} locale={locale} />
           </section>
 
@@ -59,6 +96,14 @@ export default async function Home() {
                 index={index}
               />
             </Fragment>
+          ))}
+
+          {remainingToolCategories.map((category, offset) => (
+            <HomeToolsCategorySection
+              key={category}
+              category={category}
+              index={news.sections.length + offset}
+            />
           ))}
         </div>
       </PageWithAside>

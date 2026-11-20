@@ -4,6 +4,7 @@ import {useTranslations} from "next-intl";
 
 import {ToolCard} from "@/components/tools/tool-card";
 import {tools} from "@/lib/tools";
+import {typography} from "@/lib/typography";
 
 export function RelatedTools() {
   const t = useTranslations("NewsPage");
@@ -11,11 +12,11 @@ export function RelatedTools() {
   return (
     <section
       aria-labelledby="related-tools-title"
-      className="mt-14 pt-10 md:mt-16 md:pt-12"
+      className="mt-12 md:mt-16"
     >
       <h2
         id="related-tools-title"
-        className="text-2xl font-bold leading-none tracking-tight text-foreground sm:text-3xl"
+        className={typography.title}
       >
         {t("relatedToolsTitle")}
       </h2>

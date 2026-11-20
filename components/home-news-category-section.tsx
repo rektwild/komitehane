@@ -2,6 +2,8 @@ import {getTranslations} from "next-intl/server";
 
 import {ArticleCard} from "@/components/news/article-card";
 import type {NewsLocale, HomeNewsSection} from "@/lib/news/types";
+import {typography} from "@/lib/typography";
+import {cn} from "@/lib/utils";
 
 export async function HomeNewsCategorySection({
   section,
@@ -17,10 +19,10 @@ export async function HomeNewsCategorySection({
       aria-labelledby={`home-news-category-${section.category.id}`}
       className="flex min-w-0 flex-col gap-4"
     >
-      <div className="flex min-w-0 items-center gap-6">
+      <div className="flex min-w-0 items-center gap-4">
         <h2
           id={`home-news-category-${section.category.id}`}
-          className="min-w-0 text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+          className={cn(typography.title, "min-w-0")}
         >
           {section.category.name}
         </h2>

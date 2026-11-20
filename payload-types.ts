@@ -131,6 +131,14 @@ export interface User {
   id: number;
   name: string;
   /**
+   * Herkese açık yazar profili adresi (ör. /tr/yazarlar/ad-soyad). Boş bırakılırsa addan üretilir; sonradan değiştirmek eski bağlantıları bozar.
+   */
+  slug?: string | null;
+  /**
+   * Yazar profilinde ve yapılandırılmış veride gösterilen kısa biyografi. Uzmanlık, eğitim veya rolü yalnızca doğru bilgilerle yazın.
+   */
+  bio?: string | null;
+  /**
    * Yetki ve herkese açık yazar rolü.
    */
   role?: ('founder' | 'editor' | 'writer' | 'automation') | null;
@@ -369,6 +377,8 @@ export interface PayloadMigration {
  */
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
+  slug?: T;
+  bio?: T;
   role?: T;
   updatedAt?: T;
   createdAt?: T;

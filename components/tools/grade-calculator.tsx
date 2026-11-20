@@ -448,7 +448,7 @@ export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: Tool
     if (result.status === "ALREADY_PASSING") {
       return (
         <div className="space-y-2">
-          <p className="text-3xl font-bold tabular-nums sm:text-5xl">
+          <p className="text-4xl font-bold leading-none tracking-tight tabular-nums">
             {formatNumber(result.value)}
           </p>
           <p className="text-sm text-muted-foreground">
@@ -461,7 +461,7 @@ export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: Tool
     if (result.status === "IMPOSSIBLE") {
       return (
         <div className="space-y-2">
-          <p className="text-3xl font-bold tabular-nums sm:text-5xl">
+          <p className="text-4xl font-bold leading-none tracking-tight tabular-nums">
             {formatNumber(result.value)}
           </p>
           <p className="text-sm text-muted-foreground">
@@ -472,7 +472,7 @@ export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: Tool
     }
 
     return (
-      <p className="text-3xl font-bold tabular-nums sm:text-5xl">
+      <p className="text-4xl font-bold leading-none tracking-tight tabular-nums">
         {formatNumber(result.value)}
       </p>
     );
@@ -533,7 +533,7 @@ export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: Tool
         >
           <h2
             id={`calculator-${toolKey}-information-title`}
-            className="text-base font-medium"
+            className="text-xl font-semibold tracking-tight"
           >
             {t("calculationInformationTitle")}
           </h2>
@@ -744,7 +744,7 @@ export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: Tool
       >
         <h2
           id={`calculator-${toolKey}-result-title`}
-          className="text-base font-medium"
+          className="text-xl font-semibold tracking-tight"
         >
           {t("resultTitle")}
         </h2>
@@ -761,7 +761,7 @@ export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: Tool
       >
         <h2
           id={`calculator-${toolKey}-how-it-works-title`}
-          className="text-base font-medium"
+          className="text-xl font-semibold tracking-tight"
         >
           {t("howItWorksTitle")}
         </h2>
@@ -779,13 +779,13 @@ export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: Tool
                 <h3>{t("formulaTitle")}</h3>
                 <p>{t("formulaIntroduction")}</p>
                 <blockquote className="article-quote text-center">
-                  <p className="font-mono text-xs leading-5 sm:text-sm">
+                  <p className="font-mono text-sm leading-6">
                     <strong>{t("formula")}</strong>
                   </p>
                 </blockquote>
                 <p>{t("contributionIntroduction")}</p>
                 <blockquote className="article-quote text-center">
-                  <p className="font-mono text-xs leading-5 sm:text-sm">
+                  <p className="font-mono text-sm leading-6">
                     <strong>{t("contributionFormula")}</strong>
                   </p>
                 </blockquote>
@@ -802,16 +802,16 @@ export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: Tool
       >
         <h2
           id={`calculator-${toolKey}-faq-title`}
-          className="text-base font-medium"
+          className="text-xl font-semibold tracking-tight"
         >
           {t("faqTitle")}
         </h2>
         <Card className="w-full">
           <CardContent>
-            <dl className="space-y-4 text-sm leading-6">
+            <dl className="space-y-5 text-base leading-7">
               {faqKeys.map((key) => (
                 <div key={key} className="space-y-1">
-                  <dt className="font-bold">{t(`faq.${key}.question`)}</dt>
+                  <dt className="font-semibold">{t(`faq.${key}.question`)}</dt>
                   <dd>{t(`faq.${key}.answer`)}</dd>
                 </div>
               ))}

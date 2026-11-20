@@ -1,23 +1,24 @@
 {
-  "Academic": {"select": "Seçiniz", "university": "Üniversite", "faculty": "Fakülte", "program": "Program", "class": "Sınıf", "period": "Dönem", "annual": "Yıllık", "fall": "Güz", "spring": "Bahar", "course": "Ders", "source": "Resmi kaynak", "unavailable": "Akademik veri kullanılamıyor; manuel hesaplamaya devam edebilirsiniz.", "manual": "Doğrulanmış resmi kural seçilmedi. Oranları manuel girebilirsiniz.", "verified": "Doğrulanmış {year}–{nextYear} kuralı yüklendi. Oranları değiştirebilirsiniz.", "reset": "Resmi oranlara dön", "custom": "Değiştirilmiş kişisel oranlar", "landingTitle": "{university} {faculty} {program} {year}. Sınıf {tool}", "landingDescription": "{year}. sınıf için {academicYear} akademik yılında doğrulanmış değerlendirme kuralları ve hesaplama aracı.", "landingRules": "Doğrulanmış kurallar", "landingDisclaimer": "Hesaplama hedef ağırlıklı ortalama içindir; resmi geçiş koşullarının tamamını kapsamaz.", "landingAcademicYear": "Akademik yıl: {year}–{nextYear}", "landingCourse": "Ders: {course}", "landingWeights": "Ağırlıklar", "landingTarget": "Hedef ortalama: {grade}", "availableUniversities": "Doğrulanmış üniversite sayfaları", "recoverPrevious": "Önceki sürümdeki ayarlarımı getir", "noPrevious": "Bu bağlam için önceki bir sürüm kaydı bulunamadı.", "previousLoaded": "Önceki kişisel ayarlar yüklendi; oranları kontrol edin.", "viewUniversityPage": "Üniversiteye özel sayfayı aç", "copyManualGrades": "Manuel notlarımı taşı", "noManualGrades": "Taşınacak manuel not bulunamadı.", "manualGradesCopied": "Manuel notlar taşındı; oranlar değiştirilmedi.", "loading": "Akademik kural kontrol ediliyor…", "unverified": "Bu bağlam için doğrulanmış kaynak bulunamadı; manuel hesaplamayı kullanın.", "unsupported": "Bu kural henüz desteklenmiyor; manuel ağırlıklı hesaplamayı kullanın."},
+  "Academic": {"select": "Seçiniz", "university": "Üniversite", "faculty": "Fakülte", "program": "Program", "class": "Sınıf", "period": "Dönem", "annual": "Yıllık", "fall": "Güz", "spring": "Bahar", "course": "Ders", "source": "Resmi kaynak", "unavailable": "Akademik veri kullanılamıyor; manuel hesaplamaya devam edebilirsiniz.", "manual": "Doğrulanmış resmi kural seçilmedi. Oranları manuel girebilirsiniz.", "verified": "Doğrulanmış {year}–{nextYear} kuralı yüklendi. Oranları değiştirebilirsiniz.", "reset": "Resmi oranlara dön", "custom": "Değiştirilmiş kişisel oranlar", "landingTitle": "{university} {faculty} {program} {year}. Sınıf {tool}", "landingDescription": "{university} {faculty} {program} {year}. sınıf için {academicYear} akademik yılında resmi kaynakla doğrulanmış not ağırlıkları, geçme notu ve hesaplama aracı.", "classYearLabel": "{year}. Sınıf", "landingRules": "Doğrulanmış kurallar", "landingDisclaimer": "Hesaplama hedef ağırlıklı ortalama içindir; resmi geçiş koşullarının tamamını kapsamaz.", "landingAcademicYear": "Akademik yıl: {year}–{nextYear}", "landingCourse": "Ders: {course}", "landingWeights": "Ağırlıklar", "landingTarget": "Hedef ortalama: {grade}", "availableUniversities": "Doğrulanmış üniversite sayfaları", "recoverPrevious": "Önceki sürümdeki ayarlarımı getir", "noPrevious": "Bu bağlam için önceki bir sürüm kaydı bulunamadı.", "previousLoaded": "Önceki kişisel ayarlar yüklendi; oranları kontrol edin.", "viewUniversityPage": "Üniversiteye özel sayfayı aç", "copyManualGrades": "Manuel notlarımı taşı", "noManualGrades": "Taşınacak manuel not bulunamadı.", "manualGradesCopied": "Manuel notlar taşındı; oranlar değiştirilmedi.", "loading": "Akademik kural kontrol ediliyor…", "unverified": "Bu bağlam için doğrulanmış kaynak bulunamadı; manuel hesaplamayı kullanın.", "unsupported": "Bu kural henüz desteklenmiyor; manuel ağırlıklı hesaplamayı kullanın."},
   "Metadata": {
     "title": {
       "default": "Komitehane",
       "template": "%s | Komitehane"
     },
-    "description": "Komitehane — modern, çok dilli bir web uygulaması.",
+    "description": "Tıp fakültesi öğrencileri için ücretsiz komite ve vize not hesaplama araçları, minimum final notu hesaplayıcıları, TUS ve tıp eğitimi haberleri.",
     "home": {
-      "title": "Komitehane",
-      "description": "Komitehane — modern, çok dilli bir web uygulaması.",
-      "imageAlt": "Komitehane sosyal önizlemesi"
+      "title": "Komitehane – Komite ve Vize Not Hesaplama, TUS Haberleri",
+      "description": "Komite ve vize notunu hesapla, finalden kaç alman gerektiğini öğren. Tıp öğrencileri için ücretsiz not hesaplama araçları, TUS sayacı ve haberler.",
+      "imageAlt": "Komitehane: tıp öğrencileri için not hesaplama araçları ve TUS haberleri"
     },
     "tools": {
-      "title": "Araçlar",
-      "description": "Not hesaplama araçlarıyla akademik hedeflerini daha kolay planla.",
-      "imageAlt": "Komitehane araçlar sayfası"
+      "title": "Komite ve Vize Not Hesaplama Araçları | Komitehane",
+      "description": "Komite ve vize notunu hesapla, finalden kaç alman gerektiğini bul. Tıp fakültesi öğrencileri için ücretsiz ve kayıt gerektirmeyen not hesaplama araçları.",
+      "imageAlt": "Komitehane not hesaplama araçları"
     },
     "news": {
       "title": "Haberler | Komitehane",
+      "pagedTitle": "Haberler – Sayfa {page} | Komitehane",
       "description": "Tıp eğitimi, TUS ve Komitehane hakkındaki güncel haberleri keşfedin.",
       "imageAlt": "Komitehane haberler sayfası"
     },
@@ -25,11 +26,20 @@
       "title": "Gizlilik Politikası | Komitehane",
       "description": "Komitehane'nin reklam, analiz, çerez ve benzeri teknolojileri nasıl kullanabileceğini öğrenin.",
       "imageAlt": "Komitehane gizlilik politikası"
+    },
+    "about": {
+      "title": "Hakkımızda | Komitehane",
+      "description": "Komitehane'nin tıp öğrencilerine ne sunduğunu, not hesaplama araçlarının nasıl çalıştığını ve haberlerin hangi editoryal süreçten geçtiğini öğrenin.",
+      "imageAlt": "Komitehane hakkında"
     }
   },
   "Home": {
     "title": "Komitehane",
-    "description": "Komitehane — modern, çok dilli bir web uygulaması."
+    "description": "Tıp fakültesi öğrencileri için komite ve vize not hesaplama araçları, TUS ve tıp eğitimi haberleri.",
+    "heading": "Tıp öğrencileri için not hesaplama araçları ve TUS haberleri",
+    "intro": "Komite ve vize notunu hesapla, finalden kaç alman gerektiğini öğren; TUS ve tıp eğitimi gündemini tek yerden takip et. Tüm araçlar ücretsizdir ve kayıt gerektirmez.",
+    "quickLinksLabel": "Öne çıkan araçlar",
+    "latestNewsLabel": "Son haberler"
   },
   "Aside": {
     "label": "Yan içerikler",
@@ -57,6 +67,8 @@
   },
   "Tools": {
     "title": "Araçlar",
+    "heading": "Not Hesaplama Araçları",
+    "intro": "Komite ve vize notlarını ağırlıklarıyla girerek dönem sonu notunu hesaplayabilir ya da dersi geçmek için finalden almanız gereken minimum notu bulabilirsiniz. Araçlar ücretsizdir, kayıt gerektirmez ve hesaplamalar yalnızca tarayıcınızda yapılır.",
     "description": "Not hesaplama araçlarıyla akademik hedeflerini daha kolay planla.",
     "categories": {
       "midterm": "Vize hesaplama araçları",
@@ -217,7 +229,7 @@
     "resultAlreadyPassing": "Mevcut ağırlıklı katkı hedef ortalamaya ulaşıyor. Diğer resmi koşullar ayrıca geçerli olabilir.",
     "resultImpossibleDescription": "Finalden en fazla 100 alındığında hedef ağırlıklı ortalamaya ulaşılamıyor.",
     "howItWorksTitle": "Komite minimum final notu nasıl hesaplanır?",
-    "howItWorksIntroduction": "Bu araç, komite katkınızı ve geçme notunuzu kullanarak finalden almanız gereken minimum notu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
+    "howItWorksIntroduction": "Bu araç, \"Finalden kaç almam gerekiyor?\" sorusunu yanıtlar: komite katkınızı ve geçme notunuzu kullanarak finalden almanız gereken minimum notu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
     "systemTitle": "Komite katkısı nasıl hesaplanır?",
     "systemDescription": "Ara sınavların ve finalin ağırlıkları düzenlenebilir; toplamları %100 olmalıdır.",
     "formulaTitle": "Minimum final notu nasıl hesaplanır?",
@@ -265,7 +277,7 @@
     "resultAlreadyPassing": "Mevcut ağırlıklı katkı hedef ortalamaya ulaşıyor. Diğer resmi koşullar ayrıca geçerli olabilir.",
     "resultImpossibleDescription": "Finalden en fazla 100 alındığında hedef ağırlıklı ortalamaya ulaşılamıyor.",
     "howItWorksTitle": "Vize minimum final notu nasıl hesaplanır?",
-    "howItWorksIntroduction": "Bu araç, vize katkınızı ve geçme notunuzu kullanarak finalden almanız gereken minimum notu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
+    "howItWorksIntroduction": "Bu araç, \"Finalden kaç almam gerekiyor?\" sorusunu yanıtlar: vize katkınızı ve geçme notunuzu kullanarak finalden almanız gereken minimum notu hesaplar. Hesaplamalar yalnızca tarayıcınızda yapılır; not verileriniz sunucuya gönderilmez.",
     "systemTitle": "Vize katkısı nasıl hesaplanır?",
     "systemDescription": "Ara sınavların ve finalin ağırlıkları düzenlenebilir; toplamları %100 olmalıdır.",
     "formulaTitle": "Minimum final notu nasıl hesaplanır?",
@@ -300,19 +312,23 @@
     "items": {
       "midtermGrade": {
         "title": "Vize Not Hesaplama",
-        "description": "Vize notunu hızlıca hesaplamak için kullan."
+        "description": "Vize notunu hızlıca hesaplamak için kullan.",
+        "metaDescription": "Vize ve final notlarını ağırlıklarıyla girerek dönem sonu notunu hesapla. 1–10 vize desteği, otomatik final ağırlığı; ücretsiz ve kayıt gerektirmez."
       },
       "committeeGrade": {
         "title": "Komite Not Hesaplama",
-        "description": "Komite notunu pratik bir şekilde hesapla."
+        "description": "Komite notunu pratik bir şekilde hesapla.",
+        "metaDescription": "Tıp fakültesi komite notlarını ve ağırlıklarını girerek dönem sonu notunu hesapla. 1–10 komite desteği, otomatik final ağırlığı; ücretsiz ve kayıtsız."
       },
       "committeeMinimumFinal": {
         "title": "Komite Minimum Final Notu Hesaplama",
-        "description": "Komiteyi geçmek için gereken minimum final notunu bul."
+        "description": "Komiteyi geçmek için gereken minimum final notunu bul.",
+        "metaDescription": "Komiteyi geçmek için finalden kaç alman gerektiğini hesapla. Komite notlarını, ağırlıklarını ve geçme notunu gir; gereken minimum final notunu anında gör."
       },
       "midtermMinimumFinal": {
         "title": "Vize Minimum Final Notu Hesaplama",
-        "description": "Vize hedefin için gereken minimum final notunu bul."
+        "description": "Vize hedefin için gereken minimum final notunu bul.",
+        "metaDescription": "Dersi geçmek için finalden kaç alman gerektiğini hesapla. Vize notlarını, ağırlıklarını ve geçme notunu gir; gereken minimum final notunu anında gör."
       }
     }
   },
@@ -345,7 +361,8 @@
     "groups": {
       "explore": "Keşfet",
       "tools": "Araçlar",
-      "account": "Hesap"
+      "account": "Hesap",
+      "site": "Kurumsal"
     },
     "links": {
       "news": "Haberler",
@@ -356,6 +373,7 @@
       "store": "Mağaza",
       "login": "Giriş yap",
       "signup": "Kayıt ol",
+      "about": "Hakkımızda",
       "privacy": "Gizlilik politikası"
     },
     "aiLinksLabel": "Yapay zekâ araçlarını keşfet",
@@ -450,6 +468,59 @@
     "title": "Sayfa bulunamadı",
     "description": "Aradığınız sayfa bulunamadı. Adresi kontrol edin veya ana sayfaya dönün.",
     "backToHome": "Ana sayfaya dön"
+  },
+  "Authors": {
+    "metaTitle": "{name} – Yazar profili",
+    "metaDescription": "{name} tarafından Komitehane'de yayımlanan TUS ve tıp eğitimi haberleri ve yazıları.",
+    "articlesTitle": "Yazıları",
+    "roles": {
+      "founder": "Kurucu",
+      "editor": "Editör",
+      "writer": "Yazar"
+    },
+    "profileLink": "{name} yazar profili",
+    "articleCount": "{count, plural, one {# yazı} other {# yazı}}",
+    "searchLabel": "Yazarın yazılarında ara",
+    "searchPlaceholder": "Yazılarda ara",
+    "viewLabel": "Görünüm",
+    "viewGrid": "Kart görünümü",
+    "viewList": "Liste görünümü",
+    "emptyTitle": "Yazı bulunamadı",
+    "emptyDescription": "Farklı bir arama terimi deneyin."
+  },
+  "About": {
+    "title": "Hakkımızda",
+    "heading": "Komitehane hakkında",
+    "intro": "Komitehane, Türkiye'deki tıp fakültesi öğrencileri için hazırlanmış Türkçe ve İngilizce bir web sitesidir. Komite ve vize notlarını hesaplamayı, finalden kaç almak gerektiğini bulmayı ve TUS ile tıp eğitimine dair gelişmeleri takip etmeyi kolaylaştırmayı amaçlar.",
+    "sections": {
+      "offer": {
+        "title": "Neler sunuyoruz?",
+        "tools": "Komite ve vize not hesaplama araçları: notlarınızı ve ağırlıklarını girerek dönem sonu notunuzu hesaplayabilirsiniz.",
+        "minimumFinal": "Minimum final notu hesaplayıcıları: dersi veya komiteyi geçmek için finalden almanız gereken en düşük notu gösterir.",
+        "news": "Haberler: TUS, tıp eğitimi ve öğrenci hayatına dair yazılar Türkçe ve İngilizce yayımlanır.",
+        "countdown": "TUS sayacı: bir sonraki TUS'a kalan gün sayısını gösterir."
+      },
+      "calculators": {
+        "title": "Hesaplama araçları nasıl çalışır?",
+        "paragraphOne": "Araçlar, girdiğiniz notları ağırlıklarıyla çarpıp toplayarak ağırlıklı ortalamayı hesaplar. Kullanılan formüller ve örnek hesaplamalar her aracın sayfasında açıkça yer alır.",
+        "paragraphTwo": "Hesaplamalar yalnızca tarayıcınızda yapılır; notlarınız sunucuya gönderilmez ve yalnızca bu tarayıcının yerel depolamasında saklanır. Araçlar ücretsizdir ve kayıt gerektirmez."
+      },
+      "editorial": {
+        "title": "Editoryal süreç",
+        "paragraphOne": "Haberler Komitehane'nin içerik yönetim sisteminde hazırlanır. Yazarlar ve otomasyon araçları yalnızca taslak oluşturabilir; bir yazının yayımlanması için editör veya kurucu onayı gerekir.",
+        "paragraphTwo": "Her yazıda yazar adı, yayın tarihi ve kategori gösterilir. Bir yazının çevirisi yalnızca tamamlandığında yayımlanır. Yazı içindeki stok görsellerde fotoğrafçı ve kaynak bilgisi belirtilir."
+      },
+      "limitations": {
+        "title": "Sorumluluk sınırı",
+        "paragraph": "Hesaplama sonuçları bilgilendirme amaçlıdır ve hedef ağırlıklı ortalamayı gösterir. Devam zorunluluğu, baraj notu veya bütünleme gibi resmi geçiş koşulları fakülteden fakülteye değişebilir; kesin sonuç için fakültenizin yönetmeliği ve duyuruları esastır."
+      },
+      "links": {
+        "title": "Hızlı bağlantılar",
+        "tools": "Not hesaplama araçları",
+        "news": "Haberler",
+        "privacy": "Gizlilik politikası"
+      }
+    }
   },
   "Privacy": {
     "title": "Gizlilik politikası",

@@ -11,6 +11,7 @@ import {
   userRead,
   userUpdate,
 } from "@/collections/access";
+import {ensureUserSlug} from "@/collections/slug";
 import {reassignLinkedUserRecords, setUserRole} from "@/collections/user-hooks";
 
 export const Users: CollectionConfig = {
@@ -37,6 +38,29 @@ export const Users: CollectionConfig = {
       name: "name",
       type: "text",
       required: true,
+    },
+    {
+      name: "slug",
+      type: "text",
+      unique: true,
+      index: true,
+      hooks: {
+        beforeValidate: [ensureUserSlug],
+      },
+      admin: {
+        description:
+          "Herkese açık yazar profili adresi (ör. /tr/yazarlar/ad-soyad). Boş bırakılırsa addan üretilir; sonradan değiştirmek eski bağlantıları bozar.",
+      },
+    },
+    {
+      name: "bio",
+      type: "textarea",
+      localized: true,
+      maxLength: 600,
+      admin: {
+        description:
+          "Yazar profilinde ve yapılandırılmış veride gösterilen kısa biyografi. Uzmanlık, eğitim veya rolü yalnızca doğru bilgilerle yazın.",
+      },
     },
     {
       name: "role",

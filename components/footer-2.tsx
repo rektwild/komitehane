@@ -8,8 +8,9 @@ import {Openai} from "@/components/ui/svgs/openai";
 import {Perplexity} from "@/components/ui/svgs/perplexity";
 import {Button} from "@/components/ui/button";
 import {Link} from "@/i18n/navigation";
-import {inactiveRoutes} from "@/lib/navigation";
+import {isLinkableRoute} from "@/lib/navigation";
 import {tools} from "@/lib/tools";
+import {typography} from "@/lib/typography";
 
 const aiProviders = [
   {key: "claude", href: "https://claude.ai/", icon: ClaudeAI},
@@ -48,33 +49,45 @@ export default async function Footer() {
       })),
     },
     {
+      key: "site",
+      links: [
+        {href: "/about", label: t("links.about")},
+        {href: "/privacy", label: t("links.privacy")},
+      ],
+    },
+    {
       key: "account",
       links: [
         {href: "/login", label: t("links.login")},
         {href: "/signup", label: t("links.signup")},
-        {href: "/privacy", label: t("links.privacy")},
       ],
     },
   ] as const;
+  const visibleFooterGroups = footerGroups
+    .map((group) => ({
+      ...group,
+      links: group.links.filter((link) => isLinkableRoute(link.href)),
+    }))
+    .filter((group) => group.links.length > 0);
 
   return (
     <footer className="border-t border-border/60">
-      <div className="mx-auto flex w-full max-w-(--breakpoint-2xl) flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-x-3 gap-y-12 sm:grid-cols-4 lg:grid-cols-6">
+      <div className="mx-auto flex w-full max-w-(--breakpoint-2xl) flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-6">
           <div className="col-span-full lg:col-span-3">
             <SiteBrand className="w-fit" />
           </div>
 
-          {footerGroups.map((group) => (
+          {visibleFooterGroups.map((group) => (
             <nav
               key={group.key}
               aria-label={t(`groups.${group.key}`)}
             >
-              <h2 className="text-foreground text-sm font-medium">
+              <h2 className={typography.label}>
                 {t(`groups.${group.key}`)}
               </h2>
-              <ul className="mt-4 flex flex-col gap-4">
-                {group.links.filter((link) => !inactiveRoutes.has(link.href)).map((link) => (
+              <ul className="mt-4 flex flex-col gap-3">
+                {group.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
@@ -89,7 +102,7 @@ export default async function Footer() {
           ))}
         </div>
 
-        <div className="grid gap-x-3 gap-y-6 border-t pt-6 sm:grid-cols-2">
+        <div className="grid gap-x-6 gap-y-6 border-t pt-6 sm:grid-cols-2">
           <div>
             <p className="text-sm text-muted-foreground">
               {t("aiLinksLabel")}

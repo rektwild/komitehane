@@ -7,12 +7,20 @@ type EntityReference = {
   "@id": string;
 };
 
+type ImageObjectJsonLd = {
+  "@type": "ImageObject";
+  url: string;
+  width: number;
+  height: number;
+};
+
 type OrganizationJsonLd = {
   "@type": "Organization";
   "@id": string;
   name: string;
   url: string;
-  logo?: string;
+  description?: string;
+  logo?: ImageObjectJsonLd;
   sameAs?: string[];
 };
 
@@ -25,8 +33,10 @@ type WebSiteJsonLd = {
   publisher: EntityReference;
 };
 
+export type WebPageType = "WebPage" | "AboutPage" | "CollectionPage" | "ProfilePage";
+
 type WebPageNode = {
-  "@type": "WebPage";
+  "@type": WebPageType;
   "@id": string;
   url: string;
   name: string;
@@ -34,15 +44,17 @@ type WebPageNode = {
   inLanguage: Locale;
   isPartOf: EntityReference;
   publisher: EntityReference;
+  about?: EntityReference;
   mainEntity?: EntityReference;
   breadcrumb?: EntityReference;
 };
 
 type WebPageJsonLd = {
   "@context": "https://schema.org";
-} & WebPageNode;
+  "@graph": Array<WebPageNode | BreadcrumbListNode>;
+};
 
-type BreadcrumbItem = {
+export type BreadcrumbItem = {
   name: string;
   url: string;
 };
@@ -67,6 +79,7 @@ type NewsArticleNode = {
     "@id"?: string;
     "@type": "Person" | "Organization";
     name: string;
+    url?: string;
   };
   publisher: EntityReference;
 };
@@ -85,13 +98,25 @@ type BreadcrumbListNode = {
 const organizationId = `${siteUrl}/#organization`;
 const websiteId = `${siteUrl}/#website`;
 
-export function getOrganizationJsonLd(): OrganizationJsonLd {
+export function getOrganizationJsonLd(description?: string): OrganizationJsonLd {
+  const logo = siteConfig.logo;
+
   return {
     "@type": "Organization",
     "@id": organizationId,
     name: siteConfig.organizationName,
     url: absoluteUrl("/"),
-    ...(siteConfig.logo ? {logo: absoluteUrl(siteConfig.logo)} : {}),
+    ...(description ? {description} : {}),
+    ...(logo
+      ? {
+          logo: {
+            "@type": "ImageObject",
+            url: absoluteUrl(logo.url),
+            width: logo.width,
+            height: logo.height,
+          },
+        }
+      : {}),
     ...(siteConfig.socialProfiles.length > 0
       ? {sameAs: siteConfig.socialProfiles}
       : {}),
@@ -109,28 +134,74 @@ export function getWebSiteJsonLd(locale: Locale): WebSiteJsonLd {
   };
 }
 
-export function getSiteJsonLd(locale: Locale) {
+export function getSiteJsonLd(locale: Locale, description?: string) {
   return {
     "@context": "https://schema.org",
-    "@graph": [getOrganizationJsonLd(), getWebSiteJsonLd(locale)],
+    "@graph": [getOrganizationJsonLd(description), getWebSiteJsonLd(locale)],
   };
 }
 
+export function getBreadcrumbListNode(
+  url: string,
+  items: readonly BreadcrumbItem[],
+): BreadcrumbListNode {
+  return {
+    "@type": "BreadcrumbList",
+    "@id": `${url}#breadcrumb`,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem" as const,
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.url),
+    })),
+  };
+}
+
+/**
+ * WebPage (or a WebPage subtype) node, optionally linked to a BreadcrumbList
+ * that mirrors the visible breadcrumb. The final breadcrumb item must be the
+ * page itself.
+ */
 export function getWebPageJsonLd({
   locale,
   url,
   name,
   description,
+  type = "WebPage",
+  breadcrumbItems,
+  about,
+  mainEntity,
 }: {
   locale: Locale;
   url: string;
   name: string;
   description: string;
+  type?: WebPageType;
+  breadcrumbItems?: readonly BreadcrumbItem[];
+  about?: EntityReference;
+  mainEntity?: EntityReference;
 }): WebPageJsonLd {
+  const breadcrumb =
+    breadcrumbItems && breadcrumbItems.length >= 2
+      ? getBreadcrumbListNode(url, breadcrumbItems)
+      : undefined;
+
   return {
     "@context": "https://schema.org",
-    ...getWebPageNode({locale, url, name, description}),
+    "@graph": [
+      {
+        ...getWebPageNode({locale, url, name, description, type}),
+        ...(about ? {about} : {}),
+        ...(mainEntity ? {mainEntity} : {}),
+        ...(breadcrumb ? {breadcrumb: {"@id": breadcrumb["@id"]}} : {}),
+      },
+      ...(breadcrumb ? [breadcrumb] : []),
+    ],
   };
+}
+
+export function getOrganizationReference(): EntityReference {
+  return {"@id": organizationId};
 }
 
 function getWebPageNode({
@@ -138,14 +209,16 @@ function getWebPageNode({
   url,
   name,
   description,
+  type = "WebPage",
 }: {
   locale: Locale;
   url: string;
   name: string;
   description: string;
+  type?: WebPageType;
 }): WebPageNode {
   return {
-    "@type": "WebPage",
+    "@type": type,
     "@id": `${url}#webpage`,
     url,
     name,
@@ -199,6 +272,7 @@ export function getNewsArticleJsonLd({
   description,
   image,
   authorName,
+  authorUrl,
   publishedAt,
   updatedAt,
   breadcrumbItems,
@@ -209,6 +283,8 @@ export function getNewsArticleJsonLd({
   description: string;
   image: string;
   authorName: string;
+  /** Absolute URL of the author's public profile page, when one exists. */
+  authorUrl?: string;
   publishedAt: string;
   updatedAt: string;
   breadcrumbItems: readonly [BreadcrumbItem, BreadcrumbItem, ...BreadcrumbItem[]];
@@ -245,7 +321,9 @@ export function getNewsArticleJsonLd({
         mainEntityOfPage: {"@id": webpageId},
         author: authorName.trim() === siteConfig.organizationName
           ? {"@id": organizationId, "@type": "Organization", name: authorName}
-          : {"@type": "Person", name: authorName},
+          : authorUrl
+            ? {"@id": getPersonId(authorUrl), "@type": "Person", name: authorName, url: authorUrl}
+            : {"@type": "Person", name: authorName},
         publisher: {"@id": organizationId},
       },
       {
@@ -261,3 +339,56 @@ export function getNewsArticleJsonLd({
     ],
   };
 }
+
+function getPersonId(profileUrl: string): string {
+  return `${profileUrl}#person`;
+}
+
+/**
+ * ProfilePage → Person graph for a public author page. Only facts shown on
+ * the page (name, role at Komitehane, optional bio) are emitted.
+ */
+export function getAuthorProfileJsonLd({
+  locale,
+  url,
+  name,
+  pageTitle,
+  description,
+  jobTitle,
+  bio,
+  breadcrumbItems,
+}: {
+  locale: Locale;
+  url: string;
+  name: string;
+  pageTitle: string;
+  description: string;
+  jobTitle: string;
+  bio: string | null;
+  breadcrumbItems: readonly [BreadcrumbItem, BreadcrumbItem, ...BreadcrumbItem[]];
+}) {
+  const personId = getPersonId(url);
+  const breadcrumb = getBreadcrumbListNode(url, breadcrumbItems);
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        ...getWebPageNode({locale, url, name: pageTitle, description, type: "ProfilePage"}),
+        mainEntity: {"@id": personId},
+        breadcrumb: {"@id": breadcrumb["@id"]},
+      },
+      {
+        "@type": "Person",
+        "@id": personId,
+        name,
+        url,
+        jobTitle,
+        ...(bio ? {description: bio} : {}),
+        worksFor: {"@id": organizationId},
+      },
+      breadcrumb,
+    ],
+  };
+}
+

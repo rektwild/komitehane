@@ -5,6 +5,10 @@ import {
   isIndexableEnvironment,
   siteConfig,
 } from "@/config/site";
+import {
+  modelTrainingCrawlers,
+  searchAndRetrievalCrawlers,
+} from "@/lib/seo/crawlers";
 import {absoluteUrl} from "@/lib/seo/urls";
 
 export const dynamic = "force-dynamic";
@@ -45,24 +49,11 @@ export default function robots(): MetadataRoute.Robots {
     };
   }
 
-  const searchCrawlers = [
-    "Googlebot",
-    "bingbot",
-    "OAI-SearchBot",
-    "ChatGPT-User",
-    "PerplexityBot",
-    "Perplexity-User",
-    "Claude-SearchBot",
-    "Claude-User",
-  ];
-
-  const trainingCrawlers = ["GPTBot", "ClaudeBot", "Google-Extended"];
-
   return {
     rules: [
       publicRule("*"),
-      ...searchCrawlers.map(publicRule),
-      ...trainingCrawlers.map((userAgent) =>
+      ...searchAndRetrievalCrawlers.map(publicRule),
+      ...modelTrainingCrawlers.map((userAgent) =>
         allowModelTrainingCrawlers
           ? publicRule(userAgent)
           : {userAgent, disallow: "/"}

@@ -3,6 +3,8 @@ import {getTranslations} from "next-intl/server";
 
 import {Link} from "@/i18n/navigation";
 import type {NewsLocale, NewsSummary} from "@/lib/news/types";
+import {typography} from "@/lib/typography";
+import {cn} from "@/lib/utils";
 
 type RelatedNewsProps = {
   articles: NewsSummary[];
@@ -22,11 +24,11 @@ export async function RelatedNews({articles, locale}: RelatedNewsProps) {
   return (
     <section
       aria-labelledby="related-news-title"
-      className="mt-14 pt-10 md:mt-16 md:pt-12"
+      className="mt-12 md:mt-16"
     >
       <h2
         id="related-news-title"
-        className="text-2xl font-bold leading-none tracking-tight text-foreground sm:text-3xl"
+        className={typography.title}
       >
         {t("relatedTitle")}
       </h2>
@@ -60,7 +62,7 @@ export async function RelatedNews({articles, locale}: RelatedNewsProps) {
                   <span>{t("readingTime", {minutes: String(article.readingMinutes)})}</span>
                 </div>
 
-                <h3 className="line-clamp-2 text-lg font-bold leading-snug tracking-tight transition-colors group-hover:text-primary">
+                <h3 className={cn(typography.heading, "line-clamp-2 transition-colors group-hover:text-primary")}>
                   {article.title}
                 </h3>
 

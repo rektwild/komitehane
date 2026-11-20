@@ -1,6 +1,6 @@
 # Komitehane
 
-Komitehane — modern, çok dilli bir web uygulaması.
+Komitehane — tıp fakültesi öğrencileri için komite ve vize not hesaplama araçları, minimum final notu hesaplayıcıları, TUS sayacı ve tıp eğitimi haberleri sunan iki dilli (TR/EN) web sitesi.
 
 Next.js 16.3.0 (App Router, Turbopack) + React 19 + Tailwind CSS v4 + shadcn/ui + next-intl + Payload CMS 3.88.
 

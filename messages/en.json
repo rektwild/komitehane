@@ -1,23 +1,24 @@
 {
-  "Academic": {"select": "Select", "university": "University", "faculty": "Faculty", "program": "Program", "class": "Year", "period": "Period", "annual": "Annual", "fall": "Fall", "spring": "Spring", "course": "Course", "source": "Official source", "unavailable": "Academic data is unavailable; you can continue manually.", "manual": "No verified official rule selected. Enter weights manually.", "verified": "Verified {year}–{nextYear} rule loaded. You may edit the weights.", "reset": "Reset to official weights", "custom": "Customized personal weights", "landingTitle": "{university} {faculty} {program} Year {year} {tool}", "landingDescription": "Verified assessment rules and calculator for year {year} in the {academicYear} academic year.", "landingRules": "Verified rules", "landingDisclaimer": "This calculates a target weighted average; it does not cover every official passing condition.", "landingAcademicYear": "Academic year: {year}–{nextYear}", "landingCourse": "Course: {course}", "landingWeights": "Weights", "landingTarget": "Target average: {grade}", "availableUniversities": "Verified university pages", "recoverPrevious": "Restore settings from an earlier version", "noPrevious": "No earlier version was found for this context.", "previousLoaded": "Earlier personal settings were restored; check the weights.", "viewUniversityPage": "Open university page", "copyManualGrades": "Copy my manual grades", "noManualGrades": "No manual grades were found.", "manualGradesCopied": "Manual grades copied; weights were not changed.", "loading": "Checking academic rules…", "unverified": "No verified source is available for this context; use manual calculation.", "unsupported": "This rule is not supported yet; use the manual weighted calculation."},
+  "Academic": {"select": "Select", "university": "University", "faculty": "Faculty", "program": "Program", "class": "Year", "period": "Period", "annual": "Annual", "fall": "Fall", "spring": "Spring", "course": "Course", "source": "Official source", "unavailable": "Academic data is unavailable; you can continue manually.", "manual": "No verified official rule selected. Enter weights manually.", "verified": "Verified {year}–{nextYear} rule loaded. You may edit the weights.", "reset": "Reset to official weights", "custom": "Customized personal weights", "landingTitle": "{university} {faculty} {program} Year {year} {tool}", "landingDescription": "Officially sourced grade weights, passing grade and calculator for {university} {faculty} {program}, year {year}, {academicYear} academic year.", "classYearLabel": "Year {year}", "landingRules": "Verified rules", "landingDisclaimer": "This calculates a target weighted average; it does not cover every official passing condition.", "landingAcademicYear": "Academic year: {year}–{nextYear}", "landingCourse": "Course: {course}", "landingWeights": "Weights", "landingTarget": "Target average: {grade}", "availableUniversities": "Verified university pages", "recoverPrevious": "Restore settings from an earlier version", "noPrevious": "No earlier version was found for this context.", "previousLoaded": "Earlier personal settings were restored; check the weights.", "viewUniversityPage": "Open university page", "copyManualGrades": "Copy my manual grades", "noManualGrades": "No manual grades were found.", "manualGradesCopied": "Manual grades copied; weights were not changed.", "loading": "Checking academic rules…", "unverified": "No verified source is available for this context; use manual calculation.", "unsupported": "This rule is not supported yet; use the manual weighted calculation."},
   "Metadata": {
     "title": {
       "default": "Komitehane",
       "template": "%s | Komitehane"
     },
-    "description": "Komitehane — a modern, multilingual web application.",
+    "description": "Free committee and midterm grade calculators, minimum final grade tools, and TUS and medical education news for medical students in Turkey.",
     "home": {
-      "title": "Komitehane",
-      "description": "Komitehane — a modern, multilingual web application.",
-      "imageAlt": "Komitehane social preview"
+      "title": "Komitehane – Committee & Midterm Grade Calculators, TUS News",
+      "description": "Calculate committee and midterm grades and find the minimum final grade you need. Free grade calculators, a TUS countdown and news for medical students.",
+      "imageAlt": "Komitehane: grade calculators and TUS news for medical students"
     },
     "tools": {
-      "title": "Tools",
-      "description": "Plan your academic goals with practical grade calculators.",
-      "imageAlt": "Komitehane tools page"
+      "title": "Committee and Midterm Grade Calculators | Komitehane",
+      "description": "Calculate committee and midterm grades and find the minimum final grade you need. Free, sign-up-free grade calculators for medical students.",
+      "imageAlt": "Komitehane grade calculators"
     },
     "news": {
       "title": "News | Komitehane",
+      "pagedTitle": "News – Page {page} | Komitehane",
       "description": "Discover the latest news about medical education, TUS, and Komitehane.",
       "imageAlt": "Komitehane news page"
     },
@@ -25,11 +26,20 @@
       "title": "Privacy Policy | Komitehane",
       "description": "Learn how Komitehane may use advertising, analytics, cookies, and similar technologies.",
       "imageAlt": "Komitehane privacy policy"
+    },
+    "about": {
+      "title": "About Komitehane",
+      "description": "Learn what Komitehane offers medical students, how its grade calculators work, and the editorial process behind its news articles.",
+      "imageAlt": "About Komitehane"
     }
   },
   "Home": {
     "title": "Komitehane",
-    "description": "Komitehane — a modern, multilingual web application."
+    "description": "Committee and midterm grade calculators, TUS and medical education news for medical students in Turkey.",
+    "heading": "Grade calculators and TUS news for medical students",
+    "intro": "Calculate your committee and midterm grades, find out what you need on your final, and follow TUS and medical education news in one place. All tools are free and need no sign-up.",
+    "quickLinksLabel": "Featured tools",
+    "latestNewsLabel": "Latest news"
   },
   "Aside": {
     "label": "Related content",
@@ -57,6 +67,8 @@
   },
   "Tools": {
     "title": "Tools",
+    "heading": "Grade Calculators",
+    "intro": "Enter committee or midterm grades with their weights to calculate your end-of-term grade, or find the minimum final exam grade you need to pass. The tools are free, need no sign-up, and every calculation runs only in your browser.",
     "description": "Plan your academic goals with practical grade calculators.",
     "categories": {
       "midterm": "Midterm calculation tools",
@@ -217,7 +229,7 @@
     "resultAlreadyPassing": "The current weighted contribution meets the target. Other official requirements may still apply.",
     "resultImpossibleDescription": "The target weighted average cannot be reached with a maximum final score of 100.",
     "howItWorksTitle": "How is the committee minimum final grade calculated?",
-    "howItWorksIntroduction": "This tool uses your committee contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
+    "howItWorksIntroduction": "This tool answers \"What do I need on my final?\": it uses your committee contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
     "systemTitle": "How is the committee contribution calculated?",
     "systemDescription": "Assessment and final weights are editable and must total 100%.",
     "formulaTitle": "How is the minimum final grade calculated?",
@@ -265,7 +277,7 @@
     "resultAlreadyPassing": "The current weighted contribution meets the target. Other official requirements may still apply.",
     "resultImpossibleDescription": "The target weighted average cannot be reached with a maximum final score of 100.",
     "howItWorksTitle": "How is the midterm minimum final grade calculated?",
-    "howItWorksIntroduction": "This tool uses your midterm contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
+    "howItWorksIntroduction": "This tool answers \"What do I need on my final?\": it uses your midterm contribution and passing grade to calculate the minimum final grade you need. All calculations are performed only in your browser; your grade data is not sent to a server.",
     "systemTitle": "How is the midterm contribution calculated?",
     "systemDescription": "Assessment and final weights are editable and must total 100%.",
     "formulaTitle": "How is the minimum final grade calculated?",
@@ -300,19 +312,23 @@
     "items": {
       "midtermGrade": {
         "title": "Midterm Grade Calculator",
-        "description": "Use this tool to quickly calculate your midterm grade."
+        "description": "Use this tool to quickly calculate your midterm grade.",
+        "metaDescription": "Enter midterm and final grades with their weights to calculate your end-of-term grade. Supports 1–10 midterms with an automatic final weight; free."
       },
       "committeeGrade": {
         "title": "Committee Grade Calculator",
-        "description": "Calculate your committee grade in a practical way."
+        "description": "Calculate your committee grade in a practical way.",
+        "metaDescription": "Calculate your end-of-term grade from medical school committee grades and weights. Supports 1–10 committees with an automatic final weight; free."
       },
       "committeeMinimumFinal": {
         "title": "Committee Minimum Final Grade Calculator",
-        "description": "Find the minimum final grade you need to pass the committee."
+        "description": "Find the minimum final grade you need to pass the committee.",
+        "metaDescription": "Find the minimum final exam grade you need to pass the committee. Enter committee grades, weights and the passing grade to see the result instantly."
       },
       "midtermMinimumFinal": {
         "title": "Midterm Minimum Final Grade Calculator",
-        "description": "Find the minimum final grade you need for your midterm target."
+        "description": "Find the minimum final grade you need for your midterm target.",
+        "metaDescription": "Find the minimum final exam grade you need to pass the course. Enter midterm grades, weights and the passing grade to see the result instantly."
       }
     }
   },
@@ -345,7 +361,8 @@
     "groups": {
       "explore": "Explore",
       "tools": "Tools",
-      "account": "Account"
+      "account": "Account",
+      "site": "Company"
     },
     "links": {
       "news": "News",
@@ -356,6 +373,7 @@
       "store": "Store",
       "login": "Log in",
       "signup": "Sign up",
+      "about": "About",
       "privacy": "Privacy policy"
     },
     "aiLinksLabel": "Explore AI tools",
@@ -450,6 +468,59 @@
     "title": "Page not found",
     "description": "The page you're looking for couldn't be found. Check the address or go back to the homepage.",
     "backToHome": "Back to home"
+  },
+  "Authors": {
+    "metaTitle": "{name} – Author profile",
+    "metaDescription": "News and articles about TUS and medical education written by {name} on Komitehane.",
+    "articlesTitle": "Articles",
+    "roles": {
+      "founder": "Founder",
+      "editor": "Editor",
+      "writer": "Writer"
+    },
+    "profileLink": "{name}'s author profile",
+    "articleCount": "{count, plural, one {# article} other {# articles}}",
+    "searchLabel": "Search this author's articles",
+    "searchPlaceholder": "Search articles",
+    "viewLabel": "View",
+    "viewGrid": "Grid view",
+    "viewList": "List view",
+    "emptyTitle": "No articles found",
+    "emptyDescription": "Try a different search term."
+  },
+  "About": {
+    "title": "About",
+    "heading": "About Komitehane",
+    "intro": "Komitehane is a Turkish and English website for medical students in Turkey. It aims to make it easier to calculate committee and midterm grades, find out the final exam grade you need, and follow TUS and medical education news.",
+    "sections": {
+      "offer": {
+        "title": "What we offer",
+        "tools": "Committee and midterm grade calculators: enter your grades and their weights to calculate your end-of-term grade.",
+        "minimumFinal": "Minimum final grade calculators: see the lowest final exam grade you need to pass the course or committee.",
+        "news": "News: articles about TUS, medical education and student life, published in Turkish and English.",
+        "countdown": "TUS countdown: shows the number of days left until the next TUS exam."
+      },
+      "calculators": {
+        "title": "How do the calculators work?",
+        "paragraphOne": "The calculators multiply each grade by its weight and add the contributions to compute a weighted average. The formulas and worked examples are shown on every tool page.",
+        "paragraphTwo": "Calculations run only in your browser; your grades are never sent to a server and are stored only in this browser's local storage. The tools are free and need no sign-up."
+      },
+      "editorial": {
+        "title": "Editorial process",
+        "paragraphOne": "Articles are prepared in Komitehane's content management system. Writers and automation tools can only create drafts; publishing an article requires approval from an editor or the founder.",
+        "paragraphTwo": "Every article shows its author, publication date and category. A translation is published only when it is complete. Stock images inside articles credit the photographer and the source."
+      },
+      "limitations": {
+        "title": "Limitations",
+        "paragraph": "Calculation results are for information only and show the target weighted average. Official pass conditions such as attendance requirements, minimum exam thresholds or make-up exams vary between faculties; your faculty's regulations and announcements are authoritative."
+      },
+      "links": {
+        "title": "Quick links",
+        "tools": "Grade calculators",
+        "news": "News",
+        "privacy": "Privacy policy"
+      }
+    }
   },
   "Privacy": {
     "title": "Privacy policy",

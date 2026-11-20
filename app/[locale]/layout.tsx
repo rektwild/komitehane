@@ -26,7 +26,9 @@ import "../globals.css";
 
 const wixMadeforText = Wix_Madefor_Text({
   variable: "--font-default",
-  subsets: ["latin"],
+  // Turkish ğ, ş and İ live in latin-ext; preload it with latin so Turkish
+  // pages do not request an extra font file after first render.
+  subsets: ["latin", "latin-ext"],
   display: "swap",
 });
 
@@ -84,7 +86,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function LocaleLayout({children}: LayoutProps<"/[locale]">) {
-  const locale = await getLocale();
+  const [locale, metadataT] = await Promise.all([
+    getLocale(),
+    getTranslations("Metadata"),
+  ]);
   const direction = getDirection(locale);
 
   return (
@@ -96,16 +101,23 @@ export default async function LocaleLayout({children}: LayoutProps<"/[locale]">)
     >
       <head>
         <ThemeInitializerScript locale={locale} />
+      </head>
+      <body className="min-h-full flex flex-col">
         {adsenseConfig.enabled && adsenseScriptSrc ? (
+          // afterInteractive (Next's default for third-party scripts) runs the
+          // ad script after hydration instead of ahead of first-party code;
+          // Next still emits a preload hint, so ads are not delayed. Ad slots
+          // queue `adsbygoogle.push` calls until it loads. lazyOnload would
+          // defer it further (no preload) at the cost of later ad rendering.
+          // Site ownership is verified through the google-adsense-account
+          // meta tag.
           <Script
             id="google-adsense"
             src={adsenseScriptSrc}
-            strategy="beforeInteractive"
+            strategy="afterInteractive"
             crossOrigin="anonymous"
           />
         ) : null}
-      </head>
-      <body className="min-h-full flex flex-col">
         <GoogleAnalytics />
         <NextIntlClientProvider>
           <SiteHeader />
@@ -115,7 +127,7 @@ export default async function LocaleLayout({children}: LayoutProps<"/[locale]">)
             </SiteContainer>
           </main>
           <Footer />
-          <JsonLd data={getSiteJsonLd(locale)} />
+          <JsonLd data={getSiteJsonLd(locale, metadataT("description"))} />
         </NextIntlClientProvider>
       </body>
     </html>

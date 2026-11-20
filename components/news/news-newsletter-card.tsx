@@ -34,7 +34,7 @@ export function NewsNewsletterCard() {
     <section aria-labelledby="newsletter-card-title" className="space-y-4">
       <h2
         id="newsletter-card-title"
-        className="flex items-center gap-3 text-base font-bold leading-none tracking-tight text-foreground"
+        className="flex items-center gap-3 text-base font-semibold leading-none tracking-tight text-foreground"
       >
         <span>{t("newsletterTitle")}</span>
         <span aria-hidden="true" className="h-[2px] flex-1 self-center bg-action" />

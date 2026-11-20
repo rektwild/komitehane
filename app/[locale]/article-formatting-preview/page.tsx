@@ -10,6 +10,7 @@ import {
   getArticleFormattingFixtureCopy,
 } from "@/lib/news/article-formatting-fixture";
 import {routing} from "@/i18n/routing";
+import {typography} from "@/lib/typography";
 
 export const metadata: Metadata = {
   robots: {
@@ -29,7 +30,7 @@ export default async function ArticleFormattingPreviewPage() {
   return (
     <article className="w-full min-w-0 pb-12">
       <header className="border-b border-border/60 pb-4">
-        <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h1 className={typography.display}>
           {copy.title}
         </h1>
         <p

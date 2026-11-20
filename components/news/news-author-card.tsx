@@ -1,34 +1,50 @@
-import type {AuthorRole} from "@/lib/news/types";
+import {Link} from "@/i18n/navigation";
 
 type NewsAuthorCardProps = {
   authorName: string;
-  authorRole: AuthorRole;
-  locale: string;
+  /** Localized role label (from the `Authors.roles` messages). */
+  roleLabel: string;
+  /** Public profile slug; the name is rendered as plain text without one. */
+  authorSlug: string | null;
+  profileLinkLabel?: string;
 };
 
 function getAuthorInitial(authorName: string): string {
-  return authorName.trim().charAt(0).toUpperCase() || "K";
+  return authorName.trim().charAt(0).toLocaleUpperCase() || "K";
 }
 
-function getRoleLabel(role: AuthorRole, locale: string): string {
-  if (role === "founder") return "Founder";
-  if (role === "editor") return locale === "tr" ? "Editör" : "Editor";
-  return locale === "tr" ? "Yazar" : "Writer";
-}
-
-export function NewsAuthorCard({authorName, authorRole, locale}: NewsAuthorCardProps) {
+export function NewsAuthorCard({
+  authorName,
+  roleLabel,
+  authorSlug,
+  profileLinkLabel,
+}: NewsAuthorCardProps) {
   return (
     <div className="flex items-center gap-4">
-      <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-muted text-xl font-medium text-foreground">
+      <div
+        aria-hidden="true"
+        className="flex size-14 shrink-0 items-center justify-center rounded-full bg-muted text-lg font-medium text-foreground"
+      >
         {getAuthorInitial(authorName)}
       </div>
 
       <div className="min-w-0 space-y-0.5">
-        <p className="truncate text-lg font-medium tracking-[-0.03em] text-foreground">
-          {authorName}
+        <p className="truncate text-base font-semibold tracking-tight text-foreground">
+          {authorSlug ? (
+            <Link
+              href={{pathname: "/authors/[slug]", params: {slug: authorSlug}}}
+              rel="author"
+              aria-label={profileLinkLabel}
+              className="underline-offset-4 hover:underline"
+            >
+              {authorName}
+            </Link>
+          ) : (
+            authorName
+          )}
         </p>
         <p className="truncate text-sm leading-5 text-muted-foreground">
-          {getRoleLabel(authorRole, locale)}
+          {roleLabel}
         </p>
       </div>
     </div>

@@ -4,6 +4,7 @@ import type {
   CollectionBeforeChangeHook,
   CollectionBeforeDeleteHook,
   CollectionBeforeOperationHook,
+  PayloadRequest,
 } from "payload";
 import {APIError} from "payload";
 
@@ -209,6 +210,47 @@ function getArticleUrls(slugs: LocalizedSlugs): string[] {
   return urls;
 }
 
+type LocalizedArticleState = {
+  _status?: string | null;
+  publishedAt?: string | null;
+  slug: LocalizedSlugs;
+};
+
+/**
+ * Read every locale's slug for IndexNow inside the current write transaction.
+ * The database adapter is used instead of the Local API on purpose: `findByID`
+ * without `req` runs outside the transaction (a create-and-publish cannot see
+ * its own row and aborts with NotFound; updates read stale slugs), while
+ * `findByID` with `req` and `locale: "all"` mutates the shared request
+ * (`req.locale`, and replaces `req.context`, dropping hook state).
+ */
+async function findLocalizedSlugs(
+  req: PayloadRequest,
+  id: number | string,
+): Promise<LocalizedArticleState> {
+  const row = await req.payload.db.findOne<{
+    id: number | string;
+    _status?: string | null;
+    publishedAt?: string | null;
+    slug?: unknown;
+  }>({
+    collection: "articles",
+    locale: "all",
+    req,
+    where: {id: {equals: id}},
+  });
+
+  const slug: LocalizedSlugs = {};
+  if (row?.slug && typeof row.slug === "object") {
+    for (const locale of ["tr", "en"] as const) {
+      const value = (row.slug as Record<string, unknown>)[locale];
+      if (typeof value === "string" && value) slug[locale] = value;
+    }
+  }
+
+  return {_status: row?._status, publishedAt: row?.publishedAt, slug};
+}
+
 async function submitArticleUrls(slugs: LocalizedSlugs) {
   try {
     const {submitIndexNow} = await import("@/lib/seo/indexnow");
@@ -263,15 +305,9 @@ export const submitPublishedArticle: CollectionAfterChangeHook = async ({
 
   if (!isPublic(doc) && !isPublic(previousDoc)) return doc;
 
-  const localized = await req.payload.findByID({
-    collection: "articles",
-    id: doc.id,
-    depth: 0,
-    locale: "all",
-    overrideAccess: true,
-  });
+  const localized = await findLocalizedSlugs(req, doc.id);
 
-  await submitArticleUrls((localized.slug ?? {}) as LocalizedSlugs);
+  await submitArticleUrls(localized.slug);
   await revalidateNewsCaches();
   return doc;
 };
@@ -281,19 +317,13 @@ export const rememberDeletedArticle: CollectionBeforeDeleteHook = async ({
   id,
   req,
 }) => {
-  const localized = await req.payload.findByID({
-    collection: "articles",
-    id,
-    depth: 0,
-    locale: "all",
-    overrideAccess: true,
-  });
+  const localized = await findLocalizedSlugs(req, id);
   const indexNowContext = context as IndexNowContext;
   indexNowContext.deletedArticlePublished =
     localized._status === "published" &&
     Boolean(localized.publishedAt) &&
     new Date(localized.publishedAt as string).getTime() <= Date.now();
-  indexNowContext.deletedArticleSlugs = (localized.slug ?? {}) as LocalizedSlugs;
+  indexNowContext.deletedArticleSlugs = localized.slug;
 };
 
 export const submitDeletedArticle: CollectionAfterDeleteHook = async ({

@@ -6,12 +6,15 @@ import {getPathname} from "@/i18n/navigation";
 import {routing, type StaticAppPathname} from "@/i18n/routing";
 import {isIndexableEnvironment, siteConfig} from "@/config/site";
 import {getOgLocale} from "@/lib/seo/locales";
+import {socialImagePath, type SocialImageKey} from "@/lib/seo/social-image-keys";
 import {absoluteUrl} from "@/lib/seo/urls";
 
 type LocalizedMetadataInput = {
   title: string;
   description: string;
   imageAlt?: string;
+  /** Page-specific prerendered social image; defaults to the locale image. */
+  socialImageKey?: SocialImageKey;
   absoluteTitle?: boolean;
   type?: "website" | "article";
   publishedTime?: string;
@@ -72,6 +75,7 @@ export async function getLocalizedMetadata(
     title,
     description,
     imageAlt,
+    socialImageKey,
     absoluteTitle = false,
     type = "website",
     publishedTime,
@@ -81,6 +85,12 @@ export async function getLocalizedMetadata(
   availableLocales: readonly Locale[] = routing.locales
 ): Promise<Metadata> {
   const locale = await getLocale();
+  const openGraphImagePath = socialImageKey
+    ? socialImagePath(locale, socialImageKey)
+    : `/${locale}/opengraph-image`;
+  const twitterImagePath = socialImageKey
+    ? socialImagePath(locale, socialImageKey)
+    : `/${locale}/twitter-image`;
   const canonical = absoluteUrl(await getPathname({href, locale}));
   const alternateLanguages = await getAlternateLanguages(href, availableLocales);
   const alternateLocale = availableLocales
@@ -110,7 +120,7 @@ export async function getLocalizedMetadata(
         ? {
             images: [
               {
-                url: absoluteUrl(`/${locale}/opengraph-image`),
+                url: absoluteUrl(openGraphImagePath),
                 width: 1200,
                 height: 630,
                 alt: imageAlt,
@@ -127,7 +137,7 @@ export async function getLocalizedMetadata(
         ? {
             images: [
               {
-                url: absoluteUrl(`/${locale}/twitter-image`),
+                url: absoluteUrl(twitterImagePath),
                 alt: imageAlt,
               },
             ],

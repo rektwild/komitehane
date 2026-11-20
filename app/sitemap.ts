@@ -9,10 +9,11 @@ import {absoluteUrl} from "@/lib/seo/urls";
 import {landingCandidates} from "@/lib/academic/repositories/catalog";
 import {academicPath} from "@/lib/academic/seo/paths";
 import {tools} from "@/lib/tools";
+import type {NewsLocale} from "@/lib/news/types";
 
 export const revalidate = 300;
 
-const indexableRoutes = ["/", "/tools", "/news", "/privacy"] as const satisfies (
+const indexableRoutes = ["/", "/tools", "/news", "/about", "/privacy"] as const satisfies (
   keyof typeof routing.pathnames
 )[];
 
@@ -71,6 +72,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: new Date(article.updatedAt),
         alternates: {languages},
       });
+    }
+  }
+
+  // Author profiles exist only in locales where the author has a public
+  // article, mirroring the hreflang logic of the profile page itself.
+  const authorLocales = new Map<string, {locales: Set<NewsLocale>; updatedAt: string}>();
+  for (const article of articles) {
+    for (const {locale, authorSlug} of article.translations) {
+      if (!authorSlug) continue;
+      const current = authorLocales.get(authorSlug) ?? {locales: new Set<NewsLocale>(), updatedAt: article.updatedAt};
+      current.locales.add(locale);
+      if (article.updatedAt > current.updatedAt) current.updatedAt = article.updatedAt;
+      authorLocales.set(authorSlug, current);
+    }
+  }
+  for (const [slug, {locales, updatedAt}] of authorLocales) {
+    const orderedLocales = routing.locales.filter((locale) => locales.has(locale));
+    const languages: Record<string, string> = Object.fromEntries(
+      orderedLocales.map((locale) => [
+        locale,
+        absoluteUrl(getPathname({href: {pathname: "/authors/[slug]", params: {slug}}, locale})),
+      ]),
+    );
+    if (languages[routing.defaultLocale]) languages["x-default"] = languages[routing.defaultLocale];
+    for (const locale of orderedLocales) {
+      entries.push({url: languages[locale], lastModified: new Date(updatedAt), alternates: {languages}});
     }
   }
 
