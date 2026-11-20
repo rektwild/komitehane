@@ -25,6 +25,11 @@
       "title": "Gizlilik Politikası | Komitehane",
       "description": "Komitehane'nin reklam, analiz, çerez ve benzeri teknolojileri nasıl kullanabileceğini öğrenin.",
       "imageAlt": "Komitehane gizlilik politikası"
+    },
+    "about": {
+      "title": "Hakkımızda | Komitehane",
+      "description": "Komitehane'nin tıp öğrencilerine ne sunduğunu, not hesaplama araçlarının nasıl çalıştığını ve haberlerin hangi editoryal süreçten geçtiğini öğrenin.",
+      "imageAlt": "Komitehane hakkında"
     }
   },
   "Home": {
@@ -363,6 +368,7 @@
       "store": "Mağaza",
       "login": "Giriş yap",
       "signup": "Kayıt ol",
+      "about": "Hakkımızda",
       "privacy": "Gizlilik politikası"
     },
     "aiLinksLabel": "Yapay zekâ araçlarını keşfet",
@@ -457,6 +463,40 @@
     "title": "Sayfa bulunamadı",
     "description": "Aradığınız sayfa bulunamadı. Adresi kontrol edin veya ana sayfaya dönün.",
     "backToHome": "Ana sayfaya dön"
+  },
+  "About": {
+    "title": "Hakkımızda",
+    "heading": "Komitehane hakkında",
+    "intro": "Komitehane, Türkiye'deki tıp fakültesi öğrencileri için hazırlanmış Türkçe ve İngilizce bir web sitesidir. Komite ve vize notlarını hesaplamayı, finalden kaç almak gerektiğini bulmayı ve TUS ile tıp eğitimine dair gelişmeleri takip etmeyi kolaylaştırmayı amaçlar.",
+    "sections": {
+      "offer": {
+        "title": "Neler sunuyoruz?",
+        "tools": "Komite ve vize not hesaplama araçları: notlarınızı ve ağırlıklarını girerek dönem sonu notunuzu hesaplayabilirsiniz.",
+        "minimumFinal": "Minimum final notu hesaplayıcıları: dersi veya komiteyi geçmek için finalden almanız gereken en düşük notu gösterir.",
+        "news": "Haberler: TUS, tıp eğitimi ve öğrenci hayatına dair yazılar Türkçe ve İngilizce yayımlanır.",
+        "countdown": "TUS sayacı: bir sonraki TUS'a kalan gün sayısını gösterir."
+      },
+      "calculators": {
+        "title": "Hesaplama araçları nasıl çalışır?",
+        "paragraphOne": "Araçlar, girdiğiniz notları ağırlıklarıyla çarpıp toplayarak ağırlıklı ortalamayı hesaplar. Kullanılan formüller ve örnek hesaplamalar her aracın sayfasında açıkça yer alır.",
+        "paragraphTwo": "Hesaplamalar yalnızca tarayıcınızda yapılır; notlarınız sunucuya gönderilmez ve yalnızca bu tarayıcının yerel depolamasında saklanır. Araçlar ücretsizdir ve kayıt gerektirmez."
+      },
+      "editorial": {
+        "title": "Editoryal süreç",
+        "paragraphOne": "Haberler Komitehane'nin içerik yönetim sisteminde hazırlanır. Yazarlar ve otomasyon araçları yalnızca taslak oluşturabilir; bir yazının yayımlanması için editör veya kurucu onayı gerekir.",
+        "paragraphTwo": "Her yazıda yazar adı, yayın tarihi ve kategori gösterilir. Bir yazının çevirisi yalnızca tamamlandığında yayımlanır. Yazı içindeki stok görsellerde fotoğrafçı ve kaynak bilgisi belirtilir."
+      },
+      "limitations": {
+        "title": "Sorumluluk sınırı",
+        "paragraph": "Hesaplama sonuçları bilgilendirme amaçlıdır ve hedef ağırlıklı ortalamayı gösterir. Devam zorunluluğu, baraj notu veya bütünleme gibi resmi geçiş koşulları fakülteden fakülteye değişebilir; kesin sonuç için fakültenizin yönetmeliği ve duyuruları esastır."
+      },
+      "links": {
+        "title": "Hızlı bağlantılar",
+        "tools": "Not hesaplama araçları",
+        "news": "Haberler",
+        "privacy": "Gizlilik politikası"
+      }
+    }
   },
   "Privacy": {
     "title": "Gizlilik politikası",

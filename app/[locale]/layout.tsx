@@ -84,7 +84,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function LocaleLayout({children}: LayoutProps<"/[locale]">) {
-  const locale = await getLocale();
+  const [locale, metadataT] = await Promise.all([
+    getLocale(),
+    getTranslations("Metadata"),
+  ]);
   const direction = getDirection(locale);
 
   return (
@@ -115,7 +118,7 @@ export default async function LocaleLayout({children}: LayoutProps<"/[locale]">)
             </SiteContainer>
           </main>
           <Footer />
-          <JsonLd data={getSiteJsonLd(locale)} />
+          <JsonLd data={getSiteJsonLd(locale, metadataT("description"))} />
         </NextIntlClientProvider>
       </body>
     </html>

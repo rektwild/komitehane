@@ -25,6 +25,11 @@
       "title": "Privacy Policy | Komitehane",
       "description": "Learn how Komitehane may use advertising, analytics, cookies, and similar technologies.",
       "imageAlt": "Komitehane privacy policy"
+    },
+    "about": {
+      "title": "About Komitehane",
+      "description": "Learn what Komitehane offers medical students, how its grade calculators work, and the editorial process behind its news articles.",
+      "imageAlt": "About Komitehane"
     }
   },
   "Home": {
@@ -363,6 +368,7 @@
       "store": "Store",
       "login": "Log in",
       "signup": "Sign up",
+      "about": "About",
       "privacy": "Privacy policy"
     },
     "aiLinksLabel": "Explore AI tools",
@@ -457,6 +463,40 @@
     "title": "Page not found",
     "description": "The page you're looking for couldn't be found. Check the address or go back to the homepage.",
     "backToHome": "Back to home"
+  },
+  "About": {
+    "title": "About",
+    "heading": "About Komitehane",
+    "intro": "Komitehane is a Turkish and English website for medical students in Turkey. It aims to make it easier to calculate committee and midterm grades, find out the final exam grade you need, and follow TUS and medical education news.",
+    "sections": {
+      "offer": {
+        "title": "What we offer",
+        "tools": "Committee and midterm grade calculators: enter your grades and their weights to calculate your end-of-term grade.",
+        "minimumFinal": "Minimum final grade calculators: see the lowest final exam grade you need to pass the course or committee.",
+        "news": "News: articles about TUS, medical education and student life, published in Turkish and English.",
+        "countdown": "TUS countdown: shows the number of days left until the next TUS exam."
+      },
+      "calculators": {
+        "title": "How do the calculators work?",
+        "paragraphOne": "The calculators multiply each grade by its weight and add the contributions to compute a weighted average. The formulas and worked examples are shown on every tool page.",
+        "paragraphTwo": "Calculations run only in your browser; your grades are never sent to a server and are stored only in this browser's local storage. The tools are free and need no sign-up."
+      },
+      "editorial": {
+        "title": "Editorial process",
+        "paragraphOne": "Articles are prepared in Komitehane's content management system. Writers and automation tools can only create drafts; publishing an article requires approval from an editor or the founder.",
+        "paragraphTwo": "Every article shows its author, publication date and category. A translation is published only when it is complete. Stock images inside articles credit the photographer and the source."
+      },
+      "limitations": {
+        "title": "Limitations",
+        "paragraph": "Calculation results are for information only and show the target weighted average. Official pass conditions such as attendance requirements, minimum exam thresholds or make-up exams vary between faculties; your faculty's regulations and announcements are authoritative."
+      },
+      "links": {
+        "title": "Quick links",
+        "tools": "Grade calculators",
+        "news": "News",
+        "privacy": "Privacy policy"
+      }
+    }
   },
   "Privacy": {
     "title": "Privacy policy",

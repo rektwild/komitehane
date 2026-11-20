@@ -50,6 +50,7 @@ export default async function Footer() {
     {
       key: "site",
       links: [
+        {href: "/about", label: t("links.about")},
         {href: "/privacy", label: t("links.privacy")},
       ],
     },

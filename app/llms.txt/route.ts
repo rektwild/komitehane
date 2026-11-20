@@ -27,6 +27,14 @@ export async function GET() {
     }),
   );
 
+  const localizedAboutLinks = await Promise.all(
+    siteConfig.locales.map(async (locale) => {
+      const pathname = await getPathname({href: "/about", locale});
+
+      return `- [${siteConfig.localeNames[locale]}](${absoluteUrl(pathname)})`;
+    }),
+  );
+
   const content = [
     `# ${siteConfig.name}`,
     "",
@@ -42,6 +50,9 @@ export async function GET() {
     "",
     "## News",
     ...localizedNewsLinks,
+    "",
+    "## About Komitehane and editorial process",
+    ...localizedAboutLinks,
     "",
     "## Notes",
     "",

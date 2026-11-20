@@ -12,7 +12,7 @@ import {tools} from "@/lib/tools";
 
 export const revalidate = 300;
 
-const indexableRoutes = ["/", "/tools", "/news", "/privacy"] as const satisfies (
+const indexableRoutes = ["/", "/tools", "/news", "/about", "/privacy"] as const satisfies (
   keyof typeof routing.pathnames
 )[];
 

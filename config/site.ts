@@ -55,7 +55,13 @@ export const siteConfig = {
   localeToOpenGraphLocale,
   socialProfiles: [] as string[],
   authors: [] as Array<{name: string; url?: string}>,
-  logo: undefined as string | undefined,
+  // Rendered on light surfaces; Google requires a crawlable logo of at least
+  // 112x112 px that looks right on a white background.
+  logo: {
+    url: "/logo/komitehane_logo_for_light_mode.png",
+    width: 684,
+    height: 148,
+  } as {url: string; width: number; height: number} | undefined,
 } as const;
 
 export const allowModelTrainingCrawlers =
