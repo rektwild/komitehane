@@ -176,7 +176,7 @@ export function ToolsCatalog({
       ) : null}
 
       {visibleTools.length > 0 ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {visibleTools.map((tool) => (
             <ToolCard key={tool.key} tool={tool} />
           ))}
