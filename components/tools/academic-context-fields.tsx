@@ -2,6 +2,8 @@
 import {useEffect,useState} from "react";
 import {useLocale,useTranslations} from "next-intl";
 import {Field,FieldLabel} from "@/components/ui/field";
+import {Combobox,ComboboxContent,ComboboxEmpty,ComboboxInput,ComboboxItem,ComboboxList} from "@/components/ui/combobox";
+import {Select,SelectContent,SelectGroup,SelectItem,SelectTrigger,SelectValue} from "@/components/ui/select";
 import type {ToolKey} from "@/lib/tools";
 import {academicPath} from "@/lib/academic/seo/paths";
 
@@ -50,20 +52,61 @@ export function AcademicContextFields({toolKey,context,onChange}:{toolKey:ToolKe
     setRuleState(next.programId && next.classYear && (!midterm || next.courseId) ? "LOADING" : "IDLE");
     onChange(next);
   };
-  const selectClass="h-10 w-full rounded-md border border-input bg-background px-3 text-sm";
-  const select=(name:string,label:string,value:string,items:Item[],change:(v:string)=>void)=><Field><FieldLabel htmlFor={`academic-${name}`}>{label}</FieldLabel><select id={`academic-${name}`} className={selectClass} value={value} onChange={e=>change(e.target.value)}><option value="">{t("select")}</option>{items.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></Field>;
+  const select=(name:string,label:string,value:string,items:Item[],change:(v:string)=>void)=>(
+    <Field>
+      <FieldLabel htmlFor={`academic-${name}`}>{label}</FieldLabel>
+      <Select
+        value={value===""?null:value}
+        onValueChange={v=>change(v??"")}
+        items={items.map(x=>({value:x.id,label:x.name}))}
+      >
+        <SelectTrigger id={`academic-${name}`} className="w-full">
+          <SelectValue placeholder={t("select")} />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            {items.map(x=><SelectItem key={x.id} value={x.id}>{x.name}</SelectItem>)}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </Field>
+  );
+  const combobox=(name:string,label:string,value:string,items:Item[],change:(v:string)=>void)=>{
+    const names=new Map(items.map(x=>[x.id,x.name]));
+    const toLabel=(id:string)=>names.get(id)??"";
+    return (
+      <Field>
+        <FieldLabel htmlFor={`academic-${name}`}>{label}</FieldLabel>
+        <Combobox
+          items={items.map(x=>x.id)}
+          value={value===""?null:value}
+          onValueChange={(v:string|null)=>change(v??"")}
+          itemToStringLabel={toLabel}
+          filter={(id:string,query:string)=>query.trim()===""||toLabel(id).toLocaleLowerCase("tr").includes(query.trim().toLocaleLowerCase("tr"))}
+        >
+          <ComboboxInput id={`academic-${name}`} name={name} className="w-full" placeholder={t("searchPlaceholder")} showClear />
+          <ComboboxContent>
+            <ComboboxList>
+              {(id:string)=><ComboboxItem key={id} value={id}>{toLabel(id)}</ComboboxItem>}
+            </ComboboxList>
+            <ComboboxEmpty>{t("noResults")}</ComboboxEmpty>
+          </ComboboxContent>
+        </Combobox>
+      </Field>
+    );
+  };
   const selectedProgram=programs.find(x=>x.id===context.programId);
   const selectedFaculty=faculties.find(x=>x.id===context.facultyId);
   const selectedUniversity=universities.find(x=>x.id===context.universityId);
   const pagePath=context.rule && selectedProgram?.slug && selectedFaculty?.slug && selectedUniversity?.slug && context.classYear ? academicPath(locale,toolKey,selectedUniversity.slug,selectedFaculty.slug,selectedProgram.slug,Number(context.classYear)) : null;
   return <div className="space-y-3"><p className="text-sm text-muted-foreground">{unavailable?t("unavailable"):context.rule?t("verified",{year:String(context.rule.academicYearStart),nextYear:String(context.rule.academicYearStart+1)}):ruleState==="LOADING"?t("loading"):ruleState==="UNVERIFIED_RULE"?t("unverified"):ruleState==="UNSUPPORTED_RULE"?t("unsupported"):ruleState==="ERROR"?t("unavailable"):t("manual")}</p>
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      {select("university",t("university"),context.universityId,universities,v=>choose({universityId:v,facultyId:"",programId:"",classYear:"",courseId:""}))}
-      {context.universityId && select("faculty",t("faculty"),context.facultyId,faculties,v=>choose({facultyId:v,programId:"",classYear:"",courseId:""}))}
-      {context.facultyId && select("program",t("program"),context.programId,programs,v=>choose({programId:v,classYear:"",courseId:""}))}
+      {combobox("university",t("university"),context.universityId,universities,v=>choose({universityId:v,facultyId:"",programId:"",classYear:"",courseId:""}))}
+      {context.universityId && combobox("faculty",t("faculty"),context.facultyId,faculties,v=>choose({facultyId:v,programId:"",classYear:"",courseId:""}))}
+      {context.facultyId && combobox("program",t("program"),context.programId,programs,v=>choose({programId:v,classYear:"",courseId:""}))}
       {context.programId && select("class",t("class"),context.classYear,Array.from({length:selectedProgram?.durationYears??6},(_,i)=>({id:String(i+1),name:String(i+1)})),v=>choose({classYear:v,courseId:""}))}
       {context.classYear && select("period",t("period"),context.period,[{id:"ANNUAL",name:t("annual")},{id:"FALL",name:t("fall")},{id:"SPRING",name:t("spring")}],v=>choose({period:v,courseId:""}))}
-      {midterm && context.classYear && select("course",t("course"),context.courseId,courses,v=>choose({courseId:v}))}
+      {midterm && context.classYear && combobox("course",t("course"),context.courseId,courses,v=>choose({courseId:v}))}
     </div>
     {pagePath ? <p className="text-sm"><a href={pagePath} className="underline">{t("viewUniversityPage")}</a></p> : null}
     {context.rule?.sources?.map((source,i)=><p className="text-xs" key={`${source.sourceUrl}-${i}`}><a className="underline" href={source.sourceUrl} target="_blank" rel="noreferrer">{t("source")}</a></p>)}
