@@ -109,7 +109,7 @@ export async function NewsListing({
 
       {articles.length ? (
         <>
-          <div className="mt-6 grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-3">
             {firstArticles.map((article) => (
               <ArticleCard
                 key={article.id}
@@ -144,7 +144,7 @@ export async function NewsListing({
           ) : null}
         </>
       ) : (
-        <Empty className="mt-6 min-h-72 border">
+        <Empty className="mt-8 min-h-72 border">
           <EmptyHeader>
             <EmptyMedia variant="icon"><SearchIcon aria-hidden="true" /></EmptyMedia>
             <EmptyTitle>{t("emptyTitle")}</EmptyTitle>
