@@ -263,12 +263,16 @@ export const submitPublishedArticle: CollectionAfterChangeHook = async ({
 
   if (!isPublic(doc) && !isPublic(previousDoc)) return doc;
 
+  // Pass `req` so the lookup runs inside the same transaction: without it a
+  // create-and-publish cannot see the new row (NotFound aborts the save) and
+  // updates read the previous committed slugs.
   const localized = await req.payload.findByID({
     collection: "articles",
     id: doc.id,
     depth: 0,
     locale: "all",
     overrideAccess: true,
+    req,
   });
 
   await submitArticleUrls((localized.slug ?? {}) as LocalizedSlugs);
@@ -287,6 +291,7 @@ export const rememberDeletedArticle: CollectionBeforeDeleteHook = async ({
     depth: 0,
     locale: "all",
     overrideAccess: true,
+    req,
   });
   const indexNowContext = context as IndexNowContext;
   indexNowContext.deletedArticlePublished =
