@@ -22,11 +22,11 @@ export async function RelatedNews({articles, locale}: RelatedNewsProps) {
   return (
     <section
       aria-labelledby="related-news-title"
-      className="mt-14 pt-10 md:mt-16 md:pt-12"
+      className="mt-12 md:mt-16"
     >
       <h2
         id="related-news-title"
-        className="text-2xl font-bold leading-none tracking-tight text-foreground sm:text-3xl"
+        className="text-2xl font-bold leading-tight tracking-tight text-foreground"
       >
         {t("relatedTitle")}
       </h2>
@@ -60,7 +60,7 @@ export async function RelatedNews({articles, locale}: RelatedNewsProps) {
                   <span>{t("readingTime", {minutes: String(article.readingMinutes)})}</span>
                 </div>
 
-                <h3 className="line-clamp-2 text-lg font-bold leading-snug tracking-tight transition-colors group-hover:text-primary">
+                <h3 className="line-clamp-2 text-base font-semibold leading-snug tracking-tight transition-colors sm:text-lg group-hover:text-primary">
                   {article.title}
                 </h3>
 

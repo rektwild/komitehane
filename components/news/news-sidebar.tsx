@@ -24,7 +24,7 @@ function RankedList({
     <ol className="mt-4 space-y-5">
       {articles.map((article, index) => (
         <li key={article.id} className="grid grid-cols-[2rem_minmax(0,1fr)] gap-3">
-          <span className="text-2xl font-bold text-muted-foreground/60">
+          <span className="text-xl font-bold leading-6 tabular-nums text-muted-foreground/60">
             {index + 1}.
           </span>
           <div className="min-w-0">

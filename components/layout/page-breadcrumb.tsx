@@ -187,7 +187,7 @@ async function BreadcrumbTrail({
 
   return (
     <Breadcrumb aria-label={ariaLabel} className="max-w-full min-w-0">
-      <BreadcrumbList className="w-fit max-w-full min-w-0 flex-nowrap gap-0 overflow-hidden bg-transparent p-0 text-[13px] font-medium text-foreground shadow-none outline-none">
+      <BreadcrumbList className="w-fit max-w-full min-w-0 flex-nowrap gap-0 overflow-hidden bg-transparent p-0 text-sm font-medium text-foreground shadow-none outline-none">
         <BreadcrumbTrailItem
           item={firstItem}
           isCurrent={items.length === 1}

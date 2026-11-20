@@ -39,17 +39,17 @@ export async function HomeToolsCategorySection({
       aria-labelledby={headingId}
       className="min-w-0"
     >
-      <div className="flex min-w-0 items-center gap-6">
+      <div className="flex min-w-0 items-center gap-4">
         <h2
           id={headingId}
-          className="min-w-0 text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+          className="min-w-0 text-2xl font-bold leading-tight tracking-tight text-foreground"
         >
           {t(`categories.${category}`)}
         </h2>
         <span aria-hidden="true" className="h-1 min-w-0 flex-1 bg-action" />
       </div>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {selectedTools.map((tool) => (
           <ToolCard
             key={tool.key}

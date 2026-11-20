@@ -22,15 +22,15 @@ export default async function NotFound() {
 
   return (
     <PageWithAside>
-      <section className="flex min-w-0 flex-1 flex-col items-center justify-center gap-6 py-16 text-center">
-        <p className="font-mono text-6xl font-semibold text-muted-foreground/25">
+      <section className="flex min-w-0 flex-1 flex-col items-center justify-center gap-4 py-16 text-center">
+        <p className="font-mono text-5xl font-semibold leading-none text-muted-foreground/25">
           404
         </p>
-        <h1 className="text-2xl font-semibold tracking-tight">{t("title")}</h1>
-        <p className="max-w-md text-muted-foreground">{t("description")}</p>
+        <h1 className="text-balance text-3xl font-bold tracking-tight">{t("title")}</h1>
+        <p className="max-w-md text-pretty text-base leading-7 text-muted-foreground">{t("description")}</p>
         <Link
           href="/"
-          className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+          className="mt-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
         >
           {t("backToHome")}
         </Link>

@@ -99,9 +99,9 @@ export function ArticleCard({
           className={cn(
             "font-semibold tracking-tight",
             featured || carousel
-              ? "line-clamp-2 text-2xl leading-tight sm:text-3xl"
+              ? "line-clamp-2 text-xl leading-tight sm:text-2xl"
               : supporting
-                ? "line-clamp-2 text-[17px] leading-snug"
+                ? "line-clamp-2 text-base leading-snug"
                 : "line-clamp-2 text-lg leading-snug",
           )}
         >
@@ -112,9 +112,9 @@ export function ArticleCard({
           className={cn(
             "text-muted-foreground group-active:text-foreground",
             featured || carousel
-              ? "line-clamp-3 text-sm leading-relaxed sm:text-[15px]"
+              ? "line-clamp-3 text-sm leading-relaxed sm:text-base"
               : supporting
-                ? "line-clamp-2 text-[13px] leading-relaxed"
+                ? "line-clamp-2 text-sm leading-relaxed"
                 : "line-clamp-3 text-sm leading-relaxed",
           )}
         >
@@ -135,7 +135,7 @@ export function ArticleCard({
               <AvatarFallback
                 className={cn(
                   "font-medium",
-                  featured || carousel ? "text-xs" : "text-[10px]",
+                  "text-xs",
                 )}
               >
                 {getAuthorInitial(article.authorName)}
@@ -153,8 +153,7 @@ export function ArticleCard({
           <div
             className={cn(
               "flex shrink-0 items-center gap-1 text-muted-foreground transition-colors group-hover:text-foreground sm:gap-1.5",
-              featured || carousel ? "text-xs sm:text-sm" : "text-[11px] sm:text-xs",
-              supporting && "text-[11px]",
+              featured || carousel ? "text-xs sm:text-sm" : "text-xs",
             )}
           >
             <time dateTime={article.publishedAt} className="whitespace-nowrap">

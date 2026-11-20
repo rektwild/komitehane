@@ -71,8 +71,8 @@ export default async function Footer() {
 
   return (
     <footer className="border-t border-border/60">
-      <div className="mx-auto flex w-full max-w-(--breakpoint-2xl) flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-x-3 gap-y-12 sm:grid-cols-4 lg:grid-cols-6">
+      <div className="mx-auto flex w-full max-w-(--breakpoint-2xl) flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-6">
           <div className="col-span-full lg:col-span-3">
             <SiteBrand className="w-fit" />
           </div>
@@ -82,10 +82,10 @@ export default async function Footer() {
               key={group.key}
               aria-label={t(`groups.${group.key}`)}
             >
-              <h2 className="text-foreground text-sm font-medium">
+              <h2 className="text-sm font-semibold tracking-tight text-foreground">
                 {t(`groups.${group.key}`)}
               </h2>
-              <ul className="mt-4 flex flex-col gap-4">
+              <ul className="mt-4 flex flex-col gap-3">
                 {group.links.map((link) => (
                   <li key={link.href}>
                     <Link
@@ -101,7 +101,7 @@ export default async function Footer() {
           ))}
         </div>
 
-        <div className="grid gap-x-3 gap-y-6 border-t pt-6 sm:grid-cols-2">
+        <div className="grid gap-x-6 gap-y-6 border-t pt-6 sm:grid-cols-2">
           <div>
             <p className="text-sm text-muted-foreground">
               {t("aiLinksLabel")}

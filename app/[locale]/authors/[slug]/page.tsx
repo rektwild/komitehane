@@ -112,11 +112,11 @@ export default async function AuthorPage({params}: AuthorPageProps) {
           <section aria-labelledby="author-articles-title" className="min-w-0">
             <h2
               id="author-articles-title"
-              className="text-2xl font-bold tracking-tight text-foreground"
+              className="text-2xl font-bold leading-tight tracking-tight text-foreground"
             >
               {t("articlesTitle")}
             </h2>
-            <div className="mt-6 grid auto-rows-fr gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-4 grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-3">
               {profile.articles.map((article) => (
                 <ArticleCard
                   key={article.id}

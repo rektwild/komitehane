@@ -17,10 +17,10 @@ export async function HomeNewsCategorySection({
       aria-labelledby={`home-news-category-${section.category.id}`}
       className="flex min-w-0 flex-col gap-4"
     >
-      <div className="flex min-w-0 items-center gap-6">
+      <div className="flex min-w-0 items-center gap-4">
         <h2
           id={`home-news-category-${section.category.id}`}
-          className="min-w-0 text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+          className="min-w-0 text-2xl font-bold leading-tight tracking-tight text-foreground"
         >
           {section.category.name}
         </h2>

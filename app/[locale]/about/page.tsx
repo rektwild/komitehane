@@ -50,15 +50,15 @@ export default async function AboutPage() {
         />
 
         <header className="border-b border-border/60 pb-6">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {t("heading")}
           </h1>
-          <p className="mt-5 text-pretty text-lg leading-8 text-muted-foreground">
+          <p className="mt-3 text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
             {t("intro")}
           </p>
         </header>
 
-        <div className="mt-8 space-y-8 text-base leading-8 text-foreground">
+        <div className="mt-8 space-y-8 text-base leading-7 text-foreground">
           <section className="space-y-3">
             <h2 className="text-xl font-semibold leading-tight tracking-tight">
               {t("sections.offer.title")}

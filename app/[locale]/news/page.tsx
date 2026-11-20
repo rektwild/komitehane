@@ -132,7 +132,7 @@ export default async function NewsPage({params, searchParams}: NewsPageProps) {
       />
 
       <PageWithAside>
-        <div className="flex min-w-0 flex-1 flex-col pb-8">
+        <div className="flex min-w-0 flex-1 flex-col gap-8 pb-12">
           <JsonLd
             data={getNewsCollectionJsonLd({
               locale,
@@ -154,12 +154,12 @@ export default async function NewsPage({params, searchParams}: NewsPageProps) {
           />
 
           <header className="max-w-3xl">
-            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               {t("title")}
             </h1>
           </header>
 
-          <div className="mt-8 min-w-0">
+          <div className="min-w-0">
             <NewsListing
               articles={result.articles}
               categories={result.categories}

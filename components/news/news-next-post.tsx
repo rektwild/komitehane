@@ -27,12 +27,12 @@ export async function NewsNextPost({ article, locale }: NewsNextPostProps) {
         <span>{t("nextPost")}</span>
         <ArrowRightIcon aria-hidden="true" className="size-4 shrink-0" />
       </div>
-      <div className="mt-1.5 line-clamp-2 text-balance text-lg font-medium leading-snug text-foreground transition-colors group-hover:text-foreground sm:text-xl">
+      <div className="mt-2 line-clamp-2 text-balance text-base font-semibold leading-snug text-foreground sm:text-lg">
         {article.title}
       </div>
       <time
         dateTime={article.publishedAt}
-        className="mt-1.5 block text-sm font-normal leading-6 text-muted-foreground"
+        className="mt-2 block text-sm font-normal leading-6 text-muted-foreground"
       >
         {formattedDate}
       </time>
