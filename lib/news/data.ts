@@ -64,6 +64,22 @@ function publicWhere(): Where {
   };
 }
 
+/**
+ * Public articles that have a translation in the queried locale. `_status`
+ * and `publishedAt` are not localized, so without the localized checks an
+ * untranslated article still counts toward totals and pagination (e.g. the
+ * English list reported pages that rendered empty).
+ */
+function publicLocalizedWhere(): Where {
+  return {
+    and: [
+      publicWhere(),
+      {slug: {exists: true}},
+      {title: {exists: true}},
+    ],
+  };
+}
+
 function getReadingMinutes(content: Article["content"]): number {
   const text = convertLexicalToPlaintext({data: content});
   const words = text.trim() ? text.trim().split(/\s+/u).length : 0;
@@ -186,7 +202,7 @@ export async function getHomepageNews(
     populate: newsPopulate,
     overrideAccess: false,
     sort: "-publishedAt",
-    where: publicWhere(),
+    where: publicLocalizedWhere(),
   });
   const summaries = normalizeSummaries(result.docs);
   const sections = new Map<number, HomeNewsResult["sections"][number]>();
@@ -233,7 +249,7 @@ export async function getNewsListing({
   const payload = await getPayload({config: configPromise});
   const normalizedQuery = query.trim().slice(0, 120);
   const safePage = Number.isFinite(page) && page > 0 ? Math.floor(page) : 1;
-  const base = publicWhere();
+  const base = publicLocalizedWhere();
   const filters: Where[] = [base];
 
   if (category) {
@@ -359,7 +375,7 @@ export const getNewsArticle = cache(async function getNewsArticle(
     limit: 1,
     populate: newsPopulate,
     overrideAccess: false,
-    where: {and: [publicWhere(), {slug: {equals: slug}}]},
+    where: {and: [publicLocalizedWhere(), {slug: {equals: slug}}]},
   });
   const article = result.docs[0];
   if (!article) return null;
@@ -376,7 +392,7 @@ export const getNewsArticle = cache(async function getNewsArticle(
     populate: newsPopulate,
     limit: 1,
     overrideAccess: false,
-    where: {and: [publicWhere(), {id: {equals: article.id}}]},
+    where: {and: [publicLocalizedWhere(), {id: {equals: article.id}}]},
   });
   const translation = other.docs[0] && getSummaryFields(other.docs[0]);
 
@@ -397,7 +413,7 @@ export async function getRelatedNewsArticles({
   limit = 3,
 }: RelatedNewsParams): Promise<NewsSummary[]> {
   const payload = await getPayload({config: configPromise});
-  const base = publicWhere();
+  const base = publicLocalizedWhere();
   const excludeCurrent = {slug: {not_in: [slug]}};
 
   let categoryId: number | null = null;
@@ -464,7 +480,7 @@ export async function getRelatedNewsArticles({
 
 export async function getNewsCategories(locale: NewsLocale): Promise<NewsCategory[]> {
   const payload = await getPayload({config: configPromise});
-  const base = publicWhere();
+  const base = publicLocalizedWhere();
   const result = await payload.find({
     collection: "articles",
     locale,
@@ -493,7 +509,7 @@ export async function getNextNewsArticle({
   publishedAt,
 }: NextNewsParams): Promise<NewsSummary | null> {
   const payload = await getPayload({config: configPromise});
-  const base = publicWhere();
+  const base = publicLocalizedWhere();
 
   // Find the chronologically next (older) published article.
   // Supabase-style "Next post" points to the next item in reverse-chronological order.
@@ -544,7 +560,7 @@ export async function getNewsSitemapEntries(): Promise<NewsSitemapEntry[]> {
       pagination: false,
       overrideAccess: false,
       sort: "-updatedAt",
-      where: publicWhere(),
+      where: publicLocalizedWhere(),
     });
     for (const article of result.docs) {
       if (!getSummaryFields(article)) continue;
@@ -575,7 +591,7 @@ async function fetchNewsTickerItems(
       limit: TICKER_LIMIT,
       sort: "-publishedAt",
       overrideAccess: false,
-      where: publicWhere(),
+      where: publicLocalizedWhere(),
     });
 
     const items: NewsTickerItem[] = [];
@@ -621,7 +637,7 @@ async function fetchLatestNewsLinks(
       limit: ASIDE_LINKS_LIMIT,
       sort: "-publishedAt",
       overrideAccess: false,
-      where: publicWhere(),
+      where: publicLocalizedWhere(),
     });
 
     const items: NewsTickerItem[] = [];
@@ -659,7 +675,7 @@ const AUTHOR_ARTICLES_LIMIT = 48;
 const newsLocales = ["tr", "en"] as const satisfies readonly NewsLocale[];
 
 function authorArticlesWhere(authorId: number): Where {
-  return {and: [publicWhere(), {author: {equals: authorId}}]};
+  return {and: [publicLocalizedWhere(), {author: {equals: authorId}}]};
 }
 
 /**
