@@ -68,7 +68,6 @@
   "Tools": {
     "title": "Araçlar",
     "heading": "Not Hesaplama Araçları",
-    "intro": "Komite ve vize notlarını ağırlıklarıyla girerek dönem sonu notunu hesaplayabilir ya da dersi geçmek için finalden almanız gereken minimum notu bulabilirsiniz. Araçlar ücretsizdir, kayıt gerektirmez ve hesaplamalar yalnızca tarayıcınızda yapılır.",
     "description": "Not hesaplama araçlarıyla akademik hedeflerini daha kolay planla.",
     "categories": {
       "midterm": "Vize hesaplama araçları",

@@ -68,7 +68,6 @@
   "Tools": {
     "title": "Tools",
     "heading": "Grade Calculators",
-    "intro": "Enter committee or midterm grades with their weights to calculate your end-of-term grade, or find the minimum final exam grade you need to pass. The tools are free, need no sign-up, and every calculation runs only in your browser.",
     "description": "Plan your academic goals with practical grade calculators.",
     "categories": {
       "midterm": "Midterm calculation tools",

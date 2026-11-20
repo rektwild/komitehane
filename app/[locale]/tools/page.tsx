@@ -75,9 +75,6 @@ export default async function ToolsPage({searchParams}: ToolsPageProps) {
             <h1 className={typography.display}>
               {t("heading")}
             </h1>
-            <p className="mt-3 text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              {t("intro")}
-            </p>
           </header>
 
           <ToolsCatalog
