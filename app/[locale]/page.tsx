@@ -8,15 +8,12 @@ import {HomeToolsCategorySection} from "@/components/home-tools-category-section
 import {PageBreadcrumb} from "@/components/layout/page-breadcrumb";
 import {PageWithAside} from "@/components/layout/page-with-aside";
 import {LatestNewsCarousel} from "@/components/news/latest-news-carousel";
-import {Button} from "@/components/ui/button";
-import {Link} from "@/i18n/navigation";
 import {getLocalizedMetadata} from "@/lib/seo/metadata";
 import {getWebPageJsonLd} from "@/lib/seo/structured-data";
 import {absoluteUrl} from "@/lib/seo/urls";
 import {getHomepageNews} from "@/lib/news/data";
 import type {NewsLocale} from "@/lib/news/types";
-import {toolCategories, tools} from "@/lib/tools";
-import {typography} from "@/lib/typography";
+import {toolCategories} from "@/lib/tools";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Metadata.home");
@@ -31,10 +28,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const [t, metadata, toolsT] = await Promise.all([
+  const [t, metadata] = await Promise.all([
     getTranslations("Home"),
     getTranslations("Metadata.home"),
-    getTranslations("Tools"),
   ]);
   const locale = (await getLocale()) as NewsLocale;
   const news = await getHomepageNews(locale);
@@ -59,30 +55,7 @@ export default async function Home() {
               description: metadata("description"),
             })}
           />
-          <header className="flex min-w-0 flex-col gap-4">
-            <h1 className={typography.display}>
-              {t("heading")}
-            </h1>
-            <p className="max-w-3xl text-pretty text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
-              {t("intro")}
-            </p>
-            <nav aria-label={t("quickLinksLabel")}>
-              <ul className="flex flex-wrap gap-2">
-                {tools.map((tool) => (
-                  <li key={tool.key}>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      nativeButton={false}
-                      render={<Link href={tool.href} />}
-                    >
-                      {toolsT(`items.${tool.key}.title`)}
-                    </Button>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </header>
+          <h1 className="sr-only">{t("heading")}</h1>
 
           <section aria-label={t("latestNewsLabel")} className="min-w-0">
             <LatestNewsCarousel articles={news.latest} locale={locale} />
