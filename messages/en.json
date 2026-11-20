@@ -34,7 +34,11 @@
   },
   "Home": {
     "title": "Komitehane",
-    "description": "Committee and midterm grade calculators, TUS and medical education news for medical students in Turkey."
+    "description": "Committee and midterm grade calculators, TUS and medical education news for medical students in Turkey.",
+    "heading": "Grade calculators and TUS news for medical students",
+    "intro": "Calculate your committee and midterm grades, find out what you need on your final, and follow TUS and medical education news in one place. All tools are free and need no sign-up.",
+    "quickLinksLabel": "Featured tools",
+    "latestNewsLabel": "Latest news"
   },
   "Aside": {
     "label": "Related content",

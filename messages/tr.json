@@ -34,7 +34,11 @@
   },
   "Home": {
     "title": "Komitehane",
-    "description": "Tıp fakültesi öğrencileri için komite ve vize not hesaplama araçları, TUS ve tıp eğitimi haberleri."
+    "description": "Tıp fakültesi öğrencileri için komite ve vize not hesaplama araçları, TUS ve tıp eğitimi haberleri.",
+    "heading": "Tıp öğrencileri için not hesaplama araçları ve TUS haberleri",
+    "intro": "Komite ve vize notunu hesapla, finalden kaç alman gerektiğini öğren; TUS ve tıp eğitimi gündemini tek yerden takip et. Tüm araçlar ücretsizdir ve kayıt gerektirmez.",
+    "quickLinksLabel": "Öne çıkan araçlar",
+    "latestNewsLabel": "Son haberler"
   },
   "Aside": {
     "label": "Yan içerikler",

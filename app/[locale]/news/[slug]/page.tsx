@@ -16,6 +16,7 @@ import {NewsRightRail} from "@/components/news/news-right-rail";
 import {NewsShareActions} from "@/components/news/news-share-actions";
 import {NewsTopics} from "@/components/news/news-topics";
 import {RelatedNews} from "@/components/news/related-news";
+import {RelatedTools} from "@/components/news/related-tools";
 import {PageBreadcrumb} from "@/components/layout/page-breadcrumb";
 import {getPathname} from "@/i18n/navigation";
 import {
@@ -218,6 +219,7 @@ export default async function NewsArticlePage({params}: NewsArticlePageProps) {
         </div>
 
         <RelatedNews articles={relatedArticles} locale={locale} />
+        <RelatedTools />
       </article>
     </>
   );
