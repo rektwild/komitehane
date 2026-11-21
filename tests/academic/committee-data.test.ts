@@ -21,7 +21,7 @@ describe("committee dataset", () => {
   });
   it("only cites documents that were checked and hashed", () => {
     const verified = Object.values(verification.schemes).filter(x => x.status === "VERIFIED").length;
-    expect(data.versions.length).toBeLessThanOrEqual(verified + verification.derived.length);
+    expect(data.versions.length).toBeLessThanOrEqual(verified + verification.derived.length + verification.researched.length);
     for (const v of data.versions) for (const s of v.sources) {
       expect(verification.documents[s.url], s.url).toMatch(/^[0-9a-f]{64}$/);
       expect(s.verifiedAt).toBe(`${verification.checkedAt}T00:00:00.000Z`);

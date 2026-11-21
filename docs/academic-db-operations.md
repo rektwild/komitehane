@@ -102,7 +102,11 @@ Only rules that were compared with their official documents are included.
 `data/academic/committee-2026-27-verification.json` records that check: the
 SHA-256 of every downloaded document and, per scheme, VERIFIED (with the
 finding) or UNVERIFIED (e.g. Afyonkarahisar SBÜ, whose server sends an
-incomplete TLS chain). Its `derived` list adds programs the export has no rule for
+incomplete TLS chain). Its `researched` list holds rules found directly in official
+2026-27 documents (formula, passing grade, the year's committee list/AKTS and
+hashed sources); only programs whose committee list is explicitly for 2026-27
+and whose formula is in a currently published regulation are included. Its
+`derived` list adds programs the export has no rule for
 (e.g. Atatürk and AYBÜ Tıp (İngilizce)) only where the documents show they
 follow the same verified rule. Regenerate the dataset with
 `pnpm academic:convert:committee <export-dir> data/academic/committee-2026-27-verification.json data/academic/committee-2026-27.json`
