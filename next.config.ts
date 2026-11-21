@@ -47,7 +47,35 @@ function getCanonicalHostRedirects() {
   ];
 }
 
+/**
+ * Baseline security headers. The site is self-hosted behind Traefik, so
+ * nothing upstream adds these. A CSP is deliberately left out: AdSense, GA4
+ * and the Payload admin need a tuned policy that should ship on its own.
+ */
+function getSecurityHeaders() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  const servesHttps =
+    process.env.NODE_ENV === "production" && siteUrl?.startsWith("https://");
+
+  return [
+    {key: "X-Content-Type-Options", value: "nosniff"},
+    {key: "Referrer-Policy", value: "strict-origin-when-cross-origin"},
+    // Blocks clickjacking of the site and the /admin login; same-origin
+    // framing (Payload live preview) keeps working.
+    {key: "X-Frame-Options", value: "SAMEORIGIN"},
+    {key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()"},
+    // No includeSubDomains/preload: other subdomains may not serve HTTPS.
+    ...(servesHttps
+      ? [{key: "Strict-Transport-Security", value: "max-age=31536000"}]
+      : []),
+  ];
+}
+
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
+  async headers() {
+    return [{source: "/:path*", headers: getSecurityHeaders()}];
+  },
   images: mediaHostname
     ? {
         remotePatterns: [

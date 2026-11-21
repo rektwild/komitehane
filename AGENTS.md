@@ -1,6 +1,6 @@
 <!-- BEGIN:nextjs-agent-rules -->
 
-# This is NOT the Next.js you know
+## This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
 
@@ -41,6 +41,7 @@ Next.js 16.4.6 (App Router, Turbopack) + React 19 + Tailwind CSS v4 + shadcn/ui 
 - Typography: `lib/typography.ts` is the shared type scale (`display` for the page h1, `title` for listing-section h2, `subtitle` for prose-page h2, `heading` for card/h3 titles, `label`, `lead`, `body`, `meta`, `eyebrow`). Use it via `cn(typography.x, layoutClasses)` instead of hand-writing size/weight/tracking combos.
 - Fonts: Wix Madefor Text + JetBrains Mono via `next/font/google` in `app/[locale]/layout.tsx`, mapped in `globals.css` as `--font-sans: var(--font-default)` / `--font-mono: var(--font-jetbrains-mono)`.
 - Layout uses Next 16 typed slot props (`LayoutProps<"/[locale]">` in `app/[locale]/layout.tsx`).
+- Security headers live in `getSecurityHeaders` in `next.config.ts` (nosniff, Referrer-Policy, `X-Frame-Options: SAMEORIGIN`, Permissions-Policy, HSTS only for a production `https://` `NEXT_PUBLIC_SITE_URL`) plus `poweredByHeader: false`; the site is self-hosted behind Traefik, so nothing upstream adds them. `pnpm seo:audit` asserts them. No CSP yet — AdSense/GA4/Payload admin need a tuned policy.
 - The i18n middleware is the root `proxy.ts` (not `middleware.ts`, deprecated in Next 16); its matcher excludes `api|admin|trpc|_next|og/|favicon.ico|sitemap.xml|robots.txt|llms.txt|ads.txt|indexnow` and dotted paths (static assets). `og/` is the prerendered social-image route `app/og/[locale]/[key]/route.tsx`.
 
 ## SEO, robots, indexability

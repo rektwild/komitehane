@@ -40,6 +40,18 @@ async function fetchText(pathname, options = {}) {
   };
 }
 
+function assertSecurityHeaders(label, response) {
+  const expected = {
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-frame-options": "SAMEORIGIN",
+  };
+  for (const [name, value] of Object.entries(expected)) {
+    if (response.headers.get(name) !== value) fail(`${label}: ${name} header is not ${value}`);
+  }
+  if (response.headers.has("x-powered-by")) fail(`${label}: x-powered-by header is exposed`);
+}
+
 function firstMatch(pattern, value) {
   return value.match(pattern)?.[1] || "";
 }
@@ -351,6 +363,7 @@ async function run() {
       fail(`/${locale}: expected 200, received ${page.response.status}`);
       continue;
     }
+    assertSecurityHeaders(`/${locale}`, page.response);
     assertPage(locale, page.body);
   }
 
