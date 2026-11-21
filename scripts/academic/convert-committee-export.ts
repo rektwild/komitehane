@@ -94,11 +94,28 @@ const versionRow = z.object({
   source_key: z.string(), scheme_key: z.string(), version_number: z.number().int().positive(), passing_grade: z.number().nullable(),
   passing_grade_status: z.string(), publishable_candidate: z.boolean(), weights_complete: z.boolean(),
 });
+/**
+ * Record of a person-or-session check of each rule against its official
+ * documents. Only schemes marked VERIFIED are converted, and only sources whose
+ * document hash was recorded during that check are kept.
+ */
+export const verificationRecord = z.object({
+  checkedAt: z.iso.date(),
+  method: z.string().min(1).max(2000),
+  documents: z.record(z.url(), z.string().regex(/^[0-9a-f]{64}$/)),
+  schemes: z.record(z.string(), z.object({
+    status: z.enum(["VERIFIED", "UNVERIFIED", "MISMATCH"]),
+    finding: z.string().min(1).max(1000),
+    sources: z.array(z.object({url: z.url(), type: z.string().min(1).max(100), title: z.string().max(500), note: z.string().max(1500)}).strict()).optional(),
+  }).strict()),
+}).strict();
+export type VerificationRecord = z.infer<typeof verificationRecord>;
+
 async function jsonl<T>(file: string, schema: z.ZodType<T>): Promise<T[]> {
   return (await readFile(file, "utf8")).split("\n").filter(l => l.trim()).map(l => schema.parse(JSON.parse(l)));
 }
 
-export async function convertCommitteeExport(dir: string): Promise<CommitteeDataset> {
+export async function convertCommitteeExport(dir: string, verification: VerificationRecord): Promise<CommitteeDataset> {
   const csv = async (name: string) => parseCsv(await readFile(path.join(dir, name), "utf8"));
   const [universities, faculties, programs, components, sources] = await Promise.all(
     ["universities.csv", "faculties.csv", "programs.csv", "committee_assessment_components.csv", "committee_grading_rule_sources.csv"].map(csv));
@@ -169,12 +186,21 @@ export async function convertCommitteeExport(dir: string): Promise<CommitteeData
     try { weights = roundWeights([...committees, ...finals].map(c => ({weightPercent: c.weight_percent, expression: c.weight_expression}))); }
     catch (e) { exclude((e as Error).message); continue; }
 
+    const check = verification.schemes[s.source_key];
+    if (!check || check.status !== "VERIFIED") { exclude(`NOT_VERIFIED_AGAINST_SOURCE: ${check?.finding ?? "no verification record"}`); continue; }
+    const verifiedAt = `${verification.checkedAt}T00:00:00.000Z`, prefix = `Doğrulama ${verification.checkedAt}: ${check.finding}`;
     const seen = new Set<string>();
-    const accepted = (sourcesByVersion.get(v.source_key) ?? []).filter(r => {
-      if (r.accessibility !== "ACCESSIBLE" || !r.source_url.startsWith("https://") || seen.has(r.source_url) || !/^\d{4}-\d{2}-\d{2}$/.test(r.verified_at)) return false;
-      seen.add(r.source_url); return true;
+    const accepted = [
+      ...(sourcesByVersion.get(v.source_key) ?? []).filter(r => r.accessibility === "ACCESSIBLE").map(r => ({
+        url: r.source_url, type: r.source_type, title: r.source_title.slice(0, 500),
+        note: [r.academic_year && `Yıl: ${r.academic_year}`, r.location && `Konum: ${r.location}`, r.evidence && `Kanıt: ${r.evidence}`].filter(Boolean).join(" | "),
+      })),
+      ...(check.sources ?? []),
+    ].filter(r => {
+      if (!r.url.startsWith("https://") || seen.has(r.url) || !verification.documents[r.url]) return false;
+      seen.add(r.url); return true;
     });
-    if (!accepted.length) { exclude("NO_ACCESSIBLE_HTTPS_SOURCE"); continue; }
+    if (!accepted.length) { exclude("NO_VERIFIED_HTTPS_SOURCE"); continue; }
 
     const rule: DraftRule = {
       id: stableUuid(`komitehane:${v.source_key}`),
@@ -186,9 +212,8 @@ export async function convertCommitteeExport(dir: string): Promise<CommitteeData
         {type: "FINAL" as const, position: 1, weightPercent: weights[committees.length]},
       ],
       sources: accepted.map(r => ({
-        url: r.source_url, type: r.source_type, verifiedAt: `${r.verified_at}T00:00:00.000Z`,
-        title: r.source_title.slice(0, 500),
-        note: [r.academic_year && `Yıl: ${r.academic_year}`, r.location && `Konum: ${r.location}`, r.evidence && `Kanıt: ${r.evidence}`].filter(Boolean).join(" | ").slice(0, 2000),
+        url: r.url, type: r.type, verifiedAt, title: r.title,
+        note: `${prefix} | SHA-256: ${verification.documents[r.url]} | ${r.note}`.slice(0, 2000),
       })),
     };
     const errors = validateForPublication("COMMITTEE", rule.passingGrade,
@@ -202,15 +227,16 @@ export async function convertCommitteeExport(dir: string): Promise<CommitteeData
     "All catalog entries are inactive and all versions are DRAFT; nothing is published by the import.",
     "The catalog lists every Tıp program in the export (ÖSYM 2026 Tablo-4, KKTC excluded), including programs without a committee rule.",
     "Weights with more than two decimals (equal or AKTS-weighted shares such as 60/7) are rounded to two decimals by largest remainder so each version totals exactly 100.00.",
-    "Sources are those the research export marked ACCESSIBLE; each must still be checked by a person before `pnpm academic:publish`.",
+    `Every included version was compared with its official documents on ${verification.checkedAt} (see data/academic/committee-2026-27-verification.json); a person must still approve each one before \`pnpm academic:publish\`.`,
   ];
   return committeeDataset.parse(out);
 }
 
 if (process.argv[1]?.endsWith("convert-committee-export.ts")) {
-  const [dir, outFile] = process.argv.slice(2);
-  if (!dir || !outFile) throw new Error("Usage: pnpm academic:convert:committee <export-dir> <out.json>");
-  const data = await convertCommitteeExport(dir);
+  const [dir, verificationFile, outFile] = process.argv.slice(2);
+  if (!dir || !verificationFile || !outFile) throw new Error("Usage: pnpm academic:convert:committee <export-dir> <verification.json> <out.json>");
+  const verification = verificationRecord.parse(JSON.parse(await readFile(verificationFile, "utf8")));
+  const data = await convertCommitteeExport(dir, verification);
   await writeFile(outFile, JSON.stringify(data, null, 2) + "\n");
   console.log(`Wrote ${outFile}: ${data.universities.length} universities, ${data.faculties.length} faculties, ${data.programs.length} programs, ${data.versions.length} draft committee versions, ${data.excluded.length} excluded schemes.`);
 }

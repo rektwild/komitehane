@@ -1,0 +1,181 @@
+{
+  "checkedAt": "2026-11-21",
+  "method": "Each official document was downloaded over verified HTTPS, converted to text (scanned AYBÜ pages read as images) and the formula, passing grade and committee list/weights were compared with the export by hand. Thresholds the calculator does not model (final minimums, per-committee minimums, exemptions) are noted but not applied.",
+  "documents": {
+    "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/03/2026-EG%CC%86I%CC%87TI%CC%87M-O%CC%88G%CC%86RETI%CC%87M-VE-SINAV-UYGULAMA-ESASLARI.pdf": "6b44f251cebc3d8f79fcabe8fd02a2b4731cdfb1c5d104ceebbfa58ac906262e",
+    "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/03/Eg%CC%86itim-O%CC%88g%CC%86retim-ve-Sinav-Yo%CC%88netmelig%CC%86i.pdf": "194ff510d381983e23a4462eecfefe42836ed8a0db0b454a3ee133852c6ed1c1",
+    "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/11/2026-2027-Turkce-ve-Ingilizce-Tip-1-2-3-Sinif-Ders-Programi-18-11-2026.xlsx": "978e888f14163b84f4f2a2aab29d6f36eb33c062298116abb9fdfdff21a64411",
+    "https://aybu.edu.tr/GetFile?id=Upload%2Fc4a6c382-0c0a-4b18-b1a7-47254b768964.pdf": "750aa5ca80c35dc0f9e1a30743781d9c4ca71e427010554e845b235fd060ba6c",
+    "https://aybu.edu.tr/GetFile?id=Upload/0b23c87d-3867-452a-8a6a-ef4a83c67073.pdf": "6ffe1c53051b43921c870b1b598d4b8e5eb79a00539bf7540b78c77de3e2aa5a",
+    "https://aybu.edu.tr/GetFile?id=Upload/d508ec32-41a4-4e83-a1d9-0a0b0be06439.pdf": "2e51aade2c3095e05dc758c9b21efb2b1d34a7d641198d8bcfefbb1d5ae58028",
+    "https://baunwebapi.balikesir.edu.tr/uploads/1784893934635.pdf": "d83e25e3c525f62b82fa2d85cd4120c8007546fd3c312c5ed80b1b836d5ef3f9",
+    "https://fakulte.adu.edu.tr/med/webfolders/files/20260818134926-CDN9UOMUS23X9NOG35AJ-KARADEVECI-507850912.pdf": "b1431ee679eb27d0052bf70a48fe73bc5a02cc5098a4b24fd3ad9bbb04b64a0a",
+    "https://fakulte.adu.edu.tr/med/webfolders/files/20260818134943-Q30NC8Q7K3Y9GNWZYE0T-KARADEVECI-507850912.pdf": "1d5a0d0354fa28ecca04293a952d2afd293d6321cb4ebf014490fe79f1de311c",
+    "https://fakulte.adu.edu.tr/med/webfolders/files/20260818134959-ALT5WBCTB0KF2J10EBLZ-KARADEVECI-507850912.pdf": "ea3f97aa8e1055676ef095fc59b7622f6c5aadf0d6eb6c81690c6bbad04af7d2",
+    "https://gulhanetip.sbu.edu.tr/uploads/7c8ef55f-a774-7277-092e-3a0814c9d6d1/gtf_2026-2027_egitim_ogretim_yl_egitim_program.pdf": "44317b6cdf43246a125036b632e8cbd713be55cd668293940bca04339ad35506",
+    "https://oidb.alanya.edu.tr/media/3gihe1ql/2026-2027-egitim-ogretim-yili-tip-fakultesi-akademik-takvimi.pdf": "5068844e20dbeab6a4db0cba538b3dc563f67266a7b3de9ef96bfcb26ce9a832",
+    "https://sbu.edu.tr/uploads/7500448e-ff26-9c2d-bcac-3a0814c63405/2026-2027_mufredat.pdf": "64cffd1f25f3991fb9783716f195381818929fc3bc750835f7dba4b82cacf693",
+    "https://sbu.edu.tr/uploads/7500448e-ff26-9c2d-bcac-3a0814c63405/hamidiye_uluslararasi_tip_fakultesi_egitim_ogretim_ve_sinav_yonergesi_83f62ff16d304eb8a3595c3b6f14092b.pdf": "a1753f490e4f43d0827427de578c5419054a32d58a1dcf1f74dfcaee8f897ddd",
+    "https://sbu.edu.tr/uploads/7c8ef55f-a774-7277-092e-3a0814c9d6d1/gtfeosyrevize_858c12b552bc45a2b41eb030ccfa9406.pdf": "2b2da60d71a48fbbb2775ce4376360c8c63023cdb654cb4b3017d84010125b1b",
+    "https://static.adiyaman.edu.tr/files/13/(6019871)27%20ek%C4%B1m%202026%20donem%20%C4%B1%C4%B1%20ders%20programi%20ocm%20sorumlu%20ogr.%20uyeleri%20yazilmasi%20degisiklik.pdf": "729f258a32367b0247ec4fea2cd55c25d9a0b9a4f26f3aba8c3b34868b7cad4d",
+    "https://static.adiyaman.edu.tr/files/13/2026-2027%20do%CC%88nem%201%20%2011%20eylu%CC%88l%20davut%20hocadan%20sonra%20yap%C4%B1lan%20du%CC%88zenleme%204%20kas%C4%B1m.pdf": "2b89767659d476b8e8d40694e2ea0ffb91c125360d17c9a37297049829e4417c",
+    "https://static.adiyaman.edu.tr/files/13/2026-27%20y%C4%B1l%C4%B1%20d%C3%B6nem%203%20program%C4%B1-.pdf": "138750428f55ce743734e7ed32894a2763ee0f7298e156b3f8e96f90e933fe0b",
+    "https://static.adiyaman.edu.tr/files/13/ad%C4%B1yaman%20%C3%BCniversitesi%20t%C4%B1p%20fak%C3%BCltesi%20e%C4%9Fitim-%C3%B6%C4%9Fretim%20ve%20s%C4%B1nav%20y%C3%B6netmeli%C4%9Fi.pdf": "8e8c7eb7244fdd23f050a2ba417b8113b8741743249c5c6eacf0aa7e6ca1c4de",
+    "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/hamdye_tp_fakultes_2026-2027_mufredat-01092026_abxlsx.pdf": "aecc1b0a6fabe0a505d9edc413b4029798ce63de4f23c6fbafc9993b527fe635",
+    "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/htf-egitim-ogretim-ve-sinav-yonergesi-27082026.pdf": "ad2cb398334b955d8907b21bea4c04d47ff708e7207622b64664dec3fc2ce54e",
+    "https://www.agri.edu.tr/detail.aspx?bid=500&dil=tr-TR&id=5941&tid=7": "cba9d7ca6b3e85697cce15362aab44dc511f4baac286a680dbac18f20b26f9f1",
+    "https://www.alanya.edu.tr/media/wuairk3g/yo010-tip-fakultesi-egitim-ogretim-ve-sinav-yonergesi.pdf": "c36703829d2c78d1bb13b09206b3e32bea634696a5fb1343de11ac90a09ce3bf",
+    "https://www.mevzuat.gov.tr/MevzuatMetin/yonetmelik/8.5.19361.pdf": "43b24d8bf57c21a69ca821aad6947025fae49448eed03c6699862fe93e4a6398",
+    "https://www.resmigazete.gov.tr/eskiler/2023/03/20230305-1.htm": "b430d5b1c7b5f6faf0d749135c766e7c290a5849548b484346e1c907b9e9abe4"
+  },
+  "schemes": {
+    "gs:adiyaman-universitesi:tip-fakultesi:tip:2026:y1:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönetmelik Madde 24(2)-(3): ders kurulu puanları ortalamasının %60'ı + dönem sonu final/bütünleme %40; geçme 60, finalden en az 50. 2026-2027 Dönem I/II/III programlarında sırasıyla 5, 6 ve 7 ders kurulu."
+    },
+    "gs:adiyaman-universitesi:tip-fakultesi:tip:2026:y2:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönetmelik Madde 24(2)-(3): ders kurulu puanları ortalamasının %60'ı + dönem sonu final/bütünleme %40; geçme 60, finalden en az 50. 2026-2027 Dönem I/II/III programlarında sırasıyla 5, 6 ve 7 ders kurulu."
+    },
+    "gs:adiyaman-universitesi:tip-fakultesi:tip:2026:y3:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönetmelik Madde 24(2)-(3): ders kurulu puanları ortalamasının %60'ı + dönem sonu final/bütünleme %40; geçme 60, finalden en az 50. 2026-2027 Dönem I/II/III programlarında sırasıyla 5, 6 ve 7 ders kurulu."
+    },
+    "gs:afyonkarahisar-saglik-bilimleri-universitesi:tip-fakultesi:tip:2026:y1:annual:committee": {
+      "status": "UNVERIFIED",
+      "finding": "tip.afsu.edu.tr belgeleri okunamadı: sunucu TLS ara sertifikasını (Sectigo OV R36) göndermiyor; doğrulama kapatılmadı. Kural belgeyle karşılaştırılmadan eklenmez."
+    },
+    "gs:afyonkarahisar-saglik-bilimleri-universitesi:tip-fakultesi:tip:2026:y2:annual:committee": {
+      "status": "UNVERIFIED",
+      "finding": "tip.afsu.edu.tr belgeleri okunamadı: sunucu TLS ara sertifikasını (Sectigo OV R36) göndermiyor; doğrulama kapatılmadı. Kural belgeyle karşılaştırılmadan eklenmez."
+    },
+    "gs:afyonkarahisar-saglik-bilimleri-universitesi:tip-fakultesi:tip:2026:y3:annual:committee": {
+      "status": "UNVERIFIED",
+      "finding": "tip.afsu.edu.tr belgeleri okunamadı: sunucu TLS ara sertifikasını (Sectigo OV R36) göndermiyor; doğrulama kapatılmadı. Kural belgeyle karşılaştırılmadan eklenmez."
+    },
+    "gs:agri-ibrahim-cecen-universitesi:tip-fakultesi:tip:2026:y1:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "RG 05.03.2023/32123 Madde 21(1): ders grupları notları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ders bazlı %50 baraj ve ≥70 muafiyet hesaba katılmadı. 2026-2027 sınav takviminde 1-3. sınıflar için Kurul 1-6."
+    },
+    "gs:agri-ibrahim-cecen-universitesi:tip-fakultesi:tip:2026:y2:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "RG 05.03.2023/32123 Madde 21(1): ders grupları notları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ders bazlı %50 baraj ve ≥70 muafiyet hesaba katılmadı. 2026-2027 sınav takviminde 1-3. sınıflar için Kurul 1-6."
+    },
+    "gs:agri-ibrahim-cecen-universitesi:tip-fakultesi:tip:2026:y3:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "RG 05.03.2023/32123 Madde 21(1): ders grupları notları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ders bazlı %50 baraj ve ≥70 muafiyet hesaba katılmadı. 2026-2027 sınav takviminde 1-3. sınıflar için Kurul 1-6."
+    },
+    "gs:alanya-alaaddin-keykubat-universitesi:tip-fakultesi:tip:2026:y1:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönerge Madde 25(1): ders kurulu puanları ortalamasının %60'ı + yıl sonu/bütünleme %40; en az CC (60.00-64.99). 2026-2027 akademik takviminde Dönem I ve II için I-V. Ders Kurulu."
+    },
+    "gs:alanya-alaaddin-keykubat-universitesi:tip-fakultesi:tip:2026:y2:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönerge Madde 25(1): ders kurulu puanları ortalamasının %60'ı + yıl sonu/bütünleme %40; en az CC (60.00-64.99). 2026-2027 akademik takviminde Dönem I ve II için I-V. Ders Kurulu."
+    },
+    "gs:ankara-yildirim-beyazit-universitesi:tip-fakultesi:tip:2026:y1:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite."
+    },
+    "gs:ankara-yildirim-beyazit-universitesi:tip-fakultesi:tip:2026:y2:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite."
+    },
+    "gs:ankara-yildirim-beyazit-universitesi:tip-fakultesi:tip:2026:y3:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite."
+    },
+    "gs:ataturk-universitesi:tip-fakultesi:tip:2026:y1:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul."
+    },
+    "gs:ataturk-universitesi:tip-fakultesi:tip:2026:y2:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul."
+    },
+    "gs:ataturk-universitesi:tip-fakultesi:tip:2026:y3:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul."
+    },
+    "gs:aydin-adnan-menderes-universitesi:tip-fakultesi:tip:2026:y1:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "2026-2027 Dönem rehberleri 'Not Hesaplama Algoritması': kurul notlarının AKTS ağırlıklı ortalamasının %40'ı + yılsonu/bütünleme %60; geçme 60, yılsonu sınavından en az 50. AKTS: Dönem I 10/12/12/10 (44), Dönem II 10/10/8/12/10/8 (58), Dönem III 10/10/10/9/9/10 (58)."
+    },
+    "gs:aydin-adnan-menderes-universitesi:tip-fakultesi:tip:2026:y2:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "2026-2027 Dönem rehberleri 'Not Hesaplama Algoritması': kurul notlarının AKTS ağırlıklı ortalamasının %40'ı + yılsonu/bütünleme %60; geçme 60, yılsonu sınavından en az 50. AKTS: Dönem I 10/12/12/10 (44), Dönem II 10/10/8/12/10/8 (58), Dönem III 10/10/10/9/9/10 (58).",
+      "sources": [
+        {
+          "url": "https://fakulte.adu.edu.tr/med/webfolders/files/20260818134943-Q30NC8Q7K3Y9GNWZYE0T-KARADEVECI-507850912.pdf",
+          "type": "FACULTY_PROGRAM_BOOK",
+          "title": "Aydın Adnan Menderes Üniversitesi Tıp Fakültesi 2026-2027 Dönem II Eğitim Rehberi",
+          "note": "Dönem II - AKTS Bilgileri tablosu ve Temel Bilimler Not Hesaplama Algoritması (asıl PDF okundu; export'ta yalnız arama özeti vardı)."
+        }
+      ]
+    },
+    "gs:aydin-adnan-menderes-universitesi:tip-fakultesi:tip:2026:y3:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "2026-2027 Dönem rehberleri 'Not Hesaplama Algoritması': kurul notlarının AKTS ağırlıklı ortalamasının %40'ı + yılsonu/bütünleme %60; geçme 60, yılsonu sınavından en az 50. AKTS: Dönem I 10/12/12/10 (44), Dönem II 10/10/8/12/10/8 (58), Dönem III 10/10/10/9/9/10 (58)."
+    },
+    "gs:balikesir-universitesi:tip-fakultesi:tip:2026:y1:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönetmelik Madde 18(1),(3) (RG 26.05.2024 değişik): ders kurulu puanları ortalamasının %60'ı + dönem sonu/bütünleme %40; dönem sonu notu ve dönem sonu sınav notu ayrı ayrı en az CC (60). 2026-2027 planında Dönem 1/2/3 için 4, 4 ve 6 ders kurulu."
+    },
+    "gs:balikesir-universitesi:tip-fakultesi:tip:2026:y2:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönetmelik Madde 18(1),(3) (RG 26.05.2024 değişik): ders kurulu puanları ortalamasının %60'ı + dönem sonu/bütünleme %40; dönem sonu notu ve dönem sonu sınav notu ayrı ayrı en az CC (60). 2026-2027 planında Dönem 1/2/3 için 4, 4 ve 6 ders kurulu."
+    },
+    "gs:balikesir-universitesi:tip-fakultesi:tip:2026:y3:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönetmelik Madde 18(1),(3) (RG 26.05.2024 değişik): ders kurulu puanları ortalamasının %60'ı + dönem sonu/bütünleme %40; dönem sonu notu ve dönem sonu sınav notu ayrı ayrı en az CC (60). 2026-2027 planında Dönem 1/2/3 için 4, 4 ve 6 ders kurulu."
+    },
+    "gs:saglik-bilimleri-universitesi:gulhane-tip-fakultesi:tip-ankara:2026:y1:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "2026-2027 Öğrenci Kılavuzu 'Kurul Ağırlığı (Başarı notuna katkısı)': 1. sınıf %11,44/11,65/14,55/12,84/9,52, 2. sınıf %14,24/9,98/7,28/10,82/8,84/8,84, 3. sınıf %5,97/11,85/11,02/13,18/9,61/8,37; yıl sonu/bütünleme %40. Yönerge: blok başarı notu en az 60."
+    },
+    "gs:saglik-bilimleri-universitesi:gulhane-tip-fakultesi:tip-ankara:2026:y2:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "2026-2027 Öğrenci Kılavuzu 'Kurul Ağırlığı (Başarı notuna katkısı)': 1. sınıf %11,44/11,65/14,55/12,84/9,52, 2. sınıf %14,24/9,98/7,28/10,82/8,84/8,84, 3. sınıf %5,97/11,85/11,02/13,18/9,61/8,37; yıl sonu/bütünleme %40. Yönerge: blok başarı notu en az 60."
+    },
+    "gs:saglik-bilimleri-universitesi:gulhane-tip-fakultesi:tip-ankara:2026:y3:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "2026-2027 Öğrenci Kılavuzu 'Kurul Ağırlığı (Başarı notuna katkısı)': 1. sınıf %11,44/11,65/14,55/12,84/9,52, 2. sınıf %14,24/9,98/7,28/10,82/8,84/8,84, 3. sınıf %5,97/11,85/11,02/13,18/9,61/8,37; yıl sonu/bütünleme %40. Yönerge: blok başarı notu en az 60."
+    },
+    "gs:saglik-bilimleri-universitesi:hamidiye-tip-fakultesi:tip-istanbul:2026:y1:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Hamidiye Tıp ile aynı yönerge ve 2026-2027 müfredatı (Madde 13(2); AKTS 40/52/56)."
+    },
+    "gs:saglik-bilimleri-universitesi:hamidiye-tip-fakultesi:tip-istanbul:2026:y2:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Hamidiye Tıp ile aynı yönerge ve 2026-2027 müfredatı (Madde 13(2); AKTS 40/52/56)."
+    },
+    "gs:saglik-bilimleri-universitesi:hamidiye-tip-fakultesi:tip-istanbul:2026:y3:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Hamidiye Tıp ile aynı yönerge ve 2026-2027 müfredatı (Madde 13(2); AKTS 40/52/56)."
+    },
+    "gs:saglik-bilimleri-universitesi:hamidiye-tip-fakultesi:tip:2026:y1:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönerge (27.08.2026) Madde 13(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60; her kuruldan en az 50 şartı hesaba katılmadı. 2026-2027 müfredatı AKTS: 1. sınıf 7/6/8/5/6/8 (40), 2. sınıf 11/7/12/10/12 (52), 3. sınıf 9/8/6/8/6/9/10 (56)."
+    },
+    "gs:saglik-bilimleri-universitesi:hamidiye-tip-fakultesi:tip:2026:y2:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönerge (27.08.2026) Madde 13(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60; her kuruldan en az 50 şartı hesaba katılmadı. 2026-2027 müfredatı AKTS: 1. sınıf 7/6/8/5/6/8 (40), 2. sınıf 11/7/12/10/12 (52), 3. sınıf 9/8/6/8/6/9/10 (56)."
+    },
+    "gs:saglik-bilimleri-universitesi:hamidiye-tip-fakultesi:tip:2026:y3:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönerge (27.08.2026) Madde 13(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60; her kuruldan en az 50 şartı hesaba katılmadı. 2026-2027 müfredatı AKTS: 1. sınıf 7/6/8/5/6/8 (40), 2. sınıf 11/7/12/10/12 (52), 3. sınıf 9/8/6/8/6/9/10 (56)."
+    },
+    "gs:saglik-bilimleri-universitesi:hamidiye-uluslararasi-tip-fakultesi:tip:2026:y1:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönerge Madde 14(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60. 2026-2027 müfredatı AKTS: 1. sınıf 4/8/8/8/8/8 (44), 2. sınıf 9/9/9/9/10/10 (56), 3. sınıf 7/8/8/8/9/7/9 (56)."
+    },
+    "gs:saglik-bilimleri-universitesi:hamidiye-uluslararasi-tip-fakultesi:tip:2026:y2:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönerge Madde 14(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60. 2026-2027 müfredatı AKTS: 1. sınıf 4/8/8/8/8/8 (44), 2. sınıf 9/9/9/9/10/10 (56), 3. sınıf 7/8/8/8/9/7/9 (56)."
+    },
+    "gs:saglik-bilimleri-universitesi:hamidiye-uluslararasi-tip-fakultesi:tip:2026:y3:annual:committee": {
+      "status": "VERIFIED",
+      "finding": "Yönerge Madde 14(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60. 2026-2027 müfredatı AKTS: 1. sınıf 4/8/8/8/8/8 (44), 2. sınıf 9/9/9/9/10/10 (56), 3. sınıf 7/8/8/8/9/7/9 (56)."
+    }
+  }
+}

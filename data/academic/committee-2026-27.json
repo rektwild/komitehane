@@ -7,7 +7,7 @@
       "All catalog entries are inactive and all versions are DRAFT; nothing is published by the import.",
       "The catalog lists every Tıp program in the export (ÖSYM 2026 Tablo-4, KKTC excluded), including programs without a committee rule.",
       "Weights with more than two decimals (equal or AKTS-weighted shares such as 60/7) are rounded to two decimals by largest remainder so each version totals exactly 100.00.",
-      "Sources are those the research export marked ACCESSIBLE; each must still be checked by a person before `pnpm academic:publish`."
+      "Every included version was compared with its official documents on 2026-11-21 (see data/academic/committee-2026-27-verification.json); a person must still approve each one before `pnpm academic:publish`."
     ]
   },
   "universities": [
@@ -2423,33 +2423,6 @@
       "system": "COMMITTEE"
     },
     {
-      "id": "555aebaf-cf42-5c78-a864-ea171e5db740",
-      "programId": "e2865a76-ee0a-5a58-8a7c-c62c1863cc56",
-      "courseId": null,
-      "academicYearStart": 2026,
-      "classYear": 1,
-      "period": "ANNUAL",
-      "system": "COMMITTEE"
-    },
-    {
-      "id": "1d68a75c-9013-5a52-bf9d-d29db0296f46",
-      "programId": "e2865a76-ee0a-5a58-8a7c-c62c1863cc56",
-      "courseId": null,
-      "academicYearStart": 2026,
-      "classYear": 2,
-      "period": "ANNUAL",
-      "system": "COMMITTEE"
-    },
-    {
-      "id": "aaf26e15-a2cc-503a-bc6c-38b7b4a5c77d",
-      "programId": "e2865a76-ee0a-5a58-8a7c-c62c1863cc56",
-      "courseId": null,
-      "academicYearStart": 2026,
-      "classYear": 3,
-      "period": "ANNUAL",
-      "system": "COMMITTEE"
-    },
-    {
       "id": "2bb9ee59-637b-539e-8cca-f4a25b5f45af",
       "programId": "e28f7447-64f1-559e-af1a-356686a53c83",
       "courseId": null,
@@ -2554,6 +2527,15 @@
       "courseId": null,
       "academicYearStart": 2026,
       "classYear": 1,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "28325d30-c4df-5693-93b9-3abdac500f23",
+      "programId": "3261ddc0-b9ac-5b0b-86d3-cc9fea123621",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 2,
       "period": "ANNUAL",
       "system": "COMMITTEE"
     },
@@ -2744,16 +2726,16 @@
         {
           "url": "https://static.adiyaman.edu.tr/files/13/ad%C4%B1yaman%20%C3%BCniversitesi%20t%C4%B1p%20fak%C3%BCltesi%20e%C4%9Fitim-%C3%B6%C4%9Fretim%20ve%20s%C4%B1nav%20y%C3%B6netmeli%C4%9Fi.pdf",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Adıyaman Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (Resmî Gazete 18.09.2024, sayı 32666)",
-          "note": "Yıl: yürürlükte (yıl sınırı yok) | Konum: PDF s.5, Madde 24(2)-(3) | Kanıt: Dönem geçme notu = ders kurulu sınav puanları ortalamasının %60'ı + dönem sonu final/bütünleme puanının %40'ı; başarı için finalden en az 50 ve dönem sonu başarı notu en az 60. Kurul ortalaması = kurul notları toplamı / kurul sayısı."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 24(2)-(3): ders kurulu puanları ortalamasının %60'ı + dönem sonu final/bütünleme %40; geçme 60, finalden en az 50. 2026-2027 Dönem I/II/III programlarında sırasıyla 5, 6 ve 7 ders kurulu. | SHA-256: 8e8c7eb7244fdd23f050a2ba417b8113b8741743249c5c6eacf0aa7e6ca1c4de | Yıl: yürürlükte (yıl sınırı yok) | Konum: PDF s.5, Madde 24(2)-(3) | Kanıt: Dönem geçme notu = ders kurulu sınav puanları ortalamasının %60'ı + dönem sonu final/bütünleme puanının %40'ı; başarı için finalden en az 50 ve dönem sonu başarı notu en az 60. Kurul ortalaması = kurul notları toplamı / kurul sayısı."
         },
         {
           "url": "https://static.adiyaman.edu.tr/files/13/2026-2027%20do%CC%88nem%201%20%2011%20eylu%CC%88l%20davut%20hocadan%20sonra%20yap%C4%B1lan%20du%CC%88zenleme%204%20kas%C4%B1m.pdf",
           "type": "FACULTY_PROGRAM_BOOK",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Adıyaman Üniversitesi Tıp Fakültesi Dönem 1 2026-2027 Eğitim-Öğretim Yılı Rehberi (4 Kasım düzenlemesi; fakülte sayfasında bağlı güncel sürüm)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.7 \"Ders Kurulları\" tablosu | Kanıt: 2026-2027 Dönem 1: 5 ders kurulu."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 24(2)-(3): ders kurulu puanları ortalamasının %60'ı + dönem sonu final/bütünleme %40; geçme 60, finalden en az 50. 2026-2027 Dönem I/II/III programlarında sırasıyla 5, 6 ve 7 ders kurulu. | SHA-256: 2b89767659d476b8e8d40694e2ea0ffb91c125360d17c9a37297049829e4417c | Yıl: 2026-2027 | Konum: PDF s.7 \"Ders Kurulları\" tablosu | Kanıt: 2026-2027 Dönem 1: 5 ders kurulu."
         }
       ]
     },
@@ -2803,16 +2785,16 @@
         {
           "url": "https://static.adiyaman.edu.tr/files/13/ad%C4%B1yaman%20%C3%BCniversitesi%20t%C4%B1p%20fak%C3%BCltesi%20e%C4%9Fitim-%C3%B6%C4%9Fretim%20ve%20s%C4%B1nav%20y%C3%B6netmeli%C4%9Fi.pdf",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Adıyaman Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (Resmî Gazete 18.09.2024, sayı 32666)",
-          "note": "Yıl: yürürlükte (yıl sınırı yok) | Konum: PDF s.5, Madde 24(2)-(3) | Kanıt: Dönem geçme notu = ders kurulu sınav puanları ortalamasının %60'ı + dönem sonu final/bütünleme puanının %40'ı; başarı için finalden en az 50 ve dönem sonu başarı notu en az 60. Kurul ortalaması = kurul notları toplamı / kurul sayısı."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 24(2)-(3): ders kurulu puanları ortalamasının %60'ı + dönem sonu final/bütünleme %40; geçme 60, finalden en az 50. 2026-2027 Dönem I/II/III programlarında sırasıyla 5, 6 ve 7 ders kurulu. | SHA-256: 8e8c7eb7244fdd23f050a2ba417b8113b8741743249c5c6eacf0aa7e6ca1c4de | Yıl: yürürlükte (yıl sınırı yok) | Konum: PDF s.5, Madde 24(2)-(3) | Kanıt: Dönem geçme notu = ders kurulu sınav puanları ortalamasının %60'ı + dönem sonu final/bütünleme puanının %40'ı; başarı için finalden en az 50 ve dönem sonu başarı notu en az 60. Kurul ortalaması = kurul notları toplamı / kurul sayısı."
         },
         {
           "url": "https://static.adiyaman.edu.tr/files/13/(6019871)27%20ek%C4%B1m%202026%20donem%20%C4%B1%C4%B1%20ders%20programi%20ocm%20sorumlu%20ogr.%20uyeleri%20yazilmasi%20degisiklik.pdf",
           "type": "FACULTY_PROGRAM_BOOK",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Adıyaman Üniversitesi Tıp Fakültesi Dönem II 2026-2027 Rehberi/Ders Programı (27 Ekim 2026 değişikliği)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6 \"Ders Kurulları\" tablosu | Kanıt: 2026-2027 Dönem 2: 6 ders kurulu."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 24(2)-(3): ders kurulu puanları ortalamasının %60'ı + dönem sonu final/bütünleme %40; geçme 60, finalden en az 50. 2026-2027 Dönem I/II/III programlarında sırasıyla 5, 6 ve 7 ders kurulu. | SHA-256: 729f258a32367b0247ec4fea2cd55c25d9a0b9a4f26f3aba8c3b34868b7cad4d | Yıl: 2026-2027 | Konum: PDF s.6 \"Ders Kurulları\" tablosu | Kanıt: 2026-2027 Dönem 2: 6 ders kurulu."
         }
       ]
     },
@@ -2867,188 +2849,16 @@
         {
           "url": "https://static.adiyaman.edu.tr/files/13/ad%C4%B1yaman%20%C3%BCniversitesi%20t%C4%B1p%20fak%C3%BCltesi%20e%C4%9Fitim-%C3%B6%C4%9Fretim%20ve%20s%C4%B1nav%20y%C3%B6netmeli%C4%9Fi.pdf",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Adıyaman Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (Resmî Gazete 18.09.2024, sayı 32666)",
-          "note": "Yıl: yürürlükte (yıl sınırı yok) | Konum: PDF s.5, Madde 24(2)-(3) | Kanıt: Dönem geçme notu = ders kurulu sınav puanları ortalamasının %60'ı + dönem sonu final/bütünleme puanının %40'ı; başarı için finalden en az 50 ve dönem sonu başarı notu en az 60. Kurul ortalaması = kurul notları toplamı / kurul sayısı."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 24(2)-(3): ders kurulu puanları ortalamasının %60'ı + dönem sonu final/bütünleme %40; geçme 60, finalden en az 50. 2026-2027 Dönem I/II/III programlarında sırasıyla 5, 6 ve 7 ders kurulu. | SHA-256: 8e8c7eb7244fdd23f050a2ba417b8113b8741743249c5c6eacf0aa7e6ca1c4de | Yıl: yürürlükte (yıl sınırı yok) | Konum: PDF s.5, Madde 24(2)-(3) | Kanıt: Dönem geçme notu = ders kurulu sınav puanları ortalamasının %60'ı + dönem sonu final/bütünleme puanının %40'ı; başarı için finalden en az 50 ve dönem sonu başarı notu en az 60. Kurul ortalaması = kurul notları toplamı / kurul sayısı."
         },
         {
           "url": "https://static.adiyaman.edu.tr/files/13/2026-27%20y%C4%B1l%C4%B1%20d%C3%B6nem%203%20program%C4%B1-.pdf",
           "type": "FACULTY_PROGRAM_BOOK",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Adıyaman Üniversitesi Tıp Fakültesi Dönem 3 2026-2027 Eğitim-Öğretim Yılı Rehberi",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.34 \"Kurul Soru Sayıları\" tablosu (I-VII. kurul sütunları) | Kanıt: 2026-2027 Dönem 3: 7 ders kurulu."
-        }
-      ]
-    },
-    {
-      "id": "c084ea2e-d676-584d-910a-771373197a66",
-      "schemeId": "555aebaf-cf42-5c78-a864-ea171e5db740",
-      "versionNumber": 1,
-      "passingGrade": "60.00",
-      "components": [
-        {
-          "type": "COMMITTEE",
-          "position": 1,
-          "weightPercent": "12.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 2,
-          "weightPercent": "12.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 3,
-          "weightPercent": "12.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 4,
-          "weightPercent": "12.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 5,
-          "weightPercent": "12.00"
-        },
-        {
-          "type": "FINAL",
-          "position": 1,
-          "weightPercent": "40.00"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://tip.afsu.edu.tr/wp-content/uploads/sites/2/2025/07/EGITIM-%E2%80%93-OGRETIM-ve-SINAV-YONERGESI.pdf",
-          "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
-          "title": "AFSÜ Tıp Fakültesi Entegre Sistem Eğitim-Öğretim ve Sınav Yönergesi (2018 yönergesini yürürlükten kaldıran sürüm; 2025/07 yükleme; Senato kabul tarihi belgede yazmıyor)",
-          "note": "Yıl: yürürlükte (yıl sınırı yok) | Konum: PDF s.9, Madde 12(7) | Kanıt: Sınıf Geçme Notu = ders kurul sonu sınav notları ortalamasının %60'ı + yılsonu genel (veya bütünleme) sınavının %40'ı; sınıf geçme notu 60."
-        },
-        {
-          "url": "https://tip.afsu.edu.tr/wp-content/uploads/sites/2/2026/07/1.sinif-AKTS-dagilimi-26-27.pdf",
-          "type": "FACULTY_PROGRAM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
-          "title": "AFSÜ Tıp Fakültesi 1. Sınıf 2026-2027 AKTS Dağılımı",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1 AKTS tablosu | Kanıt: 2026-2027 1. sınıf: Kurul 1–Kurul 5 (5 ders kurulu)."
-        }
-      ]
-    },
-    {
-      "id": "11550a39-b2b3-5c95-acba-75f468afa304",
-      "schemeId": "1d68a75c-9013-5a52-bf9d-d29db0296f46",
-      "versionNumber": 1,
-      "passingGrade": "60.00",
-      "components": [
-        {
-          "type": "COMMITTEE",
-          "position": 1,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 2,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 3,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 4,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 5,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 6,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "FINAL",
-          "position": 1,
-          "weightPercent": "40.00"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://tip.afsu.edu.tr/wp-content/uploads/sites/2/2025/07/EGITIM-%E2%80%93-OGRETIM-ve-SINAV-YONERGESI.pdf",
-          "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
-          "title": "AFSÜ Tıp Fakültesi Entegre Sistem Eğitim-Öğretim ve Sınav Yönergesi (2018 yönergesini yürürlükten kaldıran sürüm; 2025/07 yükleme; Senato kabul tarihi belgede yazmıyor)",
-          "note": "Yıl: yürürlükte (yıl sınırı yok) | Konum: PDF s.9, Madde 12(7) | Kanıt: Sınıf Geçme Notu = ders kurul sonu sınav notları ortalamasının %60'ı + yılsonu genel (veya bütünleme) sınavının %40'ı; sınıf geçme notu 60."
-        },
-        {
-          "url": "https://tip.afsu.edu.tr/wp-content/uploads/sites/2/2026/07/2.sinif-AKTS-dagilimi-26-27.pdf",
-          "type": "FACULTY_PROGRAM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
-          "title": "AFSÜ Tıp Fakültesi 2. Sınıf 2026-2027 AKTS Dağılımı",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1 AKTS tablosu | Kanıt: 2026-2027 2. sınıf: Kurul 1–Kurul 6 (6 ders kurulu)."
-        }
-      ]
-    },
-    {
-      "id": "7371e2ef-15f1-5e3b-aa1c-d0226026e969",
-      "schemeId": "aaf26e15-a2cc-503a-bc6c-38b7b4a5c77d",
-      "versionNumber": 1,
-      "passingGrade": "60.00",
-      "components": [
-        {
-          "type": "COMMITTEE",
-          "position": 1,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 2,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 3,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 4,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 5,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "COMMITTEE",
-          "position": 6,
-          "weightPercent": "10.00"
-        },
-        {
-          "type": "FINAL",
-          "position": 1,
-          "weightPercent": "40.00"
-        }
-      ],
-      "sources": [
-        {
-          "url": "https://tip.afsu.edu.tr/wp-content/uploads/sites/2/2025/07/EGITIM-%E2%80%93-OGRETIM-ve-SINAV-YONERGESI.pdf",
-          "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
-          "title": "AFSÜ Tıp Fakültesi Entegre Sistem Eğitim-Öğretim ve Sınav Yönergesi (2018 yönergesini yürürlükten kaldıran sürüm; 2025/07 yükleme; Senato kabul tarihi belgede yazmıyor)",
-          "note": "Yıl: yürürlükte (yıl sınırı yok) | Konum: PDF s.9, Madde 12(7) | Kanıt: Sınıf Geçme Notu = ders kurul sonu sınav notları ortalamasının %60'ı + yılsonu genel (veya bütünleme) sınavının %40'ı; sınıf geçme notu 60."
-        },
-        {
-          "url": "https://tip.afsu.edu.tr/wp-content/uploads/sites/2/2026/07/3.sinif-AKTS-dagilimi-26-27.pdf",
-          "type": "FACULTY_PROGRAM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
-          "title": "AFSÜ Tıp Fakültesi 3. Sınıf 2026-2027 AKTS Dağılımı",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1 AKTS tablosu | Kanıt: 2026-2027 3. sınıf: Kurul 1–Kurul 6 (6 ders kurulu)."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 24(2)-(3): ders kurulu puanları ortalamasının %60'ı + dönem sonu final/bütünleme %40; geçme 60, finalden en az 50. 2026-2027 Dönem I/II/III programlarında sırasıyla 5, 6 ve 7 ders kurulu. | SHA-256: 138750428f55ce743734e7ed32894a2763ee0f7298e156b3f8e96f90e933fe0b | Yıl: 2026-2027 | Konum: PDF s.34 \"Kurul Soru Sayıları\" tablosu (I-VII. kurul sütunları) | Kanıt: 2026-2027 Dönem 3: 7 ders kurulu."
         }
       ]
     },
@@ -3098,16 +2908,16 @@
         {
           "url": "https://www.resmigazete.gov.tr/eskiler/2023/03/20230305-1.htm",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Ağrı İbrahim Çeçen Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (RG 05.03.2023/32123)",
-          "note": "Yıl: yürürlükte (değişiklik bulunamadı) | Konum: HTML metin, Madde 21(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı veya bütünleme notunun %40'ı; geçme en az 60."
+          "note": "Doğrulama 2026-11-21: RG 05.03.2023/32123 Madde 21(1): ders grupları notları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ders bazlı %50 baraj ve ≥70 muafiyet hesaba katılmadı. 2026-2027 sınav takviminde 1-3. sınıflar için Kurul 1-6. | SHA-256: b430d5b1c7b5f6faf0d749135c766e7c290a5849548b484346e1c907b9e9abe4 | Yıl: yürürlükte (değişiklik bulunamadı) | Konum: HTML metin, Madde 21(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı veya bütünleme notunun %40'ı; geçme en az 60."
         },
         {
           "url": "https://www.agri.edu.tr/detail.aspx?bid=500&dil=tr-TR&id=5941&tid=7",
           "type": "FACULTY_EXAM_CALENDAR",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AİÇÜ Tıp Fakültesi Sınav Takvimi — Kurul Sonu Sınavları (Kurul 1-6 tarihleri 22.10.2026–10.06.2027)",
-          "note": "Yıl: 2026-2027 | Konum: Sınav Takvimi tablosu | Kanıt: 1., 2. ve 3. sınıf için Kurul 1–Kurul 6 sınav tarihleri (22.10.2026–10.06.2027): 6 kurul."
+          "note": "Doğrulama 2026-11-21: RG 05.03.2023/32123 Madde 21(1): ders grupları notları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ders bazlı %50 baraj ve ≥70 muafiyet hesaba katılmadı. 2026-2027 sınav takviminde 1-3. sınıflar için Kurul 1-6. | SHA-256: cba9d7ca6b3e85697cce15362aab44dc511f4baac286a680dbac18f20b26f9f1 | Yıl: 2026-2027 | Konum: Sınav Takvimi tablosu | Kanıt: 1., 2. ve 3. sınıf için Kurul 1–Kurul 6 sınav tarihleri (22.10.2026–10.06.2027): 6 kurul."
         }
       ]
     },
@@ -3157,16 +2967,16 @@
         {
           "url": "https://www.resmigazete.gov.tr/eskiler/2023/03/20230305-1.htm",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Ağrı İbrahim Çeçen Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (RG 05.03.2023/32123)",
-          "note": "Yıl: yürürlükte (değişiklik bulunamadı) | Konum: HTML metin, Madde 21(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı veya bütünleme notunun %40'ı; geçme en az 60."
+          "note": "Doğrulama 2026-11-21: RG 05.03.2023/32123 Madde 21(1): ders grupları notları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ders bazlı %50 baraj ve ≥70 muafiyet hesaba katılmadı. 2026-2027 sınav takviminde 1-3. sınıflar için Kurul 1-6. | SHA-256: b430d5b1c7b5f6faf0d749135c766e7c290a5849548b484346e1c907b9e9abe4 | Yıl: yürürlükte (değişiklik bulunamadı) | Konum: HTML metin, Madde 21(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı veya bütünleme notunun %40'ı; geçme en az 60."
         },
         {
           "url": "https://www.agri.edu.tr/detail.aspx?bid=500&dil=tr-TR&id=5941&tid=7",
           "type": "FACULTY_EXAM_CALENDAR",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AİÇÜ Tıp Fakültesi Sınav Takvimi — Kurul Sonu Sınavları (Kurul 1-6 tarihleri 22.10.2026–10.06.2027)",
-          "note": "Yıl: 2026-2027 | Konum: Sınav Takvimi tablosu | Kanıt: 1., 2. ve 3. sınıf için Kurul 1–Kurul 6 sınav tarihleri (22.10.2026–10.06.2027): 6 kurul."
+          "note": "Doğrulama 2026-11-21: RG 05.03.2023/32123 Madde 21(1): ders grupları notları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ders bazlı %50 baraj ve ≥70 muafiyet hesaba katılmadı. 2026-2027 sınav takviminde 1-3. sınıflar için Kurul 1-6. | SHA-256: cba9d7ca6b3e85697cce15362aab44dc511f4baac286a680dbac18f20b26f9f1 | Yıl: 2026-2027 | Konum: Sınav Takvimi tablosu | Kanıt: 1., 2. ve 3. sınıf için Kurul 1–Kurul 6 sınav tarihleri (22.10.2026–10.06.2027): 6 kurul."
         }
       ]
     },
@@ -3216,16 +3026,16 @@
         {
           "url": "https://www.resmigazete.gov.tr/eskiler/2023/03/20230305-1.htm",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Ağrı İbrahim Çeçen Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (RG 05.03.2023/32123)",
-          "note": "Yıl: yürürlükte (değişiklik bulunamadı) | Konum: HTML metin, Madde 21(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı veya bütünleme notunun %40'ı; geçme en az 60."
+          "note": "Doğrulama 2026-11-21: RG 05.03.2023/32123 Madde 21(1): ders grupları notları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ders bazlı %50 baraj ve ≥70 muafiyet hesaba katılmadı. 2026-2027 sınav takviminde 1-3. sınıflar için Kurul 1-6. | SHA-256: b430d5b1c7b5f6faf0d749135c766e7c290a5849548b484346e1c907b9e9abe4 | Yıl: yürürlükte (değişiklik bulunamadı) | Konum: HTML metin, Madde 21(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı veya bütünleme notunun %40'ı; geçme en az 60."
         },
         {
           "url": "https://www.agri.edu.tr/detail.aspx?bid=500&dil=tr-TR&id=5941&tid=7",
           "type": "FACULTY_EXAM_CALENDAR",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AİÇÜ Tıp Fakültesi Sınav Takvimi — Kurul Sonu Sınavları (Kurul 1-6 tarihleri 22.10.2026–10.06.2027)",
-          "note": "Yıl: 2026-2027 | Konum: Sınav Takvimi tablosu | Kanıt: 1., 2. ve 3. sınıf için Kurul 1–Kurul 6 sınav tarihleri (22.10.2026–10.06.2027): 6 kurul."
+          "note": "Doğrulama 2026-11-21: RG 05.03.2023/32123 Madde 21(1): ders grupları notları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ders bazlı %50 baraj ve ≥70 muafiyet hesaba katılmadı. 2026-2027 sınav takviminde 1-3. sınıflar için Kurul 1-6. | SHA-256: cba9d7ca6b3e85697cce15362aab44dc511f4baac286a680dbac18f20b26f9f1 | Yıl: 2026-2027 | Konum: Sınav Takvimi tablosu | Kanıt: 1., 2. ve 3. sınıf için Kurul 1–Kurul 6 sınav tarihleri (22.10.2026–10.06.2027): 6 kurul."
         }
       ]
     },
@@ -3270,16 +3080,16 @@
         {
           "url": "https://www.alanya.edu.tr/media/wuairk3g/yo010-tip-fakultesi-egitim-ogretim-ve-sinav-yonergesi.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "ALKÜ Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönergesi YÖ.010 (Revizyon 8, 17.09.2025)",
-          "note": "Yıl: yürürlükte | Konum: PDF s.9, Madde 25(1); s.8 harf notu tablosu | Kanıt: Dönem notu = ders kurulu sınav puanlarının ortalamasının %60'ı + yıl sonu (veya bütünleme) sınavı puanının %40'ı; en az CC (CC = 60.00-64.99)."
+          "note": "Doğrulama 2026-11-21: Yönerge Madde 25(1): ders kurulu puanları ortalamasının %60'ı + yıl sonu/bütünleme %40; en az CC (60.00-64.99). 2026-2027 akademik takviminde Dönem I ve II için I-V. Ders Kurulu. | SHA-256: c36703829d2c78d1bb13b09206b3e32bea634696a5fb1343de11ac90a09ce3bf | Yıl: yürürlükte | Konum: PDF s.9, Madde 25(1); s.8 harf notu tablosu | Kanıt: Dönem notu = ders kurulu sınav puanlarının ortalamasının %60'ı + yıl sonu (veya bütünleme) sınavı puanının %40'ı; en az CC (CC = 60.00-64.99)."
         },
         {
           "url": "https://oidb.alanya.edu.tr/media/3gihe1ql/2026-2027-egitim-ogretim-yili-tip-fakultesi-akademik-takvimi.pdf",
           "type": "ACADEMIC_CALENDAR",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "ALKÜ 2026-2027 Eğitim Öğretim Yılı Tıp Fakültesi Akademik Takvimi",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1 | Kanıt: 2026-2027 Dönem I: I–V. Ders Kurulu (5 kurul)."
+          "note": "Doğrulama 2026-11-21: Yönerge Madde 25(1): ders kurulu puanları ortalamasının %60'ı + yıl sonu/bütünleme %40; en az CC (60.00-64.99). 2026-2027 akademik takviminde Dönem I ve II için I-V. Ders Kurulu. | SHA-256: 5068844e20dbeab6a4db0cba538b3dc563f67266a7b3de9ef96bfcb26ce9a832 | Yıl: 2026-2027 | Konum: PDF s.1 | Kanıt: 2026-2027 Dönem I: I–V. Ders Kurulu (5 kurul)."
         }
       ]
     },
@@ -3324,16 +3134,16 @@
         {
           "url": "https://www.alanya.edu.tr/media/wuairk3g/yo010-tip-fakultesi-egitim-ogretim-ve-sinav-yonergesi.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "ALKÜ Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönergesi YÖ.010 (Revizyon 8, 17.09.2025)",
-          "note": "Yıl: yürürlükte | Konum: PDF s.9, Madde 25(1); s.8 harf notu tablosu | Kanıt: Dönem notu = ders kurulu sınav puanlarının ortalamasının %60'ı + yıl sonu (veya bütünleme) sınavı puanının %40'ı; en az CC (CC = 60.00-64.99)."
+          "note": "Doğrulama 2026-11-21: Yönerge Madde 25(1): ders kurulu puanları ortalamasının %60'ı + yıl sonu/bütünleme %40; en az CC (60.00-64.99). 2026-2027 akademik takviminde Dönem I ve II için I-V. Ders Kurulu. | SHA-256: c36703829d2c78d1bb13b09206b3e32bea634696a5fb1343de11ac90a09ce3bf | Yıl: yürürlükte | Konum: PDF s.9, Madde 25(1); s.8 harf notu tablosu | Kanıt: Dönem notu = ders kurulu sınav puanlarının ortalamasının %60'ı + yıl sonu (veya bütünleme) sınavı puanının %40'ı; en az CC (CC = 60.00-64.99)."
         },
         {
           "url": "https://oidb.alanya.edu.tr/media/3gihe1ql/2026-2027-egitim-ogretim-yili-tip-fakultesi-akademik-takvimi.pdf",
           "type": "ACADEMIC_CALENDAR",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "ALKÜ 2026-2027 Eğitim Öğretim Yılı Tıp Fakültesi Akademik Takvimi",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1 | Kanıt: 2026-2027 Dönem II: I–V. Ders Kurulu (5 kurul)."
+          "note": "Doğrulama 2026-11-21: Yönerge Madde 25(1): ders kurulu puanları ortalamasının %60'ı + yıl sonu/bütünleme %40; en az CC (60.00-64.99). 2026-2027 akademik takviminde Dönem I ve II için I-V. Ders Kurulu. | SHA-256: 5068844e20dbeab6a4db0cba538b3dc563f67266a7b3de9ef96bfcb26ce9a832 | Yıl: 2026-2027 | Konum: PDF s.1 | Kanıt: 2026-2027 Dönem II: I–V. Ders Kurulu (5 kurul)."
         }
       ]
     },
@@ -3373,23 +3183,23 @@
         {
           "url": "https://aybu.edu.tr/GetFile?id=Upload/0b23c87d-3867-452a-8a6a-ef4a83c67073.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AYBÜ Tıp Fakültesi 2026-2027 Eğitim-Öğretim Yönergesi (taranmış PDF; sitede \"2026-2027 EĞİTİM-ÖĞRETİM YÖNERGESİ\" bağlantısı; PDF oluşturma 16.10.2026)",
-          "note": "Yıl: 2026-2027 | Konum: Taranmış PDF s.8-9, Madde 19(1)(b),(g) | Kanıt: Komite not ortalaması = komite notları toplamı / komite sayısı (aritmetik ortalama); yıl sonu başarı notu = komite ortalamasının %60'ı + yıl sonu genel sınavının %40'ı; sınıf geçmek için en az 60 (CC)."
+          "note": "Doğrulama 2026-11-21: Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite. | SHA-256: 6ffe1c53051b43921c870b1b598d4b8e5eb79a00539bf7540b78c77de3e2aa5a | Yıl: 2026-2027 | Konum: Taranmış PDF s.8-9, Madde 19(1)(b),(g) | Kanıt: Komite not ortalaması = komite notları toplamı / komite sayısı (aritmetik ortalama); yıl sonu başarı notu = komite ortalamasının %60'ı + yıl sonu genel sınavının %40'ı; sınıf geçmek için en az 60 (CC)."
         },
         {
           "url": "https://aybu.edu.tr/GetFile?id=Upload/d508ec32-41a4-4e83-a1d9-0a0b0be06439.pdf",
           "type": "ACADEMIC_CALENDAR",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AYBÜ Tıp Fakültesi 2026-2027 Eğitim Öğretim Yılı Akademik Takvimi (Türkçe)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1, DÖNEM I SINAVLAR | Kanıt: 2026-2027 Dönem I: Komite 1–Komite 4 sınav tarihleri + Final + Bütünleme (4 komite)."
+          "note": "Doğrulama 2026-11-21: Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite. | SHA-256: 2e51aade2c3095e05dc758c9b21efb2b1d34a7d641198d8bcfefbb1d5ae58028 | Yıl: 2026-2027 | Konum: PDF s.1, DÖNEM I SINAVLAR | Kanıt: 2026-2027 Dönem I: Komite 1–Komite 4 sınav tarihleri + Final + Bütünleme (4 komite)."
         },
         {
           "url": "https://aybu.edu.tr/GetFile?id=Upload%2Fc4a6c382-0c0a-4b18-b1a7-47254b768964.pdf",
           "type": "ACADEMIC_CALENDAR",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AYBÜ 2026–2027 Academic Calendar for the Medicine Program (İngilizce)",
-          "note": "Yıl: 2026-2027 | Konum: PDF p.1, PHASE I EXAMS | Kanıt: İngilizce program takviminde de Committee 1–4 (4 komite)."
+          "note": "Doğrulama 2026-11-21: Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite. | SHA-256: 750aa5ca80c35dc0f9e1a30743781d9c4ca71e427010554e845b235fd060ba6c | Yıl: 2026-2027 | Konum: PDF p.1, PHASE I EXAMS | Kanıt: İngilizce program takviminde de Committee 1–4 (4 komite)."
         }
       ]
     },
@@ -3439,23 +3249,23 @@
         {
           "url": "https://aybu.edu.tr/GetFile?id=Upload/0b23c87d-3867-452a-8a6a-ef4a83c67073.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AYBÜ Tıp Fakültesi 2026-2027 Eğitim-Öğretim Yönergesi (taranmış PDF; sitede \"2026-2027 EĞİTİM-ÖĞRETİM YÖNERGESİ\" bağlantısı; PDF oluşturma 16.10.2026)",
-          "note": "Yıl: 2026-2027 | Konum: Taranmış PDF s.8-9, Madde 19(1)(b),(g) | Kanıt: Komite not ortalaması = komite notları toplamı / komite sayısı (aritmetik ortalama); yıl sonu başarı notu = komite ortalamasının %60'ı + yıl sonu genel sınavının %40'ı; sınıf geçmek için en az 60 (CC)."
+          "note": "Doğrulama 2026-11-21: Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite. | SHA-256: 6ffe1c53051b43921c870b1b598d4b8e5eb79a00539bf7540b78c77de3e2aa5a | Yıl: 2026-2027 | Konum: Taranmış PDF s.8-9, Madde 19(1)(b),(g) | Kanıt: Komite not ortalaması = komite notları toplamı / komite sayısı (aritmetik ortalama); yıl sonu başarı notu = komite ortalamasının %60'ı + yıl sonu genel sınavının %40'ı; sınıf geçmek için en az 60 (CC)."
         },
         {
           "url": "https://aybu.edu.tr/GetFile?id=Upload/d508ec32-41a4-4e83-a1d9-0a0b0be06439.pdf",
           "type": "ACADEMIC_CALENDAR",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AYBÜ Tıp Fakültesi 2026-2027 Eğitim Öğretim Yılı Akademik Takvimi (Türkçe)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1, DÖNEM II SINAVLAR | Kanıt: 2026-2027 Dönem II: Komite 1–Komite 6 sınav tarihleri + Final + Bütünleme (6 komite)."
+          "note": "Doğrulama 2026-11-21: Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite. | SHA-256: 2e51aade2c3095e05dc758c9b21efb2b1d34a7d641198d8bcfefbb1d5ae58028 | Yıl: 2026-2027 | Konum: PDF s.1, DÖNEM II SINAVLAR | Kanıt: 2026-2027 Dönem II: Komite 1–Komite 6 sınav tarihleri + Final + Bütünleme (6 komite)."
         },
         {
           "url": "https://aybu.edu.tr/GetFile?id=Upload%2Fc4a6c382-0c0a-4b18-b1a7-47254b768964.pdf",
           "type": "ACADEMIC_CALENDAR",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AYBÜ 2026–2027 Academic Calendar for the Medicine Program (İngilizce)",
-          "note": "Yıl: 2026-2027 | Konum: PDF p.1, PHASE II EXAMS | Kanıt: İngilizce program takviminde de Committee 1–6 (6 komite)."
+          "note": "Doğrulama 2026-11-21: Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite. | SHA-256: 750aa5ca80c35dc0f9e1a30743781d9c4ca71e427010554e845b235fd060ba6c | Yıl: 2026-2027 | Konum: PDF p.1, PHASE II EXAMS | Kanıt: İngilizce program takviminde de Committee 1–6 (6 komite)."
         }
       ]
     },
@@ -3510,23 +3320,23 @@
         {
           "url": "https://aybu.edu.tr/GetFile?id=Upload/0b23c87d-3867-452a-8a6a-ef4a83c67073.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AYBÜ Tıp Fakültesi 2026-2027 Eğitim-Öğretim Yönergesi (taranmış PDF; sitede \"2026-2027 EĞİTİM-ÖĞRETİM YÖNERGESİ\" bağlantısı; PDF oluşturma 16.10.2026)",
-          "note": "Yıl: 2026-2027 | Konum: Taranmış PDF s.8-9, Madde 19(1)(b),(g) | Kanıt: Komite not ortalaması = komite notları toplamı / komite sayısı (aritmetik ortalama); yıl sonu başarı notu = komite ortalamasının %60'ı + yıl sonu genel sınavının %40'ı; sınıf geçmek için en az 60 (CC)."
+          "note": "Doğrulama 2026-11-21: Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite. | SHA-256: 6ffe1c53051b43921c870b1b598d4b8e5eb79a00539bf7540b78c77de3e2aa5a | Yıl: 2026-2027 | Konum: Taranmış PDF s.8-9, Madde 19(1)(b),(g) | Kanıt: Komite not ortalaması = komite notları toplamı / komite sayısı (aritmetik ortalama); yıl sonu başarı notu = komite ortalamasının %60'ı + yıl sonu genel sınavının %40'ı; sınıf geçmek için en az 60 (CC)."
         },
         {
           "url": "https://aybu.edu.tr/GetFile?id=Upload/d508ec32-41a4-4e83-a1d9-0a0b0be06439.pdf",
           "type": "ACADEMIC_CALENDAR",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AYBÜ Tıp Fakültesi 2026-2027 Eğitim Öğretim Yılı Akademik Takvimi (Türkçe)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1, DÖNEM III SINAVLAR | Kanıt: 2026-2027 Dönem III: Komite 1–Komite 7 sınav tarihleri + Final + Bütünleme (7 komite)."
+          "note": "Doğrulama 2026-11-21: Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite. | SHA-256: 2e51aade2c3095e05dc758c9b21efb2b1d34a7d641198d8bcfefbb1d5ae58028 | Yıl: 2026-2027 | Konum: PDF s.1, DÖNEM III SINAVLAR | Kanıt: 2026-2027 Dönem III: Komite 1–Komite 7 sınav tarihleri + Final + Bütünleme (7 komite)."
         },
         {
           "url": "https://aybu.edu.tr/GetFile?id=Upload%2Fc4a6c382-0c0a-4b18-b1a7-47254b768964.pdf",
           "type": "ACADEMIC_CALENDAR",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "AYBÜ 2026–2027 Academic Calendar for the Medicine Program (İngilizce)",
-          "note": "Yıl: 2026-2027 | Konum: PDF p.1, PHASE III EXAMS | Kanıt: İngilizce program takviminde de Committee 1–7 (7 komite)."
+          "note": "Doğrulama 2026-11-21: Yönerge (taranmış, tarihsiz) Madde 19(1)(b),(g),(ğ): ders kurulları aritmetik ortalamasının %60'ı + yıl sonu genel %40; geçme 60 (CC); ders bazlı %50 baraj hesaba katılmadı. 2026-2027 takviminde Dönem I/II/III için 4, 6 ve 7 komite. | SHA-256: 750aa5ca80c35dc0f9e1a30743781d9c4ca71e427010554e845b235fd060ba6c | Yıl: 2026-2027 | Konum: PDF p.1, PHASE III EXAMS | Kanıt: İngilizce program takviminde de Committee 1–7 (7 komite)."
         }
       ]
     },
@@ -3581,23 +3391,23 @@
         {
           "url": "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/03/2026-EG%CC%86I%CC%87TI%CC%87M-O%CC%88G%CC%86RETI%CC%87M-VE-SINAV-UYGULAMA-ESASLARI.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Atatürk Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Uygulama Esasları (fakülte sitesi, 2026/03 yükleme)",
-          "note": "Yıl: yürürlükte (2012-2013'ten itibaren) | Konum: PDF s.9, Madde 30(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı ya da bütünleme notunun %40'ı; sınıfı geçmek için en az 60."
+          "note": "Doğrulama 2026-11-21: Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul. | SHA-256: 6b44f251cebc3d8f79fcabe8fd02a2b4731cdfb1c5d104ceebbfa58ac906262e | Yıl: yürürlükte (2012-2013'ten itibaren) | Konum: PDF s.9, Madde 30(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı ya da bütünleme notunun %40'ı; sınıfı geçmek için en az 60."
         },
         {
           "url": "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/03/Eg%CC%86itim-O%CC%88g%CC%86retim-ve-Sinav-Yo%CC%88netmelig%CC%86i.pdf",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Atatürk Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (RG 31.08.2012/28397; RG 28.03.2024/32503 değişiklikleriyle; fakülte sitesi kopyası)",
-          "note": "Yıl: yürürlükte | Konum: PDF s.4, Madde 21(1) | Kanıt: Aynı hüküm yönetmelikte: ders grupları notlarının ortalamasının %60'ı + yıl sonu genel/bütünleme %40."
+          "note": "Doğrulama 2026-11-21: Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul. | SHA-256: 194ff510d381983e23a4462eecfefe42836ed8a0db0b454a3ee133852c6ed1c1 | Yıl: yürürlükte | Konum: PDF s.4, Madde 21(1) | Kanıt: Aynı hüküm yönetmelikte: ders grupları notlarının ortalamasının %60'ı + yıl sonu genel/bütünleme %40."
         },
         {
           "url": "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/11/2026-2027-Turkce-ve-Ingilizce-Tip-1-2-3-Sinif-Ders-Programi-18-11-2026.xlsx",
           "type": "FACULTY_PROGRAM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Atatürk Üniversitesi Tıp Fakültesi 2026-2027 Türkçe ve İngilizce Tıp 1-2-3. Sınıf Ders Programı (18.11.2026) — \"Kurul isimleri ve AKTS\" sayfası",
-          "note": "Yıl: 2026-2027 | Konum: \"Kurul isimleri ve AKTS\" sayfası | Kanıt: 2026-2027 Türkçe Tıp 1. sınıf: 7 kurul (Hücre - Doku Bilimleri 1; Hücre - Doku Bilimleri 2; Hücre - Doku Bilimleri 3; Hücre - Doku Bilimleri 4; Hücre - Doku Bilimleri 5; Hücre - Doku Bilimleri 6 ve Mikroorganizmaların Temel Özellikleri; Hücre - Doku Bilimleri 7 ve Araştırma Yöntemlerine Giriş). İngilizce Tıp aynı 7 kurul."
+          "note": "Doğrulama 2026-11-21: Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul. | SHA-256: 978e888f14163b84f4f2a2aab29d6f36eb33c062298116abb9fdfdff21a64411 | Yıl: 2026-2027 | Konum: \"Kurul isimleri ve AKTS\" sayfası | Kanıt: 2026-2027 Türkçe Tıp 1. sınıf: 7 kurul (Hücre - Doku Bilimleri 1; Hücre - Doku Bilimleri 2; Hücre - Doku Bilimleri 3; Hücre - Doku Bilimleri 4; Hücre - Doku Bilimleri 5; Hücre - Doku Bilimleri 6 ve Mikroorganizmaların Temel Özellikleri; Hücre - Doku Bilimleri 7 ve Araştırma Yöntemlerine Giriş). İngilizce Tıp aynı 7 kurul."
         }
       ]
     },
@@ -3652,23 +3462,23 @@
         {
           "url": "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/03/2026-EG%CC%86I%CC%87TI%CC%87M-O%CC%88G%CC%86RETI%CC%87M-VE-SINAV-UYGULAMA-ESASLARI.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Atatürk Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Uygulama Esasları (fakülte sitesi, 2026/03 yükleme)",
-          "note": "Yıl: yürürlükte (2012-2013'ten itibaren) | Konum: PDF s.9, Madde 30(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı ya da bütünleme notunun %40'ı; sınıfı geçmek için en az 60."
+          "note": "Doğrulama 2026-11-21: Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul. | SHA-256: 6b44f251cebc3d8f79fcabe8fd02a2b4731cdfb1c5d104ceebbfa58ac906262e | Yıl: yürürlükte (2012-2013'ten itibaren) | Konum: PDF s.9, Madde 30(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı ya da bütünleme notunun %40'ı; sınıfı geçmek için en az 60."
         },
         {
           "url": "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/03/Eg%CC%86itim-O%CC%88g%CC%86retim-ve-Sinav-Yo%CC%88netmelig%CC%86i.pdf",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Atatürk Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (RG 31.08.2012/28397; RG 28.03.2024/32503 değişiklikleriyle; fakülte sitesi kopyası)",
-          "note": "Yıl: yürürlükte | Konum: PDF s.4, Madde 21(1) | Kanıt: Aynı hüküm yönetmelikte: ders grupları notlarının ortalamasının %60'ı + yıl sonu genel/bütünleme %40."
+          "note": "Doğrulama 2026-11-21: Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul. | SHA-256: 194ff510d381983e23a4462eecfefe42836ed8a0db0b454a3ee133852c6ed1c1 | Yıl: yürürlükte | Konum: PDF s.4, Madde 21(1) | Kanıt: Aynı hüküm yönetmelikte: ders grupları notlarının ortalamasının %60'ı + yıl sonu genel/bütünleme %40."
         },
         {
           "url": "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/11/2026-2027-Turkce-ve-Ingilizce-Tip-1-2-3-Sinif-Ders-Programi-18-11-2026.xlsx",
           "type": "FACULTY_PROGRAM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Atatürk Üniversitesi Tıp Fakültesi 2026-2027 Türkçe ve İngilizce Tıp 1-2-3. Sınıf Ders Programı (18.11.2026) — \"Kurul isimleri ve AKTS\" sayfası",
-          "note": "Yıl: 2026-2027 | Konum: \"Kurul isimleri ve AKTS\" sayfası | Kanıt: 2026-2027 Türkçe Tıp 2. sınıf: 7 kurul (Enfeksiyon Etkenlerine Giriş; Dolaşım ve Solunum Sistemi; Gastrointestinal ve Metabolik Sistem 1; Gastrointestinal ve Metabolik Sistem 2; Endokrin ve Ürogenital Sistem; Sinir Sistemi; Normalden Anormale). İngilizce Tıp aynı 7 kurul."
+          "note": "Doğrulama 2026-11-21: Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul. | SHA-256: 978e888f14163b84f4f2a2aab29d6f36eb33c062298116abb9fdfdff21a64411 | Yıl: 2026-2027 | Konum: \"Kurul isimleri ve AKTS\" sayfası | Kanıt: 2026-2027 Türkçe Tıp 2. sınıf: 7 kurul (Enfeksiyon Etkenlerine Giriş; Dolaşım ve Solunum Sistemi; Gastrointestinal ve Metabolik Sistem 1; Gastrointestinal ve Metabolik Sistem 2; Endokrin ve Ürogenital Sistem; Sinir Sistemi; Normalden Anormale). İngilizce Tıp aynı 7 kurul."
         }
       ]
     },
@@ -3723,23 +3533,23 @@
         {
           "url": "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/03/2026-EG%CC%86I%CC%87TI%CC%87M-O%CC%88G%CC%86RETI%CC%87M-VE-SINAV-UYGULAMA-ESASLARI.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Atatürk Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Uygulama Esasları (fakülte sitesi, 2026/03 yükleme)",
-          "note": "Yıl: yürürlükte (2012-2013'ten itibaren) | Konum: PDF s.9, Madde 30(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı ya da bütünleme notunun %40'ı; sınıfı geçmek için en az 60."
+          "note": "Doğrulama 2026-11-21: Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul. | SHA-256: 6b44f251cebc3d8f79fcabe8fd02a2b4731cdfb1c5d104ceebbfa58ac906262e | Yıl: yürürlükte (2012-2013'ten itibaren) | Konum: PDF s.9, Madde 30(1) | Kanıt: Yıl sonu geçme notu = ders grupları notlarının ortalamasının %60'ı + yıl sonu genel sınavı ya da bütünleme notunun %40'ı; sınıfı geçmek için en az 60."
         },
         {
           "url": "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/03/Eg%CC%86itim-O%CC%88g%CC%86retim-ve-Sinav-Yo%CC%88netmelig%CC%86i.pdf",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Atatürk Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (RG 31.08.2012/28397; RG 28.03.2024/32503 değişiklikleriyle; fakülte sitesi kopyası)",
-          "note": "Yıl: yürürlükte | Konum: PDF s.4, Madde 21(1) | Kanıt: Aynı hüküm yönetmelikte: ders grupları notlarının ortalamasının %60'ı + yıl sonu genel/bütünleme %40."
+          "note": "Doğrulama 2026-11-21: Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul. | SHA-256: 194ff510d381983e23a4462eecfefe42836ed8a0db0b454a3ee133852c6ed1c1 | Yıl: yürürlükte | Konum: PDF s.4, Madde 21(1) | Kanıt: Aynı hüküm yönetmelikte: ders grupları notlarının ortalamasının %60'ı + yıl sonu genel/bütünleme %40."
         },
         {
           "url": "https://atauni.edu.tr/tip-fakultesi/wp-content/uploads/sites/73/2026/11/2026-2027-Turkce-ve-Ingilizce-Tip-1-2-3-Sinif-Ders-Programi-18-11-2026.xlsx",
           "type": "FACULTY_PROGRAM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Atatürk Üniversitesi Tıp Fakültesi 2026-2027 Türkçe ve İngilizce Tıp 1-2-3. Sınıf Ders Programı (18.11.2026) — \"Kurul isimleri ve AKTS\" sayfası",
-          "note": "Yıl: 2026-2027 | Konum: \"Kurul isimleri ve AKTS\" sayfası | Kanıt: 2026-2027 Türkçe Tıp 3. sınıf: 7 kurul (Hastalıkların Biyolojik Temelleri; Dolaşım Sistemi Hastalıkları; Solunum Sistemi Hastalıkları; Hematopoetik Sistem ve Ruh Sağlığı/Davranış Hastalıkları; Gastrointestinal Sistem Hastalıkları; Genitoüriner Sistem Hastalıkları; Nöroendokrin ve Lokomotor Sistem Hastalıkları). İngilizce Tıp aynı 7 kurul."
+          "note": "Doğrulama 2026-11-21: Uygulama Esasları Madde 30(1) ve Yönetmelik Madde 21(1): ders grupları ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60; ≥70 muafiyet hesaba katılmadı. 2026-2027 ders programı 'Kurul isimleri ve AKTS' sayfasında Türkçe Tıp 1-3. sınıf için 7'şer kurul. | SHA-256: 978e888f14163b84f4f2a2aab29d6f36eb33c062298116abb9fdfdff21a64411 | Yıl: 2026-2027 | Konum: \"Kurul isimleri ve AKTS\" sayfası | Kanıt: 2026-2027 Türkçe Tıp 3. sınıf: 7 kurul (Hastalıkların Biyolojik Temelleri; Dolaşım Sistemi Hastalıkları; Solunum Sistemi Hastalıkları; Hematopoetik Sistem ve Ruh Sağlığı/Davranış Hastalıkları; Gastrointestinal Sistem Hastalıkları; Genitoüriner Sistem Hastalıkları; Nöroendokrin ve Lokomotor Sistem Hastalıkları). İngilizce Tıp aynı 7 kurul."
         }
       ]
     },
@@ -3779,9 +3589,61 @@
         {
           "url": "https://fakulte.adu.edu.tr/med/webfolders/files/20260818134926-CDN9UOMUS23X9NOG35AJ-KARADEVECI-507850912.pdf",
           "type": "FACULTY_PROGRAM_BOOK",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "ADÜ Tıp Fakültesi 2026-2027 Eğitim-Öğretim Yılı Dönem I Eğitim Rehberi (18.08.2026 yükleme)",
-          "note": "Yıl: 2026-2027 | Konum: \"Temel Bilimler (Dönem I, II, III) Dönemi Not Hesaplama Algoritması\" | Kanıt: Dönem başarı notu = ders kurulu notlarının AKTS ağırlıklı ortalamasının %40'ı + yılsonu (final/bütünleme) sınavının %60'ı; geçme notu 60, yılsonu sınavından en az 50."
+          "note": "Doğrulama 2026-11-21: 2026-2027 Dönem rehberleri 'Not Hesaplama Algoritması': kurul notlarının AKTS ağırlıklı ortalamasının %40'ı + yılsonu/bütünleme %60; geçme 60, yılsonu sınavından en az 50. AKTS: Dönem I 10/12/12/10 (44), Dönem II 10/10/8/12/10/8 (58), Dönem III 10/10/10/9/9/10 (58). | SHA-256: b1431ee679eb27d0052bf70a48fe73bc5a02cc5098a4b24fd3ad9bbb04b64a0a | Yıl: 2026-2027 | Konum: \"Temel Bilimler (Dönem I, II, III) Dönemi Not Hesaplama Algoritması\" | Kanıt: Dönem başarı notu = ders kurulu notlarının AKTS ağırlıklı ortalamasının %40'ı + yılsonu (final/bütünleme) sınavının %60'ı; geçme notu 60, yılsonu sınavından en az 50."
+        }
+      ]
+    },
+    {
+      "id": "e32ad410-f9d8-5a4e-81ab-e09b6678a818",
+      "schemeId": "28325d30-c4df-5693-93b9-3abdac500f23",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "6.90"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "6.90"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "5.52"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "8.27"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "6.89"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "5.52"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "60.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://fakulte.adu.edu.tr/med/webfolders/files/20260818134943-Q30NC8Q7K3Y9GNWZYE0T-KARADEVECI-507850912.pdf",
+          "type": "FACULTY_PROGRAM_BOOK",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Aydın Adnan Menderes Üniversitesi Tıp Fakültesi 2026-2027 Dönem II Eğitim Rehberi",
+          "note": "Doğrulama 2026-11-21: 2026-2027 Dönem rehberleri 'Not Hesaplama Algoritması': kurul notlarının AKTS ağırlıklı ortalamasının %40'ı + yılsonu/bütünleme %60; geçme 60, yılsonu sınavından en az 50. AKTS: Dönem I 10/12/12/10 (44), Dönem II 10/10/8/12/10/8 (58), Dönem III 10/10/10/9/9/10 (58). | SHA-256: 1d5a0d0354fa28ecca04293a952d2afd293d6321cb4ebf014490fe79f1de311c | Dönem II - AKTS Bilgileri tablosu ve Temel Bilimler Not Hesaplama Algoritması (asıl PDF okundu; export'ta yalnız arama özeti vardı)."
         }
       ]
     },
@@ -3831,9 +3693,9 @@
         {
           "url": "https://fakulte.adu.edu.tr/med/webfolders/files/20260818134959-ALT5WBCTB0KF2J10EBLZ-KARADEVECI-507850912.pdf",
           "type": "FACULTY_PROGRAM_BOOK",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "ADÜ Tıp Fakültesi 2026-2027 Eğitim-Öğretim Yılı Dönem III Eğitim Rehberi (18.08.2026 yükleme)",
-          "note": "Yıl: 2026-2027 | Konum: \"Temel Bilimler (Dönem I, II, III) Dönemi Not Hesaplama Algoritması\" | Kanıt: Dönem başarı notu = ders kurulu notlarının AKTS ağırlıklı ortalamasının %40'ı + yılsonu (final/bütünleme) sınavının %60'ı; geçme notu 60, yılsonu sınavından en az 50."
+          "note": "Doğrulama 2026-11-21: 2026-2027 Dönem rehberleri 'Not Hesaplama Algoritması': kurul notlarının AKTS ağırlıklı ortalamasının %40'ı + yılsonu/bütünleme %60; geçme 60, yılsonu sınavından en az 50. AKTS: Dönem I 10/12/12/10 (44), Dönem II 10/10/8/12/10/8 (58), Dönem III 10/10/10/9/9/10 (58). | SHA-256: ea3f97aa8e1055676ef095fc59b7622f6c5aadf0d6eb6c81690c6bbad04af7d2 | Yıl: 2026-2027 | Konum: \"Temel Bilimler (Dönem I, II, III) Dönemi Not Hesaplama Algoritması\" | Kanıt: Dönem başarı notu = ders kurulu notlarının AKTS ağırlıklı ortalamasının %40'ı + yılsonu (final/bütünleme) sınavının %60'ı; geçme notu 60, yılsonu sınavından en az 50."
         }
       ]
     },
@@ -3873,16 +3735,16 @@
         {
           "url": "https://www.mevzuat.gov.tr/MevzuatMetin/yonetmelik/8.5.19361.pdf",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Balıkesir Üniversitesi Tıp Fakültesi Eğitim Öğretim ve Sınav Yönetmeliği (RG 29.01.2014/28897; değişiklik RG 26.05.2024/32557)",
-          "note": "Yıl: yürürlükte | Konum: Madde 18(1),(3) | Kanıt: Dönem sonu notu = ders kurulu sınav puanlarının ortalamasının %60'ı + dönem sonu/bütünleme sınavının %40'ı (RG 26.05.2024 değişik ibare); üst döneme geçmek için dönem sonu notu ve dönem sonu sınav notu en az CC (60)."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 18(1),(3) (RG 26.05.2024 değişik): ders kurulu puanları ortalamasının %60'ı + dönem sonu/bütünleme %40; dönem sonu notu ve dönem sonu sınav notu ayrı ayrı en az CC (60). 2026-2027 planında Dönem 1/2/3 için 4, 4 ve 6 ders kurulu. | SHA-256: 43b24d8bf57c21a69ca821aad6947025fae49448eed03c6699862fe93e4a6398 | Yıl: yürürlükte | Konum: Madde 18(1),(3) | Kanıt: Dönem sonu notu = ders kurulu sınav puanlarının ortalamasının %60'ı + dönem sonu/bütünleme sınavının %40'ı (RG 26.05.2024 değişik ibare); üst döneme geçmek için dönem sonu notu ve dönem sonu sınav notu en az CC (60)."
         },
         {
           "url": "https://baunwebapi.balikesir.edu.tr/uploads/1784893934635.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Balıkesir Üniversitesi Tıp Fakültesi 2026-2027 Eğitim Öğretim Yılı Yıllık Ders ve Staj Planları",
-          "note": "Yıl: 2026-2027 | Konum: Dönem-1 tablosu | Kanıt: 2026-2027 Dönem-1: 4 ders kurulu (Tıbbi Bilimlere Giriş (TIP1108); Hücreden Dokuya: Yapı ve Fonksiyon-1 (TIP1109); Hücreden Dokuya: Yapı ve Fonksiyon-2 (TIP1110); Doku Sistemi (TIP1112)); Mesleki Beceriler ayrı ders."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 18(1),(3) (RG 26.05.2024 değişik): ders kurulu puanları ortalamasının %60'ı + dönem sonu/bütünleme %40; dönem sonu notu ve dönem sonu sınav notu ayrı ayrı en az CC (60). 2026-2027 planında Dönem 1/2/3 için 4, 4 ve 6 ders kurulu. | SHA-256: d83e25e3c525f62b82fa2d85cd4120c8007546fd3c312c5ed80b1b836d5ef3f9 | Yıl: 2026-2027 | Konum: Dönem-1 tablosu | Kanıt: 2026-2027 Dönem-1: 4 ders kurulu (Tıbbi Bilimlere Giriş (TIP1108); Hücreden Dokuya: Yapı ve Fonksiyon-1 (TIP1109); Hücreden Dokuya: Yapı ve Fonksiyon-2 (TIP1110); Doku Sistemi (TIP1112)); Mesleki Beceriler ayrı ders."
         }
       ]
     },
@@ -3922,16 +3784,16 @@
         {
           "url": "https://www.mevzuat.gov.tr/MevzuatMetin/yonetmelik/8.5.19361.pdf",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Balıkesir Üniversitesi Tıp Fakültesi Eğitim Öğretim ve Sınav Yönetmeliği (RG 29.01.2014/28897; değişiklik RG 26.05.2024/32557)",
-          "note": "Yıl: yürürlükte | Konum: Madde 18(1),(3) | Kanıt: Dönem sonu notu = ders kurulu sınav puanlarının ortalamasının %60'ı + dönem sonu/bütünleme sınavının %40'ı (RG 26.05.2024 değişik ibare); üst döneme geçmek için dönem sonu notu ve dönem sonu sınav notu en az CC (60)."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 18(1),(3) (RG 26.05.2024 değişik): ders kurulu puanları ortalamasının %60'ı + dönem sonu/bütünleme %40; dönem sonu notu ve dönem sonu sınav notu ayrı ayrı en az CC (60). 2026-2027 planında Dönem 1/2/3 için 4, 4 ve 6 ders kurulu. | SHA-256: 43b24d8bf57c21a69ca821aad6947025fae49448eed03c6699862fe93e4a6398 | Yıl: yürürlükte | Konum: Madde 18(1),(3) | Kanıt: Dönem sonu notu = ders kurulu sınav puanlarının ortalamasının %60'ı + dönem sonu/bütünleme sınavının %40'ı (RG 26.05.2024 değişik ibare); üst döneme geçmek için dönem sonu notu ve dönem sonu sınav notu en az CC (60)."
         },
         {
           "url": "https://baunwebapi.balikesir.edu.tr/uploads/1784893934635.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Balıkesir Üniversitesi Tıp Fakültesi 2026-2027 Eğitim Öğretim Yılı Yıllık Ders ve Staj Planları",
-          "note": "Yıl: 2026-2027 | Konum: Dönem-2 tablosu | Kanıt: 2026-2027 Dönem-2: 4 ders kurulu (Nörolojik Bilimler (TIP2105); Kan, Dolaşım ve Solunum Sistemleri (TIP2102); Endokrin Üreme ve Boşaltım Sistemleri (TIP2104); Sindirim ve Metabolizma Sistemleri (TIP2103)); Mesleki Beceriler ayrı ders."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 18(1),(3) (RG 26.05.2024 değişik): ders kurulu puanları ortalamasının %60'ı + dönem sonu/bütünleme %40; dönem sonu notu ve dönem sonu sınav notu ayrı ayrı en az CC (60). 2026-2027 planında Dönem 1/2/3 için 4, 4 ve 6 ders kurulu. | SHA-256: d83e25e3c525f62b82fa2d85cd4120c8007546fd3c312c5ed80b1b836d5ef3f9 | Yıl: 2026-2027 | Konum: Dönem-2 tablosu | Kanıt: 2026-2027 Dönem-2: 4 ders kurulu (Nörolojik Bilimler (TIP2105); Kan, Dolaşım ve Solunum Sistemleri (TIP2102); Endokrin Üreme ve Boşaltım Sistemleri (TIP2104); Sindirim ve Metabolizma Sistemleri (TIP2103)); Mesleki Beceriler ayrı ders."
         }
       ]
     },
@@ -3981,16 +3843,16 @@
         {
           "url": "https://www.mevzuat.gov.tr/MevzuatMetin/yonetmelik/8.5.19361.pdf",
           "type": "OFFICIAL_GAZETTE_REGULATION",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Balıkesir Üniversitesi Tıp Fakültesi Eğitim Öğretim ve Sınav Yönetmeliği (RG 29.01.2014/28897; değişiklik RG 26.05.2024/32557)",
-          "note": "Yıl: yürürlükte | Konum: Madde 18(1),(3) | Kanıt: Dönem sonu notu = ders kurulu sınav puanlarının ortalamasının %60'ı + dönem sonu/bütünleme sınavının %40'ı (RG 26.05.2024 değişik ibare); üst döneme geçmek için dönem sonu notu ve dönem sonu sınav notu en az CC (60)."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 18(1),(3) (RG 26.05.2024 değişik): ders kurulu puanları ortalamasının %60'ı + dönem sonu/bütünleme %40; dönem sonu notu ve dönem sonu sınav notu ayrı ayrı en az CC (60). 2026-2027 planında Dönem 1/2/3 için 4, 4 ve 6 ders kurulu. | SHA-256: 43b24d8bf57c21a69ca821aad6947025fae49448eed03c6699862fe93e4a6398 | Yıl: yürürlükte | Konum: Madde 18(1),(3) | Kanıt: Dönem sonu notu = ders kurulu sınav puanlarının ortalamasının %60'ı + dönem sonu/bütünleme sınavının %40'ı (RG 26.05.2024 değişik ibare); üst döneme geçmek için dönem sonu notu ve dönem sonu sınav notu en az CC (60)."
         },
         {
           "url": "https://baunwebapi.balikesir.edu.tr/uploads/1784893934635.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "Balıkesir Üniversitesi Tıp Fakültesi 2026-2027 Eğitim Öğretim Yılı Yıllık Ders ve Staj Planları",
-          "note": "Yıl: 2026-2027 | Konum: Dönem-3 tablosu | Kanıt: 2026-2027 Dönem-3: 6 ders kurulu (Hastalıkların Biyolojik Temeli (TIP3101); Enfeksiyon, Neoplazi ve Hematopoetik Sistem (TIP3110); Gastrointestinal ve Endokrin Sistemleri (TIP3111); Dolaşım ve Solunum Sistemleri (TIP3104); Sinir ve Kas İskelet Sistemleri (TIP3112); Ürogenital Sistem ve Halk Sağlığı (TIP3113)); Mesleki Beceriler ayrı ders."
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 18(1),(3) (RG 26.05.2024 değişik): ders kurulu puanları ortalamasının %60'ı + dönem sonu/bütünleme %40; dönem sonu notu ve dönem sonu sınav notu ayrı ayrı en az CC (60). 2026-2027 planında Dönem 1/2/3 için 4, 4 ve 6 ders kurulu. | SHA-256: d83e25e3c525f62b82fa2d85cd4120c8007546fd3c312c5ed80b1b836d5ef3f9 | Yıl: 2026-2027 | Konum: Dönem-3 tablosu | Kanıt: 2026-2027 Dönem-3: 6 ders kurulu (Hastalıkların Biyolojik Temeli (TIP3101); Enfeksiyon, Neoplazi ve Hematopoetik Sistem (TIP3110); Gastrointestinal ve Endokrin Sistemleri (TIP3111); Dolaşım ve Solunum Sistemleri (TIP3104); Sinir ve Kas İskelet Sistemleri (TIP3112); Ürogenital Sistem ve Halk Sağlığı (TIP3113)); Mesleki Beceriler ayrı ders."
         }
       ]
     },
@@ -4035,16 +3897,16 @@
         {
           "url": "https://gulhanetip.sbu.edu.tr/uploads/7c8ef55f-a774-7277-092e-3a0814c9d6d1/gtf_2026-2027_egitim_ogretim_yl_egitim_program.pdf",
           "type": "FACULTY_PROGRAM_BOOK",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Gülhane Tıp Fakültesi 2026-2027 Eğitim-Öğretim Yılı Eğitim Programı",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.33 \"III. Ölçme-Değerlendirme Bilgileri / Yıl Sonu Başarı Notunun Hesaplanması\" | Kanıt: 1. sınıf: 5 kurulun başarı notuna katkıları %11.44, %11.65, %14.55, %12.84, %9.52 (toplam %60); Yıl Sonu Sınavı/Bütünleme katkısı %40 (final içi bileşim: Teorik %75, Laboratuvar %14, Mesleki Beceri %9, Sosyal Sorumluluk Programı %2)."
+          "note": "Doğrulama 2026-11-21: 2026-2027 Öğrenci Kılavuzu 'Kurul Ağırlığı (Başarı notuna katkısı)': 1. sınıf %11,44/11,65/14,55/12,84/9,52, 2. sınıf %14,24/9,98/7,28/10,82/8,84/8,84, 3. sınıf %5,97/11,85/11,02/13,18/9,61/8,37; yıl sonu/bütünleme %40. Yönerge: blok başarı notu en az 60. | SHA-256: 44317b6cdf43246a125036b632e8cbd713be55cd668293940bca04339ad35506 | Yıl: 2026-2027 | Konum: PDF s.33 \"III. Ölçme-Değerlendirme Bilgileri / Yıl Sonu Başarı Notunun Hesaplanması\" | Kanıt: 1. sınıf: 5 kurulun başarı notuna katkıları %11.44, %11.65, %14.55, %12.84, %9.52 (toplam %60); Yıl Sonu Sınavı/Bütünleme katkısı %40 (final içi bileşim: Teorik %75, Laboratuvar %14, Mesleki Beceri %9, Sosyal Sorumluluk Programı %2)."
         },
         {
           "url": "https://sbu.edu.tr/uploads/7c8ef55f-a774-7277-092e-3a0814c9d6d1/gtfeosyrevize_858c12b552bc45a2b41eb030ccfa9406.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Gülhane Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönergesi (Senato 16.08.2022/24-10; değişiklik 18.07.2023/23-07 ve 27.08.2026/21-20)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6-7, Madde 16(1)(c) ve 17(1) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; blok başarı notu en az 60 (27.08.2026 tarih ve 21-20 sayılı Senato kararıyla değişik)."
+          "note": "Doğrulama 2026-11-21: 2026-2027 Öğrenci Kılavuzu 'Kurul Ağırlığı (Başarı notuna katkısı)': 1. sınıf %11,44/11,65/14,55/12,84/9,52, 2. sınıf %14,24/9,98/7,28/10,82/8,84/8,84, 3. sınıf %5,97/11,85/11,02/13,18/9,61/8,37; yıl sonu/bütünleme %40. Yönerge: blok başarı notu en az 60. | SHA-256: 2b2da60d71a48fbbb2775ce4376360c8c63023cdb654cb4b3017d84010125b1b | Yıl: 2026-2027 | Konum: PDF s.6-7, Madde 16(1)(c) ve 17(1) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; blok başarı notu en az 60 (27.08.2026 tarih ve 21-20 sayılı Senato kararıyla değişik)."
         }
       ]
     },
@@ -4094,16 +3956,16 @@
         {
           "url": "https://gulhanetip.sbu.edu.tr/uploads/7c8ef55f-a774-7277-092e-3a0814c9d6d1/gtf_2026-2027_egitim_ogretim_yl_egitim_program.pdf",
           "type": "FACULTY_PROGRAM_BOOK",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Gülhane Tıp Fakültesi 2026-2027 Eğitim-Öğretim Yılı Eğitim Programı",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.83 \"III. Ölçme-Değerlendirme Bilgileri / Yıl Sonu Başarı Notunun Hesaplanması\" | Kanıt: 2. sınıf: 6 kurulun başarı notuna katkıları %14.24, %9.98, %7.28, %10.82, %8.84, %8.84 (toplam %60); Yıl Sonu Sınavı/Bütünleme katkısı %40 (final içi bileşim: Teorik %75, Laboratuvar %13, Mesleki Beceri %9, Bilimsel Düşünme ve Planlama %3)."
+          "note": "Doğrulama 2026-11-21: 2026-2027 Öğrenci Kılavuzu 'Kurul Ağırlığı (Başarı notuna katkısı)': 1. sınıf %11,44/11,65/14,55/12,84/9,52, 2. sınıf %14,24/9,98/7,28/10,82/8,84/8,84, 3. sınıf %5,97/11,85/11,02/13,18/9,61/8,37; yıl sonu/bütünleme %40. Yönerge: blok başarı notu en az 60. | SHA-256: 44317b6cdf43246a125036b632e8cbd713be55cd668293940bca04339ad35506 | Yıl: 2026-2027 | Konum: PDF s.83 \"III. Ölçme-Değerlendirme Bilgileri / Yıl Sonu Başarı Notunun Hesaplanması\" | Kanıt: 2. sınıf: 6 kurulun başarı notuna katkıları %14.24, %9.98, %7.28, %10.82, %8.84, %8.84 (toplam %60); Yıl Sonu Sınavı/Bütünleme katkısı %40 (final içi bileşim: Teorik %75, Laboratuvar %13, Mesleki Beceri %9, Bilimsel Düşünme ve Planlama %3)."
         },
         {
           "url": "https://sbu.edu.tr/uploads/7c8ef55f-a774-7277-092e-3a0814c9d6d1/gtfeosyrevize_858c12b552bc45a2b41eb030ccfa9406.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Gülhane Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönergesi (Senato 16.08.2022/24-10; değişiklik 18.07.2023/23-07 ve 27.08.2026/21-20)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6-7, Madde 16(1)(c) ve 17(1) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; blok başarı notu en az 60 (27.08.2026 tarih ve 21-20 sayılı Senato kararıyla değişik)."
+          "note": "Doğrulama 2026-11-21: 2026-2027 Öğrenci Kılavuzu 'Kurul Ağırlığı (Başarı notuna katkısı)': 1. sınıf %11,44/11,65/14,55/12,84/9,52, 2. sınıf %14,24/9,98/7,28/10,82/8,84/8,84, 3. sınıf %5,97/11,85/11,02/13,18/9,61/8,37; yıl sonu/bütünleme %40. Yönerge: blok başarı notu en az 60. | SHA-256: 2b2da60d71a48fbbb2775ce4376360c8c63023cdb654cb4b3017d84010125b1b | Yıl: 2026-2027 | Konum: PDF s.6-7, Madde 16(1)(c) ve 17(1) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; blok başarı notu en az 60 (27.08.2026 tarih ve 21-20 sayılı Senato kararıyla değişik)."
         }
       ]
     },
@@ -4153,16 +4015,16 @@
         {
           "url": "https://gulhanetip.sbu.edu.tr/uploads/7c8ef55f-a774-7277-092e-3a0814c9d6d1/gtf_2026-2027_egitim_ogretim_yl_egitim_program.pdf",
           "type": "FACULTY_PROGRAM_BOOK",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Gülhane Tıp Fakültesi 2026-2027 Eğitim-Öğretim Yılı Eğitim Programı",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.143 \"III. Ölçme-Değerlendirme Bilgileri / Yıl Sonu Başarı Notunun Hesaplanması\" | Kanıt: 3. sınıf: 6 kurulun başarı notuna katkıları %5.97, %11.85, %11.02, %13.18, %9.61, %8.37 (toplam %60); Yıl Sonu Sınavı/Bütünleme katkısı %40 (final içi bileşim: Teorik %85, Mesleki Beceri %9, Bilimsel Düşünme ve Planlama %3, Topluma Dayalı Tıp Uygulamaları %3)."
+          "note": "Doğrulama 2026-11-21: 2026-2027 Öğrenci Kılavuzu 'Kurul Ağırlığı (Başarı notuna katkısı)': 1. sınıf %11,44/11,65/14,55/12,84/9,52, 2. sınıf %14,24/9,98/7,28/10,82/8,84/8,84, 3. sınıf %5,97/11,85/11,02/13,18/9,61/8,37; yıl sonu/bütünleme %40. Yönerge: blok başarı notu en az 60. | SHA-256: 44317b6cdf43246a125036b632e8cbd713be55cd668293940bca04339ad35506 | Yıl: 2026-2027 | Konum: PDF s.143 \"III. Ölçme-Değerlendirme Bilgileri / Yıl Sonu Başarı Notunun Hesaplanması\" | Kanıt: 3. sınıf: 6 kurulun başarı notuna katkıları %5.97, %11.85, %11.02, %13.18, %9.61, %8.37 (toplam %60); Yıl Sonu Sınavı/Bütünleme katkısı %40 (final içi bileşim: Teorik %85, Mesleki Beceri %9, Bilimsel Düşünme ve Planlama %3, Topluma Dayalı Tıp Uygulamaları %3)."
         },
         {
           "url": "https://sbu.edu.tr/uploads/7c8ef55f-a774-7277-092e-3a0814c9d6d1/gtfeosyrevize_858c12b552bc45a2b41eb030ccfa9406.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Gülhane Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönergesi (Senato 16.08.2022/24-10; değişiklik 18.07.2023/23-07 ve 27.08.2026/21-20)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6-7, Madde 16(1)(c) ve 17(1) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; blok başarı notu en az 60 (27.08.2026 tarih ve 21-20 sayılı Senato kararıyla değişik)."
+          "note": "Doğrulama 2026-11-21: 2026-2027 Öğrenci Kılavuzu 'Kurul Ağırlığı (Başarı notuna katkısı)': 1. sınıf %11,44/11,65/14,55/12,84/9,52, 2. sınıf %14,24/9,98/7,28/10,82/8,84/8,84, 3. sınıf %5,97/11,85/11,02/13,18/9,61/8,37; yıl sonu/bütünleme %40. Yönerge: blok başarı notu en az 60. | SHA-256: 2b2da60d71a48fbbb2775ce4376360c8c63023cdb654cb4b3017d84010125b1b | Yıl: 2026-2027 | Konum: PDF s.6-7, Madde 16(1)(c) ve 17(1) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; blok başarı notu en az 60 (27.08.2026 tarih ve 21-20 sayılı Senato kararıyla değişik)."
         }
       ]
     },
@@ -4212,16 +4074,16 @@
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/htf-egitim-ogretim-ve-sinav-yonergesi-27082026.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi Eğitim Öğretim ve Sınav Yönergesi (Senato 25.07.2023/24-06; değişiklik 27.08.2026/21-19)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
+          "note": "Doğrulama 2026-11-21: Hamidiye Tıp ile aynı yönerge ve 2026-2027 müfredatı (Madde 13(2); AKTS 40/52/56). | SHA-256: ad2cb398334b955d8907b21bea4c04d47ff708e7207622b64664dec3fc2ce54e | Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
         },
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/hamdye_tp_fakultes_2026-2027_mufredat-01092026_abxlsx.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi 2026-2027 Müfredatı (01.09.2026)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1, 1.SINIF tablosu | Kanıt: 2026-2027 1. sınıf Ders Kurulları Bloğu 40 AKTS: Tıbba Giriş 7, Yaşamın Temelleri 6, Hücre ve Metabolizması 8, Genetik ve Yaşam Döngüsü 5, Doku ve İskelet Sistemi 6, Kas ve Periferik Sinir 8."
+          "note": "Doğrulama 2026-11-21: Hamidiye Tıp ile aynı yönerge ve 2026-2027 müfredatı (Madde 13(2); AKTS 40/52/56). | SHA-256: aecc1b0a6fabe0a505d9edc413b4029798ce63de4f23c6fbafc9993b527fe635 | Yıl: 2026-2027 | Konum: PDF s.1, 1.SINIF tablosu | Kanıt: 2026-2027 1. sınıf Ders Kurulları Bloğu 40 AKTS: Tıbba Giriş 7, Yaşamın Temelleri 6, Hücre ve Metabolizması 8, Genetik ve Yaşam Döngüsü 5, Doku ve İskelet Sistemi 6, Kas ve Periferik Sinir 8."
         }
       ]
     },
@@ -4266,16 +4128,16 @@
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/htf-egitim-ogretim-ve-sinav-yonergesi-27082026.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi Eğitim Öğretim ve Sınav Yönergesi (Senato 25.07.2023/24-06; değişiklik 27.08.2026/21-19)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
+          "note": "Doğrulama 2026-11-21: Hamidiye Tıp ile aynı yönerge ve 2026-2027 müfredatı (Madde 13(2); AKTS 40/52/56). | SHA-256: ad2cb398334b955d8907b21bea4c04d47ff708e7207622b64664dec3fc2ce54e | Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
         },
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/hamdye_tp_fakultes_2026-2027_mufredat-01092026_abxlsx.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi 2026-2027 Müfredatı (01.09.2026)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1, 2.SINIF tablosu | Kanıt: 2026-2027 2. sınıf Ders Kurulları Bloğu 52 AKTS: Kan, Dolaşım ve Solunum Sistemi 11, Sindirim Sistemi ve Metabolizma 7, Merkezi Sinir Sistemi ve Duyu 12, Endokrin ve Ürogenital Sistem 10, Hastalıkların Temelleri 12."
+          "note": "Doğrulama 2026-11-21: Hamidiye Tıp ile aynı yönerge ve 2026-2027 müfredatı (Madde 13(2); AKTS 40/52/56). | SHA-256: aecc1b0a6fabe0a505d9edc413b4029798ce63de4f23c6fbafc9993b527fe635 | Yıl: 2026-2027 | Konum: PDF s.1, 2.SINIF tablosu | Kanıt: 2026-2027 2. sınıf Ders Kurulları Bloğu 52 AKTS: Kan, Dolaşım ve Solunum Sistemi 11, Sindirim Sistemi ve Metabolizma 7, Merkezi Sinir Sistemi ve Duyu 12, Endokrin ve Ürogenital Sistem 10, Hastalıkların Temelleri 12."
         }
       ]
     },
@@ -4330,16 +4192,16 @@
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/htf-egitim-ogretim-ve-sinav-yonergesi-27082026.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi Eğitim Öğretim ve Sınav Yönergesi (Senato 25.07.2023/24-06; değişiklik 27.08.2026/21-19)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
+          "note": "Doğrulama 2026-11-21: Hamidiye Tıp ile aynı yönerge ve 2026-2027 müfredatı (Madde 13(2); AKTS 40/52/56). | SHA-256: ad2cb398334b955d8907b21bea4c04d47ff708e7207622b64664dec3fc2ce54e | Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
         },
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/hamdye_tp_fakultes_2026-2027_mufredat-01092026_abxlsx.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi 2026-2027 Müfredatı (01.09.2026)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1, 3.SINIF tablosu | Kanıt: 2026-2027 3. sınıf Ders Kurulları Bloğu 56 AKTS: Halk Sağlığı, Tıp Hukuku 9, Kas İskelet Sistemi ve Deri Hastalıkları 8, Kan ve Lenf Hastalıkları 6, Dolaşım ve Solunum Sistemi Hastalıkları 8, Sindirim Sistemi ve Metabolizma Hastalıkları 6, Ürogenital ve Endokrin Sistem Hastalıkları 9, Nöroloji Psikiyatri ve Duyu Organları Hastalıkları 10."
+          "note": "Doğrulama 2026-11-21: Hamidiye Tıp ile aynı yönerge ve 2026-2027 müfredatı (Madde 13(2); AKTS 40/52/56). | SHA-256: aecc1b0a6fabe0a505d9edc413b4029798ce63de4f23c6fbafc9993b527fe635 | Yıl: 2026-2027 | Konum: PDF s.1, 3.SINIF tablosu | Kanıt: 2026-2027 3. sınıf Ders Kurulları Bloğu 56 AKTS: Halk Sağlığı, Tıp Hukuku 9, Kas İskelet Sistemi ve Deri Hastalıkları 8, Kan ve Lenf Hastalıkları 6, Dolaşım ve Solunum Sistemi Hastalıkları 8, Sindirim Sistemi ve Metabolizma Hastalıkları 6, Ürogenital ve Endokrin Sistem Hastalıkları 9, Nöroloji Psikiyatri ve Duyu Organları Hastalıkları 10."
         }
       ]
     },
@@ -4389,16 +4251,16 @@
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/htf-egitim-ogretim-ve-sinav-yonergesi-27082026.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi Eğitim Öğretim ve Sınav Yönergesi (Senato 25.07.2023/24-06; değişiklik 27.08.2026/21-19)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
+          "note": "Doğrulama 2026-11-21: Yönerge (27.08.2026) Madde 13(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60; her kuruldan en az 50 şartı hesaba katılmadı. 2026-2027 müfredatı AKTS: 1. sınıf 7/6/8/5/6/8 (40), 2. sınıf 11/7/12/10/12 (52), 3. sınıf 9/8/6/8/6/9/10 (56). | SHA-256: ad2cb398334b955d8907b21bea4c04d47ff708e7207622b64664dec3fc2ce54e | Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
         },
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/hamdye_tp_fakultes_2026-2027_mufredat-01092026_abxlsx.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi 2026-2027 Müfredatı (01.09.2026)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1, 1.SINIF tablosu | Kanıt: 2026-2027 1. sınıf Ders Kurulları Bloğu 40 AKTS: Tıbba Giriş 7, Yaşamın Temelleri 6, Hücre ve Metabolizması 8, Genetik ve Yaşam Döngüsü 5, Doku ve İskelet Sistemi 6, Kas ve Periferik Sinir 8."
+          "note": "Doğrulama 2026-11-21: Yönerge (27.08.2026) Madde 13(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60; her kuruldan en az 50 şartı hesaba katılmadı. 2026-2027 müfredatı AKTS: 1. sınıf 7/6/8/5/6/8 (40), 2. sınıf 11/7/12/10/12 (52), 3. sınıf 9/8/6/8/6/9/10 (56). | SHA-256: aecc1b0a6fabe0a505d9edc413b4029798ce63de4f23c6fbafc9993b527fe635 | Yıl: 2026-2027 | Konum: PDF s.1, 1.SINIF tablosu | Kanıt: 2026-2027 1. sınıf Ders Kurulları Bloğu 40 AKTS: Tıbba Giriş 7, Yaşamın Temelleri 6, Hücre ve Metabolizması 8, Genetik ve Yaşam Döngüsü 5, Doku ve İskelet Sistemi 6, Kas ve Periferik Sinir 8."
         }
       ]
     },
@@ -4443,16 +4305,16 @@
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/htf-egitim-ogretim-ve-sinav-yonergesi-27082026.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi Eğitim Öğretim ve Sınav Yönergesi (Senato 25.07.2023/24-06; değişiklik 27.08.2026/21-19)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
+          "note": "Doğrulama 2026-11-21: Yönerge (27.08.2026) Madde 13(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60; her kuruldan en az 50 şartı hesaba katılmadı. 2026-2027 müfredatı AKTS: 1. sınıf 7/6/8/5/6/8 (40), 2. sınıf 11/7/12/10/12 (52), 3. sınıf 9/8/6/8/6/9/10 (56). | SHA-256: ad2cb398334b955d8907b21bea4c04d47ff708e7207622b64664dec3fc2ce54e | Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
         },
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/hamdye_tp_fakultes_2026-2027_mufredat-01092026_abxlsx.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi 2026-2027 Müfredatı (01.09.2026)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1, 2.SINIF tablosu | Kanıt: 2026-2027 2. sınıf Ders Kurulları Bloğu 52 AKTS: Kan, Dolaşım ve Solunum Sistemi 11, Sindirim Sistemi ve Metabolizma 7, Merkezi Sinir Sistemi ve Duyu 12, Endokrin ve Ürogenital Sistem 10, Hastalıkların Temelleri 12."
+          "note": "Doğrulama 2026-11-21: Yönerge (27.08.2026) Madde 13(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60; her kuruldan en az 50 şartı hesaba katılmadı. 2026-2027 müfredatı AKTS: 1. sınıf 7/6/8/5/6/8 (40), 2. sınıf 11/7/12/10/12 (52), 3. sınıf 9/8/6/8/6/9/10 (56). | SHA-256: aecc1b0a6fabe0a505d9edc413b4029798ce63de4f23c6fbafc9993b527fe635 | Yıl: 2026-2027 | Konum: PDF s.1, 2.SINIF tablosu | Kanıt: 2026-2027 2. sınıf Ders Kurulları Bloğu 52 AKTS: Kan, Dolaşım ve Solunum Sistemi 11, Sindirim Sistemi ve Metabolizma 7, Merkezi Sinir Sistemi ve Duyu 12, Endokrin ve Ürogenital Sistem 10, Hastalıkların Temelleri 12."
         }
       ]
     },
@@ -4507,16 +4369,16 @@
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/htf-egitim-ogretim-ve-sinav-yonergesi-27082026.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi Eğitim Öğretim ve Sınav Yönergesi (Senato 25.07.2023/24-06; değişiklik 27.08.2026/21-19)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
+          "note": "Doğrulama 2026-11-21: Yönerge (27.08.2026) Madde 13(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60; her kuruldan en az 50 şartı hesaba katılmadı. 2026-2027 müfredatı AKTS: 1. sınıf 7/6/8/5/6/8 (40), 2. sınıf 11/7/12/10/12 (52), 3. sınıf 9/8/6/8/6/9/10 (56). | SHA-256: ad2cb398334b955d8907b21bea4c04d47ff708e7207622b64664dec3fc2ce54e | Yıl: 2026-2027 | Konum: PDF s.6, Madde 13(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (Senato 27.08.2026/21-19 değişikliği)."
         },
         {
           "url": "https://tip.sbu.edu.tr/uploads/294de994-6449-54a2-87e0-3a0814c6e272/hamdye_tp_fakultes_2026-2027_mufredat-01092026_abxlsx.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Tıp Fakültesi 2026-2027 Müfredatı (01.09.2026)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1, 3.SINIF tablosu | Kanıt: 2026-2027 3. sınıf Ders Kurulları Bloğu 56 AKTS: Halk Sağlığı, Tıp Hukuku 9, Kas İskelet Sistemi ve Deri Hastalıkları 8, Kan ve Lenf Hastalıkları 6, Dolaşım ve Solunum Sistemi Hastalıkları 8, Sindirim Sistemi ve Metabolizma Hastalıkları 6, Ürogenital ve Endokrin Sistem Hastalıkları 9, Nöroloji Psikiyatri ve Duyu Organları Hastalıkları 10."
+          "note": "Doğrulama 2026-11-21: Yönerge (27.08.2026) Madde 13(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60; her kuruldan en az 50 şartı hesaba katılmadı. 2026-2027 müfredatı AKTS: 1. sınıf 7/6/8/5/6/8 (40), 2. sınıf 11/7/12/10/12 (52), 3. sınıf 9/8/6/8/6/9/10 (56). | SHA-256: aecc1b0a6fabe0a505d9edc413b4029798ce63de4f23c6fbafc9993b527fe635 | Yıl: 2026-2027 | Konum: PDF s.1, 3.SINIF tablosu | Kanıt: 2026-2027 3. sınıf Ders Kurulları Bloğu 56 AKTS: Halk Sağlığı, Tıp Hukuku 9, Kas İskelet Sistemi ve Deri Hastalıkları 8, Kan ve Lenf Hastalıkları 6, Dolaşım ve Solunum Sistemi Hastalıkları 8, Sindirim Sistemi ve Metabolizma Hastalıkları 6, Ürogenital ve Endokrin Sistem Hastalıkları 9, Nöroloji Psikiyatri ve Duyu Organları Hastalıkları 10."
         }
       ]
     },
@@ -4566,16 +4428,16 @@
         {
           "url": "https://sbu.edu.tr/uploads/7500448e-ff26-9c2d-bcac-3a0814c63405/hamidiye_uluslararasi_tip_fakultesi_egitim_ogretim_ve_sinav_yonergesi_83f62ff16d304eb8a3595c3b6f14092b.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Uluslararası Tıp Fakültesi Eğitim Öğretim ve Sınav Yönergesi (değişiklikler 04.07.2023/21-04, 25.09.2024/28-03, 27.08.2026/21-21; PDF oluşturma 23.09.2026)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6, Madde 14(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (27.08.2026/21-21 değişikliği)."
+          "note": "Doğrulama 2026-11-21: Yönerge Madde 14(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60. 2026-2027 müfredatı AKTS: 1. sınıf 4/8/8/8/8/8 (44), 2. sınıf 9/9/9/9/10/10 (56), 3. sınıf 7/8/8/8/9/7/9 (56). | SHA-256: a1753f490e4f43d0827427de578c5419054a32d58a1dcf1f74dfcaee8f897ddd | Yıl: 2026-2027 | Konum: PDF s.6, Madde 14(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (27.08.2026/21-21 değişikliği)."
         },
         {
           "url": "https://sbu.edu.tr/uploads/7500448e-ff26-9c2d-bcac-3a0814c63405/2026-2027_mufredat.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Uluslararası Tıp Fakültesi 2026-2027 Eğitim Öğretim Yılı Müfredatı",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.1, 1.SINIF tablosu (DKBL 19 001 01) | Kanıt: 2026-2027 1. sınıf Ders Kurulları Bloğu 44 AKTS: Birey ve Toplum Sağlığına Giriş 4, Molekülden Hücreye 8, Hücre ve Metabolizma 8, Genetik ve Yaşam Döngüsü 8, Hücreden Dokuya 8, Kas ve Periferik Sinir 8."
+          "note": "Doğrulama 2026-11-21: Yönerge Madde 14(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60. 2026-2027 müfredatı AKTS: 1. sınıf 4/8/8/8/8/8 (44), 2. sınıf 9/9/9/9/10/10 (56), 3. sınıf 7/8/8/8/9/7/9 (56). | SHA-256: 64cffd1f25f3991fb9783716f195381818929fc3bc750835f7dba4b82cacf693 | Yıl: 2026-2027 | Konum: PDF s.1, 1.SINIF tablosu (DKBL 19 001 01) | Kanıt: 2026-2027 1. sınıf Ders Kurulları Bloğu 44 AKTS: Birey ve Toplum Sağlığına Giriş 4, Molekülden Hücreye 8, Hücre ve Metabolizma 8, Genetik ve Yaşam Döngüsü 8, Hücreden Dokuya 8, Kas ve Periferik Sinir 8."
         }
       ]
     },
@@ -4625,16 +4487,16 @@
         {
           "url": "https://sbu.edu.tr/uploads/7500448e-ff26-9c2d-bcac-3a0814c63405/hamidiye_uluslararasi_tip_fakultesi_egitim_ogretim_ve_sinav_yonergesi_83f62ff16d304eb8a3595c3b6f14092b.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Uluslararası Tıp Fakültesi Eğitim Öğretim ve Sınav Yönergesi (değişiklikler 04.07.2023/21-04, 25.09.2024/28-03, 27.08.2026/21-21; PDF oluşturma 23.09.2026)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6, Madde 14(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (27.08.2026/21-21 değişikliği)."
+          "note": "Doğrulama 2026-11-21: Yönerge Madde 14(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60. 2026-2027 müfredatı AKTS: 1. sınıf 4/8/8/8/8/8 (44), 2. sınıf 9/9/9/9/10/10 (56), 3. sınıf 7/8/8/8/9/7/9 (56). | SHA-256: a1753f490e4f43d0827427de578c5419054a32d58a1dcf1f74dfcaee8f897ddd | Yıl: 2026-2027 | Konum: PDF s.6, Madde 14(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (27.08.2026/21-21 değişikliği)."
         },
         {
           "url": "https://sbu.edu.tr/uploads/7500448e-ff26-9c2d-bcac-3a0814c63405/2026-2027_mufredat.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Uluslararası Tıp Fakültesi 2026-2027 Eğitim Öğretim Yılı Müfredatı",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.4, 2.SINIF tablosu (DKBL 19 001 02) | Kanıt: 2026-2027 2. sınıf Ders Kurulları Bloğu 56 AKTS: Dolaşım Sistemi 9, Kan, Lenf ve İmmün Sistem 9, Solunum Sistemi 9, Sindirim Sistemi ve Metabolizma 9, Endokrin ve Ürogenital Sistem 10, Merkezi Sinir Sistemi ve Duyu Organları 10."
+          "note": "Doğrulama 2026-11-21: Yönerge Madde 14(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60. 2026-2027 müfredatı AKTS: 1. sınıf 4/8/8/8/8/8 (44), 2. sınıf 9/9/9/9/10/10 (56), 3. sınıf 7/8/8/8/9/7/9 (56). | SHA-256: 64cffd1f25f3991fb9783716f195381818929fc3bc750835f7dba4b82cacf693 | Yıl: 2026-2027 | Konum: PDF s.4, 2.SINIF tablosu (DKBL 19 001 02) | Kanıt: 2026-2027 2. sınıf Ders Kurulları Bloğu 56 AKTS: Dolaşım Sistemi 9, Kan, Lenf ve İmmün Sistem 9, Solunum Sistemi 9, Sindirim Sistemi ve Metabolizma 9, Endokrin ve Ürogenital Sistem 10, Merkezi Sinir Sistemi ve Duyu Organları 10."
         }
       ]
     },
@@ -4689,16 +4551,16 @@
         {
           "url": "https://sbu.edu.tr/uploads/7500448e-ff26-9c2d-bcac-3a0814c63405/hamidiye_uluslararasi_tip_fakultesi_egitim_ogretim_ve_sinav_yonergesi_83f62ff16d304eb8a3595c3b6f14092b.pdf",
           "type": "FACULTY_DIRECTIVE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Uluslararası Tıp Fakültesi Eğitim Öğretim ve Sınav Yönergesi (değişiklikler 04.07.2023/21-04, 25.09.2024/28-03, 27.08.2026/21-21; PDF oluşturma 23.09.2026)",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6, Madde 14(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (27.08.2026/21-21 değişikliği)."
+          "note": "Doğrulama 2026-11-21: Yönerge Madde 14(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60. 2026-2027 müfredatı AKTS: 1. sınıf 4/8/8/8/8/8 (44), 2. sınıf 9/9/9/9/10/10 (56), 3. sınıf 7/8/8/8/9/7/9 (56). | SHA-256: a1753f490e4f43d0827427de578c5419054a32d58a1dcf1f74dfcaee8f897ddd | Yıl: 2026-2027 | Konum: PDF s.6, Madde 14(2) | Kanıt: Ders Kurulları Bloğu Başarı Notu = kurul notlarının AKTS kredilerine göre ağırlıklı ortalamasının %60'ı + blok genel/bütünleme sınavının %40'ı; başarı 60 (27.08.2026/21-21 değişikliği)."
         },
         {
           "url": "https://sbu.edu.tr/uploads/7500448e-ff26-9c2d-bcac-3a0814c63405/2026-2027_mufredat.pdf",
           "type": "FACULTY_CURRICULUM_TABLE",
-          "verifiedAt": "2026-11-18T00:00:00.000Z",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "SBÜ Hamidiye Uluslararası Tıp Fakültesi 2026-2027 Eğitim Öğretim Yılı Müfredatı",
-          "note": "Yıl: 2026-2027 | Konum: PDF s.6, 3.SINIF tablosu (DKBL 19 001 03) | Kanıt: 2026-2027 3. sınıf Ders Kurulları Bloğu 56 AKTS: Dolaşım Sistemi Hastalıkları 7, Kan ve Lenf Hastalıkları 8, Solunum Sistemi Hastalıkları 8, Sindirim Sistemi ve Metabolizma Hastalıkları 8, Endokrin ve Ürogenital Sistem Hastalıkları 9, Kas İskelet Sistemi ve Deri Hastalıkları 7, Nöroloji, Psikiyatri ve Duyu Organları Hastalıkları 9."
+          "note": "Doğrulama 2026-11-21: Yönerge Madde 14(2): kurulların AKTS ağırlıklı ortalamasının %60'ı + blok genel/bütünleme %40; başarı 60. 2026-2027 müfredatı AKTS: 1. sınıf 4/8/8/8/8/8 (44), 2. sınıf 9/9/9/9/10/10 (56), 3. sınıf 7/8/8/8/9/7/9 (56). | SHA-256: 64cffd1f25f3991fb9783716f195381818929fc3bc750835f7dba4b82cacf693 | Yıl: 2026-2027 | Konum: PDF s.6, 3.SINIF tablosu (DKBL 19 001 03) | Kanıt: 2026-2027 3. sınıf Ders Kurulları Bloğu 56 AKTS: Dolaşım Sistemi Hastalıkları 7, Kan ve Lenf Hastalıkları 8, Solunum Sistemi Hastalıkları 8, Sindirim Sistemi ve Metabolizma Hastalıkları 8, Endokrin ve Ürogenital Sistem Hastalıkları 9, Kas İskelet Sistemi ve Deri Hastalıkları 7, Nöroloji, Psikiyatri ve Duyu Organları Hastalıkları 9."
         }
       ]
     }
@@ -4715,6 +4577,18 @@
     {
       "scheme": "gs:acibadem-mehmet-ali-aydinlar-universitesi:tip-fakultesi:tip:2026:y3:annual:committee",
       "reason": "PARTIAL: BSC sayısı 2026-2027 için doğrulandı (5); %60/%40 formülü yalnız 2022 tarihli genel belgeden (VERIFIED_HISTORICAL). Ortalamanın eşit mi ağırlıklı mı olduğu belirsiz (\"average\" vs \"weighted average\") → kurul başı ağırlık üretilmedi. CMPS dersleri ayrı (%70/%30) ve kapsam dışı."
+    },
+    {
+      "scheme": "gs:afyonkarahisar-saglik-bilimleri-universitesi:tip-fakultesi:tip:2026:y1:annual:committee",
+      "reason": "NOT_VERIFIED_AGAINST_SOURCE: tip.afsu.edu.tr belgeleri okunamadı: sunucu TLS ara sertifikasını (Sectigo OV R36) göndermiyor; doğrulama kapatılmadı. Kural belgeyle karşılaştırılmadan eklenmez."
+    },
+    {
+      "scheme": "gs:afyonkarahisar-saglik-bilimleri-universitesi:tip-fakultesi:tip:2026:y2:annual:committee",
+      "reason": "NOT_VERIFIED_AGAINST_SOURCE: tip.afsu.edu.tr belgeleri okunamadı: sunucu TLS ara sertifikasını (Sectigo OV R36) göndermiyor; doğrulama kapatılmadı. Kural belgeyle karşılaştırılmadan eklenmez."
+    },
+    {
+      "scheme": "gs:afyonkarahisar-saglik-bilimleri-universitesi:tip-fakultesi:tip:2026:y3:annual:committee",
+      "reason": "NOT_VERIFIED_AGAINST_SOURCE: tip.afsu.edu.tr belgeleri okunamadı: sunucu TLS ara sertifikasını (Sectigo OV R36) göndermiyor; doğrulama kapatılmadı. Kural belgeyle karşılaştırılmadan eklenmez."
     },
     {
       "scheme": "gs:akdeniz-universitesi:tip-fakultesi:tip:2026:y1:annual:committee",
@@ -4803,10 +4677,6 @@
     {
       "scheme": "gs:atilim-universitesi:tip-fakultesi:tip:2026:y3:annual:committee",
       "reason": "PARTIAL: Komite ağırlığı eşit ortalama; 2026-2027 komite sayısı/listesi bulunamadı. Sayısal geçme notu yönergede yok (harf notu CC ile başarı; harf aralıkları üniversite yönetmeliğinde). Komite notunun kendisi teorik+pratik+küçük grup bileşimidir (Madde 12(1))."
-    },
-    {
-      "scheme": "gs:aydin-adnan-menderes-universitesi:tip-fakultesi:tip:2026:y2:annual:committee",
-      "reason": "NO_ACCESSIBLE_HTTPS_SOURCE"
     },
     {
       "scheme": "gs:bahcesehir-universitesi:tip-fakultesi:tip:2026:y1:annual:committee",

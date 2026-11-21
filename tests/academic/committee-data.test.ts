@@ -3,10 +3,11 @@ import {describe, expect, it} from "vitest";
 import {validateForPublication} from "../../lib/academic/services/publish";
 import {MEDICAL_UNIVERSITIES} from "../../lib/universities";
 import {committeeDataset} from "../../scripts/academic/committee-dataset";
-import {parseCsv, roundWeights, turkishTitleCase} from "../../scripts/academic/convert-committee-export";
+import {parseCsv, roundWeights, turkishTitleCase, verificationRecord} from "../../scripts/academic/convert-committee-export";
 import {slugify, universityId} from "../../scripts/academic/ids";
 
 const data = committeeDataset.parse(JSON.parse(readFileSync("data/academic/committee-2026-27.json", "utf8")));
+const verification = verificationRecord.parse(JSON.parse(readFileSync("data/academic/committee-2026-27-verification.json", "utf8")));
 
 describe("committee dataset", () => {
   it("only contains structurally publishable DRAFT committee versions", () => {
@@ -16,6 +17,14 @@ describe("committee dataset", () => {
         v.components.map(c => ({component_type: c.type, position: c.position, weight_percent: c.weightPercent})),
         v.sources.map(s => ({source_url: s.url, verified_at: new Date(s.verifiedAt)})));
       expect(errors, v.id).toEqual([]);
+    }
+  });
+  it("only cites documents that were checked and hashed", () => {
+    const verified = Object.values(verification.schemes).filter(x => x.status === "VERIFIED").length;
+    expect(data.versions.length).toBeLessThanOrEqual(verified);
+    for (const v of data.versions) for (const s of v.sources) {
+      expect(verification.documents[s.url], s.url).toMatch(/^[0-9a-f]{64}$/);
+      expect(s.verifiedAt).toBe(`${verification.checkedAt}T00:00:00.000Z`);
     }
   });
   it("reuses candidate catalog ids for the same universities", () => {

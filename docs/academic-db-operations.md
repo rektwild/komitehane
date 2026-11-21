@@ -98,10 +98,14 @@ Weights with more than two decimals (equal or AKTS-weighted shares such as
 exactly 100.00. Universities reuse the candidate catalog ids, including the
 renamed Aydın Adnan Menderes, İstanbul Beykent and İstanbul Nişantaşı.
 
-Regenerate it from a new export with
-`pnpm academic:convert:committee <export-dir> data/academic/committee-2026-27.json`
+Only rules that were compared with their official documents are included.
+`data/academic/committee-2026-27-verification.json` records that check: the
+SHA-256 of every downloaded document and, per scheme, VERIFIED (with the
+finding) or UNVERIFIED (e.g. Afyonkarahisar SBÜ, whose server sends an
+incomplete TLS chain). Regenerate the dataset with
+`pnpm academic:convert:committee <export-dir> data/academic/committee-2026-27-verification.json data/academic/committee-2026-27.json`
 (the directory containing `committee_grading_schemes.jsonl`; course/midterm
-files are ignored). Import with `pnpm academic:seed:committee
+files are ignored). A new export needs a new verification pass first. Import with `pnpm academic:seed:committee
 data/academic/committee-2026-27.json` using the writer connection: one
 transaction, idempotent, nothing activated or published. Then, per version,
 check the exact source document (each source carries the export's page/article
