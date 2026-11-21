@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="
+    T.C. Ordu Üniveristesitesi TIP FAKÜLTESİ    ">
+    <title>
+
+        T.C. Ordu Üniversitesi TIP FAKÜLTESİ    </title>
+    <link rel="shortcut icon" type="image/png" href="https://tipfakultesi.odu.edu.tr/dist_theme/images/odu-fav.ico"/>
+
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://tipfakultesi.odu.edu.tr/dist_theme/css/bootstrap.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="https://tipfakultesi.odu.edu.tr/dist_theme/css/style.css">
+<!-- Page CSS -->
+<link rel="stylesheet" href="https://tipfakultesi.odu.edu.tr/dist_theme/css/all.min.css">
+<link rel="stylesheet" href="https://tipfakultesi.odu.edu.tr/dist_theme/plugins/animate/animate.css">
+<link rel='stylesheet prefetch' href='https://tipfakultesi.odu.edu.tr/dist_theme/plugins/OwlCarousel/owl.carousel.css'>
+<link rel='stylesheet prefetch' href='https://tipfakultesi.odu.edu.tr/dist_theme/plugins/fancybox/jquery.fancybox.min.css'>    <link rel="stylesheet" href="https://tipfakultesi.odu.edu.tr/dist_theme/plugins/OwlCarousel/normalize.min.css">
+<!--solmenu-->
+<link rel="stylesheet" href="https://tipfakultesi.odu.edu.tr/dist_theme/plugins/metis/metisMenu.min.css" />
+
+
+<style>
+    .sag-blok> .accordion {
+        width: 100%;
+        max-width: 360px;
+        margin: 30px auto 20px;
+        background: #FFF;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .sag-blok>.accordion .link {
+        cursor: pointer;
+        display: block;
+        padding: 15px 15px 15px 0px;
+        color: #4D4D4D;
+        font-size: 14px;
+        font-weight: 700;
+        border-bottom: 1px solid #CCC;
+        position: relative;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+
+    .sag-blok>.accordion li:last-child .link { border-bottom: 0; }
+
+    .sag-blok>.accordion li i {
+        position: absolute;
+        top: 16px;
+        left: 12px;
+        font-size: 18px;
+        color: #595959;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+    }
+
+    .sag-blok>.accordion li i.fa-chevron-down {
+        right: 12px;
+        left: auto;
+        font-size: 16px;
+    }
+
+    .sag-blok>.accordion li.open .link { color: #b63b4d; }
+
+    .sag-blok>.accordion li.open i { color: #b63b4d; }
+
+    .sag-blok>.accordion li.open i.fa-chevron-down {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    /**
+     * Submenu
+     -----------------------------*/
+
+
+    .sag-blok .submenu {
+        display: none;
+        background: #444359;
+        font-size: 14px;
+        list-style: none !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sag-blok .submenu li { border-bottom: 1px solid #4b4a5e; }
+
+    .sag-blok .submenu a {
+        display: block;
+        text-decoration: none;
+        color: #d9d9d9;
+        padding: 12px;
+        padding-left: 10px;
+        -webkit-transition: all 0.25s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+        border-left: 0 !important;
+    }
+
+    .sag-blok .submenu a:hover {
+        background: #4a4e68;
+        color: #FFF;
+    }
+</style>
+
+
+</head>
+<body>
+
+
+    <!--<div class="hizli">
+    <a href="javascript:void(0);" id="hizlibutton" class="">Hızlı Erişim</a>
+</div>
+<div class="hizlipopup animated fadeOutRightBig">
+    <div class="menuler">
+        <div class="container-fluid">
+            <div class="row">
+                <ul class="list-unstyled" id="hkapsama">
+                    
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="https://disrandevu.odu.edu.tr/">
+                            <div class="hicon"><i class="fa fa-calendar-alt"></i></div>
+                            <div class="hbaslik">E-Randevu</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://aof.odu.edu.tr/">
+                            <div class="hicon"><i class="fas fa-grip-horizontal"></i></div>
+                            <div class="hbaslik">AÖF Koordinatörlüğü</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://aday.odu.edu.tr/">
+                            <div class="hicon"><i class="fas fa-graduation-cap "></i></div>
+                            <div class="hbaslik">Aday Öğrenci</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://www.odu.edu.tr/Page/162/diploma-eki">
+                            <div class="hicon"><i class="fas fa-file-invoice"></i></div>
+                            <div class="hbaslik">Diploma Eki</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://ebap.odu.edu.tr/">
+                            <div class="hicon"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <div class="hbaslik">E-BAP</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="https://www.turkiye.gov.tr/ordu-universitesi-ebys">
+                            <div class="hicon"><i class="far fa-copy"></i></div>
+                            <div class="hbaslik">E-Belge Doğrulama</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://www.odu.edu.tr/Page/172/e-dergi">
+                            <div class="hicon"><i class="fas fa-atlas"></i></div>
+                            <div class="hbaslik">E-Dergi</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://ekders.odu.edu.tr/">
+                            <div class="hicon"><i class="far fa-bookmark"></i></div>
+                            <div class="hbaslik">Ek Ders Otomasyon</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://engelsiz.odu.edu.tr/">
+                            <div class="hicon"><i class="fas fa-universal-access"></i></div>
+                            <div class="hbaslik">Engelli Öğrenci Birimi</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="https://ilan.gov.tr/kategori-arama-299012?word=%22ORDU+%C3%9CN%C4%B0VERS%C4%B0TES%C4%B0%22">
+                            <div class="hicon"><i class="fas fa-bezier-curve"></i></div>
+                            <div class="hbaslik">İhale Duyuruları</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://iktisadiisletme.odu.edu.tr/">
+                            <div class="hicon"><i class="fas fa-utensils"></i></div>
+                            <div class="hbaslik">İktisadi İşletme</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://kddb.odu.edu.tr/">
+                            <div class="hicon"><i class="fas fa-book-reader"></i></div>
+                            <div class="hbaslik">Kütüphane</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://cloud.odu.edu.tr/index.php">
+                            <div class="hicon"><i class="fas fa-cloud"></i></div>
+                            <div class="hbaslik">ODÜ-BULUT</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://www.odu.edu.tr/Page/166/odu-mobil-uygulama">
+                            <div class="hicon"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="hbaslik">ODÜ Mobil Uygulama</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="https://oidb.odu.edu.tr/">
+                            <div class="hicon"><i class="fas fa-user-graduate"></i></div>
+                            <div class="hbaslik">Öğrenci Bilgi Sistemi</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=4345a7b9-9a63-4910-a426-35363201d503&response_mode=form_post&response_type=code+id_token&scope=openid+profile&state=OpenIdConnect.AuthenticationProperties%3dpjBDCxti1b5fwDi9P3xIwIp7oXYGLv">
+                            <div class="hicon"><i class="fas fa-envelope"></i></div>
+                            <div class="hbaslik">Öğrenci E-Posta</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://pbys.odu.edu.tr/personel/KisiBilgileri/login.aspx">
+                            <div class="hicon"><i class="fas fa-users"></i></div>
+                            <div class="hbaslik">Personel Bilgi Sistemi</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://bidbservis.odu.edu.tr/Rehber.aspx">
+                            <div class="hicon"><i class="fas fa-phone-volume"></i></div>
+                            <div class="hbaslik">Rehber</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://sem.odu.edu.tr/">
+                            <div class="hicon"><i class="fas fa-mouse-pointer"></i></div>
+                            <div class="hbaslik">Sürekli Eğitim Merkezi</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://tuyam.odu.edu.tr">
+                            <div class="hicon"><i class="far fa-comment-dots"></i></div>
+                            <div class="hbaslik">TUYAM</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="http://uib.odu.edu.tr/">
+                            <div class="hicon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="hbaslik">Uluslararası İlişkiler Birimi</div>
+                        </a>
+                    </div>
+                </li>       
+            
+                <li>
+                    <div class="hkutu">
+                        <a target=_blank href="https://uzem.odu.edu.tr/">
+                            <div class="hicon"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <div class="hbaslik">Uzaktan Eğitimi Merkezi</div>
+                        </a>
+                    </div>
+                </li>       
+                            </ul>
+
+            </div>
+        </div>
+
+    </div>
+</div>-->
+    <!--Top-Bar Start-->
+<div class="top-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-md-center justify-content-lg-between align-items-center">
+                    <div class="d-sm-none d-md-block">
+                        <a href="https://www.facebook.com/orduniversitesi2006/" target="_blank" style="line-height: normal !important; margin-right: 5px;">
+                            <svg fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-37.2 -37.2 384.40 384.40" xml:space="preserve" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-37.2" y="-37.2" width="384.40" height="384.40" rx="0" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_834_"> <path id="XMLID_835_" d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064 c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996 V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545 C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703 c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"></path> </g> </g></svg>
+                        </a>
+                        <a  href="https://twitter.com/Orduniversitesi" target="_blank" style="line-height: normal !important; margin-right: 5px;">
+                            <svg fill="#ffffff" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                            </svg>
+                        </a><a href="https://www.instagram.com/orduniversitesi2006/" target="_blank" style="line-height: normal !important; margin-right: 5px;">
+                            <svg fill="#ffffff" height="20px" width="20px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_504_"> <path id="XMLID_505_" d="M38.52,0.012h222.978C282.682,0.012,300,17.336,300,38.52v222.978c0,21.178-17.318,38.49-38.502,38.49 H38.52c-21.184,0-38.52-17.313-38.52-38.49V38.52C0,17.336,17.336,0.012,38.52,0.012z M218.546,33.329 c-7.438,0-13.505,6.091-13.505,13.525v32.314c0,7.437,6.067,13.514,13.505,13.514h33.903c7.426,0,13.506-6.077,13.506-13.514 V46.854c0-7.434-6.08-13.525-13.506-13.525H218.546z M266.084,126.868h-26.396c2.503,8.175,3.86,16.796,3.86,25.759 c0,49.882-41.766,90.34-93.266,90.34c-51.487,0-93.254-40.458-93.254-90.34c0-8.963,1.37-17.584,3.861-25.759H33.35v126.732 c0,6.563,5.359,11.902,11.916,11.902h208.907c6.563,0,11.911-5.339,11.911-11.902V126.868z M150.283,90.978 c-33.26,0-60.24,26.128-60.24,58.388c0,32.227,26.98,58.375,60.24,58.375c33.278,0,60.259-26.148,60.259-58.375 C210.542,117.105,183.561,90.978,150.283,90.978z"></path> </g> </g></svg>
+                        </a>
+                    </div>
+                    <ul class="m-0">
+                        <li class="dropdown"><a target=_blank href="#" class="dropdown-toggle" data-toggle="dropdown">BİZE ULAŞIN <b class="caret"></b></a><ul class="dropdown-menu" style="z-index: 1000 !important;"><li><a href="https://unikys.odu.edu.tr/tr/feedbacks/new">Şikayet, Öneri, Memnuniyet, İstek Formu</a></li><li><a href="https://unikys.odu.edu.tr/tr/feedbacks/tracking">Geri Bildirim Durumu Sorgulama</a></li></ul></li><li><a target=_blank href="https://odu.edu.tr/hizli-erisim.html" alt="HIZLI ERİŞİM">HIZLI ERİŞİM</a></li><li><a target=_blank href="https://unikys.odu.edu.tr/" alt="ÜNİKYS">ÜNİKYS</a></li><li><a target=_blank href="http://bidbservis.odu.edu.tr/Rehber.aspx" alt="İletişim">İLETİŞİM</a></li>                        <li>
+                            <a href="#" class="dil" style="color:#fff; background-color:#c02e20 ">
+                                ENGLISH                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Top-Bar End-->    <div class="header backpage">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="unilogo">
+                    <a class="navbar-brand animated bounceInDown" href="http://www.odu.edu.tr">
+                        <img src="https://www.odu.edu.tr/dist_theme/images/oduk.png" alt="Ordu Üniversitesi Logo">                    </a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="birimadi">
+                    <h2>
+                        TIP FAKÜLTESİ                    </h2> </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="anacontent">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+                <nav class="sidebar-nav">
+                    <ul class="metismenu" id="menu1">
+                        <li>
+                            <a href="https://tipfakultesi.odu.edu.tr/">
+                                ANASAYFA                            </a>
+                        </li>
+                        <li><a class="has-arrow"  href="#">FAKÜLTE</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/42/tarihce">Tarihçe</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/43/tanitim">Tanıtım</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/44/vizyon-misyon">Vizyon& Misyon</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/45/temel-degerler"> Temel Değerler</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/47/dekanin-mesaji">Dekanın Mesajı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/48/fakulte-yonetimi">Fakülte Yönetimi</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/49/fakulte-yonetim-kurulu">Fakülte Yönetim Kurulu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/50/fakulte-kurulu">Fakülte Kurulu</a></li><li><a class="has-arrow"  href="#">İç Kontrol</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/203/akademik-personel-is-tanimlari">Akademik Personel İş Tanımları </a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2026/04/02/10-36-08-gorev-dagilimi-2026.pdf">İdari Personel İş Tanımları</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2026/04/02/10-49-58-ikame-personel-listesi-2026.pdf">İkame Personel Listesi</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2024/11/29/11-03-43-hassas-gorev-envanteri-2024.pdf">Hassas Görev Envanteri</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2024/11/29/11-06-15-kamu_hizmet_envanteri.pdf">Hizmet Envanteri</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2024/11/29/10-58-50-tip-fakultesi-organizasyon-semasi-2024.pdf">Organizasyon Şeması</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/125/birim-faaliyet-raporlari">Birim Faaliyet Raporları</a></li></ul><li><a class="has-arrow"  href="#">Toplumsal Katkı</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/222/2026-yili-gerceklesen-faaliyetler">2026 Yılı Gerçekleşen Faaliyetler</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2026/02/17/09-21-54-2026-planlanan-etkinlik.pdf">2026 Yılı Eylem Planı</a></li></ul><li><a class="has-arrow"  href="#">Kalite Güvencesi Sistemi</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/213/birim-danisma-kurulu">Birim Danışma Kurulu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/217/birim_danisma_kurulu_kararlari">Birim Danışma Kurulu Kararları</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/136/birim-kalite-komisyonu"> Birim Kalite Komisyonu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/215/birim-kalite-komisyonu-kararlari">Birim Kalite Komisyonu Kararları</a></li><li><a class="has-arrow"  href="#">Komisyon Çalışmaları</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/209/birim-kalite-komisyonu-calismalari">Birim Kalite Komisyonu Çalışmaları</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/138/kalite-guvence-sistemi-ve-kurum-dis-degerlendirme-bilgilendirmesi-26-10-2018">Kalite Güvence Sistemi ve Kurum Dış Değerlendirme Bilgilendirmesi (26/10/2018)</a></li></ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/210/kalite-guvence-sistemi-birim-eylem-plani">Kalite Güvence Sistemi Birim Eylem Planı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2018/11/30/06-25-09-kalite_politikasi_.png"> Kalite Politikamız</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2024/10/17/02-03-33-kalite-guvencesi.pdf">Kalite Güvencesi Yönergesi</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2025/10/16/02-57-37-kalite-el-kitabi_ek_kalite-el-kitabi-2025.pdf">Kalite El Kitabı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/207/kalite-hizmet-standartlari">Kalite Hizmet Standartları</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/141/kurum-ic-degerlendirme-raporlari">Kurum İç Değerlendirme Raporları</a></li><li><a target=_blank href="https://anket.odu.edu.tr/">Memnuniyet Anketi ve Sonuçları</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/214/puko-iyilestirme-sonuclari">PUKÖ İyileştirme Sonuçları</a></li></ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/145/mevzuat">Mevzuat</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/147/formlar">Formlar</a></li></ul><li><a class="has-arrow"  href="#">AKADEMİK</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/87/akademik-personel">Akademik Personel</a></li><li><a class="has-arrow"  href="#">Komisyon ve Ekipler</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/90/acil-durum-ekibi">Acil Durum Ekibi</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/170/birim-akademik-tesvik-basvuru-ve-inceleme-komisyonu">Birim Akademik Teşvik Başvuru ve İnceleme Komisyonu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/211/birim-akreditasyon-kurulu">Birim Akreditasyon Kurulu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/91/birim-kalite-komisyonu">Birim Kalite Komisyonu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/92/birim-risk-yonetim-ekibi">Birim Risk Yönetim Ekibi</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/93/burs-komisyonu">Burs Komisyonu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/94/egitim-komisyonu">Eğitim Komisyonu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/95/mezuniyet-sonrasi-egitim-komisyonu">Mezuniyet Sonrası Eğitim Komisyonu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/96/muafiyet-ve-intibak-degerlendirme-komisyonu">Muafiyet ve İntibak Değerlendirme Komisyonu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/97/on-inceleme-birim-komisyonu">Ön İnceleme Birim Komisyonu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/99/stratejik-planlama-ekibi">Stratejik Planlama Ekibi</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/195/sifir-atik-birim-kurulu">Sıfır Atık Birim Kurulu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/218/toplumsal-katki-komisyonu">Toplumsal Katkı Komisyonu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/100/tuk-uzmanlik-egitim-komisyonu">TUK Uzmanlık Eğitim Komisyonu</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/98/yatay-gecis-degerlendirme-komisyonu">Yatay Geçiş Değerlendirme Komisyonu</a></li></ul><li><a class="has-arrow"  href="#">Öğretim Üyeleri İçin</a><ul><li><a target=_blank href="http://www.uak.gov.tr/">Doçentlik Sınavı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2024/04/04/01-33-40-yonerge_degisikligi_ogretim_uyeligi_kadrolarina_basvuru_ve_atanma_kosullari_uygulama_yonergesi_yeni.pdf">Atanma Kriterleri</a></li><li><a target=_blank href="http://bologna.odu.edu.tr/DereceProgramlari/Detay/1/2/170/932001">Ders Kodları</a></li></ul></ul><li><a class="has-arrow"  href="#">İDARİ</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/88/idari-personel">İdari Personel</a></li></ul><li><a class="has-arrow"  href="#">BÖLÜMLER</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/51/bolum-ve-anabilim-dali-baskanlari">Bölüm ve Anabilim Dalı Başkanları</a></li><li><a class="has-arrow"  href="#">Temel Tıp Bilimleri Bölümü</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/54/anatomi-anabilim-dali">Anatomi Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/55/biyoistatistik-ve-tibbi-bilisim-anabilim-dali">Biyoistatistik ve Tıbbi Bilişim Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/56/fizyoloji-anabilim-dali">Fizyoloji Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/57/histoloji-ve-embriyoloji-anabilim-dali">Histoloji ve Embriyoloji Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/58/tibbi-biyokimya-anabilim-dali">Tıbbi Biyokimya Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/61/tibbi-biyoloji-anabilim-dali">Tıbbi Biyoloji Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/59/tibbi-mikrobiyoloji-anabilim-dali">Tıbbi Mikrobiyoloji Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/60/tibbi-parazitoloji-anabilim-dali">Tıbbi Parazitoloji Anabilim Dalı</a></li></ul><li><a class="has-arrow"  href="#">Dahili Tıp Bilimleri Bölümü</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/63/acil-tip-anabilim-dali">Acil Tıp Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/64/adli-tip-anabilim-dali">Adli Tıp Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/65/aile-hekimligi-anabilim-dali">Aile Hekimliği Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/67/cocuk-sagligi-ve-hastaliklari-anabilim-dali">Çocuk Sağlığı ve Hastalıkları Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/66/cocuk-ve-ergen-ruh-sagligi-ve-hastaliklari-anabilim-dali">Çocuk ve Ergen Ruh Sağlığı ve Hastalıkları Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/68/deri-ve-zuhrevi-hastaliklar-anabilim-dali">Deri ve Zührevi Hastalıklar Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/69/enfeksiyon-hastaliklari-anabilim-dali">Enfeksiyon Hastalıkları Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/173/fizik-tedavi-ve-rehabilitasyon-anabilim-dali">Fizik Tedavi ve Rehabilitasyon Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/161/gogus-hastaliklari-anabilim-dali">Göğüs Hastalıkları Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/171/halk-sagligi-anabilim-dali">Halk Sağlığı Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/71/ic-hastaliklari-anabilim-dali">İç Hastalıkları Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/72/kardiyoloji-anabilim-dali">Kardiyoloji Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/73/noroloji-anabilim-dali">Nöroloji Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/75/radyoloji-anabilim-dali">Radyoloji Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/160/ruh-sagligi-ve-hastaliklari-anabilim-dali">Ruh Sağlığı ve Hastalıkları Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/70/tibbi-farmakoloji-anabilim-dali">Tıbbi Farmakoloji Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/175/tibbi-genetik-anabilim-dali">Tıbbi Genetik Anabilim Dalı</a></li></ul><li><a class="has-arrow"  href="#">Cerrahi Tıp Bilimleri Bölümü</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/77/anesteziyoloji-ve-reanimasyon-anabilim-dali"> Anesteziyoloji ve Reanimasyon Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/78/beyin-ve-sinir-cerrahisi-anabilim-dali"> Beyin ve Sinir Cerrahisi Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/79/cocuk-cerrahisi-anabilim-dali">Çocuk Cerrahisi Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/80/genel-cerrahi-anabilim-dali">Genel Cerrahi Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/177/gogus-cerrahisi-anabilim-dali">Göğüs Cerrahisi Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/81/goz-hastaliklari-anabilim-dali"> Göz Hastalıkları Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/82/kadin-hastaliklari-ve-dogum-anabilim-dali">Kadın Hastalıkları ve Doğum Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/165/kalp-ve-damar-cerrahisi-anabilim-dali">Kalp ve Damar Cerrahisi Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/83/kulak-burun-ve-bogaz-hastaliklari-anabilim-dali">Kulak, Burun ve Boğaz Hastalıkları Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/84/ortopedi-ve-travmatoloji-anabilim-dali"> Ortopedi ve Travmatoloji Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/85/tibbi-patoloji-anabilim-dali">Tıbbi Patoloji Anabilim Dalı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/86/uroloji-anabilim-dali">Üroloji Anabilim Dalı</a></li></ul></ul><li><a class="has-arrow"  href="#">ÖĞRENCİ</a><ul><li><a class="has-arrow"  href="#">Lisans Eğitimi</a><ul><li><a target=_blank href="http://ogidb.odu.edu.tr/Page/48/akademik-takvim">Akademik Takvim</a></li><li><a class="has-arrow"  href="#">Ders Programları</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/223/2026-2027-egitim-ogretim-yili-ders-programlari">2026-2027 EĞİTİM ÖĞRETİM YILI DERS PROGRAMLARI</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/212/2025-2026-egitim-ogretim-yili">2025-2026 EĞİTİM ÖĞRETİM YILI</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/196/2024-2025-egitim-ogretim-yili">2024-2025 EĞİTİM-ÖĞRETİM YILI</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/192/2023-2024-egitim-ogretim-yili">2023-2024 EĞİTİM-ÖĞRETİM YILI</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/190/2022-2023-egitim-ogretim-yili">2022-2023 Eğitim Öğretim Yılı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/178/2021-2022-egitim-ogretim-yili">2021-2022 Eğitim-Öğretim Yılı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/174/2020-2021-egitim-ogretim-yili-guncel">2020-2021 Eğitim-Öğretim Yılı (Güncel)</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/166/2019-2020-egitim-ogretim-yili">2019-2020 Eğitim-Öğretim Yılı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/150/2018-2019-egitim-ogretim-yili">2018-2019 Eğitim-Öğretim Yılı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/153/2017-2018-egitim-ogretim-yili">2017-2018 Eğitim-Öğretim Yılı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/154/2016-2017-egitim-ogretim-yili">2016-2017 Eğitim-Öğretim Yılı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/155/2015-2016-egitim-ogretim-yili">2015-2016 Eğitim-Öğretim Yılı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/156/2014-2015-egitim-ogretim-yili">2014-2015 Eğitim-Öğretim Yılı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/157/2013-2014-egitim-ogretim-yili">2013-2014 Eğitim-Öğretim Yılı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/158/2012-2013-egitim-ogretim-yili">2012-2013 Eğitim-Öğretim Yılı</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/159/2011-2012-egitim-ogretim-yili">2011-2012 Eğitim-Öğretim Yılı</a></li></ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/110/yabanci-ogrenciler-icin">Yabancı Öğrenciler İçin</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/107/formlar">Formlar</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/146/geri-bildirim-formlari">Geri Bildirim Formları</a></li></ul><li><a target=_blank href="https://bologna.odu.edu.tr/DereceProgramlari/Detay/1/2/170/932001?lang=tr-TR">Bilgi Paketi/Ders Kataloğu (Ders İçerikleri)</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/other/Yonetmelik_Deiiklii_Tp_Fakultesi_Eitim-Oretim_ve_Snav_Yonetmelii_Ek_ORDU_UNVERSTES_TIP_FAKULTES_ETM-ORETM_VE_SINAV_YONETMEL_08.05.2023.pdf.pdf">Tıp Fakültesi Eğitim ve Öğretim Sınav Yönetmeliği</a></li><li><a class="has-arrow"  href="#">ERASMUS+</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/199/erasmus_nedir">ERASMUS+ Nedir?</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/200/erasmus_sikca_sorulan_sorular">ERASMUS+ Sıkça Sorulan Sorular</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2021/12/01/04-15-19-10_44_54_odu_erasmus_yonergesi.pdf">Ordu Üniversitesi Erasmus Değişim Programı Yönergesi</a></li><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/files/sayfalar/2021/12/01/04-17-30-2020_uygulama_el_kitabi.pdf">ERASMUS+ El Kitabı</a></li></ul><li><a target=_blank href="https://tuk.saglik.gov.tr/">Tıpta Uzmanlık Eğitimi</a></li></ul><li><a class="has-arrow"  href="#">ARAŞTIRMA</a><ul><li><a target=_blank href="https://ordueah.saglik.gov.tr/">Hastanemiz</a></li><li><a target=_blank href="http://bap.odu.edu.tr/">Bilimsel Araştırma Projeleri Koordinatörlüğü</a></li><li><a target=_blank href="http://kddb.odu.edu.tr/">Kütüphane</a></li><li><a target=_blank href="https://www.odu.edu.tr/Page/258/etik-kurullar">Etik Kurul</a></li><li><a target=_blank href="https://tubitak.gov.tr/tr">TÜBİTAK</a></li><li><a target=_blank href="https://www.tuba.gov.tr/tr/">TÜBA</a></li><li><a target=_blank href="https://www.tuseb.gov.tr/index.php">TÜSEB</a></li></ul><li><a class="has-arrow"  href="#">İLETİŞİM</a><ul><li><a target=_blank href="https://tipfakultesi.odu.edu.tr/Page/148/iletisim-bilgileri">İletişim Bilgileri</a></li><li><a target=_blank href="http://bidbservis.odu.edu.tr/Rehber.aspx?P=Tıp Fakültesi">Telefon Rehberi</a></li></ul>                    </ul>
+                </nav>
+
+            </div>
+
+            <div class="col-md-9">
+                <div class="icbaslik">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>
+                                Mevzuat
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="icerik">
+
+                    <pre><strong><span style="color: #666699; font-family: georgia, palatino; font-size: small;">&nbsp;</span></strong></pre>
+<table class="table table-sm" style="height: 1025px; width: 462px;" border="0">
+<tbody>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Birlikte Kullanım Protokol&uuml;</span></strong></span></pre>
+</td>
+<td>
+<pre><span style="color: #000080;"><strong><span style="font-size: small; font-family: georgia, palatino;"><a href="https://tipfakultesi.odu.edu.tr/files/other/Mevzuat/Birlikte_Kullanm_Protokolu.pdf"><span style="color: #000080;">İndir</span></a></span></strong></span></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Ortak Hizmet ve İş Birliği Protokol&uuml;</span></strong></span></pre>
+</td>
+<td>
+<pre><span style="color: #000080;"><strong><span style="font-size: small; font-family: georgia, palatino;"><a href="https://tipfakultesi.odu.edu.tr/files/other/Mevzuat/D_Payda_Anlama_Protokolu_Ek_Ortak_Hizmet_ve_birlii_Protokolu.pdf"><span style="color: #000080;">İndir</span></a></span></strong></span></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Devlet Memurlari Kanunu</span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=657&amp;MevzuatTur=1&amp;MevzuatTertip=5"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir&nbsp;</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Y&uuml;ksekogretim Kanunu&nbsp; &nbsp;</span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=2547&amp;MevzuatTur=1&amp;MevzuatTertip=5"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Y&uuml;ksekogretim Personel Kanunu</span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=2914&amp;MevzuatTur=1&amp;MevzuatTertip=5"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Gelir Vergisi Kanunu</span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=193&amp;MevzuatTur=1&amp;MevzuatTertip=4"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Harcirah Kanunu</span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6245&amp;MevzuatTur=1&amp;MevzuatTertip=3"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Sağlık Hizmetleri Temel Kanunu</span></strong></span></pre>
+</td>
+<td>
+<pre><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=3359&amp;MevzuatTur=1&amp;MevzuatTertip=5"><span style="color: #000080;">İndir</span></a>&nbsp;</span></strong></span></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Tababet ve Şuabatı Sanatlarının Tarzı İcrasına Dair Kanun</span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=1219&amp;MevzuatTur=1&amp;MevzuatTertip=3"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Arastirma ve Gelistirme Faaliyetlerinin Desteklenmesi <br />Hakkinda Kanun</span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=5746&amp;MevzuatTur=1&amp;MevzuatTertip=5"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">&Uuml;niversitelerde Akademik Teşkilat Y&ouml;netmeliği</span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=10127&amp;MevzuatTur=7&amp;MevzuatTertip=5"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="line-height: 107%;"><span style="color: #666699;">Tıpta ve Diş Hekimliğinde Uzmanlık Eğitimi Y&ouml;netmeliği</span></span></span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=39700&amp;MevzuatTur=7&amp;MevzuatTertip=5"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Tıpta ve Diş Hekimliğinde Uzmanlık Eğitimi Y&ouml;netmeliği&nbsp;Ekleri</span></strong></span></pre>
+</td>
+<td>
+<pre><span style="color: #333399;"><strong><span style="font-family: georgia, palatino; font-size: small;"><a href="https://tipfakultesi.odu.edu.tr/files/other/Mevzuat/tipta_ve_dis_hekimliginde_uzmanlik_egitimi_yonetmeligi_ekleri.doc"><span style="color: #333399;">İndir</span></a></span></strong></span></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Ordu &Uuml;niversitesi Tıp Fak&uuml;ltesi Eğitim ve &Ouml;ğretim Sınav Y&ouml;netmeliği</span></strong></span></pre>
+</td>
+<td>
+<pre><span style="color: #333399;"><strong><span style="font-family: georgia, palatino; font-size: small;"><a href="https://tipfakultesi.odu.edu.tr/files/other/Yonetmelik_Deiiklii_Tp_Fakultesi_Eitim-Oretim_ve_Snav_Yonetmelii_Ek_ORDU_UNVERSTES_TIP_FAKULTES_ETM-ORETM_VE_SINAV_YONETMEL_08.05.2023.pdf.pdf"><span style="color: #333399;">İndir</span></a></span></strong></span></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Ordu &Uuml;niversitesi Tıp Fak&uuml;ltesi &Ouml;ğrenci Danışma Y&ouml;nergesi</span></strong></span></pre>
+</td>
+<td>
+<pre><span style="color: #333399;"><strong><span style="font-family: georgia, palatino; font-size: small;"><a href="https://tipfakultesi.odu.edu.tr/files/other/Mevzuat/Tip_Fakultesi_ogrenci_danismanligi_yonergesi.pdf"><span style="color: #333399;">İndir</span></a>   </span></strong></span></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Ordu &Uuml;niversitesi Tıp Fak&uuml;ltesi D&ouml;nem VI (İnt&ouml;rl&uuml;k D&ouml;nemi) <br />Eğitimi Y&ouml;nergesi</span></strong></span></pre>
+</td>
+<td>
+<pre><span style="color: #333399;"><strong><span style="font-family: georgia, palatino; font-size: small;"><a href="https://tipfakultesi.odu.edu.tr/files/other/Mevzuat/tip_fakultesi_donem_6.pdf"><span style="color: #333399;">İndir</span></a></span></strong></span></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Ordu &Uuml;niversitesi Lisans ve &Ouml;nlisans Mezuniyet Belgeleri, Diploma ve <br />Diploma Eki  D&uuml;zenlenmesinde Uyulacak Esaslara İlişkin Y&ouml;nerge</span></strong></span></pre>
+</td>
+<td>
+<pre><span style="color: #333399;"><strong><span style="font-family: georgia, palatino; font-size: small;"><a href="https://tipfakultesi.odu.edu.tr/files/other/Mevzuat/lisans_onlisans_diploma.pdf"><span style="color: #333399;">İndir</span></a></span></strong></span></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Ordu &Uuml;niversitesi &Ouml;gretim &Uuml;yeligi Kadrolarina Basvuru ve Atanma <br />Kosullari ve Uygulama Y&ouml;nergesi</span></strong></span></pre>
+</td>
+<td>
+<pre><span style="color: #333399;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #333399;"><a href="https://tipfakultesi.odu.edu.tr/files/other/Mevzuat/Oretim_Uyelii_Kadrolarna_Bavuru_ve_Atanma_Koullar_ve_Uygulama_Yonergesi_Ek_ODU_Atama_Yonergesi_15.04.2024._Son_Hali.pdf.pdf">İn<span style="color: #333399;">dir</span></a></span></span></strong></span></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="line-height: 107%;"><span style="color: #666699;">Sağlık Bakanlığı ve Bağlı Kuruluşlarının Teşkilat ve G&ouml;revleri Hakkında<br /> Kanun H&uuml;km&uuml;nde Kararname</span></span></span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://dosyamerkez.saglik.gov.tr/Eklenti/6025/0/663-sayili-khkpdf.pdf"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="line-height: 107%;"><span style="color: #666699;">Rotasyonlar</span></span></span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://dosyamerkez.saglik.gov.tr/Eklenti/47508/0/rotasyon-tablosu-20240220pdf.pdf"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">&nbsp;Terimler S&ouml;zl&uuml;ğ&uuml;</span></strong><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="text-decoration-line: underline;"><span style="line-height: 107%;"><span style="color: #666699;"><br /></span></span></span></span></strong></span></pre>
+</td>
+<td>
+<pre><a href="https://dosyamerkez.saglik.gov.tr/Eklenti/13068/0/karar1026-tukstandartek3-tukterimlerisozlugupdf.pdf"><span style="color: #000080;"><strong><span style="font-family: georgia, palatino; font-size: small;"><span style="color: #000080;">İndir</span></span></strong></span></a></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><span style="color: #666699;"><strong><span style="font-family: georgia, palatino; font-size: small;">Aile Hekimliği Eğitim Uygulama ve Araştırma Merkezi Y&ouml;netmeliği</span></strong></span></pre>
+</td>
+<td>
+<pre><span style="color: #333399;"><strong><span style="font-family: georgia, palatino; font-size: small;"><a href="https://tipfakultesi.odu.edu.tr/files/other/Mevzuat/Aile_Hekimligi_yonetmeligi.pdf"><span style="color: #333399;">İndir</span></a></span></strong></span></pre>
+</td>
+</tr>
+</tbody>
+</table>                    <hr>
+                    <div class="text-right font-italic">
+                        <small>
+                            Kayıt Tarihi 30.11.2018 06:50:32  - Düzenmele Tarihi 09.02.2026 09:17:41
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="altline">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><a href="https://tipfakultesi.odu.edu.tr/"><i class="fas fa-home"> </i></a>
+                <a target="_blank" href="https://www.facebook.com/orduniversitesi2006/"><i class="fab fa-facebook"> </i></a>
+                <a target="_blank" href="https://twitter.com/Orduniversitesi">
+                    <img style="width: 24px; margin-top: -10px;" src="https://odu.edu.tr/dist_theme/images/x-logo.svg"/>
+                </a>
+				<a target="_blank" href="https://www.instagram.com/orduniversitesi2006/"><i class="fab fa-instagram"> </i></a>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="" class="footerlogo">
+                    <img src="https://www.odu.edu.tr/dist_theme/images/oduk.png" alt="Ordu Üniversitesi Logo">                </a>
+            </div>
+            <div class="col-md-12">
+                <div>
+                    <small>
+                        T.C. Ordu Üniversitesi                        © 2026 Cumhuriyet Yerleşkesi PK 52200 Altınordu / ORDU Telefon : 0452 226 52 00
+                    </small>
+                </div>
+                <div><small>Bilgi İşlem Daire Başkanlığı</small></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://tipfakultesi.odu.edu.tr/dist_theme/js/jquery-3.2.1.min.js"></script>
+<script src="https://tipfakultesi.odu.edu.tr/dist_theme/js/popper.min.js"></script>
+<script src="https://tipfakultesi.odu.edu.tr/dist_theme/js/bootstrap.min.js"></script>
+
+<script src='https://tipfakultesi.odu.edu.tr/dist_theme/plugins/OwlCarousel/owl.carousel.js'></script>
+<script src='https://tipfakultesi.odu.edu.tr/dist_theme/plugins/fancybox/jquery.fancybox.min.js'></script>
+
+
+<script>
+    $(document).ready(function() {
+
+        $('.haberalan').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            items:4
+        })
+
+        $('.medya-slider').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            items:4,
+            pagination: false,
+        })
+
+        $('.am-next').click(function(){
+            $(".medya-slider").trigger("owl.next");
+        })
+        $('.am-prev').click(function(){
+            $(".medya-slider").trigger("owl.prev");
+        })
+
+        $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+            if (!$(this).next().hasClass('show')) {
+                $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+            }
+            var $subMenu = $(this).next(".dropdown-menu");
+            $subMenu.toggleClass('show');
+
+            $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+                $('.dropdown-submenu .show').removeClass("show");
+            });
+
+            return false;
+        });
+
+
+
+
+        $('#hizlibutton').click(function () {
+            $('.hizlipopup').css('display','block');
+            if($('.hizlipopup').hasClass('fadeInRightBig')){
+                $('.hizlipopup').removeClass('fadeInRightBig');
+                $('.hizlipopup').addClass('fadeOutRightBig');
+            }
+            else{
+                $('.hizlipopup').removeClass('fadeOutRightBig');
+                $('.hizlipopup').addClass('fadeInRightBig');
+            }
+
+
+            $(".menuler").each(function(j,d) {
+                var maxHeight = 0;
+                $(d).find('.hbaslik').each(function (i,e) {
+                    if(maxHeight < $(e).height()) maxHeight = $(e).height();
+                });
+                $(d).find('.hbaslik').height(maxHeight);
+            });
+        });
+
+
+        $(document).click(function (e) {
+            var element = e.target.id;
+            if(element!='hizlibutton') {
+                if($('.hizlipopup').hasClass('fadeInRightBig')){
+                    $('.hizlipopup').removeClass('fadeInRightBig');
+                    $('.hizlipopup').addClass('fadeOutRightBig');
+                }
+            }
+
+        });
+
+        $('.hizlibutton').click(function () {
+
+            $('.hizlipopup').css('display','block');
+            if($('.hizlipopup').hasClass('fadeInRightBig')){
+                $('.hizlipopup').removeClass('fadeInRightBig');
+                $('.hizlipopup').addClass('fadeOutRightBig');
+            }
+            else if ($('.hizlipopup').hasClass('fadeOutRightBig')){
+                $('.hizlipopup').removeClass('fadeOutRightBig');
+                $('.hizlipopup').addClass('fadeInRightBig');
+            }
+            else {
+                $('.hizlipopup').addClass('fadeInRightBig');
+            }
+
+
+            $(".menuler").each(function(j,d) {
+                var maxHeight = 0;
+                $(d).find('.hbaslik').each(function (i,e) {
+                    if(maxHeight < $(e).height()) maxHeight = $(e).height();
+                });
+                $(d).find('.hbaslik').height(maxHeight);
+            });
+
+
+
+
+        });
+
+
+    });
+</script>    <script>
+        $(document).on('click', '.dil', function(){
+            $.ajax({
+                type: 'POST',
+                url: 'https://tipfakultesi.odu.edu.tr/index/language',
+                success: function (data) {
+                    location.reload();
+                }
+            });
+        });
+    </script>
+    <script src='https://tipfakultesi.odu.edu.tr/dist_theme/js/jquery.easing.min.js'></script>
+<script src='https://tipfakultesi.odu.edu.tr/dist_theme/plugins/OwlCarousel/owl.carousel.js'></script>
+<script src='https://tipfakultesi.odu.edu.tr/dist_theme/plugins/fancybox/jquery.fancybox.min.js'></script>
+<script src='https://tipfakultesi.odu.edu.tr/dist_theme/plugins/metis/metisMenu.min.js'></script>
+
+
+<!--ana js dosyaları son-->
+<script>
+    $(document).ready(function() {
+        // executes when HTML-Document is loaded and DOM is ready
+
+        $('#menu1').metisMenu();
+
+    });
+
+
+</script></body>
+</html>

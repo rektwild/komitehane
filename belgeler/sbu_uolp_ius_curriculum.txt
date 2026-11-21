@@ -1,0 +1,1282 @@
+International University of Sarajevo (IUS), Faculty of Medical Sciences (FMS)
+Integrated Curriculum: Medicine
+Academic Year: 2025-2026
+Academic Years Spent at International University of Sarajevo
+
+Semester I
+Code
+
+Title
+
+MED100
+
+Semester II
+Prerequisites
+
+T
+
+P
+
+ECTS
+
+Code
+
+Title
+
+T
+
+P
+
+ECTS
+
+Behavioral Sciences
+
+2
+
+0
+
+3
+
+MED107
+
+Human Genetics
+
+Prerequisites
+
+2
+
+0
+
+2
+
+MED101
+
+Cell Biology and Molecular Genetics
+
+4
+
+2
+
+6
+
+MED108
+
+Medical Chemistry and Biochemistry II
+
+4
+
+2
+
+6
+
+MED102
+
+Medical Chemistry and Biochemistry I
+
+4
+
+2
+
+6
+
+MED109
+
+Biostatistics
+
+2
+
+2
+
+4
+
+MED103
+
+Medical Physics and Biophysics
+
+2
+
+2
+
+4
+
+MED110
+
+Medical Informatics
+
+2
+
+0
+
+2
+
+MED104
+
+Medical Ethics and Sociology
+
+2
+
+0
+
+2
+
+MED111
+
+Human Anatomy I
+
+4
+
+4
+
+8
+
+MED105
+
+Introduction to Medicine with History of Medicine
+
+2
+
+0
+
+2
+
+MED112
+
+Introduction to Scientific Methods I
+
+2
+
+0
+
+2
+
+MED106
+
+First Aid
+
+1
+
+2
+
+3
+
+MED113
+
+Hygiene
+
+1
+
+1
+
+2
+
+MED1xx
+
+Elective Course I
+
+2
+
+0
+
+2
+
+MED1XX
+
+Elective Course II
+
+2
+
+0
+
+2
+
+MED1XX
+
+Spoken Language I
+
+2
+
+0
+
+2
+
+MED1XX
+
+Spoken Language II
+
+2
+
+0
+
+2
+
+Semester Total =
+
+21
+
+8
+
+30
+
+Semester Total = 21
+
+9
+
+30
+
+Prerequisites
+
+T
+
+P
+
+ECTS
+
+Code
+
+Title
+
+Semester III
+
+Semester IV
+
+Code
+
+Title
+
+T
+
+P
+
+ECTS
+
+MED200
+
+Human Anatomy II
+
+4
+
+4
+
+8
+
+MED205
+
+Human Physiology II
+
+4
+
+2
+
+6
+
+MED201
+
+Histology and Embriology I
+
+4
+
+2
+
+6
+
+MED206
+
+Histology and Embriology II
+
+4
+
+2
+
+6
+
+MED202
+
+Human Physiology I
+
+4
+
+2
+
+6
+
+MED207
+
+Medical Microbiology I
+
+4
+
+2
+
+6
+
+MED203
+
+Biophysics
+
+2
+
+2
+
+4
+
+MED208
+
+Human Anatomy III
+
+2
+
+2
+
+4
+
+MED204
+
+Fundamentals of Clinical Practice I
+
+0
+
+2
+
+2
+
+MED209
+
+Introduction to Scientific Methods II
+
+0
+
+2
+
+2
+
+MED2XX
+
+Elective Course III
+
+2
+
+0
+
+2
+
+MED210
+
+Fundamentals of Clinical Practice II
+
+0
+
+2
+
+2
+
+MED2XX
+
+Spoken Language III
+
+2
+
+0
+
+2
+
+MED2XX
+
+Elective Course IV
+
+2
+
+0
+
+2
+
+MED2XX
+
+Spoken Language IV
+
+2
+
+0
+
+2
+
+Semester Total = 18
+
+12
+
+30
+
+Semester Total =
+
+18
+
+12
+
+30
+
+Prerequisites
+
+T
+
+P
+
+ECTS
+
+Code
+
+Title
+
+Prerequisites
+
+Semester V
+
+Semester VI
+
+Code
+
+Title
+
+T
+
+P
+
+ECTS
+
+MED300
+
+Pathology I
+
+4
+
+2
+
+6
+
+MED307
+
+Pathology II
+
+4
+
+2
+
+6
+
+MED301
+
+Pathophysiology I
+
+4
+
+0
+
+4
+
+MED308
+
+Pathophysiology II
+
+4
+
+0
+
+4
+
+MED302
+
+Pharmacology and Toxicology I
+
+4
+
+0
+
+4
+
+MED309
+
+Pharmacology and Toxicology II
+
+4
+
+0
+
+6
+
+MED303
+
+Medical Microbiology II
+
+4
+
+2
+
+6
+
+MED310
+
+Clinical Propedeutics
+
+4
+
+4
+
+6
+
+MED304
+
+Immunology
+
+2
+
+0
+
+2
+
+MED311
+
+Clinical Biochemistry
+
+2
+
+0
+
+2
+
+MED305
+
+Preventive Medicine and Epidemiology
+
+4
+
+0
+
+4
+
+MED312
+
+Social Medicine and Organization of Health Care
+
+2
+
+0
+
+2
+
+MED306
+
+Fundamentals of Clinical Practice III
+
+0
+
+2
+
+2
+
+MED313
+
+Fundamentals of Clinical Practice IV
+
+0
+
+2
+
+2
+
+MED3XX
+
+Elective Course V
+
+2
+
+0
+
+2
+
+MED3XX
+
+Elective Course VI
+
+2
+
+0
+
+2
+
+24
+
+6
+
+30
+
+Semester Total = 22
+
+8
+
+30
+
+Semester Total =
+
+Prerequisites
+
+Abbreviations: T (Theory), P (Practice), ECTS (European Credit Transfer System)
+
+NOTES: Conditions for enrolling medical students into the II and III years
+
+IUS / FMS - List of Elective Courses
+Code
+
+Title
+
+T
+
+P
+
+ECTS
+
+The student can transfer a maximum of 12 ECTS study credits to the next academic year.
+
+MED114
+
+Introduction to Lifestyle Medicine
+
+Prerequisites
+
+2
+
+0
+
+2
+
+In addition, the following criteria must be met as well:
+
+MED115
+
+Sport Medicine
+
+2
+
+0
+
+2
+
+1. In order to progress to Year II students must pass the following courses:
+• Medical Chemistry and Biochemistry 1*
+• Medical Chemistry and Biochemistry 2 *
+• Human Anatomy 1*
+2. In order to progress to Year III students must pass the following courses:
+• Human Physiology 1*
+• Human Physiology 2*
+• Histology and Embryology 1*
+• Histology and Embryology 2*
+• Human Anatomy 2*
+• Human Anatomy 3*
+3. Students must pass all courses from Years I–III, including the Turkish language proficiency exam
+(B2 level), in order to advance to Year IV at SBÜ (Türkiye).
+*The above-mentioned courses are considered prerequisites for all courses in the following year.
+
+Version: 3/25-26
+Last update: June 22, 2026
+Senate Decision: IUS-SENATE-11-1823/26; June 22, 2026
+
+Pg. 1/4
+
+Academic Years Spent at University of Health Sciences - Sağlık Bilimleri Üniversitesi
+
+4th Academic Year
+Code
+
+Title
+
+ICHS XX 001 04 0
+CSHS XX 001 04 0
+
+Prerequisites
+
+T
+
+P
+
+ECTS
+
+Internal Medicine
+
+150
+
+138
+
+15
+
+Pediatrics
+
+150
+
+140
+
+15
+
+ANES XX 001 04 0
+
+Anesthesiology and Reanimation
+
+21
+
+32
+
+3
+
+GNCR XX 001 04 0
+
+General Surgery
+
+88
+
+100
+
+10
+
+KHDG XX 001 04 0
+
+Obstetrics And Gynecology
+
+126
+
+96
+
+10
+
+UROL XX 001 04 0
+
+Urology
+
+29
+
+24
+
+3
+
+SECU XX 001 01 0
+
+Elective Clinical Course
+
+20
+
+20
+
+2
+
+Elective Clinical Course
+
+20
+
+20
+
+2
+
+Year Total =
+
+60
+
+SECU XX 001 02 0
+
+List of Elective Courses
+COCR XX 001 04 0
+
+Pediatric Surgery
+
+2
+
+ALGO XX 001 04 0
+
+Algology
+
+2
+
+TGEN XX 001 04 0
+
+Medical Genetics
+
+2
+
+NEON XX 000 04 2
+
+Neonatology
+
+2
+
+SAHB XX 000 04 2
+
+Underwater and Hyperbaric Medicine
+
+2
+
+PBAK XX 000 04 2
+
+Palliative Care
+
+2
+
+TONK XX 000 04 2
+
+Medical Oncology
+
+2
+
+ALIM XX 000 04 2
+
+Allergy and Immunology
+
+2
+
+KBNK XX 000 04 0
+
+Blood Banking
+
+2
+
+SAFY XX 001 04 0
+
+Disaster Management in Health
+
+2
+
+RONK XX 000 04 0
+
+Radiation Oncology
+
+2
+
+HDYZ XX 000 04 0
+
+Hemodialysis
+
+2
+
+Abbreviations: T (Theory), P (Practice), ECTS (European Credit Transfer System)
+
+Pg. 2/4
+
+5th Academic Year
+Code
+
+Title
+
+GOHS XX 001 04 0
+
+Prerequisites
+
+T
+
+P
+
+ECTS
+
+Pulmonology
+
+26
+
+62
+
+5
+
+KARD XX 001 04 0
+
+Cardiology
+
+36
+
+76
+
+5
+
+NORO XX 001 04 0
+
+Neurology
+
+19
+
+47
+
+5
+
+RSHS XX 001 04 0
+
+Mental Health and Child Psychiatry
+
+40
+
+26
+
+5
+
+ENKM XX 001 04 0
+
+Infectious Diseases and Clinical Microbiology
+
+60
+
+30
+
+5
+
+ACLT XX 001 04 0
+
+Emergency Medicine
+
+30
+
+30
+
+5
+
+RDYO XX 001 04 0
+
+Radiology
+
+48
+
+29
+
+3
+
+DERM XX 001 04 0
+
+Dermatology and Venereal Diseases
+
+39
+
+27
+
+3
+
+FTRE XX 001 04 0
+
+Physical Medicine and Rehabilitation
+
+22
+
+44
+
+3
+
+OTRM XX 001 04 0
+
+Orthapedics and Traumatology
+
+16
+
+50
+
+3
+
+KBBC XX 001 04 0
+
+Otorhinolaryngology (ENT)
+
+50
+
+16
+
+3
+
+GZHS XX 001 04 0
+
+Ophthalmology
+
+21
+
+45
+
+3
+
+BSCR XX 001 04 0
+
+Neurosurgery
+
+12
+
+24
+
+2
+
+PREC XX 001 04 0
+
+Plastic, Reconstructive and Aesthetic Surgery
+
+26
+
+6
+
+2
+
+ADLT XX 001 04 0
+
+Forensic Medicine
+
+28
+
+7
+
+2
+
+SECU XX 001 03 0
+
+Elective Clinical Course
+
+20
+
+20
+
+2
+
+SECU XX 001 04 0
+
+Elective Clinical Course
+
+20
+
+20
+
+2
+
+SECU XX 001 05 0
+
+Elective Clinical Course
+
+20
+
+20
+
+2
+
+Year Total =
+
+60
+
+List of Elective Courses
+GRAD XX 001 04 0
+
+Interventional Radiology
+
+2
+
+GOCR XX 001 04 0
+
+Thoracic Surgery
+
+2
+
+NUKT XX 001 04 0
+
+Nuclear Medicine
+
+2
+
+KDCR XX 001 04 0
+
+Cardiovascular Surgery
+
+2
+
+GKRD XX 001 04 0
+
+Interventional Cardiology
+
+2
+
+Abbreviations: T (Theory), P (Practice), ECTS (European Credit Transfer System)
+Pg. 3/4
+
+6th Academic Year
+GNCR XX 001 06 0
+
+General Surgery
+
+180
+
+5
+
+ACLT XX 001 06 0
+
+Emergency Medicine
+
+360
+
+10
+
+ICHS XX 001 06 0
+
+Internal Medicine
+
+360
+
+10
+
+CSHS XX 001 06 0
+
+Pediatrics
+
+360
+
+10
+
+KHDG XX 001 06 0
+
+Obstetrics and Gynecology
+
+180
+
+5
+
+AHEK XX 001 06 0
+
+Family Medicine
+
+180
+
+5
+
+HSAG XX 001 00 0
+
+Public Health
+
+180
+
+4
+
+RSHS XX 001 06 0
+
+Mental Health and Psychiatry
+
+180
+
+5
+
+MTEZ XX 001 06 0
+
+Graduation Thesis
+
+N/A
+
+2
+
+Elective Internship Practice
+
+180
+
+4
+
+Year Total =
+
+60
+
+ISEC XX 001 01 0
+
+List of Elective Internship Practices
+ANES XX 001 06 0
+
+Anesthesiology and Reanimation
+
+4
+
+UROL XX 001 06 0
+
+Urology
+
+4
+
+COCR XX 001 06 0
+
+Pediatric Surgery
+
+4
+
+ENKM XX 001 06 0
+
+Infectious Disease and Clinical Microbiology
+
+4
+
+NORO XX 001 06 0
+
+Neurology
+
+4
+
+BSCR XX 001 06 0
+
+Neurosurgery
+
+4
+
+KBBC XX 001 06 0
+
+Otorhinolaryngelogy (ENT)
+
+4
+
+GZHS XX 001 06 0
+
+Ophthalmology
+
+4
+
+DERM XX 001 06 0
+
+Dermatology and Venereal Diseases
+
+4
+
+PREC XX 001 06 0
+
+Plastic, Reconstructive and Aesthetic Surgery
+
+4
+
+OTRM XX 001 06 0
+
+Orthapedics and Traumatology
+
+4
+
+FTRE XX 001 06 0
+
+Physcal Medicine and Rehabilitation
+
+4
+
+GOHS XX 001 06 0
+
+Pulmonology
+
+4
+
+GOCR XX 001 06 0
+
+Thoracic Surgery
+
+4
+
+KARD XX 001 06 0
+
+Cardiology
+
+4
+
+KDCR XX 001 06 0
+
+4
+
+Cardivascular Surgery
+Abbreviations: T (Theory), P (Practice), ECTS (European Credit Transfer System)
+Notes:
+*The first three years of the program are organized according to a semester-based system, with each
+semester spanning 15 weeks of instruction
+*The 4th and 5th years comprise clinical training modules conducted over one academic year each
+*The 6th year is dedicated entirely to a one-year internship period, during which students engage in
+supervised clinical practice
+
+Version: 1/25-26
+Last update: January 30, 2026
+Decision: IUS-FMS-17-257/26; January 29, 2026
+Pg. 4/4
+
+

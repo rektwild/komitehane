@@ -1,0 +1,2830 @@
+
+
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta name="robots" content="index, follow">
+  <meta name="robots" content="all">
+  <meta name="revisit-after" content="1 days">
+
+<link rel="alternate" type="application/rss+xml" title="RSS Feed for https://w3.beun.edu.tr" href="https://w3.beun.edu.tr/rss" />
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Yönetmelikler -  Öğrenci İşleri Daire Başkanlığı</title>
+    <meta name="description" content="None">
+    <meta name="keywords" content="https://cdn3.beun.edu.tr/www/4ae3f380d1552558ce98d2228e7004e5/ogrenci.png">
+    <script>window.sayfabasi=400;window.sayfa={"site":"","dil":"TR","icerik_no":"49019","slug":"yonetmelikler","slug_en":"","genislik":"","ustalan":"101","gorunum":"","ogeler":[{"id":"anaicerik","sinif":"col-100"},{"id":"anaicerik","sinif":"col-100"},{"id":"yanicerik-5012","sinif":""},]}</script>
+    <link rel="icon" type="image/x-icon" href="https://cdn1.beun.edu.tr/beun.png">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons%401.5.0/font/bootstrap-icons.css"> -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+      <script src="https://cdn3.beun.edu.tr/w3/tema2023/assets/js/jquery.min.js"></script>
+    <script src="https://cdn3.beun.edu.tr/w3/tema2023/assets/js/functions.js"></script>
+
+      <!-- Bootstrap core CSS -->
+    <link href="https://cdn3.beun.edu.tr/w3/tema2023/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn3.beun.edu.tr/w3/tema2023/assets/css/styleblue.css" rel="stylesheet">
+    <link href="https://cdn3.beun.edu.tr/w3/tema2023/assets/css/search.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn3.beun.edu.tr/w3/tema2023/assets/fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script>
+		$(document).ready(function(){
+
+
+
+			var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+			var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  				return new bootstrap.Tooltip(tooltipTriggerEl)
+			})
+
+			$('table').addClass('table table-striped table-hover table-bordered caption-top');
+
+			$('.carousel').carousel({
+    			pause: "true"
+			});
+
+
+			$("#carousel-prev").click(function(){
+    			$("#carouselText").carousel("prev");
+  			});
+
+			$("#carousel-next").click(function(){
+    			$("#carouselText").carousel("next");
+  			});
+
+		});
+
+// ********** FOTO GALERİ ****************
+		$(document).ready(function(){
+
+    		loadGallery(true, 'a.thumbnail');
+
+			//This function disables buttons when needed
+			function disableButtons(counter_max, counter_current){
+				$('#show-previous-image, #show-next-image').show();
+				if(counter_max == counter_current){
+					$('#show-next-image').hide();
+				} else if (counter_current == 1){
+					$('#show-previous-image').hide();
+				}
+			}
+
+
+			function loadGallery(setIDs, setClickAttr){
+				var current_image,
+					selector,
+					counter = 0;
+
+				$('#show-next-image, #show-previous-image').click(function(){
+					if($(this).attr('id') == 'show-previous-image'){
+						current_image--;
+					} else {
+						current_image++;
+					}
+
+					selector = $('[data-image-id="' + current_image + '"]');
+					updateGallery(selector);
+				});
+
+				function updateGallery(selector) {
+
+					var $sel = selector;
+					current_image = $sel.data('image-id');
+					$('#image-gallery-caption').text($sel.data('caption'));
+					$('#image-gallery-title').text($sel.data('title'));
+					$('#image-gallery-image').attr('src', $sel.data('image'));
+					disableButtons(counter, $sel.data('image-id'));
+				}
+
+				if(setIDs == true){
+					$('[data-image-id]').each(function(){
+						counter++;
+						$(this).attr('data-image-id',counter);
+					});
+				}
+				$(setClickAttr).on('click',function(){
+					updateGallery($(this));
+				});
+			}
+		});
+
+// ********** FOTO GALERİ ****************
+
+	  </script>
+    <style>
+
+    .ana-bolum{
+      font-family: 'Roboto', sans-serif;
+width: 100%;
+margin: 20px auto;
+display: table;
+padding: 10px;
+border: 1px solid #ccc;
+background: #f9f9f9;
+  	}
+  	.ana-bolum .kutu{
+  		float:left;
+  		width: 9.5%;
+  		height:auto;
+  		border:1px solid #848484;
+  		padding:1%;
+  		margin-right:7px;
+  	}
+  	.ana-bolum .kutu:nth-child(5n+4){
+  		margin-right:0;
+  	}
+  	.ana-bolum .kutu *{
+  		display:table;
+  		margin:0 auto;
+  	}
+  	.ana-bolum .kutu .baslik{
+  		margin-top:5px;
+  		font-size:20px;
+  		color:#000;
+  		text-decoration:none;
+  	}
+  	.ana-bolum .kutu .aciklama{
+  		margin-top:3px;
+  		font-size:14px;
+  		color:#383838;
+  		text-decoration:none;
+  	}
+  	.ana-bolum .kutu .link{
+  		margin-top: 10px;
+  		font-size: 14px;
+  		text-decoration: none;
+  		border: 1px solid #0a2740;
+  		padding: 3px 10px;
+  		background: #0faed2;
+  		color: #f1f1f1;
+  	}
+  	.ana-bolum .kutu .fotograf{
+  		width:100%;
+  		height:auto;
+
+  	}
+  	.ana-bolum .kutu .fotograf img{
+  		width:100%;
+  		height:auto;
+  	}
+  	.ayirici{
+  		width:100%;
+  		height:20px;
+  		float:left;
+  	}
+
+    .card {
+   padding: 20px;
+   background: #fff;
+   border-radius: 10px;
+   box-shadow: rgb(0 0 0 / 25%) 8px 8px 8px -10px;
+   border: none;
+}
+
+/* .cardx {
+   padding: 20px;
+   background: linear-gradient(90deg, rgba(211,212,214,1) 0%, rgba(228,229,230,1) 35%);
+   border-radius: 10px;
+   box-shadow: rgb(0 0 0 / 25%) 8px 8px 8px -10px;
+   border: none;
+} */
+
+.cardx {
+
+}
+
+.card-head {
+   background: #f1f1f1;
+   padding: 10px;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+.akademik-bg {
+   background: #fff url(../images/akademik-bg.png) center right no-repeat;
+   ;
+}
+
+li {
+   list-style: none;
+}
+
+ul.round li {
+   margin: 7px 0 7px 0;
+   font-size: 18px;
+   position: relative;
+}
+
+ul.round li::before {
+   content: "";
+   position: absolute;
+   left: -20px;
+   top: 8px;
+   width: 12px;
+   height: 12px;
+   background-color: #003B88;
+   border-radius: 50%;
+   -moz-border-radius: 50%;
+   -webkit-border-radius: 50%;
+}
+
+ul.round li a:hover {
+   text-decoration: underline;
+}
+
+ul.round small {
+   font-size: 12px;
+   float: right;
+}
+
+.big-button
+{
+  background:#003B88;
+  width: 100%;
+  color: #fff;
+}
+
+.big-button:hover
+{
+  background:#0055c4;
+  color: #fff;
+}
+
+.circle img {
+   max-width: 450px;
+   width: 100%;
+}
+
+.circle:hover {
+   transform: scale(1.1);
+}
+    </style>
+
+
+
+
+<style>
+  /* Özel Stiller */
+/* Store Butonları */
+.store-buttons {
+display: flex;
+gap: 15px;
+margin-bottom: 30px;
+}
+
+.store-btn {
+display: flex;
+align-items: center;
+padding: 12px 20px;
+border-radius: 8px;
+text-decoration: none;
+transition: transform 0.3s;
+}
+
+.store-btn:hover {
+transform: translateY(-3px);
+}
+
+.google-play {
+background: #000;
+color: #fff;
+}
+
+.app-store {
+background: #fff;
+color: #000;
+}
+
+.store-btn i {
+font-size: 28px;
+margin-right: 10px;
+}
+
+.store-btn span {
+display: block;
+font-size: 12px;
+}
+
+.store-btn strong {
+font-size: 18px;
+font-weight: 600;
+}
+
+/* Sosyal Medya İkonları */
+.social-media-section {
+margin-top: 25px;
+}
+
+.social-media-section h4 {
+color: #fff;
+margin-bottom: 15px;
+font-size: 18px;
+}
+
+.social-icons {
+display: flex;
+gap: 15px;
+}
+
+.social-icon {
+color: #fff;
+font-size: 24px;
+transition: all 0.3s;
+}
+
+.social-icon:hover {
+opacity: 0.8;
+transform: scale(1.1);
+}
+  ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+  }
+  
+  .footer-section {
+      background: #c31632;
+      position: relative;
+      margin-top: auto;
+  }
+  
+  .footer-cta {
+      border-bottom: 1px solid #373636;
+  }
+  
+  .single-cta i {
+      color: #000;
+      font-size: 30px;
+      float: left;
+      margin-top: 8px;
+  }
+  
+  .cta-text {
+      padding-left: 15px;
+      display: inline-block;
+  }
+  
+  .cta-text h4 {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 2px;
+  }
+  
+  .cta-text span {
+      color: #fff;
+      font-size: 15px;
+  }
+  
+  .footer-content {
+      position: relative;
+      z-index: 2;
+  }
+  
+  .footer-logo img {
+      max-width: 200px;
+  }
+  
+  .footer-text p {
+      margin-bottom: 14px;
+      font-size: 14px;
+      color: #7e7e7e;
+      line-height: 28px;
+  }
+  
+  .footer-social-icon span {
+      color: #fff;
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 20px;
+  }
+  
+  .footer-social-icon a {
+      margin-right: 15px;
+  }
+  
+  .footer-social-icon i {
+      height: 40px;
+      width: 40px;
+      text-align: center;
+      line-height: 38px;
+      border-radius: 50%;
+  }
+  
+  .facebook-bg {
+      background: #3B5998;
+  }
+  
+  .twitter-bg {
+      background: #55ACEE;
+  }
+  
+  .google-bg {
+      background: #DD4B39;
+  }
+  
+  .footer-widget-heading h3 {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 40px;
+      position: relative;
+  }
+  
+  .footer-widget-heading h3::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -15px;
+      height: 2px;
+      width: 50px;
+      background: #000;
+  }
+  
+  .footer-widget ul li {
+      display: inline-block;
+      width: 50%;
+      margin-bottom: 12px;
+  }
+  
+  .footer-widget ul li a {
+      color: #ffffff;
+      text-transform: capitalize;
+  }
+  
+  .footer-widget ul li a:hover {
+      color: #000000;
+  }
+  
+  .subscribe-form {
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .subscribe-form input {
+      width: 100%;
+      padding: 14px 28px;
+      background: #2E2E2E;
+      border: 1px solid #2E2E2E;
+      color: #fff;
+  }
+  
+  .subscribe-form button {
+      position: absolute;
+      right: 0;
+      background: #C41531;
+      padding: 13px 20px;
+      border: 1px solid #C41531;
+      top: 0;
+  }
+  
+  .subscribe-form button i {
+      color: #fff;
+      font-size: 22px;
+      transform: rotate(-6deg);
+  }
+  
+  .copyright-area {
+      background: #202020;
+      padding: 25px 0;
+  }
+  
+  .copyright-text p {
+      margin: 0;
+      font-size: 14px;
+      color: #878787;
+  }
+  
+  .copyright-text p a {
+      color: #C41531;
+  }
+  
+  .footer-menu li {
+      display: inline-block;
+      margin-left: 20px;
+  }
+  
+  .footer-menu li:hover a {
+      color: #C41531;
+  }
+  
+  .footer-menu li a {
+      font-size: 14px;
+      color: #878787;
+  }
+
+  /* Sayfa Yapısı */
+  body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+  }
+  
+  main {
+      flex: 1;
+      padding: 20px;
+  }
+</style>
+</head>
+
+
+
+<body class="d-flex flex-column min-vh-100">
+
+<header class="header">
+
+  <div class="container-fluid header-container">
+    <div class="container-xxl" style="padding: 0px;">
+
+    <div class="row row-cols-auto justify-content-end ust">
+      
+      
+      
+      
+      
+      
+         <link rel="stylesheet" id="pojo-a11y-css" href="https://cdn3.beun.edu.tr/w3/engelsiz.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="pojo-a11y-css" href="https://cdn3.beun.edu.tr/w3/engelsiz.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var PojoA11yOptions = {"focusable":"","remove_link_target":"","add_role_links":"","enable_save":"","save_expiration":""};
+/* ]]> */
+</script>
+
+<script type="text/javascript" src="https://cdn3.beun.edu.tr/w3/app.min.js"></script>
+
+<nav id="pojo-a11y-toolbar" class="pojo-a11y-toolbar-left " role="navigation">
+    <div class="pojo-a11y-toolbar-toggle">
+      <a class="pojo-a11y-toolbar-link pojo-a11y-toolbar-toggle-link" href="javascript:void(0);" title="Erişilebilirlik" tabindex="0">
+        <span class="pojo-sr-only sr-only">Open toolbar</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" width="1em">
+          <g><path d="M60.4,78.9c-2.2,4.1-5.3,7.4-9.2,9.8c-4,2.4-8.3,3.6-13,3.6c-6.9,0-12.8-2.4-17.7-7.3c-4.9-4.9-7.3-10.8-7.3-17.7c0-5,1.4-9.5,4.1-13.7c2.7-4.2,6.4-7.2,10.9-9.2l-0.9-7.3c-6.3,2.3-11.4,6.2-15.3,11.8C7.9,54.4,6,60.6,6,67.3c0,5.8,1.4,11.2,4.3,16.1s6.8,8.8,11.7,11.7c4.9,2.9,10.3,4.3,16.1,4.3c7,0,13.3-2.1,18.9-6.2c5.7-4.1,9.6-9.5,11.7-16.2l-5.7-11.4C63.5,70.4,62.5,74.8,60.4,78.9z"></path><path d="M93.8,71.3l-11.1,5.5L70,51.4c-0.6-1.3-1.7-2-3.2-2H41.3l-0.9-7.2h22.7v-7.2H39.6L37.5,19c2.5,0.3,4.8-0.5,6.7-2.3c1.9-1.8,2.9-4,2.9-6.6c0-2.5-0.9-4.6-2.6-6.3c-1.8-1.8-3.9-2.6-6.3-2.6c-2,0-3.8,0.6-5.4,1.8c-1.6,1.2-2.7,2.7-3.2,4.6c-0.3,1-0.4,1.8-0.3,2.3l5.4,43.5c0.1,0.9,0.5,1.6,1.2,2.3c0.7,0.6,1.5,0.9,2.4,0.9h26.4l13.4,26.7c0.6,1.3,1.7,2,3.2,2c0.6,0,1.1-0.1,1.6-0.4L97,77.7L93.8,71.3z"></path></g>					</svg>
+      </a>
+    </div>
+    <div class="pojo-a11y-toolbar-overlay">
+      <div class="pojo-a11y-toolbar-inner">
+        <p class="pojo-a11y-toolbar-title">Erişilebilirlik</p>
+
+        <ul class="pojo-a11y-toolbar-items pojo-a11y-tools">
+                                    <li class="pojo-a11y-toolbar-item">
+              <a href="https://w3.beun.edu.tr/#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-plus" data-action="resize-plus" data-action-group="resize" tabindex="0">
+                <span class="pojo-a11y-toolbar-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><path fill="currentColor" d="M256 200v16c0 4.25-3.75 8-8 8h-56v56c0 4.25-3.75 8-8 8h-16c-4.25 0-8-3.75-8-8v-56h-56c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h56v-56c0-4.25 3.75-8 8-8h16c4.25 0 8 3.75 8 8v56h56c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z" "=""></path></svg></span><span class="pojo-a11y-toolbar-text">Metni Büyüt</span>								</a>
+            </li>
+
+            <li class="pojo-a11y-toolbar-item">
+              <a href="https://w3.beun.edu.tr/#" class="pojo-a11y-toolbar-link pojo-a11y-btn-resize-font pojo-a11y-btn-resize-minus" data-action="resize-minus" data-action-group="resize" tabindex="0">
+                <span class="pojo-a11y-toolbar-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><path fill="currentColor" d="M256 200v16c0 4.25-3.75 8-8 8h-144c-4.25 0-8-3.75-8-8v-16c0-4.25 3.75-8 8-8h144c4.25 0 8 3.75 8 8zM288 208c0-61.75-50.25-112-112-112s-112 50.25-112 112 50.25 112 112 112 112-50.25 112-112zM416 416c0 17.75-14.25 32-32 32-8.5 0-16.75-3.5-22.5-9.5l-85.75-85.5c-29.25 20.25-64.25 31-99.75 31-97.25 0-176-78.75-176-176s78.75-176 176-176 176 78.75 176 176c0 35.5-10.75 70.5-31 99.75l85.75 85.75c5.75 5.75 9.25 14 9.25 22.5z"></path></svg></span><span class="pojo-a11y-toolbar-text">Metni Küçült</span>								</a>
+            </li>
+
+                        <li class="pojo-a11y-toolbar-item">
+              <a href="https://w3.beun.edu.tr/#" class="pojo-a11y-toolbar-link pojo-a11y-btn-background-group pojo-a11y-btn-grayscale" data-action="grayscale" data-action-group="schema" tabindex="0">
+                <span class="pojo-a11y-toolbar-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><path fill="currentColor" d="M15.75 384h-15.75v-352h15.75v352zM31.5 383.75h-8v-351.75h8v351.75zM55 383.75h-7.75v-351.75h7.75v351.75zM94.25 383.75h-7.75v-351.75h7.75v351.75zM133.5 383.75h-15.5v-351.75h15.5v351.75zM165 383.75h-7.75v-351.75h7.75v351.75zM180.75 383.75h-7.75v-351.75h7.75v351.75zM196.5 383.75h-7.75v-351.75h7.75v351.75zM235.75 383.75h-15.75v-351.75h15.75v351.75zM275 383.75h-15.75v-351.75h15.75v351.75zM306.5 383.75h-15.75v-351.75h15.75v351.75zM338 383.75h-15.75v-351.75h15.75v351.75zM361.5 383.75h-15.75v-351.75h15.75v351.75zM408.75 383.75h-23.5v-351.75h23.5v351.75zM424.5 383.75h-8v-351.75h8v351.75zM448 384h-15.75v-352h15.75v352z"></path></svg></span><span class="pojo-a11y-toolbar-text">Gri tonlama</span>								</a>
+            </li>
+
+                        <li class="pojo-a11y-toolbar-item">
+              <a href="https://w3.beun.edu.tr/#" class="pojo-a11y-toolbar-link pojo-a11y-btn-background-group pojo-a11y-btn-high-contrast" data-action="high-contrast" data-action-group="schema" tabindex="0">
+                <span class="pojo-a11y-toolbar-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><path fill="currentColor" d="M192 360v-272c-75 0-136 61-136 136s61 136 136 136zM384 224c0 106-86 192-192 192s-192-86-192-192 86-192 192-192 192 86 192 192z" "=""></path></svg></span><span class="pojo-a11y-toolbar-text">Yüksek Contrast</span>								</a>
+            </li>
+
+          <li class="pojo-a11y-toolbar-item">
+            <a href="https://w3.beun.edu.tr/#" class="pojo-a11y-toolbar-link pojo-a11y-btn-background-group pojo-a11y-btn-negative-contrast" data-action="negative-contrast" data-action-group="schema" tabindex="0">
+
+              <span class="pojo-a11y-toolbar-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><path fill="currentColor" d="M416 240c-23.75-36.75-56.25-68.25-95.25-88.25 10 17 15.25 36.5 15.25 56.25 0 61.75-50.25 112-112 112s-112-50.25-112-112c0-19.75 5.25-39.25 15.25-56.25-39 20-71.5 51.5-95.25 88.25 42.75 66 111.75 112 192 112s149.25-46 192-112zM236 144c0-6.5-5.5-12-12-12-41.75 0-76 34.25-76 76 0 6.5 5.5 12 12 12s12-5.5 12-12c0-28.5 23.5-52 52-52 6.5 0 12-5.5 12-12zM448 240c0 6.25-2 12-5 17.25-46 75.75-130.25 126.75-219 126.75s-173-51.25-219-126.75c-3-5.25-5-11-5-17.25s2-12 5-17.25c46-75.5 130.25-126.75 219-126.75s173 51.25 219 126.75c3 5.25 5 11 5 17.25z"></path></svg></span><span class="pojo-a11y-toolbar-text">Düşük Contrast</span>							</a>
+          </li>
+
+                        <li class="pojo-a11y-toolbar-item">
+              <a href="https://w3.beun.edu.tr/#" class="pojo-a11y-toolbar-link pojo-a11y-btn-background-group pojo-a11y-btn-light-background" data-action="light-background" data-action-group="schema" tabindex="0">
+                <span class="pojo-a11y-toolbar-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><path fill="currentColor" d="M184 144c0 4.25-3.75 8-8 8s-8-3.75-8-8c0-17.25-26.75-24-40-24-4.25 0-8-3.75-8-8s3.75-8 8-8c23.25 0 56 12.25 56 40zM224 144c0-50-50.75-80-96-80s-96 30-96 80c0 16 6.5 32.75 17 45 4.75 5.5 10.25 10.75 15.25 16.5 17.75 21.25 32.75 46.25 35.25 74.5h57c2.5-28.25 17.5-53.25 35.25-74.5 5-5.75 10.5-11 15.25-16.5 10.5-12.25 17-29 17-45zM256 144c0 25.75-8.5 48-25.75 67s-40 45.75-42 72.5c7.25 4.25 11.75 12.25 11.75 20.5 0 6-2.25 11.75-6.25 16 4 4.25 6.25 10 6.25 16 0 8.25-4.25 15.75-11.25 20.25 2 3.5 3.25 7.75 3.25 11.75 0 16.25-12.75 24-27.25 24-6.5 14.5-21 24-36.75 24s-30.25-9.5-36.75-24c-14.5 0-27.25-7.75-27.25-24 0-4 1.25-8.25 3.25-11.75-7-4.5-11.25-12-11.25-20.25 0-6 2.25-11.75 6.25-16-4-4.25-6.25-10-6.25-16 0-8.25 4.5-16.25 11.75-20.5-2-26.75-24.75-53.5-42-72.5s-25.75-41.25-25.75-67c0-68 64.75-112 128-112s128 44 128 112z"></path></svg></span><span class="pojo-a11y-toolbar-text">Açık Arkaplan</span>								</a>
+            </li>
+
+                        <li class="pojo-a11y-toolbar-item">
+              <a href="https://w3.beun.edu.tr/#" class="pojo-a11y-toolbar-link pojo-a11y-btn-links-underline" data-action="links-underline" data-action-group="toggle" tabindex="0">
+                <span class="pojo-a11y-toolbar-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><path fill="currentColor" d="M364 304c0-6.5-2.5-12.5-7-17l-52-52c-4.5-4.5-10.75-7-17-7-7.25 0-13 2.75-18 8 8.25 8.25 18 15.25 18 28 0 13.25-10.75 24-24 24-12.75 0-19.75-9.75-28-18-5.25 5-8.25 10.75-8.25 18.25 0 6.25 2.5 12.5 7 17l51.5 51.75c4.5 4.5 10.75 6.75 17 6.75s12.5-2.25 17-6.5l36.75-36.5c4.5-4.5 7-10.5 7-16.75zM188.25 127.75c0-6.25-2.5-12.5-7-17l-51.5-51.75c-4.5-4.5-10.75-7-17-7s-12.5 2.5-17 6.75l-36.75 36.5c-4.5 4.5-7 10.5-7 16.75 0 6.5 2.5 12.5 7 17l52 52c4.5 4.5 10.75 6.75 17 6.75 7.25 0 13-2.5 18-7.75-8.25-8.25-18-15.25-18-28 0-13.25 10.75-24 24-24 12.75 0 19.75 9.75 28 18 5.25-5 8.25-10.75 8.25-18.25zM412 304c0 19-7.75 37.5-21.25 50.75l-36.75 36.5c-13.5 13.5-31.75 20.75-50.75 20.75-19.25 0-37.5-7.5-51-21.25l-51.5-51.75c-13.5-13.5-20.75-31.75-20.75-50.75 0-19.75 8-38.5 22-52.25l-22-22c-13.75 14-32.25 22-52 22-19 0-37.5-7.5-51-21l-52-52c-13.75-13.75-21-31.75-21-51 0-19 7.75-37.5 21.25-50.75l36.75-36.5c13.5-13.5 31.75-20.75 50.75-20.75 19.25 0 37.5 7.5 51 21.25l51.5 51.75c13.5 13.5 20.75 31.75 20.75 50.75 0 19.75-8 38.5-22 52.25l22 22c13.75-14 32.25-22 52-22 19 0 37.5 7.5 51 21l52 52c13.75 13.75 21 31.75 21 51z"></path></svg></span><span class="pojo-a11y-toolbar-text">Linklerin altını çiz</span>								</a>
+            </li>
+
+                        <li class="pojo-a11y-toolbar-item">
+              <a href="https://w3.beun.edu.tr/#" class="pojo-a11y-toolbar-link pojo-a11y-btn-readable-font" data-action="readable-font" data-action-group="toggle" tabindex="0">
+                <span class="pojo-a11y-toolbar-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><path fill="currentColor" d="M181.25 139.75l-42.5 112.5c24.75 0.25 49.5 1 74.25 1 4.75 0 9.5-0.25 14.25-0.5-13-38-28.25-76.75-46-113zM0 416l0.5-19.75c23.5-7.25 49-2.25 59.5-29.25l59.25-154 70-181h32c1 1.75 2 3.5 2.75 5.25l51.25 120c18.75 44.25 36 89 55 133 11.25 26 20 52.75 32.5 78.25 1.75 4 5.25 11.5 8.75 14.25 8.25 6.5 31.25 8 43 12.5 0.75 4.75 1.5 9.5 1.5 14.25 0 2.25-0.25 4.25-0.25 6.5-31.75 0-63.5-4-95.25-4-32.75 0-65.5 2.75-98.25 3.75 0-6.5 0.25-13 1-19.5l32.75-7c6.75-1.5 20-3.25 20-12.5 0-9-32.25-83.25-36.25-93.5l-112.5-0.5c-6.5 14.5-31.75 80-31.75 89.5 0 19.25 36.75 20 51 22 0.25 4.75 0.25 9.5 0.25 14.5 0 2.25-0.25 4.5-0.5 6.75-29 0-58.25-5-87.25-5-3.5 0-8.5 1.5-12 2-15.75 2.75-31.25 3.5-47 3.5z"></path></svg></span><span class="pojo-a11y-toolbar-text">Okunabilir Yazı Tipi</span>								</a>
+            </li>
+                                  <li class="pojo-a11y-toolbar-item">
+            <a href="https://w3.beun.edu.tr/#" class="pojo-a11y-toolbar-link pojo-a11y-btn-reset" data-action="reset" tabindex="0">
+              <span class="pojo-a11y-toolbar-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><path fill="currentColor" d="M384 224c0 105.75-86.25 192-192 192-57.25 0-111.25-25.25-147.75-69.25-2.5-3.25-2.25-8 0.5-10.75l34.25-34.5c1.75-1.5 4-2.25 6.25-2.25 2.25 0.25 4.5 1.25 5.75 3 24.5 31.75 61.25 49.75 101 49.75 70.5 0 128-57.5 128-128s-57.5-128-128-128c-32.75 0-63.75 12.5-87 34.25l34.25 34.5c4.75 4.5 6 11.5 3.5 17.25-2.5 6-8.25 10-14.75 10h-112c-8.75 0-16-7.25-16-16v-112c0-6.5 4-12.25 10-14.75 5.75-2.5 12.75-1.25 17.25 3.5l32.5 32.25c35.25-33.25 83-53 132.25-53 105.75 0 192 86.25 192 192z"></path></svg></span>
+              <span class="pojo-a11y-toolbar-text">Reset</span>
+            </a>
+          </li>
+        </ul>
+                  <ul class="pojo-a11y-toolbar-items pojo-a11y-links">
+  
+                                  <li class="pojo-a11y-toolbar-item">
+            <a href="https://w3.beun.edu.tr/iletisim/birimler.html" class="pojo-a11y-toolbar-link pojo-a11y-link-feedback" tabindex="0">
+              <span class="pojo-a11y-toolbar-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" viewBox="0 0 448 448"><path fill="currentColor" d="M448 224c0 88.5-100.25 160-224 160-12.25 0-24.5-0.75-36.25-2-32.75 29-71.75 49.5-115 60.5-9 2.5-18.75 4.25-28.5 5.5-5.5 0.5-10.75-3.5-12-9.5v-0.25c-1.25-6.25 3-10 6.75-14.5 15.75-17.75 33.75-32.75 45.5-74.5-51.5-29.25-84.5-74.5-84.5-125.25 0-88.25 100.25-160 224-160s224 71.5 224 160z"></path></svg></span><span class="pojo-a11y-toolbar-text">Bize ulaşın</span>							</a>
+          </li>
+                    </ul>
+                </div>
+    </div>
+  </nav>
+ <div class="col">
+          <a href="https://aday.beun.edu.tr" target="_blank"><strong>Aday Öğrenci</strong></a><strong>
+          </strong>
+        </div>
+        <div class="col">
+          <a href="https://mezun.beun.edu.tr" target="_blank"><strong>Mezunlar</strong></a><strong>
+          </strong>
+        </div>
+        <div class="col">
+          <a href="https://iso.beun.edu.tr" target="_blank"><strong>Uluslararası Öğrenci</strong></a><strong>
+          </strong>
+        </div>
+        <div class="col">
+          <a href="https://w3.beun.edu.tr/iletisim/birimler.html" target="_self"><strong>İletişim</strong></a><strong> </strong>
+        </div>
+        
+        
+        <div class="col">
+          <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" onclick="window.location='https://student.beun.edu.tr/'" class="btn btn-dark btn-tr button-dil1" >
+              EN <i class="bi bi-chevron-double-down"></i>
+            </button>
+            <ul class="dropdown-menu ul-en" aria-labelledby="btnGroupDrop1" style="">
+              <li style="width: 100%;">
+                 <button id="btnGroupDrop1" type="button" onclick="window.location='https://student.beun.edu.tr/'" class="btn btn-dark btn-tr button-dil1" >
+              EN <i class="bi bi-chevron-double-down"></i>
+            </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+		
+        
+      
+      
+      
+
+
+      <div class="col">
+        <a id="dynamic-link" target="_blank"><strong>Laboratuvar Sistemi</strong></a>
+      </div>
+      <div id="hedefAlan"></div>
+
+      <script>
+        // Sayfanın URL'sinden subdomain bilgisini almak için bir fonksiyon
+        function getSubdomainFromUrl() {
+            const hostname = window.location.hostname;
+            const parts = hostname.split('.');
+            if (parts.length > 2) {
+                return parts[0]; // Eğer alt alan adı varsa ilk kısmını al
+            } else {
+                return ''; // Eğer alt alan adı yoksa boş döndür
+            }
+        }
+        var domain = getSubdomainFromUrl();
+        const apiUrl = 'https://verimerkezi.beun.edu.tr/api/xuHPOzbWEfK59Sy4hG6R7ixsD2qbTnmK6i8DF3qUE28/'+domain;
+ 
+         // API'ye GET isteği gönderme
+         fetch(apiUrl)
+     .then(response => response.text())  // JSON yerine text olarak al
+     .then(data => {
+         const link = data;  // JSON olmayan veriyi doğrudan kullan
+         const anchor = document.getElementById('dynamic-link');
+         anchor.href = link;
+     })
+     .catch(error => {
+         console.error('API isteği sırasında bir hata oluştu:', error);
+     });
+        </script>
+
+    </div>
+
+  </div>
+</div>
+
+</header><script>
+
+		$(document).ready(function(){
+
+		var btns = document.getElementsByClassName("menu-pills");
+
+		for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+			event.stopPropagation();//Add function here
+        });
+    	}
+
+		});
+
+		  </script>
+
+      <nav class="navbar navbar-expand-lg header-nav navbar-light " style="padding:0px !important;">
+
+      	<div class="container  align-items-start menu-container">
+
+
+      		<!-- <a class="navbar-brand align-self-end" style="margin-left:-12px;" href="#"> -->
+          <!-- <a class="navbar-brand align-self-end" href="/">
+
+      			<img src="https://cdn3.beun.edu.tr/www/4ae3f380d1552558ce98d2228e7004e5/ogrenci.png" class="img-fluid brand-image">
+
+      					</a> -->
+                <a class="navbar-brand align-self-end" href="https://w3.beun.edu.tr">
+                  <img src="https://cdn3.beun.edu.tr/w3/tema2023/zbeulogouni_logo.png" style="width: 110px;margin-right: -20px;">
+              </a>
+                <a class="navbar-brand align-self-end" href="/">
+                <img src="https://cdn3.beun.edu.tr/www/4ae3f380d1552558ce98d2228e7004e5/ogrenci.png" style="width: 350px !important;">
+
+                    </a>
+
+
+
+      		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: 40px;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+
+      	<div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+
+      		</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+          </button>
+        </div>
+        <div class="offcanvas-body" id="mobile-menu">
+
+          <ul class="navbar-nav ml-auto mb-2 mb-lg-0 h-75 align-self-end">
+            
+            
+            
+            <li class="nav-item">
+            <a class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold" href="#"
+              id="navbarDropdown-mobile-1" role="button" data-bs-toggle="collapse"
+              aria-expanded="false"
+              data-bs-target="#drop-mobile-1" aria-controls="drop-mobile-1">Kurumsal</a>
+            </li>
+
+            <div class="collapse megamenu" id="drop-mobile-1" data-bs-parent="#mobile-menu">
+              <div class="container">
+                <div class="row" style="padding: 1rem;">
+                  <div class="col-md-12 col-xs-12" style="padding-bottom:20px;">
+                    <div class="nav flex-column nav-pills me-3 col-md-4 col-xs-6" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-11-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-11" type="button" role="button"
+                        aria-controls="v-pills-mobile-11" aria-selected="true">
+                        <div class="underline"> Tanıtım
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-11" role="tabpanel" aria-labelledby="v-pills-mobile-11-tab"
+                          data-bs-parent="#drop-mobile-1">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/misyon-vizyon.html';">Misyon / Vizyon</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-12-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-12" type="button" role="button"
+                        aria-controls="v-pills-mobile-12" aria-selected="true">
+                        <div class="underline"> Personel
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-12" role="tabpanel" aria-labelledby="v-pills-mobile-12-tab"
+                          data-bs-parent="#drop-mobile-1">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/daire-baskani.html';">Daire Başkanı</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/sube-mudurleri.html';">Şube Müdürleri</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/yazi-isleri-birimi.html';">Yazı İşleri Birimi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/egitim-ogretim-birimi.html';">Eğitim Öğretim Birimi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/mali-isler-istatistik-burs-islemleri-ve-ozel-ogrenci-birimi.html';">Mali İşler, İstatistik, Burs İşlemleri ve Özel Öğrenci Birimi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/uluslararasi-ogrenci-birimi.html';">Uluslararası Öğrenci Birimi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/mezuniyet-isleri-birimi.html';">Mezuniyet İşlemleri Birimi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='diploma-ve-diploma-eki-birimi.html';">Diploma ve Diploma Eki Birimi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/destek-personeli.html';">Destek Personeli</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <li class="nav-item">
+            <a class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold" href="#"
+              id="navbarDropdown-mobile-2" role="button" data-bs-toggle="collapse"
+              aria-expanded="false"
+              data-bs-target="#drop-mobile-2" aria-controls="drop-mobile-2">Mevzuat</a>
+            </li>
+
+            <div class="collapse megamenu" id="drop-mobile-2" data-bs-parent="#mobile-menu">
+              <div class="container">
+                <div class="row" style="padding: 1rem;">
+                  <div class="col-md-12 col-xs-12" style="padding-bottom:20px;">
+                    <div class="nav flex-column nav-pills me-3 col-md-4 col-xs-6" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-21-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-21" type="button" role="button"
+                        aria-controls="v-pills-mobile-21" aria-selected="true">
+                        <div class="underline"> Mevzuatlar
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-21" role="tabpanel" aria-labelledby="v-pills-mobile-21-tab"
+                          data-bs-parent="#drop-mobile-2">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/kanunlar.html';">Kanunlar</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/yonetmelikler.html';">Yönetmelikler</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/yonergeler.html';">Yönergeler</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/esas-ve-usuller.html';">Esas-Usuller ve Kılavuzlar</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://www.yok.gov.tr/Sayfalar/Kurumsal/IdariBirimler/egitim_ogretim_daire_bsk/yuksekogretim-bolum-ve-program-isimleri.aspx';">Yükseköğretim Bölüm/Program İsimleri</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <li class="nav-item">
+            <a class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold" href="#"
+              id="navbarDropdown-mobile-3" role="button" data-bs-toggle="collapse"
+              aria-expanded="false"
+              data-bs-target="#drop-mobile-3" aria-controls="drop-mobile-3">Kalite</a>
+            </li>
+
+            <div class="collapse megamenu" id="drop-mobile-3" data-bs-parent="#mobile-menu">
+              <div class="container">
+                <div class="row" style="padding: 1rem;">
+                  <div class="col-md-12 col-xs-12" style="padding-bottom:20px;">
+                    <div class="nav flex-column nav-pills me-3 col-md-4 col-xs-6" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-31-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-31" type="button" role="button"
+                        aria-controls="v-pills-mobile-31" aria-selected="true">
+                        <div class="underline"> Kurumsal Kalite Politikaları
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-31" role="tabpanel" aria-labelledby="v-pills-mobile-31-tab"
+                          data-bs-parent="#drop-mobile-3">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/kalite-politikasi-ve-oncellikler.html';">Kalite Politikası ve Öncelikler</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://cdn3.beun.edu.tr/kalite/b45ae3d415deee0dc8baa642b33e3109/kalite-politikasi.png';">Kalite Politikası</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://cdn3.beun.edu.tr/kalite/644ae85798ba86f9dd5963b739d2a74e/kek.pdf';">BEUN Kalite El Kitabı</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://cdn1.beun.edu.tr/ogrenci/e7fb9aff79340c8cea75fd34b748ba59/zbeu-ogrenci-isleri-d.-b.-el-kitabi-2025-2.pdf';">Öğrenci İşleri El Kitabı</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://kalite.beun.edu.tr/bilgi-sistemi-s1/s1-egitim-ogretim-programlama.html';">S.1 Eğitim ve Öğretim Ana Süreci</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/birim-kalite-komisyonu.html';">Birim Kalite Komisyonu</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/toplanti-tutanaklari.html';">Toplantı Tutanakları</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/anketler.html';">Anketler</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/birim-gorev-tanimlari.html';">Birim Görev Tanımı</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/organizasyon-semasi.html';">Organizasyon Şeması</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://kalite.beun.edu.tr/bilgi-sistemi-s1/s1-egitim-ogretim-programlama.html';">İş Akış Süreçleri</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/faaliyet-raporu.html';">Faaliyet Raporu</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/stratejik-plan.html';">Stratejik Plan</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/acil-durum-plani.html';">Acil Durum Planı</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://kalite.beun.edu.tr/puko-cevrim-semalari.html';">PUKÖ Çevrim Şeması</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-32-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-32" type="button" role="button"
+                        aria-controls="v-pills-mobile-32" aria-selected="true">
+                        <div class="underline"> İç Kontrol
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-32" role="tabpanel" aria-labelledby="v-pills-mobile-32-tab"
+                          data-bs-parent="#drop-mobile-3">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/hassas-gorevler.html';">Hassas Görevler</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://cdn1.beun.edu.tr/ogrenci/0b77faef5b366b54ec6e9e386d8589cd/riskoylamaformuek1.pdf';">Risk Oylama Formu</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://cdn1.beun.edu.tr/ogrenci/40582f623efebdd36e16f3054506da58/riskkontroleylemplanisablonuek3.pdf';">Birim Risk Kontrol Eylem Planı</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://cdn1.beun.edu.tr/ogrenci/90f58eecc5447a6939037c08451474c0/birimriskkayitveilaveriskyonetimifaaliyetitakipformubirimbazindaek2.pdf';">Birim Risk Yönetimi Faaliyeti Takip Formu</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://cdn1.beun.edu.tr/ogrenci/b33ce6ebda9c73b45da1b3112762fe2f/riskstratejibelgesi20262027.pdf';">Risk Stratejik Belgesi</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <li class="nav-item">
+            <a class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold" href="#"
+              id="navbarDropdown-mobile-4" role="button" data-bs-toggle="collapse"
+              aria-expanded="false"
+              data-bs-target="#drop-mobile-4" aria-controls="drop-mobile-4">Öğrenci</a>
+            </li>
+
+            <div class="collapse megamenu" id="drop-mobile-4" data-bs-parent="#mobile-menu">
+              <div class="container">
+                <div class="row" style="padding: 1rem;">
+                  <div class="col-md-12 col-xs-12" style="padding-bottom:20px;">
+                    <div class="nav flex-column nav-pills me-3 col-md-4 col-xs-6" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-41-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-41" type="button" role="button"
+                        aria-controls="v-pills-mobile-41" aria-selected="true">
+                        <div class="underline"> Aday Öğrenci
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-41" role="tabpanel" aria-labelledby="v-pills-mobile-41-tab"
+                          data-bs-parent="#drop-mobile-4">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/kayit-rehberi.html';">Kayıt Rehberi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/ek-kontenjan-kayit-rehberi.html';">Ek Kontenjan Kayıt Rehberi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://ogrenci.beun.edu.tr/dikey-gecis-dgs-ogrenci-kayit-rehberi.html';">Dikey Geçiş Sınavı (DGS) Kayıt Rehberi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://ogrenci.beun.edu.tr/dikey-gecis--dgs-ek-yerlestirme.html';">Dikey Geçiş Sınavı (DGS) Ek Kontenjan Kayıt Rehberi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/2022yksdgskontenjan.html';">YKS - DGS Kontenjan</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/kosul-ve-aciklamalar.html';">Koşul  ve Açıklamalar</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-42-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-42" type="button" role="button"
+                        aria-controls="v-pills-mobile-42" aria-selected="true">
+                        <div class="underline"> Ders Alma / Katkı Payı
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-42" role="tabpanel" aria-labelledby="v-pills-mobile-42-tab"
+                          data-bs-parent="#drop-mobile-4">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/ders-alma-islemleri.html';">Ders Alma İşlemleri</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://cdn1.beun.edu.tr/ogrenci/61c52046e48135e693cc40be04172f37/ogrenciklavuz1.pdf';">Ders Alma Klavuzu</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://cdn1.beun.edu.tr/ogrenci/61c52046e48135e693cc40be04172f37/ortakders.pdf';">Ortak Zorunlu Dersler İle İlgili Bilgi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/katki-payi-ogrenim-ucretleri.html';">Katkı Payı / Öğrenim Ücretleri</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-43-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-43" type="button" role="button"
+                        aria-controls="v-pills-mobile-43" aria-selected="true">
+                        <div class="underline"> Bölüm ve Programlar
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-43" role="tabpanel" aria-labelledby="v-pills-mobile-43-tab"
+                          data-bs-parent="#drop-mobile-4">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://w3.beun.edu.tr/akademik/fakulteler.html';">Fakülteler</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://w3.beun.edu.tr/akademik/yuksekokullar-ve-konservatuvar.html';">Yüksekokullar ve Konservatuvar</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://w3.beun.edu.tr/akademik/meslek-yuksek-okullari.html';">Meslek Yüksekokulları</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://w3.beun.edu.tr/akademik/enstituler.html';">Enstitüler</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-44-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-44" type="button" role="button"
+                        aria-controls="v-pills-mobile-44" aria-selected="true">
+                        <div class="underline"> Yatay Geçiş
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-44" role="tabpanel" aria-labelledby="v-pills-mobile-44-tab"
+                          data-bs-parent="#drop-mobile-4">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='http://cdn1.beun.edu.tr/ogrenci/1ac7ef3c6c547debae23a25199e3a813/yataygecis.pdf';">Yatay Geçiş Yöntemleri</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/kurumlararasi-yatay-gecis.html';">Kurumlararası Yatay Geçiş</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/kurum-ici-programlar-arasi-yatay-gecis.html';">Kurum İçi Programlar Arası Yatay Geçiş</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/merkezi-yerlestirme-puani-ek-madde-1-ile-yatay-gecis.html';">Merkezi Yerleştirme Puanı (Ek Madde-1) İle Yatay Geçiş</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-45-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-45" type="button" role="button"
+                        aria-controls="v-pills-mobile-45" aria-selected="true">
+                        <div class="underline"> Çift Ana Dal ve Yandal
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-45" role="tabpanel" aria-labelledby="v-pills-mobile-45-tab"
+                          data-bs-parent="#drop-mobile-4">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/cift-anadal.html';">Çift Ana Dal</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://ogrenci.beun.edu.tr/cift-anadal-ve-yandal/cift-ana-dal-programlari-1.html';">Çift Ana Dal Programları</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/yandal.html';">Yandal</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://ogrenci.beun.edu.tr/cift-anadal-ve-yandal/yandal-programlari.html';">Yandal Programları</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-46-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-46" type="button" role="button"
+                        aria-controls="v-pills-mobile-46" aria-selected="true">
+                        <div class="underline"> Hizmet Kısayolları
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-46" role="tabpanel" aria-labelledby="v-pills-mobile-46-tab"
+                          data-bs-parent="#drop-mobile-4">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://diplomaeki.beun.edu.tr/';">Diploma Eki</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/sosyal-transkript.html';">Sosyal Transkript</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://sks.beun.edu.tr/ekampus.html';">Yemekhane İşlemleri (E-Kampüs)</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <li class="nav-item text-bold">
+            <a href="https://ogrenci.beun.edu.tr/akademik-takvimler.html"  target="_self"  class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold">Akademik Takvimler</a>
+            </li>
+            
+            
+            
+            <li class="nav-item text-bold">
+            <a href="https://kalite.beun.edu.tr/bilgi-sistemi-s1/s1-egitim-ogretim-programlama.html"  target="_self"  class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold">Formlar</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+            <a class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold" href="#"
+              id="navbarDropdown-mobile-7" role="button" data-bs-toggle="collapse"
+              aria-expanded="false"
+              data-bs-target="#drop-mobile-7" aria-controls="drop-mobile-7">Faydalı Linkler</a>
+            </li>
+
+            <div class="collapse megamenu" id="drop-mobile-7" data-bs-parent="#mobile-menu">
+              <div class="container">
+                <div class="row" style="padding: 1rem;">
+                  <div class="col-md-12 col-xs-12" style="padding-bottom:20px;">
+                    <div class="nav flex-column nav-pills me-3 col-md-4 col-xs-6" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      
+                      <button class="nav-link menu-pills text-start" id="v-pills-mobile-71-tab" data-bs-toggle="collapse"
+                        data-bs-target="#v-pills-mobile-71" type="button" role="button"
+                        aria-controls="v-pills-mobile-71" aria-selected="true">
+                        <div class="underline"> Dış Bağlantılar
+                          <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i>
+                        </div>
+                      </button>
+                      <!-- En Alt Menüler -->
+                      <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent-1">
+                        <div class="collapse" id="v-pills-mobile-71" role="tabpanel" aria-labelledby="v-pills-mobile-71-tab"
+                          data-bs-parent="#drop-mobile-7">
+                          <hr class="menutab-hr">
+                          <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                              <ul class="list-group list-group-flush" style="width:87%;">
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://www.resmigazete.gov.tr/';">Resmi Gazete</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://www.yok.gov.tr/';">Yükseköğretim Kurulu Başkanlığı</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='/yuksekogretim-program-atlasi.html';">Yükseköğretim Program Atlası</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://www.uak.gov.tr/';">Üniversitelerarası Kurul Başkanlığı</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://www.yok.gov.tr/universiteler/universitelerimiz';">Üniversiteler</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://www.yok.gov.tr/universiteler/diger-yuksekogretim-kurumlari';">Diğer Yükseköğretim Kurumları</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://www.osym.gov.tr/genel/anasayfa.aspx';">Ölçme, Seçme ve Yerleştirme Merkezi</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://detsis.gov.tr/';">Kaysis</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://www.turkiye.gov.tr/';">E-Devlet</li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://www.sgk.gov.tr/';">Sosyal Güvenlik Kurumu </li>
+                                
+                                <li class="list-group-item menu-items" onclick="window.location='https://verimerkezi.beun.edu.tr/';">ZBEÜ Veri Merkezi</li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            <li class="nav-item text-bold">
+            <a href="/sikca-sorulan-sorular.html"  target="_self"  class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold">S.S.S</a>
+            </li>
+            
+            
+            
+            <li class="nav-item text-bold">
+            <a href="/iletisim.html"  target="_self"  class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold">İletişim</a>
+            </li>
+            
+            
+            
+              </ul>
+      																							</div>
+      																						</div>
+
+
+      <div class="collapse navbar-collapse justify-content-end h-75 align-self-end" id="navbarSupportedContent" style="margin-right: -12px;">
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0 h-75 align-self-end">
+      
+      
+      
+      <li class="nav-item text-bold">
+        <a class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold" href="#" id="navbarDropdown-1" role="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#drop-1" aria-controls="drop-1">Kurumsal</a>
+      </li>
+      
+      
+      
+      <li class="nav-item text-bold">
+        <a class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold" href="#" id="navbarDropdown-2" role="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#drop-2" aria-controls="drop-2">Mevzuat</a>
+      </li>
+      
+      
+      
+      <li class="nav-item text-bold">
+        <a class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold" href="#" id="navbarDropdown-3" role="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#drop-3" aria-controls="drop-3">Kalite</a>
+      </li>
+      
+      
+      
+      <li class="nav-item text-bold">
+        <a class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold" href="#" id="navbarDropdown-4" role="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#drop-4" aria-controls="drop-4">Öğrenci</a>
+      </li>
+      
+      
+      
+        <li class="nav-item text-bold"><a href="https://ogrenci.beun.edu.tr/akademik-takvimler.html"  target="_self"  class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold">Akademik Takvimler</a>  </li>
+
+
+      
+      
+      
+        <li class="nav-item text-bold"><a href="https://kalite.beun.edu.tr/bilgi-sistemi-s1/s1-egitim-ogretim-programlama.html"  target="_self"  class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold">Formlar</a>  </li>
+
+
+      
+      
+      
+      <li class="nav-item text-bold">
+        <a class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold" href="#" id="navbarDropdown-7" role="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#drop-7" aria-controls="drop-7">Faydalı Linkler</a>
+      </li>
+      
+      
+      
+        <li class="nav-item text-bold"><a href="/sikca-sorulan-sorular.html"  target="_self"  class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold">S.S.S</a>  </li>
+
+
+      
+      
+      
+        <li class="nav-item text-bold"><a href="/iletisim.html"  target="_self"  class="nav-link nav-link-menu h-100 collapsed anamenu anamenu-mobile text-bold">İletişim</a>  </li>
+
+
+      
+      
+      
+      </ul>
+      </div>
+      <img src="https://cdn3.beun.edu.tr/w3/14fb9cead825c6b92388e307404a5547/akreditasyon.png" class="img-fluid brand-image" style="width: 120px !important;margin-top: 30px;margin-left: 20px;">
+      	</div>
+
+      </nav>
+
+
+      <div id="menumega">
+    
+  <div class="collapse megamenu" id="drop-1" data-bs-parent="#menumega">
+    <div class="container">
+      <div class="row menu-row">
+        <div class="col-md-3 col-xs-12 d-flex align-items-center d-none d-lg-flex col-menu-label">
+          <p class="text-break menu-label">Kurumsal</p>
+        </div>
+        <div class="col-md-9 col-xs-12 col-menu-list">
+          <div class="d-flex align-items-start">
+            
+            <div class="nav flex-column nav-pills me-3 col-md-4 col-xs-6" id="v-pills-tab-1" role="tablist" aria-orientation="vertical">
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar active" id="v-pills-11-tab" data-bs-toggle="pill" data-bs-target="#v-pills-11" type="button" role="tab" aria-controls="v-pills-11" aria-selected="true">
+                <div class="underline">Tanıtım <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar " id="v-pills-12-tab" data-bs-toggle="pill" data-bs-target="#v-pills-12" type="button" role="tab" aria-controls="v-pills-12" aria-selected="true">
+                <div class="underline">Personel <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+            </div>
+            
+
+
+            <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent">
+              
+              
+              <div class="tab-pane fade show active" id="v-pills-11" role="tabpanel" aria-labelledby="v-pills-11-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/misyon-vizyon.html"  target="_self"  style="text-decoration: none;">Misyon / Vizyon</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+              
+              <div class="tab-pane fade " id="v-pills-12" role="tabpanel" aria-labelledby="v-pills-12-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/daire-baskani.html"  target="_self"  style="text-decoration: none;">Daire Başkanı</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/sube-mudurleri.html"  target="_self"  style="text-decoration: none;">Şube Müdürleri</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/yazi-isleri-birimi.html"  target="_self"  style="text-decoration: none;">Yazı İşleri Birimi</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/egitim-ogretim-birimi.html"  target="_self"  style="text-decoration: none;">Eğitim Öğretim Birimi</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/mali-isler-istatistik-burs-islemleri-ve-ozel-ogrenci-birimi.html"  target="_self"  style="text-decoration: none;">Mali İşler, İstatistik, Burs İşlemleri ve Özel Öğrenci Birimi</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/uluslararasi-ogrenci-birimi.html"  target="_self"  style="text-decoration: none;">Uluslararası Öğrenci Birimi</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/mezuniyet-isleri-birimi.html"  target="_self"  style="text-decoration: none;">Mezuniyet İşlemleri Birimi</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="diploma-ve-diploma-eki-birimi.html"  target="_self"  style="text-decoration: none;">Diploma ve Diploma Eki Birimi</a></li>
+                  </ul>
+
+                  
+                
+                  
+                    
+                      </div>
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/destek-personeli.html"  target="_self"  style="text-decoration: none;">Destek Personeli</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="collapse megamenu" id="drop-2" data-bs-parent="#menumega">
+    <div class="container">
+      <div class="row menu-row">
+        <div class="col-md-3 col-xs-12 d-flex align-items-center d-none d-lg-flex col-menu-label">
+          <p class="text-break menu-label">Mevzuat</p>
+        </div>
+        <div class="col-md-9 col-xs-12 col-menu-list">
+          <div class="d-flex align-items-start">
+            
+            <div class="nav flex-column nav-pills me-3 col-md-4 col-xs-6" id="v-pills-tab-2" role="tablist" aria-orientation="vertical">
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar " id="v-pills-21-tab" data-bs-toggle="pill" data-bs-target="#v-pills-21" type="button" role="tab" aria-controls="v-pills-21" aria-selected="true">
+                <div class="underline">Mevzuatlar <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+            </div>
+            
+
+
+            <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent">
+              
+              
+              <div class="tab-pane fade " id="v-pills-21" role="tabpanel" aria-labelledby="v-pills-21-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/kanunlar.html"  target="_self"  style="text-decoration: none;">Kanunlar</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/yonetmelikler.html"  target="_self"  style="text-decoration: none;">Yönetmelikler</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/yonergeler.html"  target="_self"  style="text-decoration: none;">Yönergeler</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/esas-ve-usuller.html"  target="_self"  style="text-decoration: none;">Esas-Usuller ve Kılavuzlar</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://www.yok.gov.tr/Sayfalar/Kurumsal/IdariBirimler/egitim_ogretim_daire_bsk/yuksekogretim-bolum-ve-program-isimleri.aspx"  target="_self"  style="text-decoration: none;">Yükseköğretim Bölüm/Program İsimleri</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="collapse megamenu" id="drop-3" data-bs-parent="#menumega">
+    <div class="container">
+      <div class="row menu-row">
+        <div class="col-md-3 col-xs-12 d-flex align-items-center d-none d-lg-flex col-menu-label">
+          <p class="text-break menu-label">Kalite</p>
+        </div>
+        <div class="col-md-9 col-xs-12 col-menu-list">
+          <div class="d-flex align-items-start">
+            
+            <div class="nav flex-column nav-pills me-3 col-md-4 col-xs-6" id="v-pills-tab-3" role="tablist" aria-orientation="vertical">
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar " id="v-pills-31-tab" data-bs-toggle="pill" data-bs-target="#v-pills-31" type="button" role="tab" aria-controls="v-pills-31" aria-selected="true">
+                <div class="underline">Kurumsal Kalite Politikaları <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar " id="v-pills-32-tab" data-bs-toggle="pill" data-bs-target="#v-pills-32" type="button" role="tab" aria-controls="v-pills-32" aria-selected="true">
+                <div class="underline">İç Kontrol <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+            </div>
+            
+
+
+            <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent">
+              
+              
+              <div class="tab-pane fade " id="v-pills-31" role="tabpanel" aria-labelledby="v-pills-31-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/kalite-politikasi-ve-oncellikler.html"  target="_self"  style="text-decoration: none;">Kalite Politikası ve Öncelikler</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://cdn3.beun.edu.tr/kalite/b45ae3d415deee0dc8baa642b33e3109/kalite-politikasi.png"  target="_self"  style="text-decoration: none;">Kalite Politikası</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://cdn3.beun.edu.tr/kalite/644ae85798ba86f9dd5963b739d2a74e/kek.pdf"  target="_self"  style="text-decoration: none;">BEUN Kalite El Kitabı</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://cdn1.beun.edu.tr/ogrenci/e7fb9aff79340c8cea75fd34b748ba59/zbeu-ogrenci-isleri-d.-b.-el-kitabi-2025-2.pdf"  target="_self"  style="text-decoration: none;">Öğrenci İşleri El Kitabı</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://kalite.beun.edu.tr/bilgi-sistemi-s1/s1-egitim-ogretim-programlama.html"  target="_self"  style="text-decoration: none;">S.1 Eğitim ve Öğretim Ana Süreci</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/birim-kalite-komisyonu.html"  target="_self"  style="text-decoration: none;">Birim Kalite Komisyonu</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/toplanti-tutanaklari.html"  target="_self"  style="text-decoration: none;">Toplantı Tutanakları</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/anketler.html"  target="_self"  style="text-decoration: none;">Anketler</a></li>
+                  </ul>
+
+                  
+                
+                  
+                    
+                      </div>
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/birim-gorev-tanimlari.html"  target="_self"  style="text-decoration: none;">Birim Görev Tanımı</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/organizasyon-semasi.html"  target="_self"  style="text-decoration: none;">Organizasyon Şeması</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://kalite.beun.edu.tr/bilgi-sistemi-s1/s1-egitim-ogretim-programlama.html"  target="_self"  style="text-decoration: none;">İş Akış Süreçleri</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/faaliyet-raporu.html"  target="_self"  style="text-decoration: none;">Faaliyet Raporu</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/stratejik-plan.html"  target="_self"  style="text-decoration: none;">Stratejik Plan</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/acil-durum-plani.html"  target="_self"  style="text-decoration: none;">Acil Durum Planı</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://kalite.beun.edu.tr/puko-cevrim-semalari.html"  target="_self"  style="text-decoration: none;">PUKÖ Çevrim Şeması</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+              
+              <div class="tab-pane fade " id="v-pills-32" role="tabpanel" aria-labelledby="v-pills-32-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/hassas-gorevler.html"  target="_self"  style="text-decoration: none;">Hassas Görevler</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://cdn1.beun.edu.tr/ogrenci/0b77faef5b366b54ec6e9e386d8589cd/riskoylamaformuek1.pdf"  target="_self"  style="text-decoration: none;">Risk Oylama Formu</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://cdn1.beun.edu.tr/ogrenci/40582f623efebdd36e16f3054506da58/riskkontroleylemplanisablonuek3.pdf"  target="_self"  style="text-decoration: none;">Birim Risk Kontrol Eylem Planı</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://cdn1.beun.edu.tr/ogrenci/90f58eecc5447a6939037c08451474c0/birimriskkayitveilaveriskyonetimifaaliyetitakipformubirimbazindaek2.pdf"  target="_self"  style="text-decoration: none;">Birim Risk Yönetimi Faaliyeti Takip Formu</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://cdn1.beun.edu.tr/ogrenci/b33ce6ebda9c73b45da1b3112762fe2f/riskstratejibelgesi20262027.pdf"  target="_self"  style="text-decoration: none;">Risk Stratejik Belgesi</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="collapse megamenu" id="drop-4" data-bs-parent="#menumega">
+    <div class="container">
+      <div class="row menu-row">
+        <div class="col-md-3 col-xs-12 d-flex align-items-center d-none d-lg-flex col-menu-label">
+          <p class="text-break menu-label">Öğrenci</p>
+        </div>
+        <div class="col-md-9 col-xs-12 col-menu-list">
+          <div class="d-flex align-items-start">
+            
+            <div class="nav flex-column nav-pills me-3 col-md-4 col-xs-6" id="v-pills-tab-4" role="tablist" aria-orientation="vertical">
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar " id="v-pills-41-tab" data-bs-toggle="pill" data-bs-target="#v-pills-41" type="button" role="tab" aria-controls="v-pills-41" aria-selected="true">
+                <div class="underline">Aday Öğrenci <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar " id="v-pills-42-tab" data-bs-toggle="pill" data-bs-target="#v-pills-42" type="button" role="tab" aria-controls="v-pills-42" aria-selected="true">
+                <div class="underline">Ders Alma / Katkı Payı <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar " id="v-pills-43-tab" data-bs-toggle="pill" data-bs-target="#v-pills-43" type="button" role="tab" aria-controls="v-pills-43" aria-selected="true">
+                <div class="underline">Bölüm ve Programlar <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar " id="v-pills-44-tab" data-bs-toggle="pill" data-bs-target="#v-pills-44" type="button" role="tab" aria-controls="v-pills-44" aria-selected="true">
+                <div class="underline">Yatay Geçiş <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar " id="v-pills-45-tab" data-bs-toggle="pill" data-bs-target="#v-pills-45" type="button" role="tab" aria-controls="v-pills-45" aria-selected="true">
+                <div class="underline">Çift Ana Dal ve Yandal <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar " id="v-pills-46-tab" data-bs-toggle="pill" data-bs-target="#v-pills-46" type="button" role="tab" aria-controls="v-pills-46" aria-selected="true">
+                <div class="underline">Hizmet Kısayolları <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+            </div>
+            
+
+
+            <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent">
+              
+              
+              <div class="tab-pane fade " id="v-pills-41" role="tabpanel" aria-labelledby="v-pills-41-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/kayit-rehberi.html"  target="_self"  style="text-decoration: none;">Kayıt Rehberi</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/ek-kontenjan-kayit-rehberi.html"  target="_self"  style="text-decoration: none;">Ek Kontenjan Kayıt Rehberi</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://ogrenci.beun.edu.tr/dikey-gecis-dgs-ogrenci-kayit-rehberi.html"  target="_self"  style="text-decoration: none;">Dikey Geçiş Sınavı (DGS) Kayıt Rehberi</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://ogrenci.beun.edu.tr/dikey-gecis--dgs-ek-yerlestirme.html"  target="_self"  style="text-decoration: none;">Dikey Geçiş Sınavı (DGS) Ek Kontenjan Kayıt Rehberi</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/2022yksdgskontenjan.html"  target="_self"  style="text-decoration: none;">YKS - DGS Kontenjan</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/kosul-ve-aciklamalar.html"  target="_self"  style="text-decoration: none;">Koşul  ve Açıklamalar</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+              
+              <div class="tab-pane fade " id="v-pills-42" role="tabpanel" aria-labelledby="v-pills-42-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/ders-alma-islemleri.html"  target="_self"  style="text-decoration: none;">Ders Alma İşlemleri</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://cdn1.beun.edu.tr/ogrenci/61c52046e48135e693cc40be04172f37/ogrenciklavuz1.pdf"  target="_self"  style="text-decoration: none;">Ders Alma Klavuzu</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://cdn1.beun.edu.tr/ogrenci/61c52046e48135e693cc40be04172f37/ortakders.pdf"  target="_self"  style="text-decoration: none;">Ortak Zorunlu Dersler İle İlgili Bilgi</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/katki-payi-ogrenim-ucretleri.html"  target="_self"  style="text-decoration: none;">Katkı Payı / Öğrenim Ücretleri</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+              
+              <div class="tab-pane fade " id="v-pills-43" role="tabpanel" aria-labelledby="v-pills-43-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://w3.beun.edu.tr/akademik/fakulteler.html"  target="_self"  style="text-decoration: none;">Fakülteler</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://w3.beun.edu.tr/akademik/yuksekokullar-ve-konservatuvar.html"  target="_self"  style="text-decoration: none;">Yüksekokullar ve Konservatuvar</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://w3.beun.edu.tr/akademik/meslek-yuksek-okullari.html"  target="_self"  style="text-decoration: none;">Meslek Yüksekokulları</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://w3.beun.edu.tr/akademik/enstituler.html"  target="_self"  style="text-decoration: none;">Enstitüler</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+              
+              <div class="tab-pane fade " id="v-pills-44" role="tabpanel" aria-labelledby="v-pills-44-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="http://cdn1.beun.edu.tr/ogrenci/1ac7ef3c6c547debae23a25199e3a813/yataygecis.pdf"  target="_self"  style="text-decoration: none;">Yatay Geçiş Yöntemleri</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/kurumlararasi-yatay-gecis.html"  target="_self"  style="text-decoration: none;">Kurumlararası Yatay Geçiş</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/kurum-ici-programlar-arasi-yatay-gecis.html"  target="_self"  style="text-decoration: none;">Kurum İçi Programlar Arası Yatay Geçiş</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/merkezi-yerlestirme-puani-ek-madde-1-ile-yatay-gecis.html"  target="_self"  style="text-decoration: none;">Merkezi Yerleştirme Puanı (Ek Madde-1) İle Yatay Geçiş</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+              
+              <div class="tab-pane fade " id="v-pills-45" role="tabpanel" aria-labelledby="v-pills-45-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/cift-anadal.html"  target="_self"  style="text-decoration: none;">Çift Ana Dal</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://ogrenci.beun.edu.tr/cift-anadal-ve-yandal/cift-ana-dal-programlari-1.html"  target="_self"  style="text-decoration: none;">Çift Ana Dal Programları</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/yandal.html"  target="_self"  style="text-decoration: none;">Yandal</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://ogrenci.beun.edu.tr/cift-anadal-ve-yandal/yandal-programlari.html"  target="_self"  style="text-decoration: none;">Yandal Programları</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+              
+              <div class="tab-pane fade " id="v-pills-46" role="tabpanel" aria-labelledby="v-pills-46-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://diplomaeki.beun.edu.tr/"  target="_self"  style="text-decoration: none;">Diploma Eki</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/sosyal-transkript.html"  target="_self"  style="text-decoration: none;">Sosyal Transkript</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://sks.beun.edu.tr/ekampus.html"  target="_self"  style="text-decoration: none;">Yemekhane İşlemleri (E-Kampüs)</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="collapse megamenu" id="drop-5" data-bs-parent="#menumega">
+    <div class="container">
+      <div class="row menu-row">
+        <div class="col-md-3 col-xs-12 d-flex align-items-center d-none d-lg-flex col-menu-label">
+          <p class="text-break menu-label">Akademik Takvimler</p>
+        </div>
+        <div class="col-md-9 col-xs-12 col-menu-list">
+          <div class="d-flex align-items-start">
+            
+
+
+            <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent">
+              
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="collapse megamenu" id="drop-6" data-bs-parent="#menumega">
+    <div class="container">
+      <div class="row menu-row">
+        <div class="col-md-3 col-xs-12 d-flex align-items-center d-none d-lg-flex col-menu-label">
+          <p class="text-break menu-label">Formlar</p>
+        </div>
+        <div class="col-md-9 col-xs-12 col-menu-list">
+          <div class="d-flex align-items-start">
+            
+
+
+            <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent">
+              
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="collapse megamenu" id="drop-7" data-bs-parent="#menumega">
+    <div class="container">
+      <div class="row menu-row">
+        <div class="col-md-3 col-xs-12 d-flex align-items-center d-none d-lg-flex col-menu-label">
+          <p class="text-break menu-label">Faydalı Linkler</p>
+        </div>
+        <div class="col-md-9 col-xs-12 col-menu-list">
+          <div class="d-flex align-items-start">
+            
+            <div class="nav flex-column nav-pills me-3 col-md-4 col-xs-6" id="v-pills-tab-7" role="tablist" aria-orientation="vertical">
+              
+              
+              <button class="nav-link menu-pills text-start altmenuvar " id="v-pills-71-tab" data-bs-toggle="pill" data-bs-target="#v-pills-71" type="button" role="tab" aria-controls="v-pills-71" aria-selected="true">
+                <div class="underline">Dış Bağlantılar <i class="fas fa-angle-double-right" style="float:right; font-size:15px;"></i></div>
+              </button>
+              
+              
+            </div>
+            
+
+
+            <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent">
+              
+              
+              <div class="tab-pane fade " id="v-pills-71" role="tabpanel" aria-labelledby="v-pills-71-tab">
+                <div class="row">
+                
+                  
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://www.resmigazete.gov.tr/"  target="_self"  style="text-decoration: none;">Resmi Gazete</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://www.yok.gov.tr/"  target="_self"  style="text-decoration: none;">Yükseköğretim Kurulu Başkanlığı</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="/yuksekogretim-program-atlasi.html"  target="_self"  style="text-decoration: none;">Yükseköğretim Program Atlası</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://www.uak.gov.tr/"  target="_self"  style="text-decoration: none;">Üniversitelerarası Kurul Başkanlığı</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://www.yok.gov.tr/universiteler/universitelerimiz"  target="_self"  style="text-decoration: none;">Üniversiteler</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://www.yok.gov.tr/universiteler/diger-yuksekogretim-kurumlari"  target="_self"  style="text-decoration: none;">Diğer Yükseköğretim Kurumları</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://www.osym.gov.tr/genel/anasayfa.aspx"  target="_self"  style="text-decoration: none;">Ölçme, Seçme ve Yerleştirme Merkezi</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://detsis.gov.tr/"  target="_self"  style="text-decoration: none;">Kaysis</a></li>
+                  </ul>
+
+                  
+                
+                  
+                    
+                      </div>
+                    
+                    <div class="col-md-6 col-xs-12">
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://www.turkiye.gov.tr/"  target="_self"  style="text-decoration: none;">E-Devlet</a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://www.sgk.gov.tr/"  target="_self"  style="text-decoration: none;">Sosyal Güvenlik Kurumu </a></li>
+                  </ul>
+
+                  
+                
+                  
+
+                  <ul class="list-group list-group-flush" style="width:87%;">
+                    <li class="list-group-item menu-items"><a href="https://verimerkezi.beun.edu.tr/"  target="_self"  style="text-decoration: none;">ZBEÜ Veri Merkezi</a></li>
+                  </ul>
+
+                  
+                    </div>
+                  
+                
+              </div>
+              </div>
+              
+              
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="collapse megamenu" id="drop-8" data-bs-parent="#menumega">
+    <div class="container">
+      <div class="row menu-row">
+        <div class="col-md-3 col-xs-12 d-flex align-items-center d-none d-lg-flex col-menu-label">
+          <p class="text-break menu-label">S.S.S</p>
+        </div>
+        <div class="col-md-9 col-xs-12 col-menu-list">
+          <div class="d-flex align-items-start">
+            
+
+
+            <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent">
+              
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="collapse megamenu" id="drop-9" data-bs-parent="#menumega">
+    <div class="container">
+      <div class="row menu-row">
+        <div class="col-md-3 col-xs-12 d-flex align-items-center d-none d-lg-flex col-menu-label">
+          <p class="text-break menu-label">İletişim</p>
+        </div>
+        <div class="col-md-9 col-xs-12 col-menu-list">
+          <div class="d-flex align-items-start">
+            
+
+
+            <div class="tab-content col-md-8 col-xs-6" id="v-pills-tabContent">
+              
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+<style>
+	.fa-angle-double-left:hover{
+		background-color: #c14c48 !important;
+		color: #fff !important;
+	}
+	.fa-angle-double-right:hover{
+		background-color: #c14c48 !important;
+		color: #fff !important;
+	}
+</style>
+<!-- ####################### DUYURULAR #####################################-->
+    <div class="container-fluid duyuru_container" style="background-color:#001a2a; padding-top: 10px; padding-bottom: 10px;">
+    	<div class="container">
+		  <div class="row">
+			<div class="col-12" style="padding:15px;padding-left:0px;">
+				<div class="solcizgi"></div>
+               	<div style="float:left;padding-top:7px;">
+					<h2 class="sayfabaslik">
+						Yönetmelikler					</h2>
+
+				</div>
+
+
+
+		    </div>
+
+
+          </div>
+			</div>
+          </div>
+
+
+          <div class="container">
+            <div class="row mt-4" style="padding-bottom: 3.5rem!important;">
+
+          
+          
+          
+          
+          
+          
+          
+          
+          <div class="col-sm-12 col-md-12" style="margin-top: 5px;">
+            <div style="display: table-cell;vertical-align: middle;max-width: 100%;">
+
+                <a href="#" onclick="window.open('https://twitter.com/intent/tweet?original_referer='+encodeURIComponent(location.href)+'&amp;ref_src=twsrc%5Etfw&amp;text=Zonguldak Bülent Ecevit Üniversitesi&amp;tw_p=tweetbutton&amp;url='+encodeURIComponent(location.href), 'twitter-paylas', 'width=626,height=436'); return false;">
+                  <img src="https://cdn1.beun.edu.tr/bidb/ef52ad0d22d7bee722cd627692e60362/twitter.png" style="height: 100%;" class="ss">
+                </a>
+
+
+              <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-paylas', 'width=626,height=436'); return false;">
+                <div class="sb" style="cursor: pointer; float: right; margin-right: -1px; height: 100%;">
+                <img src="https://cdn1.beun.edu.tr/bidb/ef52ad0d22d7bee722cd627692e60362/facebook.png" style="height: 100%; border-radius: 5px 0px 0px 5px;" class="ss">
+                </div>
+              </a>
+
+
+
+
+              </div>
+            <h2 class="col-90" style="calc(100% - 35px;);margin-top: 10px;">
+            Yönetmelikler</h2>
+
+            <div class="rhd-tool-top cf">
+              <a href="javascript:void(0);" onclick="boyutlandir(-1)" style="text-decoration: none;">
+                <i class="fa fa-search-minus" style="color: red;text-decoration: none;"></i> Küçült</a>
+            <font style="font-weight: 700;">Yazı Tipi</font>
+            <a href="javascript:void(0);" onclick="boyutlandir(1)" style="text-decoration: none;"><i class="fa fa-search-plus" style="color: green;"></i> Büyüt</a>
+            </div>
+            <article id="makale" style="font-size:1em;margin-top: 22px;">
+            <ul>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="https://kms.kaysis.gov.tr/Home/Goster/39225" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ LİSANS EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a></b></span></li>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="https://kms.kaysis.gov.tr/Home/Goster/39227" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ MESLEK Y&Uuml;KSEKOKULLARI EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a></b></span></li>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="https://kms.kaysis.gov.tr/Home/Goster/128596" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ SAĞLIK BİLİMLERİ FAK&Uuml;LTESİ EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a></b></span></li>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="http://cdn1.beun.edu.tr/ogrenci/5be2f6d6c684f0f44c83efa9f75e8b08/saglikyuksekokulu06.07.2015.docx_XcJn2in.pdf" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ ZONGULDAK SAĞLIK Y&Uuml;KSEKOKULU EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a></b></span></li>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="https://kms.kaysis.gov.tr/Home/Goster/39226" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ DEVLET KONSERVATUVARI LİSANS EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a></b></span></li>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="https://kms.kaysis.gov.tr/Home/Goster/147180" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ TIP FAK&Uuml;LTESİ EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a>&nbsp;&nbsp;</b></span></li>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="https://kms.kaysis.gov.tr/Home/Goster/39699" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ G&Uuml;ZEL SANATLAR FAK&Uuml;LTESİ LİSANS EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a>&nbsp;</b></span></li>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="https://kms.kaysis.gov.tr/Home/Goster/39277" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ DİŞ HEKİMLİĞİ FAK&Uuml;LTESİ EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a>&nbsp;</b></span></li>
+<li><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=40403&amp;MevzuatTur=8&amp;MevzuatTertip=5" target="_blank" rel="noopener"><span style="font-size: 9pt; color: #3366ff;"><b>ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ LİSANS&Uuml;ST&Uuml; EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ&nbsp;</b></span></a></li>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="https://kms.kaysis.gov.tr/Home/Goster/75506" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ ECZACILIK FAK&Uuml;LTESİ EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a>&nbsp;</b></span></li>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="https://kms.kaysis.gov.tr/Home/Goster/39229" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ YAZ OKULU EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a>&nbsp;</b></span></li>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="https://kms.kaysis.gov.tr/Home/Goster/75510" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ YABANCI DİLLER Y&Uuml;KSEKOKULU YABANCI DİLLER B&Ouml;L&Uuml;M&Uuml; EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a>&nbsp;</b></span></li>
+<li><span style="font-size: 9pt; color: #3366ff;"><b><a href="https://kms.kaysis.gov.tr/Home/Goster/75509" target="_blank" rel="noopener" style="color: #3366ff;">ZONGULDAK B&Uuml;LENT ECEVİT &Uuml;NİVERSİTESİ İLAHİYAT FAK&Uuml;LTESİ ZORUNLU ARAP&Ccedil;A HAZIRLIK SINIFI EĞİTİM-&Ouml;ĞRETİM VE SINAV Y&Ouml;NETMELİĞİ</a>&nbsp;</b></span></li>
+<li><span style="font-size: 9pt;"><strong><span style="color: #3366ff;"><a href="http://www.mevzuat.gov.tr/Metin.Aspx?MevzuatKod=7.5.21475&amp;MevzuatIliski=0&amp;sourceXmlSearch=Y%C3%9CKSEK%C3%96%C4%9ERET%C4%B0M%20KURUMLARINDA%20YABANCI%20D%C4%B0L%20%C3%96%C4%9ERET%C4%B0M%C4%B0%20VE%20YABANCI%20D%C4%B0LLE%20%C3%96%C4%9ERET%C4%B0M%20YAPILMASINDA%20UYULACAK%20ESASL" target="_blank" rel="noopener" style="color: #3366ff;">Y&Uuml;KSEK&Ouml;ĞRETİM KURUMLARINDA YABANCI DİL &Ouml;ĞRETİMİ VE YABANCI DİLLE &Ouml;ĞRETİM YAPILMASINDA UYULACAK ESASLARA İLİŞKİN Y&Ouml;NETMELİK</a></span></strong></span></li>
+<li><span style="font-size: 9pt;"><strong><span style="color: #3366ff;"></span></strong></span><span style="font-size: 9pt;"><strong><span style="color: #3366ff;"><a href="http://www.mevzuat.gov.tr/Metin.Aspx?MevzuatKod=7.5.13948&amp;MevzuatIliski=0&amp;sourceXmlSearch=Y%C3%9CKSEK%C3%96%C4%9ERET%C4%B0M%20KURUMLARINDA%20%C3%96NL%C4%B0SANS%20VE%20L%C4%B0SANS%20D%C3%9CZEY%C4%B0NDEK%C4%B0%20PROGRAMLAR%20ARASINDA%20GE%C3%87%C4%B0%C5%9E,%20%C3%87%C4%B0FT%20ANADAL,%20YA" target="_blank" rel="noopener" style="color: #3366ff;">Y&Uuml;KSEK&Ouml;ĞRETİM KURUMLARINDA &Ouml;NLİSANS VE LİSANS D&Uuml;ZEYİNDEKİ PROGRAMLAR ARASINDA GE&Ccedil;İŞ, &Ccedil;İFT ANADAL, YAN DAL İLE KURUMLAR ARASI KREDİ TRANSFERİ YAPILMASI ESASLARINA İLİŞKİN Y&Ouml;NETMELİK</a></span></strong></span></li>
+<li><span style="font-size: 9pt;"><strong><span style="color: #3366ff;"></span></strong></span><span style="font-size: 9pt;"><strong><span style="color: #3366ff;"><a href="http://www.mevzuat.gov.tr/Metin.Aspx?MevzuatKod=7.5.8315&amp;MevzuatIliski=0&amp;sourceXmlSearch=Meslek%20Y%C3%BCksekokullar%C4%B1%20ve%20A%C3%A7%C4%B1k%C3%B6%C4%9Fretim%20%C3%96n" target="_blank" rel="noopener" style="color: #3366ff;">MESLEK Y&Uuml;KSEKOKULLARI VE A&Ccedil;IK&Ouml;ĞRETİM &Ouml;N LİSANS PROGRAMLARI MEZUNLARININ LİSANS &Ouml;ĞRENİMİNE DEVAMLARI HAKKINDA Y&Ouml;NETMELİK</a></span></strong></span></li>
+<li><span style="font-size: 9pt;"><strong><span style="color: #3366ff;"></span></strong></span><span style="font-size: 9pt;"><strong><span style="color: #3366ff;"><a href="https://www.resmigazete.gov.tr/eskiler/2023/03/20230311-4.htm" target="_blank" rel="noopener" style="color: #3366ff;">Y&Uuml;KSEK&Ouml;ĞRETİM KURUMLARI &Ouml;ĞRENCİ DİSİPLİN Y&Ouml;NETMELİĞİ</a></span></strong></span></li>
+<li><span style="font-size: 9pt;"><strong><span style="color: #3366ff;"></span></strong></span><span style="font-size: 9pt;"><strong><span style="color: #3366ff;"><a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=34608&amp;MevzuatTur=7&amp;MevzuatTertip=5" target="_blank" rel="noopener" style="color: #3366ff;">Y&Uuml;KSEK&Ouml;ĞRETİM KURUMLARI &Ouml;ĞRENCİ KONSEYLERİ VE Y&Uuml;KSEK&Ouml;ĞRETİM KURUMLARI ULUSAL &Ouml;ĞRENCİ KONSEYİ Y&Ouml;NETMELİĞİ</a></span></strong></span></li>
+<li>
+<p>&Uuml;niversitemize ait diğer Y&ouml;netmelik-Y&ouml;nerge-İlke ve Esaslara aşağıda verilen link &uuml;zerinden ulaşılabilir.</p>
+<p><a href="https://kms.kaysis.gov.tr/Home/Kurum/59441486" target="_blank" rel="noopener">https://kms.kaysis.gov.tr/Home/Kurum/59441486</a></p>
+</li>
+</ul>
+            </article>
+
+            <br><br>
+
+            
+
+
+                        
+
+
+          </div>
+          
+
+
+
+
+          
+          
+          
+          
+          <div class="col-sm-12 col-md-12">
+          <div id="yanicerik-5012" class="" style="">
+<style>
+.liste-aktif {
+  border-radius: 0px;
+      border-style: dashed;
+      border-width: 1px;
+      border-color: rgb(204, 204, 204);
+      background-image: linear-gradient(to left, rgb(250, 250, 250), rgb(255, 255, 255));
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      border-left: none !important;
+}
+.liste {
+padding: 10px;
+    min-height: 33px;
+    text-align: left;
+    border-left: solid 2px rgb(204, 204, 204);
+    border-top: dashed 1px #eee;
+    line-height: 1.5;
+}
+</style>
+<div class="container" style="margin-top: 15px;">
+  <div class="col-sm-12">
+  <div class="d-flex justify-content-between align-items-center card-head">
+    <h2>Mevzuat</h2>
+  </div>
+  <div class="d-flex flex-column">
+    <div class="card akademik-bg">
+      <!-- <h3> Eğitim Öğretim Yılı</h3> -->
+      <ul id="test" class="round">
+        
+            
+          
+          <li class="liste-aktif">
+            <a href="/mevzuat/yonetmelikler.html">Yönetmelikler</a>
+          </li>
+          
+          
+            
+
+    			
+        <li>
+          <a href="/mevzuat/kanunlar.html">Kanunlar</a>
+        </li>
+        
+        
+          
+          
+            
+
+    			
+        <li>
+          <a href="/mevzuat/yonergeler.html">Yönergeler</a>
+        </li>
+        
+        
+          
+          
+            
+
+    			
+        <li>
+          <a href="/mevzuat/esas-ve-usuller.html">Esas - Usuller ve  Kılavuzlar</a>
+        </li>
+        
+        
+          
+          
+      </ul>
+    </div>
+  </div>
+</div>
+</div></div>
+          </div>
+          
+
+
+
+
+          
+          
+          
+          
+          </div>
+          </div>
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+
+
+<script type="text/javascript">
+var c = document.getElementById("makale");
+function boyutlandir(multiplier) { if (c.style.fontSize == "") { c.style.fontSize = "1.0em"; }
+c.style.fontSize = parseFloat(c.style.fontSize) + (multiplier * 0.2) + "em"; }
+</script>
+
+
+    <button onclick="topFunction()" id="topbtn" title="Başa Dön">
+      <i class="fas fa-angle-up"></i>
+    </button>
+
+  <script>
+let mybutton = document.getElementById("topbtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+<script src="https://www.ktu.edu.tr/assets/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+<!-- ####################### ALT KISIM #####################################-->
+<footer class="footer-section">
+  <div class="container">
+    <div class="footer-cta pt-5 pb-5">
+      <div class="row">
+        <div class="col-xl-4 col-md-4 mb-30">
+          <div class="single-cta">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="cta-text">
+              <h4>Adres</h4>
+              <span>Zonguldak Bülent Ecevit Üniversitesi<br>İncivez Merkez / ZONGULDAK</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-4 mb-30">
+          <div class="single-cta">
+            <i class="fas fa-phone"></i>
+            <div class="cta-text">
+              <h4>İletişim</h4>
+              <span>+90 372 291 1100 <br>+90 850 330 2386</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-4 mb-30">
+          <div class="single-cta">
+            <i class="far fa-envelope-open"></i>
+            <div class="cta-text">
+              <h4>E-Posta</h4>
+              <span>E-Posta: info@beun.edu.tr<br>Kep Adresi: beun@hs03.kep.tr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-content pt-5 pb-5">
+      <div class="row">
+        <div class="col-xl-4 col-lg-4 mb-50">
+          <div class="footer-widget">
+            <div class="footer-widget-heading">
+              <h3>Hizmetler</h3>
+            </div>
+            <ul>
+              <li><a target="_blank" href="https://w3.beun.edu.tr/hizmetler/yemek-listesi.html">Yemek Listesi</a></li>
+              <li><a target="_blank" href="https://obs.beun.edu.tr">Öğrenci Bilgi Sistemi</a></li>
+              <li><a target="_blank" href="https://kurumsalkimlik.beun.edu.tr">Kurumsal Kimlik Kılavuzu</a></li>
+              
+              <li><a target="_blank" href="https://sem.beun.edu.tr/">Sürekli Eğitim Merkezi</a></li>
+              <li><a target="_blank" href="https://kariyer.beun.edu.tr">Kariyer Merkezi</a></li>
+              <li><a target="_blank" href="https://digk.beun.edu.tr/">Dış İlişkiler Koord.</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-9 mb-30">
+          <div class="footer-widget">
+            <div class="footer-widget-heading">
+              <h3>Bağlantılar</h3>
+            </div>
+            <ul>
+              <li><a target="_blank" href="https://acikarsiv.beun.edu.tr">Açık Arşiv</a></li>
+              <li><a target="_blank" href="https://verimerkezi.beun.edu.tr">Veri Merkezi</a></li>
+              <li><a target="_blank" href="https://posta.beun.edu.tr/">BEUN E-Posta</a></li>
+              <li><a target="_blank" href="https://hastane.beun.edu.tr">BEUN Hastane</a></li>
+              <li><a target="_blank" href="https://dismer.beun.edu.tr">Diş Hekimliği</a></li>
+              <li><a target="_blank" href="https://obdm.beun.edu.tr/">Obezite ve Diyabet Mer.</a></li>
+              <li><a target="_blank" href="https://webkutuphane.beun.edu.tr/">Kütüphane</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+          <div class="footer-widget">
+            <div class="footer-widget-heading">
+              <h3>BEUN Mobil</h3>
+            </div><br>
+            <div class="store-buttons">
+              <a href="https://play.google.com/store/apps/details?id=com.zbeu.app" class="store-btn google-play">
+                <i class="fab fa-google-play"></i>
+                <div>
+                  <span>Get it on</span>
+                  <strong>Google Play</strong>
+                </div>
+              </a>
+              <a href="#" class="store-btn app-store">
+                <i class="fab fa-apple"></i>
+                <div>
+                  <span>Download on the</span>
+                  <strong>App Store</strong>
+                </div>
+              </a>
+            </div>
+            <div class="social-media-section">
+            <br><h4>Sosyal Medya</h4><br>
+            <div class="social-icons">
+            <a target="_blank" href="https://www.facebook.com/beunedutr" class="social-icon"><img src="https://cdn3.beun.edu.tr/w3/9c65ff72954f769c86d95fb76a518a0b/face-ook-tek-.svg" alt="Facebook" style="width: 1em; height: 1em; object-fit: contain;"></i></a>
+			<a target="_blank" href="https://x.com/beunedutr" class="social-icon"><img src="https://cdn3.beun.edu.tr/w3/9c65ff72954f769c86d95fb76a518a0b/x-tek.svg" alt="X-twitter" style="width: 1em; height: 1em; object-fit: contain;"></i></a>
+			<a target="_blank" href="https://sosyal.teknofest.app/@beunteknofest" class="social-icon"><img src="https://cdn3.beun.edu.tr/w3/9c65ff72954f769c86d95fb76a518a0b/nsosyal-tek.svg" alt="NSosyal" style="width: 1em; height: 1em; object-fit: contain;"></i></a>
+			<a target="_blank" href="https://www.youtube.com/user/beunedu" class="social-icon"><img src="https://cdn3.beun.edu.tr/w3/9c65ff72954f769c86d95fb76a518a0b/youtube-tek.svg" alt="Youtube" style="width: 1em; height: 1em; object-fit: contain;"></i></a>
+            <a target="_blank" href="https://www.instagram.com/beunedutr/" class="social-icon"><img src="https://cdn3.beun.edu.tr/w3/9c65ff72954f769c86d95fb76a518a0b/instagramtek.svg" alt="Instagram" style="width: 1em; height: 1em; object-fit: contain;"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/zonguldak-b%C3%BClent-ecevit-%C3%BCniversitesi-60816a2b0/" class="social-icon"><img src="https://cdn3.beun.edu.tr/w3/9c65ff72954f769c86d95fb76a518a0b/linkdeen-tek.svg" alt="Linkedin" style="width: 1em; height: 1em; object-fit: contain;"></i></a>
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+          <div class="copyright-text">
+            <p>Copyright 2025 | Zonguldak Bülent Ecevit Üniversitesi | Her Hakkı Saklıdır.</p>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+          <div class="footer-menu">
+            <ul>
+              <li><a target="_blank" href="https://obs.beun.edu.tr/">Öğrenci Bilgi Sistemi</a></li>
+              <li><a target="_blank" href="https://acikarsiv.beun.edu.tr/">Açık Arşiv</a></li>
+              <li><a target="_blank" href="https://dvys.beun.edu.tr/">Veri Merkezi</a></li>
+              <li><a target="_blank" href="https://webkutuphane.beun.edu.tr">Kütüphane</a></li>
+              <li><a target="_blank" href="https://hastaneweb.beun.edu.tr/MiaMedRandevu">Hastane</a></li>
+              <li><a target="_blank" href="https://w3.beun.edu.tr/iletisim/birimler.html">İletişim</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- ####################### ALT KISIM BİTİŞ #####################################-->
+
+
+  
+
+
+<script>
+
+  $(document).ready(function() {
+      var hostname = window.location.hostname;
+      var subdomain = hostname.split(".")[0];
+  
+      if (subdomain === "biyoloji" || subdomain === "kimya" || subdomain === "fizik") {
+          var link = $("<a>")
+              .attr("href", "https://verimerkezi.beun.edu.tr/calendar/unit_calendar/"+subdomain)
+              .text("Ders Programı")
+              .attr("target", "_blank")
+              .css({
+                  // "display": "block",
+                  // "color": "blue",
+                  "font-weight": "bold"
+              });
+  
+          $("#hedefAlan").append(link);
+      }
+  });
+  
+  
+  </script>
+
+  </body>
+
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>403 Access Error</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center m-3" id="main">
+        <h1 class="mr-3 pr-3 align-top border-right inline-block align-content-center">403</h1>
+        <div class="inline-block align-middle">
+            <h2 class="font-weight-normal lead" id="desc">Access Error</h2>
+        </div>
+    </div>
+
+    <div class="card col-md-4 mx-auto m-3">
+        <div class="card-body">
+            <h4 class="card-title">Information</h4>
+            <ol class="list-group list-group-numbered">
+
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div><b>Client Ip</b></div>
+                        136.121.28.1
+                    </div>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div><b>Host Name</b></div>
+                        www.arel.edu.tr
+                    </div>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div><b>Log Id</b></div>
+                        1a1ffe76e1d-765e956e
+                    </div>
+                </li>
+
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>

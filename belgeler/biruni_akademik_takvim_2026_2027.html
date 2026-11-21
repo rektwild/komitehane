@@ -1,0 +1,3349 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <style>
+        /* Critical CSS: tam stil dosyalari yuklenmeden once ilk boyamayi sabitler (FOUC/CLS azaltma).
+           Mevcut tasarimi degistirmeyen, sadece guvenli bir baslangic durumu tanimlar. */
+        html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+        body {
+            margin: 0;
+            background-color: #f8f8f8;
+            font-family: "Gotham", Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        img, svg { max-width: 100%; height: auto; }
+    </style>
+
+        <title>2026–2027 Akademik Takvim - Biruni Üniversitesi</title>
+            <meta name="description" content="Biruni &#220;niversitesi 2026–2027 Akademik Takvim">
+            <meta name="keywords" content="Biruni Universitesi">
+            <meta name="description" content="Biruni &#220;niversitesi">
+            <meta property="og:site_name" content="Biruni &#220;niversitesi -- 2026–2027 Akademik Takvim">
+            <meta property="fb:app_id" content="Biruni &#220;niversitesi -- 2026–2027 Akademik Takvim">
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="https://biruni.edu.tr/">
+            <meta property="og:title" content="2026–2027 Akademik Takvim - Biruni &#220;niversitesi">
+            <meta property="og:description" content="Biruni &#220;niversitesi">
+        <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+        <meta property="og:image" content="share-image.jpg">
+        <link rel="preload" as="font" type="font/otf" href="/Content/fonts/GothamBook.otf" crossorigin="anonymous">
+        <link rel="preload" as="font" type="font/otf" href="/Content/fonts/GothamBold.otf" crossorigin="anonymous">
+        <!-- Kritik stil once: site gorunumunu tanimlayan asil dosya oncelikli, tek render-blocking CSS olarak yuklenir -->
+        <link href="/Content/css/style.css" rel="stylesheet" />
+        <!-- Font Awesome: navbar (telefon/e-posta/arama/menu) ikonlari icin sart, navbar'dan once yuklenmeli.
+             Daha once _Footer.cshtml icinde en sonda yukleniyordu; navbar ikonlari sayfa acilista bos gorunup
+             footer stili gelince "gec beliriyordu". Buraya tasindi. -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <!-- ~/css/style.css eski/ilgisiz bir varsayilan (Plesk) sablon dosyasi; Biruni'ye ozgu hicbir sinif icermiyor.
+             Kaldirmak yerine guvenli tarafta kalmak icin render-blocking olmadan (async) yukleniyor. -->
+        <!-- Bu sayfada kullanilmayan slider/lightbox eklenti CSS'leri de render-blocking olmadan (async) yuklenir -->
+        <link rel="preload" as="style" href="/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="preload" as="style" href="/Content/css/slick.css" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="preload" as="style" href="/Content/css/swiper-bundle.min.css" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="preload" as="style" href="/Content/css/jquery.mCustomScrollbar.min.css" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="preload" as="style" href="/Content/css/jquery.fancybox.min.css" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link href="/css/style.css" rel="stylesheet" />
+            <link href="/Content/css/slick.css" rel="stylesheet" />
+            <link href="/Content/css/swiper-bundle.min.css" rel="stylesheet" />
+            <link rel="stylesheet" href="/Content/css/jquery.mCustomScrollbar.min.css">
+            <link rel="stylesheet" href="/Content/css/jquery.fancybox.min.css">
+        </noscript>
+    <script src="https://erisebilir.com/api/widget/js/eq_5119dd9ee2714760876ec3ff.js" async></script>
+    <style>
+    /* Erişilebilirlik paneli - mobil alt panel (bottom sheet) */
+    @media (max-width: 768px) {
+      #accessibility-widget .widget-panel{position:fixed!important;left:0!important;right:0!important;top:auto!important;bottom:0!important;width:100%!important;max-width:100%!important;height:auto!important;max-height:88vh!important;max-height:88dvh!important;border-radius:20px 20px 0 0!important;box-shadow:0 -8px 30px rgba(0,0,0,.35)!important;flex-direction:column!important;overflow:hidden!important;margin:0!important;box-sizing:border-box!important}
+      #accessibility-widget .widget-panel.active{display:flex!important}
+      #accessibility-widget .widget-panel::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:4px;border-radius:4px;background:rgba(255,255,255,.55);z-index:3}
+      #accessibility-widget .widget-header{flex:0 0 auto!important;padding:22px 16px 12px!important}
+      #accessibility-widget .widget-header-top{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important}
+      #accessibility-widget .widget-header-bottom{display:flex!important;flex-wrap:wrap!important;gap:6px!important;margin-top:10px!important}
+      #accessibility-widget .widget-header-bottom button{font-size:11px!important;padding:5px 10px!important;min-height:32px!important}
+      #accessibility-widget .widget-content{flex:1 1 auto!important;min-height:0!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:12px 14px!important;height:auto!important;max-height:none!important}
+      #accessibility-widget .widget-reset-zone{flex:0 0 auto!important;padding:10px 14px!important}
+      #accessibility-widget .widget-footer{flex:0 0 auto!important;padding:10px 14px calc(10px + env(safe-area-inset-bottom))!important;font-size:13px!important}
+    }
+    </style>
+    <style>
+        /* Erişilebilirlik butonu – mobilde kenara yapışmasın */
+        @media (max-width: 768px) {
+            html body #accessibility-widget {
+                left: 16px !important;
+                bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important;
+                width: 48px !important;
+                height: 48px !important;
+                min-width: 48px !important;
+                min-height: 48px !important;
+            }
+            html body #accessibility-widget .widget-trigger-button {
+                border-radius: 50% !important;
+                box-shadow: 0 6px 18px rgba(15, 42, 74, 0.28) !important;
+            }
+            html body .back-to-top {
+                right: 16px !important;
+                bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mnShadow"></div>
+    <div class="wrapper">
+            <style>
+        :root {
+            --biruni-darkblue: rgba(8, 19, 38, 0.78);
+            --biruni-blue: #0cabc4;
+            --biruni-yellow: #f09201;
+            --biruni-red: #e74c3c;
+            --text-color-dark: #2c3e50;
+            --text-color-light: #ffffff;
+            --border-color: #ecf0f1;
+            --readable-font: "Arial", Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--readable-font);
+            background-color: #f9f9f9;
+        }
+
+        /* Ana sayfada body padding'i yok */
+        body.homepage {
+            padding-top: 0 !important;
+        }
+
+        /* Diğer sayfalarda navbar yüksekliği kadar padding (header-top 45px + header-main 85px) */
+        body:not(.homepage) {
+            padding-top: 130px;
+        }
+
+        /*
+          Mobilde .header-top gizlendiği için sabit 130px, gerçek header'dan büyük kalır;
+          içerik ile menü arasında beyaz boş şerit oluşur. Görünür satır yüksekliği ile eşitle.
+        */
+        @media (max-width: 1200px) {
+            body:not(.homepage) {
+                padding-top: 85px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body:not(.homepage) {
+                padding-top: 60px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .pro-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: transparent;
+            transition: all 0.4s ease;
+        }
+
+        /* Ana sayfada navbar SADECE scroll edilmemişken şeffaf */
+        body.homepage .pro-header:not(.scrolled) {
+            background: transparent !important;
+        }
+
+        /* Scroll yapınca navbar sabit ve MAVİ */
+        body.homepage .pro-header.scrolled,
+        .pro-header.scrolled {
+            position: fixed !important;
+            /* GÜNCELLEME: Şeffaflık artırıldı (%45 Opaklık) */
+            background: rgba(10, 76, 142, 0.96) !important;
+            transform: translateZ(0);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        /* HEADER-TOP (Mavi Alan) - Ana Sayfada Şeffaf */
+        body.homepage .pro-header:not(.scrolled) .header-top {
+            background: transparent !important;
+        }
+
+        body.homepage .pro-header:not(.scrolled) .header-top a {
+            color: var(--text-color-light) !important;
+            opacity: 0.9;
+        }
+
+        body.homepage .pro-header:not(.scrolled) .header-top a:hover {
+            opacity: 1;
+        }
+
+        body.homepage .pro-header:not(.scrolled) .top-contact i {
+            color: var(--biruni-yellow) !important;
+        }
+
+        body.homepage .pro-header:not(.scrolled) .top-quick-links .action-button {
+            background: rgba(240, 146, 1, 0.9) !important;
+            color: white !important;
+        }
+
+        body.homepage .pro-header:not(.scrolled) .top-quick-links .action-button:hover {
+            background: rgba(255, 174, 26, 0.9) !important;
+        }
+
+        /* Scroll yapınca header-top GİZLENİR (sadece ana menü kalır) */
+        body.homepage .pro-header.scrolled .header-top {
+            display: none !important;
+        }
+
+        /* HEADER-MAIN (Ana Menü) - Ana Sayfada Şeffaf */
+        body.homepage .pro-header:not(.scrolled) .header-main {
+            background: transparent !important;
+            border-bottom: none !important;
+        }
+
+        /* Ana sayfada menü linklerinin altındaki çizgiyi kaldır */
+        body.homepage .pro-header .main-navigation>ul>li>a,
+        body.homepage .pro-header .main-navigation>ul>li>a:hover,
+        body.homepage .pro-header .main-navigation>ul>li>a:focus,
+        body.homepage .pro-header .main-navigation>ul>li>a:active {
+            border-bottom: none !important;
+            text-decoration: none !important;
+            box-shadow: none !important;
+            background-image: none !important;
+        }
+
+        body.homepage .pro-header .main-navigation>ul>li>a::after,
+        body.homepage .pro-header .main-navigation>ul>li>a::before {
+            display: none !important;
+            content: none !important;
+        }
+
+        /* Header linkleri (Scrolled değilken) */
+        body.homepage .pro-header:not(.scrolled) .main-navigation>ul>li>a {
+            color: white !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+        }
+
+        body.homepage .pro-header:not(.scrolled) .header-right-actions .search-btn {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: white !important;
+        }
+
+        body.homepage .pro-header:not(.scrolled) .header-right-actions .lang-btn {
+            background: var(--biruni-yellow) !important;
+            color: white !important;
+        }
+
+        body.homepage .pro-header:not(.scrolled) .header-right-actions .actions-divider {
+            background: rgba(255, 255, 255, 0.3) !important;
+        }
+
+        body.homepage .pro-header:not(.scrolled) .header-right-actions .hastane-btn {
+            background: rgba(230, 76, 60, 0.9) !important;
+        }
+
+        body.homepage .pro-header:not(.scrolled) .mobile-menu-toggle {
+            color: white !important;
+        }
+
+        /* Ana sayfada logo beyaz (Scrolled değilken) */
+        body.homepage .pro-header:not(.scrolled) .logo img {
+            filter: brightness(0) invert(1) !important;
+        }
+
+        /* GÜNCELLEME: SCROLL YAPINCA (MAVİ MOD) AYARLARI
+           Burada arka plan mavi olduğu için yazıların beyaz kalmasını sağlıyoruz.
+        */
+
+        /* Header main arka planı */
+        body.homepage .pro-header.scrolled .header-main {
+            background: rgba(10, 76, 142, 0.45) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+
+        /* Menü linkleri BEYAZ */
+        body.homepage .pro-header.scrolled .main-navigation>ul>li>a {
+            color: #ffffff !important;
+            text-shadow: none;
+        }
+
+        /* Menü link hover rengi (Sarı) */
+        body.homepage .pro-header.scrolled .main-navigation>ul>li>a:hover {
+            color: var(--biruni-yellow) !important;
+        }
+
+        /* Arama butonu şeffaf beyaz */
+        body.homepage .pro-header.scrolled .header-right-actions .search-btn {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: #ffffff !important;
+        }
+
+        body.homepage .pro-header.scrolled .header-right-actions .lang-btn {
+            background: var(--biruni-yellow) !important;
+            color: #ffffff !important;
+        }
+
+        body.homepage .pro-header.scrolled .header-right-actions .actions-divider {
+            background: rgba(255, 255, 255, 0.3) !important;
+        }
+
+        body.homepage .pro-header.scrolled .header-right-actions .hastane-btn {
+            background: var(--biruni-red) !important;
+        }
+
+        /* Mobil menü ikonu beyaz */
+        body.homepage .pro-header.scrolled .mobile-menu-toggle {
+            color: #ffffff !important;
+        }
+
+        /* Logo Scroll yapınca da BEYAZ kalsın (Mavi zemin üzerinde) */
+        body.homepage .pro-header.scrolled .logo img {
+            filter: brightness(0) invert(1) !important;
+        }
+
+        /* HEADER-TOP GENEL STİLLER */
+        .header-top {
+            background-color: var(--biruni-darkblue);
+            color: var(--text-color-light);
+            padding: 0 2rem;
+            height: 45px;
+            transition: all 0.3s ease;
+        }
+
+        .header-top-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 100%;
+        }
+
+        .top-contact,
+        .top-quick-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .top-contact a,
+        .top-quick-links a {
+            color: var(--text-color-light);
+            font-size: 13px;
+            font-weight: 500;
+            opacity: 0.8;
+            text-decoration: none;
+        }
+
+        .top-contact a:hover,
+        .top-quick-links a:hover {
+            opacity: 1;
+            text-decoration: none;
+        }
+
+        .top-contact i {
+            color: var(--biruni-yellow);
+            margin-right: 5px;
+        }
+
+        .top-quick-links .action-button {
+            background-color: var(--biruni-yellow);
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            opacity: 1;
+            text-decoration: none;
+        }
+
+        .top-quick-links .action-button:hover {
+            background-color: #ffae1a;
+        }
+
+        /* HEADER-MAIN GENEL STİLLER */
+        .header-main {
+            background-color: #fff;
+            padding: 0 2rem;
+            height: 85px;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .header-main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 100%;
+            position: relative;
+            /* Added for absolute positioning of children */
+        }
+
+        .brand-group {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            position: relative;
+            z-index: 1100;
+        }
+
+        .logo {
+            position: relative;
+            z-index: 1100;
+        }
+
+        .logo img {
+            height: 65px;
+            transition: all 0.3s ease;
+        }
+
+        /* Akreditasyon rozeti - logonun hemen yanında (sadece ana sayfa) */
+        .accreditation-badge {
+            display: none;
+            line-height: 0;
+        }
+
+        body.homepage .accreditation-badge {
+            display: block;
+        }
+
+        .accreditation-badge img {
+            height: 56px;
+            width: auto;
+            display: block;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+            transition: transform 0.3s ease;
+        }
+
+        .accreditation-badge:hover img {
+            transform: translateY(-2px);
+        }
+
+        .main-navigation {
+            /* Default static/block positioning */
+        }
+
+        .main-navigation>ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .main-navigation>ul>li {
+            /* position: relative; */ /* Removed to center mega-menu relative to header container */
+        }
+
+        .main-navigation>ul>li>a {
+            color: var(--text-color-dark);
+            font-weight: 600;
+            font-size: 16px;
+            padding: 30px 0;
+            position: relative;
+            text-decoration: none;
+        }
+
+        body.homepage .pro-header:not(.scrolled) .main-navigation>ul>li>a:hover {
+            color: var(--biruni-yellow);
+        }
+
+        /* Modern Premium Mega Menu v2 - Enhanced */
+        .mega-menu {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 85px;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            /* Premium Glass-like White */
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            /* Soft, deep luxurious shadow */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.02);
+            border-top: 3px solid #0a4c8e;
+            border-radius: 0 0 16px 16px;
+            padding: 3rem 2.5rem;
+            width: auto;
+            min-width: 950px;
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            z-index: 1000;
+            margin-top: -5px;
+            /* Starts below logo */
+            max-height: calc(100vh - 150px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(10, 76, 142, 0.2) transparent;
+        }
+
+        .mega-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .mega-menu::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .mega-menu::-webkit-scrollbar-thumb {
+            background: rgba(10, 76, 142, 0.2);
+            border-radius: 4px;
+        }
+
+        .mega-menu::-webkit-scrollbar-thumb:hover {
+            background: rgba(10, 76, 142, 0.4);
+        }
+
+        /* Bridge for hover continuity */
+        .mega-menu::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: transparent;
+        }
+
+        .main-navigation>ul>li:hover .mega-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .mega-menu-content {
+            display: flex;
+            gap: 40px;
+            position: relative;
+        }
+
+        /* Subtle separator between columns */
+        .mega-menu-column {
+            flex: 1;
+            min-width: 220px;
+            position: relative;
+        }
+
+        .mega-menu-column:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 10px;
+            bottom: 10px;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.05), transparent);
+        }
+
+        .mega-menu-column .sTitle {
+            display: block;
+            font-size: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #0a4c8e;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(10, 76, 142, 0.15);
+            position: relative;
+        }
+
+        .mega-menu-column .sLnk,
+        .mega-menu-column .sLnk:hover,
+        .mega-menu-column .sLnk:focus,
+        .idari-birimler-submenu .sLnk,
+        .idari-birimler-submenu .sLnk:hover {
+            text-decoration: none !important;
+        }
+
+        .mega-menu-column .sLnk {
+            display: flex;
+            align-items: center;
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 0.7rem 1rem 0.7rem 0.6rem;
+            margin-bottom: 2px;
+            border-radius: 8px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .mega-menu-column .sLnk:hover {
+            color: #0a4c8e;
+            background-color: rgba(10, 76, 142, 0.06);
+            padding-left: 14px;
+            /* Slight slide effect */
+        }
+
+        /* Administrative Units Trigger Styling */
+        .genel-sekreterlik-container {
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .genel-sekreterlik-container>.sLnk {
+            background-color: rgba(10, 76, 142, 0.03);
+            color: #0cabc4;
+            /* Highlight color */
+            font-weight: 700;
+            justify-content: space-between;
+        }
+
+        .genel-sekreterlik-container>.sLnk::after {
+            content: '\f078';
+            /* FontAwesome Chevron-down */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .genel-sekreterlik-container:hover>.sLnk {
+            background-color: #0cabc4;
+            color: white;
+            box-shadow: 0 4px 12px rgba(12, 171, 196, 0.3);
+        }
+
+        .genel-sekreterlik-container:hover>.sLnk::after {
+            transform: translateY(2px);
+        }
+
+        /* Administrative Submenu - The "Pop-out" */
+        .idari-birimler-submenu {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            margin-top: 10px;
+            /* Gap */
+            margin-left: 0;
+            background: #ffffff;
+            box-shadow: 0 10px 40px -5px rgba(0, 0, 0, 0.12);
+            padding: 0.5rem;
+            border-top: 3px solid #0cabc4;
+            border-left: none;
+            /* Remove left border */
+            border-radius: 8px;
+            min-width: 100%;
+            z-index: 1010;
+            flex-direction: column;
+            animation: fadeInDown 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        /* Little arrow pointing to parent */
+        /* Transparent bridge to keep menu open */
+        .idari-birimler-submenu::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -15px;
+            /* Cover the gap */
+            width: 100%;
+            height: 15px;
+            background: transparent;
+        }
+
+        .genel-sekreterlik-container:hover .idari-birimler-submenu,
+        .idari-birimler-submenu:hover {
+            display: flex;
+        }
+
+        .idari-birimler-submenu .sTitle {
+            color: #0cabc4;
+            border-bottom: 2px solid rgba(12, 171, 196, 0.2);
+            font-size: 15px;
+        }
+
+        .idari-birimler-submenu .sLnk:hover {
+            color: #0cabc4;
+            background-color: rgba(12, 171, 196, 0.08);
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .header-right-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .header-right-actions .actions-divider {
+            width: 1px;
+            height: 24px;
+            background: rgba(0, 0, 0, 0.15);
+            flex: 0 0 auto;
+        }
+
+        .header-right-actions .action-button {
+            padding: 10px 22px;
+            border-radius: 999px;
+            font-weight: 700;
+            color: #fff;
+            font-size: 14px;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            /* Prevent buttons breaking */
+        }
+
+        .header-right-actions .hastane-btn {
+            background-color: var(--biruni-red);
+            position: relative;
+            box-shadow: 0 4px 16px rgba(231, 76, 60, 0.35);
+            transition: all 0.25s ease;
+        }
+
+        .header-right-actions .hastane-btn i {
+            font-size: 12px;
+            transition: transform 0.25s ease;
+        }
+
+        .header-right-actions .hastane-btn:hover {
+            background-color: #c0392b;
+            box-shadow: 0 4px 20px rgba(231, 76, 60, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .header-right-actions .hastane-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        .header-right-actions .hastane-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: auto;
+            background-color: #fff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            border-top: 3px solid var(--biruni-red);
+            border-radius: 8px;
+            padding: 1rem;
+            min-width: 220px;
+            z-index: 1000;
+            background: linear-gradient(180deg, #f9f9f9 0%, #fff 100%);
+            box-sizing: border-box;
+        }
+
+        .header-right-actions .hastane-btn:hover+.hastane-menu,
+        .hastane-menu:hover {
+            display: block;
+            text-decoration: none;
+        }
+
+        .hastane-menu .sTitle {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--biruni-darkblue);
+            padding: 0.6rem 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .hastane-menu .sTitle:hover {
+            background-color: var(--biruni-yellow);
+            color: var(--text-color-light);
+            transform: translateX(5px);
+            text-decoration: none;
+        }
+
+        .hastane-menu .sTitle i {
+            margin-right: 10px;
+            color: var(--biruni-red);
+            text-decoration: none;
+        }
+
+        .header-right-actions .search-btn {
+            background-color: var(--border-color);
+            color: var(--text-color-dark);
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .header-right-actions .search-btn:hover {
+            background-color: #bdc3c7;
+            transform: translateY(-1px);
+        }
+
+        .header-right-actions .lang-btn {
+            background-color: var(--biruni-yellow);
+            color: #fff;
+            height: 42px;
+            padding: 0 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.25s ease;
+        }
+
+        .header-right-actions .lang-btn i {
+            font-size: 9px;
+            opacity: 0.85;
+        }
+
+        .header-right-actions .lang-btn:hover {
+            background-color: #ffae1a;
+            transform: translateY(-1px);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-color-dark);
+            z-index: 1001;
+            /* Above mobile menu */
+            position: relative;
+            /* Ensure z-index works */
+        }
+
+        /* Fix visibility! Override all likely parent specificities */
+        body .mobile-menu-toggle.active,
+        body.homepage .pro-header .mobile-menu-toggle.active,
+        body.homepage .pro-header.scrolled .mobile-menu-toggle.active {
+            color: #ffffff !important;
+            z-index: 2005 !important;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+        }
+
+        body .mobile-menu-toggle.active i {
+            color: #ffffff !important;
+        }
+
+        /* Mobile Menu Premium Styling */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            /* Full screen overlay style */
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            z-index: 998;
+            /* Below toggle button */
+            overflow-y: auto;
+            padding-top: 80px;
+            padding-bottom: 150px;
+            /* Ensure bottom content is reachable */
+            /* Space for header */
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform: translateX(100%);
+            /* Slide from right */
+            opacity: 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* MOBİL MENÜ: menü kaydırılınca öğeler logonun/kapatma ikonunun altına girip üst üste biniyordu.
+           Açık menüde üstte sabit, düz beyaz bir şerit (logo + X bunun üstünde) bırakılır; öğeler şeridin altına kayar. */
+        @media (max-width: 1200px) {
+            .mobile-menu.active {
+                padding-top: 0 !important;
+            }
+
+            .mobile-menu.active::before {
+                content: "";
+                position: sticky;
+                top: 0;
+                display: block;
+                height: 90px;
+                background: #ffffff;
+                z-index: 5;
+                box-shadow: 0 1px 0 var(--border-color);
+            }
+
+            /* Menü beyaz olduğu için X ikonu ve logo koyu/normal renkte olmalı */
+            body .mobile-menu-toggle.active,
+            body.homepage .pro-header .mobile-menu-toggle.active,
+            body.homepage .pro-header.scrolled .mobile-menu-toggle.active,
+            body .mobile-menu-toggle.active i {
+                color: var(--text-color-dark) !important;
+                text-shadow: none !important;
+            }
+
+            body.homepage .pro-header:has(.mobile-menu.active) .logo img {
+                filter: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu.active::before {
+                height: 60px;
+            }
+        }
+
+        .mobile-menu>ul {
+            list-style: none;
+            padding: 0 20px 40px 20px;
+            margin: 0;
+        }
+
+        .mobile-menu>ul>li {
+            border-bottom: none;
+            margin-bottom: 5px;
+        }
+
+        .mobile-menu>ul>li>a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            color: var(--biruni-darkblue);
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+            position: relative;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu>ul>li>a:hover,
+        .mobile-menu>ul>li>a:active {
+            color: var(--biruni-blue);
+            background-color: rgba(12, 171, 196, 0.05);
+            /* Soft premium hover */
+            padding-left: 2rem;
+            /* Slide effect */
+        }
+
+        /* Add arrow indicator for items with submenus */
+        .mobile-menu-item:not([href*="iletisim"]):not([href*="ogrenci"]):not([href*="kutuphane"]):not([href*="/universitemiz/inovasyon"]):not([href*="/universitemiz/etki"]):not([href*="force_inovasyon"]):not([href*="force_impact"]):not([href*="/universitemiz/toplumsal-katki"]):not([href*="/toplumsal-katki"]):not([href*="force_toplumsal_katki"]):not([href*="/universitemiz/hikayemiz"]):not([href*="/universitemiz/kampus-imkanlari"])::after {
+            content: '+';
+            font-weight: 300;
+            font-size: 24px;
+            color: #ccc;
+            transition: transform 0.3s ease;
+        }
+
+        /* Mobile Mega Menu */
+        .mobile-mega-menu {
+            display: none;
+            padding: 1rem 1.5rem;
+            background-color: rgba(249, 250, 251, 0.8);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-mega-menu.active {
+            display: block;
+            animation: fadeInDown 0.3s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-mega-menu-column {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-mega-menu-column .sTitle {
+            display: block;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--biruni-blue);
+            padding: 0.5rem 0;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(12, 171, 196, 0.2);
+            text-transform: uppercase;
+        }
+
+        .mobile-mega-menu-column .sLnk,
+        .mobile-mega-menu-column .sLnk:hover,
+        .mobile-mega-menu-column .sLnk:focus {
+            text-decoration: none !important;
+        }
+
+        .mobile-mega-menu-column .sLnk {
+            display: block;
+            color: #64748b;
+            font-size: 14px;
+            padding: 0.6rem 0;
+            font-weight: 500;
+        }
+
+        .mobile-mega-menu-column .sLnk:hover {
+            color: var(--biruni-darkblue);
+            transform: translateX(5px);
+            transition: transform 0.2s ease;
+        }
+
+        .mobile-top-contact,
+        .mobile-quick-links {
+            padding: 20px;
+            background: #f8f9fa;
+            margin: 0 20px 20px 20px;
+            border-radius: 12px;
+            border: none;
+        }
+
+        .mobile-top-contact a,
+        .mobile-quick-links a {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 0;
+            color: var(--text-color-dark);
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-top-contact a:last-child,
+        .mobile-quick-links a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-top-contact i {
+            color: var(--biruni-blue);
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .mobile-quick-links .action-button {
+            background-color: var(--biruni-blue);
+            padding: 12px;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 700;
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 1400px) and (min-width: 1201px) {
+            .main-navigation>ul {
+                gap: 1.25rem;
+            }
+            .main-navigation>ul>li>a {
+                font-size: 14px;
+            }
+            .header-right-actions {
+                gap: 0.75rem;
+            }
+            .header-right-actions .action-button {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+            .logo img {
+                height: 55px;
+            }
+            .mega-menu {
+                min-width: 850px;
+                padding: 1.5rem 1.5rem;
+                max-height: calc(100vh - 125px);
+            }
+            .mega-menu-content {
+                gap: 20px;
+            }
+            .mega-menu-column {
+                min-width: 180px;
+            }
+            .mega-menu-column .sTitle {
+                margin-bottom: 0.75rem;
+                padding-bottom: 0.35rem;
+                font-size: 13px;
+            }
+            .mega-menu-column .sLnk {
+                padding: 0.35rem 0.6rem 0.35rem 0.4rem;
+                font-size: 13px;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+
+            .main-navigation,
+            .header-right-actions {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .header-main-container {
+                display: flex !important;
+                justify-content: space-between;
+                padding-right: 0;
+            }
+
+            .mobile-header-extras {
+                display: flex !important;
+            }
+
+
+
+            /* Remove header border on mobile for seamless look */
+            .header-main {
+                border-bottom: none !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+                /* Subtle shadow instead of line */
+            }
+
+            /* Mobilde üst menü (header-top) kesinlikle gizlenmeli */
+            .header-top,
+            .pro-header .header-top,
+            body.homepage .pro-header .header-top {
+                display: none !important;
+                height: 0 !important;
+                overflow: hidden !important;
+                padding: 0 !important;
+            }
+
+            .mobile-menu {
+                top: 0;
+                height: 100vh;
+                padding-top: 90px;
+                /* Adjusted to clear 85px header + breathing room */
+            }
+
+            body.homepage .mobile-menu-toggle {
+                color: white !important;
+            }
+
+            /* Mobilde her zaman mavi arka plan */
+            body.homepage .pro-header:not(.scrolled) .header-main {
+                background: rgba(10, 76, 142, 0.95) !important;
+                border-bottom: none !important;
+            }
+
+            body.homepage .pro-header:not(.scrolled) {
+                background: transparent !important;
+                /* Wrapper stays transparent, inner header-main takes color */
+            }
+
+            /* Mobilde scroll yapılmasa bile logo beyaz olmalı */
+            body.homepage .pro-header:not(.scrolled) .logo img {
+                filter: brightness(0) invert(1) !important;
+            }
+
+            /* Mobilde scroll yapılmasa bile menü ikonu beyaz olmalı */
+            body.homepage .pro-header:not(.scrolled) .mobile-menu-toggle {
+                color: white !important;
+            }
+
+            /* Mobilde de scroll yapınca ikon beyaz kalsın (zemin mavi çünkü) */
+            body.homepage .pro-header.scrolled .mobile-menu-toggle {
+                color: white !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-main {
+                height: 60px;
+                padding: 0 1rem;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .brand-group {
+                gap: 12px;
+            }
+
+            .accreditation-badge img {
+                height: 40px;
+            }
+
+            .mobile-menu {
+                top: 0;
+                height: 100vh;
+                max-height: 100vh;
+                padding-top: 60px;
+            }
+
+            body.homepage .pro-header:not(.scrolled) .logo img {
+                filter: brightness(0) invert(1) !important;
+            }
+
+
+        }
+
+
+
+        /* Custom Dropdown Styles */
+        .dropdown-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 13px !important;
+            /* MATCHING ADJACENT LINKS */
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+
+        .dropdown-toggle:hover {
+            opacity: 1;
+            color: #ffffff !important;
+        }
+
+        .dropdown-menu-custom {
+            display: none;
+            position: absolute;
+            top: 100%;
+            top: 100%;
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Correct centering offset */
+            background-color: #fff;
+            min-width: 220px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 99999;
+            /* HIGHEST Z-INDEX */
+            border-radius: 4px;
+            padding: 5px 0;
+            text-align: left;
+            margin-top: 10px;
+            /* Gap for bridge */
+        }
+
+        /* Bridge to prevent closing */
+        .dropdown-menu-custom::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: transparent;
+        }
+
+        .dropdown-wrapper:hover .dropdown-menu-custom {
+            display: block;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+
+        .dropdown-menu-custom a {
+            color: #333 !important;
+            /* Force dark text immediately */
+            background-color: #fff !important;
+            /* Force white background immediately */
+            padding: 12px 20px !important;
+            text-decoration: none !important;
+            display: block !important;
+            font-size: 13px !important;
+            transition: background-color 0.2s ease, padding-left 0.2s ease;
+            /* Only animate hover effects */
+            border-bottom: 1px solid #f0f0f0;
+            margin: 0 !important;
+            line-height: normal;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .dropdown-menu-custom a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu-custom a:hover {
+            background-color: #0a4c8e !important;
+            /* Blue background on hover */
+            color: #fff !important;
+            /* White text on hover */
+            padding-left: 25px !important;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* ==========================================================
+           MOBİL / TABLET NAVBAR – modern, ince görünüm (≤1200px)
+           ========================================================== */
+        @media (max-width: 1200px) {
+
+            /* --- Üst çubuk (iç sayfalar) --- */
+            body:not(.homepage) .pro-header,
+            body:not(.homepage) .pro-header.scrolled {
+                background: transparent !important;
+                backdrop-filter: none;
+                box-shadow: none;
+                animation: none;
+            }
+
+            body:not(.homepage) .header-main {
+                height: 60px;
+                background: rgba(255, 255, 255, 0.94);
+                -webkit-backdrop-filter: saturate(180%) blur(14px);
+                backdrop-filter: saturate(180%) blur(14px);
+                border-bottom: 1px solid rgba(15, 42, 74, 0.08);
+                box-shadow: 0 6px 20px -12px rgba(15, 42, 74, 0.25);
+                padding: 0 16px !important;
+            }
+
+            .header-main-container {
+                max-width: none;
+            }
+
+            .logo img {
+                height: 40px;
+                width: auto;
+            }
+
+            /* --- Menü düğmesi: yuvarlatılmış kare buton --- */
+            .mobile-menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 12px;
+                font-size: 18px;
+                color: #0a4c8e;
+                background: rgba(10, 76, 142, 0.08);
+                transition: background-color 0.2s ease, transform 0.2s ease;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .mobile-menu-toggle:active {
+                transform: scale(0.94);
+            }
+
+            body.homepage .pro-header:not(.scrolled) .mobile-menu-toggle,
+            body.homepage .pro-header.scrolled .mobile-menu-toggle {
+                background: rgba(255, 255, 255, 0.16);
+            }
+
+            body .mobile-menu-toggle.active,
+            body.homepage .pro-header .mobile-menu-toggle.active,
+            body.homepage .pro-header.scrolled .mobile-menu-toggle.active {
+                background: rgba(10, 76, 142, 0.08);
+                color: #0a4c8e !important;
+            }
+
+            body .mobile-menu-toggle.active i {
+                color: #0a4c8e !important;
+            }
+
+            /* --- Menü paneli --- */
+            .mobile-menu.active::before {
+                height: 60px;
+                box-shadow: 0 1px 0 rgba(15, 42, 74, 0.08);
+            }
+
+            .mobile-menu>ul {
+                padding: 8px 20px 24px;
+            }
+
+            .mobile-menu>ul>li {
+                margin-bottom: 0;
+                border-bottom: 1px solid rgba(15, 42, 74, 0.07);
+            }
+
+            .mobile-menu>ul>li>a {
+                padding: 18px 4px;
+                border-radius: 0;
+                font-size: 15px;
+                font-weight: 700;
+                letter-spacing: 0.06em;
+                color: #0f2a4a;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .mobile-menu>ul>li>a:hover,
+            .mobile-menu>ul>li>a:active {
+                padding-left: 4px;
+                background: transparent;
+                color: #0a4c8e;
+            }
+
+            /* "+" yerine ok (chevron) */
+            .mobile-menu-item:not([href*="iletisim"]):not([href*="ogrenci"]):not([href*="kutuphane"]):not([href*="/universitemiz/inovasyon"]):not([href*="/universitemiz/etki"]):not([href*="force_inovasyon"]):not([href*="force_impact"]):not([href*="/universitemiz/toplumsal-katki"]):not([href*="/toplumsal-katki"]):not([href*="force_toplumsal_katki"]):not([href*="/universitemiz/hikayemiz"]):not([href*="/universitemiz/kampus-imkanlari"])::after {
+                content: "";
+                width: 8px;
+                height: 8px;
+                margin-right: 6px;
+                border-right: 2px solid #94a3b8;
+                border-bottom: 2px solid #94a3b8;
+                transform: rotate(45deg) translateY(-2px);
+                transition: transform 0.25s ease, border-color 0.25s ease;
+                font-size: 0;
+            }
+
+            .mobile-menu>ul>li:has(> .mobile-mega-menu.active)>a {
+                color: #0a4c8e;
+            }
+
+            .mobile-menu>ul>li:has(> .mobile-mega-menu.active)>a::after {
+                transform: rotate(-135deg) translateY(-2px) !important;
+                border-color: #0a4c8e !important;
+            }
+
+            /* Üst çubuk menü panelinin üstünde kalsın (logo + X her zaman görünsün) */
+            .header-main {
+                position: relative;
+                z-index: 1100;
+            }
+
+            /* Menü açıkken üst çubuk her sayfada düz beyaz */
+            body .pro-header:has(.mobile-menu.active) .header-main {
+                background: #ffffff !important;
+                border-bottom: 1px solid rgba(15, 42, 74, 0.08) !important;
+            }
+
+            /* Alt menü kartı */
+            .mobile-mega-menu {
+                padding: 6px 16px 4px;
+                margin: 0 0 14px;
+                background: #f5f8fc;
+                border-radius: 14px;
+            }
+
+            .mobile-mega-menu-column {
+                margin-bottom: 8px;
+            }
+
+            .mobile-mega-menu-column .sTitle {
+                font-size: 11px;
+                font-weight: 800;
+                letter-spacing: 0.1em;
+                color: #0a4c8e;
+                padding: 14px 0 8px;
+                margin-bottom: 2px;
+                border-bottom: 1px solid rgba(10, 76, 142, 0.14);
+            }
+
+            .mobile-mega-menu-column .sLnk {
+                font-size: 15px;
+                line-height: 1.35;
+                font-weight: 500;
+                color: #334155;
+                padding: 11px 0;
+            }
+
+            .mobile-mega-menu-column .sLnk:hover {
+                color: #0a4c8e;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu.active::before {
+                height: 60px;
+            }
+        }
+
+        /* ==== MOBİL: dil butonu (EN/TR) tüm sayfalarda menü düğmesinin yanında ==== */
+        .mobile-lang-btn {
+            display: none;
+        }
+
+        @media (max-width: 1200px) {
+            .mobile-lang-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 42px;
+                min-width: 46px;
+                padding: 0 12px;
+                margin-left: auto;
+                margin-right: 10px;
+                border-radius: 12px;
+                background: rgba(10, 76, 142, 0.08);
+                color: #0a4c8e;
+                font-size: 13px;
+                font-weight: 800;
+                letter-spacing: 0.05em;
+                text-decoration: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            body.homepage .pro-header:not(.scrolled) .mobile-lang-btn,
+            body.homepage .pro-header.scrolled .mobile-lang-btn {
+                background: rgba(255, 255, 255, 0.16);
+                color: #ffffff;
+            }
+
+            body .pro-header:has(.mobile-menu.active) .mobile-lang-btn {
+                background: rgba(10, 76, 142, 0.08);
+                color: #0a4c8e;
+            }
+
+            /* Ana sayfadaki eski sabit EN butonu artık gereksiz (çift görünmesin) */
+            .mobile-en-fixed-btn {
+                display: none !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="pro-header">
+        <div class="header-top">
+            <div class="header-top-container">
+                <div class="top-contact"></div>
+                <div class="top-quick-links">
+                    <a href="https://aday.biruni.edu.tr" target="_blank" class="action-button">ADAY ÖĞRENCİ</a>
+                    <a href="https://int.biruni.edu.tr/international/" target="_blank">ULUSLARARASI ÖĞRENCİ</a>
+                    <div class="dropdown-wrapper">
+                        <span class="dropdown-toggle" style="cursor:pointer;">DİJİTAL BİLGİ SİSTEMLERİ</span>
+                        <div class="dropdown-menu-custom">
+                            <a href="https://kybs.biruni.edu.tr" target="_blank"
+                                style="color: #333 !important; background: #fff !important;">Dijital Entegre Bilgi Sistemleri</a>
+                            <a href="https://sis.biruni.edu.tr/oibs/bologna/index.aspx" target="_blank"
+                                style="color: #333 !important; background: #fff !important;">Eğitim Bilgi Sistemi</a>
+                            <a href="https://keyps.biruni.edu.tr/system/login" target="_blank"
+                                style="color: #333 !important; background: #fff !important;">KEYPS</a>
+
+                        </div>
+                    </div>
+
+                    <a href="https://kalite.biruni.edu.tr/" target="_blank">KALİTE YÖNETİMİ</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="header-main-container">
+                <div class="brand-group">
+                    <a href="/" class="logo">
+                        <img src="/images/logo.svg" alt="Biruni Üniversitesi">
+                    </a>
+                    <a href="/haberler/duyurular/yokak-tan-universitemize-tam-akreditasyon" class="accreditation-badge" title="YÖKAK 5 Yıl Tam Akreditasyon Sertifikası">
+                        <img src="/images/yokak-5-yil-akreditasyon.png" alt="YÖKAK 5 Yıl Tam Akreditasyon Sertifikası">
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <ul>
+                        <li>
+                            <a href="#">ÜNİVERSİTEMİZ</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-menu-column">
+                                        <a href="#" class="sTitle">Biruni Hakkında</a>
+                                        <a href="/universitemiz/biruni-kimdir" class="sLnk">Biruni Kimdir?</a>
+                                        <a href="/universitemiz/misyon-vizyon" class="sLnk">Misyon Vizyon Amaç</a>
+                                        <a href="/universitemiz/tarihce" class="sLnk">Tarihçe</a>
+                                        <a href="/universitemiz/kurucu-vakif" class="sLnk">Kurucu Vakıf</a>
+                                        <a href="/universitemiz/rektorun-mesaji" class="sLnk">Rektörün Mesajı</a>
+                                        <a href="/universitemiz/hikayemiz" class="sLnk">Hikayemiz</a>
+                                        <a href="/universitemiz/kampus-imkanlari" class="sLnk">Kampüs İmkanları</a>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <a href="#" class="sTitle">Yönetim</a>
+                                        <a href="/universitemiz/yonetim/mutevelli-heyeti-baskani-mesaji" class="sLnk">Mütevelli
+                                            Heyet Başkanı Mesajı</a>
+
+                                        <div class="genel-sekreterlik-container">
+                                            <a href="https://www.biruni.edu.tr/universitemiz/rektorluk" class="sLnk">Rektörlük
+                                            </a>
+                                            <div class="idari-birimler-submenu">
+                                                <a href="/universitemiz/rektorluge-bagli-birimler/rektorluge-bagli-birimler"
+                                                    class="sLnk">Rektörlüğe Bağlı Birimler</a>
+                                            </div>
+                                        </div>
+
+                                        <a href="/universitemiz/yonetim/senato" class="sLnk">Senato</a>
+                                        <a href="/universitemiz/yonetim/universite-yonetim-kurulu"
+                                            class="sLnk">Üniversite Yönetim Kurulu</a>
+                                        <div class="genel-sekreterlik-container">
+                                            <a href="/idari-birimler/genel-sekreterlik" class="sLnk">Genel
+                                                Sekreterlik</a>
+                                            <div class="idari-birimler-submenu">
+                                                <a href="/idari-birimler/genel-sekreterlik?view=tum-birimler"
+                                                    class="sLnk">İdari
+                                                    Birimler</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <a href="#" class="sTitle">Kurumsal</a>
+                                        <a href="/universitemiz/kvkk" class="sLnk">Kişisel Verilerin Korunması
+                                            Kanunu</a>
+                                        <a href="/universitemiz/kalite-politikasi" class="sLnk">Kalite Politikası</a>
+                                        <a href="/kurullar-ve-komisyonlar" class="sLnk">Kurullar ve Komisyonlar</a>
+                                        <a href="/universitemiz/yonetim/senato-kararlari" class="sLnk">Senato
+                                            Kararları</a>
+                                        <a href="/universitemiz/yonetmelik-ve-yonerge" class="sLnk">Yönetmelikler ve
+                                            Yönergeler</a>
+                                        <a href="/universitemiz/yonetim/yonetimsel-sema" class="sLnk">Yönetimsel
+                                            Şema</a>
+                                        <div class="genel-sekreterlik-container">
+                                            <a href="#" class="sLnk">Stratejik Planlama</a>
+                                            <div class="idari-birimler-submenu">
+                                                <a href="https://www.biruni.edu.tr/doc/stratejik-plan-guncel.pdf"
+                                                    target="_blank" class="sLnk">Stratejik Plan</a>
+                                                <a href="https://kalite.biruni.edu.tr/wp-content/uploads/2024/10/2023-YILI-STRATEJIK-PLAN-DEGERLENDIRME-RAPORU.pdf"
+                                                    target="_blank" class="sLnk">2023 Yılı Stratejik Plan Değerlendirme
+                                                    Raporu</a>
+                                                <a href="https://kalite.biruni.edu.tr/wp-content/uploads/2024/10/2024-YILI-STRATEJIK-PLAN-IZLEME-RAPORU.pdf"
+                                                    target="_blank" class="sLnk">2024 Yılı Stratejik Plan İzleme
+                                                    Raporu</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">ARAŞTIRMA</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-menu-column">
+                                        <a href="/uygulama-ve-arastirma-merkezleri/agiz-ve-dis-sagligi-uygulama-arastirma-merkezi"
+                                            class="sTitle">Uygulama ve Araştırma Merkezleri</a>
+
+                                        <a href="/uygulama-ve-arastirma-merkezleri/agiz-ve-dis-sagligi-uygulama-arastirma-merkezi"
+                                            class="sLnk">Ağız ve Diş Sağlığı Uygulama Araştırma Merkezi</a>
+
+                                        <a href="https://bamer.biruni.edu.tr/" class="sLnk">İleri Teknoloji Uygulama ve
+                                            Araştırma Merkezi (BAMER)</a>
+
+                                        <a href="https://www.biruni.edu.tr/uygulama-ve-arastirma-merkezleri/biruni-uygulama-ve-arastirma-merkezii" class="sLnk">Biruni Uygulama ve Araştırma Merkezi
+								</a>
+
+                                        <a href="/uygulama-ve-arastirma-merkezleri/elestirel-dusunce-uygulama-ve-arastirma-merkezi"
+                                            class="sLnk">Eleştirel Düşünce Uygulama ve Araştırma Merkezi</a>
+
+                                        <a href="/uygulama-ve-arastirma-merkezleri/otizm-uygulama-ve-arastirma-merkezi"
+                                            class="sLnk">Otizm Uygulama ve Araştırma Merkezi</a>
+
+                                        <a href="#" class="sLnk">Sağlık Eğitimi Uygulama ve Araştırma Merkezi</a>
+
+                                        <a href="/uygulama-ve-arastirma-merkezleri/turkce-ve-yabanci-dil-uygulama-ve-arastirma-merkezi-tomer"
+                                            class="sLnk">Türkçe ve Yabancı Dil Uygulama ve Araştırma Merkezi (TÖMER)</a>
+
+                                        <a href="/uygulama-ve-arastirma-merkezleri/uzaktan-egitim-uygulama-arastirma-merkezi"
+                                            class="sLnk">Uzaktan Eğitim Uygulama Araştırma Merkezi</a>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <a href="#" class="sTitle">Diğer Araştırma Merkezleri</a>
+                                        <a href="https://birarge.biruni.edu.tr/" class="sLnk">Araştırma Geliştirme
+                                            Koordinasyon Ofisi (BirArge)</a>
+                                        <a href="https://barc.biruni.edu.tr/" class="sLnk">Deney Hayvanları
+                                            Laboratuvarı (B-ARC)</a>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <a href="#" class="sTitle">Etik Kurullar</a>
+                                        <a href="http://etikkurul.biruni.edu.tr/" class="sLnk">Bilimsel Araştırmalar
+                                            Etik Kurulu</a>
+                                        <a href="https://etikkurul.biruni.edu.tr/index.php/yerel-etik-kurulu/"
+                                            class="sLnk">Hayvan Deneyleri Yerel Etik Kurulu</a>
+                                        <a href="https://etikkurul.biruni.edu.tr/index.php/klinik-arastirmalar-etik-kurulu//"
+                                            class="sLnk">Klinik Araştırmalar Etik Kurulu</a>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <a href="#" class="sTitle">Yayınlarımız</a>
+                                        <a href="https://dergi.biruni.edu.tr/" class="sLnk">Biruni Sağlık ve Eğitim
+                                            Bilimleri Dergisi (BSEBD)</a>
+                                        <a href="https://perrjournal.com/index.php/perrjournal"
+                                            class="sLnk">Psycho-Educational Research Reviews (PERR)</a>
+                                        <a href="/universitemiz/bilimsel-yayinlar" class="sLnk">Bilimsel Yayınlar</a>
+                                        <a href="https://dergipark.org.tr/en/pub/edr" class="sLnk">Eurasian Dental Research</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">AKADEMİK</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-menu-column">
+                                        <a href="#" class="sTitle">Fakülteler</a>
+                                        <a href="https://dishekimligi.biruni.edu.tr/" class="sLnk">Diş Hekimliği
+                                            Fakültesi</a>
+                                        <a href="https://eczacilik.biruni.edu.tr/" class="sLnk">Eczacılık Fakültesi</a>
+                                        <a href="https://egitim.biruni.edu.tr/" class="sLnk">Eğitim Fakültesi</a>
+                                        <a href="https://muhendislik.biruni.edu.tr/" class="sLnk">Mühendislik ve Doğa
+                                            Bilimleri Fakültesi</a>
+                                        <a href="https://sabif.biruni.edu.tr/" class="sLnk">Sağlık Bilimleri
+                                            Fakültesi</a>
+                                        <a href="https://tip.biruni.edu.tr/" class="sLnk">Tıp Fakültesi</a>
+                                        <a href="https://ubf.biruni.edu.tr/" class="sLnk">Uygulamalı Bilimler Fakültesi</a>
+                                        <a href="https://myo.biruni.edu.tr/" class="sLnk">Meslek Yüksekokulu</a>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <a href="#" class="sTitle">Lisansüstü Eğitim</a>
+                                        <a href="https://lisansustu.biruni.edu.tr/" class="sLnk">Lisansüstü Eğitim
+                                            Enstitüsü</a>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <a href="#" class="sTitle">Rektörlüğe Bağlı Bölümler</a>
+                                        <a href="https://ydb.biruni.edu.tr/" class="sLnk">Yabancı Diller Bölümü</a>
+                                        <a href="https://tomer.biruni.edu.tr/" class="sLnk">TÖMER</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="/universitemiz/inovasyon">İNOVASYON</a></li>
+                        <li><a href="/universitemiz/toplumsal-katki">TOPLUMSAL KATKI</a></li>
+                        <li><a href="/ogrenci-ii">ÖĞRENCİ</a></li>
+                        <li><a href="/iletisimm">İLETİŞİM</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right-actions">
+                    <span class="actions-divider"></span>
+                    <a href="https://kybs.biruni.edu.tr/arama.html" target="_blank" class="search-btn"><i
+                            class="fas fa-search"></i></a>
+                    <a href="https://www.biruni.edu.tr/en" class="lang-btn">EN</a>
+                    <a href="#" class="action-button hastane-btn"
+                        style="text-decoration: none !important;">HASTANELER <i class="fas fa-arrow-right"></i></a>
+                    <div class="hastane-menu">
+                        <a href="https://www.birunihastanesi.com.tr/" class="sTitle"><i
+                                class="fas fa-hospital"></i>Biruni Üniversitesi Hastanesi</a>
+                        <a href="http://www.birunidis.com/" class="sTitle"><i class="fas fa-tooth"></i>Biruni
+                            Üniversitesi Diş Hastanesi</a>
+                    </div>
+
+                </div>
+
+                <a href="https://www.biruni.edu.tr/en" class="mobile-lang-btn" aria-label="Dil">EN</a>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+
+        <nav class="mobile-menu">
+            <ul>
+                <li>
+                    <a href="#" class="mobile-menu-item">ÜNİVERSİTEMİZ</a>
+                    <div class="mobile-mega-menu">
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">Biruni Hakkında</a>
+                            <a href="/universitemiz/biruni-kimdir" class="sLnk">Biruni Kimdir?</a>
+                            <a href="/universitemiz/misyon-vizyon" class="sLnk">Misyon Vizyon Amaç</a>
+                            <a href="/universitemiz/tarihce" class="sLnk">Tarihçe</a>
+                            <a href="/universitemiz/kurucu-vakif" class="sLnk">Kurucu Vakıf</a>
+                            <a href="/universitemiz/rektorun-mesaji" class="sLnk">Rektörün Mesajı</a>
+                            <a href="/universitemiz/hikayemiz" class="sLnk">Hikayemiz</a>
+                            <a href="/universitemiz/kampus-imkanlari" class="sLnk">Kampüs İmkanları</a>
+                        </div>
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">Yönetim</a>
+                            <a href="/universitemiz/yonetim/mutevelli-heyeti-baskani-mesaji" class="sLnk">Mütevelli Heyet Başkanı Mesajı</a>
+                            <a href="https://www.biruni.edu.tr/universitemiz/rektorluk" class="sLnk">Rektörlük</a>
+                            <a href="/universitemiz/rektorluge-bagli-birimler/rektorluge-bagli-birimler"
+                                class="sLnk">Rektörlüğe Bağlı Birimler</a>
+                            <a href="/universitemiz/yonetim/senato" class="sLnk">Senato</a>
+                            <a href="/universitemiz/yonetim/universite-yonetim-kurulu" class="sLnk">Üniversite Yönetim
+                                Kurulu</a>
+                            <a href="/idari-birimler/genel-sekreterlik" class="sLnk">Genel Sekreterlik</a>
+                        </div>
+                        <div class="mobile-mega-menu-column">
+                            <a href="/universitemiz/rektorluge-bagli-birimler/rektorluge-bagli-birimler"
+                                class="sTitle">Rektörlüğe Bağlı Birimler</a>
+                            <a href="https://birarge.biruni.edu.tr/" class="sLnk">Araştırma - Geliştirme (BAP -
+                                BİRARGE)</a>
+                            <a href="https://etikkurul.biruni.edu.tr/" class="sLnk">Bilimsel Araştırmalar Etik
+                                Kurulu</a>
+                            <a href="https://www.biruni.edu.tr/ogrenci/birengelli-birimi" class="sLnk">Engelli Öğrenci
+                                Birimi</a>
+                            <a href="https://etikkurul.biruni.edu.tr/index.php/yerel-etik-kurulu/" class="sLnk">Hayvan
+                                Deneyleri Yerel Etik Kurulu</a>
+                            <a href="https://kalite.biruni.edu.tr/" class="sLnk">Kalite Koordinatörlüğü</a>
+                            <a href="https://kariyer.biruni.edu.tr/" class="sLnk">Kariyer Merkezi</a>
+                            <a href="https://etikkurul.biruni.edu.tr/index.php/klinik-arastirmalar-etik-kurulu/"
+                                class="sLnk">Klinik Araştırmalar Etik Kurulu</a>
+                            <a href="https://www.biruni.edu.tr/idari-birimler/uluslararas%C4%B1la%C5%9Fma-veri-ve-surdurulebilirlik-direktorlugu"
+                                class="sLnk">Uluslararasılaşma, Veri ve Sürdürülebilirlik Direktörlüğü</a>
+                        </div>
+                        <div class="mobile-mega-menu-column">
+                            <a href="/idari-birimler/genel-sekreterlik?view=tum-birimler" class="sTitle">İdari
+                                Birimler</a>
+                            <a href="/idari-birimler/yazi-isleri-direktorlugu" class="sLnk">Yazı İşleri Direktörlüğü</a>
+                            <a href="/idari-birimler/bilisim-teknolojileri-direktorlugu" class="sLnk">Bilişim
+                                Teknolojileri Direktörlüğü</a>
+                            <a href="/idari-birimler/yapi-isleri-direktorlugu" class="sLnk">Yapı İşleri Direktörlüğü</a>
+                            <a href="/idari-birimler/destek-hizmetleri-direktorlugu" class="sLnk">Destek Hizmetleri
+                                Direktörlüğü</a>
+                            <a href="/idari-birimler/hukuk-musavirligi" class="sLnk">Hukuk Müşavirliği</a>
+                            <a href="/idari-birimler/insan-kaynaklari-direktorlugu" class="sLnk">İnsan Kaynakları
+                                Direktörlüğü</a>
+                            <a href="/idari-birimler/kurumsal-iletisim-direktorlugu" class="sLnk">Kurumsal İletişim
+                                Direktörlüğü</a>
+                            <a href="/idari-birimler/kutuphane-ve-dokumantasyon-direktorlugu" class="sLnk">Kütüphane ve
+                                Dokümantasyon Direktörlüğü</a>
+                            <a href="/idari-birimler/mali-isler-direktorlugu" class="sLnk">Mali İşler Direktörlüğü</a>
+                            <a href="/idari-birimler/ogrenci-isleri-direktorlugu" class="sLnk">Öğrenci İşleri
+                                Direktörlüğü</a>
+                            <a href="/idari-birimler/satinalma-direktorlugu" class="sLnk">Satınalma Direktörlüğü</a>
+                            <a href="/idari-birimler/saglik-kultur-ve-spor-direktorlugu" class="sLnk">Sağlık Kültür ve
+                                Spor Direktörlüğü</a>
+                            <a href="/idari-birimler/strateji-gelistirme-direktorlugu" class="sLnk">Strateji Geliştirme
+                                Direktörlüğü</a>
+                            <a href="/idari-birimler/uluslararasi-iliskiler-ofis-direktorlugu" class="sLnk">Uluslararası
+                                İlişkiler Direktörlüğü</a>
+                            <a href="https://www.biruni.edu.tr/idari-birimler/uluslararas%C4%B1la%C5%9Fma-veri-ve-surdurulebilirlik-direktorlugu" class="sLnk">Uluslararasılaşma, Veri ve Sürdürülebilirlik Direktörlüğü
+				</a>
+                        </div>
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">Kurumsal</a>
+                            <a href="/universitemiz/kvkk" class="sLnk">Kişisel Verilerin Korunması Kanunu</a>
+                            <a href="/universitemiz/kalite-politikasi" class="sLnk">Kalite Politikası</a>
+                            <a href="/kurullar-ve-komisyonlar" class="sLnk">Kurullar ve Komisyonlar</a>
+                            <a href="/universitemiz/yonetim/senato-kararlari" class="sLnk">Senato Kararları</a>
+                            <a href="/universitemiz/yonetmelik-ve-yonerge" class="sLnk">Yönetmelikler ve Yönergeler</a>
+                            <a href="/universitemiz/yonetim/yonetimsel-sema" class="sLnk">Yönetimsel Şema</a>
+                            <div class="mobile-mega-menu-column">
+                                <a href="#" class="sTitle">Stratejik Planlama</a>
+                                <a href="https://www.biruni.edu.tr/doc/stratejik-plan-guncel.pdf" target="_blank"
+                                    class="sLnk">Stratejik Plan</a>
+                                <a href="https://kalite.biruni.edu.tr/wp-content/uploads/2024/10/2023-YILI-STRATEJIK-PLAN-DEGERLENDIRME-RAPORU.pdf"
+                                    target="_blank" class="sLnk">2023 Yılı Stratejik Plan Değerlendirme Raporu</a>
+                                <a href="https://kalite.biruni.edu.tr/wp-content/uploads/2024/10/2024-YILI-STRATEJIK-PLAN-IZLEME-RAPORU.pdf"
+                                    target="_blank" class="sLnk">2024 Yılı Stratejik Plan İzleme Raporu</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="mobile-menu-item">ARAŞTIRMA</a>
+                    <div class="mobile-mega-menu">
+                        <div class="mobile-mega-menu-column">
+                            <a href="/uygulama-ve-arastirma-merkezleri/agiz-ve-dis-sagligi-uygulama-arastirma-merkezi"
+                                class="sTitle">Uygulama ve Araştırma Merkezleri</a>
+
+                            <a href="/uygulama-ve-arastirma-merkezleri/agiz-ve-dis-sagligi-uygulama-arastirma-merkezi"
+                                class="sLnk">Ağız ve Diş Sağlığı Uygulama Araştırma Merkezi</a>
+
+                            <a href="https://bamer.biruni.edu.tr/" class="sLnk">İleri Teknoloji Uygulama ve
+                                Araştırma Merkezi (BAMER)</a>
+
+                            <a href="https://www.biruni.edu.tr/uygulama-ve-arastirma-merkezleri/biruni-uygulama-ve-arastirma-merkezii" class="sLnk">Biruni Uygulama ve Araştırma Merkezi
+				</a>
+
+                            <a href="/uygulama-ve-arastirma-merkezleri/elestirel-dusunce-uygulama-ve-arastirma-merkezi"
+                                class="sLnk">Eleştirel Düşünce Uygulama ve Araştırma Merkezi</a>
+
+                            <a href="/uygulama-ve-arastirma-merkezleri/otizm-uygulama-ve-arastirma-merkezi"
+                                class="sLnk">Otizm Uygulama ve Araştırma Merkezi</a>
+
+                            <a href="https://sem.biruni.edu.tr/" class="sLnk">Sağlık Eğitimi Uygulama ve Araştırma
+                                Merkezi</a>
+
+                            <a href="/uygulama-ve-arastirma-merkezleri/turkce-ve-yabanci-dil-uygulama-ve-arastirma-merkezi-tomer"
+                                class="sLnk">Türkçe ve Yabancı Dil Uygulama ve Araştırma Merkezi (TÖMER)</a>
+
+                            <a href="/uygulama-ve-arastirma-merkezleri/uzaktan-egitim-uygulama-arastirma-merkezi"
+                                class="sLnk">Uzaktan Eğitim Uygulama Araştırma Merkezi</a>
+                        </div>
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">Diğer Araştırma Merkezleri</a>
+                            <a href="https://birarge.biruni.edu.tr/" class="sLnk">Araştırma Geliştirme Koordinasyon
+                                Ofisi (BirArge)</a>
+                            <a href="https://barc.biruni.edu.tr/" class="sLnk">Deney Hayvanları
+                                Laboratuvarı (B-ARC)</a>
+                        </div>
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">Etik Kurullar</a>
+                            <a href="http://etikkurul.biruni.edu.tr/" class="sLnk">Bilimsel Araştırmalar Etik Kurulu</a>
+                            <a href="https://etikkurul.biruni.edu.tr/index.php/yerel-etik-kuruli/" class="sLnk">Hayvan
+                                Deneyleri Yerel Etik Kurulu</a>
+                            <a href="https://etikkurul.biruni.edu.tr/index.php/klinik-arastirmalar-etik-kuruli/"
+                                class="sLnk">Klinik Araştırmalar Etik Kurulu</a>
+                        </div>
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">Yayınlarımız</a>
+                            <a href="https://dergi.biruni.edu.tr/" class="sLnk">Biruni Sağlık ve Eğitim Bilimleri
+                                Dergisi (BSEBD)</a>
+                            <a href="https://perrjournal.com/index.php/perrjournal" class="sLnk">Psycho-Educational
+                                Research Reviews (PERR)</a>
+                            <a href="/universitemiz/bilimsel-yayinlar" class="sLnk">Bilimsel Yayınlar</a>
+                           <a href="https://dergipark.org.tr/en/pub/edr" class="sLnk">Eurasian Dental Research</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="mobile-menu-item">AKADEMİK</a>
+                    <div class="mobile-mega-menu">
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">Fakülteler</a>
+                            <a href="https://dishekimligi.biruni.edu.tr/" class="sLnk">Diş Hekimliği Fakültesi</a>
+                            <a href="https://eczacilik.biruni.edu.tr/" class="sLnk">Eczacılık Fakültesi</a>
+                            <a href="https://egitim.biruni.edu.tr/" class="sLnk">Eğitim Fakültesi</a>
+                            <a href="https://muhendislik.biruni.edu.tr/" class="sLnk">Mühendislik ve Doğa Bilimleri
+                                Fakültesi</a>
+                            <a href="https://sabif.biruni.edu.tr/" class="sLnk">Sağlık Bilimleri Fakültesi</a>
+                            <a href="https://tip.biruni.edu.tr/" class="sLnk">Tıp Fakültesi</a>
+                            <a href="https://ubf.biruni.edu.tr/" class="sLnk">Uygulamalı Bilimler Fakültesi</a>
+                            <a href="https://myo.biruni.edu.tr/" class="sLnk">Meslek Yüksekokulu</a>
+                        </div>
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">Lisansüstü Eğitim</a>
+                            <a href="https://lisansustu.biruni.edu.tr/" class="sLnk">Lisansüstü Eğitim Enstitüsü</a>
+                        </div>
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">Rektörlüğe Bağlı Bölümler</a>
+                            <a href="https://ydb.biruni.edu.tr/" class="sLnk">Yabancı Diller Bölümü</a>
+                            <a href="https://tomer.biruni.edu.tr/" class="sLnk">TÖMER</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/universitemiz/inovasyon" class="mobile-menu-item">İNOVASYON</a></li>
+                <li><a href="/universitemiz/toplumsal-katki" class="mobile-menu-item">TOPLUMSAL KATKI</a></li>
+                <li><a href="/ogrenci-ii" class="mobile-menu-item">ÖĞRENCİ</a></li>
+                <li><a href="/iletisimm" class="mobile-menu-item">İLETİŞİM</a></li>
+                <li>
+                    <a href="#" class="mobile-menu-item">HIZLI ERİŞİM</a>
+                    <div class="mobile-mega-menu">
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">Bilgilendirme</a>
+
+                            <a href="https://kalite.biruni.edu.tr" class="sLnk" target="_blank">KALİTE</a>
+                            <a href="https://int.biruni.edu.tr/" class="sLnk" target="_blank">INTERNATIONAL</a>
+                            <a href="https://sis.biruni.edu.tr/oibs/bologna/" class="sLnk" target="_blank">BOLOGNA</a>
+                        </div>
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">Platformlar</a>
+                            <a href="https://birarge.biruni.edu.tr/" class="sLnk" target="_blank">BİRAR-GE</a>
+                            <a href="https://topluluklar.biruni.edu.tr/" class="sLnk" target="_blank">TOPLULUKLAR</a>
+                            <a href="https://aday.biruni.edu.tr" class="sLnk" target="_blank">ADAY ÖĞRENCİ</a>
+                            <a href="https://int.biruni.edu.tr/international/" class="sLnk" target="_blank">ULUSLARARASI ÖĞRENCİ</a>
+                        </div>
+                        <div class="mobile-mega-menu-column">
+                            <a href="#" class="sTitle">İletişim</a>
+                            <a href="tel:4448276" class="sLnk">444 82 76</a>
+                            <a href="https://mail.google.com/" class="sLnk" target="_blank">BirMail</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-quick-links">
+                <a href="https://aday.biruni.edu.tr" target="_blank" class="action-button">ADAY ÖĞRENCİ</a>
+                <a href="https://int.biruni.edu.tr/international/" target="_blank">ULUSLARARASI ÖĞRENCİ</a>
+                <a href="https://kybs.biruni.edu.tr" target="_blank">BİLGİ SİSTEMLERİ</a>
+                <a href="https://kalite.biruni.edu.tr/" target="_blank">KALİTE YÖNETİMİ</a>
+                <a href="https://www.biruni.edu.tr/en">EN</a>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.querySelector('.pro-header');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+
+            // Daha sağlam ana sayfa kontrolü
+            const path = window.location.pathname.toLowerCase();
+            const isHomePage = path === '/' ||
+                path === '/tr' ||
+                path === '/tr/' ||
+                path.indexOf('index') > -1 ||
+                path.indexOf('homepage') > -1 ||
+                document.body.classList.contains('homepage');
+
+            if (isHomePage) {
+                document.body.classList.add('homepage');
+
+                // Scroll işleyici fonksiyon
+                const handleScroll = () => {
+                    const scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+                    if (scrollPos > 10) { // Eşik değeri düşürüldü
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                };
+
+                // Event listener ekle
+                window.addEventListener('scroll', handleScroll);
+                document.addEventListener('scroll', handleScroll);
+                document.body.addEventListener('scroll', handleScroll);
+                const wrapper = document.querySelector('.wrapper');
+                if (wrapper) wrapper.addEventListener('scroll', handleScroll);
+
+                // Mobile header-top hidden fix (Javascript Force)
+                const headerTop = document.querySelector('.header-top');
+
+                function toggleHeaderTop() {
+                    if (window.innerWidth <= 1200) {
+                        if (headerTop) headerTop.style.display = 'none';
+                    } else {
+                        if (headerTop) headerTop.style.removeProperty('display');
+                    }
+                }
+
+                // Initial check
+                toggleHeaderTop();
+                window.addEventListener('resize', toggleHeaderTop);
+
+                // Sayfa yüklendiğinde scroll pozisyonunu kontrol et
+                setTimeout(handleScroll, 100); // Hafif gecikme ile kontrol et
+                handleScroll();
+
+            } else {
+                // Ana sayfa değilse her zaman dolu (scrolled) modda olsun
+                header.classList.add('scrolled');
+                // Üst padding = sabit header yüksekliği. iOS Safari kaydırırken adres çubuğu
+                // yüzünden sürekli "resize" tetiklenir; her seferinde padding yazmak düzeni
+                // kırar ve kaydırmayı takılır hale getirir — debounce + sadece değişince yaz.
+                var lastHeaderPadPx = -1;
+                var resizeDebounceTimer = null;
+
+                function syncBodyPaddingToHeader() {
+                    if (document.body.classList.contains('homepage')) return;
+                    var h = header ? Math.round(header.getBoundingClientRect().height) : 0;
+                    if (h > 0) {
+                        if (h === lastHeaderPadPx) return;
+                        lastHeaderPadPx = h;
+                        document.body.style.paddingTop = h + 'px';
+                    } else {
+                        lastHeaderPadPx = -1;
+                        document.body.style.removeProperty('padding-top');
+                    }
+                }
+
+                syncBodyPaddingToHeader();
+                window.addEventListener('load', function () {
+                    lastHeaderPadPx = -1;
+                    syncBodyPaddingToHeader();
+                });
+
+                function schedulePaddingSyncFromResize() {
+                    if (resizeDebounceTimer) clearTimeout(resizeDebounceTimer);
+                    resizeDebounceTimer = setTimeout(function () {
+                        resizeDebounceTimer = null;
+                        lastHeaderPadPx = -1;
+                        syncBodyPaddingToHeader();
+                    }, 200);
+                }
+
+                window.addEventListener('resize', schedulePaddingSyncFromResize, { passive: true });
+                window.addEventListener('orientationchange', function () {
+                    setTimeout(function () {
+                        lastHeaderPadPx = -1;
+                        syncBodyPaddingToHeader();
+                    }, 300);
+                });
+            }
+
+            // Mobil menü toggle
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('active');
+                    this.classList.toggle('active'); // Button itself
+
+                    // Icon logic
+                    if (mobileMenu.classList.contains('active')) {
+                        mobileMenuToggle.innerHTML = '<i class="fas fa-times"></i>';
+                        // Lock body scroll
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                        // Unlock body scroll
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Mobil alt menüler
+            if (mobileMenuItems) {
+                mobileMenuItems.forEach(item => {
+                    item.addEventListener('click', function (e) {
+                        const megaMenu = this.nextElementSibling;
+                        if (megaMenu && megaMenu.classList.contains('mobile-mega-menu')) {
+                            e.preventDefault();
+                            megaMenu.classList.toggle('active');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+    <script src="/Content/js/jquery-3.3.1.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7G01TS27KR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7G01TS27KR');
+    </script>
+</body>
+
+</html>
+        
+<style>
+    /* Haber/duyuru başlığı: lacivert kurumsal şerit (menünün hemen altında, tam genişlik) */
+    .det-hero { width: 100%; background: linear-gradient(100deg, #0d2240 0%, #16386b 100%); color: #fff; box-sizing: border-box; }
+    .det-hero-inner { padding: 44px 40px 46px calc(101px + (100% - 121px) * .05); box-sizing: border-box; }
+    .det-hero-crumb { font-size: 13px; line-height: 1.4; color: #9fb3d1; margin: 0 0 14px; }
+    .det-hero-crumb a { color: #9fb3d1; text-decoration: none; }
+    .det-hero-crumb a:hover { color: #fff; }
+    .det-hero-crumb span { margin: 0 8px; opacity: .7; }
+    .det-hero h1 { margin: 0; padding: 0; max-width: 70%; font-family: inherit; font-size: 36px; line-height: 1.28; font-weight: 700; letter-spacing: -0.3px; color: #fff; text-align: left; text-transform: none; }
+    .det-hero-meta { margin-top: 16px; display: flex; align-items: center; gap: 12px; font-size: 14px; line-height: 1; color: #cfd8e6; }
+    .det-hero-meta::before { content: ""; width: 28px; height: 3px; border-radius: 2px; background: #f09201; }
+    .det-page-wrapper { padding-top: 40px; }
+    .detailPage.det-page-wrapper .pDesc .publishDate, .det-page-wrapper .publishDate { display: none !important; }
+    @media screen and (max-width: 1024px) { .det-hero h1 { max-width: 90%; } .det-hero-inner { padding-left: 40px; } }
+    @media screen and (max-width: 768px) {
+        .det-hero-inner { padding: 26px 20px 28px; }
+        .det-hero h1 { max-width: 100%; font-size: 23px; }
+        .det-hero-crumb { margin-bottom: 10px; }
+        .det-hero-meta { margin-top: 12px; }
+        .det-page-wrapper { padding-top: 26px; }
+    }
+</style>
+
+<style>
+    /* Ölçekleme ve kutu taşmalarını küresel olarak engelleme */
+    .det-page-wrapper *, .det-page-wrapper *::before, .det-page-wrapper *::after {
+        box-sizing: border-box !important;
+    }
+
+    /* Başlık Altı - Premium Kurumsal Tarih Tasarımı (artık içeriğin ÜSTÜNDE) */
+    .publishDate {
+        font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.3px;
+        color: #666666;
+        padding: 4px 0 4px 12px;
+        border-left: 2px solid #0099bc; /* Kurumsal Turkuaz Çizgi */
+        display: inline-block;
+        line-height: 1;
+        margin-top: 0;
+        margin-bottom: 20px;
+        float: right; /* Her zaman sağa yaslı */
+        clear: both;
+        transition: all 0.2s ease;
+    }
+
+    .publishDate:hover {
+        border-left-color: #007a96;
+        color: #333333;
+    }
+
+    .publishDate .label {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 11px;
+        color: #888888;
+        margin-right: 5px;
+    }
+
+    .publishDate .date {
+        font-weight: 500;
+        color: #444444;
+    }
+
+    /* --- BENZERSİZ VE İZOLE CSS SINIFLARI (UNIQUE) --- */
+
+    .det-page-wrapper {
+        width: 100%;
+        background: transparent !important;
+    }
+
+    /* İçerik taşıyıcısı */
+    .det-page-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 40px !important;
+        display: flex;
+        gap: 40px;
+    }
+
+    /* SAĞ İÇERİK ALANI */
+    .det-right-content-area {
+        flex: 1;
+        width: 100% !important;
+        max-width: 100% !important; 
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 17% 0 5% !important;
+    }
+
+    .det-main-description {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Float temizleyici ve hizalama sabitleyici */
+    .det-content-block {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flow-root !important; 
+    }
+
+    /* METİN ALANI - KİLİTLİ HİZALAMA */
+    .det-text-justify-area {
+        display: block !important;
+        width: 70% !important;               /* Genişlik %70 oranına kilitlendi */
+        min-width: 70% !important;           /* Daralmayı engeller */
+        max-width: 70% !important;           /* %125 ölçeklemede sağa taşmayı engeller */
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        line-height: 1.8 !important;
+        color: #333 !important;
+        font-size: 16px !important;
+        margin-left: 0px !important;
+        padding-left: 0px !important;
+        margin-top: 20px;
+        
+        word-break: normal !important; 
+        overflow-wrap: break-word !important;
+        hyphens: auto;
+    }
+
+    /* YAZILARI KISA TUTAN CSS AYARLARI */
+    .det-text-justify-area p {
+        display: block !important; 
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 15px !important;
+        padding-left: 0px !important;
+        margin-left: 0px !important;
+    }
+
+    .det-text-justify-area ul {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        text-align: justify !important;
+    }
+
+    .det-text-justify-area li {
+        text-align: justify !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 1; 
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        margin-bottom: 5px;
+    }
+
+    /* Dosya adları için tek satır sınırı */
+    .scContent .item:not(.dosya-item) a {
+        display: block !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        width: 100% !important;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE VIDEO MIMARISI (16:9 EN-BOY ORANI KORUYUCU)
+       ========================================================================== */
+    .det-video-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        padding-bottom: 56.25% !important; /* 16:9 En-Boy Oranı */
+        height: 0 !important;
+        overflow: hidden !important;
+        border-radius: 8px;
+        margin: 20px 0 !important;
+        background-color: #000;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .det-video-wrapper iframe,
+    .det-video-wrapper video,
+    .det-video-wrapper embed,
+    .det-video-wrapper object {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        border: 0 !important;
+    }
+
+
+    /* ==========================================================================
+       HER ÖLÇÜDE VE ZOOMDA AYNI HİZAYI KORUYAN RESPONSIVE SISTEM
+       ========================================================================== */
+
+    @media screen and (min-width: 1025px) {
+        .det-text-justify-area {
+            width: 70% !important;
+            max-width: 70% !important;
+        }
+    }
+
+    /* 1. Kırılma Noktası: Küçük Laptoplar (1200px altı) */
+    @media screen and (max-width: 1200px) and (min-width: 1025px) {
+        .det-right-content-area {
+            padding: 0 5% 0 5% !important;
+        }
+    }
+
+    /* 2. Kırılma Noktası: Tablet Ekranlar (1024px altı) */
+    @media screen and (max-width: 1024px) {
+        .det-page-container {
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .det-text-justify-area {
+            width: 85% !important;
+            max-width: 85% !important;
+            min-width: 85% !important;
+        }
+    }
+
+    /* 3. Kırılma Noktası: Mobil Ekranlar (768px ve altı) */
+    @media screen and (max-width: 768px) {
+        .det-page-container {
+            padding: 0 20px !important;
+            gap: 20px;
+        }
+
+        .det-text-justify-area {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 100% !important;
+        }
+
+        .detailPage .pDesc .publishDate,
+        .publishDate {
+            float: none !important;
+            display: block !important;
+            width: auto !important;
+            max-width: 100%;
+            margin: 18px 0 16px 0 !important;
+            padding: 3px 0 3px 10px !important;
+            line-height: 1.5 !important;
+            font-size: 13px;
+            white-space: normal;
+            clear: both;
+        }
+
+        .publishDate .label {
+            display: inline-block;
+            font-size: 11px;
+            margin-right: 4px;
+        }
+
+        .publishDate .date {
+            display: inline-block;
+            font-size: 13px;
+        }
+        
+        .det-zoom-icon-circle {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    /* 4. Kırılma Noktası: Ekstra Küçük Cihazlar */
+    @media screen and (max-width: 480px) {
+        .det-page-container {
+            padding: 0 15px !important;
+        }
+        
+        .det-text-justify-area {
+            font-size: 15px !important;
+        }
+    }
+
+    /* --- TAM ORTALANMIŞ KURUMSAM İKON VE HOVER MİMARİSİ --- */
+    .det-zoom-wrapper {
+        position: relative;
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+        margin: 15px 0;
+        cursor: pointer;
+    }
+
+    .det-zoom-wrapper img {
+        display: block;
+        max-width: 100%;
+        height: auto !important;
+        transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .det-zoom-wrapper:hover img {
+        transform: scale(1.03);
+        filter: brightness(0.85);
+    }
+
+    .det-zoom-wrapper .det-zoom-overlay-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .det-zoom-icon-circle {
+        width: 90px;
+        height: 90px;
+        background-color: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        transform: scale(0.8);
+        transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+    }
+
+    .det-zoom-lens {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border: 4px solid #ffffff;
+        border-radius: 50%;
+    }
+
+    .det-zoom-plus-sign {
+        position: absolute;
+        color: #ffffff;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 0;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .det-zoom-handle {
+        position: absolute;
+        width: 4px;
+        height: 14px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transform: rotate(-45deg);
+        bottom: 22px;
+        right: 22px;
+    }
+
+    .det-zoom-wrapper .det-zoom-text-hint {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+        color: #ffffff;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+        padding: 25px 0 12px 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+    }
+
+    .det-zoom-wrapper:hover .det-zoom-overlay-icon {
+        opacity: 1;
+    }
+
+    .det-zoom-wrapper:hover .det-zoom-icon-circle {
+        transform: scale(1);
+    }
+
+    .det-zoom-wrapper:hover .det-zoom-text-hint {
+        opacity: 1;
+    }
+
+    /* --- LIGHTBOX & OVERLAY --- */
+    .det-zoom-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+    }
+
+    .det-zoom-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .det-zoom-overlay img {
+        max-width: 90%;
+        max-height: 90%;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        transform: scale(0.95);
+        transition: transform 0.4s ease;
+        border-radius: 4px;
+    }
+
+    .det-zoom-overlay.active img {
+        transform: scale(1);
+    }
+
+    .det-overlay-close-btn {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 20px;
+        width: 46px;
+        height: 46px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        z-index: 100000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .det-overlay-close-btn:hover {
+        background: #ffffff;
+        color: #1a1a1a;
+        transform: scale(1.08) rotate(90deg);
+    }
+
+    /* ==========================================================================
+       DOSYA LİSTESİ v2 - mobil uyumlu, native kaydırma (mCustomScrollbar yok),
+       ayrı "Aç" + "İndir" dokunma alanları, uzun listelerde akıcı kaydırma
+       ========================================================================== */
+    .det-page-wrapper .pScroll { margin-top: 10px !important; float: none !important; clear: both; }
+    .det-page-wrapper .pScroll .pSc { float: none !important; width: 100% !important; background: #fff !important; border: 1px solid #ececec !important; border-radius: 12px !important; box-shadow: 0 2px 10px rgba(0,0,0,.05) !important; overflow: hidden !important; }
+    .det-page-wrapper .pScroll .pSc .tpTitle { float: none !important; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important; font-size: 16px !important; font-weight: 600 !important; color: #333 !important; line-height: 1.2 !important; padding: 18px 50px 18px 24px !important; border-bottom: 1px solid #f0f0f0 !important; background: #fafbfc !important; }
+    .det-page-wrapper .pScroll .pSc .tpTitle:before { width: 3px !important; height: 18px !important; left: 0 !important; background: #0099bc !important; }
+    .det-page-wrapper .pScroll .pSc .tpTitle.acc:after { right: 22px !important; }
+
+    /* Native kaydırma: JS tabanlı özel scrollbar yerine GPU hızlandırmalı doğal scroll */
+    .det-page-wrapper .pScroll .pSc .scContent.dosya-modern-list {
+        float: none !important; width: 100% !important; padding: 10px !important;
+        max-height: 70vh !important; overflow-y: auto !important; overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch; overscroll-behavior: contain; scroll-behavior: auto;
+        contain: content; will-change: scroll-position; scrollbar-width: thin; scrollbar-color: #b8c4d0 transparent;
+    }
+    .dosya-modern-list::-webkit-scrollbar { width: 8px; }
+    .dosya-modern-list::-webkit-scrollbar-thumb { background: #b8c4d0; border-radius: 8px; }
+
+    /* Her satır ekran dışındayken çizilmez: yüzlerce dosyada bile akıcı */
+    .det-page-wrapper .scContent .item.dosya-item {
+        float: none !important; width: 100% !important; border: 0 !important; padding: 0 !important; margin: 0 0 8px !important;
+        display: flex; align-items: stretch; gap: 8px; background: #fafbfc; border: 1px solid #eee !important; border-radius: 10px; transition: none !important;
+        content-visibility: auto; contain-intrinsic-size: auto 68px;
+    }
+    .det-page-wrapper .scContent .item.dosya-item:last-child { margin-bottom: 0 !important; }
+    .det-page-wrapper .scContent .item.dosya-item:hover { border-color: #0099bc !important; background: #fff; }
+
+    /* Ana bağlantı (aç/görüntüle) */
+    .det-page-wrapper .scContent .item.dosya-item a.dosya-link {
+        display: flex !important; align-items: center !important; flex: 1 1 auto; min-width: 0;
+        position: static !important; float: none !important; width: auto !important; margin: 0 !important;
+        padding: 12px 8px 12px 14px !important; background: transparent !important; border: 0 !important;
+        color: #333 !important; font-size: 14px !important; font-weight: 500 !important; line-height: 1.3 !important;
+        white-space: normal !important; overflow: visible !important; text-overflow: clip !important;
+        -webkit-tap-highlight-color: rgba(0,153,188,.15); touch-action: manipulation; text-decoration: none;
+    }
+    .det-page-wrapper .scContent .item.dosya-item a.dosya-link:before,
+    .det-page-wrapper .scContent .item.dosya-item a.dosya-link:after,
+    .det-page-wrapper .scContent .item.dosya-item a.dosya-dl:before,
+    .det-page-wrapper .scContent .item.dosya-item a.dosya-dl:after { display: none !important; }
+    .dosya-icon { flex: 0 0 auto; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; font-size: 18px; background: #eef7fa; border-radius: 8px; margin-right: 12px; }
+    .dosya-info { flex: 1 1 auto; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+    .dosya-title { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; word-break: break-word; overflow-wrap: anywhere; color: #333; }
+    .dosya-type { font-size: 11px; font-weight: 700; letter-spacing: .3px; color: #0099bc; text-transform: uppercase; background: #eef7fa; border-radius: 4px; padding: 1px 7px; width: max-content; }
+
+    /* Ayrı indirme düğmesi (min. 44px dokunma alanı) */
+    .det-page-wrapper .scContent .item.dosya-item a.dosya-dl {
+        flex: 0 0 auto; display: flex !important; align-items: center; justify-content: center; gap: 6px;
+        position: static !important; float: none !important; width: auto !important; margin: 6px 6px 6px 0 !important;
+        min-width: 44px; min-height: 44px; padding: 0 14px !important; border-radius: 8px;
+        background: #0099bc !important; color: #fff !important; font-size: 12px !important; font-weight: 600 !important; line-height: 1 !important;
+        white-space: nowrap !important; overflow: visible !important; text-decoration: none;
+        -webkit-tap-highlight-color: transparent; touch-action: manipulation; cursor: pointer;
+    }
+    .det-page-wrapper .scContent .item.dosya-item a.dosya-dl:hover,
+    .det-page-wrapper .scContent .item.dosya-item a.dosya-dl:active { background: #007a96 !important; }
+    .det-page-wrapper .scContent .item.dosya-item a.dosya-dl.is-loading { opacity: .6; pointer-events: none; }
+
+    .dosya-actions { flex: 0 0 auto; display: flex; align-items: center; }
+    .det-page-wrapper .scContent .item.dosya-item a.dosya-open { display: none !important; }
+
+    /* ===== MOBİL: her dosya bir kart; üstte bilgi, altta tam genişlik düğmeler ===== */
+    @media screen and (max-width: 600px) {
+        .det-page-wrapper .pScroll .pSc { border-radius: 14px !important; }
+        .det-page-wrapper .pScroll .pSc .tpTitle { padding: 15px 44px 15px 18px !important; font-size: 15px !important; letter-spacing: .2px; }
+        .det-page-wrapper .pScroll .pSc .scContent.dosya-modern-list { padding: 10px !important; max-height: 72vh !important; background: #f6f8fa; }
+
+        .det-page-wrapper .scContent .item.dosya-item {
+            flex-direction: column; gap: 0; margin: 0 0 10px !important; padding: 0 !important;
+            background: #fff; border: 1px solid #e6ebf0 !important; border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(16,24,40,.06); overflow: hidden; contain-intrinsic-size: auto 150px;
+        }
+        .det-page-wrapper .scContent .item.dosya-item a.dosya-link { padding: 14px 14px 10px !important; align-items: flex-start !important; }
+        .dosya-icon { width: 44px; height: 44px; font-size: 22px; border-radius: 10px; margin-right: 12px; background: #eaf5f9; }
+        .dosya-info { gap: 6px; padding-top: 1px; }
+        .dosya-title { font-size: 14.5px; font-weight: 600; line-height: 1.35; -webkit-line-clamp: 3; }
+        .dosya-type { font-size: 10.5px; padding: 2px 8px; border-radius: 20px; }
+
+        .dosya-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 14px 14px; width: 100%; }
+        .det-page-wrapper .scContent .item.dosya-item a.dosya-open,
+        .det-page-wrapper .scContent .item.dosya-item a.dosya-dl {
+            display: flex !important; width: 100% !important; min-height: 44px; margin: 0 !important; padding: 0 12px !important;
+            border-radius: 10px; font-size: 14px !important; font-weight: 600 !important; gap: 8px; align-items: center; justify-content: center;
+            text-decoration: none; white-space: nowrap !important; -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+        }
+        .det-page-wrapper .scContent .item.dosya-item a.dosya-open { background: #fff !important; color: #0b7f9c !important; border: 1.5px solid #0099bc !important; }
+        .det-page-wrapper .scContent .item.dosya-item a.dosya-open:active { background: #eaf5f9 !important; }
+        .det-page-wrapper .scContent .item.dosya-item a.dosya-dl { background: #0099bc !important; color: #fff !important; border: 1.5px solid #0099bc !important; box-shadow: 0 2px 6px rgba(0,153,188,.28); }
+        .det-page-wrapper .scContent .item.dosya-item a.dosya-dl:active { background: #007a96 !important; }
+        .dosya-dl-text { display: inline !important; }
+        .det-page-wrapper .scContent .item.dosya-item:hover { border-color: #e6ebf0 !important; background: #fff; }
+    }
+    /* ===== Tablet/mobil: sağ-sol boşlukları kaldır, dosya alanı tam genişlik ve kutusuz ===== */
+    @media screen and (max-width: 1024px) {
+        .det-right-content-area { padding: 0 !important; width: 100% !important; min-width: 0 !important; }
+        .det-page-wrapper .pScroll, .det-page-wrapper .pScroll .pSc { width: 100% !important; max-width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; }
+    }
+    @media screen and (max-width: 600px) {
+        .det-page-container { padding: 0 16px !important; }
+        .det-page-wrapper .pScroll .pSc { background: transparent !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; overflow: visible !important; }
+        .det-page-wrapper .pScroll .pSc .tpTitle { background: transparent !important; border-bottom: 0 !important; padding: 4px 0 12px 14px !important; font-size: 18px !important; }
+        .det-page-wrapper .pScroll .pSc .tpTitle:before { left: 0 !important; height: 20px !important; }
+        .det-page-wrapper .pScroll .pSc .tpTitle.acc:after { display: none !important; }
+        .det-page-wrapper .pScroll .pSc .scContent.dosya-modern-list { padding: 0 !important; background: transparent !important; max-height: none !important; overflow: visible !important; contain: none; will-change: auto; }
+        .det-page-wrapper .scContent .item.dosya-item { box-shadow: 0 1px 4px rgba(16,24,40,.08); }
+    }
+    /* ===== Dosya başlığı: profesyonel üst bilgi şeridi (web + mobil) ===== */
+    .det-page-wrapper .pScroll .pSc .tpTitle {
+        display: block !important; cursor: default !important; padding: 16px 22px !important;
+        background: #fff !important; border-bottom: 1px solid #e8edf2 !important; position: relative;
+    }
+    .det-page-wrapper .pScroll .pSc .tpTitle:before, .det-page-wrapper .pScroll .pSc .tpTitle:after,
+    .det-page-wrapper .pScroll .pSc .tpTitle.acc:before, .det-page-wrapper .pScroll .pSc .tpTitle.acc:after { display: none !important; content: none !important; }
+    .det-page-wrapper .pScroll .pSc .tpTitle .tt { display: flex !important; align-items: center; gap: 12px; width: 100%; float: none !important; }
+    .dosya-head-icon { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #e6f6fa 0%, #d3eef5 100%); color: #0086a6; font-size: 15px; }
+    .dosya-head-title { flex: 1 1 auto; min-width: 0; font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 17px; font-weight: 700; letter-spacing: .1px; color: #1c2b3a; line-height: 1.25; }
+    .dosya-head-count { flex: 0 0 auto; font-size: 12px; font-weight: 600; color: #0b7f9c; background: #eaf6fa; border: 1px solid #cfe9f1; border-radius: 999px; padding: 4px 11px; line-height: 1; white-space: nowrap; }
+    @media screen and (max-width: 600px) {
+        .det-page-wrapper .pScroll .pSc .tpTitle { padding: 0 0 14px !important; margin-bottom: 14px; background: transparent !important; border-bottom: 2px solid #e3e9ef !important; }
+        .det-page-wrapper .pScroll .pSc .tpTitle:after { display: block !important; content: "" !important; position: absolute; left: 0; bottom: -2px; width: 56px; height: 2px; background: #0099bc; right: auto; top: auto; transform: none; }
+        .dosya-head-icon { width: 34px; height: 34px; }
+        .dosya-head-title { font-size: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+    /* Sayfa genelinde kaydırmayı yoran efektler mobilde kapatılır */
+    @media (hover: none), (max-width: 768px) {
+        .det-zoom-wrapper:hover img { transform: none; filter: none; }
+        .det-zoom-icon-circle { backdrop-filter: none; -webkit-backdrop-filter: none; }
+    }
+</style>
+
+
+<style>
+    /* İçerik görselleri/tabloları/medya hiçbir ekran boyutunda ve zoom'da kutudan taşmaz */
+    .det-page-container, .det-right-content-area, .det-main-description, .det-content-block, .det-text-justify-area { min-width: 0; }
+    .det-text-justify-area img, .det-text-justify-area picture, .det-text-justify-area figure,
+    .det-text-justify-area canvas, .det-text-justify-area svg { max-width: 100% !important; height: auto !important; }
+    .det-text-justify-area figure { margin-left: 0; margin-right: 0; }
+    .det-text-justify-area table { display: block; max-width: 100% !important; width: auto !important; overflow-x: auto; -webkit-overflow-scrolling: touch; border-collapse: collapse; }
+    .det-text-justify-area pre { max-width: 100%; overflow-x: auto; white-space: pre-wrap; }
+    .det-text-justify-area div, .det-text-justify-area p, .det-text-justify-area span, .det-text-justify-area li { max-width: 100%; overflow-wrap: anywhere; }
+    .det-zoom-wrapper { display: block !important; width: fit-content; max-width: 100% !important; }
+    .det-zoom-wrapper img { max-width: 100% !important; width: auto; height: auto !important; margin: 0 auto; }
+    @media screen and (max-width: 768px) {
+        .det-text-justify-area img { width: auto; }
+        .det-text-justify-area [style*="width"] { max-width: 100% !important; }
+        .det-page-wrapper, .det-page-container { overflow-x: clip; }
+    }
+</style>
+
+<style>
+    /* Mobilde iki yana yaslı (justify) metin kelimeler arasında büyük boşluk bırakıyordu: sola yaslı okunaklı metin */
+    @media screen and (max-width: 768px) {
+        .det-page-wrapper .det-text-justify-area,
+        .det-page-wrapper .det-text-justify-area * {
+            text-align: left !important;
+            text-justify: auto !important;
+            word-spacing: normal !important;
+            letter-spacing: normal;
+        }
+        .det-page-wrapper .det-text-justify-area { line-height: 1.7 !important; hyphens: manual; }
+        .det-page-wrapper .det-text-justify-area table, .det-page-wrapper .det-text-justify-area table * { text-align: left !important; }
+    }
+</style>
+<div class="det-hero">
+    <div class="det-hero-inner">
+        <div class="det-hero-crumb"><a href="/">Ana Sayfa</a><span>/</span>Haberler</div>
+        <h1>2026–2027 Akademik Takvim</h1>
+            <div class="det-hero-meta">22 Nisan 2026</div>
+    </div>
+</div>
+<section class="detailPage det-page-wrapper">
+    <div class="s-content det-page-container">
+        
+<div class="leftMenu">
+    <ul>
+    </ul>
+</div>
+
+        <div class="rightContent det-right-content-area">
+            <div class="pDesc det-main-description">
+                        <div class="pdItem det-content-block">
+                            <div class="publishDate">
+                                <span class="label">Yayınlanma Tarihi:</span>
+                                <span class="date">22 Nisan 2026</span>
+                            </div>
+
+                            <div class="pdDesc det-text-justify-area">
+                                <p></p>
+                                    <ul>
+                                        <p>2026-2027 Akademik Takvim&nbsp;Genel (Eczacılık Fak&uuml;ltesi, Eğitim Fak&uuml;ltesi, Sağlık Bilimleri Fak&uuml;ltesi, M&uuml;hendislik ve Doğa Bilimleri Fak&uuml;ltesi, Uygulamalı Bilimler Fak&uuml;ltesi, Meslek Y&uuml;ksekokulu)&nbsp;&nbsp;<a href="../../../doc/2026/2026-2027%20Akademik%20Takvim%20Genel%20Eczac%C4%B1l%C4%B1k%20Fak%C3%BCltesi%20-%20E%C4%9Fitim%20Fak%C3%BCltesi%20-....pdf">i&ccedil;in tıklayınız.</a></p>
+<p>Tıp Fak&uuml;ltesi 2026-2027-Akademik- Takvim <a href="../../../doc/2026/T%C4%B1p%20Fak%C3%BCltesi%202026-2027%20Akademik%20Takvim.pdf">i&ccedil;in tıklayınız.</a></p>
+<p>Lisans&uuml;st&uuml; Eğitim Enstit&uuml;s&uuml; 2026-2027 Akademik Takvimi <a href="../../../doc/2026/Lisans%C3%BCst%C3%BC%20E%C4%9Fitim%20Enstit%C3%BCs%C3%BC%202026-2027%20Akademik%20Takvimi.pdf">i&ccedil;in tıklayınız.</a></p>
+<p>Diş Hekimliği Fak&uuml;ltesi 2026-2027 Akademik Takvimi&nbsp;<a href="https://dishekimligi.biruni.edu.tr/wp-content/uploads/2026/08/TR-AKADEMIK-TAKVIM.pdf">i&ccedil;in tıklayınız.</a></p>
+<p>Yabancı Diller B&ouml;l&uuml;m&uuml;&nbsp;2026-2027 Akademik Takvim&nbsp;<a href="../../../doc/2026/Yabanc%C4%B1%20Diller%20B%C3%B6l%C3%BCm%C3%BC%20Akademik%20Takvim%202026-2027.pdf">i&ccedil;in tıklayınız.</a></p>
+                                    </ul>
+                            </div>
+                        </div>
+                    <div style="clear: both; height: 35px;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="det-zoom-overlay" id="detImgOverlay">
+    <button class="det-overlay-close-btn" id="detCloseBtn">✕</button>
+    <img src="" alt="Büyük Görsel" id="detOverlayImg">
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        /* ==========================================================================
+           1. VİDEO İÇERİKLERİNİ OTOMATİK RESPONSIVE KAPSAYICIYA ALMA
+           ========================================================================== */
+        var mediaSelectors = ".det-text-justify-area iframe, .det-text-justify-area video, .det-text-justify-area embed, .det-text-justify-area object";
+        var videos = document.querySelectorAll(mediaSelectors);
+
+        videos.forEach(function (video) {
+            // Zaten bir responsive kapsayıcı içindeyse tekrar sarma
+            if (video.parentNode && video.parentNode.classList.contains("det-video-wrapper")) {
+                return;
+            }
+
+            var videoWrapper = document.createElement("div");
+            videoWrapper.className = "det-video-wrapper";
+
+            video.parentNode.insertBefore(videoWrapper, video);
+            videoWrapper.appendChild(video);
+        });
+
+
+        /* ==========================================================================
+           2. GÖRSEL ZOOM VE LIGHTBOX İŞLEMLERİ
+           ========================================================================== */
+        var overlay = document.getElementById("detImgOverlay");
+        var overlayImg = document.getElementById("detOverlayImg");
+        var closeBtn = document.getElementById("detCloseBtn");
+        var isTransitioning = false;
+
+        if (overlay && overlayImg && closeBtn) {
+            var contentImages = document.querySelectorAll(".det-text-justify-area img");
+            contentImages.forEach(function (im) { im.setAttribute("loading", "lazy"); im.setAttribute("decoding", "async"); });
+
+            contentImages.forEach(function (img) {
+                if (!img.src || (img.complete && img.naturalWidth === 0)) {
+                    img.style.display = "none"; 
+                    return; 
+                }
+
+                img.addEventListener('error', function() {
+                    img.style.display = "none";
+                    if(img.parentNode && img.parentNode.classList.contains('det-zoom-wrapper')) {
+                        img.parentNode.style.display = "none";
+                    }
+                });
+
+                var wrapper = document.createElement("div");
+                wrapper.className = "det-zoom-wrapper";
+
+                var overlayIcon = document.createElement("div");
+                overlayIcon.className = "det-zoom-overlay-icon";
+
+                var iconCircle = document.createElement("div");
+                iconCircle.className = "det-zoom-icon-circle";
+
+                var lens = document.createElement("div");
+                lens.className = "det-zoom-lens";
+
+                var plusSign = document.createElement("div");
+                plusSign.className = "det-zoom-plus-sign";
+                plusSign.innerText = "+";
+
+                var handle = document.createElement("div");
+                handle.className = "det-zoom-handle";
+
+                lens.appendChild(plusSign);
+                iconCircle.appendChild(lens);
+                iconCircle.appendChild(handle);
+                overlayIcon.appendChild(iconCircle);
+
+                var textHint = document.createElement("div");
+                textHint.className = "det-zoom-text-hint";
+                textHint.innerText = "Büyütmek için tıklayınız";
+
+                img.parentNode.insertBefore(wrapper, img);
+                wrapper.appendChild(img);
+                wrapper.appendChild(overlayIcon);
+                wrapper.appendChild(textHint);
+
+                wrapper.addEventListener("click", function (e) {
+                    if (isTransitioning || overlay.classList.contains("active")) return;
+
+                    if (e.target !== closeBtn) {
+                        isTransitioning = true;
+                        overlayImg.src = img.src;
+                        
+                        overlay.classList.add("active");
+                        document.body.style.overflow = "hidden";
+                        
+                        setTimeout(function() {
+                            isTransitioning = false;
+                        }, 300);
+                    }
+                });
+            });
+
+            function closeLightbox() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+
+                overlay.classList.remove("active");
+                document.body.style.overflow = "";
+                
+                setTimeout(function() {
+                    overlayImg.src = "";
+                    isTransitioning = false;
+                }, 400);
+            }
+
+            closeBtn.addEventListener("click", closeLightbox);
+
+            overlay.addEventListener("click", function (e) {
+                if (e.target === overlay) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener("keydown", function(e) {
+                if (e.key === "Escape" && overlay.classList.contains("active")) {
+                    closeLightbox();
+                }
+            });
+        }
+    });
+</script>
+
+<script>
+    /* Dosya bağlantıları: güvenilir indirme (tüm mobil tarayıcılar) */
+    (function () {
+        var ua = navigator.userAgent || "";
+        var inApp = /FBAN|FBAV|Instagram|Line\/|Twitter|MicroMessenger|; wv\)|WebView/i.test(ua);
+
+        function fallbackOpen(url) {
+            var w = null;
+            try { w = window.open(url, "_blank", "noopener"); } catch (e) {}
+            if (!w) { window.location.href = url; }
+        }
+
+        document.addEventListener("click", function (e) {
+            var a = e.target.closest ? e.target.closest("a.dosya-dl") : null;
+            if (!a) return;
+            e.preventDefault();
+            if (a.classList.contains("is-loading")) return;
+
+            var url = a.href;
+            var name = a.getAttribute("data-filename") || "dosya";
+
+            /* Uygulama içi tarayıcılar blob indirmeyi desteklemez: doğrudan aç */
+            if (inApp || !window.fetch || !window.URL || !URL.createObjectURL) { fallbackOpen(url); return; }
+
+            a.classList.add("is-loading");
+            fetch(url, { credentials: "same-origin" })
+                .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.blob(); })
+                .then(function (blob) {
+                    var obj = URL.createObjectURL(new Blob([blob], { type: "application/octet-stream" }));
+                    var t = document.createElement("a");
+                    t.href = obj; t.download = name; t.rel = "noopener"; t.style.display = "none";
+                    document.body.appendChild(t); t.click();
+                    setTimeout(function () { document.body.removeChild(t); URL.revokeObjectURL(obj); }, 4000);
+                })
+                .catch(function () { fallbackOpen(url); })
+                .then(function () { a.classList.remove("is-loading"); });
+        }, false);
+    })();
+</script>
+
+
+
+
+
+        
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght&#64;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#14529b; --blue-d:#0f4486; --orange:#f5a000; --white:#fff;
+  --wrap:min(1412px,100% - 64px);
+  --f:'Poppins',system-ui,sans-serif;
+}
+.site-footer a{color:inherit;text-decoration:none}
+.site-footer,.site-footer *{box-sizing:border-box}
+.site-footer ul{list-style:none;margin:0;padding:0}
+.site-footer h3,.site-footer h4,.site-footer p{margin:0}
+
+/* ===== FOOTER ===== */
+.site-footer{margin-top:80px;padding:0!important;border:0;position:relative;background:transparent;color:#fff;font-weight:500}
+.site-footer .wrap{width:var(--wrap);margin-inline:auto}
+
+/* Kampüs görseli */
+.ft-hero{margin:0;position:relative;background:var(--blue);height:400px;border-radius:44px 44px 0 0;overflow:hidden}
+.ft-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.ft-hero::after{content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(to top,var(--blue) 0%,rgba(20,82,155,.85) 14%,rgba(20,82,155,0) 52%),
+    linear-gradient(to right,rgba(10,30,70,.55) 0%,rgba(10,30,70,0) 42%)}
+.ft-hero .wrap{position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding-bottom:26px}
+.ft-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.ft-hero h3{font-size:26px;line-height:1.22;font-weight:700;max-width:360px;letter-spacing:-.01em}
+.ft-cta{display:inline-flex;align-items:center;gap:14px;padding:6px 6px 6px 22px;border-radius:999px;
+  background:var(--orange);color:#fff;font-size:13px;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .2s}
+.ft-cta i{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.25);display:grid;place-items:center;font-style:normal;font-size:14px}
+.ft-cta:hover{transform:translateY(-2px)}
+
+/* Ana alan */
+.ft-main{padding:48px 0 52px;background:var(--blue)}
+.ft-grid{display:grid;grid-template-columns:225px minmax(0,1.3fr) repeat(3,minmax(0,1fr)) minmax(0,1.5fr);gap:32px}
+.ft-brand{text-align:center}
+.ft-brand img{width:194px;height:auto;filter:brightness(0) invert(1);display:block;margin:0 auto}
+.ft-div{display:flex;align-items:center;gap:8px;margin:14px 0 16px}
+.ft-div::before,.ft-div::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.35)}
+.ft-div b{width:3px;height:13px;background:var(--orange);border-radius:2px}
+.ft-brand p{font-size:14.5px;font-weight:700;line-height:1.3}
+
+.ft-col h4{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding-bottom:9px;position:relative;margin-bottom:16px}
+.ft-col h4::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:2px;background:var(--orange);border-radius:2px}
+.ft-col ul{list-style:none;display:grid;gap:11px}
+.ft-col li a{position:relative;display:block;padding-left:16px;font-size:12.5px;line-height:1.35;color:#fff;transition:opacity .2s,transform .2s}
+.ft-col li a::before{content:"";position:absolute;left:0;top:.5em;width:5px;height:5px;background:var(--orange);border-radius:1px}
+.ft-col li a:hover{opacity:.8;transform:translateX(3px)}
+
+.ft-contact ul{gap:12px}
+.ft-contact li{display:flex;gap:12px;align-items:flex-start;font-size:12.5px;line-height:1.4}
+.ft-contact svg{flex:none;width:15px;height:15px;margin-top:1px;stroke:rgba(255,255,255,.65);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ft-contact li a{padding:0}
+.ft-social{display:flex;gap:8px;margin-top:18px}.ft-social a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.35);display:grid;place-items:center;font-size:14px;transition:background .2s,color .2s}.ft-social a:hover{background:#fff;color:var(--blue)}.ft-contact li a::before{display:none}
+.ft-contact a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* Alt çubuk */
+.ft-bottom{background:var(--blue);border-top:1px solid rgba(255,255,255,.18);padding:22px 0 26px}
+.ft-bottom .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:11px;font-weight:600}
+.ft-bottom nav{display:flex;gap:26px}
+.ft-bottom a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* Yukarı çık */
+
+/* Duyarlı */
+@media (max-width:1100px){
+  .ft-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ft-brand{grid-column:1/-1;text-align:left;max-width:260px}
+  .ft-brand img{margin:0}
+}
+@media (max-width:700px){
+  :root{--wrap:calc(100% - 40px)}
+
+  /* Kampüs görseli: yazı ve buton ortada */
+  .ft-hero{height:300px;border-radius:28px 28px 0 0}
+  .ft-hero .wrap{flex-direction:column;align-items:center;justify-content:flex-end;text-align:center}
+  .ft-hero h3{font-size:21px;margin-inline:auto}
+
+  /* Logo ortada; başlıklar ve alt menü linkleri sola yaslı, aynı hizada, 2 sütun yan yana */
+  .ft-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 20px}
+  .ft-brand{max-width:none;text-align:center}
+  .ft-brand img{margin:0 auto}
+
+  /* İletişim: tam genişlik, ortada, en altta */
+  .ft-contact{grid-column:1/-1;text-align:center}
+  .ft-contact h4::after{left:50%;transform:translateX(-50%)}
+  .ft-contact li{justify-content:center;text-align:center}
+  .ft-contact li a::before{display:none}
+  .ft-social{justify-content:center}
+
+  /* Alt çubuk ortada (Back-to-Top butonunun üstüne binmesin diye alt boşluk) */
+  .ft-bottom{padding-bottom:84px}
+  .ft-bottom .wrap{flex-direction:column;justify-content:center;text-align:center}
+  .ft-bottom nav{gap:18px;justify-content:center;flex-wrap:wrap}
+}
+@media (max-width:460px){
+  /* 2 sütun korunuyor, sadece boşluk ve yazı boyutu küçülüyor */
+  .ft-grid{gap:28px 14px}
+  .ft-col li a{font-size:12px;overflow-wrap:anywhere}
+  .ft-col h4{font-size:11.5px;letter-spacing:.1em}
+}
+
+    /* 1. koddan gelen Back-to-Top CSS'i */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #074583, #0a5cb4);
+        /* Primary Blue Gradient */
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(7, 69, 131, 0.4);
+        z-index: 2147483647 !important;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+        transform: translateY(-5px) scale(1.1);
+        background: #d4af37;
+        /* Secondary Gold */
+        color: #074583;
+        /* Blue Icon */
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        border-color: transparent;
+    }
+
+    /* Style when over the footer */
+    .back-to-top.footer-overlap {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-to-top.footer-overlap:hover {
+        background: #ffffff;
+        color: #074583;
+        border-color: #ffffff;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Style when over the footer */
+    .back-to-top.footer-overlap {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-to-top.footer-overlap:hover {
+        background: #ffffff;
+        color: #074583;
+        border-color: #ffffff;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+</style>
+
+<footer class="site-footer" id="footer">
+  <div class="ft-hero">
+    <img src="/images/footer-kampus.jpg" alt="Biruni Üniversitesi kampüsü">
+    <div class="wrap">
+      <div>
+        <span class="ft-eyebrow">Kampüs</span>
+        <h3>Bilimin geleceği burada şekilleniyor.</h3>
+      </div>
+      <a class="ft-cta" href="https://www.biruni.edu.tr/">Kampüsü Keşfet <i>→</i></a>
+    </div>
+  </div>
+
+  <div class="ft-main">
+    <div class="wrap ft-grid">
+      <div class="ft-brand">
+        <img src="/images/logo.svg" alt="Biruni Üniversitesi — Bilimin Geleceği">
+        <div class="ft-div"><b></b></div>
+      </div>
+
+      <div class="ft-col">
+        <h4>Öğrenci</h4>
+        <ul>
+          <li><a href="https://sis.biruni.edu.tr/">Öğrenci Bilgi Sistemi (OBS)</a></li>
+          <li><a href="https://bem.biruni.edu.tr/">Derse Hazırlık Sistemi (BEM)</a></li>
+          <li><a href="https://sks.biruni.edu.tr/">Sağlık, Kültür, Spor (SKS)</a></li>
+          <li><a href="https://www.biruni.edu.tr/idari-birimler/ogrenci-isleri-direktorlugu">Öğrenci İşleri Direktörlüğü</a></li>
+          <li><a href="https://kariyer.biruni.edu.tr/">Kariyer Merkezi</a></li>
+          <li><a href="https://aday.biruni.edu.tr/">Aday Öğrenci</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h4>Hızlı Erişim</h4>
+        <ul>
+          <li><a href="https://kutuphane.biruni.edu.tr/">Kütüphane</a></li>
+          <li><a href="https://www.biruni.edu.tr/ogrenci/akademik-takvim">Akademik Takvim</a></li>
+          <li><a href="https://mail.google.com/">BirMail</a></li>
+          <li><a href="https://www.biruni.edu.tr/YEMEK/YEMEK.PDF">Yemek Listesi</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h4>Kurumlar</h4>
+        <ul>
+          <li><a href="https://www.birunihastanesi.com.tr/">Tıp Fakültesi Hastanesi</a></li>
+          <li><a href="https://www.birunidis.com/">Diş Fakültesi Hastanesi</a></li>
+          <li><a href="https://www.biruniyurtlari.com/">Biruni Yurtları</a></li>
+          <li><a href="https://www.biruniteknopark.com/">Biruni Teknopark</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h4>Medya</h4>
+        <ul>
+          <li><a href="https://www.biruni.edu.tr/haberler/duyurular">Duyurular</a></li>
+          <li><a href="https://www.biruni.edu.tr/haberler/haberler">Haberler</a></li>
+          <li><a href="https://www.biruni.edu.tr/gazete/">Gazete</a></li>
+          <li><a href="https://www.biruni.edu.tr/ebulten/">E-Bülten</a></li>
+          <li><a href="https://www.biruni.edu.tr/bas%C4%B1nkiti/">Basın Kiti</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col ft-contact">
+        <h4>İletişim</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Merkezefendi, 75 Sk No:1-13 M.G, 34015 Zeytinburnu / İstanbul</span></li>
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><a href="mailto:info@biruni.edu.tr">info@biruni.edu.tr</a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 5.5c0 8 5.5 13.5 13.5 13.5l1-3.5-4-1.5-1.5 1.5c-2-1-3.5-2.5-4.5-4.5L11 9.5 9.5 5.5z"/></svg><a href="tel:4448276">444 8 276</a></li>
+        </ul>
+        <div class="ft-social"><a href="https://www.facebook.com/biruniedu" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/biruniuniversitesi/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://x.com/Biruniedu" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a><a href="https://tr.linkedin.com/school/biruni-%C3%BCniversitesi/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://www.youtube.com/c/Biruni%C3%9Cniversitesi" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ft-bottom">
+    <div class="wrap">
+      <span>&copy; 2026 Biruni Üniversitesi. Tüm hakları saklıdır.</span>
+      <nav>
+        <a href="https://www.biruni.edu.tr/kvkk/Biruni%20%C3%9Cniversitesi%20%C4%B0nternet%20Sitesi%20Gizlilik%20Politikas%C4%B1.pdf">Gizlilik Politikası</a>
+        <a href="https://www.biruni.edu.tr/kvkk/1.pdf">KVKK Aydınlatma Metni</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Back-to-Top butonu -->
+<div class="back-to-top">
+    <i class="fas fa-chevron-up"></i>
+</div>
+
+<script>
+    // 1. koddan gelen Back-to-Top JavaScript'i
+    (function () {
+        const initBackToTop = () => {
+            const backToTopButton = document.querySelector('.back-to-top');
+
+            if (backToTopButton) {
+                // Ensure it's in the body to avoid stacking context issues
+                if (backToTopButton.parentNode !== document.body) {
+                    document.body.appendChild(backToTopButton);
+                }
+
+                // Force layout recalc
+                backToTopButton.style.display = 'flex';
+
+                const toggleBackToTop = () => {
+                    // Check multiple scroll sources for robustness
+                    const scrollTop = window.pageYOffset ||
+                                      document.documentElement.scrollTop ||
+                                      document.body.scrollTop || 0;
+
+                    // Show/Hide logic - Lower threshold
+                    if (scrollTop > 100) {
+                        backToTopButton.classList.add('show');
+                        backToTopButton.style.opacity = '1';
+                        backToTopButton.style.visibility = 'visible';
+                        backToTopButton.style.transform = 'translateY(0)';
+                    } else {
+                        backToTopButton.classList.remove('show');
+                        backToTopButton.style.opacity = '0';
+                        backToTopButton.style.visibility = 'hidden';
+                        backToTopButton.style.transform = 'translateY(20px)';
+                    }
+                };
+
+                // aggressive binding
+                window.addEventListener('scroll', toggleBackToTop, true);
+                window.addEventListener('scroll', toggleBackToTop);
+                document.addEventListener('scroll', toggleBackToTop, true);
+
+                backToTopButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+                    document.body.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+
+                // Initial check
+                toggleBackToTop();
+            }
+        };
+
+        // Run immediately AND on load
+        initBackToTop();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initBackToTop);
+        }
+    })();
+</script>
+
+    </div>
+    <script type="text/javascript" src="/Content/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/Content/js/slick.min.js"></script>
+    <script type="text/javascript" src="/Content/js/swiper.js"></script>
+    <script type="text/javascript" src="/Content/js/codebird.js"></script>
+    <script type="text/javascript" src="/Content/js/script.js?v=20261014b"></script>
+    <script type="text/javascript" src="/Content/js/doT.min.js"></script>
+    <script type="text/javascript" src="/Content/js/moment.min.js"></script>
+    <script type="text/javascript" src="/Content/js/jquery.socialfeed.js"></script>
+    <script type="text/javascript" src="/Content/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/Content/js/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".pAnnSlide").slick({
+                dots: false,
+                arrows: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                verticalSwiping: true,
+                autoplaySpeed: 4000,
+                autoplay: true,
+                accessibility: false,
+                useTransform: false
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".detailSl").slick({
+                dots: false,
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                verticalSwiping: true,
+                autoplaySpeed: 4000,
+                autoplay: true,
+                accessibility: false,
+                useTransform: false
+            });
+        });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102501383-1"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-102501383-1'); </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-102501383-1');
+    </script>
+    
+
+</body>
+
+</html>
