@@ -53,6 +53,12 @@ Verify the running service with
 crawlability audit measures technical eligibility. Use URL Inspection and
 the Page indexing report in Search Console to measure actual inclusion.
 
+`next.config.ts` permanently redirects (308) the `www`/apex twin of the
+`NEXT_PUBLIC_SITE_URL` host to the canonical origin, path and query preserved,
+so Search Console does not report the twin as "Alternate page with proper
+canonical tag". Both hosts must point at the service for this to take effect;
+HTTP → HTTPS is handled by the reverse proxy.
+
 The local fallback origin is `http://localhost:3000`. It is useful for local
 rendering only and must not be used as a production deployment value.
 
