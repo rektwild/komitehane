@@ -7,6 +7,7 @@ import {getLocale, getTranslations} from "next-intl/server";
 import {GoogleAnalytics} from "@/components/google-analytics";
 import {JsonLd} from "@/components/json-ld";
 import Footer from "@/components/footer-2";
+import {NavigationProgress} from "@/components/layout/navigation-progress";
 import {SiteHeader} from "@/components/layout/site-header";
 import {SiteContainer} from "@/components/layout/site-container";
 import {ThemeInitializerScript} from "@/components/layout/theme-initializer";
@@ -103,6 +104,7 @@ export default async function LocaleLayout({children}: LayoutProps<"/[locale]">)
         <ThemeInitializerScript locale={locale} />
       </head>
       <body className="min-h-full flex flex-col">
+        <NavigationProgress />
         {adsenseConfig.enabled && adsenseScriptSrc ? (
           // afterInteractive (Next's default for third-party scripts) runs the
           // ad script after hydration instead of ahead of first-party code;
