@@ -570,9 +570,6 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
   height: 3px;
   pointer-events: none;
   background-color: var(--action);
-  box-shadow:
-    0 0 10px var(--action),
-    0 0 4px var(--action);
   transform: scaleX(0);
   transform-origin: left center;
   opacity: 0;
