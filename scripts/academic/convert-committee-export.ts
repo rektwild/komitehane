@@ -109,6 +109,19 @@ export const verificationRecord = z.object({
     finding: z.string().min(1).max(1000),
     sources: z.array(z.object({url: z.url(), type: z.string().min(1).max(100), title: z.string().max(500), note: z.string().max(1500)}).strict()).optional(),
   }).strict()),
+  // Rules researched directly from official documents (no export row needed):
+  // the record carries the 2026-27 committee list, the formula and the sources.
+  researched: z.array(z.object({
+    programKey: z.string().startsWith("prog:"),
+    classYear: z.number().int().min(1).max(12),
+    passingGrade: z.number().min(0).max(100),
+    committeeShare: z.number().positive().max(100),
+    finalShare: z.number().positive().max(100),
+    weighting: z.enum(["equal", "akts", "explicit"]),
+    committees: z.array(z.object({name: z.string().min(1).max(200), akts: z.number().positive().optional(), weightPercent: z.number().positive().max(100).optional()}).strict()).min(1).max(10),
+    finding: z.string().min(1).max(1000),
+    sources: z.array(z.object({url: z.url(), type: z.string().min(1).max(100), title: z.string().max(500), note: z.string().max(1500)}).strict()).min(1),
+  }).strict()).default([]),
   // Programs the export has no rule for (e.g. separately coded English variants)
   // whose documents show they follow the same rule as a verified scheme.
   derived: z.array(z.object({
@@ -241,6 +254,42 @@ export async function convertCommitteeExport(dir: string, verification: Verifica
     out.schemes.push(scheme);
     out.versions.push(rule);
     built.set(s.source_key, {rule, scheme});
+  }
+
+  for (const r of verification.researched) {
+    const programId = catalogFor(r.programKey);
+    if (Math.abs(r.committeeShare + r.finalShare - 100) > 1e-9) throw new Error(`SHARES_DO_NOT_TOTAL_100 ${r.programKey}`);
+    const n = r.committees.length, total = r.committees.reduce((a, c) => a + (c.akts ?? 0), 0);
+    const shares = r.committees.map(c => {
+      if (r.weighting === "equal") return {weightPercent: String(Number(((r.committeeShare) / n).toFixed(4))), expression: `${r.committeeShare}/${n}`};
+      if (r.weighting === "akts") {
+        if (!c.akts) throw new Error(`MISSING_AKTS ${r.programKey}`);
+        return {weightPercent: String(Number((r.committeeShare * c.akts / total).toFixed(4))), expression: `${r.committeeShare}*${c.akts}/${total}`};
+      }
+      if (!c.weightPercent) throw new Error(`MISSING_WEIGHT ${r.programKey}`);
+      return {weightPercent: String(c.weightPercent), expression: ""};
+    });
+    const weights = roundWeights([...shares, {weightPercent: String(r.finalShare), expression: ""}]);
+    const key = `gs:${r.programKey.slice(5)}:${academicYearStart}:y${r.classYear}:annual:committee`;
+    const verifiedAt = `${verification.checkedAt}T00:00:00.000Z`, prefix = `Doğrulama ${verification.checkedAt}: ${r.finding}`;
+    const sources = r.sources.filter(x => verification.documents[x.url]).map(x => ({
+      url: x.url, type: x.type, verifiedAt, title: x.title, note: `${prefix} | SHA-256: ${verification.documents[x.url]} | ${x.note}`.slice(0, 2000),
+    }));
+    if (!sources.length) throw new Error(`NO_HASHED_SOURCE ${r.programKey}`);
+    const rule: DraftRule = {
+      id: stableUuid(`komitehane:${key}:v1`), schemeId: stableUuid(`komitehane:${key}`), versionNumber: 1, passingGrade: r.passingGrade.toFixed(2),
+      components: [
+        ...r.committees.map((_, i) => ({type: "COMMITTEE" as const, position: i + 1, weightPercent: weights[i]})),
+        {type: "FINAL" as const, position: 1, weightPercent: weights[n]},
+      ],
+      sources,
+    };
+    const errors = validateForPublication("COMMITTEE", rule.passingGrade, rule.components.map(c => ({component_type: c.type, position: c.position, weight_percent: c.weightPercent})), rule.sources.map(x => ({source_url: x.url, verified_at: new Date(x.verifiedAt)})));
+    if (errors.length) throw new Error(`RESEARCHED_RULE_INVALID ${key} ${errors.join(",")}`);
+    const scheme = {id: rule.schemeId, programId, courseId: null, academicYearStart, classYear: r.classYear, period: "ANNUAL" as const, system: "COMMITTEE" as const};
+    out.schemes.push(scheme);
+    out.versions.push(rule);
+    built.set(key, {rule, scheme});
   }
 
   for (const d of verification.derived) {
