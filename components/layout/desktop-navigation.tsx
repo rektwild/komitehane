@@ -52,7 +52,9 @@ export function DesktopNavigation() {
                   aria-current={isActive ? "page" : undefined}
                   render={<Link href={item.href} />}
                   className={cn(
-                    "whitespace-nowrap p-0 text-base font-semibold text-foreground/75 hover:bg-transparent hover:text-foreground focus:bg-transparent data-active:bg-transparent data-active:hover:bg-transparent data-active:focus:bg-transparent",
+                    // Negative margins offset the padding so the hover pill
+                    // does not change the header's spacing or height.
+                    "-mx-2.5 -my-1.5 whitespace-nowrap px-2.5 py-1.5 text-base font-semibold text-foreground/75 transition-colors duration-200 hover:bg-muted hover:text-foreground focus:bg-transparent focus-visible:bg-muted data-active:bg-transparent data-active:hover:bg-muted data-active:focus:bg-transparent motion-reduce:transition-none",
                     isActive && "font-semibold text-foreground",
                   )}
                 >
