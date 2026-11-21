@@ -40,6 +40,8 @@
     "https://tip.comu.edu.tr/donem-2-2026-2027-egitim-yili-r285.html": "e3c051661b2a6705393674a65289c9b10f6cdff5b1b0150d49f2807d6f52812c",
     "https://tip.comu.edu.tr/donem-3-2026-2027-egitim-yili-r284.html": "2f87873f13edd5cfcaf63c78f26633b25b4cbee11d959bbd11f3a3a4517e4c80",
     "https://tip.cumhuriyet.edu.tr/userfiles/32/files/T%C4%B1p%20Fak%20S%C4%B1nav%20Y%C3%B6netmeli%C4%9Fi.pdf": "7adb5ed5c5917cf0d4a09c2ad92af95d8d5958389ccb5a661efdf17f12b307a2",
+    "https://tip.ebyu.edu.tr/wp-content/uploads/2026/11/2026-2027-DONEM-III-EGITIM-OGRETIM-YILI-EGITIM-PROGRAMI-2.pdf": "27b6628c2f998199931028d80c782f8e4979858046479fe91203153ddef91c84",
+    "https://tip.ebyu.edu.tr/wp-content/uploads/2026/11/2026-2027-EGITIM-OGRETIM-YILI-DONEM-I-EGITIM-PROGRAMI.pdf": "c890fca0f87d22941aaefd5e47d8d06a9b794415f046b6d5d7933b349f23fda7",
     "https://tip.erciyes.edu.tr/Dosya/MainContent/2026-2027-erciyes-universitesi-tip-fakultesi-egitim-ogretim-ve-sinav-yonergesi.pdf": "c53fb83384104039753bd728d9660a2188a71ab8e99986e31a51be3a36fed443",
     "https://tip.erciyes.edu.tr/Dosya/MainContent/d1-egitim-rehberi-2026-2027.pdf": "20aee49aabbe3a635791a23bc9a7033da4280f11e69389dbdfa0a7606dc33ca1",
     "https://tip.erciyes.edu.tr/Dosya/MainContent/d2-egitim-rehberi-2026-2027.pdf": "b6ba44c44fe087b51e3994a352b7a882a75d20de9549d7e43f793697569a96a2",
@@ -69,6 +71,7 @@
     "https://www.cumhuriyet.edu.tr/webdosya/2026-2027-egitim-ogretim-yili-donem-3-ders-programi-39513.pdf": "69e58528d78e98988dc91dcaf119090f4b04a219d181b2242d7b75a349a79b89",
     "https://www.istun.edu.tr/uploads/data/2026-09-15/Ek-1%20T%C4%B1p%20Fak%C3%BCltesi%20Akademik%20Takvimi.pdf": "2f498ee9dfb25fed9ce3670ebf5d62b8678acab9f9c905a0f5f5a81dea13c342",
     "https://www.mevzuat.gov.tr/MevzuatMetin/yonetmelik/8.5.19361.pdf": "43b24d8bf57c21a69ca821aad6947025fae49448eed03c6699862fe93e4a6398",
+    "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=33898&MevzuatTur=8&MevzuatTertip=5": "8724c797b69175e57acaaf60cc25807386ecb612992ed17c981924f6e3c10565",
     "https://www.resmigazete.gov.tr/eskiler/2023/03/20230305-1.htm": "b430d5b1c7b5f6faf0d749135c766e7c290a5849548b484346e1c907b9e9abe4",
     "https://www.resmigazete.gov.tr/eskiler/2023/10/20231016-1.htm": "cfef33c2afcc09e00a6ec62728cea1073e93f8d64f54b4847959f3aedda0d2fc",
     "https://www.resmigazete.gov.tr/eskiler/2026/02/20260213-8.htm": "f666f5d87aa9979223c617bc5c0346dfce094dd5ce0d292179e26d9407338332"
@@ -2136,6 +2139,95 @@
           "type": "ACADEMIC_SCHEDULE_2026_2027",
           "title": "TOGÜ Tıp Fakültesi 2026-2027 Eğitim-Öğretim Rehberi",
           "note": "Kurul listesi 2026-2027: Belge başlığı 2026-2027 Eğitim-Öğretim Rehberi ve kurul başlangıç tarihleri 31.08.2026 - 19.04.2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "programKey": "prog:erzincan-binali-yildirim-universitesi:tip-fakultesi:tip",
+      "classYear": 1,
+      "passingGrade": 60,
+      "committeeShare": 60,
+      "finalShare": 40,
+      "weighting": "equal",
+      "committees": [
+        {
+          "name": "HEKİMLİĞE GİRİŞ DERS KURULU"
+        },
+        {
+          "name": "MOLEKÜLDEN HÜCREYE DERS KURULU"
+        },
+        {
+          "name": "HÜCRE BİLİMLERİ DERS KURULU"
+        },
+        {
+          "name": "DOKU BİLİMLERİ I DERS KURULU"
+        },
+        {
+          "name": "DOKU BİLİMLERİ II DERS KURULU"
+        },
+        {
+          "name": "DOKU BİLİMLERİ III DERS KURULU"
+        }
+      ],
+      "finding": "Yönetmelik (RG 18.10.2019/30922; değişik 23.10.2022/31992) Madde 32(4): ders kurulu sonu sınavı notlarının ortalamasının %60'ı + yılsonu genel/bütünleme %40; geçme 60. Madde 32(2) her sınavda en az 60 şartı modellenmedi. Kurul adları 2026-2027 eğitim programında tek tek bulundu (Browser Use listesi; konsolide yönetmelik metni Browser Use'un indirdiği mevzuat.gov.tr kopyasından okundu).",
+      "sources": [
+        {
+          "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=33898&MevzuatTur=8&MevzuatTertip=5",
+          "type": "OFFICIAL_GAZETTE_REGULATION",
+          "title": "Erzincan Binali Yıldırım Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (konsolide)",
+          "note": "Madde 32(4)"
+        },
+        {
+          "url": "https://tip.ebyu.edu.tr/wp-content/uploads/2026/11/2026-2027-EGITIM-OGRETIM-YILI-DONEM-I-EGITIM-PROGRAMI.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "title": "2026-2027 Dönem I Eğitim Programı",
+          "note": "Kurul listesi 2026-2027"
+        }
+      ]
+    },
+    {
+      "programKey": "prog:erzincan-binali-yildirim-universitesi:tip-fakultesi:tip",
+      "classYear": 3,
+      "passingGrade": 60,
+      "committeeShare": 60,
+      "finalShare": 40,
+      "weighting": "equal",
+      "committees": [
+        {
+          "name": "TOPLUM SAĞLIĞI ve SİSTEMİK ENFEKSİYON ETKENLERİ"
+        },
+        {
+          "name": "SOLUNUM ve DOLAŞIM SİSTEMLERİ DERS KURULU"
+        },
+        {
+          "name": "GASTROİNTESTİNAL SİSTEM DERS KURULU"
+        },
+        {
+          "name": "ENDOKRİN SİSTEM ve HEMATOLOJİ DERS KURULU"
+        },
+        {
+          "name": "ÜROGENİTAL SİSTEM DERS KURULU"
+        },
+        {
+          "name": "SİNİR SİSTEMİ ve PSİKİYATRİ DERS KURULU"
+        },
+        {
+          "name": "DERİ – KAS – İSKELET SİSTEMLERİ DERS KURULU"
+        }
+      ],
+      "finding": "Yönetmelik (RG 18.10.2019/30922; değişik 23.10.2022/31992) Madde 32(4): ders kurulu sonu sınavı notlarının ortalamasının %60'ı + yılsonu genel/bütünleme %40; geçme 60. Madde 32(2) her sınavda en az 60 şartı modellenmedi. Kurul adları 2026-2027 eğitim programında tek tek bulundu (Browser Use listesi; konsolide yönetmelik metni Browser Use'un indirdiği mevzuat.gov.tr kopyasından okundu).",
+      "sources": [
+        {
+          "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=33898&MevzuatTur=8&MevzuatTertip=5",
+          "type": "OFFICIAL_GAZETTE_REGULATION",
+          "title": "Erzincan Binali Yıldırım Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (konsolide)",
+          "note": "Madde 32(4)"
+        },
+        {
+          "url": "https://tip.ebyu.edu.tr/wp-content/uploads/2026/11/2026-2027-DONEM-III-EGITIM-OGRETIM-YILI-EGITIM-PROGRAMI-2.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "title": "2026-2027 Dönem III Eğitim Programı",
+          "note": "Kurul listesi 2026-2027"
         }
       ]
     }

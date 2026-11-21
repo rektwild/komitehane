@@ -3132,6 +3132,24 @@
       "system": "COMMITTEE"
     },
     {
+      "id": "9d1dfd3f-8361-5ce7-a6e4-99a4b5b1b2f0",
+      "programId": "67a36b96-5028-5ccc-bde3-85565f5541ac",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 1,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "2e0f40a7-60be-5ef3-bc28-24bae8f05c3e",
+      "programId": "67a36b96-5028-5ccc-bde3-85565f5541ac",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 3,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
       "id": "48d70f2b-ce57-5971-90fa-972d9f561283",
       "programId": "9048f6f7-e1f8-540c-9b32-0e06dd4ac52d",
       "courseId": null,
@@ -7525,6 +7543,129 @@
           "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "TOGÜ Tıp Fakültesi 2026-2027 Eğitim-Öğretim Rehberi",
           "note": "Doğrulama 2026-11-21: Yönetmelik [25-09-2026] Madde 24(2): kurul notları toplamı/sınav sayısı %60 + dönem sonu genel sınav %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: a5ac070f475d9771202da77406286637e0e000c6488dc4ea8bc9ec00602323e9 | Kurul listesi 2026-2027: Belge başlığı 2026-2027 Eğitim-Öğretim Rehberi ve kurul başlangıç tarihleri 31.08.2026 - 19.04.2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "ee4e34b4-e324-5617-b8ae-08d50c2333f3",
+      "schemeId": "9d1dfd3f-8361-5ce7-a6e4-99a4b5b1b2f0",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=33898&MevzuatTur=8&MevzuatTertip=5",
+          "type": "OFFICIAL_GAZETTE_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Erzincan Binali Yıldırım Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (konsolide)",
+          "note": "Doğrulama 2026-11-21: Yönetmelik (RG 18.10.2019/30922; değişik 23.10.2022/31992) Madde 32(4): ders kurulu sonu sınavı notlarının ortalamasının %60'ı + yılsonu genel/bütünleme %40; geçme 60. Madde 32(2) her sınavda en az 60 şartı modellenmedi. Kurul adları 2026-2027 eğitim programında tek tek bulundu (Browser Use listesi; konsolide yönetmelik metni Browser Use'un indirdiği mevzuat.gov.tr kopyasından okundu). | SHA-256: 8724c797b69175e57acaaf60cc25807386ecb612992ed17c981924f6e3c10565 | Madde 32(4)"
+        },
+        {
+          "url": "https://tip.ebyu.edu.tr/wp-content/uploads/2026/11/2026-2027-EGITIM-OGRETIM-YILI-DONEM-I-EGITIM-PROGRAMI.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "2026-2027 Dönem I Eğitim Programı",
+          "note": "Doğrulama 2026-11-21: Yönetmelik (RG 18.10.2019/30922; değişik 23.10.2022/31992) Madde 32(4): ders kurulu sonu sınavı notlarının ortalamasının %60'ı + yılsonu genel/bütünleme %40; geçme 60. Madde 32(2) her sınavda en az 60 şartı modellenmedi. Kurul adları 2026-2027 eğitim programında tek tek bulundu (Browser Use listesi; konsolide yönetmelik metni Browser Use'un indirdiği mevzuat.gov.tr kopyasından okundu). | SHA-256: c890fca0f87d22941aaefd5e47d8d06a9b794415f046b6d5d7933b349f23fda7 | Kurul listesi 2026-2027"
+        }
+      ]
+    },
+    {
+      "id": "84b10699-caef-5a2b-b7a6-65b7bbb21857",
+      "schemeId": "2e0f40a7-60be-5ef3-bc28-24bae8f05c3e",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "8.58"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 7,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=33898&MevzuatTur=8&MevzuatTertip=5",
+          "type": "OFFICIAL_GAZETTE_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Erzincan Binali Yıldırım Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (konsolide)",
+          "note": "Doğrulama 2026-11-21: Yönetmelik (RG 18.10.2019/30922; değişik 23.10.2022/31992) Madde 32(4): ders kurulu sonu sınavı notlarının ortalamasının %60'ı + yılsonu genel/bütünleme %40; geçme 60. Madde 32(2) her sınavda en az 60 şartı modellenmedi. Kurul adları 2026-2027 eğitim programında tek tek bulundu (Browser Use listesi; konsolide yönetmelik metni Browser Use'un indirdiği mevzuat.gov.tr kopyasından okundu). | SHA-256: 8724c797b69175e57acaaf60cc25807386ecb612992ed17c981924f6e3c10565 | Madde 32(4)"
+        },
+        {
+          "url": "https://tip.ebyu.edu.tr/wp-content/uploads/2026/11/2026-2027-DONEM-III-EGITIM-OGRETIM-YILI-EGITIM-PROGRAMI-2.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "2026-2027 Dönem III Eğitim Programı",
+          "note": "Doğrulama 2026-11-21: Yönetmelik (RG 18.10.2019/30922; değişik 23.10.2022/31992) Madde 32(4): ders kurulu sonu sınavı notlarının ortalamasının %60'ı + yılsonu genel/bütünleme %40; geçme 60. Madde 32(2) her sınavda en az 60 şartı modellenmedi. Kurul adları 2026-2027 eğitim programında tek tek bulundu (Browser Use listesi; konsolide yönetmelik metni Browser Use'un indirdiği mevzuat.gov.tr kopyasından okundu). | SHA-256: 27b6628c2f998199931028d80c782f8e4979858046479fe91203153ddef91c84 | Kurul listesi 2026-2027"
         }
       ]
     },
