@@ -10,7 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # Komitehane
 
-Next.js 16.3.0 (App Router, Turbopack) + React 19 + Tailwind CSS v4 + shadcn/ui + next-intl + Payload CMS 3.88.0. Public surface includes localized homepages, tools (plus academic landing pages when `ACADEMIC_FEATURE_ENABLED`), the About page (`/tr/hakkimizda`, `/en/about`), the Payload-backed news list/detail routes (`/tr/haberler`, `/en/news`) and author profiles (`/tr/yazarlar/[slug]`, `/en/authors/[slug]`). Payload admin is `/admin`; REST is `/api`; GraphQL is not exposed. Audience is Turkish med students (TUS exam).
+Next.js 16.4.6 (App Router, Turbopack) + React 19 + Tailwind CSS v4 + shadcn/ui + next-intl + Payload CMS 3.94.1. Public surface includes localized homepages, tools (plus academic landing pages when `ACADEMIC_FEATURE_ENABLED`), the About page (`/tr/hakkimizda`, `/en/about`), the Payload-backed news list/detail routes (`/tr/haberler`, `/en/news`) and author profiles (`/tr/yazarlar/[slug]`, `/en/authors/[slug]`). Payload admin is `/admin`; REST is `/api`; GraphQL is not exposed. Audience is Turkish med students (TUS exam).
 
 ## Commands
 
