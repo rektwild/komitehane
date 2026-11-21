@@ -1,0 +1,1228 @@
+
+    <style>
+        * {
+            font-size: 12pt !important;
+            line-height: 127% !important;
+        }
+
+        @media print {
+            a {
+                visibility: hidden;
+            }
+
+            #section-to-print, #section-to-print * {
+                visibility: visible;
+            }
+
+            #section-to-print {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+        /*aşağıda js kodu var table width değiştirmek için*/
+        table {
+            width: 100% !important;
+            page-break-inside: initial !important;
+            white-space: initial !important;
+            padding: 0 !important;
+            text-indent: 0 !important;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            tr, p, table {
+                width: initial !important;
+                page-break-inside: initial !important;
+                white-space: initial !important;
+                padding: 0 !important;
+                text-indent: 0 !important;
+            }
+
+            table {
+                width: 100% !important;
+            }
+
+
+            td {
+                /*white-space: nowrap !important;*/
+            }
+
+            img {
+                max-width: 100%;
+            }
+        }
+    </style>
+
+    <link href="/lib/tooltip/tooltip.css" rel="stylesheet" />
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=Windows-1254">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:105%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	line-height:105%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.msolistparagraphcxspfirst, li.msolistparagraphcxspfirst, div.msolistparagraphcxspfirst
+	{mso-style-name:msolistparagraphcxspfirst;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:105%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.msolistparagraphcxspmiddle, li.msolistparagraphcxspmiddle, div.msolistparagraphcxspmiddle
+	{mso-style-name:msolistparagraphcxspmiddle;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:105%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.msolistparagraphcxsplast, li.msolistparagraphcxsplast, div.msolistparagraphcxsplast
+	{mso-style-name:msolistparagraphcxsplast;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:36.0pt;
+	line-height:105%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.OrtaBalkBold, li.OrtaBalkBold, div.OrtaBalkBold
+	{mso-style-name:"Orta Başlık Bold";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:9.5pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.Metin, li.Metin, div.Metin
+	{mso-style-name:Metin;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:28.3pt;
+	font-size:9.5pt;
+	font-family:"Times New Roman",serif;}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.msopapdefault, li.msopapdefault, div.msopapdefault
+	{mso-style-name:msopapdefault;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:105%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.metin0, li.metin0, div.metin0
+	{mso-style-name:metin;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.grame
+	{mso-style-name:grame;}
+.MsoChpDefault
+	{font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+<script type="text/javascript">window.av = { database:'2' , rnApp:'False' }</script><script src="https://www.mevzuat.gov.tr/lib/jquery/dist/jquery.js"></script><script src="https://www.mevzuat.gov.tr/js/iframescript.min.js?v=1.05"></script><style><!--* {font-family:inherit!important;}--></style></head>
+
+<body lang=TR>
+
+<div class=WordSection1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse'>
+ <tr>
+  <td width=607 valign=top style='width:455.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <div align=center>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=0 style='width:439.45pt;border-collapse:collapse'>
+   <tr style='height:24.0pt'>
+    <td width=586 style='width:439.45pt;padding:0cm 5.4pt 0cm 5.4pt;height:
+    24.0pt'>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>KARADENİZ TEKNİK
+    ÜNİVERSİTESİ TIP FAKÜLTESİ EĞİTİM-ÖĞRETİM YÖNETMELİĞİ<sup>(1)</sup>&nbsp;</b></p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'>&nbsp;</p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>BİRİNCİ BÖLÜM</b></p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>Başlangıç Hükümleri</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Amaç</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 1- </b>(1)
+    Bu Yönetmeliğin amacı; Karadeniz Teknik Üniversitesi Tıp Fakültesinde mezuniyet
+    öncesi tıp eğitim-öğretimine ilişkin usul ve esasları belirlemektir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Kapsam</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 2- </b>(1)
+    Bu Yönetmelik; Karadeniz Teknik Üniversitesi Tıp Fakültesinde öğrenci kabul
+    ve kayıtlarına, uyum programı ve akademik danışmanlığa, eğitim ve öğretim
+    programlarının düzenlenmesi, ölçme ve değerlendirme, diploma ve ayrılma
+    işlemlerine ilişkin hükümleri kapsar.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Dayanak</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 3- </b>(1)
+    Bu Yönetmelik; 4/11/1981 tarihli ve 2547 sayılı Yükseköğretim Kanununun 14
+    üncü ve 44 üncü maddelerine dayanarak hazırlanmıştır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Tanımlar</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 4- </b>(1)
+    Bu Yönetmelikte geçen;</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>a) Akademik
+    danışman: Danışmanı olduğu öğrencilere, eğitim süresi boyunca akademik,
+    sosyal ve kariyer planlama alanlarında danışmanlık yapmak üzere Dekan
+    tarafından görevlendirilen öğretim üyesini,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>b) Anabilim dalı:
+    Karadeniz Teknik Üniversitesi Tıp Fakültesinin ilgili anabilim dalını,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>c) Ara
+    değerlendirmeler: Ders kurulu, staj/staj bloğu ve dikey koridor programları
+    süresince, öğrenmenin geliştirilmesi amacıyla, staj/staj bloğu sonu sınav
+    notlarına katkı oranı %30’u geçmeyecek şekilde uygulanan kuramsal ve
+    uygulamalı sınavları,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>ç) Bütünleme
+    dönemi: Dönem I-V için eğitim-öğretim yılı sonunda ve başlangıç ile bitiş
+    tarihleri, akademik takvim kapsamında belirlenen bütünleme sınavlarının
+    yapılacağı dönemi,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>d) Dekan: Karadeniz
+    Teknik Üniversitesi Tıp Fakültesi Dekanını,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>e) Ders Kurulu:
+    Dönem I, II ve III’te uygulanmakta olan, birbirleriyle bağlantılı konuların
+    uyumunu sağlayacak bir düzen içerisinde öğrencilere aktarıldığı kuramsal ve
+    uygulamalı eğitimler bütününü,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>f) Ders Kurulu
+    Başkanı: Dekan tarafından görevlendirilen ve başkanı olduğu kurulun
+    yapılandırılması ve işleyişinden sorumlu olan öğretim üyesini,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>g) Dikey Koridor
+    Programları: Program sonunda hedeflenen çıktılara ulaşmayı sağlayacak,
+    öğrencilerin eğitim düzeyleri doğrultusunda dönemlere yayılmış, belirli bir
+    tema içerisinde yapılandırılmış ders ve uygulamaları içeren eğitim
+    programlarını,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>ğ) Dönem: Tıp
+    Fakültesindeki her bir sınıfı,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>h) Dönem
+    Koordinatörü: Dekan tarafından her bir dönem için görevlendirilen; ders,
+    ders kurulları, staj/staj bloklarının programlarını ve sınavlarını koordine
+    eden öğretim üyesini,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>ı) Dönem
+    Koordinatör Yardımcısı: Dekan tarafından her bir dönem için
+    görevlendirilen; ders, ders kurulları, staj/staj blokları programlarının ve
+    sınavlarının koordine edilmesinde dönem koordinatörüne yardımcı olan
+    öğretim üyesini,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>i) Eğitim-Öğretim
+    yılı: Başlangıç ve bitiş tarihleri Eğitim Komisyonu önerisi ve Fakülte
+    Kurulu onayı ile belirlenen, her dönem için en az otuz iki haftadan oluşan
+    süreyi,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>j) Fakülte:
+    Karadeniz Teknik Üniversitesi Tıp Fakültesini,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>k) Fakülte
+    Kurulu: Karadeniz Teknik Üniversitesi Tıp Fakültesi Fakülte Kurulunu,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>l) Fakülte
+    Yönetim Kurulu: Karadeniz Teknik Üniversitesi Tıp Fakültesi Fakülte Yönetim
+    Kurulunu,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>m) Gecikmeli öğrenci:
+    Dönem V ve Dönem VI’da, ilgili döneme akademik takvim başlangıç tarihinde
+    başlamaya hak kazanamayan/başlamayan öğrencileri,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>n) İntörnlük
+    (Aile Hekimliği) dönemi: Tıp fakültesi Dönem VI öğrencilerinin, hekimlik
+    uygulamalarına yönelik bilgi, beceri ve tutumlarını geliştirmek üzere
+    öğretim üyeleri, tıp hekimleri ve diğer sağlık meslek mensupları ile
+    birlikte klinik karar verme süreçlerine ve uygulamalarına, nöbet tutma
+    dâhil sağlık hizmet sunumuna aktif katılımının sağlandığı ve kesintisiz on
+    iki ay süreli, uygulamalı eğitim dönemini,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>o) Mezuniyet
+    Öncesi Eğitim Komisyonu: Fakültede görevli öğretim üyeleri arasından Dekan
+    tarafından görevlendirilen, mezuniyet öncesi tıp eğitiminin yönetilmesi ve
+    geliştirilmesinde rol alan kurulların çalışmasını organize eden, kurullar
+    tarafından alınan tüm kararları değerlendirip önerilerini Dekanlığa sunan
+    komisyonu,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>ö) Müfredat
+    Geliştirme Kurulu: Fakültenin misyon, vizyon, mezun yetkinlikleri ve
+    Program Değerlendirme Kurulu önerileri doğrultusunda mezuniyet öncesi tıp eğitimi
+    programını geliştiren kurulu,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>p) Öğrenci:
+    Karadeniz Teknik Üniversitesi Tıp Fakültesi öğrencisini,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>r) Öğrenci İşleri
+    Daire Başkanlığı: Karadeniz Teknik Üniversitesi Öğrenci İşleri Daire
+    Başkanlığını,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>s)
+    Ölçme-Değerlendirme Kurulu: Mezuniyet öncesi tıp eğitiminde kullanılan
+    ölçme değerlendirme yöntemlerini izleyen, değerlendiren ve öğrenme
+    içerikleri ve eğitim yöntemlerine göre geliştirerek ilgili ders kurulu,
+    staj ve staj bloklarına öneren kurulu,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>ş) Program
+    Değerlendirme Kurulu: Mezuniyet öncesi tıp eğitimi programının tümünü
+    değerlendirerek mevcut durumun iyileştirilmesi için strateji ve yöntemler
+    belirleyen, eğitim ile ilgili kurullara ve Dekanlığa öneriler sunan kurulu,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>t) Rektör:
+    Karadeniz Teknik Üniversitesi Rektörünü,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>u) Seçmeli
+    Program: Ders, uygulama, staj, tıp dışı uygulamalar, özel çalışma modülleri
+    gibi öğrencilerin kariyer planlamalarına katkı vermek ve ilgi alanlarına
+    uygun konularda daha derin çalışmalar yapmalarına imkân sağlamak amacıyla
+    oluşturulmuş, öğrencilerin seçerek katıldıkları eğitim programlarını,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>ü) Senato:
+    Karadeniz Teknik Üniversitesi Senatosunu,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>v) Staj: Dönem
+    IV, V ve VI’da ilgili anabilim dalları tarafından yürütülen ve ağırlıklı
+    olarak hekimlik mesleğinin uygulanmasına yönelik hazırlanan eğitim
+    programını,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>y) Staj Bloğu:
+    Dönem IV ve V’te, farklı anabilim dallarının yer aldığı, bütünsel bir
+    yaklaşımla yürütülen ve ağırlıklı olarak hekimlik mesleğinin uygulanmasına
+    yönelik hazırlanan eğitim programını,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>z) Staj Bloğu
+    Başkanı: Dekan tarafından görevlendirilen ve başkanı olduğu staj bloğunun
+    yapılandırılması ve işleyişinden sorumlu öğretim üyesini,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>aa) Üniversite:
+    Karadeniz Teknik Üniversitesini,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>bb) Üniversite
+    Yönetim Kurulu: Karadeniz Teknik Üniversitesi Yönetim Kurulunu,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>ifade eder.</p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>İKİNCİ BÖLÜM</b></p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>Öğrenci Kabulü, Kayıtlar,
+    Yatay Geçişler, Uyum Programı ve Akademik Danışmanlık</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Öğrenci kabulü</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 5- </b>(1)
+    Tıp Fakültesine, Ölçme, Seçme ve Yerleştirme Merkezi tarafından düzenlenen
+    seçme ve yerleştirme sınav sonuçlarına göre öğrenci kabul edilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Kayıt
+    işlemleri</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 6- </b>(1)
+    Üniversiteye kayıtla ilgili bütün işlemler, 7/10/2017 tarihli ve 30203
+    sayılı Resmî Gazete’de yayımlanan Karadeniz Teknik Üniversitesi Önlisans ve
+    Lisans Eğitim-Öğretim Yönetmeliğine göre Öğrenci İşleri Daire Başkanlığınca
+    yürütülür.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Yatay geçiş
+    yoluyla öğrenci kabulü</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 7- </b>(1)
+    Yatay geçişler, Karadeniz Teknik Üniversitesi Önlisans ve Lisans
+    Eğitim-Öğretim Yönetmeliği ve ilgili Senato kararları uyarınca Mezuniyet
+    Öncesi Eğitim Komisyonunun önerisi ve Fakülte Yönetim Kurulu kararı ile
+    yapılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Ders intibakı</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 8- </b>(1)
+    Tıp fakültesine kaydını yaptıran ve daha önce eğitim aldığı yükseköğretim
+    kurumunda son beş yıl içerisinde başarılı olduğu dersleri bulunan
+    öğrenciler, eğitime başladığı ilk beş iş günü içinde ders muafiyet
+    başvurusu yapabilirler. Muafiyet ile ilgili iş ve işlemler Senato
+    tarafından belirlenen esaslara göre Mezuniyet Öncesi Eğitim Komisyonunun
+    önerisi ve Fakülte Yönetim Kurulunun kararı doğrultusunda gerçekleştirilir.
+    Süresi içinde muafiyet talebinde bulunmayan öğrenci ilgili dönemin tüm derslerinden
+    sorumludur.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Uyum
+    programları</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 9- </b>(1)
+    Mezuniyet öncesi tıp eğitiminin herhangi bir döneminde öğrencilere eğitim
+    programlarının, eğitim altyapılarının, sosyal alanların tanıtıldığı ve
+    ihtiyaç halinde, uygulanacak eğitim yöntemleri ile ilgili uygulamalı
+    eğitimleri de kapsayan programlardır. Bu programlar kredisiz eğitim
+    çalışması olarak kabul edilerek değerlendirilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Akademik
+    danışmanlık</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 10- </b>(1)
+    Kesin kayıt yaptıran veya yatay geçişle gelen her öğrenciye, derslerin
+    başlamasını takip eden on beş gün içinde, Akademik Danışmanlık
+    Koordinatörlüğünün önerisi ile Dekanlık tarafından bir akademik danışman
+    görevlendirilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Kayıt yenileme
+    ve eğitim-öğretim çalışmalarına yazılma</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 11- </b>(1)
+    Öğrenciler her eğitim-öğretim yılı başında bir önceki dönem başarı durumuna
+    göre ve akademik takvimde belirtilen süreler içinde, eğer varsa belirlenen
+    katkı payı ve öğrenim ücretini ödeyerek, Üniversite Yönetim Kurulunun
+    tespit ettiği esaslar çerçevesinde kayıtlarını yenilemek ve eğitim-öğretim
+    çalışmalarına yazılmak zorundadırlar. Derslere ve diğer eğitim-öğretim
+    çalışmalarına yazılma ve kayıt yenileme işlerinin tümünden öğrenciler
+    sorumlu olup, bu işlemleri kendileri yapmakla yükümlüdürler. Ancak ilk
+    kayıt sırasında kaydını yaptıran öğrencilerin hazırlık sınıfı derslerine,
+    hazırlık sınıfından muaf olmaları durumunda ise birinci sınıf derslerine
+    kayıtları Öğrenci İşleri Dairesi Başkanlığı tarafından yapılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) Öğrencinin
+    yazıldığı eğitim-öğretim çalışmaları internet ortamında öğrencilere
+    duyurulur. Öğrencilerin ders kayıtlarına ilişkin itirazlarını akademik
+    takvimde belirlenen süreler içerisinde Öğrenci İşleri Daire Başkanlığına
+    yapmaları gerekir. Bu süreler içerisinde itiraz başvurusu yapmayan
+    öğrencilerin kayıtları kesinlik kazanır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) Gecikmeli
+    öğrenciler başarılı oldukları dönem derslerinin bitiminde, bir sonraki
+    döneme kayıtlarını yapmakla yükümlüdürler.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(4) Kaydını
+    yenilemeyen öğrenciler derslere ve sınavlara giremezler.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(5) Öğrencilerin
+    öğrenim durumlarının izlenebilmesi amacıyla her bir öğrenci için öğrenim
+    durumu bilgileri Öğrenci İşleri Daire Başkanlığı tarafından tutulur ve
+    muhafaza edilir.</p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>ÜÇÜNCÜ BÖLÜM</b></p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>Eğitim ve Öğretimle İlgili
+    Esaslar</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Eğitim-öğretim
+    süresi</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 12- </b>(1)
+    Tıp Fakültesinde eğitim-öğretim süresi yabancı dil hazırlık sınıfı hariç,
+    her biri bir eğitim-öğretim döneminden oluşan toplam altı yıldır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) 2547 sayılı
+    Kanunun 44 üncü maddesi esaslarına göre öğrenciler, bir yıl süreli yabancı
+    dil hazırlık sınıfı hariç, kayıt olduğu programa ilişkin derslerin
+    verildiği dönemden başlamak üzere azami dokuz yıl içinde öğrenimlerini
+    tamamlamak zorundadırlar. Hazırlık eğitim süresi azami iki yıldır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3)
+    Eğitim-öğretim süresi ile ilgili diğer hususlar 2547 sayılı Kanunun 44 üncü
+    maddesi hükümleri ve Senato kararları doğrultusunda uygulanır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Hazırlık
+    sınıfı</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 13- </b>(1)
+    Fakülteye yeni kayıt yaptıran öğrencilerin hazırlık sınıfı yabancı dil
+    muafiyetine yönelik sınav(lar) ve değerlendirmeler Üniversite Yabancı
+    Diller Yüksekokulu tarafından yapılır. Hazırlık sınıfından muaf olan
+    öğrenciler eğitimlerine Dönem I’den başlarlar. Muafiyet hakkı kazanamayan
+    öğrenciler ise hazırlık sınıfına devam ederler.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Eğitim-öğretim
+    dili</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 14-
+    (Değişik:RG-24/1/2024-32439)</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><span style='color:black'>(1) Fakültede Türkçe eğitim-öğretim yapılır.</span></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Eğitim şekli</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 15- </b>(1)
+    Fakültede eğitim Dönem I, II ve III’te temel olarak ders kurullarından,
+    Dönem IV ve V’te staj/staj bloklarından ve Dönem VI’da uygulamalı klinik
+    eğitimleri kapsayan stajlardan oluşur.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) Öğrenciler
+    her eğitim-öğretim yılında Dönem I, II ve III’te bir seçmeli ders; Dönem
+    IV, V ve VI’da her dönem için bir seçmeli staj almak zorundadır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) Fakültede bir
+    dönem, bir sonraki dönemin ön şartıdır. Öğrenci Dönem I, II ve III’te
+    başarısız olduğu dönemi; Dönem IV, V ve VI’da ise başarısız olduğu staj/staj
+    bloğunu tekrarlar. Eğitim gördüğü döneme ait staj/staj bloklarını başarı
+    ile tamamlayan öğrenci bir üst dönem staj/staj bloklarına devam edebilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(4) Öğrenciler
+    Dönem I, II ve III’te her eğitim-öğretim yılında bir seçmeli ders; Dönem
+    IV, V ve VI’da bir seçmeli staj almak zorundadır. Her öğrenci için alması
+    gereken seçmeli ders/staj programı ile ilgili detayları (AKTS kredisi,
+    süre, zaman, yer ve benzeri) Müfredat Geliştirme Kurulu ve Mezuniyet Öncesi
+    Eğitimi Komisyonu önerisi, Fakülte Yönetim Kurulu ve Üniversite Yönetim
+    Kurulu onayı ile belirlenerek eğitim-öğretim yılı başında öğrencilere
+    duyurulur.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(5) Türk Dili,
+    Atatürk İlkeleri ve İnkılap Tarihi, Yabancı Dil dersleri ve Seçmeli
+    Programlardan başarısız olan öğrenciye bu ders veya programları, sonraki
+    dönemlerde başarılı oluncaya kadar tekrarlama hakkı verilir. Öğrenci bu
+    dersler ve seçmeli programları aldığı dönemde devamsızlıktan kalmamışsa bu
+    ders veya programları tekrarlaması halinde, devam mecburiyeti aranmadan
+    ders ya da seçmeli program sınavlarına girebilir. Aynı seçmeli programın
+    bir sonraki yıl açılmaması durumunda öğrenci aynı AKTS yükünde başka bir
+    seçmeli programı alabilir. Öğrenciler, Türk Dili, Atatürk İlkeleri ve
+    İnkılap Tarihi, Yabancı Dil dersleri ve Seçmeli Programlardan başarılı
+    olmadan intörnlük dönemine başlayamazlar.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(6) Fakültede
+    staj yapma koşullarının sağlanamaması, ulusal/uluslararası öğrenci değişim
+    programları veya öğrencinin farklı bir nedenle talep etmesi durumunda,
+    stajın yurt içi veya yurt dışındaki başka bir kurumda yapılabilmesi için
+    öğrencinin kurum dışında almayı planladığı staj/stajlara ait içeriği
+    Fakülte Yönetim Kuruluna sunması ve Fakülte Yönetim Kurulunun bu başvuruyu
+    onaylaması gereklidir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Devam
+    zorunluluğu</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 16- </b>(1)
+    Dönem I, II ve III’ te; bir ders kurulu süresince uygulamalı eğitimlerde
+    devam durumunu ilgili Anabilim Dalı Başkanlığı takip eder. Her bir Anabilim
+    dalı için, ders kurulunda yer alan uygulamalı derslerin %20’sinden
+    fazlasına katılmayan öğrenci ilgili ders kurulunun sonunda yer alan anabilim
+    dalına ait uygulama sınav(lar)a giremez. Bu sınav(lar)dan herhangi birine
+    girmiş olsa bile girdiği sınav geçersiz sayılır ve o derse ait uygulama
+    sınav notu sıfır olarak kaydedilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) Ders
+    kurulundaki kuramsal derslerin toplamının %30’undan fazlasına katılmayan
+    öğrenci, o ders kuruluna ait ders kurulu sonu kuramsal sınav(lar)ına
+    giremez. Bu sınav(lar)dan herhangi birine girmiş olsa bile girdiği sınav
+    geçersiz sayılır ve kuramsal sınav notu sıfır olarak kaydedilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) Dönem I, II
+    ve III’te her ders kurulu programında veya seçmeli programlarda yer alan
+    uygulamalı derslerde devamsızlık %20’yi geçmediği takdirde, mazereti
+    fakülte yönetim kurulunca geçerli sayılan öğrencilerin devam etmediği
+    uygulamalı eğitim faaliyetlerini (laboratuvar uygulamaları, temel hekimlik
+    uygulamaları ve benzeri) ilgili birim, anabilim dalı veya öğretim
+    üyelerinin planladığı günde ve saatte telafi etmeleri sağlanır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(4) Dönem IV ve
+    Dönem V’te; her bir staj bloğu veya seçmeli programlar için kuramsal
+    derslerin %30’undan fazlasına devam etmeyen öğrenci staj bloğu sonu
+    kuramsal sınav(lar)a ve staj bloğunun bütünleme sınavlarına giremez ve
+    ilgili staj bloğu veya seçmeli programları tekrar eder. Bu sınavlardan
+    herhangi birine girmiş olsa bile girdiği sınav geçersiz sayılır ve sınav
+    notu sıfır olarak kaydedilir. Her bir anabilim dalı için, staj bloğundaki
+    uygulamalı derslerin %20’sinden fazlasına katılmayan öğrenci staj bloğunda
+    gerçekleştirilecek ilgili anabilim dalına ait uygulama sınav(lar)a giremez.
+    Bu sınavlardan herhangi birine girmiş olsa bile girdiği sınav geçersiz
+    sayılır ve ilgili uygulama sınav notu sıfır olarak kaydedilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(5) Dönem IV ve
+    V’te her staj bloğu programında veya seçmeli programlarda yer alan
+    uygulamalarda devamsızlık %20’yi geçmediği takdirde, mazereti fakülte
+    yönetim kurulunca geçerli sayılan öğrencilerin devam etmediği uygulamalı
+    eğitim faaliyetlerini (klinikte hasta başı eğitim, temel hekimlik
+    uygulamaları ve benzeri) ilgili birim, anabilim dalı veya öğretim
+    üyelerinin planladığı günde ve saatte telafi etmeleri sağlanır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(6) Yabancı dil
+    dersleri için kuramsal derslerin %30’undan fazlasına veya uygulama
+    derslerinin %20’sinden fazlasına devam etmeyen öğrenci ilgili dersin
+    yılsonu sınavına ve bütünleme sınavına giremez. Bu sınavlardan herhangi
+    birine girmiş olsa bile girdiği sınav geçersiz sayılır ve sınav notu sıfır
+    olarak kaydedilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(7) İntörnlük
+    döneminde devam zorunludur. Öğrencinin mazeretli ve/veya izinli olduğu
+    toplam süre, her staj için staj süresinin %20’sinden fazla ise öğrenci <b>(Değişik
+    ibare:RG-15/11/2022-32014) </b><u>D</u> notu alır ve o stajı tam süreli
+    olarak tekrar eder.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Mazeretler ve
+    mazeret sınavları</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 17- </b>(1)
+    Mazeret sınavı; ders kurulu sonu kuramsal ve uygulama sınavlarında ve ara
+    sınavlarda uygulanır. Yarıyıl sonu final sınavı, staj/staj bloğu sonu
+    sınavları, seçmeli program sınavları ve bütünleme sınavları için mazeret
+    sınavı yapılmaz. Sınava giremeyen öğrenciye bu sınav ile ilgili mazeret
+    sınavı hakkı verilebilmesi için;</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>a) Öğrencinin,
+    sınavına giremediği ders veya derslerin sınav tarihini kapsayan rahatsızlığını
+    Üniversite Sağlık, Uygulama ve Araştırma Merkezi Farabi Hastanesinden veya
+    bunun mümkün olmadığı zorunlu hallerde diğer sağlık kuruluşundan alacağı
+    rapor ile belgelendirmesi ve bu raporun Fakülte Yönetim Kurulunca kabul
+    edilmesi ya da;</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>b) Sağlık sorunları
+    dışındaki diğer mazeretlerini dilekçe ile bildiren öğrencilerin
+    mazeretlerinin Fakülte Yönetim Kurulunca kabul edilmesi,</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>gerekir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) Mazereti
+    Fakülte Yönetim Kurulu tarafından kabul edilen öğrenci mazeretli olduğu
+    süre içinde sınavlara giremez, derslere devam etse bile devamlılıktan
+    sayılmaz.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) İntörnlük
+    döneminde staja devam etmesini engelleyecek bir mazereti olan öğrenci bu
+    mazeretini Fakülte Yönetim Kuruluna bildirmek zorundadır. Mazereti Fakülte
+    Yönetim Kurulunca kabul edilen öğrenci, bu süre içinde staja devam etse
+    bile devamlılıktan sayılmaz. Mazeretli olduğu süre staj süresinin
+    %20’sinden fazla olduğu takdirde staj tekrarı yapar.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(4) Mazeretlerle
+    ilgili müracaat mazeretin bitiminden itibaren en geç bir hafta içinde
+    Mezuniyet Öncesi Eğitim Komisyonu Sekreterliğine yapılır. Daha sonra
+    yapılan müracaatlar, geç sunulan raporlar, Fakülte Yönetim Kurulunca kabul
+    edilmeyen raporlar işleme konulmaz.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>İzinler</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 18- </b>(1)
+    Üniversiteyi, fakülteyi ya da ülkeyi temsil etmek üzere spor
+    karşılaşmaları, akademik faaliyetler, sanatsal ya da kültürel faaliyetlere
+    katılacak olan öğrencilere Fakülte Yönetim Kurulunca uygun görülmesi
+    halinde, görevli oldukları sürece izin verilir. Bu süre devamsızlıktan
+    sayılmaz. Öğrenciler izinli sayıldıkları süre içinde uygulanan ve
+    giremedikleri ders kurulu sonu kuramsal, uygulama ve ara değerlendirme
+    sınavları için mazeret sınavına alınırlar. İzinli sayıldıkları süre içinde
+    giremedikleri diğer sınavlar ve not ile değerlendirilen küçük grup
+    çalışmaları (Probleme Dayalı Öğrenim ve Olgu Temelli Öğrenim ve benzeri)
+    için mazeret sınav hakkı verilmez.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) İntörnlük
+    dönemi süresince toplam on günü geçmemek kaydıyla öğrencinin talebi, ilgili
+    staj başkanı ve Fakülte Yönetim Kurulunun onayı ile öğrenciye izin
+    verilebilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) Öğrenciler talepleri
+    halinde ve gerekçesi Fakülte Yönetim Kurulu ve Üniversite Yönetim Kurulu
+    tarafından kabul edilmesi durumunda, bir seferde bir yıla kadar kayıt
+    dondurabilir. Kayıt dondurma hakkı eğitim süresi boyunca en fazla iki defa
+    kullanılabilir. Bu süre eğitim-öğretim süresinden sayılmaz.</p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>DÖRDÜNCÜ BÖLÜM</b></p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>Dönem Sınavları ve Başarı
+    Durumuna İlişkin Hükümler</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Dönem I, II ve
+    III sınavları</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 19- </b>(1)
+    Ders kurulu sonu sınav(lar)ı: Eğitim-öğretim dönemi içinde her ders kurulu sonunda
+    kuramsal ve/veya uygulama sınav(lar)ı şeklinde yapılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) Mazeret
+    sınavı: Ders kurulu sonu notuna etki eden herhangi bir sınava giremeyen ya
+    da ders kurulu içinde yapılan ara değerlendirmelere giremeyen ve sınava
+    girememesine neden olan mazereti Fakülte Yönetim Kurulu tarafından kabul
+    edilen öğrenciler için yapılan sınavlardır. Mazeret sınavları kuramsal
+    ve/veya uygulama sınavları şeklinde yapılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) Yarıyıl sonu
+    final sınavları: Güz ve bahar yarıyılı sonunda yapılan, ilgili yarıyıl
+    içindeki ders kurullarının içeriklerini kapsayan sınavlardır. Bu sınavlar
+    kuramsal ve/veya uygulama sınavları şeklinde yapılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(4) Yarıyıl sonu
+    notu: Bir yarıyıldaki ders kurul sonu notlarının aritmetik ortalamasının
+    %60’ı, o yarıyıla ait yarıyıl sonu final sınav notunun %40’ı toplanarak o
+    yarıyıl için yarıyıl sonu notu elde edilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(5) Yılsonu notu:
+    Her iki yarıyıl sonu notlarının aritmetik ortalaması alınarak yılsonu notu
+    elde edilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(6) Yılsonu
+    başarı notu: Dikey koridorlardan (temel hekimlik uygulamaları, iletişim
+    becerileri ve benzeri) elde edilen notların belirli oranda yılsonu notuna
+    eklenmesi ile elde edilir. Bu oran, Mezuniyet Öncesi Eğitim Komisyonu
+    tarafından karara bağlanır ve her eğitim öğretim yılı akademik takvimi
+    başında öğrencilere duyurulur.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(7) Yılsonu
+    başarı notunda ortaya çıkabilecek ondalıklı puanlar tam sayıya yuvarlanır.
+    Ondalıklı sayının virgülden sonraki kısmı 0,50’ye eşit veya büyük ise bir
+    üst tam sayıya, 0,50’den küçük ise bir alt tam sayıya yuvarlanır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(8) Yılsonu
+    başarı notu 60 ve üzerinde olan öğrenciler o yıl için başarılı sayılırlar.
+    Yılsonu başarı notu öğrenciye 25 inci madde hükümleri dikkate alınarak
+    rakam ve harf notu olarak bildirilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(9) Bütünleme
+    sınavları: Akademik takvimde belirlenen tarihlerde güz ve bahar yarıyılı
+    bütünleme sınavları yapılır. Yarıyıl sonu notu 60 puanın altında olan ya da
+    yarıyıl sonu final sınavına girme hakkı olduğu halde bu sınava girmeyen
+    öğrenciler ilgili yarıyıla ait bütünleme sınavına girebilirler. Bu
+    sınavlardan alınan not ilgili yarıyıl sonu bütünleme sınav notu olarak
+    kaydedilir ve dönem sonu başarı notu hesaplanırken, ilgili yarıyıl sonu
+    final sınavı notu yerine konularak değerlendirmeye alınır. Yarıyıl sonu
+    notu 60 puanın altında olduğu halde güz ya da bahar yarıyıl sonu bütünleme
+    sınavlarından herhangi birine girmeyen öğrencinin yarıyıl sonu notu
+    hesaplanırken, bütünleme sınavına girmediği yarıyıl sonu final sınavı notu
+    değerlendirmede esas alınır. Bu sınavlar sadece kuramsal veya kuramsal ve
+    uygulama sınavı şeklinde yapılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Dönem IV ve V
+    staj bloğu sınavları</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 20- </b>(1)
+    Dönem IV ve V staj bloğu sonu sınavları her staj bloğunun son gününü
+    geçmemek kaydı ile kuramsal ve uygulama sınavları şeklinde yapılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) Staj Bloğu
+    Başkanlıkları, kullanılacak ölçme-değerlendirme yöntemleri ve bu
+    yöntemlerin staj bloğu sonu başarı notu değerlendirmesindeki oranlarını
+    belirleyerek bağlı bulunduğu dönem koordinatörlüğü aracılığıyla Ölçme
+    Değerlendirme Kuruluna sunar. Ölçme Değerlendirme Kurulu önerisi ve Eğitim
+    Komisyonu kararı ile belirlenen ölçme-değerlendirme yöntem ve oranları
+    akademik takvim başında öğrencilere duyurulur.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) Staj bloğu
+    süresince, staj bloğu sonu sınav puanına etkisi %30’u geçmeyecek şekilde
+    ara değerlendirmeler yapılabilir. Ara değerlendirmeler kuramsal ve/veya
+    uygulama şeklinde olabilir. Ara değerlendirme tarihleri staj bloğu programı
+    başında (ilk hafta içerisinde) duyurulur.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(4) Öğrencinin
+    staj bloğundan başarılı sayılması için belirlenen ölçme-değerlendirme
+    oranları doğrultusunda hesaplanan kuramsal sınav notunun en az 60 ve
+    uygulama sınav notunun en az 60 olması gerekmektedir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(5) Staj bloğu
+    başarı notu: Kuramsal ve uygulama sınav notlarının aritmetik ortalaması
+    alınarak elde edilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(6) Staj bloğu
+    başarı notu 60 ve üzerinde olan öğrenciler o staj bloğu için başarılı
+    sayılırlar. Staj bloğu başarı notu öğrenciye 25 inci madde hükümleri
+    dikkate alınarak rakam ve harf notu olarak bildirilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(7) Mazeret
+    sınavı: Staj bloğu içinde yapılan ara değerlendirmelere katılamayan ve
+    mazereti Fakülte Yönetim Kurulu tarafından kabul edilen öğrenciler için
+    mazeret sınavı yapılır. Staj bloğu sonu ve bütünleme sınavları için mazeret
+    sınav hakkı verilmez.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(8) Staj bloğu
+    sonu sınavında başarısız olan ya da sınava girme hakkı olduğu halde sınava
+    girmeyen öğrenciler her staj bloğu için staj bloğu bütünleme sınavlarına
+    girebilirler. Bütünleme sınavlarında, staj bloğu sonu sınavlarında olduğu
+    gibi kuramsal ve/veya uygulama şeklinde yapılabileceği gibi, staj bloğu
+    başkanlığının belirleyeceği çeşitli ölçme değerlendirme araçları/yöntemleri
+    de kullanılabilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(9) Bütünleme
+    sınavlarından geçme notu 60 puandır. Öğrenci bütünleme sınavında 60 puanın
+    altında aldığı her bir staj bloğunu tekrar eder.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(10) Gecikmeli
+    öğrenciler bütünleme dönemini beklemeksizin akademik takvim içerisinde
+    başarısız olduğu, al(a)madığı staj bloğunu tekrar edebilir/alabilirler.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>İntörnlük
+    (Aile Hekimliği) dönemi başarı durumu</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 21- </b>(1)
+    İntörnlük (Aile Hekimliği) döneminde öğrencilerin başarısının
+    değerlendirilmesinde Üniversite mezun yetkinliklerine yönelik iş başı
+    değerlendirmeleri göz önüne alınır. Bu yetkinlikler doğrultusunda Anabilim
+    Dalı Başkanlığınca hazırlanan değerlendirme kriterleri, dönem VI
+    koordinatörlüğü aracılığı ile Ölçme-Değerlendirme Kuruluna sunulur. Ölçme
+    değerlendirme kurulu önerileri ve Mezuniyet Öncesi Eğitim Komisyonu kararları
+    doğrultusunda hazırlanan değerlendirme kriterleri stajın başlangıcında
+    öğrencilere bildirilir. Staj sonu başarısı 25 inci maddeye göre
+    değerlendirilir.</p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>BEŞİNCİ BÖLÜM</b></p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>Ortak, Zorunlu Ders ve
+    Seçmeli Program Sınavları ve Başarı </b></p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>Durumuna İlişkin Hükümler</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Ortak ve
+    zorunlu ders sınavları</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 22- </b>(1)
+    Ortak ve zorunlu dersler Atatürk İlkeleri ve İnkılâp Tarihi, Türk Dili ve
+    Yabancı Dil dersleridir. Bu derslerden her yarıyılda ara sınav(lar) ve
+    yılsonunda final sınavı yapılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) Bu derslerin başarı
+    ve tekrarına ilişkin hususlar; Karadeniz Teknik Üniversitesi Önlisans ve
+    Lisans Eğitim-Öğretim Yönetmeliği hükümlerine göre yürütülür. Bu derslerden
+    başarılı olamayan öğrenciler intörnlük dönemine geçemezler.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) Mazeret
+    sınavı; Atatürk İlkeleri ve İnkılâp Tarihi, Türk Dili ve Yabancı Dil
+    dersleri ara sınavlarına giremeyen ve sınava girememesine neden olan
+    mazereti Fakülte Yönetim Kurulu tarafından kabul edilen öğrenciler için
+    yapılır. Bu derslere ait final ve bütünleme sınavları için mazeret sınav hakkı
+    verilmez.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(4) Bütünleme
+    sınavı; Atatürk İlkeleri ve İnkılâp Tarihi, Türk Dili, Yabancı Dil
+    derslerinden başarısız olan veya bu derslerin yılsonu sınavına girme hakkı
+    olduğu halde sınavlara girmeyen öğrenciler bütünleme sınavına alınır.
+    Bütünleme sınavından alınan not yılsonu sınav notu olarak kaydedilir ve
+    değerlendirmeye alınır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Seçmeli
+    program sınavları</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 23- </b>(1)
+    Seçmeli programlarda uygulanacak ölçme-değerlendirme araçlarının
+    çeşitliliği, içeriği, uygulanan sınav çeşitlerinin ağırlık yüzdeleri (uygulama
+    sınavları, laboratuvar sınavları, kuramsal sınavlar, küçük grup
+    çalışmalarının değerlendirilmesi ve benzeri) ve başarılı sayılma kriterleri
+    ilgili anabilim/bilim dalı veya öğretim üyesinin önerisi, Ölçme
+    Değerlendirme Kurulunun değerlendirmesi sonrasında Mezuniyet Öncesi Eğitimi
+    Komisyonunun kararı ile belirlenir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) Dönem I, II
+    ve III’te seçmeli derslerden başarısız olan öğrenciler bütünleme sınavına
+    alınır. Bütünleme sınavında da başarılı olamayan öğrenci, bir üst sınıfa
+    geçer ancak aynı seçmeli dersi tekrar alır. Aynı seçmeli dersin bir sonraki
+    yıl açılmaması durumunda öğrenci aynı AKTS yükünde başka bir seçmeli ders
+    alabilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) Dönem IV ve
+    V’te seçmeli stajlardan başarısız olan öğrenciler bütünleme sınavına
+    alınır. Bütünleme sınavında da başarılı olamayan öğrenci bir üst sınıfa
+    geçemez. Aynı seçmeli dersi başarılı oluncaya kadar tekrar alır. Aynı
+    seçmeli dersin tekrar açılmaması durumunda öğrenci aynı AKTS yükünde başka
+    bir seçmeli staj alabilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(4) Seçmeli
+    programların ara değerlendirmelerine giremeyen ve mazereti Fakülte Yönetim
+    Kurulu tarafından kabul edilen öğrenciler için mazeret sınavı yapılır.</p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>ALTINCI BÖLÜM</b></p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>Sınavların Uygulanması,
+    Başarı Durumu ve Mezuniyet</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Sınavların
+    uygulanması</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 24- </b>(1)
+    Sınav günleri ilan edildikten sonra Fakülte Yönetim Kurulu ve Senato kararı
+    ile değiştirilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) Öğrenciler
+    belirlenen gün ve saatte sınavlara girmek zorundadırlar. Sınava zamanında
+    girmeyen veya sınavın kuramsal ve/veya uygulama sınavları kısımlarından
+    herhangi birine girmeyen öğrenci girmediği sınav için sıfır notu alır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) Öğrencinin
+    girme hakkı olmadığı halde bir sınava girmesi durumunda aldığı not, ilan
+    edilmiş olsa dahi iptal edilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(4) Gerekli
+    görüldüğü durumlarda Fakülte Yönetim Kurulu kararı ile ulusal ve dini
+    bayramlar dışında cumartesi ve pazar günleri de sınav yapılabilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(5) Olağanüstü
+    hallerde (pandemi, deprem ve benzeri durumlar) Fakülte Yönetim Kurulu
+    kararı ile ölçme-değerlendirme tasarımı o anki koşullar doğrultusunda
+    değişebilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(6) Sınav
+    sonuçları en geç yedi iş günü içerisinde açıklanır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(7) Sınav
+    sorularına itiraz başvuruları sınav bitiminden sonraki üç iş günü içinde,
+    sınav sonucuna itirazların sınav sonuçları ilan edildikten sonraki üç iş
+    günü içinde yapılması gerekir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(8) Sınavlara
+    itirazlarda aşağıdaki esaslar uygulanır:</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>a) Öğrencinin
+    sınavlardaki; maddi, bilimsel, usul ve işleyiş hataları ile ilgili yapmış
+    olduğu itirazlar Dönem I, II ve III’te ilgili ders kurul başkanlıkları
+    tarafından, Dönem IV ve V’te staj ve staj bloğu başkanlıkları tarafından
+    değerlendirilir ve sonuçlandırılır. Ders kurulu ve staj/staj bloğu
+    başkanlıkları gerekli durumlarda Ölçme-Değerlendirme Kurulundan soru ve
+    sınav itirazları ile ilgili görüş alabilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>b) Maddi ve
+    bilimsel hatalar ile ilgili itirazlar başvuruyu izleyen beş iş günü, usul
+    ve işleyiş ile ilgili itirazlar on iş günü içerisinde sonuçlandırılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(9) Öğrenci
+    İşleri Daire Başkanlığı tarafından açıklanan dönem eğitim-öğretim
+    çalışmaları başarı notları ile ilişkili herhangi bir maddi hatanın yapılmış
+    olması halinde düzeltme istemi, ilgili dönem koordinatörünün başvurusu
+    üzerine Fakülte Yönetim Kurulu tarafından karara bağlanır. Dönem sonu
+    sınavlarından sonra verilen notlarla ilgili maddi hataların en geç ertesi
+    yıl kayıt süresi içinde düzeltilmiş olması gerekir. Bu tarihten sonraki
+    düzeltme işlemlerinin Fakülte Yönetim Kurulu kararı ile yapılması gerekir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Puan, not,
+    derece ve katsayılar</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 25- </b>(1)
+    Tıp Fakültesi sınavlarının değerlendirilmesinde kullanılan puanlar, notlar,
+    dereceler ve katsayılar aşağıdaki gibidir:</p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><img width=391 height=169 src="8.5.39819_dosyalar/image001.png" alt="KTÜTıpFakültesiYönetmeliği ek-1"></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) Bu notlardan;</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>a) AA, BA, BB, CB
+    veya CC notlarından birini alan öğrenci başarılı sayılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>b) FF notu alan
+    öğrenci başarısız sayılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>c) M: Muaf notu,
+    muaf olunan dersler için kullanılır ve genel not ortalaması (GNO)
+    hesaplanmasında değerlendirmeye katılmaz.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>ç) G: Geçer notu,
+    başarılı olarak değerlendirilen ve GNO’ya katılmayan çalışmalarda
+    kullanılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>d) K: Kalır notu,
+    başarısız olarak değerlendirilir ve GNO’ya katılmayan çalışmalarda
+    kullanılır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>e) D notu,
+    devamsızlığı ifade eder, GNO hesabında FF notu işlemi görür.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) Öğretim
+    planlarında yer alan derslerin AKTS kredileri toplamı, her bir yıl için 60’
+    tır. Tıp Fakültesi eğitim-öğretimi toplam 360 ders kredisidir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Mezuniyet
+    başarı derecesi</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 26- </b>(1)
+    Mezun olan öğrencilerin mezuniyet başarı derecelerinin tespiti için eğitim
+    gördükleri ilk beş dönem (Dönem I-II-III-IV-V) notlarının ortalaması
+    3,00-3,50 olan öğrenciler onur öğrencisi, 3,51-4,00 arasındaki öğrencileri
+    yüksek onur öğrencisi sayılır ve bu durum diplomalarında belirtilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Diplomalar</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 27- </b>(1)
+    Tıp doktorluğu diploması, tıp doktorluğu için öngörülen altı dönemlik
+    eğitim süresini başarı ile tamamlayanlara verilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(2) Tıp
+    doktorluğu diplomasında Dekan ve Rektörün imzası bulunur.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(3) Diploma
+    verilinceye kadar isteği üzerine öğrenciye, Öğrenci İşleri Daire
+    Başkanlığınca, mezun olduğuna dair bir belge verilir.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>(4) Üniversiteden
+    herhangi bir nedenle eğitim-öğretimini tamamlamadan ayrılan öğrencilere
+    Öğrenci İşleri Daire Başkanlığınca durumlarını belirtir belge verilir.
+    Öğrencinin aynı programa dönmesi halinde, kayıt sırasında bu belgeyi
+    Üniversiteye geri vermesi gerekir. Aksi halde öğrencinin kaydı yapılmaz.</p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>YEDİNCİ BÖLÜM</b></p>
+    <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:
+    .0001pt;text-align:center;line-height:normal'><b>Çeşitli ve Son Hükümler</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Yönetmelikte
+    hüküm bulunmayan haller</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 28- </b>(1)
+    Bu Yönetmelikte hüküm bulunmayan hallerde; ilgili mevzuat hükümleri ile
+    YÖK, Senato ve Üniversite Yönetim Kurulu kararları uygulanır.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Yürürlükten
+    kaldırılan yönetmelik</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 29- </b>(1)
+    19/8/2016 tarihli ve 29806 sayılı Resmî Gazete’de yayımlanan Karadeniz
+    Teknik Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği
+    yürürlükten kaldırılmıştır.</p>
+    <p class=metin0 style='margin:0cm;margin-bottom:.0001pt;text-align:justify;
+    text-indent:28.3pt;line-height:12.0pt'><b><span style='font-size:11.0pt;
+    font-family:"Calibri",sans-serif;color:black'>İntibak<u1:p></u1:p></span></b></p>
+    <p class=metin0 style='margin:0cm;margin-bottom:.0001pt;text-align:justify;
+    text-indent:28.3pt;line-height:12.0pt;font-variant-ligatures: normal;
+    font-variant-caps: normal;orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;
+    text-decoration-thickness: initial;text-decoration-style: initial;
+    text-decoration-color: initial;word-spacing:0px'><b><span style='font-size:
+    11.0pt;font-family:"Calibri",sans-serif;color:black'>GEÇİCİ MADDE 1- (Ek:RG-24/1/2024-32439)
+    </span></b></p>
+    <p class=metin0 style='margin:0cm;margin-bottom:.0001pt;text-align:justify;
+    text-indent:28.3pt;line-height:12.0pt'><span style='font-size:11.0pt;
+    font-family:"Calibri",sans-serif;color:black'>(1) Bu maddeyi ihdas eden
+    Yönetmelik ile değiştirilen 14 üncü madde hükmü 2024-2025 eğitim-öğretim
+    yılından önce kayıt yaptıran öğrencilere uygulanmaz.</span></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Yürürlük</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 30- </b>(1)
+    Bu Yönetmelik 2022-2023 eğitim-öğretim yılı başından geçerli olmak üzere
+    yayımı tarihinde yürürlüğe girer.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>Yürütme</b></p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'><b>MADDE 31- </b>(1)
+    Bu Yönetmelik hükümlerini Karadeniz Teknik Üniversitesi Rektörü yürütür.</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:28.3pt;line-height:normal'>___________</p>
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+    text-align:justify;text-indent:24.65pt;line-height:normal'><i>(1)<span class=grame><span style='color:black'> 15/8/2022</span></span><span style='color:black'><span style='font-variant-ligatures: normal;font-variant-caps: normal;
+    orphans: 2;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-thickness: initial;
+    text-decoration-style: initial;text-decoration-color: initial;float:none;
+    word-spacing:0px'>&nbsp;tarihli ve 31924 sayılı Resmî Gazete’de yayımlanan</span>
+    değişiklik ile Yönetmeliğin adı “Karadeniz Teknik Üniversitesi Tıp
+    Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği</span>” iken metne işlendiği
+    şekilde değiştirilmiştir.</i></p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse'>
+ <tr>
+  <td width=55 rowspan=5 valign=top style='width:34.8pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+  1.0cm;line-height:normal'>&nbsp;</p>
+  </td>
+  <td width=480 colspan=2 style='width:360.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'><b>Yönetmeliğin
+  Yayımlandığı Resmî Gazete’nin</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=240 style='width:180.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'><b>Tarihi</b></p>
+  </td>
+  <td width=240 style='width:180.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'><b>Sayısı</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=240 style='width:180.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'>15/8/2022</p>
+  </td>
+  <td width=240 style='width:180.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'>31924</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=480 colspan=2 style='width:360.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'><b>Yönetmelikte
+  Değişiklik Yapan Yönetmeliklerin Yayımlandığı Resmî Gazetelerin</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=240 style='width:180.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'><b>Tarihi</b></p>
+  </td>
+  <td width=240 style='width:180.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'><b>Sayısı</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=55 valign=top style='width:34.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>
+  </td>
+  <td width=240 style='width:180.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'>15/11/2022</p>
+  </td>
+  <td width=240 style='width:180.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'>32014</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=55 valign=top style='width:34.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal'>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>
+  </td>
+  <td width=240 style='width:180.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'>&nbsp;24/1/2024</p>
+  </td>
+  <td width=240 style='width:180.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;text-indent:1.0cm;line-height:normal'>32439&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
+    <p id="page-end"></p>
+    <script src="/lib/tooltip/tooltip.js"></script>
+    <script>
+        $(document).ready(function () {
+            jQuery('table').each(function (cmp) {
+                var parent = this.parentNode;
+                var wrapper = document.createElement('div');
+
+                parent.replaceChild(wrapper, this);
+                wrapper.appendChild(this);
+                this.parentElement.style.overflowX = 'auto';
+            });
+            if (window.location.search.indexOf("2709") != -1 || window.location.search.indexOf("MevzuatTur=19") != -1) {
+                var tableCss = document.styleSheets[0].cssRules[2].style;
+                tableCss.cssText = tableCss.cssText.replace("100%", "initial");
+            }
+            //$('.tooltip').tooltipster();
+            //replaceTable();
+            //$(window).on('resize', function () {
+            //    replaceTable();
+            //});
+            //replaceTable();
+        });
+            //function replaceTable() {
+            //    //if (window.location.search.indexOf("MevzuatTur=19") == -1) {
+            //    //    var iframe = document.getElementsByTagName("td");
+            //    //    var value = $('body').width() - 10;
+            //    //    for (var i = 0; i < iframe.length; i++) {
+            //    //        iframe[i].style.width = "initial !important";
+            //    //    }
+            //    //}
+
+
+            //    //var iframe = document.getElementsByClassName("MsoNormalTable");
+            //    //var value = $('body').width() - 10;
+            //
+            //    //for (var i = 0; i < iframe.length; i++) {
+            //    //    iframe[i].style.width = value;
+            //    //}
+
+            //    //var iframe2 = document.getElementsByClassName("MsoNormal");
+            //    ////for (var j = 0; j < iframe2.length; j++) {
+            //    ////    iframe2[j].style.width = value;
+            //    ////}
+            //}
+    </script>
+
+
+
