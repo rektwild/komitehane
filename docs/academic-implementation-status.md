@@ -9,8 +9,8 @@ entity seed commands and draft-only rule import, a shared calculation engine,
 editable final weight, context/version-scoped browser storage with explicit
 recovery, API, localized academic routes and sitemap, OpenAPI and operations
 guides. Candidate universities, faculties, programs and courses start inactive.
-A first real committee dataset (`data/academic/committee-2026-27.json`, 58 DRAFT
-versions for 20 Tıp programs at 15 universities, each checked against its
+A first real committee dataset (`data/academic/committee-2026-27.json`, 81 DRAFT
+versions for 29 Tıp programs at 24 universities, each checked against its
 official 2026-27 documents, inactive catalog of all 152 Tıp programs at 114 universities) is prepared
 and covered by the isolated PostgreSQL test; it has not been imported into or
 published on production, and its sources still need human review.

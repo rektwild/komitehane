@@ -2925,6 +2925,213 @@
       "system": "COMMITTEE"
     },
     {
+      "id": "c6864a3f-3309-5e49-b7ee-9dda79fd4fad",
+      "programId": "16ebf86b-f223-5efa-876f-9ac4c65fbcda",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 1,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "ac104c5c-1fb0-5b0f-af61-b8d7f3de3981",
+      "programId": "16ebf86b-f223-5efa-876f-9ac4c65fbcda",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 2,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "8965279a-c9ba-5ea6-96dd-417fbb29e578",
+      "programId": "16ebf86b-f223-5efa-876f-9ac4c65fbcda",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 3,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "54f03bc8-67a4-5172-81fa-d4cb8c4dfbce",
+      "programId": "277c6dd5-0bda-5fe4-a263-6ed046cbfefa",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 1,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "58b25727-2899-57b9-8a52-5ad761e09d0e",
+      "programId": "e80225ed-d823-5829-9398-6b12ec22e6d1",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 1,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "5990c05d-9350-5dd2-840a-eb62ba57874e",
+      "programId": "e80225ed-d823-5829-9398-6b12ec22e6d1",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 2,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "6db09b31-aa24-5dc8-89c4-9375686ebf93",
+      "programId": "e80225ed-d823-5829-9398-6b12ec22e6d1",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 3,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "f8922155-ac00-5a90-bec9-3f5f4f00ce4d",
+      "programId": "94f3dd74-93e6-5508-b9cb-8d671b6dd71b",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 1,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "d565059a-4246-59a6-a60a-4aa0b00f12e8",
+      "programId": "94f3dd74-93e6-5508-b9cb-8d671b6dd71b",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 2,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "1ed29d24-b7d5-56e7-a0da-193753340570",
+      "programId": "94f3dd74-93e6-5508-b9cb-8d671b6dd71b",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 3,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "59ecb359-aba1-5f00-8fbf-1a8f993be2ef",
+      "programId": "7eae6a48-fbcb-5a0d-a497-577fe0c5682d",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 1,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "61095510-ad94-5829-a73e-c22eaf614318",
+      "programId": "7eae6a48-fbcb-5a0d-a497-577fe0c5682d",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 3,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "b07082ae-402e-5f79-9e13-4e95f14c7b5e",
+      "programId": "a9bb82f5-d97f-532c-be5f-3b377534de8a",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 1,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "b1f6d18f-7f73-5ffc-aa69-e4c0fd8db490",
+      "programId": "a9bb82f5-d97f-532c-be5f-3b377534de8a",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 2,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "8e49c7a4-1afb-5fbb-839b-b2cb28ff4b3c",
+      "programId": "a9bb82f5-d97f-532c-be5f-3b377534de8a",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 3,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "caf27a46-f7fd-5afe-9042-39ed9ec71072",
+      "programId": "dcdedff0-8401-566f-8a41-bb29f1c49e02",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 1,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "d3ccf26d-010a-5f84-9b10-e88de253cbea",
+      "programId": "dcdedff0-8401-566f-8a41-bb29f1c49e02",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 2,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "f829ef3e-0118-5547-b39b-bc834d994563",
+      "programId": "dcdedff0-8401-566f-8a41-bb29f1c49e02",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 3,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "0e768316-a459-5d30-b57f-1940117f1bdb",
+      "programId": "06802fda-7a9f-51ec-aaf4-7f48402098b9",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 1,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "4b07d07d-10f2-5c7c-9b10-a94e541cdb61",
+      "programId": "06802fda-7a9f-51ec-aaf4-7f48402098b9",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 2,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "a9a3a425-b309-5a56-ab27-0b9653f7873d",
+      "programId": "06802fda-7a9f-51ec-aaf4-7f48402098b9",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 3,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "e7baa260-288d-5871-ab99-41efa15d7e64",
+      "programId": "bbc3eaf2-378a-5fb6-9f80-54bd847a6a47",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 1,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
+      "id": "37858c45-4261-59b0-a6e6-30534d8f784b",
+      "programId": "bbc3eaf2-378a-5fb6-9f80-54bd847a6a47",
+      "courseId": null,
+      "academicYearStart": 2026,
+      "classYear": 2,
+      "period": "ANNUAL",
+      "system": "COMMITTEE"
+    },
+    {
       "id": "48d70f2b-ce57-5971-90fa-972d9f561283",
       "programId": "9048f6f7-e1f8-540c-9b32-0e06dd4ac52d",
       "courseId": null,
@@ -6027,6 +6234,1297 @@
           "verifiedAt": "2026-11-21T00:00:00.000Z",
           "title": "D%C3%B6nem%203%20Kas%C4%B1m.pdf",
           "note": "Doğrulama 2026-11-21: RTEÜ yönergesi (Revizyon 22.07.2026): tüm ders kurulu sınav notu ortalamalarının %60'ı + dönem sonu final/bütünleme %40, geçme 60. 2026-27 ders programlarında D1=6, D2=7, D3=10 kurul (eşit ağırlık; AKTS verilmemiş). Modellenmeyen kurallar (hesaba katılmadı): Dönem sonu sınavında en az 50 şartı (Selçuk benzeri) doğrulanmadı; kurul notu içinde PDÖ/topluma dayalı bileşenler Formül: MADDE 26 – (1) Tüm ders kurullarına ait sınav notu ortalamalarının %60'ı ile dönem sonu | Madde 26 | Revizyon Tarihi 22.07.2026, Revizyon No 2 | SHA-256: df428f80371788dbfb66019b5226526536ab840b9e29f385ed2398245f8a8ec1 | Kurul listesi 2026-2027: Belge 'Dönem III Ders Programı 2026-2027 EĞİTİM-ÖĞRETİM YILI' (10 kurul) | 1. Kurul      2. Kurul      3. Kurul        4. Kurul       5. Kurul      6. Kurul      7. Kurul    8. Kurul      9. Kurul     10. Kurul     Genel Toplam"
+        }
+      ]
+    },
+    {
+      "id": "0f8eb6c7-dc2f-51b2-aa65-7b0227f76c31",
+      "schemeId": "c6864a3f-3309-5e49-b7ee-9dda79fd4fad",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.resmigazete.gov.tr/eskiler/2023/10/20231016-1.htm",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "baibu_yonetmelik_degisiklik_2023.html",
+          "note": "Doğrulama 2026-11-21: RG 16.10.2023/32341 değişikliği Madde 30(1)(a): ders kurulları not ortalamasının %60'ı + dönem sonu genel/bütünleme %40; geçme 60. Dönem II finali 95 puan + en çok 5 puan özel çalışma modülü (final tek not olarak girilir). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: cfef33c2afcc09e00a6ec62728cea1073e93f8d64f54b4847959f3aedda0d2fc | Formül; Madde 30 (1) a (16.10.2023 tarihli 32341 sayılı RG ile değişik) ve b (04.09.2022 tarihli 31943 sayılı RG)"
+        },
+        {
+          "url": "https://tip.ibu.edu.tr/wp-content/uploads/tip-0607-d1-akademik-takvim.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "baibu_d1_takvim.pdf",
+          "note": "Doğrulama 2026-11-21: RG 16.10.2023/32341 değişikliği Madde 30(1)(a): ders kurulları not ortalamasının %60'ı + dönem sonu genel/bütünleme %40; geçme 60. Dönem II finali 95 puan + en çok 5 puan özel çalışma modülü (final tek not olarak girilir). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 03b24679fe197d56343b5c787bef04555ff647870f3f42f29fc1ab0f5a7e931e | Kurul listesi 2026-2027: Belge başlığında açıkça 2026-2027 EĞİTİM- ÖĞRETİM YILI yazmakta ve kurul tarihleri Eylül 2026 – Mayıs 2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "6f8f4a74-e573-53bb-a6ae-af04145f7806",
+      "schemeId": "ac104c5c-1fb0-5b0f-af61-b8d7f3de3981",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.resmigazete.gov.tr/eskiler/2023/10/20231016-1.htm",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "baibu_yonetmelik_degisiklik_2023.html",
+          "note": "Doğrulama 2026-11-21: RG 16.10.2023/32341 değişikliği Madde 30(1)(a): ders kurulları not ortalamasının %60'ı + dönem sonu genel/bütünleme %40; geçme 60. Dönem II finali 95 puan + en çok 5 puan özel çalışma modülü (final tek not olarak girilir). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: cfef33c2afcc09e00a6ec62728cea1073e93f8d64f54b4847959f3aedda0d2fc | Formül; Madde 30 (1) a (16.10.2023 tarihli 32341 sayılı RG ile değişik) ve b (04.09.2022 tarihli 31943 sayılı RG)"
+        },
+        {
+          "url": "https://tip.ibu.edu.tr/wp-content/uploads/tip-0612-d2-akademik-takvim.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "baibu_d2_takvim.pdf",
+          "note": "Doğrulama 2026-11-21: RG 16.10.2023/32341 değişikliği Madde 30(1)(a): ders kurulları not ortalamasının %60'ı + dönem sonu genel/bütünleme %40; geçme 60. Dönem II finali 95 puan + en çok 5 puan özel çalışma modülü (final tek not olarak girilir). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: fe605384c374df875a8491aa9222fe6665df931419fe215e7968de1fe51975fc | Kurul listesi 2026-2027: Belge başlığında açıkça 2026-2027 EĞİTİM- ÖĞRETİM YILI yazmakta ve kurul tarihleri Eylül 2026 – Mayıs 2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "1965be77-d001-5deb-91f4-1af0b38b74a0",
+      "schemeId": "8965279a-c9ba-5ea6-96dd-417fbb29e578",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.resmigazete.gov.tr/eskiler/2023/10/20231016-1.htm",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "baibu_yonetmelik_degisiklik_2023.html",
+          "note": "Doğrulama 2026-11-21: RG 16.10.2023/32341 değişikliği Madde 30(1)(a): ders kurulları not ortalamasının %60'ı + dönem sonu genel/bütünleme %40; geçme 60. Dönem II finali 95 puan + en çok 5 puan özel çalışma modülü (final tek not olarak girilir). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: cfef33c2afcc09e00a6ec62728cea1073e93f8d64f54b4847959f3aedda0d2fc | Formül; Madde 30 (1) a (16.10.2023 tarihli 32341 sayılı RG ile değişik) ve b (04.09.2022 tarihli 31943 sayılı RG)"
+        },
+        {
+          "url": "https://tip.ibu.edu.tr/wp-content/uploads/tip-0618-d3-akademik-takvim.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "baibu_d3_takvim.pdf",
+          "note": "Doğrulama 2026-11-21: RG 16.10.2023/32341 değişikliği Madde 30(1)(a): ders kurulları not ortalamasının %60'ı + dönem sonu genel/bütünleme %40; geçme 60. Dönem II finali 95 puan + en çok 5 puan özel çalışma modülü (final tek not olarak girilir). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 4942d5ddb66a4c385488a611ab4754f7356a562ce4ecfc100b76eb4a5ffb4bce | Kurul listesi 2026-2027: Belge başlığında açıkça 2026-2027 EĞİTİM- ÖĞRETİM YILI yazmakta ve kurul tarihleri Eylül 2026 – Haziran 2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "0746d095-6184-5016-ad09-6b66508d2342",
+      "schemeId": "54f03bc8-67a4-5172-81fa-d4cb8c4dfbce",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://erbakan.edu.tr/storage/departments/files/99999991/Y%C3%B6netmelikler/T%C4%B1p%20Fak%C3%BCltesi%20Y%C3%B6netmeli%C4%9Fi%2020_09_2026%20Sonras%C4%B1.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "erbakan_yonetmelik_2026.pdf",
+          "note": "Doğrulama 2026-11-21: Yönetmelik (RG 28.07.2025) Madde 30(1)(b)-(c): ders kurulu puanlarının aritmetik ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60 (CC). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: e0ead1ec26a9258b7f4ec62159da5089e706b76b3358026f98d59fe157e1e73e | Formül; Sayfa 6-7, Madde 29, 30 ve 41"
+        },
+        {
+          "url": "https://tfees.erbakan.edu.tr/terms/fca1e125-b899-49d6-b520-44a84bdf50e0",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "erbakan_tfees_d1.html",
+          "note": "Doğrulama 2026-11-21: Yönetmelik (RG 28.07.2025) Madde 30(1)(b)-(c): ders kurulu puanlarının aritmetik ortalamasının %60'ı + yıl sonu genel/bütünleme %40; geçme 60 (CC). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: b18f55caf5024615ceca2f7345010693af2fce24578cb52aea22a2abb41d32a7 | Kurul listesi 2026-2027: Sayfada eğitim yılı olarak 2026-2027 seçili ve başlıkta 2026-2027 EĞİTİM-ÖĞRETİM YILI MEZUNİYET ÖNCESİ EĞİTİM KILAVUZU yazmaktadır."
+        }
+      ]
+    },
+    {
+      "id": "b56602b1-23ff-57be-8c83-38d000dc31a6",
+      "schemeId": "58b25727-2899-57b9-8a52-5ad761e09d0e",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://tip.cumhuriyet.edu.tr/userfiles/32/files/T%C4%B1p%20Fak%20S%C4%B1nav%20Y%C3%B6netmeli%C4%9Fi.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "cumhuriyet_yonetmelik.pdf",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 20(f),(ğ): kurul notları toplamı/kurul sayısı ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 7adb5ed5c5917cf0d4a09c2ad92af95d8d5958389ccb5a661efdf17f12b307a2 | Formül; Sayfa 4, Madde 20 (1) e, f, ğ"
+        },
+        {
+          "url": "https://www.cumhuriyet.edu.tr/webdosya/2026-2027-egitim-ogretim-yili-donem-1-ders-programi-84756.docx",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "cumhuriyet_d1_2026_2027.docx",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 20(f),(ğ): kurul notları toplamı/kurul sayısı ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: f5349dd6939599a9635a7f3e45d3e654726e394b193282882fd6130a42d98f2a | Kurul listesi 2026-2027: Belge başlığında 2026-2027 EĞİTİM VE ÖĞRETİM YILI DÖNEM I DERS PROGRAMI yazmaktadır ve tarihler 14 Eylül 2026 - 11 Haziran 2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "e2a09505-da56-5ff9-86e4-19bdac737bb6",
+      "schemeId": "5990c05d-9350-5dd2-840a-eb62ba57874e",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "8.58"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 7,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://tip.cumhuriyet.edu.tr/userfiles/32/files/T%C4%B1p%20Fak%20S%C4%B1nav%20Y%C3%B6netmeli%C4%9Fi.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "cumhuriyet_yonetmelik.pdf",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 20(f),(ğ): kurul notları toplamı/kurul sayısı ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 7adb5ed5c5917cf0d4a09c2ad92af95d8d5958389ccb5a661efdf17f12b307a2 | Formül; Sayfa 4, Madde 20 (1) e, f, ğ"
+        },
+        {
+          "url": "https://www.cumhuriyet.edu.tr/webdosya/2026-2027-egitim-ogretim-yili-donem-2-ders-programi-24528.xlsx",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "cumhuriyet_d2_2026_2027.xlsx",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 20(f),(ğ): kurul notları toplamı/kurul sayısı ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 77e01ff7458653fafa783bc2c68cb88b1f9e021fafb78e57064d553a9b9e663a | Kurul listesi 2026-2027: Dosya fakülte sitesinde 2026-2027 Eğitim Öğretim Yılı Dönem 2 Ders Programı olarak yayımlanmıştır ve kurul tarihleri Ağustos 2026 - Mayıs 2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "cadb634d-864c-5907-9ffe-adc903fa37c8",
+      "schemeId": "6db09b31-aa24-5dc8-89c4-9375686ebf93",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "8.58"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 7,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://tip.cumhuriyet.edu.tr/userfiles/32/files/T%C4%B1p%20Fak%20S%C4%B1nav%20Y%C3%B6netmeli%C4%9Fi.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "cumhuriyet_yonetmelik.pdf",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 20(f),(ğ): kurul notları toplamı/kurul sayısı ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 7adb5ed5c5917cf0d4a09c2ad92af95d8d5958389ccb5a661efdf17f12b307a2 | Formül; Sayfa 4, Madde 20 (1) e, f, ğ"
+        },
+        {
+          "url": "https://www.cumhuriyet.edu.tr/webdosya/2026-2027-egitim-ogretim-yili-donem-3-ders-programi-39513.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "cumhuriyet_d3_2026_2027.pdf",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 20(f),(ğ): kurul notları toplamı/kurul sayısı ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 69e58528d78e98988dc91dcaf119090f4b04a219d181b2242d7b75a349a79b89 | Kurul listesi 2026-2027: Kapakta 2026-2027 EĞİTİM VE ÖĞRETİM YILI DÖNEM 3 DERS PROGRAMI yazmaktadır ve kurul tarihleri 31 Ağustos 2026 - 9 Haziran 2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "ca683fa6-bb12-5965-b248-897bcb126655",
+      "schemeId": "f8922155-ac00-5a90-bec9-3f5f4f00ce4d",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://tip.bozok.edu.tr/upload/dosya/f2x7.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Yozgat Bozok Üniversitesi Tıp Fakültesi 2026-2027 Eğitim-Öğretim Rehberi (7.1. Yozgat Bozok Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği)",
+          "note": "Doğrulama 2026-11-21: 2026-2027 Eğitim-Öğretim Rehberi (yönetmelik Madde 18(3),(5)(a), değişik RG 27.09.2018): genel kurul ortalaması (kurul notları toplamı/kurul sayısı) %60 + genel sınav %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: ced5d78a100d3b649de6533653bbe79d2d79d5b1518c59463894c558f289beb0 | Formül; Sayfa 430, Madde 18/3-5"
+        }
+      ]
+    },
+    {
+      "id": "82661711-f5d7-572b-baff-eee578ae357a",
+      "schemeId": "d565059a-4246-59a6-a60a-4aa0b00f12e8",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://tip.bozok.edu.tr/upload/dosya/f2x7.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Yozgat Bozok Üniversitesi Tıp Fakültesi 2026-2027 Eğitim-Öğretim Rehberi (7.1. Yozgat Bozok Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği)",
+          "note": "Doğrulama 2026-11-21: 2026-2027 Eğitim-Öğretim Rehberi (yönetmelik Madde 18(3),(5)(a), değişik RG 27.09.2018): genel kurul ortalaması (kurul notları toplamı/kurul sayısı) %60 + genel sınav %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: ced5d78a100d3b649de6533653bbe79d2d79d5b1518c59463894c558f289beb0 | Formül; Sayfa 430, Madde 18/3-5"
+        }
+      ]
+    },
+    {
+      "id": "4b92bdca-5e4c-53dc-b166-74162350e2ea",
+      "schemeId": "1ed29d24-b7d5-56e7-a0da-193753340570",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "8.58"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 7,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://tip.bozok.edu.tr/upload/dosya/f2x7.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Yozgat Bozok Üniversitesi Tıp Fakültesi 2026-2027 Eğitim-Öğretim Rehberi (7.1. Yozgat Bozok Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği)",
+          "note": "Doğrulama 2026-11-21: 2026-2027 Eğitim-Öğretim Rehberi (yönetmelik Madde 18(3),(5)(a), değişik RG 27.09.2018): genel kurul ortalaması (kurul notları toplamı/kurul sayısı) %60 + genel sınav %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: ced5d78a100d3b649de6533653bbe79d2d79d5b1518c59463894c558f289beb0 | Formül; Sayfa 430, Madde 18/3-5"
+        }
+      ]
+    },
+    {
+      "id": "b20c7565-548b-568c-b80a-231b7eca5713",
+      "schemeId": "59ecb359-aba1-5f00-8fbf-1a8f993be2ef",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.resmigazete.gov.tr/eskiler/2026/02/20260213-8.htm",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Zonguldak Bülent Ecevit Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (RG 13.02.2026 / 33167)",
+          "note": "Doğrulama 2026-11-21: Yönetmelik RG 13.02.2026/33167 Madde 16(3),(5)(a): ders kurulu puanlarının aritmetik ortalamasının %60'ı + genel sınav %40; geçme 60 (CC). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: f666f5d87aa9979223c617bc5c0346dfce094dd5ce0d292179e26d9407338332 | Formül; Madde 16/3-5"
+        },
+        {
+          "url": "https://cdn3.beun.edu.tr/tip//donem1dersprogrami20262027son.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "2026-2027 EĞİTİM-ÖĞRETİM YILI DÖNEM 1 PROGRAMI",
+          "note": "Doğrulama 2026-11-21: Yönetmelik RG 13.02.2026/33167 Madde 16(3),(5)(a): ders kurulu puanlarının aritmetik ortalamasının %60'ı + genel sınav %40; geçme 60 (CC). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 05f983851de8a705137c4c78fe2000cc8b6291cf232ee2dc1493faa415f5fd6d | Kurul listesi 2026-2027: Belge başlıklarında 2026-2027 EĞİTİM-ÖĞRETİM YILI yazmakta ve kurul tarihleri 14 Eylül 2026 - 11 Haziran 2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "34b140c8-68c5-577c-9006-34572b8f1e24",
+      "schemeId": "61095510-ad94-5829-a73e-c22eaf614318",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "8.58"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 7,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.resmigazete.gov.tr/eskiler/2026/02/20260213-8.htm",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Zonguldak Bülent Ecevit Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği (RG 13.02.2026 / 33167)",
+          "note": "Doğrulama 2026-11-21: Yönetmelik RG 13.02.2026/33167 Madde 16(3),(5)(a): ders kurulu puanlarının aritmetik ortalamasının %60'ı + genel sınav %40; geçme 60 (CC). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: f666f5d87aa9979223c617bc5c0346dfce094dd5ce0d292179e26d9407338332 | Formül; Madde 16/3-5"
+        },
+        {
+          "url": "https://cdn3.beun.edu.tr/tip//donem3dersprogrami20262027_2aVUprQ.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "2026-2027 EĞİTİM-ÖĞRETİM YILI DÖNEM III PROGRAMI",
+          "note": "Doğrulama 2026-11-21: Yönetmelik RG 13.02.2026/33167 Madde 16(3),(5)(a): ders kurulu puanlarının aritmetik ortalamasının %60'ı + genel sınav %40; geçme 60 (CC). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 117dbd9d502461f1042b02170fbd6007b682dbe41b692747c5c16001c8106b21 | Kurul listesi 2026-2027: Belge başlıklarında 2026-2027 EĞİTİM-ÖĞRETİM YILI DÖNEM III yazmakta ve tarihler 14/09/2026 - 25/06/2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "04f8be8c-d73b-53ad-817e-f52f768903a7",
+      "schemeId": "b07082ae-402e-5f79-9e13-4e95f14c7b5e",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://cdn.comu.edu.tr/cms/tipfak/files/3887-comutf-egitim-sinav-yonergesi-01092025.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Çanakkale Onsekiz Mart Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği",
+          "note": "Doğrulama 2026-11-21: Eğitim-Öğretim ve Sınav Yönergesi (01.09.2025): ders kurulu başarı puanları ortalamasının %60'ı + final %40; başarı notu 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: d926f7f69545b52411af55ea81fa8d40c4205c63a447a3d6cb23a6586ed0cec3 | Formül; Madde 37/3, Madde 38/1-2"
+        },
+        {
+          "url": "https://tip.comu.edu.tr/donem-1-2026-2027-egitim-yili-r286.html",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "ÇOMÜ Tıp Fakültesi Dönem 1 2026-2027 Eğitim Yılı Sayfası",
+          "note": "Doğrulama 2026-11-21: Eğitim-Öğretim ve Sınav Yönergesi (01.09.2025): ders kurulu başarı puanları ortalamasının %60'ı + final %40; başarı notu 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 9216db343b30c54ff14e4710fe9b979bb0bf94a7bae1766113bdabe8a8600b0d | Kurul listesi 2026-2027: Sayfa başlığı 'Dönem 1 2026-2027 Eğitim Yılı' ve tarihler '14 Eylül 2026 Derslerin Başlangıcı - 21 Mayıs 2027 Ders Bitimi'."
+        }
+      ]
+    },
+    {
+      "id": "38c699d9-6354-5f28-9a00-c2dee964ff40",
+      "schemeId": "b1f6d18f-7f73-5ffc-aa69-e4c0fd8db490",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://cdn.comu.edu.tr/cms/tipfak/files/3887-comutf-egitim-sinav-yonergesi-01092025.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Çanakkale Onsekiz Mart Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği",
+          "note": "Doğrulama 2026-11-21: Eğitim-Öğretim ve Sınav Yönergesi (01.09.2025): ders kurulu başarı puanları ortalamasının %60'ı + final %40; başarı notu 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: d926f7f69545b52411af55ea81fa8d40c4205c63a447a3d6cb23a6586ed0cec3 | Formül; Madde 37/3, Madde 38/1-2"
+        },
+        {
+          "url": "https://tip.comu.edu.tr/donem-2-2026-2027-egitim-yili-r285.html",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "ÇOMÜ Tıp Fakültesi Dönem 2 2026-2027 Eğitim Yılı Sayfası",
+          "note": "Doğrulama 2026-11-21: Eğitim-Öğretim ve Sınav Yönergesi (01.09.2025): ders kurulu başarı puanları ortalamasının %60'ı + final %40; başarı notu 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: e3c051661b2a6705393674a65289c9b10f6cdff5b1b0150d49f2807d6f52812c | Kurul listesi 2026-2027: Sayfa başlığı 'Dönem 2 2026-2027 Eğitim Yılı' ve tarihler '31 Ağustos 2026 Derslerin Başlangıcı - 14 Mayıs 2027 Ders Bitimi'."
+        }
+      ]
+    },
+    {
+      "id": "f5b3a6e2-2222-5d00-9ba4-3eb3b6d9987c",
+      "schemeId": "8e49c7a4-1afb-5fbb-839b-b2cb28ff4b3c",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://cdn.comu.edu.tr/cms/tipfak/files/3887-comutf-egitim-sinav-yonergesi-01092025.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Çanakkale Onsekiz Mart Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği",
+          "note": "Doğrulama 2026-11-21: Eğitim-Öğretim ve Sınav Yönergesi (01.09.2025): ders kurulu başarı puanları ortalamasının %60'ı + final %40; başarı notu 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: d926f7f69545b52411af55ea81fa8d40c4205c63a447a3d6cb23a6586ed0cec3 | Formül; Madde 37/3, Madde 38/1-2"
+        },
+        {
+          "url": "https://tip.comu.edu.tr/donem-3-2026-2027-egitim-yili-r284.html",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "ÇOMÜ Tıp Fakültesi Dönem 3 2026-2027 Eğitim Yılı Sayfası",
+          "note": "Doğrulama 2026-11-21: Eğitim-Öğretim ve Sınav Yönergesi (01.09.2025): ders kurulu başarı puanları ortalamasının %60'ı + final %40; başarı notu 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 2f87873f13edd5cfcaf63c78f26633b25b4cbee11d959bbd11f3a3a4517e4c80 | Kurul listesi 2026-2027: Sayfa başlığı 'Dönem 3 2026-2027 Eğitim Yılı' ve tarihler '31 Ağustos 2026 Derslerin Başlangıcı - 21 Mayıs 2027 Ders Bitimi'."
+        }
+      ]
+    },
+    {
+      "id": "1a353833-6978-5c24-8828-eca479083a99",
+      "schemeId": "caf27a46-f7fd-5afe-9042-39ed9ec71072",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "15.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.aydin.edu.tr/en-us/akademik/fakulteler/tip/Documents/Preclinical%20Education%20Directive.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "İstanbul Aydın Üniversitesi Tıp Fakültesi Klinik Öncesi (Dönem I, II, III) Eğitim-Öğretim Sınav Ölçme ve Değerlendirme Yönergesi",
+          "note": "Doğrulama 2026-11-21: Preclinical Education Directive Madde 8(5)(a): ders kurulları not ortalamasının (aritmetik) %60'ı + final/bütünleme %40; geçme 60; finalde 50 baraj. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: c9d4e961166800640cd84b63d37c66a72f8fca072173b786f1a8ae18e2d58f87 | Formül; Sayfa 5-7, Madde 8/2, 8/4, 8/5 ve Madde 11/4"
+        },
+        {
+          "url": "https://www.aydin.edu.tr/tr-tr/ogrenciler/kayit-kabul/Documents/2026-2027-iau-tip-fakultesi-akademik-takvimi.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "İstanbul Aydın Üniversitesi Tıp Fakültesi 2026 – 2027 Eğitim-Öğretim Yılı Akademik Takvimi",
+          "note": "Doğrulama 2026-11-21: Preclinical Education Directive Madde 8(5)(a): ders kurulları not ortalamasının (aritmetik) %60'ı + final/bütünleme %40; geçme 60; finalde 50 baraj. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: f812991ca5f09bbeca7c9b299833e4ebe0821d32872d4eeb17fb604d50f58c48 | Kurul listesi 2026-2027: Belge başlığı 'İSTANBUL AYDIN ÜNİVERSİTESİ TIP FAKÜLTESİ 2026 – 2027 EĞİTİM-ÖĞRETİM YILI AKADEMİK TAKVİMİ' ve tarihler 21.09.2026 – 27.04.2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "906003f6-7910-574a-9bfa-9a69c673b0b9",
+      "schemeId": "d3ccf26d-010a-5f84-9b10-e88de253cbea",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.aydin.edu.tr/en-us/akademik/fakulteler/tip/Documents/Preclinical%20Education%20Directive.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "İstanbul Aydın Üniversitesi Tıp Fakültesi Klinik Öncesi (Dönem I, II, III) Eğitim-Öğretim Sınav Ölçme ve Değerlendirme Yönergesi",
+          "note": "Doğrulama 2026-11-21: Preclinical Education Directive Madde 8(5)(a): ders kurulları not ortalamasının (aritmetik) %60'ı + final/bütünleme %40; geçme 60; finalde 50 baraj. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: c9d4e961166800640cd84b63d37c66a72f8fca072173b786f1a8ae18e2d58f87 | Formül; Sayfa 5-7, Madde 8/2, 8/4, 8/5 ve Madde 11/4"
+        },
+        {
+          "url": "https://www.aydin.edu.tr/tr-tr/ogrenciler/kayit-kabul/Documents/2026-2027-iau-tip-fakultesi-akademik-takvimi.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "İstanbul Aydın Üniversitesi Tıp Fakültesi 2026 – 2027 Eğitim-Öğretim Yılı Akademik Takvimi",
+          "note": "Doğrulama 2026-11-21: Preclinical Education Directive Madde 8(5)(a): ders kurulları not ortalamasının (aritmetik) %60'ı + final/bütünleme %40; geçme 60; finalde 50 baraj. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: f812991ca5f09bbeca7c9b299833e4ebe0821d32872d4eeb17fb604d50f58c48 | Kurul listesi 2026-2027: Belge başlığı 'İSTANBUL AYDIN ÜNİVERSİTESİ TIP FAKÜLTESİ 2026 – 2027 EĞİTİM-ÖĞRETİM YILI AKADEMİK TAKVİMİ' ve tarihler 14.09.2026 – 28.04.2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "bd53e1d7-55bd-5c90-abe9-b82fa8def14a",
+      "schemeId": "f829ef3e-0118-5547-b39b-bc834d994563",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "8.58"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 7,
+          "weightPercent": "8.57"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.aydin.edu.tr/en-us/akademik/fakulteler/tip/Documents/Preclinical%20Education%20Directive.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "İstanbul Aydın Üniversitesi Tıp Fakültesi Klinik Öncesi (Dönem I, II, III) Eğitim-Öğretim Sınav Ölçme ve Değerlendirme Yönergesi",
+          "note": "Doğrulama 2026-11-21: Preclinical Education Directive Madde 8(5)(a): ders kurulları not ortalamasının (aritmetik) %60'ı + final/bütünleme %40; geçme 60; finalde 50 baraj. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: c9d4e961166800640cd84b63d37c66a72f8fca072173b786f1a8ae18e2d58f87 | Formül; Sayfa 5-7, Madde 8/2, 8/4, 8/5 ve Madde 11/4"
+        },
+        {
+          "url": "https://www.aydin.edu.tr/tr-tr/ogrenciler/kayit-kabul/Documents/2026-2027-iau-tip-fakultesi-akademik-takvimi.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "İstanbul Aydın Üniversitesi Tıp Fakültesi 2026 – 2027 Eğitim-Öğretim Yılı Akademik Takvimi",
+          "note": "Doğrulama 2026-11-21: Preclinical Education Directive Madde 8(5)(a): ders kurulları not ortalamasının (aritmetik) %60'ı + final/bütünleme %40; geçme 60; finalde 50 baraj. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: f812991ca5f09bbeca7c9b299833e4ebe0821d32872d4eeb17fb604d50f58c48 | Kurul listesi 2026-2027: Belge başlığı 'İSTANBUL AYDIN ÜNİVERSİTESİ TIP FAKÜLTESİ 2026 – 2027 EĞİTİM-ÖĞRETİM YILI AKADEMİK TAKVİMİ' ve tarihler 14.09.2026 – 26.04.2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "aec36181-68d3-5301-b633-bc12a0b1c8e7",
+      "schemeId": "0e768316-a459-5d30-b57f-1940117f1bdb",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://mevzuat.karatay.edu.tr/pdfkaydet/yonetmelik/kto-karatay-universitesi-tip-fakultesi-egitim-ogre-122743.html",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "KTO-Karatay Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 22(2)(b): ders kurulu puanlarının aritmetik ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurullar 2026-2027 ders listesinden (Kurul11-15, 21-25, 31-36). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 93c69bd259c83e23e44f5abe2776e2ac04124e14577ddacec5acdeacee64ea29 | Formül; Madde 23-(1)-b, c ve Madde 22-(2)"
+        },
+        {
+          "url": "https://bologna.karatay.edu.tr/tr/program/tip-fakultesi/tip/ders-listesi-ve-kredilendirme",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "KTO Karatay Üniversitesi AKTS Bilgi Sistemi - Tıp 2026-2027 Müfredatı",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 22(2)(b): ders kurulu puanlarının aritmetik ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurullar 2026-2027 ders listesinden (Kurul11-15, 21-25, 31-36). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: f6a6230eee8e0cc0d72f95626b09809a881d042ef2374dd1fe70777ffca37cdb | Kurul listesi 2026-2027: AKTS Bilgi Sistemi üzerinde \"Tıp 2026-2027 Müfredatı\" başlığı altında listelenmiştir ve 2026-2027 Tıp Fakültesi Akademik Takvimi ile (5 kurul) uyumludur."
+        }
+      ]
+    },
+    {
+      "id": "a863423b-c286-5b5e-ae07-8c60e16615c3",
+      "schemeId": "4b07d07d-10f2-5c7c-9b10-a94e541cdb61",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://mevzuat.karatay.edu.tr/pdfkaydet/yonetmelik/kto-karatay-universitesi-tip-fakultesi-egitim-ogre-122743.html",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "KTO-Karatay Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 22(2)(b): ders kurulu puanlarının aritmetik ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurullar 2026-2027 ders listesinden (Kurul11-15, 21-25, 31-36). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 93c69bd259c83e23e44f5abe2776e2ac04124e14577ddacec5acdeacee64ea29 | Formül; Madde 23-(1)-b, c ve Madde 22-(2)"
+        },
+        {
+          "url": "https://bologna.karatay.edu.tr/tr/program/tip-fakultesi/tip/ders-listesi-ve-kredilendirme",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "KTO Karatay Üniversitesi AKTS Bilgi Sistemi - Tıp 2026-2027 Müfredatı",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 22(2)(b): ders kurulu puanlarının aritmetik ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurullar 2026-2027 ders listesinden (Kurul11-15, 21-25, 31-36). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: f6a6230eee8e0cc0d72f95626b09809a881d042ef2374dd1fe70777ffca37cdb | Kurul listesi 2026-2027: AKTS Bilgi Sistemi üzerinde \"Tıp 2026-2027 Müfredatı\" başlığı altında listelenmiştir."
+        }
+      ]
+    },
+    {
+      "id": "59ab95a4-d2ce-5eef-b0c6-94747efa2dcd",
+      "schemeId": "a9a3a425-b309-5a56-ab27-0b9653f7873d",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://mevzuat.karatay.edu.tr/pdfkaydet/yonetmelik/kto-karatay-universitesi-tip-fakultesi-egitim-ogre-122743.html",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "KTO-Karatay Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 22(2)(b): ders kurulu puanlarının aritmetik ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurullar 2026-2027 ders listesinden (Kurul11-15, 21-25, 31-36). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 93c69bd259c83e23e44f5abe2776e2ac04124e14577ddacec5acdeacee64ea29 | Formül; Madde 23-(1)-b, c ve Madde 22-(2)"
+        },
+        {
+          "url": "https://bologna.karatay.edu.tr/tr/program/tip-fakultesi/tip/ders-listesi-ve-kredilendirme",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "KTO Karatay Üniversitesi AKTS Bilgi Sistemi - Tıp 2026-2027 Müfredatı",
+          "note": "Doğrulama 2026-11-21: Yönetmelik Madde 22(2)(b): ders kurulu puanlarının aritmetik ortalamasının %60'ı + dönem sonu sınavı %40; geçme 60. Kurullar 2026-2027 ders listesinden (Kurul11-15, 21-25, 31-36). Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: f6a6230eee8e0cc0d72f95626b09809a881d042ef2374dd1fe70777ffca37cdb | Kurul listesi 2026-2027: AKTS Bilgi Sistemi üzerinde \"Tıp 2026-2027 Müfredatı\" başlığı altında listelenmiştir ve 2026-2027 Akademik Takvimdeki 6 kurullu Dönem III takvimiyle uyumludur."
+        }
+      ]
+    },
+    {
+      "id": "c355127b-2f90-5533-a3df-3c6040fb2706",
+      "schemeId": "e7baa260-288d-5871-ab99-41efa15d7e64",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "12.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://tipfak.gop.edu.tr/depo/menuler/birim_11159/akademik_takvim_189/html_icerik/files/Tokat%20Gaziosmanpa%C5%9Fa%20%C3%9Cniversitesi%20T%C4%B1p%20Fak%C3%BCltesi%20E%C4%9Fitim-%C3%96%C4%9Fretim%20ve%20S%C4%B1nav%20Y%C3%B6netmeli%C4%9Fi%20%5B25-09-2026%5D.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Tokat Gaziosmanpaşa Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği [25-09-2026]",
+          "note": "Doğrulama 2026-11-21: Yönetmelik [25-09-2026] Madde 24(2): kurul notları toplamı/sınav sayısı %60 + dönem sonu genel sınav %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 66ce64c6eb432f3a2dd993117070085dc74a871dd7904c601aa3b28ee9264b05 | Formül; Madde 24/(1)-(4)"
+        },
+        {
+          "url": "https://tipfak.gop.edu.tr/depo/menuler/birim_11159/akademik_takvim_189/html_icerik/files/T%C4%B1p%20Fak%C3%BCltesi%202026-2027%20E%C4%9Fitim-%C3%96%C4%9Fretim%20Y%C4%B1l%C4%B1%20T%C3%BCm%20D%C3%B6nemler%20E%C4%9Fitim%20Rehberi.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "TOGÜ Tıp Fakültesi 2026-2027 Eğitim-Öğretim Rehberi",
+          "note": "Doğrulama 2026-11-21: Yönetmelik [25-09-2026] Madde 24(2): kurul notları toplamı/sınav sayısı %60 + dönem sonu genel sınav %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: a5ac070f475d9771202da77406286637e0e000c6488dc4ea8bc9ec00602323e9 | Kurul listesi 2026-2027: Belge başlığı 2026-2027 Eğitim-Öğretim Rehberi ve kurul başlangıç tarihleri 7.09.2026 - 22.03.2027 arasındadır."
+        }
+      ]
+    },
+    {
+      "id": "2183f0db-0db3-5ee1-bd0f-f02fc2110c29",
+      "schemeId": "37858c45-4261-59b0-a6e6-30534d8f784b",
+      "versionNumber": 1,
+      "passingGrade": "60.00",
+      "components": [
+        {
+          "type": "COMMITTEE",
+          "position": 1,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 2,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 3,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 4,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 5,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "COMMITTEE",
+          "position": 6,
+          "weightPercent": "10.00"
+        },
+        {
+          "type": "FINAL",
+          "position": 1,
+          "weightPercent": "40.00"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://tipfak.gop.edu.tr/depo/menuler/birim_11159/akademik_takvim_189/html_icerik/files/Tokat%20Gaziosmanpa%C5%9Fa%20%C3%9Cniversitesi%20T%C4%B1p%20Fak%C3%BCltesi%20E%C4%9Fitim-%C3%96%C4%9Fretim%20ve%20S%C4%B1nav%20Y%C3%B6netmeli%C4%9Fi%20%5B25-09-2026%5D.pdf",
+          "type": "FACULTY_REGULATION",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "Tokat Gaziosmanpaşa Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönetmeliği [25-09-2026]",
+          "note": "Doğrulama 2026-11-21: Yönetmelik [25-09-2026] Madde 24(2): kurul notları toplamı/sınav sayısı %60 + dönem sonu genel sınav %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: 66ce64c6eb432f3a2dd993117070085dc74a871dd7904c601aa3b28ee9264b05 | Formül; Madde 24/(1)-(4)"
+        },
+        {
+          "url": "https://tipfak.gop.edu.tr/depo/menuler/birim_11159/akademik_takvim_189/html_icerik/files/T%C4%B1p%20Fak%C3%BCltesi%202026-2027%20E%C4%9Fitim-%C3%96%C4%9Fretim%20Y%C4%B1l%C4%B1%20T%C3%BCm%20D%C3%B6nemler%20E%C4%9Fitim%20Rehberi.pdf",
+          "type": "ACADEMIC_SCHEDULE_2026_2027",
+          "verifiedAt": "2026-11-21T00:00:00.000Z",
+          "title": "TOGÜ Tıp Fakültesi 2026-2027 Eğitim-Öğretim Rehberi",
+          "note": "Doğrulama 2026-11-21: Yönetmelik [25-09-2026] Madde 24(2): kurul notları toplamı/sınav sayısı %60 + dönem sonu genel sınav %40; geçme 60. Kurul adları 2026-2027 belgesinde tek tek bulundu; kaynak tarayıcı ajanının (Browser Use) listesi, formül belgeden ayrıca doğrulandı. | SHA-256: a5ac070f475d9771202da77406286637e0e000c6488dc4ea8bc9ec00602323e9 | Kurul listesi 2026-2027: Belge başlığı 2026-2027 Eğitim-Öğretim Rehberi ve kurul başlangıç tarihleri 31.08.2026 - 19.04.2027 arasındadır."
         }
       ]
     },
