@@ -108,6 +108,15 @@ export const verificationRecord = z.object({
     finding: z.string().min(1).max(1000),
     sources: z.array(z.object({url: z.url(), type: z.string().min(1).max(100), title: z.string().max(500), note: z.string().max(1500)}).strict()).optional(),
   }).strict()),
+  // Programs the export has no rule for (e.g. separately coded English variants)
+  // whose documents show they follow the same rule as a verified scheme.
+  derived: z.array(z.object({
+    programKey: z.string().startsWith("prog:"),
+    classYear: z.number().int().min(1).max(12),
+    sameAs: z.string().startsWith("gs:"),
+    finding: z.string().min(1).max(1000),
+    sources: z.array(z.object({url: z.url(), type: z.string().min(1).max(100), title: z.string().max(500), note: z.string().max(1500)}).strict()).optional(),
+  }).strict()).default([]),
 }).strict();
 export type VerificationRecord = z.infer<typeof verificationRecord>;
 
@@ -137,6 +146,7 @@ export async function convertCommitteeExport(dir: string, verification: Verifica
     meta: {exportName: path.basename(path.resolve(dir)), academicYearStart, generatedFrom: "scripts/academic/convert-committee-export.ts", notes: []},
     universities: [], faculties: [], programs: [], schemes: [], versions: [], excluded: [],
   };
+  const built = new Map<string, {rule: DraftRule; scheme: CommitteeDataset["schemes"][number]}>();
   const uniIds = new Map<string, string>(), facIds = new Map<string, string>(), progIds = new Map<string, string>();
   const catalogFor = (programKey: string) => {
     const p = get(progByKey, programKey), f = get(facByKey, p.faculty_key), u = get(uniByKey, f.university_key);
@@ -220,7 +230,26 @@ export async function convertCommitteeExport(dir: string, verification: Verifica
       rule.components.map(c => ({component_type: c.type, position: c.position, weight_percent: c.weightPercent})),
       rule.sources.map(r => ({source_url: r.url, verified_at: new Date(r.verifiedAt)})));
     if (errors.length) { exclude(errors.join(",")); continue; }
-    out.schemes.push({id: rule.schemeId, programId, courseId: null, academicYearStart: s.academic_year_start, classYear: s.class_year, period: s.period, system: "COMMITTEE"});
+    const scheme = {id: rule.schemeId, programId, courseId: null, academicYearStart: s.academic_year_start, classYear: s.class_year, period: s.period, system: "COMMITTEE" as const};
+    out.schemes.push(scheme);
+    out.versions.push(rule);
+    built.set(s.source_key, {rule, scheme});
+  }
+
+  for (const d of verification.derived) {
+    const base = built.get(d.sameAs);
+    if (!base) throw new Error(`DERIVED_BASE_NOT_INCLUDED ${d.sameAs}`);
+    if (base.scheme.classYear !== d.classYear) throw new Error(`DERIVED_CLASS_MISMATCH ${d.programKey}`);
+    const programId = catalogFor(d.programKey);
+    const key = `gs:${d.programKey.slice(5)}:${academicYearStart}:y${d.classYear}:annual:committee`;
+    const prefix = `Doğrulama ${verification.checkedAt}: ${d.finding}`;
+    const extra = (d.sources ?? []).filter(r => verification.documents[r.url]).map(r => ({
+      url: r.url, type: r.type, verifiedAt: `${verification.checkedAt}T00:00:00.000Z`, title: r.title,
+      note: `${prefix} | SHA-256: ${verification.documents[r.url]} | ${r.note}`.slice(0, 2000),
+    }));
+    const sources = [...extra, ...base.rule.sources.filter(r => !extra.some(e => e.url === r.url))];
+    const rule: DraftRule = {...base.rule, id: stableUuid(`komitehane:${key}:v1`), schemeId: stableUuid(`komitehane:${key}`), versionNumber: 1, sources};
+    out.schemes.push({...base.scheme, id: rule.schemeId, programId});
     out.versions.push(rule);
   }
   out.meta.notes = [
