@@ -1,24 +1,31 @@
 import {readFile} from "node:fs/promises";
-import type {Pool} from "pg";
+import type {Pool, PoolClient} from "pg";
 import {z} from "zod";
 import {academicConnection} from "./connections";
 const numberString=z.string().regex(/^\d{1,3}(?:\.\d{1,2})?$/).refine(x=>Number(x)<=100);
-const fileSchema=z.array(z.object({
+export const draftRuleInput=z.object({
   id:z.uuid(), schemeId:z.uuid(), versionNumber:z.number().int().positive(), passingGrade:numberString,
   components:z.array(z.object({type:z.enum(["COMMITTEE","MIDTERM","FINAL"]),position:z.number().int().min(1).max(11),weightPercent:numberString.refine(x=>Number(x)>0)})).max(11),
-  sources:z.array(z.object({url:z.url().refine(s=>new URL(s).protocol==="https:"),type:z.string().min(1).max(100),verifiedAt:z.iso.datetime(),title:z.string().max(500).optional()})).max(20),
-}).strict()).max(500);
+  sources:z.array(z.object({url:z.url().refine(s=>new URL(s).protocol==="https:"),type:z.string().min(1).max(100),verifiedAt:z.iso.datetime(),title:z.string().max(500).optional(),note:z.string().max(2000).optional()})).max(20),
+}).strict();
+export const draftRulesFile=z.array(draftRuleInput).max(500);
+export type DraftRule=z.infer<typeof draftRuleInput>;
+/** Inserts DRAFT versions inside the caller's transaction; an existing version id is skipped with its children. */
+export async function insertDraftRules(client:PoolClient,rows:DraftRule[]) {
+  let inserted=0;
+  for (const row of rows) {
+    const result=await client.query("INSERT INTO grading_scheme_versions(id,scheme_id,version_number,passing_grade,status) VALUES($1,$2,$3,$4,'DRAFT') ON CONFLICT (id) DO NOTHING RETURNING id",[row.id,row.schemeId,row.versionNumber,row.passingGrade]);
+    if (!result.rowCount) continue;
+    inserted++;
+    for (const c of row.components) await client.query("INSERT INTO assessment_components(version_id,component_type,position,weight_percent) VALUES($1,$2,$3,$4)",[row.id,c.type,c.position,c.weightPercent]);
+    for (const s of row.sources) await client.query("INSERT INTO grading_rule_sources(version_id,source_url,source_type,verified_at,source_title,source_note) VALUES($1,$2,$3,$4,$5,$6)",[row.id,s.url,s.type,s.verifiedAt,s.title??null,s.note??null]);
+  }
+  return inserted;
+}
 export async function seedRules(pool:Pool,raw:unknown) {
-  const rows=fileSchema.parse(raw);const client=await pool.connect();
+  const rows=draftRulesFile.parse(raw);const client=await pool.connect();
   try {
-    await client.query("BEGIN");let inserted=0;
-    for (const row of rows) {
-      const result=await client.query("INSERT INTO grading_scheme_versions(id,scheme_id,version_number,passing_grade,status) VALUES($1,$2,$3,$4,'DRAFT') ON CONFLICT (id) DO NOTHING RETURNING id",[row.id,row.schemeId,row.versionNumber,row.passingGrade]);
-      if (!result.rowCount) continue;
-      inserted++;
-      for (const c of row.components) await client.query("INSERT INTO assessment_components(version_id,component_type,position,weight_percent) VALUES($1,$2,$3,$4)",[row.id,c.type,c.position,c.weightPercent]);
-      for (const s of row.sources) await client.query("INSERT INTO grading_rule_sources(version_id,source_url,source_type,verified_at,source_title) VALUES($1,$2,$3,$4,$5)",[row.id,s.url,s.type,s.verifiedAt,s.title??null]);
-    }
+    await client.query("BEGIN");const inserted=await insertDraftRules(client,rows);
     await client.query("COMMIT");return inserted;
   } catch(e) {await client.query("ROLLBACK");throw e;} finally {client.release();}
 }

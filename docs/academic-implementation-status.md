@@ -9,7 +9,10 @@ entity seed commands and draft-only rule import, a shared calculation engine,
 editable final weight, context/version-scoped browser storage with explicit
 recovery, API, localized academic routes and sitemap, OpenAPI and operations
 guides. Candidate universities, faculties, programs and courses start inactive.
-No real university grading rules or production data have been seeded.
+A first real committee dataset (`data/academic/committee-2026-27.json`, 34 DRAFT
+versions for 12 Tıp programs at 10 universities, inactive catalog for 107 universities) is prepared
+and covered by the isolated PostgreSQL test; it has not been imported into or
+published on production, and its sources still need human review.
 
 The isolated CI workflow now verifies the following on disposable PostgreSQL
 16 and 18 services and fictional fixture data: clean and repeat migration, idempotent
