@@ -87,8 +87,9 @@ by a different role. Never grant the app role writer or migrator privileges.
 ### Committee (kurul) dataset
 
 `data/academic/committee-2026-27.json` is the reviewed, normalized committee
-part of a research export (2026-27, Tıp only). It holds inactive universities,
-faculties and programs, committee schemes, and DRAFT versions whose structure
+part of a research export (2026-27, Tıp only). It holds an inactive catalog of
+every Tıp program in the export (ÖSYM 2026 Tablo-4; KKTC excluded), committee
+schemes, and DRAFT versions whose structure
 already passes `validateForPublication`; everything the export marked partial,
 unsupported, conflicting, without a numeric passing grade or without an
 accessible HTTPS source is listed under `excluded` instead of being imported.

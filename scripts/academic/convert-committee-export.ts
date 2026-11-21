@@ -143,6 +143,11 @@ export async function convertCommitteeExport(dir: string): Promise<CommitteeData
     return progIds.get(p.source_key)!;
   };
 
+  // Every Tıp program in the export joins the inactive catalog, including those
+  // without any committee rule yet (e.g. separately coded English variants).
+  const medicalPrograms = programs.filter(p => /^Tıp\b/u.test(p.name) && /TIP/u.test(get(facByKey, p.faculty_key).name));
+  for (const p of [...medicalPrograms].sort((a, b) => a.source_key.localeCompare(b.source_key))) catalogFor(p.source_key);
+
   for (const s of [...schemes].sort((a, b) => a.source_key.localeCompare(b.source_key))) {
     if (s.system_type !== "COMMITTEE" || s.course_key) throw new Error(`NOT_A_COMMITTEE_SCHEME ${s.source_key}`);
     const programId = catalogFor(s.program_key);
@@ -195,6 +200,7 @@ export async function convertCommitteeExport(dir: string): Promise<CommitteeData
   }
   out.meta.notes = [
     "All catalog entries are inactive and all versions are DRAFT; nothing is published by the import.",
+    "The catalog lists every Tıp program in the export (ÖSYM 2026 Tablo-4, KKTC excluded), including programs without a committee rule.",
     "Weights with more than two decimals (equal or AKTS-weighted shares such as 60/7) are rounded to two decimals by largest remainder so each version totals exactly 100.00.",
     "Sources are those the research export marked ACCESSIBLE; each must still be checked by a person before `pnpm academic:publish`.",
   ];

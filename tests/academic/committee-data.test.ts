@@ -20,8 +20,8 @@ describe("committee dataset", () => {
   });
   it("reuses candidate catalog ids for the same universities", () => {
     const catalogIds = new Set(MEDICAL_UNIVERSITIES.map(name => universityId(slugify(name))));
-    const reused = data.universities.filter(u => catalogIds.has(u.id));
-    expect(reused.length).toBeGreaterThan(100);
+    expect(data.universities.filter(u => !catalogIds.has(u.id)).map(u => u.name)).toEqual([]);
+    expect(data.universities).toHaveLength(MEDICAL_UNIVERSITIES.length);
     expect(data.universities.find(u => u.slug === "aydin-adnan-menderes-universitesi")?.id).toBe(universityId("adnan-menderes-universitesi"));
   });
   it("uses readable names rather than upper-case source names", () => {

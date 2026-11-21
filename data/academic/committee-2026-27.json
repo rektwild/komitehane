@@ -5,6 +5,7 @@
     "generatedFrom": "scripts/academic/convert-committee-export.ts",
     "notes": [
       "All catalog entries are inactive and all versions are DRAFT; nothing is published by the import.",
+      "The catalog lists every Tıp program in the export (ÖSYM 2026 Tablo-4, KKTC excluded), including programs without a committee rule.",
       "Weights with more than two decimals (equal or AKTS-weighted shares such as 60/7) are rounded to two decimals by largest remainder so each version totals exactly 100.00.",
       "Sources are those the research export marked ACCESSIBLE; each must still be checked by a person before `pnpm academic:publish`."
     ]
@@ -119,6 +120,11 @@
       "id": "26c6c651-2e1d-5544-9b09-6b051aafb862",
       "name": "Biruni Üniversitesi",
       "slug": "biruni-universitesi"
+    },
+    {
+      "id": "6f5561ff-11a7-531d-ad09-8d9ae1a64aea",
+      "name": "Bitlis Eren Üniversitesi",
+      "slug": "bitlis-eren-universitesi"
     },
     {
       "id": "93a3ccb8-0967-5d6b-854c-20ff9e66e12b",
@@ -286,6 +292,11 @@
       "slug": "istanbul-saglik-ve-teknoloji-universitesi"
     },
     {
+      "id": "45f52657-1919-521d-a7ee-8f094f33312e",
+      "name": "İstanbul Üniversitesi-Cerrahpaşa",
+      "slug": "istanbul-universitesi-cerrahpasa"
+    },
+    {
       "id": "c095dc38-c9bb-5819-9c97-e1a7eade2fc9",
       "name": "İstanbul Üniversitesi",
       "slug": "istanbul-universitesi"
@@ -304,6 +315,16 @@
       "id": "d6b15e5c-c58e-5167-b806-0f3bed8f8de8",
       "name": "İzmir Bakırçay Üniversitesi",
       "slug": "izmir-bakircay-universitesi"
+    },
+    {
+      "id": "3f060324-2863-5c78-97d4-872df1aa6112",
+      "name": "İzmir Demokrasi Üniversitesi",
+      "slug": "izmir-demokrasi-universitesi"
+    },
+    {
+      "id": "e2079c13-586a-525a-8532-fd2adb016c4a",
+      "name": "İzmir Ekonomi Üniversitesi",
+      "slug": "izmir-ekonomi-universitesi"
     },
     {
       "id": "f3161509-f53d-5a8d-9014-9d903f01b473",
@@ -399,6 +420,11 @@
       "id": "3fbd690e-205d-5e1e-acac-9b599ca215f4",
       "name": "Manisa Celal Bayar Üniversitesi",
       "slug": "manisa-celal-bayar-universitesi"
+    },
+    {
+      "id": "15c319c5-e7a9-52fb-97f2-1df9153e2ef6",
+      "name": "Mardin Artuklu Üniversitesi",
+      "slug": "mardin-artuklu-universitesi"
     },
     {
       "id": "e01aebfb-c991-5453-b5f4-0f5081ac6c5c",
@@ -501,6 +527,11 @@
       "slug": "tokat-gaziosmanpasa-universitesi"
     },
     {
+      "id": "c15a7d71-f0b5-5ff0-895a-121b82d65ad8",
+      "name": "Trabzon Üniversitesi",
+      "slug": "trabzon-universitesi"
+    },
+    {
       "id": "ce3a5c4a-b3c7-531d-900b-3e7762b5d87d",
       "name": "Trakya Üniversitesi",
       "slug": "trakya-universitesi"
@@ -529,6 +560,11 @@
       "id": "d6e1d4e6-e976-5068-96dd-5ec2c37f9dc8",
       "name": "Yalova Üniversitesi",
       "slug": "yalova-universitesi"
+    },
+    {
+      "id": "c5ac9b7e-1a2a-513e-8ef8-5ab9679ddd95",
+      "name": "Yeditepe Üniversitesi",
+      "slug": "yeditepe-universitesi"
     },
     {
       "id": "aaf07bcd-8160-5b9c-9d97-7d878c7e81ce",
@@ -676,6 +712,12 @@
     {
       "id": "c41f1c95-ed6a-546f-92f2-f1d63237ed33",
       "universityId": "26c6c651-2e1d-5544-9b09-6b051aafb862",
+      "name": "Tıp Fakültesi",
+      "slug": "tip-fakultesi"
+    },
+    {
+      "id": "57bdf4c5-7022-5ff4-9bdc-cd87bdab3cb5",
+      "universityId": "6f5561ff-11a7-531d-ad09-8d9ae1a64aea",
       "name": "Tıp Fakültesi",
       "slug": "tip-fakultesi"
     },
@@ -884,6 +926,12 @@
       "slug": "tip-fakultesi"
     },
     {
+      "id": "c7a4a3b4-d4e2-5e1e-80c0-1476c20706b1",
+      "universityId": "45f52657-1919-521d-a7ee-8f094f33312e",
+      "name": "Cerrahpaşa Tıp Fakültesi",
+      "slug": "cerrahpasa-tip-fakultesi"
+    },
+    {
       "id": "2134424a-12f9-514e-a2e6-78754bc34f75",
       "universityId": "c095dc38-c9bb-5819-9c97-e1a7eade2fc9",
       "name": "İstanbul Tıp Fakültesi",
@@ -904,6 +952,18 @@
     {
       "id": "194b335e-2246-57cc-898c-f9c70d85176f",
       "universityId": "d6b15e5c-c58e-5167-b806-0f3bed8f8de8",
+      "name": "Tıp Fakültesi",
+      "slug": "tip-fakultesi"
+    },
+    {
+      "id": "9e746e71-10d9-5c80-81db-bff3b1fcafc7",
+      "universityId": "3f060324-2863-5c78-97d4-872df1aa6112",
+      "name": "Tıp Fakültesi",
+      "slug": "tip-fakultesi"
+    },
+    {
+      "id": "bec67a57-d3bd-533c-a0f3-b506d94f85aa",
+      "universityId": "e2079c13-586a-525a-8532-fd2adb016c4a",
       "name": "Tıp Fakültesi",
       "slug": "tip-fakultesi"
     },
@@ -1022,6 +1082,12 @@
       "slug": "tip-fakultesi"
     },
     {
+      "id": "63ef66c4-6f4d-5d39-9408-65f42c06ac85",
+      "universityId": "15c319c5-e7a9-52fb-97f2-1df9153e2ef6",
+      "name": "Tıp Fakültesi",
+      "slug": "tip-fakultesi"
+    },
+    {
       "id": "93a725d0-45e2-5c27-ac93-3f589fa7ac16",
       "universityId": "e01aebfb-c991-5453-b5f4-0f5081ac6c5c",
       "name": "Tıp Fakültesi",
@@ -1124,6 +1190,18 @@
       "slug": "kayseri-tip-fakultesi"
     },
     {
+      "id": "f3d4ae70-e6d1-5c8f-bdda-09871e158d24",
+      "universityId": "1316de70-6d70-5250-b07c-65856b9c459c",
+      "name": "Saraybosna Uluslararası Tıp Fakültesi",
+      "slug": "saraybosna-uluslararasi-tip-fakultesi"
+    },
+    {
+      "id": "8f8b21ff-4300-55f6-92f7-cacbd5675511",
+      "universityId": "1316de70-6d70-5250-b07c-65856b9c459c",
+      "name": "Tıp Fakültesi",
+      "slug": "tip-fakultesi"
+    },
+    {
       "id": "68dbe8ad-091c-56d2-9150-df4dfd467b0a",
       "universityId": "86b02de7-be28-5987-9d4d-e5ab4c74e650",
       "name": "Tıp Fakültesi",
@@ -1184,6 +1262,12 @@
       "slug": "tip-fakultesi"
     },
     {
+      "id": "17d53064-9791-557e-a96b-0693ce887f14",
+      "universityId": "c15a7d71-f0b5-5ff0-895a-121b82d65ad8",
+      "name": "Tıp Fakültesi",
+      "slug": "tip-fakultesi"
+    },
+    {
       "id": "3220904b-4996-5c7d-a1aa-eae3bfee0cb6",
       "universityId": "ce3a5c4a-b3c7-531d-900b-3e7762b5d87d",
       "name": "Tıp Fakültesi",
@@ -1216,6 +1300,12 @@
     {
       "id": "721328dc-827e-50c1-8a28-730a5fe0b143",
       "universityId": "d6e1d4e6-e976-5068-96dd-5ec2c37f9dc8",
+      "name": "Tıp Fakültesi",
+      "slug": "tip-fakultesi"
+    },
+    {
+      "id": "3e47b7a7-3ab9-52f1-bcca-d70a52d3da52",
+      "universityId": "c5ac9b7e-1a2a-513e-8ef8-5ab9679ddd95",
       "name": "Tıp Fakültesi",
       "slug": "tip-fakultesi"
     },
@@ -1310,10 +1400,24 @@
       "durationYears": 6
     },
     {
+      "id": "0ae9610c-f833-5d41-946d-86482d183417",
+      "facultyId": "f019eb28-f917-55e1-9286-e366917256bf",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "95b8da05-5e96-5e2a-8879-e671031c428a",
       "facultyId": "a08570f9-b42b-5354-a5b1-e6dbd9d9b951",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "7cc6b4e2-321b-5de3-a73d-8dfcd1da5d56",
+      "facultyId": "a08570f9-b42b-5354-a5b1-e6dbd9d9b951",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
       "durationYears": 6
     },
     {
@@ -1324,10 +1428,24 @@
       "durationYears": 6
     },
     {
+      "id": "d2adc54f-fc1f-561b-a162-9afd90518e2b",
+      "facultyId": "f2c826f3-ffa1-5f52-8ed9-50be902840ec",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "2dee6431-2ae1-5308-999e-da867aaf8817",
       "facultyId": "81ed626e-e468-50a9-be22-fad32d318333",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "9048f6f7-e1f8-540c-9b32-0e06dd4ac52d",
+      "facultyId": "81ed626e-e468-50a9-be22-fad32d318333",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
       "durationYears": 6
     },
     {
@@ -1373,10 +1491,24 @@
       "durationYears": 6
     },
     {
+      "id": "dd860dcf-db2f-56eb-9be1-502141ea848e",
+      "facultyId": "ba8bdfb7-42ec-5ba2-a6d5-cb417ca76e0b",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "3916b947-1158-5f98-8ebe-32ef7e9689aa",
       "facultyId": "6fbca619-6261-5a0a-9753-bbeddcb50404",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "bf5653cf-a4a9-5a61-9235-1b1cbdf076d4",
+      "facultyId": "6fbca619-6261-5a0a-9753-bbeddcb50404",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
       "durationYears": 6
     },
     {
@@ -1389,6 +1521,20 @@
     {
       "id": "365c5700-a1ed-5b89-beeb-d34078f755c3",
       "facultyId": "c41f1c95-ed6a-546f-92f2-f1d63237ed33",
+      "name": "Tıp",
+      "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "e38ef424-b4e0-543e-9a97-169c5312dd9d",
+      "facultyId": "c41f1c95-ed6a-546f-92f2-f1d63237ed33",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
+      "id": "f671b4f2-ce0f-57ea-870c-b1136fe53eed",
+      "facultyId": "57bdf4c5-7022-5ff4-9bdc-cd87bdab3cb5",
       "name": "Tıp",
       "slug": "tip",
       "durationYears": 6
@@ -1450,6 +1596,13 @@
       "durationYears": 6
     },
     {
+      "id": "d639fc59-5952-512b-bcc4-7ae5f418bdbf",
+      "facultyId": "3850581e-20ae-5e59-9cb0-d5abd1eedd31",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "cb6e0336-e423-5b79-99b2-09599f5197b2",
       "facultyId": "339266f5-0205-5258-9c1b-134c4489f386",
       "name": "Tıp",
@@ -1499,6 +1652,13 @@
       "durationYears": 6
     },
     {
+      "id": "c8bf9817-51a1-5063-a407-09529fa24d06",
+      "facultyId": "6a99bb6a-a9d9-594f-b6c0-35ece2d9e944",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "ae336e13-98f5-5a31-90e9-d32590afda90",
       "facultyId": "246b17aa-8b90-54e9-a823-6297c7be4c91",
       "name": "Tıp",
@@ -1510,6 +1670,13 @@
       "facultyId": "7f4c8a43-a1fb-5545-92a0-680f379c5d36",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "5f9b3def-b536-5c85-8ec7-5e0ce748e53a",
+      "facultyId": "7f4c8a43-a1fb-5545-92a0-680f379c5d36",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
       "durationYears": 6
     },
     {
@@ -1527,10 +1694,24 @@
       "durationYears": 6
     },
     {
+      "id": "6dee6905-d7b9-5027-872c-fa5626115481",
+      "facultyId": "aee21a24-df84-5545-a4a6-610e6c21d7bd",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "03dd6186-d125-5cd8-b842-2a8e833e4d00",
       "facultyId": "634b0cc4-0668-58e4-a74e-7428bd9b1af8",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "a9c04b6c-de10-5370-8631-75ec8e883855",
+      "facultyId": "634b0cc4-0668-58e4-a74e-7428bd9b1af8",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
       "durationYears": 6
     },
     {
@@ -1562,6 +1743,13 @@
       "durationYears": 6
     },
     {
+      "id": "dfd6a7d8-71a6-5e30-9dd3-9384035c2cbd",
+      "facultyId": "18613530-d209-5e6b-92e2-a26de6184ce2",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "5c1092c9-8dc9-5a16-8cc7-8c912a6459d3",
       "facultyId": "87e7a836-f613-5028-80f1-1093dbbf899f",
       "name": "Tıp",
@@ -1576,10 +1764,24 @@
       "durationYears": 6
     },
     {
+      "id": "73522eb5-796b-5208-8eda-beffc6533a51",
+      "facultyId": "60effeab-7ac1-55e5-835b-aa7f83f9ce47",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "dcdedff0-8401-566f-8a41-bb29f1c49e02",
       "facultyId": "69ec5cf4-a179-5bde-9e03-123491803c39",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "2a1d0a8d-461d-5b2d-a534-9d3938998ae7",
+      "facultyId": "69ec5cf4-a179-5bde-9e03-123491803c39",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
       "durationYears": 6
     },
     {
@@ -1604,6 +1806,13 @@
       "durationYears": 6
     },
     {
+      "id": "d69b1154-bdc3-5c2b-96f3-1537d4961603",
+      "facultyId": "109681c7-bd73-5a67-9691-aed83d8df036",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "81cfc986-7a74-5757-9b42-3f5429b88a9b",
       "facultyId": "8a7c117f-3c94-57c5-bb00-f643db4a411c",
       "name": "Tıp",
@@ -1625,6 +1834,13 @@
       "durationYears": 6
     },
     {
+      "id": "ffe6f6e0-d07e-57e8-8f8b-ea4980f57abf",
+      "facultyId": "35a920d2-abb7-5217-847d-a7616eee2561",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "96d61248-2cf3-5ea9-9097-a2abb51c17bb",
       "facultyId": "36ec890d-5cd6-58e6-856f-189d065f53f9",
       "name": "Tıp",
@@ -1632,10 +1848,38 @@
       "durationYears": 6
     },
     {
+      "id": "4ae90e3b-7f30-5482-8522-fc6fb20c0c23",
+      "facultyId": "36ec890d-5cd6-58e6-856f-189d065f53f9",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
+      "id": "c414db96-bb46-5127-9e1c-8aee8c395084",
+      "facultyId": "c7a4a3b4-d4e2-5e1e-80c0-1476c20706b1",
+      "name": "Tıp",
+      "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "cc06641e-1f22-530d-8ce4-c309c60b080b",
+      "facultyId": "c7a4a3b4-d4e2-5e1e-80c0-1476c20706b1",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "506b099f-e137-5650-946e-9e4b55f9f322",
       "facultyId": "2134424a-12f9-514e-a2e6-78754bc34f75",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "5528fbff-c46f-5e12-88c9-ea8fec7a5b5b",
+      "facultyId": "2134424a-12f9-514e-a2e6-78754bc34f75",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
       "durationYears": 6
     },
     {
@@ -1653,8 +1897,29 @@
       "durationYears": 6
     },
     {
+      "id": "9c72c9e6-32ed-56a5-bddb-626e586763b9",
+      "facultyId": "81a303ff-a062-54b7-8dc7-cdf606fba993",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "f1f821d8-79c5-51c0-b5b7-ece33bbb1d55",
       "facultyId": "194b335e-2246-57cc-898c-f9c70d85176f",
+      "name": "Tıp",
+      "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "2d612dcd-039c-5ecb-9e64-ded493708928",
+      "facultyId": "9e746e71-10d9-5c80-81db-bff3b1fcafc7",
+      "name": "Tıp",
+      "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "135a76c0-d197-5b0a-9bdb-8f0bc24cbcfb",
+      "facultyId": "bec67a57-d3bd-533c-a0f3-b506d94f85aa",
       "name": "Tıp",
       "slug": "tip",
       "durationYears": 6
@@ -1772,6 +2037,13 @@
       "durationYears": 6
     },
     {
+      "id": "38accbcc-fe2b-5ebe-8aa7-600b37ba17b2",
+      "facultyId": "5248bc93-ccb4-526a-8dc6-0d69d247b001",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "b0a24088-0818-50d9-be7b-87b961493a3d",
       "facultyId": "bb438842-7e0f-554e-8c1c-6d613b45d457",
       "name": "Tıp",
@@ -1786,8 +2058,22 @@
       "durationYears": 6
     },
     {
+      "id": "b3f7f11b-5aaf-50f4-a27e-0d2e48eed714",
+      "facultyId": "e0a57d34-8120-51ca-9c6d-1935146569f6",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "000fea75-20b7-574c-9e74-210600766d0f",
       "facultyId": "b8b4b399-e5af-509e-838a-9b8ebe9ebf25",
+      "name": "Tıp",
+      "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "3ab906cb-a3f2-550e-b329-3bbc86ccfa57",
+      "facultyId": "63ef66c4-6f4d-5d39-9408-65f42c06ac85",
       "name": "Tıp",
       "slug": "tip",
       "durationYears": 6
@@ -1832,6 +2118,13 @@
       "facultyId": "15bd1fee-cad6-5c50-8ed9-f49fa9ae3ee1",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "11097493-721d-5f37-8d37-e5f47dacbf68",
+      "facultyId": "15bd1fee-cad6-5c50-8ed9-f49fa9ae3ee1",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
       "durationYears": 6
     },
     {
@@ -1884,17 +2177,17 @@
       "durationYears": 6
     },
     {
-      "id": "3f37e744-37a3-5534-839e-f10e0be4f72f",
-      "facultyId": "7726d7fa-c2c6-573c-a8ce-1443ea9a3ca0",
-      "name": "Tıp (İstanbul)",
-      "slug": "tip-istanbul",
-      "durationYears": 6
-    },
-    {
       "id": "e7c8e783-bbf9-5808-98de-90d71b451064",
       "facultyId": "7726d7fa-c2c6-573c-a8ce-1443ea9a3ca0",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "3f37e744-37a3-5534-839e-f10e0be4f72f",
+      "facultyId": "7726d7fa-c2c6-573c-a8ce-1443ea9a3ca0",
+      "name": "Tıp (İstanbul)",
+      "slug": "tip-istanbul",
       "durationYears": 6
     },
     {
@@ -1916,6 +2209,20 @@
       "facultyId": "dc3c1b4f-372b-591f-95dc-db4e268a0910",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "20c22707-b9c7-5836-bce7-c51ed99b25d7",
+      "facultyId": "f3d4ae70-e6d1-5c8f-bdda-09871e158d24",
+      "name": "Tıp (UOLP-Uluslararası Saraybosna Üniversitesi)",
+      "slug": "tip-uolp-uluslararasi-saraybosna-universitesi",
+      "durationYears": 6
+    },
+    {
+      "id": "74b94efd-16f8-5baf-97bb-d47086a7e13b",
+      "facultyId": "8f8b21ff-4300-55f6-92f7-cacbd5675511",
+      "name": "Tıp (UOLP-Sağlık Bilimleri Üniversitesi)",
+      "slug": "tip-uolp-saglik-bilimleri-universitesi",
       "durationYears": 6
     },
     {
@@ -1989,6 +2296,13 @@
       "durationYears": 6
     },
     {
+      "id": "b36d8db1-c01e-56b8-9adc-f108a3aa8a01",
+      "facultyId": "17d53064-9791-557e-a96b-0693ce887f14",
+      "name": "Tıp",
+      "slug": "tip",
+      "durationYears": 6
+    },
+    {
       "id": "bb115ea2-8c06-5289-ac87-1eaef4ae9d57",
       "facultyId": "3220904b-4996-5c7d-a1aa-eae3bfee0cb6",
       "name": "Tıp",
@@ -2000,6 +2314,13 @@
       "facultyId": "c39f5f6d-adeb-5823-af94-94a9d4bd3a21",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "b5a6a05a-0a53-52ed-85ce-ecfc43726d5d",
+      "facultyId": "c39f5f6d-adeb-5823-af94-94a9d4bd3a21",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
       "durationYears": 6
     },
     {
@@ -2017,6 +2338,13 @@
       "durationYears": 6
     },
     {
+      "id": "a6701c85-ac41-511d-8873-f40705b6d26d",
+      "facultyId": "8ed395e7-a8bd-5e12-94b0-ba16dae8fba9",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
       "id": "52ba3eaf-fba7-54b4-b586-2ec8a2497572",
       "facultyId": "9d642375-27b2-53ab-a92c-c3792e0ff503",
       "name": "Tıp",
@@ -2026,6 +2354,13 @@
     {
       "id": "a4a2f7b0-9125-54c9-b5cc-524edd39906b",
       "facultyId": "721328dc-827e-50c1-8a28-730a5fe0b143",
+      "name": "Tıp",
+      "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "bb3fa151-56f6-5ba9-b58d-2b5d0e9d17cc",
+      "facultyId": "3e47b7a7-3ab9-52f1-bcca-d70a52d3da52",
       "name": "Tıp",
       "slug": "tip",
       "durationYears": 6
@@ -2042,6 +2377,13 @@
       "facultyId": "8e9d36da-6f00-55dd-8a05-a40d739e28ec",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "043d4a30-0c6e-5b0d-a2e2-b38c95368ac7",
+      "facultyId": "8e9d36da-6f00-55dd-8a05-a40d739e28ec",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
       "durationYears": 6
     },
     {
