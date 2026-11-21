@@ -7,6 +7,7 @@ import {join} from "node:path";
 const aliasLoader = "scripts/register-test-alias.mjs";
 const tests = [
   "lib/auth-entry.test.ts",
+  "lib/analytics.test.ts",
   ...(existsSync("lib/news")
     ? readdirSync("lib/news").filter(name => name.endsWith(".test.ts")).map(name => join("lib/news", name))
     : []),

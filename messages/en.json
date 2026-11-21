@@ -382,6 +382,14 @@
       "perplexity": "Open Perplexity",
       "gemini": "Open Gemini"
     },
+    "rss": {
+      "label": "News RSS feed"
+    },
+    "copyright": "© Komitehane {year}"
+  },
+  "Feed": {
+    "title": "Komitehane News",
+    "description": "Komitehane news on the TUS exam and medical education in Turkey.",
     "copyright": "© Komitehane {year}"
   },
   "ThemeSwitcher": {

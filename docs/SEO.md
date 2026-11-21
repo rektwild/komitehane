@@ -186,10 +186,33 @@ and include reciprocal alternates only where the translation exists. Search,
 category, and pagination query URLs are never added.
 
 `/llms.txt` is a deliberately small, experimental resource listing the public
-localized homepages, tools, news lists, and About pages. It is not an official search-ranking standard or a ranking
+localized homepages, tools, news lists, news RSS feeds, and About pages. It is not an official search-ranking standard or a ranking
 factor. `robots.txt`, canonical tags, and the sitemap remain authoritative.
 `llms-full.txt` is not added because the current site has no documentation or
 content corpus that would justify one.
+
+## News RSS feeds
+
+Each locale has an RSS 2.0 news feed at `/tr/feeds/news.xml` and
+`/en/feeds/news.xml` (`app/[locale]/feeds/news.xml/route.ts`, path from
+`getRssFeedPath` in `lib/rss`). It lists the newest 20 public articles in that
+locale, filtered like the news list (no drafts, future dates or missing
+translations), and is built with `createRssXml`.
+
+- Data comes from `getNewsFeedEntries` (`lib/news/data.ts`), cached with
+  `unstable_cache` under the `news-feed` tag for 5 minutes. The article
+  publish/update/unpublish/delete hooks revalidate the tag, so changes show up
+  right away.
+- The handler is dynamic (the Next 16 GET default), so builds never need the
+  database. Responses carry `s-maxage=300, stale-while-revalidate=3600`. If the
+  database is unavailable the feed returns 503 with `Retry-After`; it never
+  caches or serves an empty feed for an outage.
+- Outside indexable environments the feed also sends `X-Robots-Tag: noindex`.
+- Discovery: every page built through `getLocalizedMetadata` or
+  `getDynamicLocalizedMetadata` emits
+  `<link rel="alternate" type="application/rss+xml">` for its locale's feed.
+  Pages that override `alternates` must keep `types`. The footer shows an RSS
+  icon link, and `/llms.txt` lists both feeds.
 
 ## Pagination, search, and filtered views
 

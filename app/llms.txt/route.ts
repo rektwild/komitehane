@@ -2,6 +2,7 @@ import {getTranslations} from "next-intl/server";
 import {tools} from "@/lib/tools";
 import {getPathname} from "@/i18n/navigation";
 import {siteConfig} from "@/config/site";
+import {getRssFeedPath} from "@/lib/rss";
 import {absoluteUrl} from "@/lib/seo/urls";
 
 export async function GET() {
@@ -50,6 +51,11 @@ export async function GET() {
     "",
     "## News",
     ...localizedNewsLinks,
+    "",
+    "## News RSS feeds",
+    ...siteConfig.locales.map(
+      (locale) => `- [${siteConfig.localeNames[locale]}](${absoluteUrl(getRssFeedPath(locale, "news"))})`
+    ),
     "",
     "## About Komitehane and editorial process",
     ...localizedAboutLinks,

@@ -267,6 +267,7 @@ async function revalidateNewsCaches() {
     const {revalidateTag} = await import("next/cache");
     revalidateTag("news-ticker", "max");
     revalidateTag("news-latest-links", "max");
+    revalidateTag("news-feed", "max");
   } catch (error) {
     console.warn(
       `News cache revalidation failed: ${error instanceof Error ? error.message : "unknown error"}`,

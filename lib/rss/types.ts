@@ -1,6 +1,6 @@
 import type {Locale} from "next-intl";
 
-export type RssFeedType = "blog" | "podcast";
+export type RssFeedType = "news" | "podcast";
 
 export interface RssChannel {
   title: string;

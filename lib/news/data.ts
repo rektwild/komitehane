@@ -7,12 +7,14 @@ import {getPayload, type PopulateType, type Where} from "payload";
 
 import configPromise from "@payload-config";
 import type {Article} from "@/payload-types";
+import {RSS_MAX_ITEMS} from "@/lib/rss";
 import type {
   AuthorProfile,
   AuthorRole,
   HomeNewsResult,
   NewsCategory,
   NewsDetail,
+  NewsFeedEntry,
   NewsImage,
   NewsListingParams,
   NewsListingResult,
@@ -31,6 +33,7 @@ const LATEST_PAGE_SIZE = 15;
 const HOME_CATEGORY_LIMIT = 3;
 const TICKER_LIMIT = 8;
 const ASIDE_LINKS_LIMIT = 5;
+const FEED_LIMIT = RSS_MAX_ITEMS;
 
 const newsPopulate = {
   users: {name: true, role: true, slug: true},
@@ -669,6 +672,58 @@ export async function getLatestNewsLinks(
   locale: NewsLocale,
 ): Promise<NewsTickerItem[]> {
   return getCachedLatestNewsLinks(locale);
+}
+
+/**
+ * Newest public articles for the locale's RSS feed. Filters through
+ * getSummaryFields so the feed lists exactly what the news list shows.
+ * Errors propagate on purpose: unstable_cache does not store a throw, so a
+ * database outage never gets cached as an empty feed.
+ */
+async function fetchNewsFeedEntries(
+  locale: NewsLocale,
+): Promise<NewsFeedEntry[]> {
+  const payload = await getPayload({config: configPromise});
+  const result = await payload.find({
+    collection: "articles",
+    locale,
+    fallbackLocale: false,
+    depth: 1,
+    populate: newsPopulate,
+    limit: FEED_LIMIT,
+    sort: "-publishedAt",
+    overrideAccess: false,
+    where: publicLocalizedWhere(),
+  });
+
+  return result.docs.flatMap((article) => {
+    const fields = getSummaryFields(article);
+    if (!fields) return [];
+
+    return [{
+      id: fields.id,
+      slug: fields.slug,
+      title: fields.title,
+      excerpt: fields.excerpt,
+      authorName: fields.authorName,
+      categoryName: fields.category.name,
+      publishedAt: fields.publishedAt,
+      updatedAt: fields.updatedAt,
+    }];
+  });
+}
+
+const getCachedNewsFeedEntries = unstable_cache(
+  async (locale: NewsLocale): Promise<NewsFeedEntry[]> =>
+    fetchNewsFeedEntries(locale),
+  ["news-feed"],
+  {revalidate: 300, tags: ["news-feed"]},
+);
+
+export async function getNewsFeedEntries(
+  locale: NewsLocale,
+): Promise<NewsFeedEntry[]> {
+  return getCachedNewsFeedEntries(locale);
 }
 
 const AUTHOR_ARTICLES_LIMIT = 48;
