@@ -9,6 +9,7 @@ import {MEDICAL_UNIVERSITIES} from "../../lib/universities";
 import {validateForPublication} from "../../lib/academic/services/publish";
 import {committeeDataset, type CommitteeDataset} from "./committee-dataset";
 import {slugify, stableUuid, universityId} from "./ids";
+import {KKTC_MEDICAL} from "./kktc-medical";
 import type {DraftRule} from "./seed-rules";
 
 type Row = Record<string, string>;
@@ -174,6 +175,12 @@ export async function convertCommitteeExport(dir: string, verification: Verifica
   // without any committee rule yet (e.g. separately coded English variants).
   const medicalPrograms = programs.filter(p => /^Tıp\b/u.test(p.name) && /TIP/u.test(get(facByKey, p.faculty_key).name));
   for (const p of [...medicalPrograms].sort((a, b) => a.source_key.localeCompare(b.source_key))) catalogFor(p.source_key);
+  for (const k of KKTC_MEDICAL) {
+    const uniSlug = slugify(k.university), uid = universityId(uniSlug), fid = stableUuid(`komitehane:fac:${uniSlug}:${slugify(k.faculty)}`);
+    out.universities.push({id: uid, name: k.university, slug: uniSlug});
+    out.faculties.push({id: fid, universityId: uid, name: k.faculty, slug: slugify(k.faculty)});
+    for (const p of k.programs) out.programs.push({id: stableUuid(`komitehane:prog:${uniSlug}:${slugify(k.faculty)}:${p.slug}`), facultyId: fid, name: p.name, slug: p.slug, durationYears: 6});
+  }
 
   for (const s of [...schemes].sort((a, b) => a.source_key.localeCompare(b.source_key))) {
     if (s.system_type !== "COMMITTEE" || s.course_key) throw new Error(`NOT_A_COMMITTEE_SCHEME ${s.source_key}`);
@@ -254,7 +261,7 @@ export async function convertCommitteeExport(dir: string, verification: Verifica
   }
   out.meta.notes = [
     "All catalog entries are inactive and all versions are DRAFT; nothing is published by the import.",
-    "The catalog lists every Tıp program in the export (ÖSYM 2026 Tablo-4, KKTC excluded), including programs without a committee rule.",
+    "The catalog lists every Tıp program in the export (ÖSYM 2026 Tablo-4, including KKTC), including programs without a committee rule.",
     "Weights with more than two decimals (equal or AKTS-weighted shares such as 60/7) are rounded to two decimals by largest remainder so each version totals exactly 100.00.",
     `Every included version was compared with its official documents on ${verification.checkedAt} (see data/academic/committee-2026-27-verification.json); a person must still approve each one before \`pnpm academic:publish\`.`,
   ];

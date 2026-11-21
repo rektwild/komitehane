@@ -88,7 +88,7 @@ by a different role. Never grant the app role writer or migrator privileges.
 
 `data/academic/committee-2026-27.json` is the reviewed, normalized committee
 part of a research export (2026-27, Tıp only). It holds an inactive catalog of
-every Tıp program in the export (ÖSYM 2026 Tablo-4; KKTC excluded), committee
+every Tıp program in the export (ÖSYM 2026 Tablo-4; including KKTC), committee
 schemes, and DRAFT versions whose structure
 already passes `validateForPublication`; everything the export marked partial,
 unsupported, conflicting, without a numeric passing grade or without an

@@ -5,7 +5,7 @@
     "generatedFrom": "scripts/academic/convert-committee-export.ts",
     "notes": [
       "All catalog entries are inactive and all versions are DRAFT; nothing is published by the import.",
-      "The catalog lists every Tıp program in the export (ÖSYM 2026 Tablo-4, KKTC excluded), including programs without a committee rule.",
+      "The catalog lists every Tıp program in the export (ÖSYM 2026 Tablo-4, including KKTC), including programs without a committee rule.",
       "Weights with more than two decimals (equal or AKTS-weighted shares such as 60/7) are rounded to two decimals by largest remainder so each version totals exactly 100.00.",
       "Every included version was compared with its official documents on 2026-11-21 (see data/academic/committee-2026-27-verification.json); a person must still approve each one before `pnpm academic:publish`."
     ]
@@ -580,6 +580,21 @@
       "id": "8403290f-33ca-5720-9da2-c85a14a20ae7",
       "name": "Zonguldak Bülent Ecevit Üniversitesi",
       "slug": "zonguldak-bulent-ecevit-universitesi"
+    },
+    {
+      "id": "c54e78b4-4cdd-58a7-8b3a-acb4beec3d72",
+      "name": "Yakın Doğu Üniversitesi",
+      "slug": "yakin-dogu-universitesi"
+    },
+    {
+      "id": "fa746b5e-50f9-5451-a86c-08e96aeab0a9",
+      "name": "Girne Üniversitesi",
+      "slug": "girne-universitesi"
+    },
+    {
+      "id": "a1243851-f160-5e3c-aedd-3590e0b35e1c",
+      "name": "Doğu Akdeniz Üniversitesi",
+      "slug": "dogu-akdeniz-universitesi"
     }
   ],
   "faculties": [
@@ -1324,6 +1339,24 @@
     {
       "id": "65f4baac-3be8-5873-bbb8-b8c2a8d62b21",
       "universityId": "8403290f-33ca-5720-9da2-c85a14a20ae7",
+      "name": "Tıp Fakültesi",
+      "slug": "tip-fakultesi"
+    },
+    {
+      "id": "1573bcf9-df54-528e-a23c-a394d3e31d62",
+      "universityId": "c54e78b4-4cdd-58a7-8b3a-acb4beec3d72",
+      "name": "Tıp Fakültesi",
+      "slug": "tip-fakultesi"
+    },
+    {
+      "id": "bd5fea81-27fa-5bed-a2fb-413fdf9296de",
+      "universityId": "fa746b5e-50f9-5451-a86c-08e96aeab0a9",
+      "name": "Tıp Fakültesi",
+      "slug": "tip-fakultesi"
+    },
+    {
+      "id": "2bd3d28f-62c8-5c47-9a34-fbb6d5f7b391",
+      "universityId": "a1243851-f160-5e3c-aedd-3590e0b35e1c",
       "name": "Tıp Fakültesi",
       "slug": "tip-fakultesi"
     }
@@ -2391,6 +2424,34 @@
       "facultyId": "65f4baac-3be8-5873-bbb8-b8c2a8d62b21",
       "name": "Tıp",
       "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "cfb7d953-e911-574f-8c59-db3978ddd0f3",
+      "facultyId": "1573bcf9-df54-528e-a23c-a394d3e31d62",
+      "name": "Tıp",
+      "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "db6979ff-f099-5a42-a9a7-f92d3229a185",
+      "facultyId": "1573bcf9-df54-528e-a23c-a394d3e31d62",
+      "name": "Tıp (İngilizce)",
+      "slug": "tip-ingilizce",
+      "durationYears": 6
+    },
+    {
+      "id": "9a553b8e-8124-5d60-8aaf-ffe4b00e29e5",
+      "facultyId": "bd5fea81-27fa-5bed-a2fb-413fdf9296de",
+      "name": "Tıp",
+      "slug": "tip",
+      "durationYears": 6
+    },
+    {
+      "id": "6b0ba0da-b780-5fa9-9a64-8332455a751b",
+      "facultyId": "2bd3d28f-62c8-5c47-9a34-fbb6d5f7b391",
+      "name": "Tıp (İngilizce) (UOLP-Marmara Üniversitesi)",
+      "slug": "tip-ingilizce-uolp-marmara-universitesi",
       "durationYears": 6
     }
   ],
