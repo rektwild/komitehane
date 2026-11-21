@@ -503,6 +503,36 @@ async function run() {
     }
   }
 
+  for (const locale of locales) {
+    const feedPath = `/${locale}/feeds/news.xml`;
+    if (!llms.body.includes(`](${absoluteUrl(feedPath)})`)) {
+      fail(`llms.txt: missing news feed ${feedPath}`);
+    }
+
+    const feed = await fetchText(feedPath);
+    if (feed.response.status !== 200) {
+      fail(`${feedPath}: expected 200, received ${feed.response.status}`);
+    } else {
+      if (!/^application\/rss\+xml\b/i.test(feed.response.headers.get("content-type") ?? "")) {
+        fail(`${feedPath}: expected an application/rss+xml content type`);
+      }
+      if (!feed.body.includes(`<atom:link href="${absoluteUrl(feedPath)}" rel="self"`)) {
+        fail(`${feedPath}: missing self-referencing atom:link`);
+      }
+      if (!feed.body.includes(`<language>${locale}</language>`)) {
+        fail(`${feedPath}: expected <language>${locale}</language>`);
+      }
+    }
+
+    const homePage = await fetchText(`/${locale}`);
+    const feedLinks = [...homePage.body.matchAll(/<link\b[^>]*>/gi)]
+      .map((match) => match[0])
+      .filter((tag) => /type=["']application\/rss\+xml["']/i.test(tag));
+    if (!feedLinks.some((tag) => tag.includes(`href="${absoluteUrl(feedPath)}"`))) {
+      fail(`/${locale}: missing RSS discovery link to ${feedPath}`);
+    }
+  }
+
   if (articlePath) {
     if (!articlePath.startsWith("/")) {
       fail("SEO_AUDIT_ARTICLE_PATH: expected an absolute path beginning with /");

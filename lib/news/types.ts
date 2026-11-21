@@ -109,6 +109,18 @@ export type AuthorProfile = {
   locales: NewsLocale[];
 };
 
+/** Cache-safe (JSON-serializable) RSS entry; dates are ISO strings. */
+export type NewsFeedEntry = {
+  id: number;
+  slug: string;
+  title: string;
+  excerpt: string;
+  authorName: string;
+  categoryName: string;
+  publishedAt: string;
+  updatedAt: string;
+};
+
 export type NewsTickerItem = {
   title: string;
   slug: string;

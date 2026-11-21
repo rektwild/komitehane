@@ -5,6 +5,7 @@ import {getLocale} from "next-intl/server";
 import {getPathname} from "@/i18n/navigation";
 import {routing, type StaticAppPathname} from "@/i18n/routing";
 import {isIndexableEnvironment, siteConfig} from "@/config/site";
+import {getRssFeedPath, RSS_MEDIA_TYPE} from "@/lib/rss";
 import {getOgLocale} from "@/lib/seo/locales";
 import {socialImagePath, type SocialImageKey} from "@/lib/seo/social-image-keys";
 import {absoluteUrl} from "@/lib/seo/urls";
@@ -49,6 +50,15 @@ export function getRobotsMetadata(): Metadata["robots"] {
       "max-video-preview": -1,
     },
   };
+}
+
+/**
+ * `<link rel="alternate" type="application/rss+xml">` for the locale's news
+ * feed. Set on every page because a page's `alternates` replaces the
+ * layout's wholesale.
+ */
+export function getFeedAlternates(locale: Locale): NonNullable<Metadata["alternates"]>["types"] {
+  return {[RSS_MEDIA_TYPE]: absoluteUrl(getRssFeedPath(locale, "news"))};
 }
 
 export async function getAlternateLanguages(
@@ -103,6 +113,7 @@ export async function getLocalizedMetadata(
     alternates: {
       canonical,
       languages: alternateLanguages,
+      types: getFeedAlternates(locale),
     },
     robots: getRobotsMetadata(),
     openGraph: {
@@ -186,7 +197,7 @@ export function getDynamicLocalizedMetadata({
   return {
     title: absoluteTitle ? {absolute: title} : title,
     description,
-    alternates: {canonical, languages},
+    alternates: {canonical, languages, types: getFeedAlternates(locale)},
     robots: getRobotsMetadata(),
     openGraph: {
       title,

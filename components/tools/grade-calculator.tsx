@@ -38,6 +38,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {trackEvent, type AnalyticsEvent} from "@/lib/analytics";
 import type {ToolKey} from "@/lib/tools";
 import {
   calculateCourseGrade,
@@ -66,6 +67,16 @@ const formNamespaces = {
 type CalculatorResult =
   | CourseGradeCalculationResult
   | MinimumFinalCalculationResult;
+
+const resultStatusParams = {
+  CALCULATED: "calculated",
+  ALREADY_PASSING: "already_passing",
+  IMPOSSIBLE: "impossible",
+  INVALID_INPUT: "invalid_input",
+} as const satisfies Record<
+  CalculatorResult["status"],
+  AnalyticsEvent["params"]["result_status"]
+>;
 
 type StoredCalculatorState = {
   version: number;
@@ -427,6 +438,16 @@ export function GradeCalculator({toolKey,initialAcademicContext}: {toolKey: Tool
       storageKey,
       result: nextResult,
       issues: nextResult.status === "INVALID_INPUT" ? nextResult.errors : [],
+    });
+
+    trackEvent({
+      name: "tool_calculate",
+      params: {
+        tool_key: toolKey,
+        result_status: resultStatusParams[nextResult.status],
+        grading_mode: academicContext.rule ? "official" : "manual",
+        assessment_count: assessmentCount,
+      },
     });
   }
 

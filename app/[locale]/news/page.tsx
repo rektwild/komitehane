@@ -90,7 +90,7 @@ export async function generateMetadata({params, searchParams}: NewsPageProps): P
     return {
       ...metadata,
       title: {absolute: title},
-      alternates: {canonical},
+      alternates: {canonical, types: metadata.alternates?.types},
       robots: getRobotsMetadata(),
       openGraph: {...metadata.openGraph, title, url: canonical},
       twitter: {...metadata.twitter, title},

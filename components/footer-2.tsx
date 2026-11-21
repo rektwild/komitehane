@@ -1,4 +1,5 @@
-import {getTranslations} from "next-intl/server";
+import {RssIcon} from "lucide-react";
+import {getLocale, getTranslations} from "next-intl/server";
 
 import {SiteBrand} from "@/components/layout/site-brand";
 import {FooterThemeSwitcher} from "@/components/layout/theme-switcher";
@@ -9,6 +10,7 @@ import {Perplexity} from "@/components/ui/svgs/perplexity";
 import {Button} from "@/components/ui/button";
 import {Link} from "@/i18n/navigation";
 import {isLinkableRoute} from "@/lib/navigation";
+import {getRssFeedPath, RSS_MEDIA_TYPE} from "@/lib/rss";
 import {tools} from "@/lib/tools";
 import {typography} from "@/lib/typography";
 
@@ -24,9 +26,10 @@ const aiProviders = [
 ] as const;
 
 export default async function Footer() {
-  const [t, toolsT] = await Promise.all([
+  const [t, toolsT, locale] = await Promise.all([
     getTranslations("Footer"),
     getTranslations("Tools"),
+    getLocale(),
   ]);
   const year = new Date().getFullYear();
   const footerGroups = [
@@ -74,8 +77,25 @@ export default async function Footer() {
     <footer className="border-t border-border/60">
       <div className="mx-auto flex w-full max-w-(--breakpoint-2xl) flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:grid-cols-6">
-          <div className="col-span-full lg:col-span-3">
+          <div className="col-span-full flex flex-col items-start gap-3 lg:col-span-3">
             <SiteBrand className="w-fit" />
+            {/* Plain <a>: the feed is a route handler, not a page to prefetch. */}
+            <Button
+              variant="ghost"
+              size="icon"
+              nativeButton={false}
+              className="-ml-2.5"
+              render={
+                <a
+                  href={getRssFeedPath(locale, "news")}
+                  type={RSS_MEDIA_TYPE}
+                  aria-label={t("rss.label")}
+                  title={t("rss.label")}
+                />
+              }
+            >
+              <RssIcon aria-hidden="true" />
+            </Button>
           </div>
 
           {visibleFooterGroups.map((group) => (

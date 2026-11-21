@@ -382,6 +382,14 @@
       "perplexity": "Perplexity'yi aç",
       "gemini": "Gemini'yi aç"
     },
+    "rss": {
+      "label": "Haberler RSS akışı"
+    },
+    "copyright": "© Komitehane {year}"
+  },
+  "Feed": {
+    "title": "Komitehane Haberler",
+    "description": "TUS ve tıp eğitimiyle ilgili Komitehane haberleri.",
     "copyright": "© Komitehane {year}"
   },
   "ThemeSwitcher": {
