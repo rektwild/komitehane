@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html class="light" lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Edu</title>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    screens: {
+                        "md": "520px",
+                    },
+                    colors: {
+                        "primary": "#137fec",
+                        "accent": "#FFD700",
+                        "navy-dark": "#0d121b",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+        // Moves a page's title/search controls into the top header slot on desktop
+        // (>=lg) and back to their in-content anchor below that width.
+        function initHeaderControls(controlsId, slotId, anchorId) {
+            function place() {
+                const controls = document.getElementById(controlsId);
+                const headerSlot = document.getElementById(slotId);
+                const anchor = document.getElementById(anchorId);
+                if (!controls || !headerSlot || !anchor) return;
+                if (window.matchMedia('(min-width: 1024px)').matches) {
+                    if (controls.parentElement !== headerSlot) headerSlot.appendChild(controls);
+                    controls.classList.remove('px-4', 'pt-2', 'pb-2');
+                } else {
+                    if (controls.parentElement !== anchor.parentElement || controls.previousElementSibling !== anchor) {
+                        anchor.after(controls);
+                    }
+                    controls.classList.add('px-4', 'pt-2', 'pb-2');
+                }
+            }
+            document.addEventListener('DOMContentLoaded', place);
+            window.addEventListener('resize', place);
+        }
+        function toggleSidebar() {
+            if (window.innerWidth < 1024) {
+                // Mobile + tablet: use the slide-in drawer
+                toggleMobileMenu();
+            } else {
+                const sidebar = document.getElementById('left-sidebar');
+                sidebar.classList.toggle('collapsed');
+                try { localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed') ? '1' : '0'); } catch (e) { }
+            }
+        }
+        // Sidebar kategorilerinin açık/kapalı durumu: varsayılan hepsi kapalı; kullanıcının
+        // açtığı kategori, kendi başlığından kapatılana kadar sayfalar arası açık kalır.
+        // Durum localStorage'da tutulur (masaüstü ve mobil nav aynı durumu paylaşır).
+        const NAV_OPEN_KEY = 'navOpenGroups';
+        function readNavState() {
+            try { return JSON.parse(localStorage.getItem(NAV_OPEN_KEY)) || {}; } catch (e) { return {}; }
+        }
+        function restoreNavState(root) {
+            const state = readNavState();
+            root.querySelectorAll('details[data-nav-key]').forEach(function (d) {
+                if (state[d.dataset.navKey]) d.open = true;
+            });
+            // Sidebar daraltma (menü butonu) durumu da hatırlanır.
+            try {
+                if (localStorage.getItem('sidebarCollapsed') === '1') {
+                    const sidebar = document.getElementById('left-sidebar');
+                    if (sidebar) sidebar.classList.add('collapsed');
+                }
+            } catch (e) { }
+        }
+        // The native 'toggle' event doesn't bubble, hence the capture-phase listener.
+        document.addEventListener('toggle', function (e) {
+            const d = e.target;
+            if (d.tagName !== 'DETAILS' || !d.dataset.navKey) return;
+            const state = readNavState();
+            if (d.open) state[d.dataset.navKey] = 1; else delete state[d.dataset.navKey];
+            try { localStorage.setItem(NAV_OPEN_KEY, JSON.stringify(state)); } catch (e) { }
+        }, true);
+    </script>
+    <style>
+        /* Sidebar Collapse Styles */
+        #left-sidebar {
+            transition: width 0.3s ease;
+            white-space: nowrap;
+        }
+
+        #left-sidebar.collapsed {
+            width: 5rem;
+            /* w-20 equivalent */
+        }
+
+        #left-sidebar.collapsed .sidebar-text,
+        #left-sidebar.collapsed p,
+        #left-sidebar.collapsed h1,
+        #left-sidebar.collapsed summary .material-symbols-outlined:last-child {
+            display: none;
+        }
+
+        #left-sidebar.collapsed details>div {
+            display: none !important;
+        }
+
+        #left-sidebar.collapsed .sidebar-header {
+            justify-content: center;
+        }
+
+        #left-sidebar.collapsed .sidebar-header-content {
+            display: none;
+        }
+
+        /* Hide scrollbar but keep scrolling */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Collapse adjacent menu dividers when sections are hidden */
+        nav div.h-px + div.h-px {
+            display: none !important;
+        }
+
+        /* Native <select> popups ignore the (transparent) select background and fall back
+           to a light system panel, so the inherited white text becomes invisible in dark
+           mode. Give the option list an explicit dark surface. */
+        .dark select {
+            color-scheme: dark;
+        }
+
+        .dark select option,
+        .dark select optgroup {
+            background-color: #1e293b;
+            color: #f1f5f9;
+        }
+
+        /* The logo SVG has near-black text, invisible on the dark theme. Inverting it and rotating the hue back
+           whitens the text and keeps the emblem blue, without a second logo file. */
+        .dark .logo-auto-dark {
+            filter: invert(1) hue-rotate(180deg);
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+    
+<style>
+    /* Ders listesi kendi scroll alanı; scroll bar listenin sağ kenarında görünür.
+       Yükseklik JS ile pencereye göre ayarlanır (aşağıdaki fitLessonsScroll). */
+    #lessons-scroll,
+    #courses-sidebar {
+        overflow-y: auto;
+        padding-right: 0.5rem;
+        padding-bottom: 1.5rem; /* son kart / son hedef pencere altına yapışmasın */
+        scrollbar-width: thin;
+        scrollbar-color: rgba(100, 116, 139, 0.5) transparent;
+    }
+    #lessons-scroll::-webkit-scrollbar,
+    #courses-sidebar::-webkit-scrollbar {
+        width: 8px;
+    }
+    #lessons-scroll::-webkit-scrollbar-thumb,
+    #courses-sidebar::-webkit-scrollbar-thumb {
+        background: rgba(100, 116, 139, 0.5);
+        border-radius: 4px;
+    }
+    #lessons-scroll::-webkit-scrollbar-track,
+    #courses-sidebar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Üst menü çubuğu ile içerik (ve sticky tarih barı) arasındaki boşluğu azalt */
+    main .mx-auto.flex.flex-col.gap-6 {
+        gap: 0.25rem !important;
+    }
+
+    /* md+: dış sayfa kaydırmasını kapat; sadece ders listesi kayar,
+       listenin altında ölü boşluk kalmaz. */
+    @media (min-width: 768px) {
+        #main-scroll-area {
+            overflow: hidden !important;
+            bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        #main-scroll-area > div {
+            min-height: 0 !important;
+        }
+        #main-scroll-area > div > .h-16,
+        #main-scroll-area > div > .h-12 {
+            display: none !important;
+        }
+    }
+</style>
+
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d141b] dark:text-slate-100 min-h-screen">
+    
+    
+    <div class="flex h-screen overflow-hidden w-full relative">
+        <!-- Sidebar Navigation (full height) -->
+        <aside id="left-sidebar"
+            class="w-56 hidden lg:flex flex-col justify-between border-r border-[#cfdbe7] dark:border-slate-700 bg-white dark:bg-background-dark p-4 sticky top-0 h-full overflow-y-auto group/sidebar flex-shrink-0 print:hidden ">
+            <div class="flex flex-col gap-6">
+                <div class="flex gap-2 items-center justify-between sidebar-header">
+                    <div class="flex gap-3 items-center sidebar-header-content">
+                        
+                        <a href="/tr" class="hover:opacity-80 transition-opacity w-full">
+                            <img src="/static/images/ino/logo-tr.svg" onerror="this.onerror=null; this.src='/static/images/logo.svg';" alt="Edu" class="w-full logo-auto-dark">
+                        </a>
+                        
+                    </div>
+                    <button onclick="toggleSidebar()"
+                        class="p-1.5 text-slate-500 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+                <nav class="flex flex-col gap-2">
+                    
+    
+    
+    
+    
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+        
+        href="/tr">
+        <span class="material-symbols-outlined">dashboard</span>
+        <p class="text-sm font-medium sidebar-text">Ana Sayfa</p>
+    </a>
+    
+    
+    
+    <div class="h-px bg-[#cfdbe7] dark:bg-slate-700 my-1"></div>
+    
+    
+    
+    <details class="group" data-nav-key="resources">
+        <summary
+            
+            class="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer list-none text-[#4c739a] dark:text-slate-500 hover:bg-[#e7edf3] dark:hover:bg-slate-800 transition-all select-none">
+            <span class="material-symbols-outlined text-[20px] flex-shrink-0">folder_open</span>
+            
+            <p class="text-xs font-semibold uppercase tracking-wider flex-1 sidebar-text">EĞİTİM</p>
+            
+            <span
+                class="material-symbols-outlined text-base sidebar-text transition-transform duration-200 group-open:rotate-180">expand_more</span>
+        </summary>
+        <div class="flex flex-col gap-0.5 mt-0.5 pl-2">
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all bg-[#137fec1a] text-primary font-bold"
+                href="/tr/lib/courses">
+                <span class="material-symbols-outlined">school</span>
+                <p class="text-sm font-medium sidebar-text">Dersler</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/lib/instructors">
+                <span class="material-symbols-outlined">co_present</span>
+                <p class="text-sm font-medium sidebar-text">Eğitmenler</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/lib/materials">
+                <span class="material-symbols-outlined">library_books</span>
+                <p class="text-sm font-medium sidebar-text">Materyaller</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/lib/online">
+                <span class="material-symbols-outlined">video_camera_front</span>
+                <p class="text-sm font-medium sidebar-text">Çevrimiçi</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/lib/flipped">
+                <span class="material-symbols-outlined">flip</span>
+                <p class="text-sm font-medium sidebar-text">Ters Yüz</p>
+            </a>
+            
+        </div>
+    </details>
+    
+    
+    
+    <div class="h-px bg-[#cfdbe7] dark:bg-slate-700 my-1"></div>
+    
+    
+    
+    <details class="group" data-nav-key="activity">
+        <summary
+            
+            class="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer list-none text-[#4c739a] dark:text-slate-500 hover:bg-[#e7edf3] dark:hover:bg-slate-800 transition-all select-none">
+            <span class="material-symbols-outlined text-[20px] flex-shrink-0">bolt</span>
+            
+            <p class="text-xs font-semibold uppercase tracking-wider flex-1 sidebar-text">Aktivite</p>
+            
+            <span
+                class="material-symbols-outlined text-base sidebar-text transition-transform duration-200 group-open:rotate-180">expand_more</span>
+        </summary>
+        <div class="flex flex-col gap-0.5 mt-0.5 pl-2">
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/activity/dashboard">
+                <span class="material-symbols-outlined">tv</span>
+                <p class="text-sm font-medium sidebar-text">Pano</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/activity/messages">
+                <span class="material-symbols-outlined">chat_bubble</span>
+                <p class="text-sm font-medium sidebar-text">Mesajlar</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/activity/feedback">
+                <span class="material-symbols-outlined">poll</span>
+                <p class="text-sm font-medium sidebar-text">Geri Bildirim</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/activity/attendance">
+                <span class="material-symbols-outlined">fact_check</span>
+                <p class="text-sm font-medium sidebar-text">Yoklama</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/panel">
+                <span class="material-symbols-outlined">dashboard</span>
+                <p class="text-sm font-medium sidebar-text">Panel</p>
+            </a>
+            
+        </div>
+    </details>
+    
+    
+    
+    <div class="h-px bg-[#cfdbe7] dark:bg-slate-700 my-1"></div>
+    
+    
+    
+    <details class="group" data-nav-key="analytics">
+        <summary
+            
+            class="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer list-none text-[#4c739a] dark:text-slate-500 hover:bg-[#e7edf3] dark:hover:bg-slate-800 transition-all select-none">
+            <span class="material-symbols-outlined text-[20px] flex-shrink-0">query_stats</span>
+            
+            <p class="text-xs font-semibold uppercase tracking-wider flex-1 sidebar-text">Analitik</p>
+            
+            <span
+                class="material-symbols-outlined text-base sidebar-text transition-transform duration-200 group-open:rotate-180">expand_more</span>
+        </summary>
+        <div class="flex flex-col gap-0.5 mt-0.5 pl-2">
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/analytics/curriculum">
+                <span class="material-symbols-outlined">local_library</span>
+                <p class="text-sm font-medium sidebar-text">Eğitim Programı</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/analytics/ucep">
+                <span class="material-symbols-outlined">account_tree</span>
+                <p class="text-sm font-medium sidebar-text">UÇEP Ağı</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/analytics/publications">
+                <span class="material-symbols-outlined">article</span>
+                <p class="text-sm font-medium sidebar-text">Yayınlar</p>
+            </a>
+            
+        </div>
+    </details>
+    
+    
+    
+    <div class="h-px bg-[#cfdbe7] dark:bg-slate-700 my-1"></div>
+    
+    
+    
+    <details class="group" data-nav-key="belgeler">
+        <summary
+            
+            class="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer list-none text-[#4c739a] dark:text-slate-500 hover:bg-[#e7edf3] dark:hover:bg-slate-800 transition-all select-none">
+            <span class="material-symbols-outlined text-[20px] flex-shrink-0">description</span>
+            
+            <p class="text-xs font-semibold uppercase tracking-wider flex-1 sidebar-text">Çerçeve</p>
+            
+            <span
+                class="material-symbols-outlined text-base sidebar-text transition-transform duration-200 group-open:rotate-180">expand_more</span>
+        </summary>
+        <div class="flex flex-col gap-0.5 mt-0.5 pl-2">
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/belgeler/ucep-yetkin">
+                <span class="material-symbols-outlined">verified</span>
+                <p class="text-sm font-medium sidebar-text">Yetkin&amp;Yeter</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/belgeler/basic_med">
+                <span class="material-symbols-outlined">local_hospital</span>
+                <p class="text-sm font-medium sidebar-text">Temel Hekimlik</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/belgeler/ucep-davranis">
+                <span class="material-symbols-outlined">psychology</span>
+                <p class="text-sm font-medium sidebar-text">Davranışsal B.</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/belgeler/outcomes">
+                <span class="material-symbols-outlined">school</span>
+                <p class="text-sm font-medium sidebar-text">Çıktılar</p>
+            </a>
+            
+        </div>
+    </details>
+    
+    
+    
+                    <script>restoreNavState(document.currentScript.parentElement);</script>
+                </nav>
+
+            </div>
+            <div class="mt-auto">
+                
+                <div class="pt-4 border-t border-[#cfdbe7] dark:border-slate-700">
+                
+                <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/10 transition-colors"
+                    href="/tr/login">
+                    <span class="material-symbols-outlined">login</span>
+                    <p class="text-sm font-medium">Giriş Yap</p>
+                </a>
+                
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right column: Header + Main -->
+        <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- TopNavBar -->
+            <header
+                class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[#cfdbe7] dark:border-slate-700 bg-white dark:bg-background-dark px-6 py-3 print:hidden">
+                <div class="flex-1 min-w-0 flex items-center gap-4 lg:gap-8">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()"
+                        class="lg:hidden text-[#4c739a] dark:text-slate-400 hover:text-primary transition-colors p-1">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                    
+                    <a href="/tr" class="lg:hidden hover:opacity-80 transition-opacity">
+                        <img src="/static/images/ino/logo-tr.svg" onerror="this.onerror=null; this.src='/static/images/logo.svg';" alt="Ed" class="h-8 logo-auto-dark">
+                    </a>
+                    
+                    <div class="hidden lg:flex items-center gap-2 text-sm">
+                        
+                        <a href="/tr"
+                            class="flex items-center gap-1.5 text-[#4c739a] dark:text-slate-400 hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-base">home</span>
+                            <span class="font-medium">Ana Sayfa</span>
+                        </a>
+                        
+                        <span class="text-[#cfdbe7] dark:text-slate-600">/</span>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="flex shrink-0 justify-end gap-6 items-center">
+                    <div class="flex items-center gap-2 text-sm font-medium">
+                        <a href="#" onclick="window.location.href='/tr/lib/courses' + window.location.search; return false;"
+                            class='text-primary'>TR</a>
+                        <span class="text-[#cfdbe7] dark:text-slate-700">|</span>
+                        <a href="#" onclick="window.location.href='/en/lib/courses' + window.location.search; return false;"
+                            class='text-[#4c739a] dark:text-slate-400 hover:text-primary'>EN</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button onclick="toggleTheme()"
+                            class="text-[#4c739a] dark:text-slate-400 hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+                            <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+                        </button>
+
+                        <div class="relative">
+                            <button id="top-user-btn"
+                                onclick="document.getElementById('top-user-dropdown').classList.toggle('hidden')"
+                                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20 cursor-pointer"
+                                style='background-image: url("/static/avatar.webp");'>
+                            </button>
+                            <div id="top-user-dropdown"
+                                class="hidden absolute right-0 top-full mt-2 w-48 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-[#cfdbe7] dark:border-slate-700 overflow-hidden z-50">
+                                
+                                <a href="/tr/login"
+                                    class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/10 transition-colors">
+                                    <span class="material-symbols-outlined text-lg">login</span>
+                                    Giriş Yap
+                                </a>
+                                
+                            </div>
+                        </div>
+                        <script>
+                            document.addEventListener('click', function (event) {
+                                const dropdown = document.getElementById('top-user-dropdown');
+                                const button = event.target.closest('#top-user-btn');
+                                const isDropdown = event.target.closest('#top-user-dropdown');
+                                if (!button && !isDropdown && !dropdown.classList.contains('hidden')) {
+                                    dropdown.classList.add('hidden');
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 relative overflow-hidden flex flex-col h-full">
+                <div class="flex-1 flex flex-col min-h-0 px-4 md:px-6 pt-1">
+                    <div class="max-w-[1024px] mx-auto w-full flex flex-col min-h-0 flex-1 gap-6">
+                        <!-- Emergency Action Panel -->
+                        <div class="@container shrink-0">
+                            
+                        </div>
+
+                        <div class="flex-1 min-h-0 relative">
+                            <!-- Main Content — scrolls independently -->
+                            <div id="main-scroll-area" class="absolute inset-0 overflow-y-auto scrollbar-hide pb-28">
+                                <div class="flex flex-col gap-8 min-h-max lg:min-h-fit">
+                                    
+                                    
+
+
+
+<section id="page-hero" class="mt-4 -mb-4 shrink-0 overflow-hidden transition-all duration-300">
+    
+    <div class="relative h-32 rounded-xl overflow-hidden flex items-center bg-cover bg-center px-8 "
+        data-alt="Dersler, Kurslar, Laboratuvar ve Atölyeler"
+        style='background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%), url("/static/images/ino/courses.webp");'>
+        <div class="max-w-xl">
+            
+            <h1 class="text-white text-base md:text-lg font-bold mb-1 tracking-tight">Dersler, Kurslar, Laboratuvar ve Atölyeler</h1>
+            <p class="text-white/90 text-xs font-medium">
+                Geniş kapsamlı ders kaynaklarımızı keşfedin, öğrenin, gelişin
+            </p>
+        </div>
+    </div>
+    
+</section>
+<script>
+    (function () {
+        var hero = document.getElementById('page-hero');
+        if (!hero) return;
+        var dismissed = false;
+        function refit() { window.dispatchEvent(new Event('resize')); }
+        function dismiss() {
+            if (dismissed) return;
+            dismissed = true;
+            hero.style.maxHeight = hero.offsetHeight + 'px';
+            void hero.offsetHeight; // reflow, so the max-height change animates
+            hero.style.maxHeight = '0px';
+            hero.style.opacity = '0';
+            hero.style.marginBottom = '0px';
+            hero.style.marginTop = '0px';
+            hero.addEventListener('transitionend', function () {
+                hero.style.display = 'none';
+                refit();
+            }, { once: true });
+            refit();
+        }
+        // `scroll` does not bubble, but a capturing listener on document sees the page's own
+        // inner scroll boxes (lesson / instructor / material lists) as well as the window.
+        document.addEventListener('scroll', function (e) {
+            var t = e.target;
+            var top = (t === document || t === document.documentElement) ? window.scrollY : t.scrollTop;
+            if (top > 4) dismiss();
+        }, { capture: true, passive: true });
+        window.addEventListener('wheel', dismiss, { passive: true, once: true });
+        window.addEventListener('touchmove', dismiss, { passive: true, once: true });
+    })();
+</script>
+
+
+<div class="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-6">
+    <!-- Main Content -->
+    <div id="courses-main-col" class="min-w-0 space-y-8">
+        
+
+<div class="space-y-1.5 -mb-5" data-news-banners>
+    
+    <a href="https://tip.inonu.edu.tr/panel" target="_blank" rel="noopener noreferrer"
+       class="news-banner-blink flex items-center gap-2 text-red-600 dark:text-red-400 font-bold text-sm md:text-base leading-snug underline underline-offset-4 decoration-2 hover:decoration-4">
+        <span class="material-symbols-outlined text-lg shrink-0">campaign</span>
+        <span class="min-w-0">Tıp Panel – Kişisel  Panel Kullanıma Açıldı</span>
+        <span class="material-symbols-outlined text-base shrink-0">open_in_new</span>
+    </a>
+    
+</div>
+<style>
+    @keyframes news-banner-blink { 0%, 100% { opacity: 1; } 50% { opacity: .2; } }
+    .news-banner-blink { animation: news-banner-blink 1s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { .news-banner-blink { animation: none; } }
+</style>
+
+        <!-- Student Life Gallery -> Resource Collections -->
+
+
+        <!-- Daily Lessons -->
+        <section>
+            <!-- Search & Dropdown (mobilde scroll ile yukarı kayar, sticky değil) -->
+            <div id="courses-filters" class="pt-3 flex flex-col gap-3">
+                <div class="flex flex-col gap-3 w-full">
+                    <!-- Search Input -->
+                    <form method="GET" action="/tr/lib/courses" class="flex items-center bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 shadow-sm focus-within:border-primary transition-colors">
+                        <span class="material-symbols-outlined text-slate-400 text-lg mr-2">search</span>
+                        <input type="text" name="q" value=""
+                               placeholder="Tüm zamanlarda ve modüllerde ders ara..."
+                               class="w-full bg-transparent border-none focus:ring-0 text-sm py-0 px-0 dark:text-white placeholder:text-slate-400 outline-none" />
+                        
+                    </form>
+
+                    <!-- Dönem (Term) Dropdown + its Timeline PDF (only live once a Dönem is picked) -->
+                    <div class="flex items-center gap-2">
+                        <div class="relative flex items-center flex-1 min-w-0 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 shadow-sm hover:border-primary dark:hover:border-primary transition-colors">
+                            <select id="grade-select-dropdown" onchange="window.location.href=this.value" class="w-full text-[#0d141b] dark:text-white text-sm md:text-base font-bold bg-transparent border-0 border-none focus:ring-0 focus:outline-none cursor-pointer pr-6 appearance-none bg-none truncate" style="appearance: none; -webkit-appearance: none; -moz-appearance: none; background-image: none; box-shadow: none;">
+                                <option value="/tr/lib/courses" selected>
+                                    Tüm Dönemler
+                                </option>
+                                <option value="/tr/lib/courses?start_date=2026-11-23&end_date=2026-11-23&grade=1" >Dönem 1</option>
+                                <option value="/tr/lib/courses?start_date=2026-11-23&end_date=2026-11-23&grade=2" >Dönem 2</option>
+                                <option value="/tr/lib/courses?start_date=2026-11-23&end_date=2026-11-23&grade=3" >Dönem 3</option>
+                                <option value="/tr/lib/courses?start_date=2026-11-23&end_date=2026-11-23&grade=4" >Dönem 4</option>
+                                <option value="/tr/lib/courses?start_date=2026-11-23&end_date=2026-11-23&grade=5" >Dönem 5</option>
+                                <option value="/tr/lib/courses?start_date=2026-11-23&end_date=2026-11-23&grade=6" >Dönem 6</option>
+                            </select>
+                            <span class="material-symbols-outlined pointer-events-none absolute right-2 text-xl text-slate-500 dark:text-slate-400">expand_more</span>
+                        </div>
+
+                        
+                        
+                        <span class="flex items-center justify-center p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-300 dark:text-slate-600 shrink-0 cursor-not-allowed"
+                            title="Ders programı için üniversite sitesine bakınız">
+                            <span class="material-symbols-outlined text-xl">picture_as_pdf</span>
+                        </span>
+                        <span class="flex items-center justify-center p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-300 dark:text-slate-600 shrink-0 cursor-not-allowed"
+                            title="Ders programı için üniversite sitesine bakınız">
+                            <span class="material-symbols-outlined text-xl">calendar_view_week</span>
+                        </span>
+                        <span class="flex items-center justify-center p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-300 dark:text-slate-600 shrink-0 cursor-not-allowed"
+                            title="Ders programı için üniversite sitesine bakınız">
+                            <span class="material-symbols-outlined text-xl">smartphone</span>
+                        </span>
+                        
+                    </div>
+
+                    <!-- Module Dropdown + "aims & objectives" jump icon (only once a module is picked) -->
+                    <div class="flex items-center gap-2">
+                    <div class="relative flex items-center flex-1 min-w-0 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 shadow-sm hover:border-primary dark:hover:border-primary transition-colors">
+                        <select id="module-select-dropdown" onchange="window.location.href=this.value" class="w-full text-[#0d141b] dark:text-white text-sm md:text-base font-bold bg-transparent border-0 border-none focus:ring-0 focus:outline-none cursor-pointer pr-6 appearance-none bg-none truncate" style="appearance: none; -webkit-appearance: none; -moz-appearance: none; background-image: none; box-shadow: none;">
+                            <option value="/tr/lib/courses" selected>
+                                Modül Seçiniz
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=PHS101" data-code="PHS101" >
+                                PHS101 - Koruyucu Sağlık ve Tıbbi Beşeri Bilimler
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=MBE102" data-code="MBE102" >
+                                MBE102 - Yaşamın Moleküler Temeli ve Hücre
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=GLC103" data-code="GLC103" >
+                                GLC103 - Genetik ve Yaşam Döngüsü
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=SSY104" data-code="SSY104" >
+                                SSY104 - İskelet Sistemi
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=MSY105" data-code="MSY105" >
+                                MSY105 - Kas Sistemi
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=CRF201" data-code="CRF201" >
+                                CRF201 - Kardiyovasküler ve Solunum Sistemi
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=GSY202" data-code="GSY202" >
+                                GSY202 - Gastrointestinal Sistem
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=MEC203" data-code="MEC203" >
+                                MEC203 - Metabolizma ve Endokrin Sistem
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=USY204" data-code="USY204" >
+                                USY204 - Ürogenital Sistem
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=CNS205" data-code="CNS205" >
+                                CNS205 - Merkezi Sinir Sistemi ve Duyu
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=BBD206" data-code="BBD206" >
+                                BBD206 - Hastalığın Biyolojik Temeli
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=MAB301" data-code="MAB301" >
+                                MAB301 - Mikrobik Ajanlar ve Antimikrobiyal İlaçlar
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=NHD302" data-code="NHD302" >
+                                NHD302 - Neoplazi ve Hematopoietik Sistem Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=CRG303" data-code="CRG303" >
+                                CRG303 - Dolaşım ve Solunum Sistemi Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=DSL304" data-code="DSL304" >
+                                DSL304 - Sindirim Sistemi Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=MEE305" data-code="MEE305" >
+                                MEE305 - Metabolizma ve Endokrin Sistem Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=USD306" data-code="USD306" >
+                                USD306 - Ürogenital Sistem Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=NSE307" data-code="NSE307" >
+                                NSE307 - Sinir Sistemi ve Kas-İskelet Sistemi Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=CBI308" data-code="CBI308" >
+                                CBI308 - Toplum Temelli Tıp ve Klinik Staja Uyum
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=RAD401" data-code="RAD401" >
+                                RAD401 - Radyoloji
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=GAS401" data-code="GAS401" >
+                                GAS401 - Gastroenteroloji
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=GYN401" data-code="GYN401" >
+                                GYN401 - Kadın Hastalıkları ve Doğum
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=INT401" data-code="INT401" >
+                                INT401 - İç Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=CHD401" data-code="CHD401" >
+                                CHD401 - Göğüs Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=RHE401" data-code="RHE401" >
+                                RHE401 - Romatoloji
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=ONC401" data-code="ONC401" >
+                                ONC401 - Tıbbi Onkoloji
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=EMD401" data-code="EMD401" >
+                                EMD401 - Endokrinoloji ve Metabolizma Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=NEP401" data-code="NEP401" >
+                                NEP401 - Nefroloji
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=GSY401" data-code="GSY401" >
+                                GSY401 - Genel Cerrahi
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=PED401" data-code="PED401" >
+                                PED401 - Çocuk Sağlığı ve Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=GER401" data-code="GER401" >
+                                GER401 - Geriatri
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=HEM401" data-code="HEM401" >
+                                HEM401 - Hematoloji
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=CAR401" data-code="CAR401" >
+                                CAR401 - Kardiyoloji
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=FOR401" data-code="FOR401" >
+                                FOR401 - Adli Tıp
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=ANR501" data-code="ANR501" >
+                                ANR501 - Anesteziyoloji ve Reanimasyon
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=PMR501" data-code="PMR501" >
+                                PMR501 - Fiziksel Tıp ve Rehabilitasyon
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=ENT501" data-code="ENT501" >
+                                ENT501 - Kulak Burun Boğaz Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=THO501" data-code="THO501" >
+                                THO501 - Göğüs Cerrahi
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=PRS501" data-code="PRS501" >
+                                PRS501 - Plastik, Rekonstrüktif ve Estetik Cerrahi
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=ORT501" data-code="ORT501" >
+                                ORT501 - Ortopedi ve Travmatoloji
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=INF501" data-code="INF501" >
+                                INF501 - Enfeksiyon Hastalıkları ve Klinik Mikrobiyoloji
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=PDS501" data-code="PDS501" >
+                                PDS501 - Çocuk Cerrahisi
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=DER501" data-code="DER501" >
+                                DER501 - Deri ve Zührevi Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=URO501" data-code="URO501" >
+                                URO501 - Üroloji
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=CAP501" data-code="CAP501" >
+                                CAP501 - Çocuk ve Ergen Ruh Sağlığı ve Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=NEU501" data-code="NEU501" >
+                                NEU501 - Beyin Cerrahisi
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=EMD501" data-code="EMD501" >
+                                EMD501 - Acil Tıp
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=NRL501" data-code="NRL501" >
+                                NRL501 - Nöroloji
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=PSY501" data-code="PSY501" >
+                                PSY501 - Ruh Sağlığı ve Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=OPH501" data-code="OPH501" >
+                                OPH501 - Göz Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=EMM601" data-code="EMM601" >
+                                EMM601 - Acil Tıp
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=FAM601" data-code="FAM601" >
+                                FAM601 - Aile Hekimliği
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=PED601" data-code="PED601" >
+                                PED601 - Çocuk Sağlığı ve Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=GSG601" data-code="GSG601" >
+                                GSG601 - Genel Cerrahi
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=PBH601" data-code="PBH601" >
+                                PBH601 - Halk Sağlığı
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=INM601" data-code="INM601" >
+                                INM601 - İç Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=GYN601" data-code="GYN601" >
+                                GYN601 - Kadın Hastalıkları ve Doğum
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=PSY601" data-code="PSY601" >
+                                PSY601 - Ruh Sağlığı ve Hastalıkları
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=ELM601" data-code="ELM601" >
+                                ELM601 - Seçmeli Dahili Staj
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=SRE601" data-code="SRE601" >
+                                SRE601 - Seçmeli Cerrahi Staj
+                            </option>
+                            
+                            <option value="/tr/lib/courses?mod=FOR601" data-code="FOR601" >
+                                FOR601 - Adli Tıp Stajı
+                            </option>
+                            
+                        </select>
+                        <span class="material-symbols-outlined pointer-events-none absolute right-2 text-xl text-slate-500 dark:text-slate-400">expand_more</span>
+                    </div>
+                    
+                    <!-- No module/term picked: same jump, but to the article cards
+                         (oxi_gen.articles) that take the AMAÇ slot in the sidebar. -->
+                    <a href="#page-articles"
+                        onclick="var t=document.getElementById('page-articles'); if(t){t.scrollIntoView({behavior:'smooth',block:'start'}); return false;}"
+                        class="hidden md:flex items-center justify-center p-1.5 rounded-lg bg-primary hover:bg-primary/90 text-white shadow-sm shadow-primary/30 transition-colors shrink-0"
+                        title="Öğrencilerin Uyması Gereken Kurallar">
+                        <span class="material-symbols-outlined text-xl">flag</span>
+                    </a>
+                    
+                    </div>
+                </div>
+            </div>
+
+            <!-- Date Range Selector — mobilde liste boyunca üstte sticky kalır -->
+            <div class="sticky top-0 z-30 pt-1 pb-2 bg-background-light dark:bg-background-dark">
+                <div class="flex items-center gap-2 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 shadow-sm w-full">
+                    <!-- Layout: [Eki 19 <]  ...  Bugün  ...  [> Kas 2]  [flag]
+                         Date labels sit OUTSIDE the chevrons so the right chevron
+                         isn't jammed against the flag button on mobile. -->
+                    <!-- Mobile only: back to the top of the page (search / module row)
+                         from anywhere - this bar is sticky, so it's always reachable. -->
+                    <a href="#courses-filters"
+                        onclick="var t=document.getElementById('courses-filters'); if(t){t.scrollIntoView({behavior:'smooth',block:'start'});} return false;"
+                        class="md:hidden mr-2 flex items-center justify-center p-1.5 rounded-lg text-primary bg-primary/10 hover:bg-primary hover:text-white transition-colors shrink-0"
+                        title="Başa dön">
+                        <span class="material-symbols-outlined text-xl">vertical_align_top</span>
+                    </a>
+                    
+                    <div class="flex-1 min-w-0 py-1">
+<div class="flex items-center gap-2 text-xs md:text-sm text-amber-800 dark:text-amber-200 min-w-0">
+    <span class="material-symbols-outlined text-lg text-amber-500 shrink-0">event_busy</span>
+    <span class="min-w-0">
+        Ders saatleri için üniversite sitesindeki ders programına bakınız.
+        
+        
+        <a href="https://www.inonu.edu.tr/tip/menu/36829/2026-2027-egitim-donemi-ders-programi" target="_blank" rel="noopener" class="font-semibold underline hover:text-primary whitespace-nowrap">Ders programı</a>
+        
+    </span>
+</div></div>
+                    
+
+                    
+                    <!-- Same, jumping to the article cards instead. -->
+                    <a href="#page-articles"
+                        onclick="var t=document.getElementById('page-articles'); if(t){t.scrollIntoView({behavior:'smooth',block:'start'}); return false;}"
+                        class="md:hidden ml-2 flex items-center justify-center p-1.5 rounded-lg bg-primary hover:bg-primary/90 text-white shadow-sm shrink-0"
+                        title="Öğrencilerin Uyması Gereken Kurallar">
+                        <span class="material-symbols-outlined text-xl">flag</span>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <!-- Dynamic List (Single Column) -->
+            <div id="lessons-scroll" class="flex flex-col gap-4">
+                
+                
+                <div
+                    class="col-span-full text-center py-8 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <p class="text-slate-500">
+                        
+                            Dersleri görmek için bir modül seçin ya da arama yapın.
+                        
+                    </p>
+                </div>
+                
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        (function () {
+            var el = document.getElementById('lessons-scroll');
+            if (!el) return;
+            // Sağ panel de aynı şekilde pencereye sığdırılır: md+'da dış sayfa
+            // kaymadığı için, uzun bir Öğrenim Hedefleri listesi ancak panelin
+            // kendi scroll alanıyla okunabilir.
+            var isDesktop = function () { return window.matchMedia('(min-width: 768px)').matches; };
+            function fitLessonsScroll() {
+                // Aside HTML'de bu scriptten SONRA geliyor; ilk çağrıda henüz
+                // yok, o yüzden her seferinde yeniden bulunur (load'da bulunur).
+                var side = document.getElementById('courses-sidebar');
+                if (!isDesktop()) {
+                    el.style.maxHeight = '';
+                    if (side) side.style.maxHeight = '';
+                    return;
+                }
+                var top = el.getBoundingClientRect().top;
+                // 24px: kaydırma alanı pencere altıyla birleşmesin.
+                el.style.maxHeight = Math.max(200, window.innerHeight - top - 24) + 'px';
+                if (side) {
+                    var sTop = side.getBoundingClientRect().top;
+                    side.style.maxHeight = Math.max(200, window.innerHeight - sTop - 24) + 'px';
+                }
+            }
+            fitLessonsScroll();
+
+            
+
+            window.addEventListener('load', fitLessonsScroll);
+            window.addEventListener('resize', fitLessonsScroll);
+            window.addEventListener('orientationchange', fitLessonsScroll);
+            // Sticky başlık (arama/modül/tarih) satır kaydırınca yüksekliği değişebilir
+            if (window.ResizeObserver) {
+                var hdr = document.getElementById('courses-filters');
+                if (hdr) new ResizeObserver(fitLessonsScroll).observe(hdr);
+            }
+        })();
+    </script>
+
+    <!-- Sidebar -->
+    <aside id="courses-sidebar" class="min-w-0 space-y-8 md:sticky md:top-2 md:self-start">
+        <!-- Ongoing Modules (Sidebar) -->
+        
+
+        
+        <!-- No term/module picked yet: article cards (oxi_gen.articles) instead of workshops. -->
+        <div id="page-articles" class="scroll-mt-4 space-y-8">
+            
+
+<section id="article-courses" class="scroll-mt-4 rounded-lg border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm overflow-hidden">
+    
+    <p class="px-4 pt-4 text-xs font-bold text-gray-400">Dersler</p>
+    
+    <div class="flex items-center gap-2 px-4 pt-1">
+        <span class="material-symbols-outlined text-primary text-xl">gavel</span>
+        <h2 class="text-sm font-bold text-gray-800 dark:text-gray-100">Öğrencilerin Uyması Gereken Kurallar</h2>
+    </div>
+    <div class="px-4 pb-4 pt-2">
+        
+        <div class="prose prose-sm prose-slate dark:prose-invert max-w-none text-sm leading-relaxed prose-headings:text-[13px] prose-headings:font-bold prose-headings:mt-3 prose-headings:mb-1">
+            <p>Ders kurullarına, laboratuvar ve pratik uygulamalara ve sınavlara katılımda tüm öğrencilerin uyması gereken kurallar.</p>
+
+        </div>
+        
+        
+        <details class="group mt-2" >
+            <summary class="cursor-pointer list-none text-xs font-bold text-primary hover:underline select-none">
+                <span class="group-open:hidden">Devamını oku</span>
+                <span class="hidden group-open:inline">Kapat</span>
+            </summary>
+            <div class="prose prose-sm prose-slate dark:prose-invert max-w-none text-sm leading-relaxed prose-headings:text-[13px] prose-headings:font-bold prose-headings:mt-3 prose-headings:mb-1 mt-2">
+                <ol>
+<li>Öğrenciler ders kurullarına ilgili yönetmelik ve yönergede belirtilen devamsızlık sınırını aşmayacak şekilde devam etmek zorundadır.</li>
+<li>Öğrenciler, ders kurullarına ve sınavlara temiz ve bakımlı olarak katılacaklardır.</li>
+<li>Her ders kurulunun ilk dersi, ders kurulunun tanıtımı olarak planlanmıştır. Tanıtımda ders kurulunun amacı, öğrenme hedefleri, kapsamı, ders programı, ölçme-değerlendirme yöntemleri ve uyulması gereken kurallar hakkında öğrencilere bilgi verilecektir.</li>
+<li>Ders kurulunun teorik ve pratik dersleri, programda belirtilen saatlerde başlar ve biter.</li>
+<li>Ders kurulunda, teorik dersler, mesleki beceri ve diğer pratik uygulamalar bire bir öğretim üyeleri tarafından verilecektir.</li>
+<li>Tüm öğrenciler, mesleki beceri ve pratik derslerde yeterlilik kazandıktan sonra ders kurulunun teorik sınavına alınacaklardır.</li>
+<li>Öğrenciler, mesleki beceri ve pratik derslerde ilgili öğretim üyesi ile birlikte uygulamalı olarak aktif şekilde derse katılacaktır.</li>
+<li>Öğrenciler ders programında belirtilen saatlerde seçmeli dersler, kanıta dayalı uygulamalar ve diğer uygulamalara katılacaklardır.</li>
+<li>Öğrenciler laboratuvarlara (Histoloji, Anatomi ve Mesleki beceri) temiz önlükle katılacaktır.</li>
+<li>Öğrenciler laboratuvarlarda ders süresi bitene kadar kalacaktır.</li>
+<li>Histoloji laboratuvarına öğrenciler düz beyaz yapraklı çizim defteri ve renkli kalem getirmelidir.</li>
+<li>Devam süreleri aşıldığında öğrenci devamsız kabul edilir ve ders kurulu sınavlarına giremez.</li>
+<li>İlgili dönemde başarılı olup bir üst döneme geçebilmek için; öğrencilerin yılsonu başarı notunun ilgili yönetmelik ve yönergede belirtilen şartları karşılıyor olması gerekmektedir. Sınav yönetmeliğinde yapılacak olan değişiklikler aynen uygulanacaktır.</li>
+<li>Ders kurulu sınavından sonra tüm öğrenciler ile sınav soruları interaktif olarak çözülecektir.</li>
+<li>Öğrenciler sınav sorularına itirazlarını ölçme değerlendirme komisyonuna yapacaktır.</li>
+<li>Öğrenciler, probleme dayalı öğrenme (PDÖ) ve interaktif oturum senaryolarına aktif katılım göstermek ve kendilerine verilen görevleri eksiksiz yerine getirmekle yükümlüdür.</li>
+<li>Ders kurulu sonunda tüm öğrencilerden geri bildirim alınacaktır.</li>
+</ol>
+
+            </div>
+        </details>
+        
+    </div>
+</section>
+
+        </div>
+        
+    </aside>
+</div>
+<div class="h-16"></div>
+
+                                    <div class="h-12 shrink-0"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Chat Bar — attached to main content bottom -->
+                    
+            </main>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-[60] hidden lg:hidden" onclick="toggleMobileMenu()">
+    </div>
+    <aside id="mobile-sidebar"
+        class="fixed top-0 left-0 h-full w-72 z-[70] bg-white dark:bg-background-dark border-r border-[#cfdbe7] dark:border-slate-700 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col overflow-y-auto">
+        <div class="flex items-center justify-between p-4 border-b border-[#cfdbe7] dark:border-slate-700">
+            
+            <a href="/tr" class="hover:opacity-80 transition-opacity w-[70%]">
+                <img src="/static/images/ino/logo-tr.svg" onerror="this.onerror=null; this.src='/static/images/logo.svg';" alt="Edu" class="w-full logo-auto-dark">
+            </a>
+            
+            <button onclick="toggleMobileMenu()"
+                class="p-1.5 text-slate-500 hover:text-primary rounded-lg transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-1 p-4 flex-1">
+            
+    
+    
+    
+    
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+        
+        href="/tr">
+        <span class="material-symbols-outlined">dashboard</span>
+        <p class="text-sm font-medium sidebar-text">Ana Sayfa</p>
+    </a>
+    
+    
+    
+    <div class="h-px bg-[#cfdbe7] dark:bg-slate-700 my-1"></div>
+    
+    
+    
+    <details class="group" data-nav-key="resources">
+        <summary
+            
+            class="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer list-none text-[#4c739a] dark:text-slate-500 hover:bg-[#e7edf3] dark:hover:bg-slate-800 transition-all select-none">
+            <span class="material-symbols-outlined text-[20px] flex-shrink-0">folder_open</span>
+            
+            <p class="text-xs font-semibold uppercase tracking-wider flex-1 sidebar-text">EĞİTİM</p>
+            
+            <span
+                class="material-symbols-outlined text-base sidebar-text transition-transform duration-200 group-open:rotate-180">expand_more</span>
+        </summary>
+        <div class="flex flex-col gap-0.5 mt-0.5 pl-2">
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all bg-[#137fec1a] text-primary font-bold"
+                href="/tr/lib/courses">
+                <span class="material-symbols-outlined">school</span>
+                <p class="text-sm font-medium sidebar-text">Dersler</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/lib/instructors">
+                <span class="material-symbols-outlined">co_present</span>
+                <p class="text-sm font-medium sidebar-text">Eğitmenler</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/lib/materials">
+                <span class="material-symbols-outlined">library_books</span>
+                <p class="text-sm font-medium sidebar-text">Materyaller</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/lib/online">
+                <span class="material-symbols-outlined">video_camera_front</span>
+                <p class="text-sm font-medium sidebar-text">Çevrimiçi</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/lib/flipped">
+                <span class="material-symbols-outlined">flip</span>
+                <p class="text-sm font-medium sidebar-text">Ters Yüz</p>
+            </a>
+            
+        </div>
+    </details>
+    
+    
+    
+    <div class="h-px bg-[#cfdbe7] dark:bg-slate-700 my-1"></div>
+    
+    
+    
+    <details class="group" data-nav-key="activity">
+        <summary
+            
+            class="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer list-none text-[#4c739a] dark:text-slate-500 hover:bg-[#e7edf3] dark:hover:bg-slate-800 transition-all select-none">
+            <span class="material-symbols-outlined text-[20px] flex-shrink-0">bolt</span>
+            
+            <p class="text-xs font-semibold uppercase tracking-wider flex-1 sidebar-text">Aktivite</p>
+            
+            <span
+                class="material-symbols-outlined text-base sidebar-text transition-transform duration-200 group-open:rotate-180">expand_more</span>
+        </summary>
+        <div class="flex flex-col gap-0.5 mt-0.5 pl-2">
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/activity/dashboard">
+                <span class="material-symbols-outlined">tv</span>
+                <p class="text-sm font-medium sidebar-text">Pano</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/activity/messages">
+                <span class="material-symbols-outlined">chat_bubble</span>
+                <p class="text-sm font-medium sidebar-text">Mesajlar</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/activity/feedback">
+                <span class="material-symbols-outlined">poll</span>
+                <p class="text-sm font-medium sidebar-text">Geri Bildirim</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/activity/attendance">
+                <span class="material-symbols-outlined">fact_check</span>
+                <p class="text-sm font-medium sidebar-text">Yoklama</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/panel">
+                <span class="material-symbols-outlined">dashboard</span>
+                <p class="text-sm font-medium sidebar-text">Panel</p>
+            </a>
+            
+        </div>
+    </details>
+    
+    
+    
+    <div class="h-px bg-[#cfdbe7] dark:bg-slate-700 my-1"></div>
+    
+    
+    
+    <details class="group" data-nav-key="analytics">
+        <summary
+            
+            class="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer list-none text-[#4c739a] dark:text-slate-500 hover:bg-[#e7edf3] dark:hover:bg-slate-800 transition-all select-none">
+            <span class="material-symbols-outlined text-[20px] flex-shrink-0">query_stats</span>
+            
+            <p class="text-xs font-semibold uppercase tracking-wider flex-1 sidebar-text">Analitik</p>
+            
+            <span
+                class="material-symbols-outlined text-base sidebar-text transition-transform duration-200 group-open:rotate-180">expand_more</span>
+        </summary>
+        <div class="flex flex-col gap-0.5 mt-0.5 pl-2">
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/analytics/curriculum">
+                <span class="material-symbols-outlined">local_library</span>
+                <p class="text-sm font-medium sidebar-text">Eğitim Programı</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/analytics/ucep">
+                <span class="material-symbols-outlined">account_tree</span>
+                <p class="text-sm font-medium sidebar-text">UÇEP Ağı</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/analytics/publications">
+                <span class="material-symbols-outlined">article</span>
+                <p class="text-sm font-medium sidebar-text">Yayınlar</p>
+            </a>
+            
+        </div>
+    </details>
+    
+    
+    
+    <div class="h-px bg-[#cfdbe7] dark:bg-slate-700 my-1"></div>
+    
+    
+    
+    <details class="group" data-nav-key="belgeler">
+        <summary
+            
+            class="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer list-none text-[#4c739a] dark:text-slate-500 hover:bg-[#e7edf3] dark:hover:bg-slate-800 transition-all select-none">
+            <span class="material-symbols-outlined text-[20px] flex-shrink-0">description</span>
+            
+            <p class="text-xs font-semibold uppercase tracking-wider flex-1 sidebar-text">Çerçeve</p>
+            
+            <span
+                class="material-symbols-outlined text-base sidebar-text transition-transform duration-200 group-open:rotate-180">expand_more</span>
+        </summary>
+        <div class="flex flex-col gap-0.5 mt-0.5 pl-2">
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/belgeler/ucep-yetkin">
+                <span class="material-symbols-outlined">verified</span>
+                <p class="text-sm font-medium sidebar-text">Yetkin&amp;Yeter</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/belgeler/basic_med">
+                <span class="material-symbols-outlined">local_hospital</span>
+                <p class="text-sm font-medium sidebar-text">Temel Hekimlik</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/belgeler/ucep-davranis">
+                <span class="material-symbols-outlined">psychology</span>
+                <p class="text-sm font-medium sidebar-text">Davranışsal B.</p>
+            </a>
+            
+            
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-all text-[#0d141b] dark:text-slate-300 hover:bg-[#e7edf3] dark:hover:bg-slate-800"
+                href="/tr/belgeler/outcomes">
+                <span class="material-symbols-outlined">school</span>
+                <p class="text-sm font-medium sidebar-text">Çıktılar</p>
+            </a>
+            
+        </div>
+    </details>
+    
+    
+    
+            <script>restoreNavState(document.currentScript.parentElement);</script>
+        </nav>
+        <div class="p-4 border-t border-[#cfdbe7] dark:border-slate-700">
+            
+            <a href="/tr/login"
+                class="flex items-center gap-3 px-3 py-2 text-sm text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/10 rounded-lg transition-colors">
+                <span class="material-symbols-outlined text-lg">login</span>
+                Giriş Yap
+            </a>
+            
+        </div>
+        
+    </aside>
+
+    <script>
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('mobile-overlay');
+            const isOpen = !sidebar.classList.contains('-translate-x-full');
+            if (isOpen) {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            } else {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            }
+        }
+    </script>
+    <script>
+        // oxi_gen salt okunurken (src/gen_readonly.rs) reddedilen htmx kayıtlarında sunucunun mesajını göster.
+        document.body.addEventListener('htmx:responseError', function (e) {
+            const xhr = e.detail.xhr;
+            if (!xhr || !xhr.getResponseHeader('x-gen-readonly')) return;
+            let box = document.getElementById('gen-readonly-toast');
+            if (!box) {
+                box = document.createElement('div');
+                box.id = 'gen-readonly-toast';
+                box.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] max-w-md w-[calc(100%-2rem)] rounded-lg bg-amber-600 text-white text-sm shadow-lg px-4 py-3';
+                document.body.appendChild(box);
+            }
+            box.textContent = xhr.responseText;
+            box.hidden = false;
+            clearTimeout(box._t);
+            box._t = setTimeout(() => { box.hidden = true; }, 6000);
+        });
+    </script>
+</body>
+
+</html>
