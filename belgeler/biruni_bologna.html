@@ -1,0 +1,1216 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
+<head><title>
+
+</title><meta http-equiv="x-ua-compatible" content="ie=edge" /><meta content="width=device-width, initial-scale=1" name="viewport" /><meta name="robots" content="noindex,nofollow" /><meta name="googlebot" content="noindex" /><link href="../proliz_boots4/bootstrap/css/bootstrap.min.css" rel="stylesheet" /><link href="../proliz_boots4/fontawesome/css/all.min.css" rel="stylesheet" /><link href="../proliz_boots4/prolizcodes/css/prlz-sidebar/prlz-sidebar-menu.css" rel="stylesheet" />
+    <style>
+        :root {
+
+            --primary-color: #1E2A38;
+            --secondary-color: #C9A86A;
+            --third-color: #F4F7FB;
+
+            --tobartextcolor: #FFFFFF;
+            --gold-light: #D4A017;
+            --surface: #FFFFFF;
+            --surface-alt: var(--third-color);
+            --text-primary: #0D1B2A;
+            --text-muted: #5C6F82;
+            --border-subtle: rgba(184,134,11,.18);
+            --sidebar-w: 300px;
+            --sidebar-mini-w: 68px;
+            --topbar-h: 60px;
+            --radius-card: 14px;
+            --shadow-card: 0 4px 24px rgba(13,27,42,.09);
+            --transition: .22s cubic-bezier(.4,0,.2,1);
+        }
+        body {
+            font-family: "Open Sans", Tahoma, sans-serif;
+            background: var(--surface-alt);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+        #topbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1040;
+            height: var(--topbar-h);
+            background: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            display: flex; align-items: center; padding: 0 1rem; gap: .75rem;
+        }
+        #hamburger {
+            border: none; background: transparent; color: var(--tobartextcolor);
+            font-size: 1.2rem; width: 32px; height: 32px;
+        }
+        #hamburger:hover { color: var(--secondary-color); }
+        .brand-text { color: var(--tobartextcolor); font-weight: 100; font-size: .95rem; letter-spacing: .01em; }
+        .brand-text span { color: var(--tobartextcolor) !important; }
+        #lblUniAd { font-size: 0.9rem !important; }
+
+        .appname-title {
+            font-size: .72rem; 
+            background: rgba(255,255,255,.09); color: var(--tobartextcolor);
+            border: 1px solid rgba(184,134,11,.35); border-radius: 4px; padding: 0 9px;
+            color: var(--tobartextcolor) !important;
+            width: 90%;
+            height: 30px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            box-sizing: border-box;
+            margin: 0 auto .45rem;
+        }
+
+        .semester-badge {
+            font-size: .72rem; font-weight: 500;
+            background: rgba(255,255,255,.09); color: var(--tobartextcolor);
+            border: 1px solid rgba(184,134,11,.35); border-radius: 4px; padding: 2px 9px;
+        }
+        .semester-badge,
+        .semester-badge span,
+        .semester-badge font,
+        #topbar #lblAppName,
+        #topbar #lblAppName * {
+            color: var(--tobartextcolor) !important;
+        }
+        .topbar-actions { display: flex; align-items: center; gap: .4rem; margin-left: auto; }
+        .topbar-icon-btn {
+            width: 34px; height: 34px; border: none; border-radius: 8px;
+            background: rgba(255,255,255,.07); color: var(--tobartextcolor);
+            display: inline-flex; align-items: center; justify-content: center;
+            transition: all var(--transition);
+        }
+        .topbar-icon-btn:hover { background: var(--secondary-color); color: var(--primary-color); }
+        .topbar-notif-wrap {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+        .topbar-notif-wrap .notif-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            z-index: 2;
+            background: #E74C3C;
+            color: #fff;
+            min-width: 15px;
+            min-height: 15px;
+            border-radius: 999px;
+            font-size: 9px;
+            line-height: 1;
+            padding: 2px 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            box-shadow: 0 1px 3px rgba(0,0,0,.35);
+        }
+        .avatar-pill {
+            display: flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.09);
+            border: 1px solid rgba(184,134,11,.3); border-radius: 40px; padding: 3px 10px 3px 4px;
+            color: var(--tobartextcolor); font-size: .78rem;
+        }
+        .avatar-user-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 160px;
+            line-height: 1.15;
+            color: var(--tobartextcolor) !important;
+        }
+        .avatar-user-block,
+        .avatar-user-block *,
+        .avatar-user-block #lblOgrenciAdSoyad,
+        .avatar-user-block #lblHocaAdSoyadUnvan {
+            color: var(--tobartextcolor) !important;
+            text-align: center !important;
+        }
+        #topbar #lblOgrenciAdSoyad,
+        #topbar #lblOgrenciAdSoyad *,
+        #topbar #lblHocaAdSoyadUnvan,
+        #topbar #lblHocaAdSoyadUnvan * {
+            color: var(--tobartextcolor) !important;
+        }
+        #avatarDropdownWrap {
+            flex-shrink: 0;
+            max-width: min(320px, 42vw);
+        }
+        .avatar-pill {
+            max-width: 100%;
+            min-width: 0;
+        }
+        .avatar-user-block {
+            min-width: 0;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        #topbar .avatar-user-block span,
+        #topbar .avatar-user-block #lblHocaAdSoyadUnvan {
+            display: block;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .avatar-circle {
+            width: 28px; height: 28px; border-radius: 50%; background: var(--secondary-color);
+            color: var(--primary-color); display: inline-flex; align-items: center; justify-content: center; font-weight: 700;
+        }
+        .avatar-photo {
+            display: inline-block !important;
+            object-fit: cover;
+            background: #dfe6ef;
+            border: 1px solid rgba(255,255,255,.22);
+        }
+        .user-menu-dropdown {
+            min-width: 320px;
+            border-radius: 10px;
+            border: 1px solid rgba(13,27,42,.12);
+            background: var(--surface);
+            box-shadow: var(--shadow-card);
+        }
+        .user-menu-photo-wrap {
+            display: flex;
+            justify-content: center;
+            margin: .1rem 0 .55rem;
+        }
+        .user-menu-photo {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(201,168,106,.28);
+            background: var(--third-color);
+        }
+        .user-menu-dropdown .menu-action {
+            display: flex;
+            align-items: center;
+            gap: .65rem;
+            width: 100%;
+
+            border-radius: 12px;
+            border: 1px solid rgba(13,27,42,.10);
+            border-left: 4px solid transparent;
+
+            padding: .62rem .78rem;
+            font-size: .95rem;
+            font-weight: 500;
+            line-height: 1.15;
+
+            background: rgba(13,27,42,.02);
+            color: var(--text-primary) !important;
+            text-decoration: none !important;
+
+            transition: background var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+        }
+
+        .user-menu-dropdown .menu-action i {
+            width: 26px;
+            height: 26px;
+            border-radius: 9px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .85rem;
+            flex-shrink: 0;
+            background: rgba(201,168,106,.14);
+            color: var(--secondary-color);
+        }
+
+        .user-menu-dropdown .menu-action-light {
+            border-left-color: rgba(201,168,106,.95);
+        }
+        .user-menu-dropdown .menu-action-light:hover {
+            background: rgba(201,168,106,.10);
+            border-color: rgba(201,168,106,.22);
+            box-shadow: 0 10px 24px rgba(13,27,42,.08);
+            transform: translateY(-1px);
+        }
+        .user-menu-dropdown .menu-action-light i {
+            background: rgba(201,168,106,.18);
+            color: var(--secondary-color);
+        }
+
+        .user-menu-dropdown .menu-action-danger {
+            border-left-color: rgba(229,57,75,.95);
+        }
+        .user-menu-dropdown .menu-action-danger:hover {
+            background: rgba(229,57,75,.12);
+            border-color: rgba(229,57,75,.25);
+            box-shadow: 0 10px 24px rgba(13,27,42,.08);
+            transform: translateY(-1px);
+        }
+        .user-menu-dropdown .menu-action-danger i {
+            background: rgba(229,57,75,.16);
+            color: #d52e40;
+        }
+
+        .user-menu-dropdown hr{
+            border-color: rgba(13,27,42,.12) !important;
+            margin: .75rem 0;
+        }
+        .user-menu-dropdown .text-muted{
+            color: rgba(13,27,42,.65) !important;
+        }
+
+        #sidebar {
+            position: fixed; top: var(--topbar-h); left: 0; bottom: 0; width: var(--sidebar-w);
+            background: var(--primary-color); border-right: 1px solid rgba(184,134,11,.15);
+            overflow-y: auto; overflow-x: hidden; z-index: 1030; transition: transform var(--transition), width var(--transition);
+        }
+        #sidebar-overlay {
+            display: none; position: fixed; inset: 0; z-index: 1025; background: rgba(0,0,0,.45);
+        }
+        .s-id { color: var(--gold-light); font-size: .72rem; }
+
+        .menu-wrap { padding: .5rem .35rem 1rem; }
+        .menu-wrap .uni-logo {
+            display: block;
+            width: 64px !important;
+            height: 64px;
+            margin: .35rem auto .75rem;
+            
+            border-radius: 50%;
+
+            object-fit: contain;
+        }
+        .menu-wrap .nav-header {
+            color: #C9A86A !important; 
+            
+            font-size: .72rem; letter-spacing: .12em;
+            font-weight: 400; padding: .62rem .8rem .22rem;
+        }
+        .menu-wrap #proMenu > .nav-item.has-treeview {
+            margin-top: .3rem;
+        }
+        .menu-wrap .nav-link {
+            border-left: 3px solid transparent;
+            color: rgba(255,255,255,.68) !important;
+            border-radius: 8px; margin: 0; padding: .42rem .62rem;
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            gap: .48rem;
+            line-height: 1.15;
+        }
+        .menu-wrap .nav-link:hover,
+        .menu-wrap .nav-link.active {
+            background: rgba(184,134,11,.13) !important;
+            color: var(--gold-light) !important;
+            border-left-color: var(--secondary-color);
+        }
+        .menu-wrap .nav-link.menu-last-selected i,
+        .menu-wrap .nav-link.menu-last-selected p {
+            color: inherit !important;
+        }
+        .menu-wrap .nav-link p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: calc(var(--sidebar-w) - 3.6rem);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: .35rem;
+            flex: 1;
+            min-width: 0;
+        }
+        .menu-wrap .nav-link > i:first-child {
+            width: 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .menu-wrap .nav-treeview {
+            display: none;
+            padding-left: .32rem;
+            margin-top: .08rem;
+        }
+        .menu-wrap .nav-item.has-treeview.menu-open > .nav-treeview,
+        .menu-wrap .nav-item.has-treeview.menu-open > .sub-items {
+            display: block;
+        }
+        .menu-wrap .menu-group-toggle .group-caret,
+        .menu-wrap .nav-link i.right {
+            transition: transform var(--transition);
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+        .menu-wrap .nav-item.has-treeview.menu-open > .menu-group-toggle .group-caret,
+        .menu-wrap .nav-item.has-treeview.menu-open > .nav-link i.right {
+            transform: rotate(90deg);
+        }
+
+        #main {
+            margin-left: var(--sidebar-w);
+            margin-top: var(--topbar-h);
+            min-height: calc(100vh - var(--topbar-h));
+            padding: 0.2rem 0.2rem 1.25rem;
+            transition: margin-left var(--transition);
+        }
+        #frameWrap {
+            position: relative;
+            min-height: calc(100vh - 110px);
+            height: auto;
+            overflow: hidden;
+            background-color:white;
+        }
+        #IFRAME1 { width: 100%; height: 2000px; min-height: 0; border: 0; padding: 0; display: block; }
+        @media (max-width: 991.98px) {
+            #IFRAME1 { height: 1200px; }
+        }
+
+        .main-footer {
+            margin-left: var(--sidebar-w);
+            background: transparent;
+            border: 0;
+            color: var(--text-muted);
+            padding: .4rem 1rem 1rem;
+        }
+
+        body.sidebar-collapsed #sidebar {
+            transform: translateX(0);
+            width: var(--sidebar-mini-w);
+            overflow: visible;
+        }
+        body.sidebar-collapsed #sidebar .menu-wrap {
+            overflow: visible;
+        }
+        body.sidebar-collapsed #main,
+        body.sidebar-collapsed .main-footer { margin-left: var(--sidebar-mini-w); }
+        body.sidebar-collapsed #lblUniAd {
+            display: none;
+        }
+        body.sidebar-collapsed .menu-wrap .uni-logo,
+        body.sidebar-collapsed .menu-wrap .nav-header,
+        body.sidebar-collapsed .menu-wrap .nav-link p,
+        body.sidebar-collapsed .menu-wrap .menu-group-toggle .group-caret {
+            display: none !important;
+        }
+        body.sidebar-collapsed .menu-wrap .menu-search-wrap {
+            display: none !important;
+        }
+        body.sidebar-collapsed .menu-wrap .nav-link {
+            justify-content: center;
+            padding: .42rem .45rem;
+        }
+        body.sidebar-collapsed .menu-wrap .nav-link > i:first-child {
+            width: auto;
+            font-size: 1rem;
+        }
+        body.sidebar-collapsed .menu-wrap .nav-treeview {
+            display: none !important;
+        }
+        body.sidebar-collapsed .menu-wrap #proMenu > .nav-item.has-treeview {
+            position: relative;
+        }
+        body.sidebar-collapsed .menu-wrap #proMenu > .nav-item.has-treeview::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 14px;
+            height: 100%;
+            display: none;
+        }
+        body.sidebar-collapsed .menu-wrap #proMenu > .nav-item.has-treeview:hover::after {
+            display: block;
+        }
+        body.sidebar-collapsed .menu-wrap #proMenu > .nav-item.has-treeview:hover > .nav-treeview {
+            display: block !important;
+            position: absolute;
+            top: 0;
+            left: calc(100% + 12px);
+            min-width: 220px;
+            max-width: 260px;
+            max-height: calc(100vh - var(--topbar-h) - 16px);
+            overflow-y: auto;
+            padding: .45rem .35rem .5rem;
+            background: var(--primary-color);
+            border: 1px solid rgba(184,134,11,.2);
+            border-left: 0;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 8px 10px 28px rgba(0,0,0,.28);
+            z-index: 1050;
+            animation: flyoutIn .14s ease-out;
+        }
+        body.sidebar-collapsed .menu-wrap #proMenu > .nav-item.has-treeview:hover > .nav-treeview .nav-link {
+            justify-content: flex-start;
+            padding: .42rem .62rem;
+        }
+        body.sidebar-collapsed .menu-wrap #proMenu > .nav-item.has-treeview:hover > .nav-treeview .nav-link p {
+            display: flex !important;
+        }
+        /* Menü araması aktifken (sidebar mini modda) alt menüyü zorla göster */
+        body.menu-searching.sidebar-collapsed .menu-wrap #proMenu > .nav-item.has-treeview.menu-open > .nav-treeview {
+            display: block !important;
+            position: absolute;
+            top: 0;
+            left: calc(100% + 12px);
+            min-width: 220px;
+            max-width: 260px;
+            max-height: calc(100vh - var(--topbar-h) - 16px);
+            overflow-y: auto;
+            padding: .45rem .35rem .5rem;
+            background: var(--primary-color);
+            border: 1px solid rgba(184,134,11,.2);
+            border-left: 0;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 8px 10px 28px rgba(0,0,0,.28);
+            z-index: 1050;
+            animation: flyoutIn .14s ease-out;
+        }
+        body.menu-searching.sidebar-collapsed .menu-wrap #proMenu > .nav-item.has-treeview.menu-open > .nav-treeview .nav-link p {
+            display: flex !important;
+        }
+        @keyframes flyoutIn {
+            from { opacity: .6; transform: translateX(-6px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @media (max-width: 991.98px) {
+            #sidebar { transform: translateX(-100%); }
+            #main, .main-footer { margin-left: 0 !important; }
+            #sidebar.open { transform: translateX(0); box-shadow: 8px 0 40px rgba(0,0,0,.35); }
+            #sidebar-overlay.open { display: block; }
+        }
+
+        /* Menu search */
+        .menu-search-wrap{
+            padding: .45rem .62rem .55rem;
+        }
+        .menu-search-input{
+            width: 100%;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(184,134,11,.25);
+            color: #fff !important;
+            border-radius: 10px;
+            font-size: 9pt;
+            padding: .42rem .55rem;
+            outline: none;
+            box-shadow: none;
+        }
+        .menu-search-input::placeholder{
+            color: rgba(255,255,255,.58);
+        }
+        .menu-search-input:focus{
+            border-color: rgba(212,160,23,.8);
+            box-shadow: 0 0 0 .2rem rgba(212,160,23,.12);
+        }
+    </style>
+    <script type="text/javascript">        
+        var gClickedItem;
+        var gLastSelectedMenuKey = null;
+        var gActiveFrameUrlOverride = null;
+        var gActiveMenuPack = null;
+        function getNavHiddenFields() {
+            return {
+                frame: document.getElementById('hfNavFrameUrl'),
+                menu: document.getElementById('hfNavMenuKey')
+            };
+        }
+        function syncNavHiddenFields() {
+            var hf = getNavHiddenFields();
+            if (hf.frame) hf.frame.value = gActiveFrameUrlOverride || '';
+            if (hf.menu) hf.menu.value = gLastSelectedMenuKey || '';
+        }
+        function hydrateNavFromHidden() {
+            var hf = getNavHiddenFields();
+            if (hf.frame && hf.frame.value) gActiveFrameUrlOverride = hf.frame.value;
+            if (hf.menu && hf.menu.value) gLastSelectedMenuKey = hf.menu.value;
+        }
+        /* utils/ModalPopupWindow isMobile'ı dokunmatik denetimiyle ezer; kabuk genişliğe bakan kendi fonksiyonunu kullanır. */
+        function isNarrowLayout() { return window.innerWidth < 992; }
+        window.addEventListener('resize', function () { if (isNarrowLayout()) document.body.classList.remove('sidebar-collapsed'); });
+        function isUnitSelectionUrl(url) {
+            return (url || '').toLowerCase().indexOf('unitselection.aspx') >= 0;
+        }
+        function prolizBolognaResetNavigationState() {
+            clearLastSelectedMenu();
+            gLastSelectedMenuKey = null;
+            gActiveFrameUrlOverride = null;
+            syncNavHiddenFields();
+            var proMenu = document.getElementById('proMenu');
+            if (proMenu) {
+                proMenu.querySelectorAll('.has-treeview.menu-open').forEach(function (li) {
+                    li.classList.remove('menu-open');
+                });
+            }
+            var menuSearch = document.getElementById('menuSearchInput');
+            if (menuSearch) menuSearch.value = '';
+            document.body.classList.remove('menu-searching');
+            prolizInitMenuPackState();
+        }
+        function getRelativeFrameUrl(src) {
+            if (!src) return '';
+            try {
+                var u = new URL(src, window.location.href);
+                var path = u.pathname || '';
+                var marker = '/bologna/';
+                var idx = path.toLowerCase().indexOf(marker);
+                if (idx >= 0) return path.substring(idx + marker.length) + u.search + u.hash;
+                idx = path.lastIndexOf('/');
+                return (idx >= 0 ? path.substring(idx + 1) : path) + u.search + u.hash;
+            } catch (e) {
+                return src;
+            }
+        }
+        function getIframeDocumentUrl() {
+            var iframe = document.getElementById('IFRAME1');
+            if (!iframe) return '';
+            try {
+                var win = iframe.contentWindow;
+                if (win && win.location && win.location.href && win.location.href !== 'about:blank') {
+                    return getRelativeFrameUrl(win.location.href);
+                }
+            } catch (e) { }
+            return getRelativeFrameUrl(iframe.src || '');
+        }
+        function getActiveFrameUrl() {
+            if (gActiveFrameUrlOverride) return gActiveFrameUrlOverride;
+            return getIframeDocumentUrl();
+        }
+        function prolizBolognaSaveChildFrameUrl(url) {
+            try {
+                var rel = getRelativeFrameUrl(url || '');
+                if (rel && rel.indexOf('startup.aspx') < 0) {
+                    gActiveFrameUrlOverride = rel;
+                    syncNavHiddenFields();
+                }
+            } catch (e) { }
+        }
+        window.prolizBolognaSaveChildFrameUrl = prolizBolognaSaveChildFrameUrl;
+        function normalizeMenuUrl(url) {
+            if (!url) return '';
+            try {
+                var u = new URL(url, window.location.href);
+                u.searchParams.delete('lang');
+                return getRelativeFrameUrl(u.href);
+            } catch (e) {
+                return (url || '').replace(/([?&])lang=(tr|en)(&?)/gi, function (m, p1, p2, p3) {
+                    return p3 ? p1 : '';
+                }).replace(/\?&/g, '?').replace(/[?&]$/, '');
+            }
+        }
+        function withLangInUrl(relativeUrl, lang) {
+            if (!relativeUrl) return '';
+            try {
+                var u = new URL(relativeUrl, window.location.href);
+                u.searchParams.set('lang', lang);
+                return getRelativeFrameUrl(u.href);
+            } catch (e) {
+                if (/[?&]lang=(tr|en)/i.test(relativeUrl)) {
+                    return relativeUrl.replace(/([?&])lang=(tr|en)/i, '$1lang=' + lang);
+                }
+                return relativeUrl + (relativeUrl.indexOf('?') >= 0 ? '&' : '?') + 'lang=' + lang;
+            }
+        }
+        function findMenuLinkByKey(menuRoot, key) {
+            if (!menuRoot || !key) return null;
+            var links = menuRoot.querySelectorAll('a.nav-link[onclick*="menu_close"]');
+            for (var i = 0; i < links.length; i++) {
+                var oc = links[i].getAttribute('onclick') || '';
+                var m = oc.match(/menu_close\(this,'([^']+)'\)/);
+                if (m && normalizeMenuUrl(m[1]) === key) return links[i];
+            }
+            return null;
+        }
+        function clearLastSelectedMenu() {
+            if (gClickedItem) {
+                gClickedItem.classList.remove('menu-last-selected');
+                gClickedItem = null;
+            }
+        }
+        function setLastSelectedMenu(id, itemLink) {
+            if (!id) return;
+            clearLastSelectedMenu();
+            id.classList.add('menu-last-selected');
+            gClickedItem = id;
+            if (itemLink) {
+                gLastSelectedMenuKey = normalizeMenuUrl(itemLink);
+                syncNavHiddenFields();
+            }
+        }
+        function restoreLastSelectedMenu() {
+            var url = new URL(window.location.href);
+            var menuKey = url.searchParams.get('menuKey');
+            if (!menuKey) menuKey = gLastSelectedMenuKey;
+            if (!menuKey) return;
+
+            var menuRoot = document.getElementById('lblMenuBuf');
+            if (!menuRoot) return;
+
+            var matchingLink = menuKey ? findMenuLinkByKey(menuRoot, menuKey) : null;
+            if (!matchingLink) return;
+
+            var oc = matchingLink.getAttribute('onclick') || '';
+            var m = oc.match(/menu_close\(this,'([^']+)'\)/);
+            var resolvedLink = m ? m[1] : null;
+            setLastSelectedMenu(matchingLink, resolvedLink);
+
+            var proMenu = document.getElementById('proMenu');
+            var el = matchingLink;
+            while (el && proMenu && proMenu.contains(el)) {
+                var branch = el.closest('li.has-treeview');
+                if (!branch || !proMenu.contains(branch)) break;
+                branch.classList.add('menu-open');
+                el = branch.parentElement;
+                if (el) el = el.parentElement;
+            }
+        }
+        function menu_close(id, itemLink) {
+            prolizOnMenuPackActivate(id);
+            if (isUnitSelectionUrl(itemLink)) {
+                prolizBolognaResetNavigationState();
+            }
+            if (isNarrowLayout()) { mypushKapat(); }
+            myOnFrameClick(itemLink);
+            if (!isUnitSelectionUrl(itemLink)) {
+                setLastSelectedMenu(id, itemLink);
+            }
+        }
+        function myOnFrameClick(itemLink) {
+            document.getElementById('lblMenuBuf').style.visibility = 'hidden';
+            gActiveFrameUrlOverride = null;
+            document.getElementById('IFRAME1').src = itemLink;
+            window.top.Swal.fire({ allowEscapeKey: false, allowOutsideClick: false, didOpen: () => { window.top.swal.showLoading(); } });
+        }
+        function mypushKapat() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('sidebar-overlay').classList.remove('open');
+        }
+        function changeLanguage() {
+            var url = new URL(window.location.href);
+            var currentLang = url.searchParams.get('lang') || 'tr';
+            var newLang = (currentLang === 'en') ? 'tr' : 'en';
+            var relativeFrame = getActiveFrameUrl();
+            if (relativeFrame && relativeFrame.indexOf('startup.aspx') < 0) {
+                relativeFrame = withLangInUrl(relativeFrame, newLang);
+                url.searchParams.set('frame', relativeFrame);
+            }
+            if (isUnitSelectionUrl(relativeFrame)) {
+                url.searchParams.delete('menuKey');
+            } else if (gLastSelectedMenuKey) {
+                url.searchParams.set('menuKey', gLastSelectedMenuKey);
+            } else {
+                url.searchParams.delete('menuKey');
+            }
+            syncNavHiddenFields();
+            url.searchParams.set('lang', newLang);
+            window.location.href = url.toString();
+        }
+        function prolizGetMenuPackAttr(el) {
+            if (!el) return null;
+            var pack = el.getAttribute('data-pack');
+            return (pack !== null && pack !== '') ? pack : null;
+        }
+        function prolizResolveMenuPack(el) {
+            if (!el) return null;
+            var pack = prolizGetMenuPackAttr(el);
+            if (pack !== null) return pack;
+            var holder = el.closest ? el.closest('[data-pack]') : null;
+            return holder ? prolizGetMenuPackAttr(holder) : null;
+        }
+        function prolizGetPackRow(el) {
+            if (!el) return null;
+            if (el.matches && (el.matches('li.nav-item') || el.matches('li.has-treeview') || el.matches('li.nav-header'))) {
+                return el;
+            }
+            return el.closest ? el.closest('li.nav-item, li.has-treeview, li.nav-header') : null;
+        }
+        function prolizIsPackRowVisible(row) {
+            return !!(row && row.style.display !== 'none');
+        }
+        function prolizGroupContainsOnlyPackOne(groupLi) {
+            var items = groupLi.querySelectorAll('[data-pack]');
+            if (!items.length) return false;
+            for (var i = 0; i < items.length; i++) {
+                if (prolizGetMenuPackAttr(items[i]) !== '1') return false;
+            }
+            return true;
+        }
+        function prolizGroupHasVisiblePackItems(groupLi) {
+            var items = groupLi.querySelectorAll('[data-pack]');
+            for (var i = 0; i < items.length; i++) {
+                if (prolizIsPackRowVisible(prolizGetPackRow(items[i]))) return true;
+            }
+            return false;
+        }
+        function prolizGetMenuGroupHeaderLink(groupLi) {
+            if (!groupLi) return null;
+            return groupLi.querySelector(':scope > a.nav-link, :scope > .menu-group-toggle a, :scope > .sub-items > a.nav-link');
+        }
+        function prolizHidePackOneParentGroups(proMenu) {
+            if (!proMenu) return;
+            var groups = Array.prototype.slice.call(
+                proMenu.querySelectorAll('li.nav-item.has-treeview, li.has-treeview')
+            );
+            groups.sort(function (a, b) {
+                var depth = function (el) {
+                    var d = 0;
+                    while (el && el !== proMenu) { d++; el = el.parentElement; }
+                    return d;
+                };
+                return depth(b) - depth(a);
+            });
+            groups.forEach(function (groupLi) {
+                var headerLink = prolizGetMenuGroupHeaderLink(groupLi);
+                if (prolizResolveMenuPack(headerLink) === '1' ||
+                    (prolizGroupContainsOnlyPackOne(groupLi) && !prolizGroupHasVisiblePackItems(groupLi))) {
+                    groupLi.style.display = 'none';
+                    groupLi.classList.remove('menu-open');
+                }
+            });
+            var currentHeader = null;
+            var headerHasVisible = false;
+            proMenu.querySelectorAll(':scope > li').forEach(function (child) {
+                if (child.classList.contains('nav-header')) {
+                    if (currentHeader) currentHeader.style.display = headerHasVisible ? '' : 'none';
+                    currentHeader = child;
+                    headerHasVisible = false;
+                    return;
+                }
+                if (child.style.display !== 'none') headerHasVisible = true;
+            });
+            if (currentHeader) currentHeader.style.display = headerHasVisible ? '' : 'none';
+        }
+        function prolizShowPackGroupContainers(proMenu) {
+            if (!proMenu) return;
+            proMenu.querySelectorAll('li.nav-item.has-treeview, li.has-treeview, li.nav-header').forEach(function (li) {
+                li.style.display = '';
+            });
+        }
+        function prolizHideMenuPackOne() {
+            gActiveMenuPack = 'pack1-hidden';
+            var proMenu = document.getElementById('proMenu');
+            if (!proMenu) return;
+            var hiddenRows = new Set();
+            proMenu.querySelectorAll('[data-pack="1"]').forEach(function (el) {
+                var row = prolizGetPackRow(el);
+                if (row) {
+                    hiddenRows.add(row);
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+            hiddenRows.forEach(function (row) {
+                row.style.display = 'none';
+                row.classList.remove('menu-open');
+            });
+            prolizHidePackOneParentGroups(proMenu);
+        }
+        function prolizShowAllMenuPacks() {
+            gActiveMenuPack = null;
+            var proMenu = document.getElementById('proMenu');
+            if (!proMenu) return;
+            prolizShowPackGroupContainers(proMenu);
+            proMenu.querySelectorAll('[data-pack]').forEach(function (el) {
+                var row = prolizGetPackRow(el);
+                if (row) row.style.display = '';
+                else el.style.display = '';
+            });
+        }
+        function prolizOnMenuPackActivate(el) {
+            if (prolizResolveMenuPack(el) === '0') prolizHideMenuPackOne();
+        }
+        function prolizInitMenuPackState() {
+            prolizShowAllMenuPacks();
+        }
+        function prolizRefreshMenuPackVisibility() {
+            if (gActiveMenuPack === 'pack1-hidden') prolizHideMenuPackOne();
+            else prolizShowAllMenuPacks();
+        }
+        function toggleMenuGroup(el) {
+            var li = el.closest('.has-treeview');
+            if (!li) return;
+            var isOpen = li.classList.contains('menu-open');
+            var root = document.getElementById('proMenu');
+            if (root) {
+                var opened = root.querySelectorAll('.has-treeview.menu-open');
+                opened.forEach(function (item) {
+                    if (item !== li) item.classList.remove('menu-open');
+                });
+            }
+            li.classList.toggle('menu-open', !isOpen);
+            prolizOnMenuPackActivate(el);
+        }
+        function bindIdariMenuTree() {
+            var root = document.getElementById('proMenu');
+            if (!root) return;
+            root.querySelectorAll('li.has-treeview > a.nav-link').forEach(function (a) {
+                if (a.dataset.prolizTreeBound) return;
+                var oc = a.getAttribute('onclick') || '';
+                if (oc.indexOf('menu_close') !== -1) return;
+                if (oc.indexOf('toggleMenuGroup') !== -1) return;
+                var li = a.parentElement;
+                if (!li || !li.classList.contains('has-treeview')) return;
+                var sub = li.querySelector(':scope > .sub-items > ul.nav-treeview') || li.querySelector(':scope > ul.nav-treeview');
+                if (!sub) return;
+                a.dataset.prolizTreeBound = '1';
+                a.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var isOpen = li.classList.contains('menu-open');
+                    var parentUl = li.parentElement;
+                    if (parentUl) {
+                        parentUl.querySelectorAll(':scope > li.has-treeview.menu-open').forEach(function (o) {
+                            if (o !== li) o.classList.remove('menu-open');
+                        });
+                    }
+                    li.classList.toggle('menu-open', !isOpen);
+                    prolizOnMenuPackActivate(a);
+                });
+            });
+        }
+        window.addEventListener('DOMContentLoaded', function () {
+            hydrateNavFromHidden();
+            bindIdariMenuTree();
+            prolizInitMenuPackState();
+            var urlFrame = new URL(window.location.href).searchParams.get('frame') || '';
+            var activeFrame = getActiveFrameUrl();
+            if (isUnitSelectionUrl(urlFrame) || isUnitSelectionUrl(activeFrame)) {
+                prolizBolognaResetNavigationState();
+            }
+            restoreLastSelectedMenu();
+            // Dil değişimi sırasında taşıdığımız `frame/menuKey` sadece bir sonraki reload için gerekliydi.
+            // Tarayıcıyı kapat/aç durumunda geri dönmesin diye URL'den temizliyoruz.
+            try {
+                var u = new URL(window.location.href);
+                u.searchParams.delete('frame');
+                u.searchParams.delete('menuKey');
+                window.history.replaceState({}, '', u.toString());
+            } catch (e) { }
+
+            var input = document.getElementById('menuSearchInput');
+            if (!input) return;
+
+            var proMenu = document.getElementById('proMenu');
+            if (!proMenu) return;
+
+            var prevOpenSet = null;
+
+            function normTxt(s) {
+                s = (s || '').toString().toLowerCase().trim();
+                // Turkish chars normalize (simple diacritic removal)
+                s = s.replace(/\u011F/g, 'g').replace(/\u00FC/g, 'u').replace(/\u015F/g, 's').replace(/\u0131/g, 'i').replace(/\u00F6/g, 'o').replace(/\u00E7/g, 'c');
+                return s;
+            }
+
+            function cachePrevOpen() {
+                if (prevOpenSet !== null) return;
+                prevOpenSet = new Set();
+                proMenu.querySelectorAll(':scope > li.has-treeview.menu-open').forEach(function (li) {
+                    prevOpenSet.add(li);
+                });
+            }
+
+            function restorePrevOpen() {
+                document.body.classList.remove('menu-searching');
+
+                proMenu.querySelectorAll(':scope > li.has-treeview').forEach(function (li) {
+                    li.classList.remove('menu-open');
+                });
+                proMenu.querySelectorAll(':scope > li.nav-header').forEach(function (h) {
+                    if (gActiveMenuPack === null) h.style.display = '';
+                });
+                if (gActiveMenuPack === null) {
+                    proMenu.querySelectorAll(':scope > li.has-treeview').forEach(function (li) {
+                        li.style.display = '';
+                    });
+                    proMenu.querySelectorAll(':scope > li.nav-header').forEach(function (h) {
+                        h.style.display = '';
+                    });
+                }
+                if (prevOpenSet) {
+                    prevOpenSet.forEach(function (li) {
+                        li.classList.add('menu-open');
+                    });
+                }
+
+                proMenu.querySelectorAll('ul.nav-treeview li.nav-item').forEach(function (li) {
+                    li.style.display = '';
+                });
+                proMenu.querySelectorAll('ul.nav-treeview').forEach(function (ul) {
+                    ul.style.display = '';
+                });
+                prolizRefreshMenuPackVisibility();
+
+                prevOpenSet = null;
+            }
+
+            function applyFilter(term) {
+                var t = normTxt(term);
+                cachePrevOpen();
+
+                document.body.classList.toggle('menu-searching', t.length > 0);
+
+                // Başlangıçta tüm grupları kapat + gizle; sonra eşleşenleri açıp göstereceğiz.
+                proMenu.querySelectorAll(':scope > li.has-treeview').forEach(function (li) {
+                    li.classList.remove('menu-open');
+                    li.style.display = 'none';
+                });
+                proMenu.querySelectorAll(':scope > li.nav-header').forEach(function (h) {
+                    h.style.display = 'none';
+                });
+
+                var matchedGroups = new Set();
+
+                proMenu.querySelectorAll('ul.nav-treeview').forEach(function (ul) {
+                    var groupLi = ul.closest('li.has-treeview');
+                    var anyMatch = false;
+
+                    // Alt kategori öğeleri: ul.nav-treeview içindeki li.nav-item
+                    ul.querySelectorAll('li.nav-item').forEach(function (leaf) {
+                        var p = leaf.querySelector('a.nav-link > p');
+                        var txt = p ? p.textContent : leaf.textContent;
+                        var n = normTxt(txt);
+
+                        if (t.length === 0) {
+                            leaf.style.display = '';
+                            anyMatch = true;
+                            return;
+                        }
+
+                        if (n.indexOf(t) !== -1) {
+                            leaf.style.display = '';
+                            anyMatch = true;
+                        } else {
+                            leaf.style.display = 'none';
+                        }
+                    });
+
+                    if (t.length > 0 && anyMatch && groupLi) {
+                        groupLi.classList.add('menu-open');
+                        groupLi.style.display = '';
+                        matchedGroups.add(groupLi);
+                    }
+                });
+
+                // Eşleşen ana grupların altında kalan ana başlıkları da göster.
+                var currentHeader = null;
+                proMenu.querySelectorAll(':scope > li').forEach(function (child) {
+                    if (child.classList && child.classList.contains('nav-header')) {
+                        currentHeader = child;
+                        return;
+                    }
+                    if (child.classList && child.classList.contains('has-treeview')) {
+                        if (matchedGroups.has(child) && currentHeader) {
+                            currentHeader.style.display = '';
+                        }
+                    }
+                });
+            }
+
+            input.addEventListener('input', function () {
+                var v = input.value || '';
+                if (!v.trim()) {
+                    if (prevOpenSet !== null) restorePrevOpen();
+                    else prolizRefreshMenuPackVisibility();
+                    return;
+                }
+
+                // Arama sadece alt kategoriler (nav-treeview) üzerinde yapılır.
+                applyFilter(v);
+            });
+
+            input.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    input.value = '';
+                    input.dispatchEvent(new Event('input'));
+                }
+            });
+        });
+    </script>
+<link href="../App_Themes/oibs21/oibs21.css" type="text/css" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="/oibs/proliz_boots4/jquery-ui/jquery-ui.min.css"></link><link rel="stylesheet" type="text/css" href="/oibs/proliz_boots4/fontawesome/css/all.min.css"></link><link rel="stylesheet" type="text/css" href="/oibs/proliz_boots4/select2/css/select2.min.css"></link><link rel="stylesheet" type="text/css" href="/oibs/proliz_boots4/sweetalert2/sweetalert2.min.css"></link><link rel="stylesheet" type="text/css" href="/oibs/proliz_boots4/prolizcodes/css/prlz-a11y/prlz-a11y.css?v=261106140548"></link></head>
+<body>
+    <form method="post" action="./index.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="8ANZ9NfdG2m8p/dOQAlihDJCDTlqdctnjVGke9uoGeiPzzEStSna/hWBSd5O5NSHPfUyJ5Rt9x9QJGiqOb0XVXrllO456Oxx8c87S7tvZ80Ah0/qcHT5Wx9S1fj/KGcNrEC5ZuK5fP6dODDT3VqJWNQZ2QhWHhxkPeKgPjs85HtGZE/qCorLT1IUdjZNACFFjr63KN9I98lEFcwSZv4rsN0xdPmLFfS4FTHDpAKt8DLU6jNq2Nm5vTIiAwvbS+aQHJfGnh2euhNd8mX8RxXy9bPlM8DEEnwIAWh51/rbe7LE45O5kmnCmGQor0D6+kFQzAftEiJalwGcZRTkfHqU54BFT51ijy/zX+eFTCEOw+EgtxpMHUDaQ4Gj8O9YoTNIiF4XtwatTYPDa8zgtagHra9Cw8JziH5xy7MbIKqEYHie4H7ZEHiYmcubzdAQt698lBVbSfVd3A4vSabK7gLQfIHuN4L7gsjwAYRdHAXwjqf+XpaxJU+sjMuyiDe9Aq4IBMODzhb/b7ro6aIOEsE3/qzEIDZalKL7dcP4oV4jbf3ffu/5i0VAfeyV4gFkX4ASgESrgiihS/33+DMJN9Zb4prDYZj51b2Vv5tqPC140fWvVlJ6hLBtrnxHSJ4z8ArOiRqWeSZhzSmttubRrzuefmsAN/wYHlCKAv+zxj3ulPrUrh1VlAI5wDpA6AQLRZrG84jWgwgCy/cwW+9xMeQ0dvKAQFchMM1msWNmevEvda7oxnn9JT4HyA9ewiyIt5tjTqee+BMum4WWb6qFy6IPQDxhvW9/X7SKCPveUyPNhr6VaxoT+NCpQgOa/zDsNW/Q+A04/J1csySkBwEJaJEVyW4DLJ5rCYwEpuuWsMxGZ8xI6w3wBaJm1kzbZGl40u12IFW66aNAYv3UG3aN9d4ySdk2Wl+mTjqclUXNBWw3lF8qQP0dJ7DEB15b87UDjrRTun/4witYspBRU/WAvBUnNotFT+gnDJ4Eb4OoGvuAfyhiIrRqSy9C9a4S1aoUx0jZupim7Fc3gm72be7eKRaQVqkIni1DbuqZVMHIIy/MI0ydhmu8FdVEb77qExv4kWDqvqj/BgWNV7QsSKnWn2FnqZrzc3a7QWTqAHcaAEb9r1yJbOvKU4wJIUYnbBSuvA0pKIwH6YPwy5bZSj9BWsDKKuPqeDwJuSX+mTVFrcyhPzMbdKm3E1yUpelqzoGDLMOyGKfStT1nK7LXsGr1PMXVe3JjabR+LTOQdpsw28v9r7Q80+uzZnvJ69UiLPspBa/7EpA+UxmrL1dlTkFWp+6gUSQf6nXiqOuSAg/V9T/xYnNhdvILvtfPP3puCjJ5sOq84LI15FoASk2J0GusC70V8pOtIdAONVgGEI3gZFNS61XLx8yRSmaOPvkGWOxVhYBJgTTr3Fk/G6w4npBvd1tYOhh8N/rm7naRqwZQU8TbsBVr7hoorM7Jy+KHgU397g4lG6NMMpPIgCPF3FhBP6OV4txnpiWFlf2UYfxkNNC/bG8lWYxAD9xkx/BDmpysn7cvkw2QNj5fD5kSuAKMocTfG0aUzlgoLBPcxTzr4DJy7l5332OVx9IQXXnCT77feL5UPkso5bie8quZtwTwxuFWL/VgjatM8fdR3xpmlm8RsUMJhOLQtNApi6F+mQsnQrz8ew9f2pTvzvPZF0j0vW0B8S2n/UKUmpKL+N3Ny+IqNXzAMqB1lvUI7hF4PwFg6DRvFXL2H5Vbctm/WI56P1ZUzHEax2s5yatiQu5rEEOZzbPXWwVUqYN4Kp0MV9qfmp9/N/tSjaUwQy01ogPNjXUPZk+SZa3U0ZPzpSqX7l3Vs5s5WPCoRyYS+u9Xtrj5waJ/8F0OTotIhixNYDYoOKK5lvRS6868HaCiLsLf1XO0/RtDiOxpdR4Y2vvhaiLiNdkEmwUUs5oZWMIPyrdIFA5hfPMnEssJt+nUKiKaZNQOsn+zohWIk9scvdDTo+RN/stxMrahjI6vNeClJeksJToH5YJzWkNCSM2++M3OTlqpfNnbu3fMOe+b0+D/CEumMf87hqAB72w+xUg1nAdGLA2nbOnIIuIIJ8Cst33sM8tx6i2FQ9MISI3r+gIpGxBubBaRg+9tmj1X7nh376mzha85hxqctGDBC2IUxruYylsSn97YOqpsytx0Qwjlf4658cWVgR54pGnDVj7cMi/ldWq1vBgVJgSpRTpiBnce+rg6IsWDE5i/sx0WpR4VTyIJs2V1JO7Ynwv/FWOjK1PGtv+mw7QmNFY9rbyURX2lK31ZGharmcpNadi41Sfth9PzTUn0jG3pMeLAqfnE75Z57HgKLQQsGkynYfaWc58T+5R4Cux86HPgiQMu9jBY/l59x5x94uykLEeA88enVvTVXgJJkS5fnut1hrSvGFJI0C9a3b9uBsf7bsO3FxmHH4F1Ma8Nmfm5vZhJnPp/GIAMOEmv4OMXgVbGyeMvHWE9nnZ0Yg7jf7FllDfv9BtEztY3vXdviOCp4ASlYxqJ4uRZCVZzAl6fIKqJpMhN5QpV0mtN8vHQV7CwPWS6VegPoO5+vDxb6MUswlLsats9iXbm25thMErH9DRo8NhepD37otofEtyrWh91hbR2l+eOiMKKeNsOGYaRdnA/MK8Xl981XbgZWHsbbHVMidnsL3c7az/nd1Xwsb5KbDzqMOx3pyMQxDlN+UUV6zL/c4azKyw79ocRInMRyOZ9hMnQzNC9E/FQGSueuDs/qr8oQAEWitjxW2T9tLWK6rFAwrgXqdTUqjSJA+RkYqK8DQnJWn9q+D/eCedCjfo7RsxKctFOe4a5vSKkhYIdGXBxZpX121pF2fSTl7u2uK8Ty4xxiiX+EqikYSgbFJjAVh1r2/y0jNd4lOAkdNxiOGX7jznVjTH0RJKEXH98BuCnpLErPOfXFOhjToIrkLtL+ddOZdZ3GPrZP2RRJh9mxOB0wUP6FVguoVa9jD/zMndycqmtDxpEYDZpCV2JWkTMB/8BGC3s+/I5nKpkkOsGatZe18Batf1JGJpOHhVIbOzbCMcWohHQBULVL/e6Bfk6BG64S3ASf0GIZXga0gDQGaMkraapvDkP7hYhnWrmFyRXb2HJ1tmwy8R7brCl+F+fDgs2PxD9Olss7rmefx42TLBRhgvzippRtpqF1FBMsurGtxMHG5oF0rizZzlDtQOj+/Bjn8TTTizdbPhBJTCBLtjBQ4SqjIaczZnSds/eH54ZKfGzqcEjfXjqfpGvABHt3ZLRpKZsbQe3jYTcfTucuRgzX466/EE7/lsKQEItzNFIZMPK9zGkjb4QrirVW+cTtXkVt6Iu9HiC6Hw3Royv0pj22yYjplQWPAbadFZzQK63uKNie3j6KDTCSId2324HVWrDqQF42j51SZqn6eO5I2VliuhUhX6UqAQBYeRAfn3AZW4PAI4moRtpMqkQkkt3J/vk1qtwpy12o2lojRhCTp+rnSzzE3tJIW+hu4e48vfLfun4Ij8MNJEpsUMiS6hZ/UD8yAunZFpsLNoXiwl6b9xOb7K3Qcky7YdDKq9yxtVNflpDLr0sThiqAf0rbQhlwMrWZjf8Y22Mdsr7A1HH19jvhdm1RPdYwzsLqJ/0E6HSNGSYgrHWvTd+1Hy2m//ukJQfQxQ7QQMH322raKRHSuImH04LgI8z+4BCwJToMpT2SXe1J83+RE8Y24QrTcmW+zwrRMV793FgQW+R24wCeTrFL+whhwjn9KetnmAdPSUchjoHJXpfBFdtUEgRAWmvkJ126aLQAcQ5PJD/JO5UHEIqqdjtPY+zy71um9DjPL1Xc0nbV2h3HBOMCKSyn27URqziP0IsOTd6aK5y0i4yYIFgMvDcIo0pxfGGvaC1HHpZ9GWXRQphEpJu597F9UkWTYQGl72/vCTvmH24Ea/Tg8eZlzDb2/ERb1bR88IcqpksDswkpeJgkmTZH+/QbAfyTsq6hS3m37/0ddg83z/XlkmAOpBAUmvtQotcDMeDwKXzJrAbRK6pRFd7Yl1I91h2JjviB8sUT9/NP3YM0lAnjGIvhxs0gKDKAfj/lM/okZvZiPFacAMAcJobeg9pY4h3zqKbmOxvxjY1hD5V6XtHFX6cybb/jL2pmS0RdkrUelZOC+fpWvyaQYKMdfqXqppnBcctP2foJjZxD6hfJx1vrz1EWkg8ZuoLt2v524P8qoS2sVRw36YkCZ6jVNiNlAEqL080r2SAFbrJgpiRih/Uh9/bRuy/SFh4WrW1TYkEo4dVVaCUFDcr9NZBxaVoH8qpHmMDy8HSgkvDs9FSYQrtX04K08k86NFixlrTBcrFdAuo4OsGGhxSpsbPYZKC6iGnY/Xi4mR3Sg/2jgFMKfQd8nLB3qw/qgOiHeFdsEgl8vLGWUjujGZBEK1dMgnztmCCdBJ23t7jB67NHNZhifEYd5fdVnm3Ff3j8k2+MLQlGpgrbTGOE79K5eYrKNAyoLQ0NCvbR1aQY1d6m2db/rXfxqG5W9OWz6JmhuB7kj/AgIr5csqTCwOusCA1Mjk8Aj3S05ZiESCaq0IAsLZv3xwHwRe5YYzOCVvnx/6MWooNbjmNCIEfxurN3DY2m/vWo/pMXp9Aa+mCT5qUrOnElOCW7u71eZSsjiL1UQByRfzNosD8ufk9fMzWscg9dDNgkJ7uhBLNifw09udR+9Yfl7M5vEPMqdUKReFwUvMljeMiamp6MNgxwbf50jI+CVJNXRRF1l80iYOrOSW783Td5UCDCPYKbFInTwzA6SczwbV8dMXMQ6FONcBN+pYCJEX6of6E0FzkJkNi4S1dTWpmf/2NGPZLc8opqa5AliYg97hzPhyZ+FlkIGqYoCwmV2D1QMfhywmGVOmGxjQ03EoO570ep9kcMin/3U7B3uS9cSnHPMObid1rZZAv0SXJVT+o4RdLbHp7bXw4THb5ew2/W8P4uvQzsRUNBR0XOlavwvUOKoAIzB318QfZt1P+fUUHrb5waew1ByZqrsatd92Gq6478AL4SG10VXS5ZLhl69c6gka529WtnDuhIpS1zHSiVTkN9tmGOnPb5i3tbzOPQfq9zjDKezwL22ZCw33uQKCj1Hxd+9ef4u1ycWlYzEXrSbArzzm7I+rYAz/r0BCRz9QOtcDrOUOfrNcE9t9tDXCG3R4t4F2qSTqMfymoXeKH7S20r/H9c3B2vLc/4ajlMeFTU9TwKi7629hW1/fvY1jtrWU1Kbakl6VgUAX30OiU44lYM4ZKOijLlCbBqLIAcBrnhvMNGz7lVB5RbMo/Az7Tf/J0/L1b35v09VORlrGwMkmn1EEcXLgkdBlJ4TzSmTGLrE5c616SUty2KVr7Fuk9yKzdWCJYBlHD17KXQxWFpuXw+pvMynAJU0fbj26bisQUt8tiGM9kHeOZ3wD9W8g1xUDLL6erJrrS9s2p4rL9cxeqjynnaOJOzzEMKgBjW0WQyxwz5On/YCJ821FL7tIkRictADHhH6OJqGOPhf0cMHffgLZ/K1MTa8t4487jN2nYbnbL38/T+RT2g8E/R+Zrhk0uaQHQug/Owl+QUx0FetDDlTgO6xbvdAqmjqYIBJH1mwAUqh+2xJLcRMKhd83eGNB+yEUt9CwYYAtClxjYAdgH5CqXLBVMobuGn9H8snU+1DtaMlhemNjDPTyEGh4VmbvwnV6q/QY1ztH3OEvQO208mpnrZ7/zJoLjAA0rhbr0d0PBMFn/oQ+PVI2OXTw10hJRNW7GkkJC6C9bgDs5zz7Qz0s1Ma55vV1sJfAb2rPyejQuC225T065Xe7fY7l2KJ270eQ0H82ITJdU1BVPUdetOyJdLQlE/Mzbjue+opw+ubPaonTJ6f1M47kQyBsoZgWzt8RTNsonI0hzx209uF1hbAVKvBr9/v1PvRpAGuKONhH2QoohUmbAgjA7NbD1++JZFGXZS0QEuJynPZ9L60fB4nnv/wdst8z3LakOXV0xihCjFhHz6h7diApGNUOX0BA6TQwnB38kBFYK5NHXjae3K887McTqaVhTPEDk16x+MSZw8FYvcH9uK3IqZJHSjdRecuuRNBW6uUotHQtT0FgkRGG91JK6WZfic1ZoGqYUxtIjjudrS/BNFrT8Tm6esd38AHPKDxgf3QIwANhdOx9QK7JMGszalXwrA5K6Sv4X3StaFtaaYGVxmHf8VsGHwXNatzGShYWkksGtLIm9zlEi3vl5nrRIb4i0pfk/wfo7dO2Q8RksfjiT8ggFGcD8dWh6m7jwOPbB2PfnA6FeqfOgByq1hfP343jUNPklZXhr7GXKOgfbBpWNIC7lz8roRiZ/LIbQA+CslQ1k1pKDstF6/BdWkRTx6gOL/022/TFiRpV1n/CtJV4eRkgFy4E5kqe9n/7SXZ6v3FWDLt7B6U/QezBZNVJyQ1xFnSwU5YC/uf9BlKZzzovwZST3XwEUAJTkV4CL6wps1YzYdnKyggEOzEg4xUq+32jkIpuafPzSBsLl2jWlcGgHMImWQCLB2q0yYFm/JQfK9m2QpYzY2LTaIv9er2p8aMHCmbxhBqeYQ03uSgRDMe3PtCRBkMLbWDfSOREGGfqNnOT2HECkVuWd9xODg4SV5usqAKa7PPUkOalMyi4y63P6anH88UVpAPneTV+JMjAHG9HfvfKr87819NnElm+uq6sLOAQ/kDGGw5bAt8r1IU0AtljL9gL14nGEu6XUYLXqF8D+PzsK9jtnjjkY7NQ5/lWV9qcDvDmWCVTUuH17p5NDmJCCIRyMFecTcmpJo1EwO8aEi0tHhy++0vJp7RfPpedQNhbCA+4OQJz8325kumXl9O9kpwxlR5LueqCTGK+UIt/47/vknoAPMSkaJASeBAT57fgx" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/oibs/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZPA9M1qbAl2lEVD0TOJQ6wnfhlIs8NH4K7lHNmStwjlnGHUZFoePWfyOWIc2tCFcug2&amp;t=639190941332169432" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+window.PRLZ_A11Y_PANEL={lang:'tr'};//]]>
+</script>
+
+<script src="/oibs/proliz_boots4/prolizcodes/js/prlz-a11y/prlz-a11y.js?v=261106140548" type="text/javascript"></script>
+<script src="/oibs/proliz_boots4/jquery/jquery-3.7.1.min.js" type="text/javascript"></script>
+<script src="/oibs/proliz_boots4/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/oibs/proliz_boots4/sweetalert2/sweetalert2.min.js" type="text/javascript"></script>
+<script src="/oibs/proliz_boots4/select2/js/select2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+window.prolizPageLang='tr';//]]>
+</script>
+
+<script src="/oibs/utils/ModalPopupWindow_v25_min.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+        (function () {
+            // 1) Anahtari hemen sil ki refresh() bos stack gorsun (flash olmasin).
+            try { sessionStorage.removeItem("BootsModalV2::" + (location.pathname || "") + "::stack"); } catch (e) {}
+            // 2) Kutuphane hazirsa da kapatma cagrisi yap (refresh zaten actiysa kapatir).
+            function doReset() {
+                if (window.BootsModalV2 && window.BootsModalV2.reset) {
+                    window.BootsModalV2.reset();
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', doReset);
+            } else {
+                doReset();
+            }
+        })();
+        (function () {
+            // 1) Anahtari hemen sil ki refresh() bos liste gorsun (flash olmasin).
+            try { sessionStorage.removeItem("BootsOffCanvas::" + (location.pathname || "") + "::open"); } catch (e) {}
+            // 2) Kutuphane hazirsa kapatma cagrisi da yap (refresh zaten actiysa kapatir).
+            function doReset() {
+                if (window.BootsOffCanvas && window.BootsOffCanvas.reset) {
+                    window.BootsOffCanvas.reset();
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', doReset);
+            } else {
+                doReset();
+            }
+        })();//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="AF2452EC" />
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" />
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" />
+	<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+	<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+</div>
+        <header id="topbar">
+            <button id="hamburger" type="button" aria-label="Men?"><i class="fal fa-bars"></i></button>
+            <span id="lblToggle" style="display:none;">...</span>
+            <div class="d-flex align-items-center gap-2 me-auto">
+                <span class="brand-text d-none d-sm-inline"><span id="lblUniAd" style="color:#3A3A3A;font-family:Open Sans;font-size:8pt;">Biruni Üniversitesi</span></span>
+            </div>
+            <div class="topbar-actions">
+                <a class="topbar-icon-btn" href="#" onclick="prolizBolognaResetNavigationState(); __doPostBack('btnHome',''); return false;" title="Ana Sayfa"><i class="fal fa-home"></i></a>
+                <a class="topbar-icon-btn" href="#" onclick="changeLanguage(); return false;" title="Dil">
+                    <i class="fal fa-globe-europe"></i>
+                    <span id="lblEN_TR" style="font-size:.72rem;margin-left:.2rem">EN</span>
+                </a>
+            </div>
+        </header>
+
+        <div id="sidebar-overlay"></div>
+        <aside id="sidebar">
+            <div class="menu-wrap">
+                <input type="image" name="imgUniLogo" id="imgUniLogo" class="uni-logo" src="../gen_imgs/uni_logo_en.gif" onclick="validNavigation=false;" />
+                <input type="image" name="imgUniLogo2" id="imgUniLogo2" class="uni-logo" src="../gen_imgs/uni_logo_en.gif" onclick="validNavigation=false;" style="display:none;" />
+                
+                <span id="lblAppNameHeader" class="appname-title text-center">Bilgi Paketi</span>
+
+                <div class="menu-search-wrap">
+                    <input id="menuSearchInput" class="menu-search-input" type="text" autocomplete="off" placeholder="Menüde Ara..." />
+                </div>
+
+                <div id="lblMenuBuf" class="text-white">
+                    <ul class="nav nav-pills nav-sidebar flex-column nav-compact nav-child-indent" style="font-size:0.80rem !important;" id="proMenu" data-widget="treeview" role="menu" data-accordion="true"><li class="nav-item has-treeview"><a href="#" class="nav-link"><i style="font-size:15px" class="fal fa-university"></i><p>Kurumsal Bilgiler<i style="font-size:15px" class="right fas fa-angle-right"></i></p></a>                     <ul class="nav nav-treeview"><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'dynConPage.aspx?curPageId=101&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Üniversite Hakkında</a></li><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'dynConPage.aspx?curPageId=102&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Bologna Komisyonu</a></li><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'dynConPage.aspx?curPageId=103&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>İletişim</a></li><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'dynConPage.aspx?curPageId=106&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Akademik Takvim</a></li></ul></li><li class="nav-item has-treeview"><a href="#" class="nav-link"><i style="font-size:15px" class="fal fa-school"></i><p>Akademik Birimler<i style="font-size:15px" class="right fas fa-angle-right"></i></p></a>                     <ul class="nav nav-treeview"><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'unitSelection.aspx?type=myo&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Ön Lisans</a></li><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'unitSelection.aspx?type=lis&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Lisans</a></li><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'unitSelection.aspx?type=yls&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Yüksek Lisans</a></li><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'unitSelection.aspx?type=dok&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Doktora</a></li></ul></li><li class="nav-item has-treeview"><a href="#" class="nav-link"><i style="font-size:15px" class="fal fa-info-square"></i><p>Öğrenciler İçin Genel Bilgiler<i style="font-size:15px" class="right fas fa-angle-right"></i></p></a>                     <ul class="nav nav-treeview"><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'dynConPage.aspx?curPageId=305&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Öğrenci Toplulukları</a></li><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'dynConPage.aspx?curPageId=316&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Öğrenci İşleri Daire Başkanlığı</a></li></ul></li><li class="nav-item has-treeview"><a href="#" class="nav-link"><i style="font-size:15px" class="fal fa-file-signature"></i><p>Erasmus Beyannamesi (İngilizce)<i style="font-size:15px" class="right fas fa-angle-right"></i></p></a>                     <ul class="nav nav-treeview"><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'dynConPage.aspx?curPageId=401&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Erasmus</a></li></ul></li><li class="nav-item has-treeview"><a href="#" class="nav-link"><i style="font-size:15px" class="fal fa-graduation-cap"></i><p>Ulusal Yeterlilikler<i style="font-size:15px" class="right fas fa-angle-right"></i></p></a>                     <ul class="nav nav-treeview"><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'dynConPage.aspx?curPageId=403&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Ulusal Yeterlilikler</a></li></ul></li><li class="nav-item has-treeview"><a href="#" class="nav-link"><i style="font-size:15px" class="fal fa-globe-europe"></i><p>Bologna Süreci<i style="font-size:15px" class="right fas fa-angle-right"></i></p></a>                     <ul class="nav nav-treeview"><li class="nav-item"><a data-pack="0" class="nav-link" onclick="menu_close(this,'dynConPage.aspx?curPageId=400&lang=tr');"  href="#"><i style="font-size:10px" class="far fa-square"></i>Bologna Süreci</a></li></ul></li></ul>
+                </div>
+            </div>
+        </aside>
+
+        <main id="main">
+            <div id="frameWrap">
+                <iframe src="dynConPage.aspx?curPageId=&lang=tr" id="IFRAME1" name="IFRAME1" allowfullscreen="true"></iframe>
+            </div>
+        </main>
+
+        <input type="hidden" name="hfNavFrameUrl" id="hfNavFrameUrl" />
+        <input type="hidden" name="hfNavMenuKey" id="hfNavMenuKey" />
+        <input type="submit" name="btnHome" value="" id="btnHome" class="Button" style="font-family:Open Sans;font-size:8pt;font-weight:normal;display:none" />
+        <input type="submit" name="btnPB" value="" id="btnPB" class="Button" style="font-family:Open Sans;font-size:8pt;font-weight:normal;display:none" />
+        <div id="myDiv2"><input name="__RequestVerificationToken" type="hidden" value="iSS3YwQtknXq7XNOEFnOI57Lf84K6dyLbDKEpyIsXUCVVTuGtjtiovgIZm1kr05qmekCzudpw_5_9vipvngTvprIKIO4ZJo_zJLSJ2TIDPI1" /></div>
+    <script src="../proliz_boots4/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+ <script type="text/javascript">
+     var hamburger = document.getElementById('hamburger');
+     var sidebar = document.getElementById('sidebar');
+     var overlay = document.getElementById('sidebar-overlay');
+
+     hamburger.addEventListener('click', function () {
+         if (isNarrowLayout()) {
+             sidebar.classList.toggle('open');
+             overlay.classList.toggle('open');
+         } else {
+             var collapsing = !document.body.classList.contains('sidebar-collapsed');
+             document.body.classList.toggle('sidebar-collapsed');
+             if (collapsing) {
+                 var ms = document.getElementById('menuSearchInput');
+                 if (ms && ms.value) {
+                     ms.value = '';
+                     ms.dispatchEvent(new Event('input'));
+                 }
+                 document.body.classList.remove('menu-searching');
+             }
+         }
+     });
+     overlay.addEventListener('click', mypushKapat);
+
+     window.addEventListener('resize', function () {
+         if (!isNarrowLayout()) {
+             sidebar.classList.remove('open');
+             overlay.classList.remove('open');
+         }
+     });
+
+     document.getElementById('IFRAME1').addEventListener('load', function () {
+         if (window.top && window.top.swal) window.top.swal.close();
+         document.getElementById('lblMenuBuf').style.visibility = '';
+         try {
+            var rel = getIframeDocumentUrl();
+            if (rel && rel.indexOf('startup.aspx') < 0) {
+                gActiveFrameUrlOverride = rel;
+                syncNavHiddenFields();
+            }
+         } catch (e) { }
+     });
+</script>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+var baseUrl = '/oibs/';var modalWin = new CreateModalPopUpObject();
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+//]]>
+</script>
+</form>
+</body>
+</html>

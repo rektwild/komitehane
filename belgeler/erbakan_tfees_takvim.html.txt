@@ -1,0 +1,63 @@
+Akademik Takvim
+-
+NEÜ Tıp Fakültesi - TFEES
+İçeriğe atla
+Anasayfa
+Akademik Takvim
+Eğitim Kılavuzu
+Eğitim Kılavuzu
+Dönem I
+Dönem II
+Dönem III
+Dönem IV
+Dönem V
+Dönem VI
+Entegrasyon Verileri
+Klinik Semptomlar
+Çekirdek Hastalıklar
+Temel Hekimlik Uygulamaları
+Davranışsal Sosyal Bilişsel Uygulamalar
+Tüm Ders Oturumları
+Tüm Öğretim Üyeleri
+SKA
+Eğitim yılı
+2026-2027 ✓
+2025-2026
+2024-2025
+2023-2024
+Genel arama
+Press Down arrow to browse results. Use Up and Down arrows to move between results, and Tab to reach result actions. Press Escape to close results.
+Giriş Yap
+Anasayfa
+Akademik Takvim
+Eğitim Kılavuzu
+Eğitim Kılavuzu
+Dönem I
+Dönem II
+Dönem III
+Dönem IV
+Dönem V
+Dönem VI
+Entegrasyon Verileri
+Klinik Semptomlar
+Çekirdek Hastalıklar
+Temel Hekimlik Uygulamaları
+Davranışsal Sosyal Bilişsel Uygulamalar
+Tüm Ders Oturumları
+Tüm Öğretim Üyeleri
+SKA
+Akademik Takvim
+Gösterilen akademik yıl:
+2026-2027
+(yılı üst çubuktan değiştirebilirsiniz)
+Takvim
+{
+sidebarCollapsed = value === false;
+});
+"
+x-show="!(sidebarCollapsed && false)"
+x-transition
+class="fi-footer my-3 flex flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400 gap-4 mx-auto w-full px-4 md:px-6 lg:px-8 max-w-7xl"
+>
+&copy; 2026 -
+TFEES

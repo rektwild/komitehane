@@ -1,0 +1,1210 @@
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+YALOVA ÜNİVERSİTESİ
+TIP FAKÜLTESİ
+EĞİTİM- ÖĞRETİM VE SINAV YÖNERGESİ
+BİRİNCİ BÖLÜM
+Başlangıç Hükümleri
+Amaç
+MADDE 1 - (1) Bu Yönergenin amacı, Yalova Üniversitesi Tıp Fakültesinde eğitimöğretim ve ölçme değerlendirme ile ilişkili tüm süreç ve faaliyetlerde uyulacak usul, esas ve
+kuralları belirlemektir.
+Kapsam
+MADDE 2 - (1) Bu Yönerge, Yalova Üniversitesi Tıp Fakültesindeki eğitim-öğretim ve
+ölçme değerlendirmeye ilişkin tüm süreç ve faaliyetler ile bu alanlarda faaliyet gösterecek
+komisyon ve kurulların oluşumu, çalışma esasları ile yetki ve sorumluluklarını kapsar.
+Dayanak
+MADDE 3 - (1) Bu Yönerge, Yalova Üniversitesi Lisans Eğitim ve Öğretim
+Yönetmeliği’ne dayanılarak hazırlanmıştır.
+Tanımlar
+MADDE 4 - (1) Bu Yönergenin uygulanmasında;
+a) AGNO: Ağırlıklı Genel Not Ortalaması
+b) AKTS: Avrupa Kredi Transfer Sistemi kredisini,
+c) Anabilim Dalı: Yalova Üniversitesi Tıp Fakültesi bünyesinde bulunan
+Anabilim Dallarını,
+ç) Anabilim Dalı Başkanı: Yalova Üniversitesi Tıp Fakültesi bünyesinde bulunan
+Anabilim Dalı Başkanlarını,
+d) ASON: Ara Sınav Ortalama Notu
+e) Aşama 1: Dönem 1, 2 ve 3’te temel ve klinik bilimlere ait eğitim-öğretim programının
+kuramsal ve uygulamalı olarak okutulduğu süreci,
+
+f) Aşama 2: Aşama 1’i tamamlayan öğrencilerin klinik uygulama eğitimlerini aldıkları
+Dönem 4 ve 5’i kapsayan iki yıllık süreci,
+g)
+Aşama 3: Aşama 2’yi tamamlayan öğrencilerin belirli Anabilim Dallarında klinik,
+poliklinik, ameliyathane ve saha çalışmalarını kapsayan, zorunlu veya seçmeli olarak kesintisiz
+12 ay süre ile intörn doktor olarak staj yaptığı Dönem 6’yı kapsayan süreci,
+ğ) Bilim Dalı: Yalova Üniversitesi Tıp Fakültesi Anabilim Dalları
+bünyesinde bulunan Bilim Dallarını,
+h) Dekan: Yalova Üniversitesi Tıp Fakültesi Dekanını,
+ı) Dekan Yardımcısı: Yalova Üniversitesi Tıp Fakültesi eğitim-öğretimden sorumlu
+Dekan Yardımcısını,
+i) Dekanlık: Yalova Üniversitesi Tıp Fakültesi Dekanlığını,
+j) Dönem: En az 34 haftadan oluşan altı eğitim-öğretim yılının her birini,
+k)Fakülte: Yalova Üniversitesi Tıp Fakültesini,
+l) HBN: Ham Başarı Notu
+m) HBNAL: Ham Başarı Notu Alt Limiti
+n)
+Klinik Uygulamalı Dersler: Aşama 2-Dönem 4 ve 5’te, birden fazla anabilim dalının
+katkıları ile bir anabilim dalının sorumluluğunda entegre olarak yürütülen uygulamalı ve
+kuramsal eğitimleri,
+o) Klinik Uygulamalı Ders Blokları: Aşama 2-Dönem 4 ve 5’de birden fazla
+Anabilim Dalı tarafından birlikte yürütülen uygulamalı ve kuramsal eğitim bloklarını,
+ö)Öğrenci: Yalova Üniversitesi Tıp Fakültesi öğrencilerini,
+p) Öğrenci İşleri Daire Başkanlığı: Yalova Üniversitesi Öğrenci İşleri Daire
+Başkanlığını,
+1
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+q) Soru Bankası: Sınavlarda kullanılan soruların güvenilir bir ortamda depolandığı ve
+korunduğu dijital yazılım programını,
+r) Staj: Aşama 3-Dönem 6’da Anabilim Dallarında yürütülen uygulamalı eğitimleri,
+s) Tıp Eğitimi Öğrenci Kurulu (TEÖK): Yalova Üniversitesi Tıp Fakültesi Tıp Eğitimi
+Öğrenci Kurulunu,
+
+ş) Tıp Bilimleri Dersi (TB): Tıp Fakültesi Anabilim Dalları tarafından Aşama 1’de verilen
+molekül/hücre/doku/organ/sistem temelli teorik ve uygulamalı dersler ile hekimlik
+uygulamaları, mesleki beceri ve insan bilimleri konularını içeren; entegre oturumlar,
+öğrencilerin aynı dersi küçük gruplara ayrılarak aldığı küçük grup çalışmaları, interaktif
+eğitimler, probleme dayalı öğrenme çalışmaları ve panellerden oluşan temel ve klinik tıp
+bilimlerinin yatay, dikey ve derinlemesine entegrasyon çerçevesinde “ders kurulları” şeklinde
+verildiği konular bütününü,
+t) Üniversite: Yalova Üniversitesini,
+u) Yönerge: Yalova Üniversitesi Tıp Fakültesi Eğitim-Öğretim ve Sınav Yönergesini,
+ü) Yönetim Kurulu: Yalova Üniversitesi Tıp Fakültesi Yönetim Kurulunu,
+v) Yönetmelik: Yalova Üniversitesi Lisans Eğitim Öğretim Yönetmeliğini,
+y) YSSN: Yıl/Yarıyıl Sonu Sınav Notu
+z) YSSNL: Yıl/Yarıyıl Sonu Sınav Notu Limiti
+aa) Yürütücü: Ders, uygulamalı ders veya staj yürütücülerini ifade
+eder.
+İKİNCİ BÖLÜM
+Eğitim-Öğretim Süresi, Eğitim-Öğretim Dili,
+Eğitim-Öğretim Yılı ve Eğitim-Öğretim Modeli
+Eğitim-öğretim süresi
+MADDE 5 - (1) Fakültede eğitim-öğretim süresi altı yıldır. Öğrenci, 2547 sayılı Kanunun
+44 üncü maddesindeki ek süreler saklı kalmak üzere, eğitimini en fazla dokuz yılda
+tamamlamak zorundadır. Kayıt yenilenmesi, harçlar, devam zorunluluğu ve kaydın silinmesi
+hakkında ilgili mevzuat hükümleri uygulanır.
+(2) Eğitimini azami sürede tamamlayamayan öğrenciler hakkında aşağıdaki hükümler
+uygulanır:
+a) Azami öğrenim süresi sonunda hiç yapmadığı ve/veya devamsızlık nedeniyle
+başarısız olduğu staj sayısı altı ve daha fazla olan öğrencinin Üniversite ile ilişiği kesilir.
+b) Azami öğrenim süresi sonunda (a) bendi kapsamı dışında kalan son sınıf
+öğrencilerine, devam koşulunu yerine getirerek başarısız oldukları tüm stajlar için iki ek staj
+tekrarı hakkı verilir. Bu staj tekrarları sonunda, mezun olması için başarması gereken staj
+sayısını, hiç yapmadığı ve devam koşulunu yerine getirmediği stajlar da dâhil olmak üzere, beşe
+indiremeyen öğrencinin Üniversite ile ilişiği kesilir.
+c) Azami öğrenim süresi sonunda veya (b) bendi uyarınca yaptığı staj tekrarları
+sonunda bir stajdan başarısız olan son sınıf öğrencilerine sınırsız staj hakkı verilir.
+ç) Staj tekrarları sonunda, mezun olması için başarması gereken toplam staj sayısı, hiç
+yapmadığı ve devam koşulu yerine getirmediği stajlar da dâhil olmak üzere en çok beş olan son
+sınıf öğrencilerine üç ek staj tekrarı hakkı verilir.
+d) Azami öğrenim süresi sonunda ek staj hakkını kullanmadan, mezun olması için
+başarması gereken toplam staj sayısı, programına hiç almadığı ve devam koşulunu yerine
+getirmediği stajlar da dâhil olmak üzere en fazla beş olan son sınıf öğrencilerine, dört ek staj
+tekrarı hakkı verilir.
+e) (ç) ve (d) bentleri uyarınca verilen ek süre sonunda mezun olamayan öğrencinin
+Üniversite ile ilişiği kesilir.
+(3) Sınırsız staj hakkı ancak devam koşulunun yerine getirilmesiyle kullanılabilir. Sınırsız
+2
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+hak kullanma durumunda olan öğrenciler devam ettiği staj başına öğrenci katkı payını ödemeye
+devam ederler. Ancak bu öğrenciler, staj tekrarı dışındaki diğer haklarından
+yararlanamazlar. Açılacak stajlara, üst üste veya aralıklı olarak toplam üç eğitim-öğretim yılı
+hiç girmeyen öğrenci, sınırsız staj tekrarı hakkından vazgeçmiş sayılır ve bu haktan
+yararlanamaz.
+(4) Yükseköğretim kurumundan uzaklaştırma cezası alan öğrencilerin bu süreleri
+öğrenim süresinden sayılır.
+(5) Eğitim sürecinde tamamlanması gereken zorunlu veya seçmeli ders, klinik
+uygulamalı ders ya da stajların bir bölümünü, planlanan eğitim programlarında belirtilen
+akademik takvimin dışında kalan zamanlarda yurtiçi ya da yurtdışı anlaşmalar yoluyla ek
+çalışmalar yaparak tamamlayan ve başarılı olan öğrencilerin mezun olabilmesi için altı yıllık
+takvim süresinin tamamlanması zorunlu değildir. Bu durumdaki öğrencilerin 360
+AKTS kredi yükünü tamamlaması ve yaptıkları ek çalışmaların Yönetim Kurulu tarafından
+onaylanmış olması yeterlidir.
+Eğitim-öğretim dili
+MADDE 6 - (1) Eğitim-öğretim dili Türkçedir. Derslerin teorik içerikleri ilgili mevzuatta
+yer alan esaslara göre çevrimiçi senkron olarak da verilebilir.
+Eğitim-öğretim yılı
+MADDE 7 - (1) Eğitim-öğretim yılı Aşama 3 dışında kalan tüm dönemler için en az 34
+haftadan oluşur. Aşama 3 kesintisiz 12 ay sürelidir.
+Eğitim-Öğretim Modeli
+MADDE 8 - (1) Fakültede entegre eğitim-öğretim modeli uygulanır. Hem yatay, hem
+dikey ve hem de derinlemesine entegrasyonun amaçlandığı; tıp ve ilişkili insan bilimlerinin
+ilgili disiplinlerce eş zamanlı olarak işlendiği; eğitim-öğretim içeriğinin ders kurulları, klinik
+uygulamalı dersler veya staj programları bazında oluşturulduğu ve paneller, probleme dayalı
+öğrenim modülleri, küçük grup eğitimleri, akran eğitimi ve simülasyonlarla zenginleştirildiği
+bu eğitim-öğretim modeli dönem geçme esasına dayanır
+(2) Entegre Tıp Eğitimi Modeli üç aşamadan oluşmaktadır.
+a) “Aşama 1”; öğrencileri hekimlik uygulamaları ile profesyonel tutum ve davranışlar
+açısından klinik eğitime hazırlayan tıp ve insan bilimleri konuları ile temel ve klinik tıp
+disiplinlerinin vücut organ sistemleri veya temalar temelinde kurullar şeklinde entegre edildiği
+(yatay, dikey ve derinlemesine entegrasyon) Tıp Bilimleri dersinin verildiği Dönem 1, 2 ve 3’ü
+kapsar.
+b) “Aşama 2”; Dönem 4 ve 5’te öğrencinin tıbbın temel kavram ve ilkelerini klinik
+olguların çözümlemesinde kullanma ve böylece gördüğü hastaları analitik bir biçimde
+değerlendirerek uygun tanı ve tedavi yaklaşımlarını seçebilme yeteneği kazandığı, klinik
+becerileri yeterli düzeyde uygulayabilme ve tüm bunlarla birlikte mesleki ve etik değerlere
+uygun tutum ve davranış sergileyebilme yetisini geliştirdiği klinik uygulamalı ders
+programları ile yapılandırılan süreci içerir.
+c) “Aşama 3”; bu dönemleri başarıyla tamamlayan öğrencilerin intörn doktor kimliği
+ile klinik uygulamalarda daha aktif olarak görev aldığı, kesintisiz olarak 12 ay süreyle devam
+eden Dönem 6’yı kapsayan süreci içerir.
+ÜÇÜNCÜ BÖLÜM
+Eğitim-Öğretim Komisyon ve Kurulları ile Diğer Görevliler
+Komisyon ve kurullar
+MADDE 9 - (1) Eğitim Komisyonu: Dekan yardımcısı, dönem koordinatörleri,
+eğitim baş koordinatörü, seçmeli dersler koordinatörü ve Tıp Eğitimi Anabilim Dalını (varsa)
+temsil eden bir öğretim üyesinden oluşur. Üyeler Dekan tarafından atanır. Komisyon
+Dekanlığın çağrısı üzerine Dekan veya Dekan yardımcısının başkanlığında her ay en az bir kez
+toplanır. Toplantılara dönem öğrenci temsilcileri de katılır. Birim öğrenci işleri bürosunun bir
+3
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+çalışanı sekreter olarak görevlendirilir.
+(2) Eğitim Komisyonunun görev ve sorumlulukları şunlardır:
+a) Fakültede yürütülen tıp eğitim-öğretimi ile ilişkili her türlü konuda gerekli
+çalışmaları koordine etmek,
+b) Program Değerlendirme ve Geliştirme Kurulu tarafından hazırlanan mezuniyet öncesi
+tıp eğitim-öğretimi programlarını değerlendirmek ve uygulanmasını sağlamak,
+c) Program Değerlendirme ve Geliştirme Kurulundan gelen geri bildirim ve önerileri
+tartışarak sonuçları ve önerileri bir rapor halinde Dekanlığa bildirmek,
+ç) Yatay geçişle öğrenci alımı için Yönetmelikte belirlenen ölçütleri
+değerlendirmek ve intibak çalışmalarını yaparak Yönetim Kuruluna öneride bulunmak,
+d) Af kapsamında fakülteye dönen öğrencilerin intibak çalışmalarını planlamak,
+e) Her yeni eğitim öğretim dönemi öncesinde gelecek eğitim öğretim yılına ait ders
+programları, ders planları ve akademik takvim çalışmalarını koordine etmek ve ilgili eğitim
+öğretim yılından önceki Nisan ayı sonunda Dekanlığa göndermek,
+f) Dekanlığın eğitimle ilgili vereceği diğer görevleri yerine getirmek.
+(3) Program Değerlendirme ve Geliştirme Kurulu: Dekan yardımcısı, eğitim baş
+koordinatörü, seçmeli dersler koordinatör yardımcısı, dönem koordinatör yardımcıları, Tıp
+Eğitimi Anabilim Dalından (varsa) bir öğretim üyesi ve fakülte öğrenci temsilcisinden oluşur.
+Üyeler Dekan tarafından atanır. Kurul her eğitim-öğretim döneminde en az üç kez olmak üzere
+Dekanlığın çağrısı üzerine Dekan yardımcısı başkanlığında toplanır. Birim öğrenci işleri
+bürosunun bir çalışanı sekreter olarak görevlendirilir.
+(4) Program Değerlendirme ve Geliştirme Kurulu görev ve sorumlulukları şunlardır:
+a) Öğretim üyeleri ve yürütücülerden dönem koordinatörlerine gelen geri
+bildirimlerden oluşturulan “Yıl Sonu Eğitimi Değerlendirme Raporlarını” almak ve incelemek,
+b) Tıp Eğitimi Anabilim Dalının eğitimle ilgili önerilerini ve eğitim-öğretim
+programlarında yer alan ders ve stajlar için oluşturduğu geribildirim raporlarını
+değerlendirmek,
+c) Gelecek eğitim dönemlerinin başlama ve bitiş tarihlerini belirleyerek ilgili eğitim
+öğretim yılından önceki Nisan ayının içinde Eğitim Komisyonuna sunmak,
+ç) Dönem koordinatörlerinden gelen ders programı taslaklarını değerlendirerek ilgili
+eğitim öğretim yılından önceki Nisan ayı içinde Eğitim Komisyonuna sunmak,
+d) Yönetim Kurulunun eğitimle ilgili aldığı kararları değerlendirerek Eğitim
+Komisyonuna sunmak,
+e) Seçmeli ders koordinatöründen gelen alan içi ya da alan dışı seçmeli ders veya staj
+önerilerini değerlendirmek,
+f) Ölçme Değerlendirme Kurulu ve Öğrenci Danışmanlığı Kurulundan gelen
+geribildirimleri ve raporları değerlendirerek Eğitim Komisyonuna sunmak,
+g) Her Eğitim-Öğretim Yılı sonunda İşverenler Danışma Kurulu ve Mezunlar
+Danışma Kurulundan gelen eğitimle ilgili önerileri değerlendirerek Eğitim
+Komisyonuna sunmak,
+ğ) Eğitim müfredatının Ulusal Çekirdek Eğitim Programı (UÇEP) ile uyumunu
+sağlamak,
+h) Her Eğitim-Öğretim Yılı sonunda eğitimle ilgili tüm verileri kullanarak
+hazırlayacağı “Program Değerlendirme Raporunu” Eğitim Komisyonuna sunmak.
+(5) Ölçme Değerlendirme Kurulu: Dekan yardımcısı başkanlığında eğitim baş
+koordinatörü, dönem koordinatör yardımcıları, soru bankası koordinatörü, Tıp Eğitimi (varsa)
+ve Biyoistatistik Anabilim Dallarını temsilen birer öğretim üyesi ve bir bilgi işlem-bilişim
+uzmanından oluşur. Üyeler Dekan tarafından atanır. Kurul her eğitim- öğretim döneminde en
+az üç kez olmak üzere Dekanlığın çağrısı üzerine Dekan yardımcısının başkanlığında toplanır.
+Birim öğrenci işleri bürosunun bir çalışanı sekreter olarak görevlendirilir.
+(6) Ölçme Değerlendirme Kurulunun görev ve sorumlulukları şunlardır:
+a) Eğitim-Öğretim Yılı içerisindeki sınav takvimlerini hazırlayarak Eğitim
+4
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+Komisyonuna önermek,
+b) “Soru Hazırlama ve Sınav Yapılandırma Kılavuzunu” hazırlamak, geliştirmek ve
+yapılandırılmış olan sınavların kılavuz ile uyumunu kontrol etmek,
+c) Sınavların yürütülmesinde salon ve gözetmen organizasyonunu yapmak,
+ç) Sınavlarda sorulacak toplam soru sayısını, her bilim/Anabilim Dalına düşen soru
+dağılımını, soruların toplanma şeklini, son toplanma tarihini, yürütücüler ile toplantı yaparak
+eğitim-öğretim dönemi başında belirlemek,
+d) Eğitim-Öğretim Yılı içerisindeki sınavların analizlerini yapmak ve “Soru- Öğrenme
+Kazanımları Matrislerini” değerlendirerek sonuçları yürütücüler ve Program Değerlendirme
+ve Geliştirme Kurulu ile paylaşmak,
+e) Soru bankasının geliştirilmesini sağlamak ve işleyişini yönetmek,
+f) Eğitim-Öğretim Yılı içerisinde yapılan sınavların iyileştirilmesi, geliştirilmesi ve
+uygulamalarındaki sorunların çözümü için önerilerini raporlandırarak Program
+Değerlendirme ve Geliştirme Kuruluna ve Eğitim Komisyonuna sunmak,
+g) Hizmet içi ölçme değerlendirme eğitimlerini planlamak ve uygulanmasını
+sağlamak.
+(7) Öğrenci Danışmanlığı Kurulu: Dekan yardımcısı, fakültenin temel, dâhili ve cerrahi
+tıp bilimleri bölümlerini temsilen birer öğretim üyesi, Tıp Eğitimi (varsa) ve Psikiyatri
+Anabilim Dallarını temsilen birer öğretim üyesi ve bir klinik psikologdan oluşur. Üyeler Dekan
+tarafından atanır. Kurulun görev ve sorumlulukları Yalova Üniversitesi Tıp Fakültesi Öğrenci
+Danışmanlığı Yönergesi ile belirlenir.
+(8) Tıp Eğitimi Akreditasyon Kurulu: Ulusal ve uluslararası tıp eğitimi
+akreditasyonu çalışmalarını yürütmek amacıyla Dekan yardımcısı, Dekan tarafından
+görevlendirilen bir koordinatör, Eğitim Komisyonu üyeleri, Tıp Eğitimi Anabilim Dalından
+(varsa) bir öğretim üyesi ve bir sekreterden oluşur. Yılda en az iki kez akreditasyon sürecini
+değerlendirmek üzere toplanır.
+(9) Eğitim Baş koordinatörü: Eğitim programlarının hazırlanması ve yürütülmesinde
+görev alan tüm kurullar arasındaki koordinasyonu sağlamak amacı ile varsa Tıp Eğitimi
+Anabilim Dalı öğretim üyeleri arasından, yoksa ilgili kurumlardaki öğretim üyeleri arasından
+Dekan tarafından iki yıl süreyle atanır.
+(10) Eğitim Baş koordinatörünün görev ve sorumlulukları şunlardır:
+a) Tüm eğitim dönemlerinde yatay, dikey ve derinlemesine entegrasyonun
+oluşturulması ve sürdürülmesini sağlamak,
+b) Eğitim programlarının UÇEP ile uyumunun sağlanması ve her eğitim-öğretim
+yılında en az bir kez toplantı düzenleyerek eğitim programını değerlendirmek, sonuçları bir
+rapor halinde Program Değerlendirme ve Geliştirme Kuruluna sunmak,
+c) Program yeterlilikleri ve “Türkiye Yükseköğretim Yeterlilikler Matrisi”
+çizelgelerini hazırlamak ve Program Değerlendirme ve Geliştirme Kuruluna sunmak,
+ç) Fakültenin ulusal veya uluslararası akreditasyon çalışmalarına liderlik etmek,
+d) “Fakülte Öz Değerlendirme ve Ara Değerlendirme Raporlarının” hazırlanması amacı
+ile oluşturulacak kurul ve komisyonlar arasında koordinasyonu sağlamak,
+e) Eğitim sekretaryasının çalışmalarını denetlemek.
+(11) Dönem Koordinatörleri ve Yardımcıları: Her dönem için bir Dönem Koordinatörü
+ve iki Dönem Koordinatör Yardımcısı öğretim üyeleri arasından Dekan tarafından atanır.
+Koordinatörlerin görev süresi Dekanın görev süresi ile sınırlıdır. Dönem koordinatörleri
+Dekana ve Dekan yardımcısına karşı sorumludur. Dönem koordinatör yardımcılarından biri
+Program Değerlendirme ve Geliştirme Kurulu, diğeri Ölçme Değerlendirme Kurulu üyesi olur.
+(12) Dönem Koordinatörleri ve yardımcılarının görev ve sorumlulukları şunlardır:
+a) Yürütücülerinin çalışmalarını denetlemek ve bu konudaki problem ve çözüm
+önerilerini Eğitim Komisyonuna sunmak,
+b) Yürütücülerin düzenlediği ders program taslağını inceleyerek ilgili eğitim öğretim
+yılından önceki Nisan ayı başında Program Değerlendirme ve Geliştirme Kuruluna
+5
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+göndermek,
+c) Görev süresi sona eren yürütücü ve yardımcılarını Dekanlığa bildirmek ve yerlerine
+yeni öğretim üyeleri önermek,
+ç) Eğitim çalışmalarının akademik takvime ve programlara uygun olarak yürütülmesini
+sağlamak,
+d) Sınavların Yönetmelik ve Yönerge kurallarına uygun olarak yapılması için Ölçme
+Değerlendirme Kurulunun iş birliği ile sınav yerlerini hazırlamak, salon başkanı ve
+gözetmenlerin belirlenmesini sağlamak,
+e) Yürütücülerin sınavlarla ilgili görevlerini denetlemek,
+f) Eğitim-öğretim döneminde her yıl en az bir kez ilgili tüm yürütücüler ve Anabilim
+Dalı Başkanlarının katıldığı ve öğrencilerin de temsil edildiği dönem
+değerlendirme toplantıları düzenlemek; toplantı tutanaklarını ve önerileri içeren Yıl Sonu
+Eğitimi Değerlendirme Raporunu, Program Değerlendirme ve Geliştirme Kuruluna sunmak,
+g) Sorumlu olduğu dönem ile ilgili eğitim programlarında önerilen değişiklik ve yeni
+düzenlemeleri Program Değerlendirme ve Geliştirme Kuruluna sunmak,
+ğ) Her yıl en az bir kez dersliklerin koşullarını incelemek ve görülen aksaklıkları
+saptamak, staj koşullarının eğitim programına uygunluğunu izlemek, aksaklıkları belirlemek
+ve çözüm önerilerini Program Değerlendirme ve Geliştirme Kuruluna iletmek,
+h) Fakülte Kalite Eğitim-Öğretim Koordinatörlüğü ve Üniversite Büyük Veri
+Koordinatörlüğü tarafından hazırlanan öğrenci anketlerinin uygulanmasında iş birliğini
+sağlamak,
+ı) Eğitim programları ile ilgili Dekanlık ve Eğitim Komisyonunun vereceği diğer işleri
+yapmak.
+(13) Ders, Ders Kurulu Yürütücüleri ve Yardımcıları: Her bir ders veya ders kurulu için
+ilgili dönem koordinatörünün önerisi ile bir yürütücü Dekan tarafından görevlendirilir.
+Yürütücünün görev süresi iki yıldır. Görev süresi sona eren yürütücü yazılı talepte
+bulunmadığı sürece yeniden görevlendirilmiş olur. Bir yürütücünün görev süresi sona
+erdiğinde, ilgili dönem koordinatörünün önerisi dikkate alınarak Dekan tarafından yeni
+yürütücü görevlendirilir. Seçmeli ders açmak isteyen öğretim üyesi kendi isteği ile yürütücü
+olarak görev almış olur. Yürütücülerin görevlendirilmesinde ilgili derse katkıda bulunan tüm
+anabilim dallarının katkı oranları dikkate alınır. Yürütücüler ve yardımcıları sırası ile ilgili
+dönem koordinatörü, eğitim baş koordinatörü, Dekan yardımcısı ve Dekana karşı sorumludur.
+(14) Ders, Ders Kurulu Yöneticileri ve Yardımcılarının görev ve sorumlulukları
+şunlardır:
+a) Sorumlu olduğu ders veya ders kurulunda yer alan Anabilim Dalları ve ilgili öğretim
+üyeleri arasındaki koordinasyonu sağlamak,
+b) Sorumlu olduğu ders veya ders kurullarının eğitim-öğretim programını ve takvimini
+hazırlayarak önerileriyle birlikte ilgili eğitim öğretim yılından önceki Nisan ayı başında dönem
+koordinatörüne sunmak,
+c) Kuramsal ve uygulamalı eğitim programlarını yürütecek öğretim elemanlarını
+belirlemek, onlarla bir araya gelerek ders akış programını oluşturmak,
+ç) Derslerin ve uygulamaların aksamadan yapılmasını sağlamak,
+d) İlgili dersin ve ilgili sınavların yürütülmesi amacıyla Ölçme ve Değerlendirme
+Kurulunun düzenlediği toplantılara katılmak,
+e) Sınavların Eğitim Komisyonu ve Yönetim Kurulu tarafından belirlenen
+tarihlerde aksaklık olmadan yapılmasını sağlamak,
+f) Sınavların organizasyonunda Madde 13’te belirtilen işleri yapmak,
+g) Uygulamadaki aksaklıkların düzeltilmesi için dönem koordinatörleri ile birlikte
+gerekli tedbirleri almak,
+ğ) Öğretim üyelerinin ve öğrencilerin sorun ve önerilerini dönem
+koordinatörlerine bildirmek,
+h) Ders veriminin artırılması konusunda öneriler geliştirmek,
+6
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+ı) Her ders veya ders kurulu sonunda derslere katılan öğretim üyeleri ve gönüllü
+öğrenciler ile düzenleyeceği toplantılar sonunda programlı derslerin işleyişi hakkında rapor
+hazırlamak ve önerileri ile birlikte dönem koordinatörlerine sunmak,
+i) Eğitim programları ile ilgili dönem koordinatörü ve Dekanlığın vereceği diğer
+görevleri yapmak.
+(15) Klinik Uygulamalı Ders/Staj Yürütücüleri ve Yardımcıları: Aşama 2 ve Aşama 3’te
+öğrencinin eğitim aldığı her klinik uygulamalı ders/staj için, dönem başlamadan en az bir ay
+önce, ilgili dönem koordinatörü tarafından belirlenen bir öğretim üyesi yürütücü olarak
+Dekanlığa önerilir. Uygun görülenler Dekan tarafından bir yıl süreyle görevlendirilir. Görev
+süresi sona eren yürütücüler ve yardımcıları yazılı talepte bulunmadıkları sürece yeniden
+görevlendirilmiş olurlar. Görev süresi sona eren yürütücü ve yardımcıları yeniden
+görevlendirilebilir. Yürütücüler ve yardımcıları, ilgili dönem koordinatörü, Dekan yardımcısı
+ve Dekana karşı sorumludur.
+(16) Klinik Uygulamalı Ders/Staj Yürütücüleri ve Yardımcılarının görev ve
+sorumlulukları şunlardır:
+a) Sorumlu olduğu klinik uygulamalı dersin/stajın eğitim takvimini hazırlayarak ilgili
+Anabilim Dalı Başkanlıklarına sunmak,
+b) Seminer, ortak vizit, konsey ve öğrenci seminerleri vb. gibi günlük aktivite
+programını düzenlemek ve bu programı ilgili dönem koordinatörüne göndermek,
+c) Eğitim takvimini öğretim elemanlarına, eğitim yılının başlamasından en geç bir hafta
+önce duyurmak,
+ç) Klinik uygulamalı eğitimlerde/stajlarda, her öğrencinin kendisinden sorumlu olacağı
+öğretim üyesi/elemanını belirleyerek hazırlanan listelerin öğrencilere ulaştırılmasını
+sağlamak,
+d) Fakülte Kalite Eğitim-Öğretim Koordinatörlüğü ve Üniversite Büyük Veri
+Koordinatörlüğü tarafından hazırlanan memnuniyet anketinin öğrenciler tarafından
+yanıtlanmasını sağlamak ve değerlendirilmek üzere Program Değerlendirme ve Geliştirme
+Kuruluna göndermek,
+e) Kuramsal ve uygulamalı sınavların yapılmasını organize etmek,
+f) Kuramsal sınav, sözlü/uygulamalı sınav ve performans notlarının anabilim/bilim
+dalı ağırlıkları ile birlikte değerlendirilmesi sonucunda elde edilen başarı notlarını öğrenci
+otomasyon sistemine girmek,
+g) Eğitimin yürütülmesi ile ilişkili problemleri, sorumlu öğretim üyeleri ve
+öğrencilerin sorunları ile birlikte değerlendirerek çözüm önerilerini ilgili Anabilim Dalı
+Başkanına ve dönem koordinatörüne sunmak ve gerekli tedbirleri almak,
+ğ) Eğitimin sürekli iyileştirilmesi konusunda kanıta dayalı öneriler geliştirmek,
+h) Her bir klinik uygulamalı ders/staj veya dönem sonunda sorumlu öğretim üyeleri ve
+gönüllü öğrenciler ile toplantılar düzenlemek, ilgili eğitim programı ve işleyişi hakkında
+değerlendirme raporu hazırlamak ve önerileri ile birlikte ilgili dönem koordinatörüne sunmak,
+ı) Eğitim programları ile ilgili olarak dönem koordinatörü ve Dekanlığın vereceği diğer
+görevleri yapmak.
+(17) Seçmeli Dersler Koordinatörü ve Koordinatör Yardımcısı: Aşama 1’de seçmeli
+derslerin programlanması ve yürütülmesinden sorumlu olmak üzere 2 yıl süreyle bir koordinatör
+ve bir koordinatör yardımcısı Dekan tarafından atanır.
+
+(18) Seçmeli Dersler Koordinatörü ve Koordinatör Yardımcısının görev ve
+sorumlulukları şunlardır:
+a) Fakülte öğretim üyelerinden gelen alan içi ve üniversitenin diğer eğitim
+birimlerinden gelen alan dışı seçmeli derslerin açılması taleplerini değerlendirmek ve gelen
+taleplerin seçmeli ders açılması ile ilgili kurallarla uyumlu olup olmadığını bildiren bir
+rapor hazırlayarak Eğitim Komisyonuna sunmak,
+b) Seçmeli ders yürütücülerinin hazırladığı ders programlarını ilgili eğitim ve öğretim
+yılından önceki Nisan ayı sonuna kadar toplamak.
+7
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+(19) Seçmeli Klinik Uygulamalı Dersler/Stajlar Eğitim Koordinatörü ve Koordinatör
+Yardımcısı: Aşama 2’de seçmeli klinik uygulamalı derslerin, Aşama 3’te seçmeli stajların
+programlanması ve yürütülmesinden sorumlu olmak üzere iki yıl süreyle bir koordinatör ve
+bir koordinatör yardımcısı Dekan tarafından atanır.
+(20) Seçmeli Klinik Uygulamalı Dersler/Stajlar Eğitim Koordinatörü ve Koordinatör
+Yardımcısının görev ve sorumlulukları şunlardır:
+a) Fakülte öğretim üyelerinden gelen seçmeli klinik uygulamalı derslerin/stajların
+açılması taleplerini değerlendirmek ve gelen taleplerin ilgili kurallarla uyumlu olup olmadığını
+bildiren bir rapor hazırlayarak Eğitim Komisyonuna sunmak,
+b) Seçmeli klinik uygulamalı ders/staj yürütücülerinin hazırladığı programlarını ilgili
+eğitim ve öğretim yılından önceki Nisan ayı sonuna kadar toplamak.
+(21) Soru Bankası Koordinatörü: Sınavların hazırlanması, yürütülmesi ve sınav
+sonuçlarının değerlendirilmesi aşamalarındaki tüm soru bankası ile ilgili işlemlerden
+sorumludur. Koordinatör Dekan tarafından Ölçme ve Değerlendirme Kurulu üyeleri arasından
+iki yıl süreyle atanır.
+(22) Soru Bankası Koordinatörünün görev ve sorumlulukları şunlardır:
+a) Soru bankasının işleyişi hakkında tüm öğretim üyelerinin kullanımına yönelik
+kılavuz rehber hazırlamak ve en az yılda bir kez güncellemek,
+b) Soru bankası ile ilgili tüm aşamalarda yürütücülere ve tüm öğretim üyelerine teknik
+bilgi desteği sağlamak, onlara yardımcı olmak,
+c) Çoktan seçmeli testlerin hazırlanmasında yürütücü, dönem koordinatörü ve eğitim
+baş koordinatörü ile birlikte çalışarak soruların sisteme yüklenmesi, sınav evraklarının
+oluşturulması ve sınav sonrası sonuçların istatistiksel açıdan değerlendirilmesi aşamalarına
+katkıda bulunmak.
+(23) Anabilim Dalı Başkanları, Anabilim Dallarının idari işleyişinin yanı sıra eğitim
+faaliyetlerinin işleyişini de yürütür ve Dekana karşı sorumludur. Başkan, eğitim faaliyetleri ile
+ilgili kararların alınmasında Anabilim Dalı kurulunu toplar ve ilgili Anabilim Dalı kurul
+kararını Dekanlığa iletir.
+(24) Anabilim Dalı Başkanlarının mezuniyet öncesi eğitimin yürütülmesine ilişkin görev
+ve sorumlulukları şunlardır:
+a) Eğitim-öğretim döneminde yer alan kuramsal/uygulamalı dersler, klinik uygulamalı
+dersler ve stajların etkin ve verimli olarak yapılandırılması ve yürütülmesi için yürütücüler,
+dönem koordinatörleri, Dekan Yardımcısı ve Dekan ile işbirliği halinde çalışmak,
+b) Yürütücülerin Anabilim Dalı öğretim üyeleri ile eş güdümlü çalışmalarını
+desteklemek ve bu konuda yapılan toplantılara Anabilim Dalındaki öğretim üyelerinin
+katılımını sağlamak.
+(25) Salon başkanları ve gözetmenler: Aşama 1’de planlanan sınavlarda görev alacak olan salon
+başkanı ve gözetmenlerin listeleri dönem koordinatörleri ve eğitim baş koordinatörü tarafından
+belirlenir. Belirlenen salon başkanları ve gözetmenler Dekanlıkça görevlendirilir. Bütünleme ve ek
+sınav görevlendirmeleri yürütücü tarafından yapılır. Salon başkanları ve gözetmenler ise uzmanlık ve
+araştırma görevlileri arasından seçilir. Aşama 2’de klinik uygulamalı ders sonu ortak yazılı sınavlarında
+görevlendirmeler klinik uygulamalı ders yürütücüsü tarafından yapılır.
+
+(26) Salon başkanları ve gözetmenlerin görev ve sorumlulukları şunlardır:
+a) Sınav başlama saatinden 15 dakika önce sınav görev duyurularında bildirilen yerde
+yürütücüden sınav evrakını teslim almak,
+b) Sınav başlamadan önce sesli olarak yoklama yapmak,
+c) Sınav sırasında öğrencilerin uyacakları kuralları yüksek sesle okumak,
+ç) Sınava girmeyen öğrencilerin ad, soyad ve numaralarını sınav tutanağına yazmak,
+d) Sınava giren öğrencilerin imzalarını yoklama listesi dolaştırarak ve kimlik
+kontrolünü yaparak almak,
+e) Kimliği olmayan veya kimliği konusunda şüpheye düşülen öğrencileri ders
+yürütücüsüne bildirmek, sınav tutanağına kayıt etmek ve daha sonra kimlik doğrulamada
+kullanılmak üzere bu öğrencilerin imza ve yazı örneklerini almak,
+8
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+f) Soru kitapçıkları ile cevap kağıtlarını dağıttıktan sonra öğrencilerin adlarının,
+soyadlarının, numaralarının ve soru kitapçığının hangi gruba ait olduğunun cevap kağıtlarını
+yazılmasını ve doğruluğunun kontrolünü sağlamak,
+g) Sınav sırasında kopya çekmeye teşebbüs eden veya sınav düzenini bozan tutum veya
+davranışlar sergileyen öğrencilerin ad, soyad ve numaralarını sınav tutanağına kaydetmek,
+sınav evrakını ve varsa delillerini almak, öğrenciyi salon dışına çıkarmak ve bu durumu hemen
+yürütücülere bildirmek,
+ğ) Sınav sırasında sorularla ilgili yapılan itirazların sınav tutanaklarına kaydedilmesini
+sağlamak,
+h) Sınav bitiminde sınavla ilgili tüm evrak ve materyali yürütücüye teslim etmek.
+(27) Dönem Öğrenci Temsilcileri ve Fakülte Öğrenci Temsilcisi: Temsilciler ilgili
+dönemlerdeki öğrenciler arasından, Yalova Üniversitesi Öğrenci Konseyi Yönergesi ile
+Yükseköğretim Kurumları Ulusal Öğrenci Konseyi Yönetmeliğinde yer alan esaslar
+çerçevesinde seçilir. Dönem öğrenci temsilcilerinin, Dekanın huzurunda aralarından seçtikleri
+bir öğrenci “Fakülte Öğrenci Temsilcisi” olarak belirlenir. Öğrenci temsilcilerinin görev süresi
+Yalova Üniversitesi Öğrenci Konseyi Yönergesine göre belirlenir. Mazeretsiz olarak ardışık
+üç ya da bir eğitim-öğretim dönemi içinde toplam beş toplantıya katılmayan öğrenci temsilcisi
+Eğitim Komisyonu toplantılarına çağrılmaz, yerine yedek temsilci veya aynı sınıftan
+öğrenci temsilciliği adaylık koşullarına sahip başka bir öğrenci davet edilir.
+(28) Dönem Öğrenci Temsilcileri ve Fakülte Öğrenci Temsilcisinin görev ve
+sorumlulukları şunlardır:
+a) Fakülteye kayıtlı öğrenciler ile fakülte yönetim organları arasında gerekli iletişimi
+kurmak,
+b) Eğitim-öğretimle ilgili kararların alınması sırasında dönemini temsilen Eğitim
+Komisyonu toplantılarına katılmak,
+c) Temsil ettiği dönemdeki öğrencilerle gerektiğinde toplantılar düzenleyip
+öğrencilerin sorunlarını ve isteklerini belirleyerek Eğitim Komisyonu aracılığıyla Dekanlığa
+iletmek,
+ç) Temsil ettiği dönemin öğrencileriyle toplantı yaparak ders programı ile ilgili önerileri
+Eğitim Komisyonu aracılığı ile Dekanlığa iletmek,
+d) Eğitim Komisyonu kararlarını temsil ettiği dönemin öğrencileri ile paylaşmak,
+e) Temsil ettiği dönemin öğrencileriyle toplantı yaparak sınav takvimi için öneri
+hazırlamak,
+f) Fakülte öğrenci temsilcileri kurulunda dönemini temsil etmek.
+g) Ayrıca, Fakülte Öğrenci temsilcisi Tıp Fakültesini Öğrenci konseyinde temsil ederek
+fakülte öğrenci temsilcileri kurulunda belirledikleri sorun ve önerileri öğrenci konseyine iletir.
+(29) Tıp Eğitimi Öğrenci Kurulu (TEÖK), öğrencilerin eğitimin planlama, yönetim ve
+değerlendirme süreçlerine etkin olarak katılımının sağlanması ve tıp eğitiminin paydaşları
+arasındaki iletişim ve iş birliğinin artırılarak tıp eğitiminin sürekli gelişiminin desteklenmesi
+amacı ile Tıp Eğitimi Anabilim Dalı ile birlikte çalışır. Kurulun faaliyetleri, Yalova
+Üniversitesi Tıp Fakültesi Tıp Eğitimi Öğrenci Kurulu Yönergesinde yer alan esas ve usullere
+göre yürütülür.
+(30) Birim Öğrenci İşleri: “Birim Öğrenci İşleri”, Öğrenci İşleri Daire Başkanlığı
+bünyesindeki Merkezi Otomasyon Birimi ile koordineli çalışır. “Birim Öğrenci İşleri” eğitimle
+ilgili kurulların ve dönem koordinatörlerinin yazışmalarını, duyurularını yapar ve dağıtımını
+sağlar, Dekanlığın eğitim ile ilgili olarak vereceği tüm görevleri yapar. Birim, Dekan
+Yardımcısına ve Dekana karşı sorumludur.
+DÖRDÜNCÜ BÖLÜM
+Aşama 1, Aşama 2 ve Aşama 3’te Genel Kurallar ve Devam Koşulları
+Aşama 1
+MADDE 10 - (1) Aşama 1’e ilişkin genel kurallar aşağıdaki gibidir:
+9
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+a) Aşama 1 Eğitim-Öğretim programı, “Tıp Bilimleri”, seçmeli dersler ile ortak zorunlu
+dersleri içermektedir. Bu derslerin ara sınav sayıları ve AKTS değerleri her dönem için farklılık
+gösterebilir. “Tıp Bilimleri” ve dersi Dönem 1, 2 ve 3 için yıllık olarak programlanır ve her biri
+dönem başarısı için baraj ders niteliğindedir. Zorunlu ve seçmeli derslerin tanımı, yazılma
+koşulları ve AKTS kredi değerleri hakkında Yönetmeliğin ilgili hükümleri uygulanır.
+b) Aşama 1’de yer alan tüm teorik ve uygulamalı derslere ilaveten aile sağlığı
+merkezlerinde/birimlerinde ve polikliniklerde ve acil servislerde gözlem/nöbet gibi
+etkinliklerin bu dönemde alınması gereklidir.
+c) Bu dönemde yer alan zorunlu ve seçmeli dersler; derslerin akademik takvime göre
+ayrıntılı programı, yürütücüleri, gerçekleştirilmesine katkı sağlayan öğretim üyeleri, öğrenim
+hedefleri ve içerikleri, ölçme değerlendirme yöntemleri ve hazırlanışında yararlanılan
+kaynakların yer aldığı ders rehberi Yalova Üniversitesi Tıp Fakültesi Mezuniyet Öncesi Eğitim
+Programında ve Yalova Üniversitesi Bilgi Paketi içeriğinde yer alır. Program her yıl yeniden
+hazırlanarak, eğitim-öğretim yılı başlamadan önce Fakültenin “web sitesi”nden ilan edilir. Tıp
+Bilimleri Dersi kapsamında yer alan derslerin değerlendirme yöntem ve not ağırlığı eğitim
+komisyonunun önerisi ile Fakülte Yönetim Kurulu tarafından kararlaştırılarak sene başında ilan
+edilir.
+ç) Alan dışı seçmeli ders/alan içi seçmeli ders oranı ilgili dönemlerdeki seçmeli ders
+AKTS kredi toplamının %50’sini geçemez.
+d) Fakülte tarafından kurumsal olarak tanınmış ikili anlaşmaya dayalı ulusal ve
+uluslararası öğrenci değişim programlarından yararlanmak isteyen öğrenciler, ilgili mevzuatta
+belirlenen koşulları yerine getirmeleri halinde eğitimlerinin bir bölümünü bir başka eğitim
+kurumunda alabilirler. Bunun için ilgili değişim programı koordinatörünün uygunluk kararı,
+Eğitim Komisyonunun önerisi ve Yönetim Kurulunun onayı gereklidir. Dönem 1 öğrencileri
+değişim programlarından yararlanamazlar.
+e) Bu dönemde kuramsal derslere en az %70, uygulama, laboratuvar ve benzeri
+çalışmalara en az %80 oranında devam zorunludur. Bu şartın yerine getirilmemesi durumunda
+öğrenci, ilgili ders veya öğretim çalışması için devamsız kabul edilir. Tıp Bilimleri Dersi
+kapsamında yer alan dersler için devamsızlığı %20'nin üzerinde olan öğrenciler ilgili küçük
+grup çalışmasından sıfır (0) puan alırlar. Devamsızlık durumu dersle ilgili ilk
+kuramsal/uygulama/laboratuvar etkinliğinden itibaren kayıt altına alınır ve son etkinliğin
+tamamlanmasını takiben Dekanlığa yazı ile bildirilir. Devamsız öğrenci yarıyıl/yılsonu ve
+bütünleme sınavlarına alınmaz ve öğrencinin not çizelgesinde bu durum DZ (devamsız) ile
+belirtilir. Öğrencinin derslere devamı, öğretim elemanının belirleyeceği yöntemle izlenir.
+Yönetmeliğin 16’ncı maddesinin 2’nci fıkrası uyarınca görevlendirilen öğrencilerin görevli
+oldukları süreler devamsızlık süresinin hesabında dikkate alınmaz. Ancak, bu şekildeki
+görevlendirmeler bir eğitim döneminde, hafta sonu ve resmi tatil günleri dahil toplam 15 günü
+aşamaz.
+Aşama 2
+MADDE 11 - (1) Aşama 2’ye ilişkin genel kurallar aşağıdaki gibidir.
+a) Dönem 4 ve 5’in eğitim-öğretim programları zorunlu ve seçmeli klinik uygulamalı
+derslerden oluşur. Klinik uygulamalı derslerin adları ve süreleri her yıl Eğitim Komisyonunun
+önerisiyle Yönetim Kurulu tarafından belirlenir.
+b) Zorunlu ve seçmeli klinik uygulamalı derslerin akademik takvime göre ayrıntılı
+programı, yürütücüsü, görev alan öğretim üyeleri, amaçları, öğrenim hedefleri, öğrenme
+kazanımları ve ölçme değerlendirme yöntemlerinin yer aldığı rehber Yalova
+Üniversitesi Tıp Fakültesi Mezuniyet Öncesi Eğitim Programında ve Yalova
+Üniversitesi Bilgi Paketi içeriğinde yer alır. Programlar, her yıl yeniden hazırlanarak eğitimöğretim yılı başlamadan önce Fakültenin web sayfasında ilan edilir.
+c) Aşama 2 eğitimlerinde esas olan, öğrencilerin klinik ve poliklinik çalışmalarına
+katılmaları ve öğretim üyeleriyle bire bir uygulama yapmalarıdır.
+ç) Öğrenim hedeflerine uygun olarak Aşama 1 dersleri ile dikey entegrasyonu sağlamak
+10
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+amacıyla program içerisinde gerekli görülen kuramsal derslere de yer verilebilir.
+d) Öğrenci, Anabilim Dalı tarafından katılımının istendiği ortak vizit, konsey, asistan
+semineri gibi diğer günlük aktivitelerde yer almak zorundadır.
+e) Bu dönemde programda yer alan tüm zorunlu ve seçmeli klinik uygulamalı dersler
+ilgili Anabilim Dallarında uygulanır. Anabilim Dalları tarafından organize edilen
+1. ve 2. basamak sağlık kuruluşlarında yapılan saha eğitimleri, Yönetim Kurulunun onayı ile
+özel veya kamuya ait yerel sağlık kuruluşlarında yapılabilir.
+f) Öğrenciler zorunlu veya seçmeli klinik uygulamalı derslerini Fakülte tarafından
+kurumsal olarak tanınmış ulusal ve uluslararası ikili anlaşmaya dayalı öğrenci değişim
+programları aracılığıyla yurtiçi ve yurtdışında yürütebilirler. Bunun için ilgili değişim
+programı koordinatörünün uygunluk kararı, Eğitim Komisyonunun önerisi ve yönetim
+kurulunun onayı gereklidir.
+(2) Eğitimler 08.00-17:00 saatleri arasında yapılır. Ancak Anabilim Dalının çalışma
+yapısına bağlı olarak bu saatler değiştirilebilir. Başlangıç ve bitiş saatleri her yıl ilan edilen
+eğitim programında ayrıntılı olarak gösterilir. Öğrenci klinik uygulamalı derslerin her birine
+ilgili klinik dersin süresi dikkate alınarak en az %80 oranında devam etmek zorundadır. Birden
+fazla Anabilim Dalının yer aldığı entegre klinik uygulamalı ders bloklarında herhangi bir
+Anabilim Dalı programının en az %50’sine devam etmeyen öğrenci bloğun tamamından
+devamsız sayılır. Öğrencinin devamı ilgili Anabilim Dalının belirleyeceği yöntem ile izlenir.
+Yönetmeliğin 16’ncı maddesinin 2’nci fıkrası uyarınca görevlendirilen öğrencilerin görevli
+oldukları süreler devamsızlık süresinin hesabında dikkate alınmaz. Ancak, bu şekildeki
+görevlendirmeler hafta sonu ve resmi tatil günleri dahil her bir klinik dersin toplam süresinin
+%50’sini aşamaz.
+Aşama 3
+MADDE 12 - (1) Aşama 3’e ilişkin genel kurallar aşağıdaki gibidir.
+a) Bu dönemde eğitim programları birinci basamak hekimlik pratiğine yönelik olup,
+poliklinik ve kliniklerde hasta izlemine ağırlık verilmesi gerekir. Gerekli olması halinde,
+öğrenciler Eğitim Komisyonu önerisi ve Yönetim Kurulunun onayı ile diğer hastane ve sağlık
+kuruluşlarına gönderilebilirler.
+b) İntörn öğrencilerin stajlarda çalışma koşulları İntörnlük Dönemi Eğitim Yönergesi
+doğrultusunda planlanır.
+c) Bu dönemde yer alan stajların adları ve süreleri her yıl Eğitim Komisyonunun
+önerisiyle Yönetim Kurulu tarafından belirlenir.
+ç) Öğrenciler, programda yer alan birimlerde çalışmak, eğitim programında yer alan
+programa uymak ve öğrenci karnelerinde belirtilmiş olan aktiviteleri başarı ile yerine getirmiş
+olmak zorundadırlar.
+d) Bu dönemde yer alan “seçmeli” stajlar, isteğe bağlı olarak fakültenin farklı Anabilim
+Dallarında veya yurtiçi/yurtdışındaki üniversite hastaneleri ya da eğitim veren kamu
+hastanelerinde yapılabilir. Ancak, kurum dışında yapılan çalışmaların “geçerli” sayılabilmesi
+için öğrencinin başvurusunun Dekanlık tarafından önceden “uygun bulunmuş” olması gerekir.
+e) Seçmeli staj dışındaki derslerin fakültede yapılması zorunludur. Kendi imkânları ile
+yurtdışında intörnlük eğitimi için başvuran öğrencilerin durumu Eğitim Komisyonunun
+teklifleri doğrultusunda Yönetim Kurulu tarafından karara bağlanır.
+f) Zorunlu ve seçmeli stajların bitiminde sorumlu öğretim üyesi, yürütücü ve Anabilim
+Dalı Başkanı tarafından imzalanmış öğrenci karneleri en geç beş işgünü içinde birim öğrenci
+işleri bürosuna teslim edilir.
+(2) Stajlar, nöbetler dışında 08.00-17.00 arasında olacak şekilde planlanır. Anabilim
+Dalları çalışma saatlerini bu saatleri aşmamak kaydı ile kendileri belirleyebilirler. Öğrenciler
+belirtilen saatler dışında kliniklerde ancak gönüllü olarak bulunabilirler.
+(3) Nöbetler eğitim amaçlıdır. Hizmet açığının kapatılması için nöbet saatleri
+artırılamaz. Nöbetler en sık üç günde bir en fazla ayda 8 nöbet olacak şekilde organize
+edilebilir. Öğrencinin stajlarda yer alan her bir Anabilim Dalındaki süreleri eksiksiz olarak
+11
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+tamamlaması zorunludur.
+(4) Stajlara devam zorunludur. Yönetmeliğin 16’ncı maddesinin 2’nci fıkrası uyarınca
+görevlendirilen öğrencilerin görevli oldukları süreler devamsızlık süresinin hesabında dikkate
+alınmaz. Ancak, bu şekildeki görevlendirmeler hafta sonu ve resmi tatil günleri dahil her bir
+stajın toplam süresinin %10’unu aşamaz.
+BEŞİNCİ BÖLÜM
+Sınavların Uygulanması Aşama 1’de sınav uygulamaları
+MADDE 13 - (1) Sınav uygulamalarına ilişkin genel kurallar aşağıdaki gibidir:
+a) Aşama 1’de yer alan dersler için, ilan edilen tarihlerde en az bir ara sınav, bir yarıyıl
+sonu veya yılsonu sınavı ve bir bütünleme sınavı yapılır.
+b) Her eğitim-öğretim yılı sonunda yürütücüler ve ilgili dönem koordinatörleri Ölçme
+Değerlendirme ve Program Değerlendirme ve Geliştirme Kurulu ile bir araya gelerek bir
+sonraki eğitim öğretim yılının sınav formatlarını, uygulama sınavı sayılarını, uygulama
+sınavlarının ara sınava etki oranlarını, sınavlarda sorulacak soru sayılarını, her Anabilim/Bilim
+alına düşen soru dağılımlarını ve soruların son toplanma tarihlerini belirler ve ilan eder.
+c) Değerlendirmede kuramsal sınavlara ek olarak ödev, uygulama ve küçük sınavlardan
+da yararlanılabilir. Bu değerlendirmelerin ağırlıkları önceden öğrencilere bildirilir.
+ç) Öğretim üyeleri sınav hazırlık aşamasında işlenen dersle ilgili olan, araştırılması
+istenen ancak derste aktarılmayan konulardan da soru sorabilirler. Bu durumda, öğrencinin
+yararlanabileceği kaynak eserlerin ders planlarında önceden belirtilmiş olması ve bu tarz
+soruların sınavlardaki toplam ağırlığının %20’den fazla olmaması gerekir.
+d) Her dönem veya her yarıyıl sonunda akademik takvimde ilan edilen tarihlerde
+bütünleme sınavları yapılır. Bütünleme sınavı dersin yıl veya yarıyıl sonu sınavı yerine geçer.
+Bir dersin ara sınavına giren, devam koşulunu yerine getiren, ancak yıl veya yarıyıl sonu
+sınavına giremeyen veya girdiği halde başarısız olan öğrenci bütünleme sınavına girebilir.
+Dersin tekrarlandığı yarıyılda/yılda alınan en son not geçerlidir.
+e) Yapılan tüm sınavlarda ham notların öğrenciye duyurulması aşamasında 0,50 ve
+üstü kesirli notlar bir üst tam nota tamamlanır.
+f) “Ortak zorunlu dersler” (5ı dersleri) ile seçmeli derslerin sınav tarihleri dönem başında
+Dekanlıkça ilan edilir. Ortak zorunlu derslerde sınavlar akademik takvimde bildirilen tarih
+aralığında yapılır. Sınavın gün ve saatinin belirlenmesinde dönem koordinatörü ile seçmeli
+dersler koordinatörü birlikte çalışır. Sınavlarda yürütücünün talep ettiği tarih esas alınır.
+Yürütücü bu sınavların planlanması ve dersliklerin ayarlanmasını ilgili dönem koordinatörü
+ve seçmeli dersler koordinatörü ile birlikte gerçekleştirir. Zorunlu hallerde yürütücünün talep
+ettiği tarihe en yakın gün/saatte olmak üzere ayrı bir zaman dilimi belirlenir.
+(2) Ara sınava ilişkin esaslar aşağıdaki gibidir:
+a) Ara sınavlar her bir ders için en az bir defa olmak üzere eğitim-öğretim döneminin
+başında yayınlanan akademik takvimde belirtilen tarih ya da tarih aralığında uygulanan
+sınavlardır. Seçmeli derslerde ara sınav yerine ödev, uygulama, seminer, sunum, araştırma,
+sözlü veya küçük sınavlar gibi performans değerlendirmeleri yapılabilir.
+b) Birden fazla öğretim üyesinin katılımı ile yürütülen derslerde sorulacak soru sayısı
+ve soru dağılımı yürütücünün derse katkıda bulunan öğretim üyeleri ile yapacağı toplantılarda
+katkı oranlarına göre belirlenir ve Ölçme Değerlendirme Kuruluna sunulur.
+c) Uygulama sınavlarının katkı oranları derse katkıda bulunan öğretim üyeleri
+tarafından belirlenir.
+ç) Sınav evrakının son şekli yürütücü, yardımcısı ve katkıda bulunan öğretim üyeleri
+tarafından kontrol edilir. Ölçme Değerlendirme Kurulu ile birlikte sınav evrakları üzerinde
+gerekli değişiklik ve düzenlemeler yapıldıktan sonra sınav kitapçığı haline getirilir.
+d) Teorik ve uygulamalı bölümleri olan derslerde öğrencinin uygulama sınavından aldığı
+not belirlenen katkı payı oranında teorik sınavlara eklenir ve tek bir sınav notu verilir.
+e) Laboratuvar ve pratik sınavlarına girmek zorunludur. Her ders için ilgili ders
+12
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+kurulundaki herhangi bir laboratuvar/pratik sınavına girmeyen öğrenci, ilgili ders kurulunun
+teorik sınavına alınmaz ve ilgili ara sınav notu "0" olarak ilan edilir. Koşulları yerine getirmek
+kaydıyla, ilgili yönetim kurulunca kabul edilen haklı ve geçerli bir nedenle pratik sınava
+girememiş olan öğrencilere mazeret sınav hakkı verilir. Yarıyıl/Yılsonu sınavında
+laboratuvar/pratik sınavlarına herhangi bir nedenle giremeyen öğrenciler, yarıyıl/yılsonu
+teorik sınavına girebilir ancak ilgili dersin pratik sınav notu sıfır (0) olarak kabul edilir.
+(3) Yarıyıl/Yılsonu sınavına ilişkin esaslar aşağıdaki gibidir:
+a) Yarıyıl/Yılsonu sınavları, ilgili ders programının bitiminde ve eğitim-öğretim
+döneminin başında yayınlanan akademik takvimde belirtilen tarih ya da tarih aralığında
+yapılan sınavlardır.
+b) Birden fazla sayıda öğretim üyesinin katılımı ile yürütülen derslerde sorulacak soru
+sayısı, soru dağılımı ve uygulama sınavlarının katkı oranları yürütücünün derse katkıda
+bulunan öğretim üyeleri ve Ölçme Değerlendirme Kurulu ile yapacağı toplantılar
+sonucunda belirlenir.
+c) Sınav evrakının son şekli yürütücü, yardımcısı ve katkıda bulunan öğretim üyeleri
+tarafından kontrol edilir. Ölçme Değerlendirme Kurulu ile birlikte sınav evrakları üzerinde
+gerekli değişiklik ve düzenlemeler yapıldıktan sonra sınav kitapçığı haline getirilir.
+ç) Teorik ve uygulamalı bölümleri olan derslerde öğrencinin uygulama sınavından aldığı
+not belirlenen katkı payı oranında teorik sınavlara eklenir ve tek bir sınav notu verilir.
+(4) Aşama 1’de sınavlar aşağıdaki esaslara göre hazırlanır ve yapılır:
+a) Salon başkanı ve gözetmen olarak kaç öğretim üyesi ve yardımcısının görevli olduğu, bu
+görevlilerin Anabilim Dalları arasındaki paylaşımları ve görevli oldukları sınav salonları dönem
+koordinatörleri ve eğitim baş koordinatörü tarafından belirlenir. Dekanlık tarafından görevlilere ve
+yürütücülere bildirilir.
+
+b) Sınavların hangi salonda, tarihte ve saatte yapılacağı dönem koordinatörleri, dönem
+öğrenci temsilcileri, yürütücüler ve birim öğrenci işlerinin ortak çalışmasıyla belirlenir ve
+Yönetim Kurulu tarafından onaylandıktan sonra Dekanlık tarafından ilan edilir.
+c) Yürütücü, sınavda sorulacak soruların konulara göre dağılımını toplam ders saatine
+göre Ölçme Değerlendirme Kurulu ile birlikte belirler ve soruları katkıda bulunan öğretim
+üyelerinden öğrenme kazanımlarıyla birlikte ister.
+ç) Yürütücü kendisine iletilen soruları düzenler, soru kitapçıklarını hazırlar ve soruların
+son kontrollerini yapar. Soru kitapçıkları “Soru Hazırlama ve Sınav Yapılandırma Kılavuzuna
+uygun olarak hazırlanır.
+d) Ölçme Değerlendirme Kurulu ile yapılan toplantıdan sonra son haline getirilen sınav
+evrakı yürütücü ve birim öğrenci işleri bürosu tarafından hazırlanır ve birim öğrenci işleri
+bürosunda gerekli gizlilik ve güvenlik sağlanarak basılı hale getirilir. Sınav evrakı; sınav
+tutanakları, sınav salonu, yoklama listeleri, sınav soru kitapçıkları, cevap kâğıtları ve
+öğrencilerin sınavda uyacakları kurallar listesinden oluşur. Sınav evrakı üzerinde sınav süresi
+açık bir şekilde belirtilir.
+e) Sınavla ilgili itirazlar sınav bittikten sonra sınav tutanaklarına kaydedilir. Sınav
+sonrasında itiraz edilen sorular, ilgili öğretim üyeleri ile gözden geçirilir. Sınav kâğıtları
+değerlendirilmeden önce; gerekirse bu soruların değerlendirilmesi ile ilgili düzenlemeler
+yapılır.
+f) Sınav değerlendirilmesi yürütücü ve Ölçme Değerlendirme Kurulu tarafından yapılır.
+Yürütücü sınav analizlerini ilgili öğretim üyeleri ile paylaşır. Sonuçları öğrenci otomasyon
+sistemi aracılığıyla ilan eder, yasal süre içindeki itirazları değerlendirir, süre sonunda sınav
+sonuçlarını, sınav tutanakları ve “Soru-Öğrenme Kazanımı Matrisi” ile birlikte Dekanlığa
+teslim eder.
+g) Sınavlar basılı kâğıt kullanılmadan çevrimiçi ortamda da yapılabilir.
+(5) Sınava girecek olan öğrencilerin uyacakları kurallar şunlardır:
+a) Sınavlarda her öğrencinin uyması gereken kurallar sınav öncesi salon başkanı
+tarafından öğrenciye sınav salonunda okunarak duyurulur. Elektronik ortamda yapılan
+13
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+sınavlarda, sınav kuralları ayrı bir sayfa halinde ekrana getirilir.
+b) Öğrenciler, geçerli kimlik belgelerini sınav salonuna getirmeli ve oturdukları sıra
+üzerinde görevlilerin rahatlıkla görebilecekleri bir noktada bulundurmalıdır.
+c) Optik okuyucu kullanılarak yapılan sınavlarda tüm işaretlemeler için mutlaka kurşun
+kalem kullanılmalıdır.
+ç) Öğrenciler, sınavda kullanacakları kurşun kalem, silgi ve kalem açacağı gibi gerekli
+araçları mutlaka yanlarında getirmelidir. Sınav sırasında kalem, silgi ve kalem açacağı
+alışverişi yapılmamalıdır.
+d) Sınavda cep telefonu, akıllı saat ve benzeri diğer elektronik haberleşme araçlarının
+kapalı tutulması gerekmektedir.
+e) Sınav süresi 60 dakikadan az olan sınavlarda ihtiyaç izni verilmez. Sınav süresi 60
+dakikadan fazla olan sınavlarda sınav salon başkanı tarafından ihtiyaç izni verilebilir. Acil
+durumlar dışında (sağlık sorunları, yangın, deprem gibi) her ne gerekçe ile olursa olsun sınavın
+ilk 30 dakikasında salondan çıkılamaz.
+f) Öğrenciler soru kitapçıklarına ad ve soyadı yazmak ve imzalamak zorundadırlar.
+g) Cevapların sadece cevap kâğıdına işaretlenmesi gerekmektedir.
+(6) Sınav sonuçlarının ilanı ve itirazların değerlendirilmesi aşağıda belirtilen esaslara
+göre yapılır:
+a) Soru itirazlarının bildirilebileceği süre soruların ilanı itibariyle 24 saattir. Sınav sorularına
+yapılan itirazlar dilekçe ile birim öğrenci işleri bürosuna yapılır. Soru itirazlarının değerlendirilmesi
+süresi dahil sınav sonuçları beş iş günü içerisinde öğrenci otomasyon sistemine girilerek ilan edilir.
+Çevrimiçi ortamda yapılan sınavlar için bu süre, en geç sınavı takip eden iki iş günüdür.
+
+b) Sınav sonuçlarına yapılan itiraz, sınav sonuçları ilan edildikten sonraki iki iş günü
+içinde birim öğrenci işleri bürosuna yapılır. İtirazlar bir üst yazı ile ilgili yürütücüye ve Ölçme
+Değerlendirme Kuruluna iletilir. İtirazın değerlendirilmesi sonucu varılan karar, yürütücü
+tarafından, Ölçme Değerlendirme Kuruluna iletilmek üzere birim öğrenci işleri bürosuna yazı
+ile gönderilir.
+(7) Sınav notlarının değerlendirilmesi aşağıda belirtilen esaslara göre yapılır:
+a) Fakültede Yıl/Yarıyıl Sonu Sınav Notu (YSSN) Limiti (YSSNL) ve Ham Başarı Notu
+(HBN) Alt Limiti (HBNAL) 100 üzerinden 60’tır.
+b) Bir dersin yıl/yarıyıl sonu sınavına girebilmek için o derse kayıt yaptırmak ve devam
+şartını sağlamış olmak gerekir. Başarı dereceleri, harf notları, ağırlık katsayıları ve diğer
+işaretler hakkında Yönetmeliğin 21 inci maddesi uygulanır.
+c) Dönemsel olarak işlenen derslerde ara sınavların aritmetik not ortalaması 100 tam
+puan üzerinden Ara Sınav Ortalama Notu (ASON) olarak hesaplanır. ASON %60 ve YSSN
+%40 oranında alınarak HBN oluşturulur ve harf notuna çevrilir. Notlar Tablo 1’de belirtilen
+not aralıklarına göre harf notuna çevrilir.
+ç) Tıp Bilimleri dersinin ara sınavlarında %50 oranında Anabilim Dalı barajı uygulanır.
+Öğrenci sınava katılan Anabilim Dallarından bir veya daha fazlasından %50’nin altında puan
+alırsa, o dalda elde ettiği puan ile o dalın toplam puanının %50’si arasında kalan puan farkı
+sınav toplam puanından düşülür. Bu kural uygulama sınavlarında geçerli değildir. Öğrencinin
+uygulama sınavından aldığı not dönem başlangıcında bildirilen etki oranında teorik sınavlara
+eklenir.
+d) Tıp Bilimleri dersinde ASON’u 80 ve üzeri olan öğrenciler yazılı olarak
+başvurdukları takdirde ilgili ders/derslerin yılsonu sınavlarından muaf olabilirler. Bu
+durumda ilgili ders/derslerin yılsonu ortalamaları geçme notu olarak değerlendirilir. Bu
+muafiyetten yararlanabilmek için ilgili derslerin tüm kurul sonu/ara sınavlarından 60 ve üzeri
+not alınması zorunludur.
+e) Bütünleme sınavı ilgili dersin yarıyıl/yılsonu sınavı yerine geçer.
+f) Yarıyıl temelinde işlenen derslerde ASON’un % 40’ı ve YSSN’nin % 60’ı ile HBN
+oluşturulur ve harf notuna çevrilir. Bir dersin yarıyıl sonu sınavına girmeyen veya girdiği halde
+sınavdan YSSNL’nin ve HBNAL’nin altında kalan öğrenciler başarısız kabul edilir.
+14
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+Seçmeli dersler ve ortak zorunlu derslerde (5ı dersleri) ara sınavın HBN’na katkı oranı %40,
+yarıyıl/yılsonu sınavının HBN’na katkı oranı %60’tır ve alınan notlar harf notuna çevrilir.
+Tablo 1: Harf Notu Cetveli*
+Harf
+Notu
+
+Başarı
+Derecesi
+
+Ağırlık
+Katsayısı
+
+Ham Not Aralığı
+
+AA
+
+Mükemmel
+
+4,0
+
+94-100
+
+BA
+
+Pekiyi
+
+3,5
+
+87-93
+
+BB
+
+İyi
+
+3,0
+
+80-86
+
+CB
+
+Orta
+
+2,5
+
+70-79
+
+CC
+
+Geçer
+
+2,0
+
+60-69
+
+DC
+
+Başarısız
+
+1,5
+
+50-59
+
+DD
+
+Başarısız
+
+1,0
+
+40-49
+
+FD
+
+Başarısız
+
+0,5
+
+30-39
+
+FF
+
+Başarısız
+
+0,0
+
+0-29
+
+*DZ gibi diğer harf notları Yönetmeliğin 21’inci maddesine göre verilir.
+g) Bir üst döneme geçebilmek için öğrencinin ağırlıklı genel not ortalaması
+(AGNO)’sunun en az 2.00 olması koşuluyla Tıp Bilimleri dersini başarmış olması gerekir.
+Öğrenci, seçmeli ve ortak zorunlu derslerini (5ı dersleri) Dönem 3’ün sonuna kadar
+tamamlayabilir.
+Aşama 2’de sınav uygulamaları
+MADDE 14 – (1) Sınav uygulamalarına ilişkin genel kurallar aşağıdaki gibidir:
+a) Her klinik uygulamalı ders programının sonunda, öğrenci yazılı ve sözlü/uygulamalı
+sınavlarla değerlendirilir.
+b) Öğrencinin klinik uygulamalı ders süresinde sergilediği performansı yansıtan Öğrenci
+Performans Karnesi’nin değerlendirilmesiyle öğrenciye “Performans Notu” verilir.
+c) Yazılı sınavlar klasik, çoktan seçmeli test, boşluk doldurmalı, açık uçlu sorular ve
+benzeri şekillerde yapılabilir. Klinik uygulamalı ders bloklarında her Anabilim Dalı ayrı yazılı
+sınav yapar.
+ç) Sözlü/uygulamalı sınavlar sorumlu öğretim üyelerinden en az ikisinin katılımıyla
+gerçekleştirilen ve adayın sözlü olarak bilgi ve becerisinin sorgulandığı sınavlardır.
+Zorunluluk hallerinde, sınav bir öğretim üyesi ve bir uzman hekim tarafından yapılabilir.
+Klinik uygulamalı ders bloklarında her Anabilim Dalı ayrı sözlü sınav yapar. Uygulamalı
+sınavlar, öğrencinin yazılı sınav veya performans notları için baraj olarak kullanılamaz.
+d)
+Öğrencinin devam ettiği ancak başarısız olduğu her klinik uygulamalı ders için bir
+bütünleme sınavı yapılır. Bütünleme sınavları için belirlenen dönem her eğitim- öğretim yılında
+akademik takvimde ilan edilir. Öğrenci bütünleme sınavı hakkını bu dönemde kullanabilir ya da bu
+hakkını koşullar uygun olduğunda, eğitim süreci devam ederken, başarısız olduğu eğitimin yıl
+15
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+içindeki herhangi bir yılsonu sınavına girerek kullanabilir. Sınava girmek isteyen öğrenciler, bu
+durumu sınavdan en az beş (5) iş günü önce dilekçe ile birim öğrenci işleri bürosuna başvurur.
+Dönem 4 için programlanan tüm klinik uygulamalı derslerden başarılı olamayan öğrenciler Dönem
+5’e devam edemezler.
+e) Bütünleme sınavı yazılı ve/veya sözlü/uygulamalı sınavlardan oluşur. Başarı notu
+hesaplanırken, öğrencinin eğitime devamı sırasında aldığı “performans” notu kullanılır.
+f) Bütünleme sınavından da başarısız olan öğrenci eğitimi tekrar etmek zorundadır. Bu
+durumdaki öğrenci kendi eğitim-öğretim programına uygun olan grup listesine katılır ve o grup
+ile başlar.
+g) Klinik uygulamalı ders süresi on iş gününden az olan derslerde performans notu
+kullanılmaz.
+ğ) Bir dersten AA, BA, BB, CB, CC notlarından biriyle başarılı olan öğrenciler, not
+yükseltme amacıyla söz konusu dersin bütünleme sınavına giremezler.
+h) Öğrencinin Dönem 5 sonunda Dönem 6’ya başlayabilmesi için AGNO'sunun en az
+2.00 olması gerekmektedir. Dersin tekrarlandığı yarıyılda/yılda alınan en son not geçerlidir.
+Tekrar edilen dersin/stajın yıl/staj sonu sınavında AGNO'su 2.00'ın altında kalan öğrenciler,
+sınavına girdikleri staj/yılı tekrar ederler.
+(2) Sınavlara ilişkin esaslar aşağıdaki gibidir:
+a) Her klinik uygulamalı ders/ders bloğu sonunda devamsızlığı olmayan tüm öğrenciler
+ortak bir yazılı sınava alınırlar.
+b) Yürütücü, sınavda sorulacak soru sayısını ve soruların konulara göre dağılımını dönem
+koordinatörü ve Ölçme Değerlendirme Kurulu ile birlikte belirleyerek katkıda bulunan öğretim
+üyelerinden soruları öğrenme kazanımları ile birlikte ister.
+c) Sözlü/uygulamalı sınavlarda öğrenciler, tekli veya küçük gruplar halinde, Anabilim
+Dalı Başkanı tarafından belirlenen jüriler tarafından sınava alınırlar. Nihai not, her
+Anabilim/Bilim Dalı tarafından ayrı ayrı oluşturulur.
+ç) Sözlü/uygulamalı sınavlarda her öğrenciye sorulan sorular ve genel değerlendirmenin
+yer aldığı bir tutanak hazırlanarak yazılı sınav evrakı ile birlikte birim öğrenci işleri bürosuna
+gönderilir.
+(3) Sınav sonuçlarının ilanı ve itirazların değerlendirilmesine ilişkin esaslar aşağıdaki
+gibidir:
+a) Yazılı ve sözlü/uygulamalı sınavların sonuçları ve performans notları yürütücü
+tarafından 100 üzerinden mutlak notlar ve harf notları şeklinde, sınavlar yapıldıktan sonraki
+üç iş günü içerisinde öğrenci otomasyon sistemi kullanılarak öğrencilere ilan edilir. Yürütücü
+sınav analizlerini ilgili öğretim üyeleri ile paylaşır.
+b) Sınav sorularına yapılan itirazların bildirilebileceği süre soruların ilanı itibariyle 24
+saattir. Sınav sonuçlarına yapılan itiraz, sınav sonuçları ilan edildikten sonraki iki iş günü içinde
+birim öğrenci işleri bürosuna yapılır. İtirazlar bir üst yazı ile ilgili yürütücüye ve Ölçme
+Değerlendirme Kuruluna iletilir. İtirazın değerlendirilmesi sonucu varılan karar, yürütücü
+tarafından, Ölçme Değerlendirme Kuruluna iletilmek üzere birim öğrenci işleri bürosuna yazı
+ile gönderilir.
+c) Yürütücü yazılı ve sözlü/uygulamalı sınav sonuçlarını, performans notlarını ve “SoruÖğrenme Kazanımları Matrisi” ile birlikte sınav tutanaklarını, öğrencinin aldığı başarı notunu,
+varsa yapılan itirazlarla ilgili değerlendirmeleri sınavın bitim tarihini izleyen 5 (beş) iş günü
+içerisinde Dekanlığa gönderir.
+ç) Yürütücü başarı notlarını sorumlu öğretim üyelerinden veya bilim dalı
+temsilcilerinden oluşan anabilim dalı kuruluna getirerek, öğretim üyelerini sınav sonuçları
+hakkında bilgilendirir.
+(4) Sınav notlarının değerlendirilmesine ilişkin esaslar aşağıdaki gibidir:
+a) HBN yazılı sınav, sözlü/uygulamalı sınav ve performans notunun Tablo 2'de
+belirtilen oranlardaki katkıları ile 100 üzerinden oluşturulur.
+
+16
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+Tablo 2. Aşama 2 Başarı Değerlendirmesinde Sınavların Katkı Oranları
+Değerlendirme Türü
+
+Katkı Oranı
+
+Yazılı Sınav
+
+% 50
+
+Sözlü/Uygulamalı Sınav
+
+% 30
+
+Performans
+
+% 20
+
+b) Yazılı sınavda 100 üzerinden 60 ham puan barajı uygulanır. Yazılı sınavdan 60 ve
+üzeri alamayan öğrenci başarısız sayılır ve öğrencinin sözlü/uygulamalı sınavları ve
+performans notu dikkate alınmaz.
+c) Klinik uygulamalı ders süresi on iş gününden az olan derslerde yazılı sınav %50,
+sözlü/uygulamalı sınav %50 katkı oranları üzerinden değerlendirilir; performans notu
+kullanılmaz.
+ç) HBN Tablo 1’e göre harf notuna dönüştürülür. HBN 60’ın altında olanlar başarısız
+sayılır.
+(5) Klinik uygulamalı ders bütünleme sınavı, klinik uygulamalı yaz dersine ilişkin esaslar
+aşağıdaki gibidir:
+a) Klinik uygulamalı derse devam etmiş ancak başarısız olmuş öğrenciye bütünleme
+sınav hakkı verilir. Öğrencinin derse devamı sırasında aldığı performans notu (başarı notunun
+%20’si), yazılı ve/veya sözlü/uygulamalı bütünleme sınav notları (başarı notunun %80’i) ile
+birlikte değerlendirilerek yeniden HBN hesaplanır ve Tablo 1’e göre harf notuna dönüştürülür.
+b) Dönem 5 seçmeli klinik uygulamalı derslerinden başarısız olan öğrenciler,
+başarısız oldukları bu ders yerine, başka bir seçmeli klinik uygulamalı dersi alabilirler.
+c) Dönem 4 veya Dönem 5’teki klinik uygulamalı derslerinden başarısız olan öğrenciler
+yurt içi ya da yurt dışındaki eğitim kurumlarında yaz dönemlerinde açılan klinik uygulamalı
+derslere devam edebilirler. Bu durumda yapılacak olan ders programının fakültemizdeki
+programla uygunluğu Eğitim Komisyonu tarafından değerlendirilir ve gerekirse ilgili
+Anabilim Dalı/dallarının görüşü alınır. Dönem 4 için programlanan klinik uygulamalı dersleri
+başarı ile tamamlayamayan öğrenciler yaz döneminde Dönem 5 için programlanan klinik
+uygulamalı yaz derslerini alamazlar.
+Aşama 3’te sınav uygulamaları
+MADDE 15 - (1) Sınav uygulamalarına ilişkin genel kurallar aşağıdaki gibidir:
+a) Bu dönemde staj sonlarında sınav yapılamaz.
+b)
+Öğrencinin bu dönemde belirlenen birimlerde belirtilen süre kadar bulunması ve
+poliklinik ve kliniklerde hasta izlemi, tıbbi girişim, laboratuvar çalışması, nöbet tutma gibi
+programlanan çalışmaları yapmış olması zorunludur. Öğrencinin staj sonunda yeterli olup
+olmadığına ilgili Anabilim Dalı kurullarının öğrencinin staj karnesini değerlendirmesi ile karar
+verilir.
+ALTINCI BÖLÜM
+Aşama 2’ye Geçme ve Aşama 3’e Başlama Koşulları, Mazeret Sınavı, Ek Sınav
+Hakkı ve Onur/Yüksek Onur Öğrencileri
+Aşama 2’ye geçme
+MADDE 16 - (1) AGNO’su en az 2.00 olan ve ilk üç dönemi zorunlu 5ı dersler ve seçmeli
+dersler de dahil başarı ile tamamlayan öğrenciler Aşama 2’ye geçebilirler.
+Dönem 4’ten Dönem 5’e geçme koşulları
+MADDE 17 – (1) Öğrencinin Dönem 4’ten Dönem 5’e geçebilmesi için, Dönem 4
+17
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+programında yer alan tüm eğitimleri başarı ile tamamlamış olması gerekir.
+Aşama 3’e başlama koşulları
+MADDE 18 – (1) AGNO’su en az 2.00 olan, Dönem 5’teki zorunlu ve seçmeli tüm
+eğitimlerini başarmış olan öğrenci Aşama 3’e geçer.
+Mazeret Sınavları
+MADDE 19 – (1) Yalova Üniversitesi Lisans Eğitim ve Öğretim Yönetmeliğinin 20 nci
+maddesinde belirtildiği şekilde geçerli bir mazeret nedeniyle ara sınava giremeyen, mazeretinin
+bitim tarihini izleyen en geç üç iş günü içinde bir dilekçe ile Dekanlığa başvuran ve mazeretinin
+geçerliliği kabul edilen öğrenciler için mazeret sınav hakkı verilir. Yıl/Yarıyıl sonu sınavları,
+bütünleme sınavları ve ek sınavlar için öğrenciye mazeret sınavı hakkı verilmez.
+(2) Dönem başında tüm yarıyıllar ve tüm dersler için ortak, ikişer günlük ve ara sınav
+tarihlerine mümkün olan en yakın tarihte olacak şekilde mazeret sınavı günleri belirlenir ve
+ilan edilir. Ara sınavlara yönelik mazeret sınavları dönem sonu sınavından en az bir hafta önce
+uygulanır.
+(3) Mazeret sınavlarının düzenlenmesini Dekanlık, yürütmesini ilgili yürütücü
+üstlenir.
+Ek sınav hakkının kullanılması
+MADDE 20 – (1) Ek sınavlar Aşama 2’den Aşama 3’e geçiş esnasında uygulanır.
+Dönem 5’teki tüm eğitimlerini tamamlayan, devam koşulunu yerine getirerek sınavlara giren
+öğrenciye Aşama 3’e başlayabilmesi için Dönem 5’te başarısız olduğu en fazla bir klinik
+uygulamalı dersten ek sınav hakkı verilir.
+a)
+Dönem 5’teki eğitimlerini yıl içinde bitiren öğrenciler ek sınav hakkını, mevcut
+grupların yılsonu sınavlarına girerek kullanırlar. Öğrenci ek sınav hakkını farklı bir tarihte
+kullanmak isterse, ek sınav tarihi Eğitim Komisyonunun önerisiyle Yönetim Kurulu
+tarafından belirlenir. Dönem 5’i zamanında bitiren öğrenciler için dönemin tamamlanmasını
+takiben ayrı bir ek sınav programı düzenlenir.
+b) Ek sınava giren öğrencinin önceki sınav notları göz önüne alınmadan, ek sınav notu
+başarı notu olarak değerlendirilir.
+c) Bu maddede belirtilen koşullardaki öğrenci ek sınav hakkından yararlanabilmek için,
+bütünleme sınavları veya yaz okulu sınav sonuçlarının açıklanmasını izleyen iki iş günü içinde
+Dekanlığa dilekçe ile başvurur. Başvuranların durumları incelendikten sonra, Dekanlık ek
+sınav hakkından yararlanacak olan öğrencileri ilan eder.
+ç) Bu maddede açıklanan ek sınav hakları her öğrenciye sadece bir defa tanınır. Ek sınav
+hakkından yararlanan, fakat başarısız olan öğrenciler başarısız oldukları klinik uygulamalı
+dersi tekrar etmek zorundadırlar. Tekrarı akademik takvimde yer alan bir sonraki ilgili klinik
+uygulamalı ders grubuna dâhil olarak yaparlar.
+Onur/Yüksek Onur Öğrencileri
+MADDE 21 – (1) Onur/Yüksek onur öğrencileri Yönetmeliğin 24 üncü maddesine göre
+belirlenerek ilan edilir.
+Mezuniyet Başarı Derecesi
+MADDE 22 – (1) maddesinde belirlenen ilke ve şartlar çerçevesinde değerlendirilir.
+(2) Mezun olduğu yıl dereceye giren öğrenciler, doğrudan geçmiş, bütünlemeye kalmamış
+ve sınıf/staj tekrarı yapmamış olan öğrenciler arasından, mezuniyet başarı derecesine göre
+sıralama ile belirlenir.
+YEDİNCİ BÖLÜM
+Çeşitli ve Son Hükümler
+Hüküm bulunmayan haller
+MADDE 23 – (1) Bu Yönergede hüküm bulunmayan hallerde; ilgili mevzuat hükümleri
+ile Yükseköğretim Kurulu, Senato ve ilgili kurulların kararları uygulanır.
+Yürürlük
+18
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+Senato: 08.10.2025/326 Madde 3’ün Ekidir.
+
+MADDE 24 – (1) Bu Yönerge, Yalova Üniversitesi Senatosunda kabul edildiği
+tarihten itibaren yürürlüğe girer.
+Yürütme
+MADDE 25 – (1) Bu Yönerge hükümlerini Yalova Üniversitesi Rektörü yürütür.
+
+19
+Bu belge,
+güvenli
+elektronik imza ile imzalanmıştır. Tarihi :;Güncelleme Numarası:
+Belge Numarası :TIPF-YNG-002;İlk
+Yayın
+Tarihi:8.10.2025;Güncelleme
+Belge Dogrulama Kodu: E473AFM Belge Takip Adresi: https://www.turkiye.gov.tr/yalova-universitesi-ebys
+
+

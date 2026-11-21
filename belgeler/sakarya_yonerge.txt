@@ -1,0 +1,487 @@
+T.C.
+SAKARYA ÜNİVERSİTESİ
+TIP FAKÜLTESİ MEZUNİYET ÖNCESİ
+EĞİTİM- ÖĞRETİM VE SINAV YÖNERGESİ
+(Senatonun 24.10.2025 tarihli 723 sayılı ve “7” no’lu kararı ile güncellenmiştir.)
+
+BİRİNCİ BÖLÜM
+Amaç, Kapsam, Dayanak ve Tanımlar
+Amaç
+MADDE 1 – (1) Bu Yönergenin amacı Sakarya Üniversitesi Tıp Fakültesinde yürütülen
+eğitim-öğretim ve sınavlara ilişkin esasları düzenlemektir.
+Kapsam
+MADDE 2 – (1) Bu Yönerge; yürürlükteki Sakarya Üniversitesi Ön lisans ve Lisans
+Eğitim-Öğretim ve Sınav Yönetmeliği’ne tabi olan Sakarya Üniversitesi Tıp Fakültesi
+öğrencilerinin eğitim-öğretim, ölçme-değerlendirme ve mezuniyetlerine ilişkin hükümleri
+kapsar.
+Dayanak
+MADDE 3 – (1) Bu yönerge, 10 Haziran 2019 tarih ve 30797 sayılı Resmi Gazete’de
+yayınlanarak yürürlüğe giren Sakarya Üniversitesi Ön lisans ve Lisans Eğitim-Öğretim ve
+Sınav Yönetmeliği’ne dayanılarak hazırlanmıştır.
+Tanımlar
+MADDE 4- (1) Bu Yönergede geçen;
+a) AKTS (ECTS- European Credit Transfer System): Ders kredilendirilmesinde ortak
+parametre olarak kullanılan Avrupa Kredi Transfer Sistemini,
+b) Başarı katsayısı: Harfli başarı notunun 0,00 ile 4,00 arasındaki karşılığını,
+c) Başarı notu: Öğrencilere aldıkları derslerde gösterdikleri başarı için verilen harf
+notunu,
+ç) Baş koordinatör: Sakarya Üniversitesi Tıp Fakültesinde eğitim-öğretim
+programlarının planlanması, yürütülmesi ve koordinasyonundan sorumlu kişiyi,
+d) Çekirdek eğitim programı (ÇEP): Sakarya Üniversitesi Tıp Fakültesinin mezuniyet
+öncesi bilgi, beceri ve tutum eğitiminde zorunlu olan bilgi düzeyini belirleyen çerçeveyi,
+e) Çerçeve eğitim programı: Sakarya Üniversitesi Tıp Fakültesi eğitimde; eğitim
+yaklaşımı ve ilkelerden yeterlik alanlarına, öğrenme içeriğinden öğrenme ve değerlendirme
+yöntemlerine, uygulama sürecinden değerlendirme sürecine kadar programın ana yapısını
+belirleyen esaslar bütününü,
+f) Dekanlık: Sakarya Üniversitesi Tıp Fakültesi Dekanlığını
+g) Ders programı: Belirli bir konu, temanın ilgili tıp disiplinleri tarafından teorik ve/veya
+uygulamalı olarak belirli bir süre ve akış içinde işlendiği disipliner veya disiplinler arası öğretim
+etkinlikleri bütününü,
+ğ) Eğitim rehberi: Sakarya Üniversitesi Tıp Fakültesi Mezuniyet Öncesi Eğitim
+Uygulamaları Koordinasyon Rehberini,
+h) Entegre Sistem: 1 inci, 2 nci ve 3 üncü Sınıf derslerinin anabilim dallarına göre değil,
+konulara göre verilmesi esasına dayalı eğitim sistemini,
+ı) Fakülte: Sakarya Üniversitesi Tıp Fakültesini,
+i) Fakülte Kurulu: Sakarya Üniversitesi Tıp Fakültesi Fakülte Kurulunu,
+j) Fakülte Yönetim Kurulu: Sakarya Üniversitesi Tıp Fakültesi Fakülte Yönetim
+Kurulunu,
+k) Faz: Sakarya Üniversitesi Tıp Fakültesinin eğitim programında amaç, içerik, yöntem
+ve eğitim ortamları açısından ortak özellikler taşıyan eğitim dönemlerini (Birinci, ikinci ve
+üçüncü sınıflar Faz I – klinik öncesi, dördüncü ve beşinci sınıflar Faz II – klinik ve altıncı sınıf
+1
+
+Faz III – internlik),
+l) Genel Not Ortalaması (GNO): Üniversite ortak zorunlu ve seçmeli dersleri dahil,
+öğrencinin almış olduğu ve notu oluşmuş derslerin ortalamasını,
+m) İnternlik: Tıp Fakültesi 6 ncı sınıfı kapsayan 12 aylık eğitim dönemini,
+n) Klinik Tıp Bilimlerine Giriş Programı: Faz I’de yer alan ve öğrencilerin temel
+mesleki beceriler, insani ve mesleki değerler ve etik yaklaşım açısından klinik eğitime
+hazırlandığı öğretim uygulamalarını,
+o) Klinik Uygulama Bloğu: Faz II de birden fazla anabilim dalının katkısıyla yürütülen
+klinik uygulama derslerinin bütününü,
+ö) Klinik Uygulama Dersi: Faz II’de ilgili anabilim dalları tarafından yürütülen
+uygulama ağırlıklı ders programlarını,
+p) Klinik Uygulama Dersi Sorumlusu: Tıp Fakültesi 4 ncü ve 5 inci sınıflarda yürütülen
+eğitim programlarından sorumlu olan öğretim üyesini,
+r) Koordinatörler Kurulu: Sakarya Üniversitesi Tıp Fakültesi Mezuniyet Öncesi Tıp
+Eğitimi Koordinatörler Kurulunu (MÖTEK),
+s) Modül: Belirli bir ders programı içerisinde, bir konunun multidisipliner yaklaşımla
+ele alındığı ve probleme dayalı öğrenme (PDÖ), olgu tartışması, ekip çalışmasına dayalı
+öğrenme vb. interaktif öğrenme yöntemlerinin kullanıldığı disiplinler arası öğretim
+uygulamalarını,
+ş) Probleme dayalı öğretim (PDÖ): Belirli bir ders kurulu veya Klinik Uygulama Dersi
+içerisinde bir konunun multidisipliner yaklaşımla değerlendirildiği eğitim şeklini,
+t) Öğrenci: Sakarya Üniversitesi Tıp Fakültesi öğrencisini,
+u) Rektör: Sakarya Üniversitesi Rektörünü,
+ü) Senato: Sakarya Üniversitesi Senatosunu,
+v) Sınıf: Her eğitim yılının bütününü (Tıp eğitimi 6 yıldır ve eğitimde yıl bütünlüğü
+esastır),
+y) Sınıf programı: Birinci sınıftan altıncı sınıfa kadar her bir sınıfta yer alan zorunlu ve
+seçmeli ders programlarının bütününü,
+z) Staj programı: Faz III’te ilgili anabilim dalları tarafından yürütülen uygulama ağırlıklı
+ders programlarını,
+aa) Staj Sorumlusu: Tıp Fakültesi 6 ncı sınıfta yürütülen eğitim programlarından
+sorumlu olan öğretim üyesini,
+bb) Temel Tıp Bilimleri Programı: Faz I’de organizmayı oluşturan sistem ve organların
+biyolojik özelliklerinin, gelişim ve hastalıklarının klinik yaklaşımlarının ve diğer özelliklerinin
+ilgili tıp disiplinleri tarafından teorik ve uygulamalı olarak belirli bir süre ve akış içinde
+işlendiği, belirli sayıda ders kurulundan oluşan, öğretim ve ölçme-değerlendirme etkinlikleri
+bütününü,
+cc) Üniversite: Sakarya Üniversitesini,
+dd) Yılsonu ağırlıklı not ortalaması (YNO): Öğrencinin, belirli bir sınıf programı
+kapsamında tamamlaması gereken tüm zorunlu ve seçmeli ders programlarındaki notlarının
+ağırlıklı ortalamasını,
+ee) Yılsonu sınavı alt limiti (YSSL): Bir ders programından başarılı olmak için gerekli
+yılsonu sınavı notu alt sınır değerini,
+ifade eder.
+İKİNCİ BÖLÜM
+Eğitim-Öğretime İlişkin Esaslar
+Eğitim ilkeleri ve görevleri
+MADDE 5 - (1) Mezuniyet öncesi eğitimle ilgili ilke ve görevler, Fakültenin misyon,
+vizyon ve stratejik planında belirtildiği şekildedir.
+2
+
+(2) Fakültede tüm eğitim uygulamaları, “Eğitim Rehberi” doğrultusunda koordine edilir.
+Eğitim Rehberi rutin olarak her yıl akademik takvim belirlenirken gözden geçirilir ve yeniden
+düzenlenir.
+Eğitim modeli
+MADDE 6 - (1) Fakültede entegre eğitim sistemi uygulanır. Hem yatay hem dikey
+entegrasyon birlikte sağlanır.
+(2) Faz I eğitim dönemi olarak adlandırılan ilk üç yılda üç tür ders programı
+bulunmaktadır. Klinik öncesi eğitim dönemi olarak da adlandırılan Faz I’de bulunan program
+türleri şunlardır:
+a) Temel Tıp Bilimleri Programı: Fakültenin 1. ve 2. sınıflarında yürütülür. Ağırlıklı
+olarak Temel Tıp Bilimleri konularından oluşan, her biri özel bir temaya sahip olan ve kendi
+içinde bütünlük arz eden Ders Kurulu adı verilen dersler bütünüdür.
+b) Klinik Tıp Bilimlerine Giriş Programı Fakültenin 3. sınıfında yürütülür. Temel ve
+Klinik Tıp Bilimleri arasındaki dikey entegrasyonun sağlandığı, her biri özel bir temaya sahip
+olan ve kendi içinde bütünlük arz eden Ders Kurulu adı verilen dersler bütünüdür.
+c) Üniversite Ortak Zorunlu ve Seçmeli dersleri: Üniversitenin Eğitim Öğretim ve Sınav
+Yönetmeliği hükümlerine göre yürütülür.
+(3) Klinik Eğitim Dönemi Faz II ve Faz III biçiminde iki evreden oluşur.
+a) Faz II: 4. ve 5. sınıflarda yürütülür. Cerrahi ve Dâhili Tıp Bilimleri bölümlerinde yer
+alan anabilim dalları tarafından verilen zorunlu ve seçmeli Klinik Uygulama Derslerinin
+bütünüdür.
+b) Faz III: 6. sınıfta yürütülür. İnternlik olarak adlandırılan bu dönem, uzmanlık eğitimi
+verilen Temel, Dahili ve Cerrahi Tıp Bilimleri bölümlerinde yer alan anabilim dalları tarafından
+verilen zorunlu ve seçmeli stajların bütünüdür.
+Akademik takvim
+MADDE 7- (1) Mezuniyet Öncesi Tıp Eğitimi Koordinatörler Kurulu tarafından
+hazırlanan akademik takvim Fakülte Kurulunun onayından sonra Senato’ya sunulur.
+Öğretim dili
+MADDE 8 - (1) Eğitim-öğretim dili Türkçedir.
+Devam zorunluluğu
+MADDE 9 - (1) Tüm Faz’larda ders programlarına devam zorunludur. Ancak Faz I’de
+Temel Tıp Bilimleri I-II ve Klinik Tıp Bilimlerine Giriş derslerinde devam şartını sağlamasına
+rağmen başarısız olan öğrencilerden sonraki eğitim öğretim dönemlerinde ilgili derslere devam
+şartı aranmaz
+(2) Faz 1 ders programındaki her bir teorik derse ait toplam ders saatlerinin ve her bir
+uygulamalı derse ait uygulama saatlerinin % 70’ine devam zorunluluğu vardır. Faz 1’de her bir
+uygulamanın, ayrı ayrı, toplam ders saatlerinin en az % 70’ine devam etmeyen öğrenciler söz
+konusu uygulamaların sınavlarına; Ders Kurulunda bulunan toplam teorik ders saatlerinin en
+az % 70’ine devam etmeyen öğrenciler ders kurulu sınavına, Faz I dönemindeki her bir
+dönemdeki ders programlarının toplam ders saatinin en az % 70’ine devam etmeyen öğrenciler
+final ve bütünleme sınavına alınmazlar. Faz II’de Klinik Uygulama Derslerinden her bir dersin
+teorik ve uygulamalı tüm ders saatlerinin en az %80’ine devam etmeyen öğrenciler söz konusu
+dersin değerlendirme sınavına ve bütünleme sınavına alınmazlar. Faz III’te devam hususunda
+Fakültenin “Sakarya Üniversitesi Tıp Fakültesi İnternlik Dönemi Eğitim ve Çalışma
+Yönergesi” hükümleri uygulanır.
+(3) Sanat, spor, kültür faaliyetlerine ve bilimsel faaliyetlere katılacak öğrenciler Fakülte
+Yönetim Kurulu tarafından uygun bulunması durumunda mazeretli izinli sayılırlar.
+Klinik Uygulama Dersi / Bloğu
+MADDE 10 - (1) 4 üncü ve 5 inci sınıflarda Klinik Uygulama Dersleri gruplar halinde
+yapılır. Klinik Uygulama Dersi yapılacak klinikler ve ders süreleri Fakülte Kurulu tarafından
+3
+
+belirlenerek Eğitim-Öğretim yılı başında ilan edilir. Gerekli durumlarda seçmeli Klinik
+Uygulama Dersi yapılabilir.
+(2) Gerekli görüldüğü takdirde, ilgili Anabilim Dalı Akademik Kurulunun uygun
+görmesi üzerine, Fakülte Yönetim Kurulu kararı ile akademik takvim dışındaki zamanlarda da
+Klinik Uygulama Dersi açılabilir.
+(3) Klinik Uygulama dersleri gerekli görüldüğü takdirde birden fazla anabilim dalının
+katkısıyla blok biçiminde yürütülebilir. Bu durumda sınavlar ve başarı değerlendirmeleri ayrı
+ayrı veya ortak yapılabilir.
+Klinik Uygulama Ders/Blok sınavı ve başarı değerlendirmesi
+MADDE 11 - (1) 4 üncü ve 5 inci sınıflarda her Klinik Uygulama Dersi/Bloğu sonunda
+teorik ve pratik (beceriye yönelik pratik sınav ve beceri tipinde biçimlendirici sınavlar) olmak
+üzere değerlendirme sınavları yapılır ve Klinik Uygulama Dersi/Bloğu başarı notu bu sınavların
+ağırlıklı ortalaması alınarak hesaplanır. Teorik ve uygulama sınavlarına programda görevli
+öğretim üyeleri iştirak ederler. Klinik Uygulama Dersi/Bloğu sınavlarıyla ilgili uygulamaları
+anabilim dalı Klinik Uygulama Dersi/Bloğu Sorumlusu yürütür.
+(2) Klinik Uygulama Dersi/Bloğu başarı notu, harf notu olarak Anabilim Dalı Klinik
+Uygulama Dersi/Bloğu Sorumlusu tarafından ilan edilir ve ayrıca yazılı olarak Dekanlığa
+iletilir.
+Bütünleme sınavı ve Klinik Uygulama Ders/Blok tekrarı
+MADDE 12 - (1) 4 üncü ve 5 inci sınıflarda Klinik Uygulama Dersi/Bloğu sınavlarında
+başarılı olmayan öğrenciler, bu dersin bütünleme sınavına girerler. Bütünleme sınav tarihleri
+Fakülte Yönetim Kurulu kararı ile belirlenir.
+(2) Bütünleme sınavlarında bu yönergenin 11 inci maddesinin 1 inci fıkrasındaki
+hükümler tekrar uygulanır.
+(3) Bütünleme sınavlarında başarısız olan öğrenciler bu Klinik Uygulama Dersi/Bloğu
+veya Derslerini/Bloklarını bir sonraki ders yılında tekrar ederler. Ancak, 4 ve 5 inci sınıfta
+bütünleme sınavlarında başarısız olan öğrencilere anabilim dalının uygun görüşü ve Fakülte
+Yönetim Kurulu kararı ile akademik takvim dışındaki zamanlarda Klinik Uygulama
+Dersi/Bloğunu alma hakkı verilebilir.
+(4) 4 üncü ve 5 inci sınıflarda, Klinik Uygulama Dersi Dersi/Bloğu tekrarında başarısız
+olan ve bütünlemeye kalan öğrenciler, bu Yönergenin ilgili maddelerinde yer alan sürelere göre
+yılsonu bütünleme sınavını beklemeden devam eden programda, o dersin bir sonraki Klinik
+Uygulama Ders/Blok sonu sınavına bütünleme sınavı olarak katılabilirler.
+(5) Klinik Uygulama Dersi/Bloğu Sorumlusu öğrencilerin derslere devam durumunu
+takip eder, devamsızlık nedeniyle sınava giremeyecek öğrencileri belirler ve ilan eder.
+İnternlik eğitimine ilişkin esaslar
+MADDE 13 - (1) Faz III eğitimi, Sakarya Üniversitesi Tıp Fakültesi İnternlik Dönemi
+Eğitim ve Çalışma Yönergesi hükümlerine göre yürütülür.
+ÜÇÜNCÜ BÖLÜM
+Ölçme-Değerlendirme ve Mezuniyete İlişkin Esaslar
+Ölçme-değerlendirme sistemi
+MADDE 14 - (1) Fakültede her öğrenme alanına (bilgi, beceri, tutum, yeterlik) uygun
+ölçme değerlendirme yöntemleri kullanılır. Ders programlarında uygulanan değerlendirme
+yöntemleri ve uygulama şekilleri, ilgili eğitim kurulları tarafından belirlenir ve Fakülte
+Kurulu’nca onaylanır.
+(2) Temel Tıp Bilimleri Dersi I ve II, Klinik Uygulamalara Giriş ve Klinik Uygulama
+Dersleri/Blokları sürecinde ve sonunda yapılan tüm değerlendirmeler kullanılarak, her bir ders
+
+4
+
+programı için 100 üzerinden tek puan hesaplanır. Hesaplanan bu puan söz konusu programın
+başarı notudur ve mutlak değerlendirme sisteminde bu başarı notu esas alınır.
+Notlandırma ve başarı durumları
+MADDE 15 - (1) Faz I’de, ders programlarının harfli başarı notlarını hesaplamak için
+şu sistemler uygulanır:
+a) Temel Tıp Bilimleri Dersi I, II ve Klinik Uygulamalara Giriş derslerinde mutlak
+değerlendirme sistemi kullanılır.
+b) Üniversite Ortak Zorunlu ve Seçmeli Dersleri Üniversite Eğitim Öğretim ve Sınav
+Yönetmeliği hükümlerine göre yürütülür.
+(2) Faz II’de Klinik Uygulama Derslerinin/Bloklarının harfli başarı notlarını
+hesaplamak için mutlak değerlendirme sistemi uygulanır.
+(3) Fakültenin tüm sınıflarında yapılan sınavlar 100 tam not üzerinden değerlendirilir.
+Alınan notların 4’lük sistemdeki karşılıkları, aşağıdaki tabloya göre dönüştürülür.
+a) Sınav sonuçlarını tanımlamada notlara ilişkin aşağıdaki tablo kullanılır:
+Puanlar
+Başarı Derecesi Başarı Notu Katsayısı
+90-100
+Pekiyi
+AA
+4.00
+85-89.99
+İyi–Pekiyi
+BA
+3.50
+75-84.99
+İyi
+BB
+3.00
+70-74.99
+Orta-İyi
+CB
+2.50
+60-69.99
+Orta
+CC
+2.00
+0-59.99
+Başarısız
+FF
+0.00
+Devamsız
+DZ
+0.00
+Sınava Girmedi
+GR
+0.00
+Yeterli
+YT
+-Yetersiz
+YZ
+-Muaf
+MU
+-Eksik
+E
+-b) Geçer notlar; AA, BA, BB, CB, CC ve YT notlarıdır. Sadece Üniversite Ortak
+Dersleri ve Seçmeli Dersler için geçerli olmak üzere ise DC ve DD notlarından birisini alan
+öğrenci, o dersi şartlı olarak başarmış sayılır.
+c) MU notu, yükseköğretim kurumları arası yatay geçiş yapan veya daha önce devam
+ettiği herhangi bir yükseköğretim kurumunda başarılı olunan derslerin eşdeğerlerine ve
+muafiyet sınavı uygulanan derslerden başarılı olan öğrencilere verilir.
+ç) YT notu, ortalamaya girmeyen ve başarılmış derslerin başarı notu olarak verilir.
+d) Geçmez notlar şunlardır:
+1) FF notu: Sınav değerlendirme sonucu başarısız olan öğrenciye verilen nottur. Sonuç
+başarısız olarak kabul edilir. Temel Tıp Bilimleri Dersi I ve II ve Klinik Tıp Bilimlerine Giriş
+dersinin yılsonu (final) sınavında FF notu alan öğrenci bütünlemeye kalır. Bütünleme sınavı
+sonucunda da FF notu alan öğrenci sınıfta kalır.
+2) Faz II ‘de Klinik Uygulama Ders/Blok sonu sınavında FF alan öğrenci bütünlemeye
+kalır. Bütünleme sınavından da FF notu alan öğrenci Klinik Uygulama Dersini/Bloğunu tekrar
+eder.
+3) GR notu: Devamlı ve sınava girme hakkı olduğu halde sınava girmemiş öğrencinin
+aldığı nottur. Not ortalamaları hesabında FF notu işlemi görür, puanı sıfır (0) kabul edilir. Bu
+durumdaki Faz I öğrencilerinin sınıf sonu sınavı ve bütünleme sınavına girme hakkı vardır. Faz
+II öğrencileri ise Klinik Uygulama Dersini tekrar etmeden bütünleme sınavına girebilir.
+4) DZ notu: Derse devam yükümlülüklerini yerine getirmeyen öğrencilerin aldığı nottur.
+Not ortalamaları hesabında FF notu işlemi görür.
+5
+
+5) YZ notu: Ortalamaya girmeyen ve başarılmamış derslerin başarı notu olarak verilir.
+6) E notu: Faz III stajlarında eğitim ve öğretim faaliyetinin belirlenen akademik takvime
+göre tamamlanamaması hallerinde dersin koordinatörünün kararı ile tamamlanması için
+verilecek süreyi ifade eder. Ek süre, E notu girildiği tarihten itibaren Senato tarafından
+belirlenecek süreyi geçemez. Eğer ders notu bu süre zarfında sisteme girilmez ise Yetersiz (YZ)
+harf notu ile değiştirilir.
+Sınavlar
+MADDE 16- (1) Faz I’de okutulan dersler ve sınavlara ilişkin esaslar aşağıda
+belirtilmiştir:
+a) Faz I’de okutulan dersler ders kurulları şeklinde verilir. Sınıf koordinatörü,
+programların hazırlanması, duyurulması, eğitimin değerlendirilmesi, sınavların yapılması,
+sınav sonuçlarının ve itirazların değerlendirilmesi ile ilgili işlemleri yürütür.
+b) Ders Kurulu sınavı, her ders kurulu sonunda yapılan sınavdır. Ders kurulu sınavı ara
+sınav yerine geçer. Ders kurulu sınavında alınan nota ders kurulu notu denir. Ders kurulunda
+modül varsa her bir modülün notu en fazla kurul notunun %10’u kadar ağırlıkta olmak üzere
+FYK tarafından belirlenir, teorik ve uygulamalı sınavlarının toplam notu ise %100’e tümleyen
+ağırlıktadır. Sınav görevlileri Dekanlık tarafından belirlenir.
+c) Teorik ve uygulamalı derslerden oluşan kurulların toplam notlarının
+hesaplanmasında, ders kurulunda yer alan teorik ve uygulamalı oturumların her biri aynı
+değerdedir. Teorik dersler, her kurul sonunda 100 puan üzerinden yapılan tek bir sınav ile
+değerlendirilir ve bu sınava ilgili kuruldaki tüm anabilim dalları ders saatleri ağırlığınca soru
+katkısında bulunur. Uygulamalı dersler ise ilgili anabilim dallarınca yine 100 puan üzerinden
+yapılan sınav ile değerlendirilir. Kurul notu, teorik sınav ve uygulamalı sınavlardan alınan
+notların ders saatleri dikkate alınarak ağırlıklı ortalamasının hesaplanması sonucu belirlenir.
+ç) 1 nci, 2 nci ve 3 üncü sınıflarda, her akademik yılın sonunda son ders kurulu sınavının
+bitiminden en erken 14, en geç 28 gün sonra yapılan ve o yıl okutulan tüm ders kurullarını
+kapsayan sınava yılsonu (final) sınavı denir. Bu sınavdan en az 50 alma zorunluluğu vardır.
+Yılsonu başarı notu 60 ve üzeri olan öğrenciler bir üst sınıfa geçer.
+d) Bütünleme sınavı, yılsonu (final) sınavının bitiminden en erken 14, en geç 28 gün
+sonra yapılan sınavdır. Bütünleme sınavına yılsonu sınavlarında başarılı olamayan ve sınav
+hakkını kazandığı halde bu sınava herhangi bir nedenle giremeyen öğrenciler katılır.
+e) Yılsonu (Final veya bütünleme) sınavlarında 100 alması durumunda bile bir üst sınıfa
+geçemeyecek olan öğrenciler bu sınavlara giremezler.
+f) Bir ders kurulunda her teorik dersin kendi barajı vardır. Ders baraj sınırı %50’dir.
+Öğrenci, ders kurulu sınavında kurulu oluşturan derslerin bir veya birkaçından %50’nin altında
+not alırsa, o dalda elde ettiği puan ile o dalın toplam puanının %50’si arasında kalan puan farkı
+sınav toplam puanından düşülerek o ders kurulu sınav notu belirlenir. Final ve bütünleme sınavı
+notu belirlenirken baraj uygulanmaz.
+g) Ders kurulları (yıl içi) ortalama notu, kurullardaki toplam ders saatlerinin yıliçi
+toplam ders saatlerine oranı dikkate alınarak hesaplanan ağırlıklı not ortalamasıdır.
+ğ) Faz I derslerinin yılsonu başarı notu, ders kurulları ortalama notunun (yıl içi ortalama)
+%60’ı ile final sınavında alınan notun %40’ının toplanması ile elde edilen nottur. Bütünlemeye
+kalan öğrencilerin yılsonu başarı notunun hesaplanmasında final sınavından alınan not yerine
+bütünleme sınavından alınan not dikkate alınır. Öğrencinin bir üst sınıfa geçebilmesi için,
+yılsonu (final-bütünleme) sınavlarından en az 50 alması ve yılsonu başarı notunun 100
+üzerinden en az 60 olması gerekir.
+h) Tüm ders kurullarının sınavlarına katılan ve ortalama notu (yıl içi) 80 veya daha fazla
+olan Faz I’deki öğrenciler yılsonu sınavına girmeden başarılı olmuş sayılırlar. Bu durumda
+öğrencilerin ders kurulları ortalama notu yılsonu başarı notu olarak kabul edilir.
+
+6
+
+ı) Yılsonu başarı notu 60’in altında olan öğrenciler, bütünleme sınavına girerler.
+Bütünleme sınavından alınan not sonucunda yılsonu başarı notunun yine 60’in altında olması
+durumunda sınıfta kalırlar. Yılsonu sınavına (final) girmeyen öğrenci bütünleme sınavına da
+girmemesi halinde o yıl sınıfta kalmış sayılır.
+i) Sınav oturumlarında oturumu oluşturan sınav bileşenlerinin (Teorik, uygulama, lab,
+vb.) herhangi birinde kopya çeken veya kopya girişiminde bulunduğu saptanan öğrenciye ilgili
+oturumdaki bütün sınavlardan sıfır (0) notu verilir ve yürürlükteki 2547 sayılı Yükseköğretim
+Kanunu’nun 54. maddesi hükümleri uygulanır.
+j) Öğrencinin girme hakkı olmadığı halde bir sınava girmesi durumunda aldığı not, ilan
+edilmiş olsa dahi iptal edilir.
+Üniversite ortak zorunlu ve seçmeli ders başarı notu
+MADDE 17 - (1) Üniversite Ortak Zorunlu ve Seçmeli dersleri, yürürlükteki Sakarya
+Üniversitesi Ön lisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği hükümlerine göre
+yürütülür.
+Ağırlıklı not ortalamaları
+MADDE 18 - (1) Yılsonu ağırlıklı not ortalaması (YNO): Öğrencinin bir sınıf
+programında yer alan ve tamamlamakla yükümlü olduğu Üniversite Ortak zorunlu ve Seçmeli
+dersleri hariç zorunlu tüm programlardan aldığı başarı katsayılarının kredi ağırlıklı
+ortalamasıdır.
+(2) Genel ağırlıklı not ortalaması (GNO): Öğrencinin belirli bir eğitim dönemi (Faz I,
+II) içinde tamamlamış olduğu Üniversite Ortak zorunlu ve Seçmeli dersleri dahil tüm ders
+programlarından alınan başarı katsayılarının ağırlıklı not ortalamasıdır. Faz I ve Faz II eğitim
+dönemlerine ait GNO’lar, bu eğitim dönemlerinin sonunda ayrı ayrı hesaplanarak not döküm
+belgesinde (transkript) gösterilir. Faz III eğitim dönemi sonunda hesaplanan GNO aynı
+zamanda öğrencinin mezuniyet GNO’sudur.
+Akademik başarı not ortalamaları, bir üst sınıf programına ve eğitim dönemine
+geçiş
+MADDE 19 - (1) Tıp Fakültesinde entegre sistem uygulanır ve altı yıllık eğitim süresi kendi
+içinde üç ayrı eğitim dönemine ayrılır. Eğitim dönemlerinin (Faz I, II ve III) kendi içlerindeki
+bütünlükleri esastır. Öğrencinin, bir eğitim döneminden bir sonraki eğitim dönemine geçişi ve
+mezuniyetine GNO hesaplanarak kararlaştırılır.
+(2) Eğitim dönemlerinin sonunda bir sonraki eğitim dönemine geçmek ve mezun olabilmek için
+öğrencinin GNO’sunun en az 2.00 olması gerekir.
+
+(3) Devamsızlık harici başarısız olan öğrenciler, başarısız olduğu ders programlarının o
+eğitim-öğretim yılında yapılan bütünleme sınavlarına girerler.
+(4) Bütünleme sınavında başarısız olan öğrenciler bu programı tekrar alırlar. Ders
+programlarının tekrar alınmaları halinde bu programlara devam şartı aranır.
+(5) Faz I den Faz II eğitim dönemine geçilebilmesi için, Temel Tıp Bilimleri Dersleri I
+ve II, Klinik Tıp Bilimlerine Giriş derslerinden en az CC düzeyinde başarılı olunması gerekir.
+Faz I sonunda öğrencinin ön lisans diploması almayı hak kazanması için, bu eğitim döneminde
+bulunan tüm derslerden başarılı olması ve Faz I GNO’sunun en az 2.00 olması gerekmektedir.
+(6) Faz II eğitim dönemi kendi içinde bir bütündür. Faz II’de öncelikle 4. Sınıf dersleri
+/blokları alınır. 4. Sınıftan 5. Sınıfa geçebilmek için 4. Sınıf tüm derslerinin başarılamaması
+durumunda Fakülte Yönetim Kurulu Kararı ile 5. Sınıftan ders alabilir. Faz II eğitim
+döneminden başarılı olunması ve Faz III’e başlanabilmesi için Faz Il’deki tüm ders
+programlarından en az CC ve üzeri not alınması gerekir.
+(7) Faz I’deki tüm derslerden (Üniversite Ortak Zorunlu ve Seçmeli dersleri dahil)
+3’üncü sınıfın sonuna kadar başarılı olamayan öğrenci Faz II eğitim dönemine başlayamaz.
+(8) Öğrencinin Faz III eğitim döneminde başarılı olması için, bu dönemde alması
+gereken tüm seçmeli ve zorunlu stajlardan başarılı olması gerekir.
+Sınav takvimi ve uygulanması
+7
+
+MADDE 20 - (1) Sınav günleri her yıl akademik takvimde ilan edilir. Sınav tarihleri
+ilan edildikten sonra ancak Fakülte Yönetim Kurulu kararı ile değiştirilebilir.
+(2) Öğrenciler, tüm sınavlara ilan edilen gün ve saatte girmek zorundadır.
+Sınavlarda mazeret hali
+MADDE 21 - (1) Olağanüstü hal, yaralanmalı kaza, 1. derece akrabalarından vefat ve
+sağlık kuruluşu raporlarına istinaden sınavlara giremeyen öğrencilerin, sınav tarihini izleyen 5
+(beş) iş günü içerisinde mazeretlerini Dekanlığa bildirmeleri gerekir. Öğrencilerin durumları
+Fakülte Yönetim Kurulu’nda görüşülür ve karara bağlanır.
+(2) Bütünleme sınavları için mazeret sınavı açılmaz.
+Sınav Sonuçlarının ilanı ve İtiraz Süreci
+MADDE 22 - (1) Sınav sonuçları soru itiraz sürecini takip eden ilk iş günü ilan edilir
+(2) Teorik Sınavlarda İtiraz Süreci:
+a) Soru itirazı: Sınavı takip eden 2 (iki) iş günü içinde, bilimsel kaynaklarla
+desteklenmiş dilekçe ile Öğrenci İşleri’ne yapılır. Öğrenci işleri tarafından toplanan
+dilekçeler Başkoordinatör imzasıyla EBYS üzerinden ilgili Anabilim Dalı
+Başkanlığına iletilir. İtirazlar Anabilim Dalı Kurulu tarafından 2 (iki) iş günü içinde
+değerlendirilir, karar EBYS üzerinden Başkoordinatörlüğe bildirilir. Soru iptali
+Fakülte Yönetim Kurulu (FYK) kararı ile kesinleşir ve bu karar sonrasında Faz I’de
+ilgili sınıf koordinatörü, Faz II’de Anabilim Dalı Klinik Uygulama Sorumlusu
+tarafından uygulanır.
+b) Sonuç itirazı: Sınav sonuçlarının ilanından itibaren 5 (beş) iş günü içinde Öğrenci
+İşleri’ne yapılır. İtirazlar en geç 5 (beş) iş günü içinde Ölçme-Değerlendirme
+Komisyonu tarafından değerlendirilir. Not değişiklikleri FYK kararı ile kesinleşir
+ve bu karar sonrasında Faz I’de sınıf koordinatörü, Faz II’de Anabilim Dalı Klinik
+Uygulama Sorumlusu tarafından Akademik Bilgi Sistemi (ABS) üzerinden
+güncellenir.
+(3) Uygulama ve Pratik Sınavlarında İtiraz Süreci:
+a) Soru/İçerik itirazı: Sınavı takip eden 2 (iki) iş günü içinde aynı usulle Öğrenci
+İşleri’ne yapılır. Öğrenci işleri tarafından toplanan dilekçeler Başkoordinatör
+imzasıyla EBYS üzerinden ilgili Anabilim Dalı Başkanlığına iletilir. İtirazlar
+Anabilim Dalı Kurulu tarafından 2 (iki) iş günü içinde değerlendirilir, karar EBYS
+üzerinden Başkoordinatörlüğe bildirilir. Soru iptali FYK kararı ile kesinleşir ve bu
+karar sonrasında Faz I’de Anabilim Dalı Eğitim Sorumlusu, Faz II’de Anabilim
+Dalı Klinik Uygulama Sorumlusu tarafından uygulanır.
+b) Sonuç/Not itirazı: Sınav sonuçlarının ilanından itibaren 5 (beş) iş günü içinde
+Öğrenci İşleri’ne yapılır. İtirazlar en geç 5 (beş) iş günü içinde ÖlçmeDeğerlendirme Komisyonu tarafından değerlendirilir. Not değişiklikleri FYK
+kararı ile kesinleşir ve bu karar sonrasında Faz I’de Anabilim Dalı Eğitim
+Sorumlusu, Faz II’de Anabilim Dalı Klinik Uygulama Sorumlusu tarafından ABS
+üzerinden güncellenir.
+(4) Genel İlkeler:
+a) Süresi geçmiş başvurular işleme alınmaz.
+b) İtiraz süreçlerinde gizlilik esastır.
+c) Duyuru ve bildirimlerde ABS esas alınır.
+d) Tüm soru iptali ve not değişiklikleri FYK kararı ile kesinleşir ve ilgili sınıf
+koordinatörü, Anabilim Dalı Eğitim Sorumlusu veya Anabilim Dalı Klinik
+Uygulama Sorumlusu tarafından uygulanır.
+(5) İtirazların şekil şartları, dilekçe örnekleri ve teslim usulleri Fakülte tarafından ayrıca
+belirlenir.
+Mezuniyet
+8
+
+MADDE 23 - (1) Mezuniyet için öğrencinin Temel Tıp Bilimler Programı ve Klinik
+Uygulamalar derslerinde CC, Üniversite ortak zorunlu ve seçmeli derslerinden ise en az DD ve
+üzeri not alması ve Faz I ve Faz II eğitim dönemlerine ait GNO’larının en az 2,00 olması, Faz
+III dönemindeki tüm stajlardan başarılı olması gerekir.
+Diplomalar
+MADDE 24 - (1) Tıp öğrenimini tamamlayamayanlar veya tamamlayamayacakları
+anlaşılanlar; 18.3.1989 tarihli ve 20112 sayılı Resmi Gazete’de yayımlanan “Lisans
+Öğrenimlerini Tamamlamayan veya Tamamlayamayanların Ön Lisans Diploması Almaları
+veya Meslek Yüksekokullarına İntibakları Hakkında Yönetmelik” hükümleri doğrultusunda
+“Temel Tıp Bilimleri Ön lisans Diploması” alırlar.
+(2) Tıp Doktorluğu için ön görülen altı yıllık eğitimi başarı ile tamamlayanlara “Tıp
+Doktorluğu Diploması” verilir.
+DÖRDÜNCÜ BÖLÜM
+Tebligat, Disiplin ve İlişik Kesmeye İlişkin Esaslar
+Tebligat ve adres bildirme
+MADDE 25 - (1) Her türlü tebligat, öğrencinin yükseköğretim kurumuna kayıt sırasında
+bildirdiği adrese taahhütlü olarak gönderilmek veya Fakültede ilan edilmek suretiyle yapılır.
+Ayrıca öğrencinin Dekanlığa yazılı olarak bildirmiş olduğu e-posta adresine veya cep
+telefonlarına mesaj yoluyla da bildirim yapılabilir.
+(2) Yükseköğretim kurumuna kaydolurken bildirdikleri iletişim bilgilerinde değişiklik
+olması durumunda yeni bilgilerin Dekanlığa bildirilme yükümlülüğü öğrenciye aittir.
+Öğrenci disiplin işlemleri
+MADDE 26 – (1) Öğrencilerin disiplin işlemleri 2547 sayılı Yükseköğretim
+Kanununun 54 üncü maddesi hükümlerine göre yürütülür ve uygulanır.
+İlişik kesme
+MADDE 27 - (1) Öğrencinin ilişik kesme talebi durumunda yürürlükteki Sakarya
+Üniversitesi Senato Kararları ve Sakarya Üniversitesi Lisans ve Ön lisans Eğitim-Öğretim ve
+Sınav Yönetmeliği Uygulama Esaslarının ilgili hükümleri uygulanır.
+Yatay geçiş
+MADDE 28 – (1) Yatay geçiş ile fakülteye kayıt olan öğrenciler, kayıt yaptırdıkları
+Eğitim-Öğretim yılındaki, yürürlükte olan mevzuat hükümlerine tabidir.
+BEŞİNCİ BÖLÜM
+Yürürlük ve Yürütme
+Hüküm bulunmayan haller
+MADDE 29 - (1) Bu Yönergede hükmü bulunmayan hallerde 04/11/1981 gün ve 2547
+sayılı Yükseköğretim Kanunu, 10/06/2019 tarih ve 30797 sayılı Resmi Gazetede yayınlanarak
+yürürlüğe giren Sakarya Üniversitesi Ön lisans ve Lisans Eğitim-Öğretim ve Sınav Yönetmeliği
+ve diğer mevzuat hükümleri ile Yükseköğretim Kurulu, Senato ve Fakülte Yönetim Kurulu
+kararları uygulanır.
+Yürürlük
+MADDE 30 - (1) Bu Yönerge Sakarya Üniversitesi Senatosunun kabul tarihinden
+itibaren yürürlüğe girer.
+Yürütme
+MADDE 31 - (1) Bu Yönerge hükümlerini Rektör yürütür.
+
+9
+
+
