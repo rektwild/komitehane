@@ -87,7 +87,9 @@ export const Media: CollectionConfig = {
   upload: {
     crop: true,
     focalPoint: true,
-    mimeTypes: ["image/*"],
+    // Explicit raster allowlist: SVG/XML uploads are rejected so they never
+    // reach the SVG sanitizer or the image optimizer.
+    mimeTypes: ["image/jpeg", "image/png", "image/webp", "image/avif", "image/gif"],
     imageSizes: [
       {
         name: "card",
