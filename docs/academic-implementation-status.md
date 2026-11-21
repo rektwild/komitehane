@@ -10,7 +10,7 @@ editable final weight, context/version-scoped browser storage with explicit
 recovery, API, localized academic routes and sitemap, OpenAPI and operations
 guides. Candidate universities, faculties, programs and courses start inactive.
 A first real committee dataset (`data/academic/committee-2026-27.json`, 34 DRAFT
-versions for 12 Tıp programs at 10 universities, inactive catalog for 107 universities) is prepared
+versions for 12 Tıp programs at 9 universities, inactive catalog for 107 universities) is prepared
 and covered by the isolated PostgreSQL test; it has not been imported into or
 published on production, and its sources still need human review.
 
