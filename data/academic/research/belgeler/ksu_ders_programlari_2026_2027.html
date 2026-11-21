@@ -1,0 +1,785 @@
+
+
+<!DOCTYPE html>
+
+<html lang="tr">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- metas -->
+    <meta name="author" content="Kahramanmaraş Sütçü İmam Üniversitesi Bilgi İşlem Daire Başkanlığı" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="keywords" content="KSÜ TIP FAKÜLTESİ
+KSÜ TIP" /><meta name="description" content="KSÜ TIP FAKÜLTESİ
+KSÜ TIP" />
+
+
+
+    <!-- title  -->
+    <title>
+	KSÜ - Tıp Fakültesi
+</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/logos/logomenu.png" /><link rel="apple-touch-icon" href="img/logos/logomenu.png" /><link rel="apple-touch-icon" sizes="72x72" href="img/logos/logo1.png" /><link rel="apple-touch-icon" sizes="114x114" href="img/logos/logo.png" /><link href="/css/all.css?v=1.21" rel="stylesheet" />
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var linkBtn = document.getElementById('content_AramaLinkButton');
+            var input = document.getElementById('content_AramaInput');
+
+            linkBtn.addEventListener('click', function (e) {
+                if (input.value.trim() === "") {
+                    //alert("Arama boş geçilemez!");
+                    input.focus();
+                    e.preventDefault(); // postback’i engeller
+                    return false;
+                }
+            });
+        });
+    </script>
+
+    
+    
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <div id="popupUyari" aria-live="assertive" class="visually-hidden"></div>
+    <a href="#mainContent" class="skip-link">İçeriğe geç</a>
+    
+    
+    <!-- PAGE LOADING
+    ================================================== -->
+    <div id="preloader"></div>
+
+    <!-- MAIN WRAPPER
+    ================================================== -->
+    
+    <main class="flex-fill">
+        <form method="post" action="./Default?SId=34379" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'content_AramaLinkButton')" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="LseYJLXnuw+Ug+nFl2ReJbMUZDuqSkrmkpEQMhdo79u5q+fN6/BE7j9vWRgcJ6rO8WCXXfq6sgqQiFhLC5UTsfLeJ+hLyF2vbwsIcNiL7jqy7NpZifuUJ/moLE+rc3iXy7mazhV1DyywUhvfCx+VXkAkY3gtgAlFfaKqPygvkPq1wzz8Rchbb5Y8JK+1Qz7h2p6Jzax0yPo8LW8f4QgsOmZeKc46tCpX+uye8/+ymyM5rDqB9IU67uENyv+LUXWph7OmtpU7ycF6KMiBqvIaIUDZoIJT+DhNDC9RJ90C3TXt1iWUHS9phnc6fCT+457L4Uaex9DNTwqKKrDJYVZtpRTiFuSgxOwtS1MAK8qC9RzXHxuSPc5VcLPzGuFg0DJodQ9TpTFzjlo7Sm/O/3qgApLpog3pGDkqjdD+W5ijwHcts4qKnT4ZN+16dgzYiTkEtVcpYawS5q567wp+pjtWzIPhV+eBOJX5cqu1juoTT4mgXxoDpOi9mJSIZx7aoL0me/GaAXcWoVH5Yk3rfeIjmt/qaPLymr464vgIWK9l6vdBklHpCg5DSMMlaM9c8sEfvzirIdjR6grkSk1p9p/mz1gj32oJlA7r+n4ZT8IAlpgU2uDmQUnDVMESyr2v/ARDMdmXfmF4D48nAEtksyYhqG1td6PqdjHvfOAm4uE3wqKcvVTxoGu0ORV2AJsSDRHgnveWW1lCabK99FH/k3toQZqczRYGL/pUXFMK+sTXSHmhzXn7CR1qf2eHZcUMMjlqCY7RaKUGttNzpd8bAg3S/SSrE0BuOYcOyeUg+hkqUWKrRnKAxB6MDWjFvSjcYnOS9aG2ZmTgMFmz3NXDZQs8MKQZjs2na2feDk0rMHV+4ioIRnyAK8gmURgUOnSX59wBv2LyEb+iDnoadPeW8iPPtp+BSg5dFjgAtRDoExMAkSixGllWKrEqIRxVKCmsHwR8E+hm4gqaafQRwhyrxRLErcHvexEriGWEQ3S5sF1/OcJdAZmyoS6+gJT0RFK0xoqnpbeJk87qHmW+sywy72WYsVcytGMjs6s5AJi35CURNsuLF9rFtYitKeZUpfC+bWuPf6WxhAZvG+OZkhKum02IlBcvm2Gj4F9UeUX74UVKeAePTK0v+NKrL5uoDpTLctv7q0pY5pCBzfRMgN20kQaSdmljOnc/x03LpM5TOLu+Z8UoopeXRDOYRj9XyQxAjVJ/ACtynRB2ZQB0plJTJgflBpIFiasGh8YJIwNIusBoKKfEhs/T3XGTEMRa2Eu1iwMShYcdldzQ4ovIq3yZKOrZlTfC/uKLC1Jc6twVROxn8r+cTlX/r7tQ2iuX++T7ZohbG4li45fmBCA+E12guwSNSvKukFa7f26QiDYorjB3UOD1tpx8gWULMlZqLWWg3b0ma7xUbvVdgnBlnLSfWGehEh1czQbYwbD/NIgE3zVVfdrrGK4hqq3n5umZpg/FSEuyjdodMHZoWbiYhUGC+sbG8twycojp/2XscH68dNVdh5m+z1uvbZspEryUjrkDjmRCYroLfbwXHoqGVyZDToKDwuY68Lxoj9GI2diKyUF8ODcROUJ6CJXSYsZtR43uCi7YCYEryddVXxtYXqFlgE+YVsEwpokoz5dLL8g4DispFYlFrkKxEL/lL8PLYlNtB/hcIn40myTvz+lkcrgj2+7RJ9d/UlxwRqskUi2c+Q2VBKoEwejoip+GpaUPRW2ZAIjv2f4jjbWaF8XP2gtYBaX7a1nQ8cEWOkpARUXCRvMDP5gwyIbuqLPNZb4AG5ACA5E/ojQlw0aMKrutUSthUAxfNMqGvbmeiAIUkguv3GXuBigq6fKw376GmIEdmPS/og+e1MB6lQF9JArDtN1HBBG7wLSikD5fdpWtrkprdBvFdoUBpjgLoqVGg3B6tqkrKnGk7Ecf0i1Tvck3WY3tsduX+BVT91D4TwGf6bWsJNZzQPSrKuMhpSMp0wxYkZsMYb9x7VtEA6Y/DQAzJC6OWxaM1a+BEgYOMo8yLatk46AJZL9p3Zp+X7e8BqIjY/TJFS/XKdizEJj+RShldPKzR73qMpofZvOFEOyQ0VvTpWwuOr8FGex5URSExU7zlFt5MGvisMlA/q6clTUEuQJeMLg0oHlgOFIrQUmJAyNHMTSKqgNRePI9lvWDkRXhk+PyiCXj7LCYsb5Ee8/Qd6VtRI0GngQIfvICKRkO3Vo51YRvkdCqZR+X4vgpOWiBglQnXQJWZsO/dmkmKm1W+9FHO8edUWeTgFVDfnxe2o6Eg0OPcjBSbv4MgL+cYDuDlpLjBE9EHUC9kbFNH0ZI8T2P/Zek16GolpC8z7fYa09D9U/o+T2vDPGKZ4FkP1ko5sQv/ilaBxsDRi2hHhN2q/3FaNejPCz/KjF/EaQVlL2IAQyVUdPnhH6y7aNH87ZPGuPzSg8ljF0LcmF1sZ+G3scouFdecNcmzjMnajlKt11JB2u7DDxTkynyJSeGc+y9Upf9xch4MYq5H2TWavuwetdJF5M9F1izYWHYwxTMu8L/ElhOIQy3piXIz9HLJ1Lo0HFz8BTJFgpcFfl4yhXFM1Vf17PUFHa/R0scXT4sfD54NmPn+J5Uppz1cZ/PkQCnaJ6Gor5iquoQUuWGL6pc7qjnuTzHWrCgGlvqGsRflHijG4CBGcazDFEzoRX59xmvMnFwkfXK53ARfXFEanmi8Weq010YNwIrBnN7CfhZD1XsUb2Hdc1yiMtP7OpezTguB9a+PNdodgTuXvunLAHYfjNg/eAfx9IU8lkN3hQBXODumH41FJmzGVo6v/UUa06azOQ5eQOAq3p4BpfVqnoJ+/Ebt6qgv1cMsDXYRbRKZrKOfpqCTWx7HJ8SNUNysdxsBa5q4cQjdorC5vQEBvx20PKRzy4ywB+eFCzfJxFpStpSweTqEAZDujlgyOq/E2eYDFpYeKlhLN+jiiHiR+FwQApcbgiPEUgO8LQb4LLr+SH1RyfdvMgT3t6Qzz60dq8BRtDG8fj+FggHI1e0SrBrAN3EdSvOSe0HrUkUu/OUtVlDsTbDyFqpRWOsAHky4zMFZ6DahYIao6uxphX2zpWAjiVJEp11Noxkaib1KO25P4rEm1sG/Dd0kLvDbnQiLOCr8UZqJNC8Tl60ZNtn4p1Vf9rPq1CfaaNSN9x6iOQUh38oXF8ielG1pOtkprB6c52P+4wkiGy+uzae8yIjcqGhwUtrhiu+r95d0X6dV3+OWfvj1oP4NxdxcO9OqRm4v9B9zEXewu/Awj2EYohuI65zTiEdhC39m3abCFdiKgjx2KksGZiojXQtlBpaL4shSzT1pN46Bs5GpoakjQ+tvaqAtqPH42A0ZZHIrpWu1mzB4wwaaC6stVnPnvhFcNaga/EYKKP2Tihg/V2OorP8CYM2XIR7Sz+/hLrrnBzfyHipgkn2xq23vJlfDEU0rZzYYtS4uqsaLLX9hzLtNCYcY7aZ/0Swn6mu2uiBg01k1hBmczlrWj0NplpRfEGp5B1lLT3EqX5nh6LWv5APL+tEkmOl8gawHHn8OFqsW7oQibsVM5MrOzluc2ZVeMs5vE4F2uTCknumM+OmxHlNrdexUsmuHPBTq2+nY6LH1H+mShnBHt7M4sAQ7EKRvZCMsRtNfiF6l5t0VEt3kBfotObQuXIi1J2BMtUK8O+dChldKlPf9M7+voJBhRV8cn0tcsA0nAVSM+R7/kr4h6i+ojZDePQDuWMaWrqOYCD5FkK4CqTJsNDIBfQUOp/VIipA7DVf1ltbNzLRj1B57KR+lBHtUZANuMIYUaRsh/Na2Ciir0EJwiqyNEg3FgLDHDFk0EVbPME5WrJEHkH57Hp5m8ozYooH3TZf7IqFiI2gDRNUad16EJC0ZsmkXSGv7ActxWBq/ZxKtjdb2Dq9A6csdB0MfC9rPmSHAR8mLeFTNJ9VY2pIP2LfCDjdFdu1TGEJsxomHxfJa6qEWnIz0BN6RZfCxnfQoI6CWFzzuAuNx5Is+10jPq16EAQMYbsPLw39Tf34mf3MGiX6U8zsMl/Q7Yc4sG/auG4hU+EnGrOoxL5vjYrnPComw+35T9k1Hah2qtcT1SMFwsa/QTdNtcJcuoKwBeoE7nloiqTWMEU6PB0AhMklaX4oaZB+81AudW1TzCVkglkr/sMb35JOu2/oS13tTbZ6wFWIuXBPAmoHsoLtRfoRK9XfJ+dURZyEjVoBagh7okzPZyG9l0z3rul6QjTqu66GGPh9xEvNtgOC0VrPjBdhdeVIbFWwoPEd6KMqVSqhPaKnLDV2IQovmuni3jr1pxvXvQCED3TQJNZyncgUNpY0fn/PwT5tjPghi9WlNNFgkZQuTT/4UNhN/lpdcsyE1FOL0rlXhre5V7CmnQg4QnklfIPTTPtQLCMm5jEr8EUWhL6HyMyopMqN9fGqsjsz6xhZou2Esd9JokkywKvhSevNGXor+HsfVxRRp2QmVltoP9eSvr+TYiLZybeeXa1+5o/qcIk4MBmgWZS64HjMeXeFPTRtmgm+wlLRWfmP4yiujGwlVFyn58/2RkiWESixp9yewPOhIb4ZDp6W5aMBL78/GVyf4Tdn8qvD/vFjqe1PYfJv7h8/Th4iGBHgakUjOx5x7HRNkX8WtGBxQjmNZCpxQHHuomScrtXHyly+QGM30ZAv8evClSqceAPNr3hn5IRxOJxZX/n8+8VseZIUCOSI7XlZacfHdCZnGD2yjv0ep4qclzAjNuT3NdtbKhrUKw9fLZFMYZyDEQ75H+gkzzmkkZH+JmZJvD0acpAE3372I7dBNkeQMyOf8zlyIFkaKUj0OeBHQDmsEuzwTyFHnvUTMDS4bLJY+BzxM9gNjdwICx8EQ0AHqE7eis2sZ1Pv4DDsCTTBZd689Uy7Jc0JE8w7K/xxcWgxpAtkzEC9iNLJfYVQ8VpGDh7brj+4W63vevjq7BvckFNM8l/Pn67Xn2vfHtk6Ayz3YxdXTsY26POxAV5eAZWmSGPNUMR2K5/ISYt/XnP5b24kUZOLW1g+dp4bFA6oEqNn9yDW+ieZ5T7nbFLzC6otYFPsS32VAJZZLR4IqRJlPVREDlc8XwO31WAbzUWgggzcgg3jhEchseIPrELZpwssHvAWz1TXTBOwu4/I34+PpmtohRVOddBG8nBL12zGifE884TsXVQ66a+RnjOnBwszhlaoxtwwBKHZasu2bucss9JOqGK6vESHIBq9JR6Jx0Oyn+/ugl55xgF+EHKSB3Skht/imz1mfQ0W+crXN4Z9DZsJyAGYG6praMc6XFX320bK7fpLtl+YPaL09WNDdKZglumkyMo+opG8kFfZDJhXCoBSEf0S89UBrBb3bI6xmaXTiG71fVY35eKmBiAzXrDn4Toip3sGRbDnKiSVyLoOVOC5FYiorur2Cow0D99amYUsZjxSBCocH1hF7N71nfGQjxPvYSfWUbuRK8976wLlXRTHhskmmu+E2tObP4lKrT3SoXT5bLPssy6AghGuGyexyzr5fBlxNmbX4Nw9cZngisgTajPMMZzyger0+qbAMmhpHmzZ5hfICkynxI0fySKBgLh3/CIWPZp3hFOp2hI4Ljl5KTIBtq8MsNkKye2tRlPxVt/kD6G4JQ/7Uo0wL9i0phHNMdj9OLhVZ8NCrmJAprBSY2Hy1/YfLKXW7lnKc3vDFPVvz/a+w6mcIUjWXiVcSSAirhyyUSVQbKhH1IUbnLGasP6D+mrk4OfUHx3DC9Hr++rrA82Lzi079G2bFRQnFBtnhbyOG1FGAC9rwrF2M8WBKXRyxkvyOpqgthAF8GnXkvMb857rp6FE64888X2ihOPHTAeg5Jxa4H09cPq6qcIiyRopt/2N895pT0IoyHc3m8kwW0gcPAMPeIegW26d9HQPowrpRJw8usdIY5fMCAYIrOVByQe7jHlkM+xWUIOIGevcJWEmMWX4KBRUomhCR9IebSOi2Qv5PE4jbjW09GIAqI9QtopsehmSpMkc/2PIs+rEZfsDiwNzjWbJWoqZd3K5qmPJGnyzHaety7/yFJTZ6kkiHhsm0PqmVBRt+lcpv8yhfJaEwYmQ/ZZ/rWflv5ixxiHogw1nXk7GNDaGExe0ZIOM9dGQxXWtTCYaSY8Y5b2kkQ+zEQs16rv+RraZEKYPaV3A3KQzeh7LnZ+mfMID2cILXMSlhm4oy5H7ul6BboW8/UW065irBuuFLC00C/dv/BJoUnX05xw/c6LZnH3WVsOZOW4KQuLZdWWhRbPCo1kyMNn7S59+h8VyN8FEsbX3zxYj9zbbHuVVS8MTjyspBN7awicVTEO4ktgxw2QECvH2LryG+viJ4jAHn5ldWINhGKr5EbBoUlEcNCyLFZrZA/nDcr9ynFdTvlMNezo+QrFyvxAE4hQCaZJDT2rmABHPLlSIsD2SrXVCk20/mOLQmqGPILZ1499WaXTdMzUSXCPORPB4j5Kb3omlUhRRUlbPikew4ZXnSUfwRcjXfNQSx8XFE23YWhq6DmGRwgACrrplPrliOUt6i8sAjMiY1eBGFbCxr05KfTtxnY5pu2jIYwvcP2zNVT+6ICJlniFe+leuCDODtmBLm/lmJfXkibXfG4APizMp22bH6R3IYdBqbvGPFbwu6kBYN/7bDkJ5i16wTpytfAxdDnFQMIqJQi1m1da6ze0oDN+ZkAFaaSqPAQvme4i3jUaL1zHUX2hzOJi6sXpea6dRQOlln4Y2XK+7nbMhl/DCZ2j536rLjeIJLLde5KS+LuFMHh0MV0Pao5ugzCQDZm7p9q7GVOHJPUPr15hMkrmL5NGoDKuZgzcrdy8oxwqIZrY4naEf5IIbDRtRdV1veOquZ2o15M7Moi31GlegqsF6cPBaMNZN0xnp+OZqshkToR66H0z4aolOa3nBxt9cj+FWFo/ZUsLEx0F05OlpPRhOQlf+1yC/Zzd/UQxZZddKprYYzo9C/ipc/MYOYyffOfJ3dSf0ne/GBNWenHm2bswvB4TBc+9HXeCWVLO0pUOn/3LsUSvPZffmeS731eirR+J4tqT1gp1p61KyYgyO+oC+66X+144hTJRxga0ahEhdDmcM+gB3F4AaMB9m8FST4xmSzYQRgLA//eJ5dBkWK/Hn//FbkgamDg+aNr6V7jbgbyEPUT8XOAvvvLN71+6DxFEhd1a1U0zRVpN4t0TuLgAs/mCtzKN3R12Pct2qKL7NAvZbHkgHxAJRBEnmeS32TiVlys/Gpbrw10BwLzIiNJ6wPtJUPQWzKal3uFEb15R/KX4KynEskCq94jqy4i8/om9vqrEXHgWuoKGrKiEJyk3XuGH7wi87s5kkiINPBDqEkjARKWM4FodD2uz6CzlfWFnf99rgft6qF/6Jn5FP/qWRACfzodM+ukxjvfsf46khS5OcceDSxyieq5+7iGt5KoXNELspLE+P7qOLpL+Ra7pM+jHcPr3+RlxHXYapmq0yMlHYvI7WGgmm2uPmgx4BHB2E8iLAys/FaayHCya0lSvRw0TkQuXRLczctmClJNuj/enOP4OQZqEMf0my3jdA5gEZR6Rfv+41yVciFFSxK0no5DhaVIwrruD20D8dIgnB3ccZ3LBvMKrJeajfITSnpNBAnGHB3T3Yp6JRfUL17+NDaxLVBAZD5GWQYB+kyKeXZBFRpdZypHpuzafRYqU+ePChBfh0MplMCmMhG/+i9ETlHPGGuIrZ5dNs6qCYc2mMiCp9RblHFpUSp6zVNIU6DAcdYEDen5zvKthceLyC20rTPTRVEySloJyfR2e74bGpJodnW2futalht22+Pqjo2Uh2WsqJxeHjX1+bv7+MjC0FSj730unvIiPcSeivO3eMvQGN/0L3vciBdyf+iiVH98Gnsqx4xZjL+hRYFAm8jYwnWpVfl8K5xhVFSzCBlSSBGHUiKDMK3x3GIftd3In4YuGgET3zRJ0H7L5syrm9TWq1xOQY84LDKS61w9jMD4bQGAMlIZZZZPSkdEZifnCQBZ+plaf3fznTFO4aA/pKQ8hZc7eyzbK7nbghuhUQzwxMADm9dD+IvQNFTqq4MJoLPdTvuuY1J5dDXYsM0I1wJP7LcYaJ/fy9gstV5vnzHe9eRLBlLzEZYGZKD236O53zj7Kp97Krm6Ocul3BfdZynqruLkztH3gk8hJsMMzkhvbFw1ZZ+a94QKY6Y4F4gsSP/5/7e/NvzFkN35ubecsKPdGikeLLekNEMr++bMN5R9UDM/1n4H+u72FaIHKJIFxqGM1ch/YakcsxAz4KgJCj7o5IZav770FGT0/iThUpgt2Jbs/jIOf1RLJvmTLzifSIluNYObdr0EftMgHjl6Oy72w1/ioaAVdSmDa6YzxcaXB/pDxxYZAybB/xAY9OiBoqreXrBOcHU+vpfA1cwF5C1kvMaat0nuCwlI3C53q/Dinew69+h1DdxfYdjhAbdYoB58SOl7hYCcySXssdqalep8CY768xdP8KL8ipw8chOjV5SmItvOhfEBAwjzkSOcaxHxbCCMmjZIgvdNH8pFsM6JYWTTN1ioBgVTUuVZKlLUY9hGxta8wchR6qewbeIUZ3SDszoTUiKQIyhcvwXACsWBvgJnrGH0o9lsSibZRH1mzCY+Vm+zWSwPRabKujXFrWFJ9wGkRFN/axWPu4bjav2iFZUW3lwS/jqpgog0ALMxMndMqpDrmjjbNwvfHas018xlSJ2DCm/w35U3oBi9rYpSPV2d4r8q3p7XV93cUPLmaYDTmDBAWhawCPEI+PO6RWQbTyluqkvCgMavQU/aeKKLID8nS6nTNKXTFX+zcAmotPiVVEiYNErG2OTeGk9djozotzVryxIjLkU/KrkWpkTiMAYrsQSFepN7IPdGlYpqQL79rX3ba4HJg9WF5ABJdX+iRTRaQO3oMVMm55xnH2TJN9mHLW+rPwAk+mgN4n+ejZCt4ORmY8//7TKh8UasoalY3+DGVHZ6Rdw2oNtGH9hDT2eqJ4/A6wTYyWJmc5K38s5/oTsFLHrOOc/g1z6MO5ACSVqiPX9k6uBMs9XJcxMW+HdBS7pViHZieVzT1+tbTdNvJMcfxXT3XBpya0kqYhViou6U58uD5beE8v1XTz+DV0xP1lWX02obs+j9DWmkfnEWHj70Iq80vc1bDZBIS5Z/C6Hjnx84gba8rp+Zr6/duPm2DoPy7/NBAU6Ob8UN5X0S2qPvXPecT0KwasOD0n1HSCOj1fim/brt25llmDfDDFZ2KPVSSQ8IDA89S+TER0ND8TUVZuYHkZ95PJ5RmqhCCyaCE/lq9mPoRHyiMOJr7HI2oDisW/Xi0cbChGwxeeLQxZ1UQYP8j2l/ANSs9DXM31YYPjnuSsjtB6VosZtMvIndt5pvIt2buJMjANEbLFDcmtoVVyzXpCf1LvW2x0A+R3QZnYkFNNIlDnNcT9HOfjHSfxDZiC5taER4ngOJsMfGlz74bjnNTgdGzIiv5+B1wvQ9vdjIwEUh4afxzPbDj13ci2GBh7fHWXfXd5vP6qclsogRhHSG+kEw3Z0h4PYFQqcHEOjmz3vIa5Ip0Sn1XVNMXklJ2OmX9BTa24PdOP79AiDVYs8clZ6XKXZvzwf9D5rmOZWKHoQK3TLS7B8bISI93LFtZ9guPCo5o4tulyqlMczlb0eK5+FdMH2V/C5h8I8oqcPh5FQlJ7BnFLb2GEK39X+bJNpjf6iYxJYsBohmPEtgPTVY5E+NgTbJAt6EnO6UOLpK1njdqosC6rU7YSaQc4IhqX13l1dH33VJkzXzyS3gZOuUUtBLNO1LFi0bG6OCCKtvWiy3Gb4wjM6orptdbY9O4DY417ve/o+JGMAIYbjjRZh/k/K3R3d5TGF2EqFgUG4l+BfE35LhSnaGFKKLgiyYGJODN/EKixQvAE+4CWvm3t+jv1+fHwussnB/KNAF1CPmGPxiZbkb/DrquynA0VLRX04xyOm+0jvjUJDHbn3ORnnX+4Wb98alyJ/vcuuyWZ43vPeyyBx22oUZUiG8N3ojrlczV1y/m86vGqjVt0IlufwcS9Eb/DU3+L/N5OVmKcvFqq1ZtL6sKHRrCOQpe/eCKLbEQ4X2/XsILwMR2qjUiUl7fzFX5KACsrIZG1WPK6GN/1Lyx27ZN2yKNy8NT+8iCyOTbFTxFGmW5xYwLqabpfkE9m5Jr/xl6v13bg+GhLWQcllZCStkC7cAATXUKNTY/pugc3wRKc0sKmJtC/hNCmes0kT53zbeW4TH1SPfu6lQuHM8e+U78DImzJGp0memT23RXMaaNL4Z3aZN2fUHnFLTlCQcQRBp+fac16tBdNV0hCNb5odCkbtdKq834uXTB4j1Ntnv5l4gDbGfb/ZUxpVKf7agRXpEffiukBWeY8QLRNiJ45i53F7zXq9vvlgt0M/1A4VPSkuechHm4oe9WrdKmgDcunRTgpYI3cZkdzQrf/umQkzfBi3zyEAS0Is5mCz8Esd2C3u5HkRL3V7iEf4vGEwiDUlmGApi656d1jwKXVXSZXx9B92vnrnc9NKhUlA1zrkLfbLV0qaRqBT73r092rUwcy1winxKM5A/Abr44s8qVH9Hmd01lsZFHhhm5ykcMgquKdpqs5eu776z4K3KTtZ8TFJNejxbxVadIYJrIjht+AQPe5zcWFrGeLX9nvRaiDeW2rK6PBp6AR7hN+qFpz9uw1STGAGhjalNLfHe1xqDo5RD50n8H8960a4zzNy67xXqd30XRetmV3At9Xe42rlhr5ztf25Mu7+zq1O8GwK6cK51IZdX1JbDXY6O05i8CNOyCAZOcOf1l7H3bWbZ/DNqnAT0sUJZ1BvUdMhBj600Q23+XDt+g08q5vGN5G2RbMzpBIijfgGCw9qqShEoqt6ICx3vvJQc7BLf+XuDT0H8oFvfYoGvUGasdLfBxTKu9oy7Is8wOioRZMwT793X1GZFIalOlCwveQ/MmyAUNdmFiAl4vcjZ47fSLYyndZA+JqJ44l4GUxNhPauGkIsTPNHO8crGqVX2mXbs+mDn6UdHT31DeZBAxTzsTNZx2cwSE6LC3cNwV9DJ2iYls7Y0Kzdr+pWGta3XnpMfxm/JiuIam3SBgLY32hsKRNwftHDYDyvRp1emGI/cs0k3/zg2oxSkPF+iBhAXlDsz6VJ3ZpNU5FynecCJp1jhtzmuwq+YPozHSjmqkTSvejNMXBnThX4yWiJSHbIFe5fsd6VaWADLgu5PpZW2BQpTek/Ak7sSEH7SwERk8Md2237xVEwoTK7v7wGgC+Fn3pIu+E8oaa2B72AgNHu5tjrRzbQoDzQgcwzF/jNiyJ5tWR+/aRBPrKj5OuR+iaanSiXlPlBf9lIv/AglIKg4S+p4dm3OK9L1mG30z7UzOupP4bPTlvv6fcPzBRU3FNq92HreBOi1PlkSnNtjlnEqrUGTp5XrgkFXz72lbceaDRyHxiFeY0dv0EC2Lh7y8q2Xo/ilzOYoBap/F3+i0WOUFcG7cVFMhaMD+/AixYdSyV29WOSeTmzJMQ8JKUcQPyuTxZIqRV46iRBwvT7Hdb/EgeHVQOKP0lKzneNr6JixMyu0tEfdHvggCeYQnA0UzfUidCzi6ogMUmOQhekCx3ml6WumYiCJ+DtOO6HJK1BzjJ4XIyk4UzaCil8ad16bk8kQsOBSVg5dD7cIWlmtLbZOlx/aCnyIOmoP2IgU4qRu0PXsmd1rkqtItM+Md8cCuCKymDQtfn7xHQzbvmFi2ZuVozdBCaG28ZI/FkDdV/+NTzqEXSR8qprLchP1iYs18GjFp/Alq4MgF9MEJuYjYU3/Tt0aUkfA4wLtNO2Po669KeK1zEy5uhh+jDlMlD5tuBSOFzJpEPjswfw9N4vUZd7EH52p/EBw6Qx88rMdy9xxAIhwR2OA4Wv/9WsVkW1236kzaIviHSMwLczyM3Vegy7FMMv56I2KvEQTizfGvNkdQXPaoMSGeFksAtrb56oe9qqcrPVyuCAT0THjT/vEKSLynRPRy3N8RZRl2r8BQMTRI31MZVQSepQbyumon6mNukbvCuEmkpIMU2RzvzGae1mr2dv7/4H7Khb7e1w00Q01U5mR6gM4CCLcUHDvUFTAyIYWrM/MG8oKAyRN83KaCMnHBuw08PNW+bhEpJHT0YOIHyXcIGuc9QKsq8RBp0Xzm5Resax4eKw/qowP3LB3YmyRiBC4G5oY0x8QkMJRK6sTysTkJNvqsEsNhoL3XRb7XGwIsC1J5SQLtEYX6V6BTCDNA5xvTd1MEj1IC0osI7FUbHFmzLnp8ImLnuN2tFV5n+g7/QSBJmQOkV3EGe9PGf96dgogKlY/zQpNKsIrcsUP9djjABOQP3ycIcP6B2yooW0PjXDYU5gnyTl8IYxOAryyxik2094cfxZN9zjULoSfLPDjCsauj8YQpu/ghDlIDUriB/Uj0/mGP6VkHYA7nlVELXsEV1ZIyBb22/J4tIqeqWFGgNVHcWUifchWJeGHOYDvHsm+mNlWkUWBJx0iY5O22atZNK2G94k5rJmtwtfGiIDiVbRv35oYJXB3iZZ0LPykxfi1DetRHPx46IrNXuHa/mnS3mr2ldKTEUWan+VocfN539MJec4KZRIn9O3HLM+YasI3+0my8YR3QQrU6Ks90ejn6x7ELYuRjttqgLyLKhD93yjhnu//49g6HoUL7dy8BwKWVWVTNSRjT5au60uTxbgrZhPuUQLBysYJyTgpeQjNsG5sI0yZbx/SMolz0J4EXM+WDhQcrKmG8zrSyIY+3vHAS8FNrfuoIalPmrw3s4Yu1AckgdxEZOL3z3SkgeTjIdhQUmSeJjIZ/U44+otOhKRGXkFjgHljYksXNEOUdW8kz/ZtkqOsidNNIH/DGngloSt0PljG+dvK8u7mdbOONM12Z2+yx5H7sENtKJZygEwfNQ9r8XLWiOkO+OtWlarn8wvXEuqKBJT8G+HaRvabY5pfxgRQ3hiJJ314kve2Ex36DWPHXerD4Xh0rJSqjVFdInZRs7CqZ4MsndbW2nce7KYabo7Ioxyyr2q3Yaxlv3oeJyXMz0svuDh8wYT0Zk4PAnhrbWudHs/lXa9YYRqVQ0ZDNzAH3+Ba333byXADj+dze3NFDL6QKxK2OVOIOHxHCvbfx8xAktIQtJ19t+d3dWWQf6GhdIm4FrgAQFVdrkVZ4rkyiZPQtOgONwFMQe8lkYM1nZbOExFVXIh2NFsn5HDTGLeMRPTUevTpjxP4UoI/GeXFgcwYciZPsrH97TEsNEBQvNXOPTwSvTonkWbCqNemuPfQjg0QTaCnWWdJWhYx4mgMuOm6o4szsk/viuMTlLXJ1TRpDZ4RJS8CvKD5Dqk3t7C88cnMRSUuAsqTOESyqfTW96i7pZ1R9TArIe/QRMD5lhB+CH0svpFcVDBvMiYCDZTIE8eumLrh/XIyn1GM0hnOY7rlyJKFurQY048ltRtd9EvaF0NAnqx31iDnQXWDXn2uZhscY2vE3hp51CIKs+DLrgSMD4CKrz6w9NqaPlJPkUHtxN7L8ENNOliRd7dUl7Ig+K1Gq0ikRCpKg+MNe4uTOmHCjqJjjK0c4zlDuMuD4U/QJVEPjYXPQX8cvQBJAmtB8eURaAlHxo62G6NJE5shireKKNudHrJ5O4Qeo3pdWy6EvWgCObi8hlCbJ5p2lMx791bz1JM4fY0W6SpxIrZsK/cO+QwZsv+Y5mMFn2MgJNPMVwS7SEzTKRq4y/74IOqfu5BSNrZBEOHEs1q8xMJa1fESrshiqTkhuIo3vIJEgT6ahjuBPrgY1rJnarXyELKED+sy29Q7pcHVlgDwZDc/nYT00hWfBVk8RYRPoqmzNkKZnlEl96xn9yovN9sP0HiKWjKN3Ju9l6haeHtkEszZa5b/2G1PeK3brV+D2JLzH0yI9ktP0/pgNJ/hgLpvuIUEgvurq3KOAqGRy59zH3v+J3TDL2eI/UwOV1vaZE/xxG4WOpFCxvjfOdahK8udrJIRtl1anIsbTIgyBO2KAC9LbT4w7z4G6S3sVI5Ma+gJVznr5WW14TQetEaJ+NBFkR+UVsbB1XuVBGZlUmMj6QmEXKhJIx/hTpbkCqLogheg/XkSFn5i+Sf2VsR2uDk88Wmt1pD1IYEP3Tuddrk3bss3lkQoF4CRKo+5hhBGhmFBxVxxsR1uISr/MJ2V1XB72MzIiVQGsZYdqZ/62rL7IOwE9mgNagikUjVpAvGpPpMaxD4p4n0FRuj6bhPAqSr3pIkdhTa8KXhhI6Ds6TrOy8h5kJOH1XaU8had5M5xe3GigVATJWu3mig9bKc/wl0nbVTicMWABKUx/DrPTDywE9IoXUA8HDlzNHE8x4j6ZyiHqnGgh6Z5ddlfLB3rtOphkU4PViVj4mxKfXnLYTsqiHUvshf5YzQcsvFzRNTR8PrOirknUIsMUQ4egxQK5rKJE7rAbFExVHKWVKjApkj9Fqh8m4nZoOzovrbdGfUnSeeXHngx+cSeiVJV6cGPCMM9snmQmNx4eyeML4rDrpIQRksKntZ3L8UCW43xBRm0Pt/ayY7XujcvDgad7BiPq+uAlvBMNT0f7rks349Pqa8Fkj3aRhHbl6/AIHYMV4UOyiX97G064tTfHOLdpD7U+uUSv8drYHffTI18p5n3wRId+sVOvaN1mFFxaN7A0AQQYnXim+2BdfSClGJgi2TO1HiVPxYyOktbm2adBAR1Ugu8YGp8cdgo4V6E4d65bvg53mz2trX+aXkwWow1sh3/79oy3RS+eiagrTOWQLU0yaQlfQEUYRpcKFuHZUuekhrShsszhGJwxF19TgF1XiZ9Pv6kh40rRd0WsCr1osk9edInt9nP2ICKhbPhkaNPI/Z7MJvylCw9lEGJ0abtZ8B3ld5j4ED5fza4bSAQVZTXlFafGVNdv/cnJahnVjIC0I3NrwEGJB6g0L2+ZTTtiLiqzyTd8XXPRoCXejIH4rbkN2Ulbx74HkMJ5EcfdVxvboVQG0M8E0lfTMtAcjX0TDkTuq7SGTyhj08x1YBz5FRAQ8hLJ8wzB5k/REXc16kQLp8N+9x7xhOiOamAwi/2NHV0TawQPYljcUoxIeMLvk8LJP5Wg2Mojr2SofY1P86hf8xS7oFe+GzDM+UDu0lizi7HyqvyM+OoSmuguHsFodqaoIlhj8abFo6e4PjZ4=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZIW90c_yszaygm7_jO8aNI2yn4kE9_83A-z0GloLxtasC4ATsvfAErC_b5zyWSgiOw2&amp;t=638901644248157332" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="wRUfqxSVcvfRxtJdGz2Be7uLvPGttq9+DgwGY0GXUlngduggtFwoX/pG8ZCgJq4knyXAWGBrE7ppc4Dlr4mlJrShLdjwsOzvLsn08VJ5yluaNWtHO8BihLXr/QU6Ks+2lw0T+EvFtRZVne7BXWqakXlud/QJvPdqE11pA9iCtmk=" />
+</div>
+            
+    <!-- HEADER ALT
+        ================================================== -->
+    <header class="header-style3 scrollHeader">
+        <div class="navbar-default">
+            <!-- logo ve başlık alanı -->
+            <div class="container-fluid top-bar my-0 text-white bg-ksublue opacity">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center p-2">
+                        <!-- Flex ile yatay hizalama -->
+
+                        <!-- Logo: sadece içerik kadar yer kaplar -->
+                        <div class="d-flex align-items-center m-2 d-none d-lg-block">
+                            <a href="https://www.ksu.edu.tr">
+                                <img class="img-fluid" src="img/logos/logo-mobile.png" alt="Kahramanmaraş Sütçü İmam Üniversitesi Logosu" aria-label="www.ksu.edu.tr">
+                            </a>
+                        </div>
+
+                        <!-- Başlık: içerik kadar yer kaplar, justify kaldırıldı -->
+                        <div class="d-flex flex-column">
+                            <h1 class="mb-0 baslik lh-2 text-white h3" style="line-height: 1.2;">KAHRAMANMARAŞ SÜTÇÜ İMAM ÜNİVERSİTESİ</h1>
+                            <h2 class="alt-baslik mb-0 text-white fw-normal h6">Tıp Fakültesi</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- logo ve başlık alanı -->
+
+            <!-- start top search -->
+            <div class="top-search bg-red">
+                <div class="container-fluid">
+                    
+                    <div class="input-group">
+                        <span class="input-group-addon cursor-pointer">
+                            
+                            <a id="content_AramaLinkButton" class="search-form_submit fas fa-search text-white" href="javascript:__doPostBack(&#39;ctl00$ctl00$content$AramaLinkButton&#39;,&#39;&#39;)"></a>
+                        </span>
+                        
+                        <input name="ctl00$ctl00$content$AramaInput" type="text" id="content_AramaInput" class="search-form_input form-control" autocomplete="off" placeholder="Site içi arama..." />
+                        <span class="input-group-addon close-search"><i class="fas fa-times display-28 mt-1"></i></span>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- end top search -->
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="menu_area alt-font">
+                            <nav class="navbar navbar-expand-lg navbar-light p-0" aria-label="Ana Menü">
+                                <!-- start logo -->
+                                <!--<div class="navbar-header navbar-header-custom">
+                                        <a href="https://www.ksu.edu.tr" class="navbar-brand logodefault d-xl-none"><img id="logo" src="img/logos/logo1.png" alt="logo"></a> 
+                                    </div>-->
+                                <!--d-xl-none sadece mobilde gürünmesini sağlar-->
+                                <!-- end logo eski hali -->
+
+                                <!-- Mobil Logo -->
+                                <a href="https://www.ksu.edu.tr" class="navbar-brand d-xl-none" aria-label="Anasayfa">
+                                    <img id="mobile-logo" src="img/logos/logo-mobile.png" alt="Kahramanmaraş Sütçü İmam Üniversitesi Logosu" aria-label="www.ksu.edu.tr">
+                                </a>
+                                <!-- Masaüstü Logo -->
+                                <!--<a href="https://www.ksu.edu.tr" class="navbar-brand d-none d-xl-block">
+										<img id="desktop-logo" src="img/logos/logo-Desktop.png" alt="Desktop Logo">
+									</a>-->
+
+                                <div class="navbar-toggler"></div>
+
+                                <!-- menu area -->
+                                <ul class='navbar-nav' id='nav' style='display: none;'><li><a href='/' aria-label='Anasayfa'><i class='fa fa-home'></i></a></li><li><a href='#' onclick='return false;'>Kurumsal</a><ul><li><a href='Default.aspx?SId=34194' >Hakkımızda</a></li><li><a href='Default.aspx?SId=21344' >Yönetim</a></li><li><a href='#' onclick='return false;'>Bölümler</a><ul><li><a href='https://geneltip.ksu.edu.tr' >Cerrahi Tıp Bilimleri</a></li><li><a href='https://dahili.ksu.edu.tr' >Dahili Tıp Bilimleri </a></li><li><a href='https://temeltip.ksu.edu.tr' >Temel Tıp Bilimleri </a></li></ul></li><li><a href='Default.aspx?SId=34871' >Proje Danışma Birimi</a></li><li><a href='Default.aspx?SId=21394' >Organizasyon Şeması</a></li><li><a href='https://tipfakultesi.ksu.edu.tr/depo/belgeler/Dekanlarımız_2603121110471895.pdf' >Önceki Dönem Dekanlarımız</a></li><li><a href='https://kvkk.ksu.edu.tr/Default.aspx?DId=56004' >KVKK</a></li></ul></li><li><a href='Default.aspx?SId=34195' >Mevzuat-Kurul-Komisyon</a></li><li><a href='#' onclick='return false;'>Öğrenci</a><ul><li><a href='#' onclick='return false;'>Tıp Eğitim ve Öğretimi</a><ul><li><a href='Default.aspx?SId=28252' >Program Yetkinlik ve Yeterlikleri</a></li><li><a href='https://drive.google.com/file/d/1hb8Np1dXhaxe43mJlAguBJlAYcM4efQ1/view?usp=sharing' >Akademik Takvim</a></li><li><a href='Default.aspx?SId=34379' >Ders Programları</a></li><li><a href='Default.aspx?SId=23834' >Staj Karneleri</a></li><li><a href='Default.aspx?SId=34461' >Uyum Programları</a></li><li><a href='Default.aspx?SId=34462' >Ulusal Çep Programı</a></li><li><a href='Default.aspx?SId=34463' >Ders Program Arşivi</a></li><li><a href='Default.aspx?SId=26564' >Ders Öğrenim Hedefleri</a></li><li><a href='Default.aspx?SId=29812' >Soru Formları</a></li></ul></li><li><a href='https://skdb.ksu.edu.tr/Default?SId=18874' >Psikolojik Danışmanlık ve Rehberlik Birimi</a></li><li><a href='http://obs.ksu.edu.tr/' >Öğrenci Otomasyonu</a></li><li><a href='Default.aspx?SId=15433' >Akademik Danışman</a></li><li><a href='Default.aspx?SId=21400' >Öğrenci Temsilcileri</a></li><li><a href='https://tipfakultesi.ksu.edu.tr/depo/belgeler/DönemKoordinatörleri_2608251608095711.pdf' >Dönem Koordinatörleri ve Yardımcıları</a></li><li><a href='#' onclick='return false;'>Laboratuvarlar</a><ul><li><a href='Default.aspx?SId=21355' >Anatomi Laboratuvarı</a></li><li><a href='Default.aspx?SId=21396' >Biyofizik Laboratuvarı</a></li><li><a href='Default.aspx?SId=21358' >Fizyoloji Laboratuvarı</a></li><li><a href='Default.aspx?SId=21359' >Histoloji ve Embriyoloji Laboratuvarı</a></li><li><a href='Default.aspx?SId=21397' >Temel Tıbbi Beceri Laboratuvarı</a></li><li><a href='Default.aspx?SId=21357' >Tıbbi Biyokimya Laboratuvarı</a></li><li><a href='Default.aspx?SId=21375' >Tıbbi Biyoloji Laboratuvarı</a></li><li><a href='Default.aspx?SId=21360' >Tıbbi Mikrobiyoloji Laboratuvarı</a></li><li><a href='Default.aspx?SId=21361' >Tıbbi Patoloji Laboratuvarı</a></li></ul></li><li><a href='Default.aspx?SId=21874' >Uluslararasılaştırma</a></li><li><a href='Default.aspx?SId=34591' >Öğrenen Merkezli Eğitim Uygulamaları</a></li><li><a href='https://otyb.ksu.edu.tr/' >Öğrenci Toplulukları</a></li><li><a href='https://obs.ksu.edu.tr/oibs/kariyer/' >Mezun Bilgi Sistemi</a></li><li><a href='https://tipfakultesi.ksu.edu.tr/Default?SId=5407' >Öneri - Memnuniyet - Şikayet</a></li></ul></li><li><a href='#' onclick='return false;'>Uzmanlık Eğitimi</a><ul><li><a href='Default.aspx?SId=15434' >Bağlantılar</a></li><li><a href='Default.aspx?SId=34162' >Belge ve Formlar</a></li><li><a href='Default.aspx?SId=32177' >Tez Yazım Kılavuzu, Protokoller, Beyan Formları</a></li><li><a href='Default.aspx?SId=30933' >Tıpta Uzmanlık Eğitimi Rehberi</a></li><li><a href='Default.aspx?SId=34157' >Asistan Karnesi</a></li><li><a href='Default.aspx?SId=21770' >Araştırma Görevlisi Temsilcileri</a></li><li><a href='https://tipfakultesi.ksu.edu.tr/Default?SId=5407' >Öneri - Memnuniyet - Şikayet</a></li></ul></li><li><a href='#' onclick='return false;'>Etik Kurul & Araştırma</a><ul><li><a href='https://kaek.ksu.edu.tr/' >Klinik Araştırmalar Etik Kurulu (KSÜ KAEK)</a></li><li><a href='Default.aspx?SId=24451' >KSÜ Tıbbi Araştırmalar Etik Kurulu (KSÜ TAREK)</a></li><li><a href='Default.aspx?SId=21145' >Bilimsel Araştırmalar ve Yayın Etiği</a></li><li><a href='https://dhaum.ksu.edu.tr' >Tıp Fakültesi Deney Hayvanları Araştırma ve Uygulama Merkezi</a></li><li><a href='#' onclick='return false;'>Projeler</a><ul><li><a href='https://bapotomasyon.ksu.edu.tr/?act=guest&act2=projeler&durum=tamam' >Tamamlanan Projeler</a></li><li><a href='https://bapotomasyon.ksu.edu.tr/?act=guest&act2=projeler&durum=devam' >Devam Eden Projeler</a></li></ul></li></ul></li><li><a href='#' onclick='return false;'>Akreditasyon ve Kalite</a><ul><li><a href='Default.aspx?SId=33806' >Kalite Politikası</a></li><li><a href='Default.aspx?SId=33808' >Raporlar</a></li><li><a href='Default.aspx?SId=34969' >Sunular</a></li><li><a href='#' onclick='return false;'>Geri Bildirim & Değerlendirme</a><ul><li><a href='Default.aspx?SId=32576' >Öğrenci Geri Bildirimleri</a></li><li><a href='Default.aspx?SId=32902' >Memnuniyet Geri Bildirimleri</a></li></ul></li><li><a href='Default.aspx?SId=34322' >Toplumsal Katkı ve Sosyal Güvenirlik</a></li><li><a href='Default.aspx?SId=34446' >Uluslararasılaştırma</a></li><li><a href='Default.aspx?SId=34320' >Protokoller</a></li><li><a href='Default.aspx?SId=33809' >Görev Tanımları</a></li><li><a href='Default.aspx?SId=33810' >İş Akış Şeması</a></li><li><a href='https://uzaktanegitimkapisi.gov.tr/' >Uzaktan Eğitim Kapısı</a></li></ul></li><li><a href='Default.aspx?SId=15424' >Belgeler</a></li><li><a href='Default.aspx?SId=5407' >İletişim</a></li><li class="d-block d-lg-none has-sub"><a href="#" onclick="return false;">Hızlı Erişim</a><ul><li><a href='https://obs.ksu.edu.tr/' target='_blank' >Öğrenci Bilgi sistemi</a></li><li><a href='https://ogr.ksu.edu.tr/' target='_blank' >Öğrenci E-posta</a></li><li><a href='https://kddb.ksu.edu.tr/' target='_blank' >Kütüphane</a></li><li><a href='https://eys.ksu.edu.tr' target='_blank' >Öğrenme Yönetim Sistemi(UZEM)
+</a></li><li><a href='https://sem.ksu.edu.tr/' target='_blank' >Sürekli Eğitim Merkezi</a></li><li><a href='#' target='_self' ><hr/></a></li><li><a href='https://pbs.ksu.edu.tr/giris.aspx' target='_blank' >Personel Bilgi Sistemi</a></li><li><a href='https://ozluk.ksu.edu.tr/edoweb/' target='_blank' >Ek Ders</a></li><li><a href='https://ebys.ksu.edu.tr/enVision/Login.aspx' target='_blank' >EBYS</a></li><li><a href='https://mail.ksu.edu.tr/' target='_blank' >Personel E-posta</a></li><li><a href='https://versis.ksu.edu.tr/login.aspx' target='_blank' >VERSİS</a></li><li><a href='https://basvuru.ksu.edu.tr/' target='_blank' >Akademik Başvuru Sistemi</a></li><li><a href='https://tesvik.ksu.edu.tr/login.aspx' target='_blank' >Akademik Teşvik Başvuru Sistemi</a></li><li><a href='#' target='_self' ><hr/></a></li><li><a href='https://bidb.ksu.edu.tr/Default.aspx?SId=34029' target='_blank' >Lisanslı Yazılımlar</a></li><li><a href='https://pbs.ksu.edu.tr/DestekTalep.aspx' target='_blank' >Teknik Destek Talebi</a></li><li><a href='https://yemekhane.ksu.edu.tr/User/Login' target='_blank' >Yemekhane kart yükleme</a></li><li><a href='https://havuzodeme.ksu.edu.tr/' target='_blank' >Spor Tesisleri Online Üyelik</a></li><li><a href='#' target='_self' ><hr/></a></li><li><a href='https://harita.ksu.edu.tr/' target='_blank' >Kampüs Haritası</a></li><li><a href='https://www.ksu.edu.tr/TelefonRehberi.aspx' target='_blank' >Telefon Rehberi</a></li><li><a href='https://eduroam.ksu.edu.tr/Default.aspx?SId=31382' target='_blank' >Eduroam</a></li><li><a href='https://radyo.ksu.edu.tr/' target='_blank' >Radyo KSÜ</a></li><li><a href='https://ekspertiz.ksu.edu.tr/' target='_blank' >Oto Ekspertiz</a></li><li><a href='https://hastane.ksu.edu.tr/' target='_blank' >KSÜ Sağlık Uygulama ve Araştırma Hastanesi</a></li></ul></li></ul>
+                                <!-- end menu area -->
+
+                                <!-- Arama -->
+                                <div class="attr-nav me-lg-0 ms-auto">
+                                    <ul>
+                                        <li class="search"><a href="#!" aria-label="Site içi arama..."><i class="fas fa-search fa-2md"></i></a></li>
+                                    </ul>
+                                </div>
+                                <!-- end Arama -->
+
+                                <button id="menuButton" class="butn primary d-lg-block custom-hover margin-075" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" aria-label="Hızlı Menüyü aç">
+                                    <span>Hızlı Menü</span>
+                                </button>
+                            </nav>
+
+                            <!-- sağ menü içerik başlangıç -->
+
+
+                            <!-- sağ menü içerik başlangıç -->
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+                                <div class="offcanvas-header">
+                                    <p class="offcanvas-title h5" id="offcanvasMenuLabel">Hızlı Erişim Menüsü</p>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
+                                </div>
+                                <div class="offcanvas-body bg-black">
+                                    <ul class="navbar-nav">
+                                        
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://obs.ksu.edu.tr/" target="_blank" data-scroll-nav="1" >Öğrenci Bilgi sistemi</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://ogr.ksu.edu.tr/" target="_blank" data-scroll-nav="2" >Öğrenci E-posta</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://kddb.ksu.edu.tr/" target="_blank" data-scroll-nav="3" >Kütüphane</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://eys.ksu.edu.tr" target="_blank" data-scroll-nav="3" >Öğrenme Yönetim Sistemi(UZEM)
+</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://sem.ksu.edu.tr/" target="_blank" data-scroll-nav="3" >Sürekli Eğitim Merkezi</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#" target="_self" data-scroll-nav="4" onclick='return false;'><hr/></a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://pbs.ksu.edu.tr/giris.aspx" target="_blank" data-scroll-nav="5" >Personel Bilgi Sistemi</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://ozluk.ksu.edu.tr/edoweb/" target="_blank" data-scroll-nav="6" >Ek Ders</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://ebys.ksu.edu.tr/enVision/Login.aspx" target="_blank" data-scroll-nav="7" >EBYS</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://mail.ksu.edu.tr/" target="_blank" data-scroll-nav="8" >Personel E-posta</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://versis.ksu.edu.tr/login.aspx" target="_blank" data-scroll-nav="9" >VERSİS</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://basvuru.ksu.edu.tr/" target="_blank" data-scroll-nav="9" >Akademik Başvuru Sistemi</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://tesvik.ksu.edu.tr/login.aspx" target="_blank" data-scroll-nav="10" >Akademik Teşvik Başvuru Sistemi</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#" target="_self" data-scroll-nav="11" onclick='return false;'><hr/></a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://bidb.ksu.edu.tr/Default.aspx?SId=34029" target="_blank" data-scroll-nav="13" >Lisanslı Yazılımlar</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://pbs.ksu.edu.tr/DestekTalep.aspx" target="_blank" data-scroll-nav="14" >Teknik Destek Talebi</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://yemekhane.ksu.edu.tr/User/Login" target="_blank" data-scroll-nav="15" >Yemekhane kart yükleme</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://havuzodeme.ksu.edu.tr/" target="_blank" data-scroll-nav="16" >Spor Tesisleri Online Üyelik</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#" target="_self" data-scroll-nav="17" onclick='return false;'><hr/></a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://harita.ksu.edu.tr/" target="_blank" data-scroll-nav="18" >Kampüs Haritası</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://www.ksu.edu.tr/TelefonRehberi.aspx" target="_blank" data-scroll-nav="19" >Telefon Rehberi</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://eduroam.ksu.edu.tr/Default.aspx?SId=31382" target="_blank" data-scroll-nav="20" >Eduroam</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://radyo.ksu.edu.tr/" target="_blank" data-scroll-nav="21" >Radyo KSÜ</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://ekspertiz.ksu.edu.tr/" target="_blank" data-scroll-nav="21" >Oto Ekspertiz</a>
+                                                </li>
+                                            
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="https://hastane.ksu.edu.tr/" target="_blank" data-scroll-nav="22" >KSÜ Sağlık Uygulama ve Araştırma Hastanesi</a>
+                                                </li>
+                                            
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- sağ menü içerik bitiş -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- HEADER ALT
+        ================================================== -->
+
+    
+    <div id="mainContent" tabindex="-1"></div>
+
+    
+
+    
+
+    
+    <section class="pb-12 pt-20 pb-0">
+        <div class="container">
+            <div class="row mt-n1-9 mb-1-6">
+                
+
+    <div class="col-md-12 col-lg-12 mt-1-9 pb-5">
+        <div class="single-plan text-start">
+            <div class="head-plan bg-primary text-uppercase">
+                <p class="head-plan-h4">Mezuniyet Öncesi Tıp Eğitimi Ders Programları</p>
+            </div>
+        </div>
+        <article class="case-block-detail blog-style6">
+            <article class="blog-item">
+                <div class="widget-body">
+                    <div class="fs-7 metin_back">
+                        <div align="center" style="font-size: 16px; font-family: &quot;Times New Roman&quot;;">  <a href="https://drive.google.com/file/d/1zsumDoNoyO-h3dlm_SwZ7vSv2j77wql8/view?usp=drive_link" target="_blank">  </a><a href="https://drive.google.com/file/d/18da1TZtST0SyOwXPllC8o3PcxKnrXB7J/view?usp=drive_link" target="_blank">  </a><table border="0" cellspacing="0" cellpadding="0" width="732" style="width: 548.95pt; border-collapse: collapse; font-size: 14.6667px; font-family: Calibri, sans-serif;">  <tbody style="font-size: 14.6667px; font-family: Calibri, sans-serif;"><tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border: 1pt solid windowtext; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1hb8Np1dXhaxe43mJlAguBJlAYcM4efQ1/view?usp=sharing" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">2026-2027 Eğitim-Öğretim Yılı Akademik Takvimi</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1ouAy38nhXmB2cJ96ul6TjnlXZ4XRUNW2/view?usp=sharing" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;" target="_blank"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Ders Saatleri</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">&nbsp; &nbsp;<a href="https://drive.google.com/file/d/1f_Iflbzeh-Q-utIQ9nvSAIrHHRufRCGv/view?usp=sharing" target="_blank" style="background-color: #ffffff; color: #0000ff;">Staj Eğitimi Sorumlu Listesi</a></td></tr><tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/17W8Z8cET4zyISt1CY0aECig1qxfEMrFX/view?usp=sharing" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;" target="_blank"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kişisel ve Mesleki Gelişim Saati Amaç, Kapsam ve İşleyiş</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; background: #487eb0; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: white;">Dönem I Programı</span></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1KKCllJZvpDOOfNUVD81F5Cq_-7yEOj1J/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Dönem I Eğitimi ve Kurulların Amaç ve Hedefleri</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1EnjRHwcPL8aOefJ8XqoGyUITiFaq6ba_/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul I - Tıbbi Bilimlere Giriş Ders Kurulu (2026-2027 Eğitim-Öğretim   Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1iw3or5lv7P8lbZrpDINalkvICE4x6IIk/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul II - Biyomolekülden Hücreye Ders Kurulu (2026-2027 Eğitim-Öğretim   Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1oI9HAb0iDwFAmpKgMjQBcdivASXfRjMN/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;" target="_blank"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul III - Hücre ve Metabolizma Ders Kurulu (2026-2027 Eğitim-Öğretim   Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1K1lTzvG84BfZcJ9w_IcIJr_L8STOvk69/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul IV - Hücresel Fonksiyonlar Ders Kurulu (2026-2027 Eğitim-Öğretim   Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1BVOWYFlPgVC4e_8kIWWRGcRgCHntewbt/view?usp=sharing" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul V - Doku Biyolojisi Ders Kurulu (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; background: #487eb0; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: white;">Dönem II Programı</span></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1KpNK5MoJixs_BfZ_36NZZrALDs2EqQK4/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Dönem II Eğitimi ve Kurulların Amaç ve Hedefleri</span></a></p>   </td></tr>    <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1AfmuTV4IRTjMtqu7Z4AYjDEcocVDkt2D/view?usp=sharing" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul I - Hematopoetik ve İmmünolojik Sistem Ders Kurulu (2026-2027 Eğitim-Öğretim Yılı)</span></a><a href="https://drive.google.com/file/d/1zsumDoNoyO-h3dlm_SwZ7vSv2j77wql8/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;" target="_blank"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;"></span></a></p><a href="https://drive.google.com/file/d/1zsumDoNoyO-h3dlm_SwZ7vSv2j77wql8/view?usp=drive_link" target="_blank">   </a></td></tr><tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1zsumDoNoyO-h3dlm_SwZ7vSv2j77wql8/view?usp=drive_link" target="_blank">   </a><p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1zsumDoNoyO-h3dlm_SwZ7vSv2j77wql8/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;" target="_blank"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul II - Sinir Sistemi Ders Kurulu (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1S-_7U9eLIoYb9_fYK5RAnAFHMW533NSz/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;" target="_blank"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul III - Dolaşım Sistemi Ders Kurulu (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1g1udYxdZlSyiAiC0Hc17QtzPL-6yvGtz/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;" target="_blank"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul IV - Solunum Sistemi Ders Kurulu (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1jUCHnoj0qdEWye_WerKhnlZUyb7IIxlJ/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;" target="_blank"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul V - Sindirim ve Metabolizma Ders Kurulu (2026 -2027 Eğitim-Öğretim Yılı)</span></a><a href="https://drive.google.com/file/d/18da1TZtST0SyOwXPllC8o3PcxKnrXB7J/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;" target="_blank"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;"></span></a></p><a href="https://drive.google.com/file/d/18da1TZtST0SyOwXPllC8o3PcxKnrXB7J/view?usp=drive_link" target="_blank">   </a></td></tr><tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/18da1TZtST0SyOwXPllC8o3PcxKnrXB7J/view?usp=drive_link" target="_blank">   </a><p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/18da1TZtST0SyOwXPllC8o3PcxKnrXB7J/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;" target="_blank"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul VI - Endokrin ve Ürogenital Sistem Ders Kurulu (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; background: #487eb0; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: white;">Dönem III Programı</span></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1ZTZrUECXuRq96LAmOoFJwX0tq0zWhq8R/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Dönem III Eğitimi ve Kurulların Amaç ve Hedefleri</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1EL4g_l7gc4DhkNkM65IZp4QmKr5MlWdu/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul I - Klinik Bilimlere Giriş ve Semiyoloji Ders Kurulu (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/177g5SHuGeouoxFoXedfCn25LKIM0rG-8/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul II - Hematopoetik İmmünolojik Sistem ve Enfeksiyon Hastalıkları   Ders Kurulu (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/12lXOCFozSVlietMiFWF0VcHIZtwXCbRv/view?usp=sharing" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul III - Sinir- Kas-İskelet Sistemi ve Hastalıkları Ders Kurulu   (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1fo-KSXmVT1WkAn9186g6GvIM7jFWsjQ8/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul IV - Dolaşım ve Solunum Sistemi Hastalıkları Ders Kurulu   (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1XM55Y5NEd_Zdin_38lR6hgIi7X4SXPM2/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul V - Gastrointestinal Sistem Hastalıkları Ders Kurulu (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1VC8Fs0JhhbxLctE2tWsJBIrKHF1O1ac0/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul VI - Genitoüriner- Endokrin Sistem ve Metabolizma Hastalıkları   Ders Kurulu (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1BbN5s94n3twzwQy1KBaDe1l5SvdhcS0V/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kurul VII - Halk Sağlığı-Aile Hekimliği Ders Kurulu (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; background: #487eb0; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: white;">Dönem IV Programı</span></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1ggS4EDsrPhBkyPgBmJwPeRN4KyN7fN0Q/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Dönem IV Eğitiminin Amaç ve Hedefleri</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1Trn8gM_0sYMDfy2o9CNpXM0bxPMRYXu0/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Dönem 4 Staj Programı</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1rokg9uJkmK63Y50XMGOubZmh7uAPtQNG/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Çocuk Sağlığı ve Hastalıkları Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1_ytKEXUKwlVfFFZAVVzvYfSnSX0TPduU/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Enfeksiyon Hastalıkları ve Klinik Mikrobiyoloji Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1L5__li7GEL0H419AOQMS25lbnQBCwpw5/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Genel Cerrahi Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1K2LKGJN7piQig3iYHrI8jFwJTt92yaYF/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Göğüs Hastalıkları Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1_EKQLAp-o5M1p4MUTIWNDpeeT9p7eMWI/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">İç Hastalıkları Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/10zNue1qxzvov8E8NHO5uLL6znQfTope-/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kadın Hastalıkları ve Doğum Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1WXiYS64M9K1C7K_zrPHVO0cL8uXepkIO/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kardiyoloji Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; background: #487eb0; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: white;">Dönem V Programı</span></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1hmsaVc8Lw-s5XWvFgrc3vfLFzlnDxIyz/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Dönem V Eğitiminin Amaç ve Hedefleri</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1aCsMdpVCYCMCLkFPh6HPbCpnvRuFy8Fm/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Dönem 5 Staj Programı</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1Jpzhue4olASaZaNwN6J261258XWqTxth/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Acil Tıp Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/19gKTpZywFMWHdkokVcnPeetT20g6fJHF/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Adli Tıp Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1c4NQREHrSLcv_Lv08dbRyCt7HK1T_w7J/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Anesteziyoloji ve Reanimasyon Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1KfE9er4H2N1A2tY5zRikhcqDJJ8Xbe3w/view?usp=sharing" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Beyin ve Sinir Cerrahisi Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1DzBX30oXIZoVNK30Fc54cz7yU1SCzWNB/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Çocuk Cerrahisi Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/12wbJkHkRIJsty7OvHxjnXzy6EFLPKOdz/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Çocuk ve Ergen Ruh Sağlığı ve Hastalıkları Stajı (Seçmeli) (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1t1FFnF3clkBDgiVfhUFOzk8HvBSBN1A7/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Deri ve Zührevi Hastalıkları Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1naV4ICog4ExPip62yOCgHtb211CmOGTc/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Fiziksel Tıp ve Rehabilitasyon Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1sbRdlKBDVCl_dEvPaFjREhJiZTZfIR4Z/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Göğüs Cerrahisi Stajı (Seçmeli) (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1XXVTYpKU-VW2ntaQyXX0u5rtN_aM9kC7/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Göz Hastalıkları Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1n7OgFz70Q0LFKTUniU2qtQS8yVZVa_Y-/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kalp ve Damar Cerrahisi Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1l4okjJ1NnR-uAcqD9H5CYNFpPKx_HvZE/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kulak Burun Boğaz Hastalıkları Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1FQSUiyDzu8f1MdEZS0Rex99O1pI5gANz/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Nöroloji Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>    <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/14WbAfZ6_aRgV7gx_RXgx5PFjx-2-Qjph/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Ortopedi ve Travmatoloji Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1m9rEFWMmmD3zkfdV54AeDqfLN77akLyX/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Plastik, Rekonstrüktif ve Estetik Cerrahi Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1ov73SAXfH-5T7ANdrMTSsMuVyl7q-bdn/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Radyasyon Onkolojisi Stajı (Seçmeli) (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/155Q82-MtUCOprzPmaRjkiNpbsLd2lTEx/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Radyoloji Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1jRDobyWNfXHYCk8anKMjRlkTWwz4xL_W/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Ruh Sağlığı ve Hastalıkları Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/16KEeF8ubW7pI_t_2ZHV7zDJxWaWhSJWe/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Tıbbi Farmakoloji Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/19CunIJPKF1jQ5ng0oKJrmjgRPqgeCIAm/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Üroloji Stajı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; background: #487eb0; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: white;">Dönem VI Programı</span></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1Rn_U_x78rftfE57fdEexd1zA8XFNj8oC/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Dönem VI Eğitiminin Amaç ve Hedefleri</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt;"><span style="font-size: 14.6667px;">&nbsp; &nbsp;</span><a href="https://drive.google.com/file/d/1t5_CppsfU1IQyBsfPTrB1r2zqY7wNi_F/view?usp=sharing" style="font-size: 14.6667px; background-color: #ffffff;" target="_blank"><span style="font-size: 10pt;"><span style="font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">İntörnlükten Hekimliğe Geçiş Eğitim Programı</span></span></a></td></tr><tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1Es9EdDSfyD_h9not-bVZaJtPH15fjV4f/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Dönem 6 Staj Programı</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/16db4zmVeKdsB8Y-wvaF1PUKATyhRXj2e/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Acil Tıp Staj Çalışma Programı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1GYMkXSpcZdQl2AwR7A4IrNSjSC5PtbAm/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Aile Hekimliği Stajı Çalışma Programı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1YLrZL4cUaRpEbo8wmPjc4QTZEb7NNpWh/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Çocuk Sağlığı ve Hastalıkları Staj Çalışma Programı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1uoizmXSM0PfeJ-99VIaRLrz2SyB3BVqA/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Genel Cerrahi Staj Çalışma Programı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1etHW8woO5y66rRR8uXcdplxIbjsR5pl4/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Halk Sağlığı Staj Çalışma Programı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1LT1WnecgdZznBf5NwtxihA3CzTWaI0CF/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">İç Hastalıkları Staj Çalışma Programı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1VeZmZVLweL1kkQPvPUdUsU-VozoMudeJ/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Kadın Hastalıkları ve Doğum Staj Çalışma Programı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr>  <tr style="height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><td width="732" style="width: 548.95pt; border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentcolor windowtext windowtext; border-image: initial; padding: 0cm; height: 19.85pt; font-size: 14.6667px; font-family: Calibri, sans-serif;">   <p style="margin: 0cm 10.2pt 0cm 6.7pt; font-size: 14.6667px; font-family: Calibri, sans-serif;"><a href="https://drive.google.com/file/d/1iwhQv4EJCQEYrOKmIS-dnjF-Kq1ovmMQ/view?usp=drive_link" style="color: #0000ff; font-size: 14.6667px; font-family: Calibri, sans-serif;"><span style="font-size: 10pt; font-family: &quot;Open Sans&quot;, sans-serif; color: #0000ff;">Ruh Sağlığı ve Hastalıkları Staj Çalışma Programı (2026-2027 Eğitim-Öğretim Yılı)</span></a></p>   </td></tr> </tbody></table>  </div><br />
+                    </div>
+                </div>
+
+            </article>
+        </article>
+    </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    
+
+    <div class="modal fade pt-20" id="anaSayfaPopup" tabindex="-1" aria-labelledby="popupBaslik" aria-modal="true" role="dialog" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="popupBaslik" class="modal-title">Popup</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>
+                        
+                    </p>
+                    <label>
+                        <input type="checkbox" id="dontShow">
+                        Bir daha gösterme
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="buy-theme  alt-font d-lg-inline-block"><a id="content_headerContent_DilLinkButton" href="javascript:__doPostBack(&#39;ctl00$ctl00$content$headerContent$DilLinkButton&#39;,&#39;&#39;)"><i class="fa fa-language"></i><span>İNGİLİZCE</span></a></div>
+
+
+
+        </form>
+    </main>
+
+    <!-- FOOTER
+        ================================================== -->
+    <footer class="pt-0">
+        <div class="footer-top-bar mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="py-1-6 p-lg-1-9 border-lg-end border-color-light-white borders-bottom border-lg-bottom-0">
+                            <span class="d-inline-block display-18 lh-1 text-light-gray align-top w-40px"><i class="fas fa-pencil-alt align-top"></i></span>
+                            <div class="d-inline-block align-top ps-2 w-75">
+                                <a href="https://www.ksu.edu.tr/Default.aspx?SId=8206">
+                                    <p class=" h5m-0 text-white text-uppercase small">Bizden Haberler</p>
+                                </a>
+                                <p class="m-0">Akademik ve İdari Tüm Personelle İlgili Haberler. <br /> (Son Haber Tarihi : 20.11.2026)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-lg-4">
+                            <div class="py-1-6 p-lg-1-9 border-lg-end border-color-light-white borders-bottom border-lg-bottom-0">
+                                <span class="d-inline-block display-18 lh-1 text-light-gray align-top w-40px"><i class="fas fa-file-alt align-top"></i></span>
+                                <div class="d-inline-block align-top ps-2 w-75">
+                                    <h5 class="m-0 text-white text-uppercase small">Documentation</h5>
+                                    <p class="m-0">Lorem ipsum dolor sit amet</p>
+                                </div>
+                            </div>
+                        </div>-->
+                    <div class="col-lg-6">
+                        <div class="py-1-6 p-lg-1-9">
+                            <span class="d-inline-block display-18 lh-1 text-light-gray align-top w-40px"><i class="far fa-map align-top"></i></span>
+                            <div class="d-inline-block align-top ps-2 w-75">
+                                <a href="https://harita.ksu.edu.tr">
+                                    <p class="h5 m-0 text-white text-uppercase small">Kampüs Haritası</p>
+                                </a>
+                                <p class="m-0">Merak ettiğin yeri haritadan seç, kampüste keşfe çık!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row mt-n1-9 row flex-column-reverse flex-md-row">
+
+                <div class="col-lg-4 col-md-6 mt-1-9">
+
+                    <img src="img/logos/logo-inner-footer.png" title="Kahramanmaraş Sütçü İmam Üniversitesi Logosu" />
+                    <p class="my-4"></p>
+                    <ul class="footer-list ps-0">
+                        <li>
+                            <span class="d-inline-block align-top"><i class="fas fa-map-marker-alt text-primary"></i></span>
+                            <span class="d-inline-block w-85 align-top ps-2">Kahramanmaraş Sütçü İmam Üniversitesi Tıp Fakültesi Avşar Mah. Batı Çevreyolu Blv. No: 251/A 46040 - Onikişubat/Kahramanmaraş</span>
+                        </li>
+                        <li>
+                            <span class="d-inline-block align-top"><i class="fas fa-mobile-alt text-primary"></i></span>
+                            <span class="d-inline-block w-85 align-top ps-2"> +90 (344) 300 34 08 (Dekanlık)</span>
+                        </li>
+                        <li>
+                            <span class="d-inline-block align-top"><i class="far fa-envelope text-primary"></i></span>
+                            <span class="d-inline-block w-85 align-top ps-2">genelsekreterlik@ksu.edu.tr</span>
+                        </li>
+                        <li>
+                            <span class="d-inline-block align-top"><i class="fas fa-print text-primary"></i></span>
+                            <span class="d-inline-block w-85 align-top ps-2">+90 (344) 300  34 09 (Dekanlık)</span>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 mt-1-9">
+                    <h3 class="footer-title-style3">Hızlı Erişim</h3>
+                    <div class="row">
+                        <div class="col-md-6 pr-lg-0">
+                            <ul class="footer-list mb-1 mb-md-0 ps-0">
+                                
+                                        <li><a href="https://yemeklistesi.ksu.edu.tr">Yemek Listesi</a></li>
+                                    
+                                        <li><a href="https://yemekhane.ksu.edu.tr/User/Login">Yemekhane Kart</a></li>
+                                    
+                                        <li><a href="https://havuzodeme.ksu.edu.tr/">Havuz Kart</a></li>
+                                    
+                                        <li><a href="https://www.ksu.edu.tr/Default.aspx?SId=16790">Personel Servis</a></li>
+                                    
+                            </ul>
+                        </div>
+                        <div class="col-md-6 pr-lg-0">
+                            <ul class="footer-list ps-0">
+                                
+                                        <li><a href="https://radyo.ksu.edu.tr">Radyo KSÜ</a></li>
+                                    
+                                        <li><a href="https://sifiratik.ksu.edu.tr">Sıfır Atık Projesi</a></li>
+                                    
+                                        <li><a href="https://www.ksu.edu.tr/Default.aspx?SId=8132">Yönergeler</a></li>
+                                    
+                                        <li><a href="https://www.ksu.edu.tr/sehitlerimiz/default.aspx">Deprem Şehitleri</a></li>
+                                    
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mt-1-9">
+                    <div class="ps-lg-1-9">
+                        <h3 class="footer-title-style3">Bilgi Sistemleri</h3>
+                        <div class="row">
+                            <div class="col-md-6 pr-lg-0">
+                                <ul class="footer-list mb-1 mb-md-0 ps-0">
+                                    
+                                            <li><a href="https://pbs.ksu.edu.tr/giris.aspx">PBS</a></li>
+                                        
+                                            <li><a href="https://ebys.ksu.edu.tr/enVision/Login.aspx">EBYS</a></li>
+                                        
+                                            <li><a href="https://ozluk.ksu.edu.tr/edoweb/">Ekders</a></li>
+                                        
+                                            <li><a href="https://mail.ksu.edu.tr/">Personel E-Posta</a></li>
+                                        
+                                            <li><a href="https://ogr.ksu.edu.tr/?loginOp=logout">Öğrenci E-Posta</a></li>
+                                        
+                                </ul>
+                            </div>
+                            <div class="col-md-6 pr-lg-0">
+                                <ul class="footer-list ps-0">
+                                    
+                                            <li><a href="https://bidb.ksu.edu.tr/Default.aspx?SId=28004">Web Eğitim</a></li>
+                                        
+                                            <li><a href="https://kvkk.ksu.edu.tr/Default?SId=34442">KVKK Metni</a></li>
+                                        
+                                            <li><a href="https://harita.ksu.edu.tr/">Ulaşım</a></li>
+                                        
+                                            <li><a href="https://pbs.ksu.edu.tr/depo/belgeler/KSU_Erasmus_Policy_Statement.pdf">Erasmus</a></li>
+                                        
+                                            <li><a href="https://pbs.ksu.edu.tr/DestekTalep.aspx">Teknik Destek</a></li>
+                                        
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-1 mb-md-0">
+                        <div class="footer-social-icons small">
+                            <ul class="ps-0">
+                                <li><a href="http://www.facebook.com/ksu.edu.tr" aria-label="facebook hesabı"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="http://www.twitter.com/ksuedutr" aria-label="x hesabı"><i class="fab fa-x-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/ksu.edu.tr/" aria-label="instagram hesabı"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCCBaF5FsepbDpjEcTrO22Fg" aria-label="youtube hesabı"><i class="fab fa-youtube"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mt-1 mt-md-0 tasarimgelistirme">
+                            &copy;<span class="current-year1">2025 </span>Tasarım ve Geliştirme <a href="https://bidb.ksu.edu.tr/" target="_blank" class="gelistirme">Bilgi İşlem Daire Başkanlığı</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- /*--------------------------------------------------KVKK BAŞLANGIÇ---------------------------------------------*/-->
+    <div id="kvkk-bar" class="kvkk-bar" style="display: none;">
+        <div class="container">
+            <div class="row footer-address">
+                <div class="col-lg-12">
+                    <div class="bg-white p-3 shadow border-radius-10">
+                        <div class="row align-items-center">
+                            <div class="col-md-10 mb-2 mb-md-0">
+                                <p class="mb-0">
+                                    Kahramanmaraş Sütçü İmam Üniversitesi Kişisel Verilerin İşlenmesine Yönelik Aydınlatma Metni için <a href="https://kvkk.ksu.edu.tr/depo/duyuru_belge/Ayd%C4%B1nlatma%20Metni%20KVKK_2103120352102113.pdf" target="_blank">tıklayınız.</a>
+                                </p>
+                            </div>
+                            <div class="col-md-2 text-md-end">
+                                <button onclick="kvkkKapat()" class="btn btn-sm btn-secondary">
+                                    Kapat
+                               
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /*--------------------------------------------------KVKK BİTİŞ---------------------------------------------*/-->
+
+
+
+    <!-- /*--------------------------------------------------RADYO BUTON BAŞLANGIÇ---------------------------------------------*/-->
+    <div id="radyoFooter" class="radyoFooter" style="display: none; z-index: 98 !important">
+        <audio id="radio" controls="" preload="none" style="width: 25%; min-width: 250px; z-index: 99 !important"></audio>
+    </div>
+
+    <script>
+        if (window.location.href.substring(8, 13) == 'radyo') {
+            document.getElementById("radio").src = "https://radyo2.ksu.edu.tr:8443/live";
+            document.getElementById("radyoFooter").style.display = "block";
+        }
+    </script>
+    <!-- /*--------------------------------------------------RADYO BUTON BİTİŞ---------------------------------------------*/-->
+
+
+
+    <!-- SCROLL TO TOP
+    ================================================== -->
+    <a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+
+    <!-- all js include start -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- bootstrap bundle -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- core.min.js -->
+    <script src="js/core.min.js"></script>
+
+    <!-- search -->
+    
+
+    <!-- custom scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- form plugins js -->
+    <script src="js/plugins.js"></script>
+
+    <!-- form scripts js -->
+    <script src="js/scripts.js"></script>
+    <!--<script src="js/www-embed-player.js"></script>-->
+    <script src="js/videolu-slider-ayar.js"></script>
+
+    <script src="js/etkinlik-slider-ayar.js"></script>
+
+    <!-- bu ncode menü butonu kaybolması için -->
+
+    <!-- bu ncode menü butonu kaybolması için -->
+    <script>
+        ////Tam Sayfa Slayt sağ sol oklar icin yapildi - Baslangic//
+        //$('#tamsayfaSlayt').owlCarousel({
+        //    loop: true,
+        //    margin: 10,
+        //    nav: false,      // ✅ oklar kapalı
+        //    dots: true,    // ❌ noktalar acik
+        //    autoplay: false, // ❌ otomatik kayma yok
+        //    items: 1,
+        //    navText: [
+        //        '<span aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></span>',
+        //        '<span aria-label="Next"><i class="fa-solid fa-chevron-right"></i></span>'
+        //    ]
+        //});
+        ////Tam Sayfa Slayt sağ sol oklar icin yapildi - Bitis//
+
+
+        const video = document.querySelector('.video-background');
+
+        // video bittiğinde otomatik durması
+        if (video) {
+            video.addEventListener('ended', () => {
+                video.pause(); // aslında video zaten bitmiş oluyor, ama garanti için
+                console.log('Video bitti!');
+                // Eğer slider kullanıyorsan, burada sonraki slayta geçişi tetikleyebilirsin
+                // slider.next(); // örnek, slider API’sine göre
+            });
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('menuButton');
+            const offcanvasMenu = document.getElementById('offcanvasMenu');
+
+            offcanvasMenu.addEventListener('show.bs.offcanvas', () => {
+                menuButton.classList.add('hide');
+            });
+
+            offcanvasMenu.addEventListener('hidden.bs.offcanvas', () => {
+                menuButton.classList.remove('hide');
+            });
+        });
+    </script>
+
+    <script>
+        function kvkkKapat() {
+            const today = new Date().toISOString().split('T')[0];
+            localStorage.setItem("kvkk_kapatma_tarihi", today);
+
+            const kvkkBar = document.getElementById("kvkk-bar");
+            if (kvkkBar) kvkkBar.style.display = "none";
+        }
+
+        window.addEventListener("load", function () {
+            const today = new Date().toISOString().split('T')[0];
+            const kayitliTarih = localStorage.getItem("kvkk_kapatma_tarihi");
+
+            var anaSayfaMi = 'false';
+
+            const kvkkBar = document.getElementById("kvkk-bar");
+
+            if (kvkkBar) {
+                if (anaSayfaMi === "true" && kayitliTarih !== today) {
+                    kvkkBar.style.display = "block";
+                } else {
+                    kvkkBar.style.display = "none";
+                }
+            }
+        });
+
+        // offcanvas kapatma
+        document.addEventListener("click", function (e) {
+            if (!e.target.closest('.offcanvas') && !e.target.closest('[data-bs-toggle="offcanvas"]')) {
+                const btn = document.querySelector('[data-bs-dismiss="offcanvas"]');
+                if (btn) btn.click();
+            }
+        });
+
+        // checkbox kontrol
+        const dontShow = document.getElementById("dontShow");
+        if (dontShow) {
+            dontShow.addEventListener("change", function () {
+                if (this.checked) {
+                    localStorage.setItem("popupShown", "true");
+                } else {
+                    localStorage.removeItem("popupShown");
+                }
+            });
+        }
+
+        //// popup event
+        //const popup = document.getElementById("anaSayfaPopup");
+        //const uyari = document.getElementById("uyari");
+
+        //if (popup) {
+        //    popup.addEventListener('shown.bs.modal', function () {
+        //        if (uyari) {
+        //            uyari.textContent = "Popup penceresi açıldı";
+        //        }
+        //    });
+        //}
+
+
+
+
+
+
+        $('.owl-carousel').each(function () {
+
+            var $this = $(this);
+
+            function updateDots() {
+                setTimeout(function () {
+                    $this.find('.owl-dot').each(function (index) {
+                        /*$(this).attr('aria-label', (index + 1) + '. slaytı göster');*/
+                        const isActive = $(this).hasClass('active');
+
+                        $(this).attr({
+                            'aria-label': (index + 1) + '. slaytı göster',
+                            'aria-current': isActive ? 'true' : 'false'
+                        });
+                    });
+                }, 0);
+            }
+
+            $this.on('initialized.owl.carousel changed.owl.carousel', updateDots);
+        });
+
+
+
+
+        $('#fullSlayt').owlCarousel({
+            items: 1,
+            nav: false,
+            dots: true
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
+
+
