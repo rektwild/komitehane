@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - '.github/workflows/academic-test.yml'
+      - 'data/academic/**'
       - 'drizzle/academic/**'
       - 'lib/academic/**'
       - 'scripts/academic/**'

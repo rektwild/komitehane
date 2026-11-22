@@ -5,8 +5,10 @@ import {academicConnection} from "./connections";
 import {seedCatalog} from "./seed-catalog";
 import {seedRules} from "./seed-rules";
 import {seedEntities} from "./seed-entities";
+import {seedCommittee} from "./seed-committee";
+import {committeeDataset} from "./committee-dataset";
 import {readFile} from "node:fs/promises";
-import {publishVersion} from "../../lib/academic/services/publish";
+import {publishVersion, validateForPublication} from "../../lib/academic/services/publish";
 
 // This script deliberately refuses non-loopback targets and non-test DB names.
 const pool=academicConnection("test");
@@ -21,6 +23,21 @@ try {
   const count=await seedCatalog(pool); await seedCatalog(pool);
   const seeded=await pool.query<{n:string}>("SELECT count(*)::text n FROM universities");
   assert.equal(Number(seeded.rows[0].n),count,"Catalog seed must be idempotent");
+  // Real committee dataset: imported as inactive catalog + DRAFT versions only (never published here).
+  const committee=committeeDataset.parse(JSON.parse(await readFile("data/academic/committee-2026-27.json","utf8")));
+  const first=await seedCommittee(pool,committee);
+  assert.equal(first.versions,committee.versions.length);
+  assert.deepEqual(await seedCommittee(pool,committee),{universities:0,entities:0,versions:0},"Committee seed must be idempotent");
+  const drafts=await pool.query<{id:string;passing_grade:string;status:string}>("SELECT id,passing_grade,status FROM grading_scheme_versions WHERE id = ANY($1::uuid[])",[committee.versions.map(v=>v.id)]);
+  assert.equal(drafts.rowCount,committee.versions.length);
+  for (const v of drafts.rows) {
+    assert.equal(v.status,"DRAFT");
+    const components=await pool.query<{component_type:string;position:number;weight_percent:string}>("SELECT component_type,position,weight_percent FROM assessment_components WHERE version_id=$1 ORDER BY component_type,position",[v.id]);
+    const sources=await pool.query<{source_url:string;verified_at:Date}>("SELECT source_url,verified_at FROM grading_rule_sources WHERE version_id=$1",[v.id]);
+    assert.deepEqual(validateForPublication("COMMITTEE",v.passing_grade,components.rows,sources.rows),[],`Committee draft ${v.id} must pass structural validation`);
+  }
+  const active=await pool.query<{n:string}>("SELECT count(*)::text n FROM academic_read_programs");
+  assert.equal(active.rows[0].n,"0","Imported catalog must stay inactive");
   await pool.query("INSERT INTO universities(id,name,slug) VALUES ($1,'Fictional University','fictional-test')",[uuid(1)]);
   const entities=JSON.parse(await readFile("tests/fixtures/academic/fictional-entities.json","utf8"));
   assert.equal(await seedEntities(pool,entities),4);

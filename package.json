@@ -24,6 +24,8 @@
     "academic:validate": "node --import tsx scripts/academic/validate.ts",
     "academic:migrate": "node --import tsx scripts/academic/migrate.ts",
     "academic:seed:entities": "node --import tsx scripts/academic/seed-entities.ts",
+    "academic:convert:committee": "node --import tsx scripts/academic/convert-committee-export.ts",
+    "academic:seed:committee": "node --import tsx scripts/academic/seed-committee.ts",
     "academic:test:wire": "node scripts/academic/test-pglite-wire.mjs"
   },
   "dependencies": {

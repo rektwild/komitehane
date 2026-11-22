@@ -83,6 +83,42 @@ by a different role. Never grant the app role writer or migrator privileges.
    source's truth. After human review of the exact source and scope, use
    `ACADEMIC_SOURCE_MANUALLY_REVIEWED=yes pnpm academic:publish <version-id>`.
    Do not publish invented rules or test fixtures.
+
+### Committee (kurul) dataset
+
+`data/academic/committee-2026-27.json` is the reviewed, normalized committee
+part of a research export (2026-27, Tıp only). It holds an inactive catalog of
+every Tıp program in the export (ÖSYM 2026 Tablo-4; including KKTC), committee
+schemes, and DRAFT versions whose structure
+already passes `validateForPublication`; everything the export marked partial,
+unsupported, conflicting, without a numeric passing grade or without an
+accessible HTTPS source is listed under `excluded` instead of being imported.
+Weights with more than two decimals (equal or AKTS-weighted shares such as
+60/7) are rounded to two decimals by largest remainder so each version totals
+exactly 100.00. Universities reuse the candidate catalog ids, including the
+renamed Aydın Adnan Menderes, İstanbul Beykent and İstanbul Nişantaşı.
+
+Only rules that were compared with their official documents are included.
+`data/academic/committee-2026-27-verification.json` records that check: the
+SHA-256 of every downloaded document and, per scheme, VERIFIED (with the
+finding) or UNVERIFIED (e.g. Afyonkarahisar SBÜ, whose server sends an
+incomplete TLS chain). Its `researched` list holds rules found directly in official
+2026-27 documents (formula, passing grade, the year's committee list/AKTS and
+hashed sources); only programs whose committee list is explicitly for 2026-27
+and whose formula is in a currently published regulation are included. Its
+`derived` list adds programs the export has no rule for
+(e.g. Atatürk and AYBÜ Tıp (İngilizce)) only where the documents show they
+follow the same verified rule. Regenerate the dataset with
+`pnpm academic:convert:committee <export-dir> data/academic/committee-2026-27-verification.json data/academic/committee-2026-27.json`
+(the directory containing `committee_grading_schemes.jsonl`; course/midterm
+files are ignored). A new export needs a new verification pass first. Import with `pnpm academic:seed:committee
+data/academic/committee-2026-27.json` using the writer connection: one
+transaction, idempotent, nothing activated or published. Then, per version,
+check the exact source document (each source carries the export's page/article
+location and evidence in `source_note`), activate the reviewed university,
+faculty and program, and publish with `ACADEMIC_SOURCE_MANUALLY_REVIEWED=yes
+pnpm academic:publish <version-id>`. The app shows a rule only when
+`ACADEMIC_CURRENT_YEAR_START=2026`.
 7. In the app runtime configure only `ACADEMIC_DATABASE_URL` for academic_app,
    `ACADEMIC_POSTGRES_CA_CERT_BASE64`, `ACADEMIC_CURRENT_YEAR_START` and
    `ACADEMIC_FEATURE_ENABLED=true`. Confirm the DB name, hostname, CA and
